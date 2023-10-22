@@ -1,9 +1,12 @@
 from mongoengine import DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
+
 class quarter(EmbeddedDocument):
     id = UUIDField()
     number = IntField()
     sequence = IntField()
+
+
 class location(EmbeddedDocument):
     alias = StringField()
     id = UUIDField()
@@ -11,15 +14,21 @@ class location(EmbeddedDocument):
     market = StringField()
     sr_id = UUIDField()
     yardline = IntField()
+
+
 class possession(EmbeddedDocument):
     alias = StringField()
     id = UUIDField()
     name = StringField()
     market = StringField()
     sr_id = UUIDField()
+
+
 class start_location(EmbeddedDocument):
     alias = StringField()
     yardline = IntField()
+
+
 class play(EmbeddedDocument):
     away_points = IntField()
     home_points = IntField()
@@ -49,12 +58,16 @@ class play(EmbeddedDocument):
     type = StringField()
     updated_at = DateTimeField()
     wall_clock = StringField()
+
+
 class score(EmbeddedDocument):
     away_points = IntField()
     points = IntField()
     home_points = IntField()
     sequence = DecimalField()
     clock = StringField()
+
+
 class detail(EmbeddedDocument):
     category = StringField()
     sequence = IntField()
@@ -66,6 +79,8 @@ class detail(EmbeddedDocument):
     result = StringField()
     sack_split = StringField()
     yards = IntField()
+
+
 class event(EmbeddedDocument):
     id = UUIDField()
     sequence = DecimalField()
@@ -73,14 +88,20 @@ class event(EmbeddedDocument):
     created_at = DateTimeField()
     type = StringField()
     updated_at = DateTimeField()
+
+
 class end_situation(EmbeddedDocument):
     clock = StringField()
     down = IntField()
     yfd = IntField()
+
+
 class start_situation(EmbeddedDocument):
     clock = StringField()
     down = IntField()
     yfd = IntField()
+
+
 class drive(EmbeddedDocument):
     id = UUIDField()
     sequence = IntField()
@@ -103,28 +124,42 @@ class drive(EmbeddedDocument):
     start_reason = StringField()
     team_sequence = StringField()
     updated_at = DateTimeField()
+
+
 class description(EmbeddedDocument):
     Description = StringField()
+
+
 class penalty(EmbeddedDocument):
     Description = StringField()
     no_play = StringField()
     result = StringField()
     safety = IntField()
     yards = IntField()
+
+
 class defensive_team(EmbeddedDocument):
     points = IntField()
     id = UUIDField()
+
+
 class offensive_team(EmbeddedDocument):
     points = IntField()
     id = UUIDField()
+
+
 class period(EmbeddedDocument):
     id = UUIDField()
     number = IntField()
     sequence = IntField()
+
+
 class points_after_play(EmbeddedDocument):
     id = UUIDField()
     sequence = DecimalField()
     type = StringField()
+
+
 class PlayByPlayInfo(Document):
     _id = StringField(required=True)
     game_id = StringField(required=True)
@@ -159,7 +194,9 @@ class PlayByPlayInfo(Document):
     period = EmbeddedDocumentListField(period)
     points_after_play = EmbeddedDocumentListField(points_after_play)
 
+
 meta = {"collection": "PlayByPlayInfo"}  # Specify the collection name
+
 
 def __str__(self):
     return "PlayByPlayGameInfo: "

@@ -1,5 +1,6 @@
 from mongoengine import EmbeddedDocumentField, DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
+
 class player(EmbeddedDocument):
     abbrname = StringField()
     age = IntField()
@@ -34,6 +35,8 @@ class player(EmbeddedDocument):
     draftteamalias = StringField()
     draftteamsrid = StringField()
     draftteammarket = StringField()
+
+
 class prospect(EmbeddedDocument):
     birthplace = StringField()
     id = StringField()
@@ -50,15 +53,23 @@ class prospect(EmbeddedDocument):
     topprospect = BooleanField()
     weight = IntField()
 
+
 class primary(EmbeddedDocument):
     Description = StringField()
+
+
 class position(EmbeddedDocument):
     name = StringField()
+
+
 class practice(EmbeddedDocument):
     status = StringField()
+
+
 class injury(EmbeddedDocument):
     status = StringField()
     statusdate = DateTimeField()
+
 
 class PlayerDCIinfo(Document):
     playerinfo = EmbeddedDocumentField(player)

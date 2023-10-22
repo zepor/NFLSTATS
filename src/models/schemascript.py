@@ -7,4 +7,3 @@ with open('combined_schema.py', 'w') as outfile:
         with open(file) as infile:
             outfile.write(infile.read())
         outfile.write("\n\n")  # Add line breaks between files
-       

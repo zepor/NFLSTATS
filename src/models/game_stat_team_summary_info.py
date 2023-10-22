@@ -1,4 +1,6 @@
 from mongoengine import DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+
+
 class GameStatTeamSummaryInfo(Document):
     avg_gain = DecimalField()
     fumbles = IntField()
@@ -13,8 +15,9 @@ class GameStatTeamSummaryInfo(Document):
     total_yards = IntField()
     turnovers = IntField()
 
+
 meta = {"collection": "GameStatTeamSummaryInfo"}
 
 
 def __str__(self):
-        return "GameStatTeamSummaryInfo: "
+    return "GameStatTeamSummaryInfo: "

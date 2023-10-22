@@ -1,19 +1,27 @@
-from mongoengine import DecimalField, Document,DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+from mongoengine import DecimalField, Document, DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+
+
 class from_team(EmbeddedDocument):
     alias = StringField()
     id = UUIDField()
     name = StringField()
     market = StringField()
     sr_id = UUIDField()
+
+
 class to_team(EmbeddedDocument):
     alias = StringField()
     id = UUIDField()
     name = StringField()
     market = StringField()
     sr_id = UUIDField()
+
+
 class trade(EmbeddedDocument):
     id = UUIDField()
     trade_date = DateTimeField()
+
+
 class transaction(EmbeddedDocument):
     id = UUIDField()
     desc = StringField()
@@ -24,9 +32,12 @@ class transaction(EmbeddedDocument):
     transaction_code = StringField()
     transaction_type = StringField()
     transaction_year = IntField()
+
+
 class transactions(EmbeddedDocument):
     end_time = DateTimeField()
     start_time = DateTimeField()
+
 
 class TransactionInfo(Document):
     from_team = EmbeddedDocumentListField(from_team)
@@ -38,5 +49,5 @@ class TransactionInfo(Document):
     meta = {"collection": "TransactionINnfo"}  # Specify the collection name
 
     def __str__(self):
-        return "TransactionInfo: " + str(self.id)  # You can customize this string representation
-
+        # You can customize this string representation
+        return "TransactionInfo: " + str(self.id)

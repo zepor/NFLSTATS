@@ -1,9 +1,13 @@
-from mongoengine import DecimalField, EmbeddedDocumentField, Document,DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+from mongoengine import DecimalField, EmbeddedDocumentField, Document, DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+
+
 class game(EmbeddedDocument):
     seasonoid = StringField()
-    seasonname  = StringField()
+    seasonname = StringField()
     leagueweekid = StringField()
     gameid = StringField()
+
+
 class season(EmbeddedDocument):
     weekid = StringField()
     id = StringField()
@@ -13,10 +17,14 @@ class season(EmbeddedDocument):
     year = IntField()
     start_date = DateField()
     end_date = DateField()
+
+
 class changelog(EmbeddedDocument):
     id = StringField()
     end_time = DateTimeField()
     start_time = DateTimeField()
+
+
 class leagueweek(EmbeddedDocument):
     id = StringField()
     sequence = IntField()
@@ -25,6 +33,8 @@ class leagueweek(EmbeddedDocument):
     byeweekteamid = StringField()
     byeweekteamname = StringField()
     byeweekteamsrid = StringField()
+
+
 class LeagueInfo(Document):
     season = EmbeddedDocumentField(season)
     changelog = EmbeddedDocumentListField(changelog)

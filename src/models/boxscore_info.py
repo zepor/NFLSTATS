@@ -1,4 +1,5 @@
-from mongoengine import DecimalField,EmbeddedDocumentField, Document,DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+from mongoengine import DecimalField, EmbeddedDocumentField, Document, DateField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+
 
 class gamebs(EmbeddedDocument):
     id = StringField(primary_key=True)
@@ -6,7 +7,8 @@ class gamebs(EmbeddedDocument):
     hometeam = StringField()
     hometeamtotalpoints = IntField()
     awayteam = StringField()
-    awayteamtotalpoints = IntField()    
+    awayteamtotalpoints = IntField()
+
 
 class overtime(EmbeddedDocument):
     overtime_id = StringField()
@@ -14,12 +16,15 @@ class overtime(EmbeddedDocument):
     overtime_sequence = DecimalField()
     awayteamovertimepoints = IntField()
     hometeamovertimepoints = IntField()
+
+
 class quarter(EmbeddedDocument):
     quarter_id = StringField()
     quarter_number = IntField()
     quarter_sequence = IntField()
     awayteampointsforquarter = IntField()
     hometeampointsforquarter = IntField()
+
 
 class BoxscoreInfo(Document):
     gamebs = EmbeddedDocumentField(gamebs)

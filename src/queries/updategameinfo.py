@@ -18,7 +18,7 @@ league_info = db['league_info'].find_one()
 
 for season in league_info['season']:
     seasonid = Binary(base64.b64decode(season['id']['$binary']['base64']))
-    for week in league_info['leagueweek']:
+    for week in league_info['leagueweek']:s
         leagueweek = Binary(base64.b64decode(week['id']['$binary']['base64']))
         # update all GameInfo documents for the given season and week
         gameinfo_collection.update_many(

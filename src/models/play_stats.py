@@ -1,13 +1,18 @@
 from mongoengine import DecimalField, Document, FloatField, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
+
 class block(EmbeddedDocument):
     block = IntField()
     category = StringField()
+
+
 class conversion(EmbeddedDocument):
     attempt = IntField()
     category = StringField()
     complete = IntField()
     safety = IntField()
+
+
 class defense(EmbeddedDocument):
     ast_sacks = IntField()
     ast_tackle = IntField()
@@ -34,14 +39,20 @@ class defense(EmbeddedDocument):
     tackle = IntField()
     tlost = IntField()
     tlost_yards = IntField()
+
+
 class defense_conversion(EmbeddedDocument):
     attempt = IntField()
     category = StringField()
     complete = IntField()
+
+
 class down_conversion(EmbeddedDocument):
     attempt = IntField()
     complete = IntField()
     down = IntField()
+
+
 class extra_point(EmbeddedDocument):
     aborted = IntField()
     attempt = IntField()
@@ -50,6 +61,8 @@ class extra_point(EmbeddedDocument):
     missed = IntField()
     returned = IntField()
     safety = IntField()
+
+
 class field_goal(EmbeddedDocument):
     att_yards = IntField()
     attempt = IntField()
@@ -59,8 +72,12 @@ class field_goal(EmbeddedDocument):
     nullified = BooleanField()
     returned = IntField()
     yards = IntField()
+
+
 class first_down(EmbeddedDocument):
     category = StringField()
+
+
 class fumble(EmbeddedDocument):
     forced = IntField()
     fumble = IntField()
@@ -74,6 +91,8 @@ class fumble(EmbeddedDocument):
     own_rec_td = IntField()
     own_rec_yards = IntField()
     play_category = StringField()
+
+
 class kick(EmbeddedDocument):
     attempt = IntField()
     endzone = IntField()
@@ -86,8 +105,12 @@ class kick(EmbeddedDocument):
     squib_kick = IntField()
     touchback = IntField()
     yards = IntField()
+
+
 class kickj(EmbeddedDocument):
     nullified = BooleanField()
+
+
 class passing(EmbeddedDocument):
     att_yards = IntField()
     attempt = IntField()
@@ -110,9 +133,13 @@ class passing(EmbeddedDocument):
     safety = IntField()
     touchdown = IntField()
     yards = IntField()
+
+
 class penalty(EmbeddedDocument):
     penalty = IntField()
     yards = IntField()
+
+
 class punt(EmbeddedDocument):
     attempt = IntField()
     blocked = IntField()
@@ -125,6 +152,8 @@ class punt(EmbeddedDocument):
     out_of_bounds = IntField()
     touchback = IntField()
     yards = IntField()
+
+
 class receive(EmbeddedDocument):
     broken_tackles = IntField()
     catchable = IntField()
@@ -140,6 +169,8 @@ class receive(EmbeddedDocument):
     yards = IntField()
     yards_after_catch = IntField()
     yards_after_contact = IntField()
+
+
 class Pkreturn(EmbeddedDocument):
     category = StringField()
     downed = IntField()
@@ -153,6 +184,8 @@ class Pkreturn(EmbeddedDocument):
     touchback = IntField()
     touchdown = IntField()
     yards = IntField()
+
+
 class rush(EmbeddedDocument):
     attempt = IntField()
     broken_tackles = IntField()
@@ -169,6 +202,7 @@ class rush(EmbeddedDocument):
     touchdown = IntField()
     yards = IntField()
     yards_after_contact = IntField()
+
 
 class PlayerStats(Document):
     blocks = EmbeddedDocumentListField(block)

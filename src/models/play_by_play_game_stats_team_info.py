@@ -1,4 +1,6 @@
-from mongoengine import DecimalField, Document, StringField, FloatField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+from mongoengine import (IntField, BooleanField, EmbeddedDocument,
+                         StringField,EmbeddedDocumentListField, FloatField,
+                         Document)
 
 class extra_point(EmbeddedDocument):
     aborted = IntField()
@@ -8,6 +10,8 @@ class extra_point(EmbeddedDocument):
     missed = IntField()
     returned = IntField()
     safety = IntField()
+
+
 class defense(EmbeddedDocument):
     ast_sacks = IntField()
     ast_tackle = IntField()
@@ -34,6 +38,8 @@ class defense(EmbeddedDocument):
     tackle = IntField()
     tlost = IntField()
     tlost_yards = IntField()
+
+
 class field_goal(EmbeddedDocument):
     att_yards = IntField()
     attempt = IntField()
@@ -43,6 +49,8 @@ class field_goal(EmbeddedDocument):
     nullified = BooleanField()
     returned = IntField()
     yards = IntField()
+
+
 class passing(EmbeddedDocument):
     att_yards = IntField()
     attempt = IntField()
@@ -65,19 +73,27 @@ class passing(EmbeddedDocument):
     safety = IntField()
     touchdown = IntField()
     yards = IntField()
+
+
 class conversion(EmbeddedDocument):
     attempt = IntField()
     category = StringField()
     complete = IntField()
     safety = IntField()
+
+
 class defense_conversion(EmbeddedDocument):
     attempt = IntField()
     category = StringField()
     complete = IntField()
+
+
 class down_conversion(EmbeddedDocument):
     attempt = IntField()
     complete = IntField()
     down = IntField()
+
+
 class kick(EmbeddedDocument):
     attempt = IntField()
     endzone = IntField()
@@ -91,6 +107,8 @@ class kick(EmbeddedDocument):
     touchback = IntField()
     yards = IntField()
     nullified = BooleanField()
+
+
 class punt(EmbeddedDocument):
     attempt = IntField()
     blocked = IntField()
@@ -103,6 +121,8 @@ class punt(EmbeddedDocument):
     out_of_bounds = IntField()
     touchback = IntField()
     yards = IntField()
+
+
 class rush(EmbeddedDocument):
     attempt = IntField()
     broken_tackles = IntField()
@@ -119,9 +139,13 @@ class rush(EmbeddedDocument):
     touchdown = IntField()
     yards = IntField()
     yards_after_contact = IntField()
+
+
 class block(EmbeddedDocument):
     block = IntField()
     category = StringField()
+
+
 class receive(EmbeddedDocument):
     broken_tackles = IntField()
     catchable = IntField()
@@ -137,8 +161,12 @@ class receive(EmbeddedDocument):
     yards = IntField()
     yards_after_catch = IntField()
     yards_after_contact = IntField()
+
+
 class first_down(EmbeddedDocument):
     category = StringField()
+
+
 class kickreturn(EmbeddedDocument):
     category = StringField()
     downed = IntField()
@@ -152,9 +180,13 @@ class kickreturn(EmbeddedDocument):
     touchback = IntField()
     touchdown = IntField()
     yards = IntField()
+
+
 class penalty(EmbeddedDocument):
     penalty = IntField()
     yards = IntField()
+
+
 class fumble(EmbeddedDocument):
     forced = IntField()
     fumble = IntField()
@@ -168,7 +200,8 @@ class fumble(EmbeddedDocument):
     own_rec_td = IntField()
     own_rec_yards = IntField()
     play_category = StringField()
-    
+
+
 class PlayByPlayGameStatsTeamInfo(Document):
     extra_point = EmbeddedDocumentListField(extra_point)
     defense = EmbeddedDocumentListField(defense)
@@ -186,9 +219,10 @@ class PlayByPlayGameStatsTeamInfo(Document):
     kickreturn = EmbeddedDocumentListField(kickreturn)
     penalty = EmbeddedDocumentListField(penalty)
     fumble = EmbeddedDocumentListField(fumble)
-   
 
-    meta = {"collection": "PlayByPlayGameStatsTeamInfo"}  # Specify the collection name
+    # Specify the collection name
+    meta = {"collection": "PlayByPlayGameStatsTeamInfo"}
 
     def __str__(self):
-        return "PlayByPlayGameStatsTeamInfo: "  # You can add more specific details here if needed
+        # You can add more specific details here if needed
+        return "PlayByPlayGameStatsTeamInfo: "

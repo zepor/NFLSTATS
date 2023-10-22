@@ -1,5 +1,6 @@
 from mongoengine import DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField, DictField
 
+
 class int_returns(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -7,6 +8,8 @@ class int_returns(EmbeddedDocument):
     returns = IntField()
     touchdowns = IntField()
     yards = IntField()
+
+
 class passing(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -37,6 +40,8 @@ class passing(EmbeddedDocument):
     throw_aways = IntField()
     touchdowns = IntField()
     yards = IntField()
+
+
 class receiving(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -53,6 +58,8 @@ class receiving(EmbeddedDocument):
     yards = IntField()
     yards_after_catch = IntField()
     yards_after_contact = IntField()
+
+
 class defense(EmbeddedDocument):
     assists = IntField()
     batted_passes = IntField()
@@ -85,28 +92,40 @@ class defense(EmbeddedDocument):
     three_and_outs_forced = IntField()
     tloss = IntField()
     tloss_yards = IntField()
+
+
 class thirddown(EmbeddedDocument):
     attempts = IntField()
     pct = DecimalField()
     successes = IntField()
+
+
 class fourthdown(EmbeddedDocument):
     attempts = IntField()
     pct = DecimalField()
     successes = IntField()
+
+
 class goaltogo(EmbeddedDocument):
     attempts = IntField()
     pct = DecimalField()
     successes = IntField()
+
+
 class redzone(EmbeddedDocument):
     attempts = IntField()
     pct = DecimalField()
     successes = IntField()
+
+
 class kicks(EmbeddedDocument):
     attempts = IntField()
     blocked = IntField()
     made = IntField()
     missed = IntField()
     pct = DecimalField()
+
+
 class field_goals(EmbeddedDocument):
     longest = IntField()
     attempts = IntField()
@@ -127,6 +146,8 @@ class field_goals(EmbeddedDocument):
     net_attempts = IntField()
     pct = DecimalField()
     yards = IntField()
+
+
 class punts(EmbeddedDocument):
     longest = IntField()
     attempts = IntField()
@@ -140,6 +161,8 @@ class punts(EmbeddedDocument):
     return_yards = IntField()
     touchbacks = IntField()
     yards = IntField()
+
+
 class rushing(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -155,6 +178,8 @@ class rushing(EmbeddedDocument):
     touchdowns = IntField()
     yards = IntField()
     yards_after_contact = IntField()
+
+
 class kick_returns(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -163,6 +188,8 @@ class kick_returns(EmbeddedDocument):
     returns = IntField()
     touchdowns = IntField()
     yards = IntField()
+
+
 class punt_returns(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -171,6 +198,8 @@ class punt_returns(EmbeddedDocument):
     returns = IntField()
     touchdowns = IntField()
     yards = IntField()
+
+
 class misc_returns(EmbeddedDocument):
     blk_fg_touchdowns = IntField()
     blk_punt_touchdowns = IntField()
@@ -179,6 +208,8 @@ class misc_returns(EmbeddedDocument):
     returns = IntField()
     touchdowns = IntField()
     yards = IntField()
+
+
 class conversions(EmbeddedDocument):
     defense_attempts = IntField()
     defense_successes = IntField()
@@ -187,6 +218,8 @@ class conversions(EmbeddedDocument):
     rush_attempts = IntField()
     rush_successes = IntField()
     turnover_successes = IntField()
+
+
 class kickoffs(EmbeddedDocument):
     endzone = IntField()
     inside_20 = IntField()
@@ -196,6 +229,8 @@ class kickoffs(EmbeddedDocument):
     total_endzone = IntField()
     touchbacks = IntField()
     yards = IntField()
+
+
 class fumbles(EmbeddedDocument):
     ez_rec_tds = IntField()
     forced_fumbles = IntField()
@@ -208,9 +243,13 @@ class fumbles(EmbeddedDocument):
     own_rec = IntField()
     own_rec_tds = IntField()
     own_rec_yards = IntField()
+
+
 class penalties(EmbeddedDocument):
     penalties = IntField()
     yards = IntField()
+
+
 class touchdowns(EmbeddedDocument):
     fumble_return = IntField()
     int_return = IntField()
@@ -221,15 +260,20 @@ class touchdowns(EmbeddedDocument):
     rush = IntField()
     total = IntField()
     total_return = IntField()
+
+
 class interceptions(EmbeddedDocument):
     interceptions = IntField()
     return_yards = IntField()
     returned = IntField()
+
+
 class first_downs(EmbeddedDocument):
     passing = IntField()
     penalty = IntField()
     rush = IntField()
     total = IntField()
+
 
 class GameStatsTeamInfo(Document):
     _id = StringField(required=True)
@@ -260,9 +304,11 @@ class GameStatsTeamInfo(Document):
     interceptions = EmbeddedDocumentListField(interceptions)
     thirdown = EmbeddedDocumentListField(thirddown)
     fourthdown = EmbeddedDocumentListField(fourthdown)
-    kicks = EmbeddedDocumentListField(kicks)  
+    kicks = EmbeddedDocumentListField(kicks)
+
 
 meta = {"collection": "GameStatsTeamInfo"}
 
+
 def __str__(self):
-        return f"GameStatsTeamInfo: {self.game_id} - {self.team}"
+    return f"GameStatsTeamInfo: {self.game_id} - {self.team}"

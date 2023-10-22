@@ -1,5 +1,6 @@
 from mongoengine import DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
+
 class metadata(EmbeddedDocument):
     draft = StringField()
     event_category = StringField()
@@ -12,9 +13,14 @@ class metadata(EmbeddedDocument):
     participant = StringField()
     team = StringField()
     version = StringField()
+
+
 class MetaDataInfo(Document):
     metadata = EmbeddedDocumentListField(metadata)
+
+
 meta = {"collection": "MetaDataInfo"}
 
+
 def __str__(self):
-        return "MetaDataInfo: "
+    return "MetaDataInfo: "

@@ -1,5 +1,6 @@
 from mongoengine import DecimalField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
+
 class player(EmbeddedDocument):
     longest = IntField()
     longest_touchdown = IntField()
@@ -110,6 +111,7 @@ class player(EmbeddedDocument):
     yards_after_catch = IntField()
     yards_after_contact = IntField()
 
+
 class GameStatPlayerInfo(Document):
     _id = StringField(required=True)
     game_id = StringField(required=True)
@@ -118,9 +120,10 @@ class GameStatPlayerInfo(Document):
     week = IntField(required=True)
     player = StringField(required=True)
     player_stats = EmbeddedDocumentListField(player)
-    
-        
+
+
 meta = {"collection": "GameStatsPlayerInfo"}
 
+
 def __str__(player):
-        return "GameStatPlayerInfos: "
+    return "GameStatPlayerInfos: "
