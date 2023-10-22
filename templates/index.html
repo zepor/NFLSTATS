@@ -51,9 +51,12 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script type="application/javascript" src="https://widgets.media.sportradar.com/uscommon/widgetloader" data-sr-language="en_us" async></script> 
   </head>
   <body>
     <!-- Begin page -->
+      <!-- Season Scores Widget -->
+      <script type="application/javascript" src="https://widgets.media.sportradar.com/<your client alias>/widgetloader" data-sr-language="en_us" async></script>
     <div class="wrapper">
       <!-- ========== Topbar Start ========== -->
       <div class="navbar-custom">
@@ -1062,6 +1065,7 @@
       <div class="content-page">
         <div class="content">
           <!-- Start Content-->
+          <div class="sr-widget" data-sr-widget="us.season.nfl.scores" data-sr-disable-pitch-switch="true" data-sr-enable-team-select="true" data-sr-enable-player-select="true" data-sr-border="false" data-sr-pre-match-links="default" data-sr-live-match-links="default" data-sr-post-match-links="default" data-sr-season-id="2023"></div>
           <div class="container-fluid">
             <!-- start page title -->
 
@@ -1090,6 +1094,11 @@
         </div>
         <!-- content -->
 
+        <div class="sr-widget" data-sr-widget="us.match.score" data-sr-match-id="20716135"></div>
+
+
+        
+        <div id="sr-widget"></div>
         <!-- Footer Start -->
         <footer class="footer">
           <div class="container-fluid">
@@ -2375,6 +2384,27 @@
     </div>
     <!-- Script for loading live games content -->
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          (function(a,b,c,d,e,f,g,h,i){
+            a[e]||(i=a[e]=function(){(a[e].q=a[e].q||[]).push(arguments)},i.l=1*new Date,i.o=f, 
+            g=b.createElement(c),h=b.getElementsByTagName(c)[0],g.async=1,g.src=d,g.setAttribute("n",e),
+            h.parentNode.insertBefore(g,h))
+          })(window,document,"script","https://widgets.media.sportradar.com/uscommon/widgetloader","SIR", { language: 'en_us' });
+        
+          SIR('addWidget', '#sr-widget', 'us.season.nfl.scores', {
+            preMatchLinks: 'default', 
+            liveMatchLinks: 'default', 
+            postMatchLinks: 'default', 
+            enableTeamSelect: true, 
+            enablePlayerSelect: true, 
+            onItemClick: function(type, obj){
+              alert(type + ': ' + JSON.stringify(obj));
+            }
+          });
+        });
+// start using global USW object
+USW('addWidget', '#myWidgetDiv', 'us.match.score');
+</script>
       document
         .getElementById("liveGamesButton")
         .addEventListener("click", function () {
@@ -2412,14 +2442,30 @@
          
           
         });
-      // Load Dashboard content
-      document
-        .getElementById("homeButton")
-        .addEventListener("click", function () {
+        // Function to load dashboard content
+        function loadDashboardContent() {
+          var content = document.querySelector(".flex-content");
+          content.innerHTML = ""; // Clear previous content
+          // Add code here to load the actual dashboard content
+        }
+
+        // Load dashboard content on initial page load
+        document.addEventListener("DOMContentLoaded", function () {
+          loadDashboardContent();
+        });
+
+        // Load dashboard content when the "Dashboard" button is clicked
+        document.getElementById("dashboardButton").addEventListener("click", function () {
+          loadDashboardContent();
+        });
+
+        // Existing code for the "Home" button
+        document.getElementById("homeButton").addEventListener("click", function () {
           var content = document.querySelector(".flex-content");
           content.innerHTML = ""; // Clear previous content
           window.location.href = "/";
         });
+
     </script>
     <!---------ALL SCRIPTS FOR VENUES END-->
     <!-- Vendor js -->
