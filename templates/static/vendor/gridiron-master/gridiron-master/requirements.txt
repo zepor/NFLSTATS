@@ -1,0 +1,5 @@
+Flask==2.0.1
+Flask-Cors==3.0.10
+requests==2.25.1
+deserialize==1.8.3
+jsonpickle==2.2.0

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ... other head elements ... -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <style>
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+      }
+      .header select {
+        margin-right: 10px;
+      }
+    </style>
+    <title>{{ title }}</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>{{ title }}</h1>
+        <form method="POST" class="form-inline">
+          <select name="year" id="year" class="form-control">
+            <option value="" disabled>Select year</option>
+            {% for year_option in years %}
+            <option value="{{ year_option }}" {% if year_option == selected_year %}selected{% endif %}>
+              {{ year_option }}
+            </option>
+            {% endfor %}
+          </select>
+          <select name="week" id="week" class="form-control">
+            <option value="" disabled>Select week</option>
+            {% for week in weeks %}
+            <option value="{{ week }}" {% if week == selected_week %}selected{% endif %}>
+              {{ week }}
+            </option>
+            {% endfor %}
+          </select>
+          <select name="week" id="week" class="form-control">
+            <option value="" disabled>Select week</option>
+            {% for week in weeks %}
+            <option
+              value="{{ week }}"
+              {%
+              if
+              week=""
+              ="selected_week"
+              %}selected{%
+              endif
+              %}
+            >
+              {{ week }}
+            </option>
+            {% endfor %}
+          </select>
+          <select name="team" id="team" class="form-control">
+            <option value="" disabled>Select team</option>
+            {% for team_option in teams %}
+            <option
+              value="{{ team_option }}"
+              {%
+              if
+              team_option=""
+              ="selected_team"
+              %}selected{%
+              endif
+              %}
+            >
+              {{ team_option }}
+            </option>
+            {% endfor %}
+          </select>
+        </form>
+      </div>
+      <h2>NFL Schedule{{ year }}{{ week }}{{ team }}</h2>
+      {% for day, games in games_grouped.items() %}
+      <h3>{{ day }}</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Away Team</th>
+            <th>Away Points</th>
+            <th>Home Team</th>
+            <th>Home Points</th>
+            <th>Attendance</th>
+            <th colspan="4">Away Quarters</th>
+            <th colspan="4">Home Quarters</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for game in games %}
+          <tr data-id="{{game.gamegame._id}}">
+            <td>{{ game.awayteam.name }}</td>
+            <td>
+              {{ game.boxscore_info.gamebs.awayteamtotalpoints if
+              game.boxscore_info else '' }}
+            </td>
+            <td>@{{ game.hometeam.name }}</td>
+            <td>
+              {{ game.boxscore_info.gamebs.hometeamtotalpoints if
+              game.boxscore_info else '' }}
+            </td>
+            <td>
+              {{ game.boxscore_info.gamebs.attendance if game.boxscore_info else
+              '' }}
+            </td>
+            {% if game.boxscore_info %} {% for quarter in
+            game.boxscore_info.quarters %}
+            <td>{{ quarter.awayteampointsforquarter }}</td>
+            {% endfor %} {% for i in range(4 -
+            game.boxscore_info.quarters|length) %}
+            <td></td>
+            {% endfor %} {% for quarter in game.boxscore_info.quarters %}
+            <td>{{ quarter.hometeampointsforquarter }}</td>
+            {% endfor %} {% for i in range(4 -
+            game.boxscore_info.quarters|length) %}
+            <td></td>
+            {% endfor %} {% else %}
+            <td colspan="8"></td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endfor %}
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById("week").addEventListener("change", function () {
+        this.form.submit();
+      });
+
+      document.getElementById("team").addEventListener("change", function () {
+        this.form.submit();
+      });
+
+      document.getElementById("year").addEventListener("change", function () {
+        this.form.submit();
+      });
+    </script>
+  </body>
+</html>

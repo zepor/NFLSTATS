@@ -1,0 +1,130 @@
+<head>
+  <!-- ... other head elements ... -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"
+  />
+  <script
+    type="text/javascript"
+    charset="utf8"
+    src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"
+  ></script>
+  <!-- ... other head elements ... -->
+</head>
+<h1>Stadiums</h1>
+<div id="map" style="width: 100%; height: 40%"></div>
+<table id="stadiumTable" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Zip</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Roof Type</th>
+      <th>Surface Type</th>
+      <th>Capacity</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for venue in venues %}
+    <tr data-id="{{ venue.id }}">
+      <td>{{ venue.name }}</td>
+      <td>{{ venue.address }}</td>
+      <td>{{ venue.zip }}</td>
+      <td>{{ venue.city }}</td>
+      <td>{{ venue.state }}</td>
+      <td>{{ venue.country }}</td>
+      <td>{{ venue.roof_type }}</td>
+      <td>{{ venue.surface }}</td>
+      <td>{{ venue.capacity }}</td>
+      <!-- Add other columns as needed -->
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      if (!window.map) {
+          window.map = L.map('map').setView([37.8, -96], 4);
+      }
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(window.map);
+
+      var stadiums = [
+      {% for venue in venues %}
+      {
+          id: "{{ venue.id }}",
+          name: "{{ venue.name }}",
+          lat: {{ venue.lat }},
+          lng: {{ venue.lng }},
+          details: "Address: {{ venue.address }}<br>City: {{ venue.city }}<br>State: {{ venue.state }}<br>Country: {{ venue.country }}<br>Roof Type: {{ venue.roof_type }}<br>Surface Type: {{ venue.surface_type }}<br>Capacity: {{ venue.capacity }}"
+      },
+      {% endfor %}
+      ];
+
+      for (var i = 0; i < stadiums.length; i++) {
+          (function(stadium) {
+              var marker = L.marker([stadium.lat, stadium.lng]).addTo(window.map)
+                  .bindPopup('<b>' + stadium.name + '</b><br>' + stadium.details);
+              marker.on('click', function() {
+                  highlightRow(stadium.id);
+              });
+          })(stadiums[i]);
+      }
+
+      function highlightRow(id) {
+          var table = document.getElementById("stadiumTable");
+          var tbody = table.tBodies[0];
+          var rows = tbody.rows;
+          for (var i = 0; i < rows.length; i++) {
+              var row = rows[i];
+              if (row.getAttribute('data-id') === id) {
+                  // Highlight the row
+                  row.style.backgroundColor = "yellow";
+                  // Move the row to the top
+                  var firstRow = tbody.rows[0];
+                  tbody.insertBefore(row, firstRow);
+              } else {
+                  // Remove highlight from other rows
+                  row.style.backgroundColor = "";
+              }
+          }
+      }
+  });
+</script>
+<script>
+  $(document).ready( function () {
+      $('#stadiumTable').DataTable();
+  });
+
+  var map = L.map('map').setView([37.8, -96], 4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  var stadiums = [
+  {% for venue in venues %}
+  {
+      id: "{{ venue.id }}",
+      name: "{{ venue.name }}",
+      lat: {{ venue.lat }},
+      lng: {{ venue.lng }},
+      details: "Address: {{ venue.address }}<br>City: {{ venue.city }}<br>State: {{ venue.state }}<br>Country: {{ venue.country }}<br>Roof Type: {{ venue.roof_type }}<br>Surface Type: {{ venue.surface_type }}<br>Capacity: {{ venue.capacity }}"
+  },
+  {% endfor %}
+  ];
+
+  for (var i = 0; i < stadiums.length; i++) {
+      var stadium = stadiums[i];
+      var marker = L.marker([stadium.lat, stadium.lng]).addTo(map)
+          .bindPopup('<b>' + stadium.name + '</b><br>' + stadium.details);
+  }
+</script>

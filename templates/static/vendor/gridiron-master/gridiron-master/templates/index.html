@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<!-- Basic Page Needs
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<meta charset="utf-8">
+  	<title>raftacon.io :: Gridiron</title>
+  	<meta name="description" content="">
+  	<meta name="author" content="Glenn Dodds">
+
+  	<!-- Browser Icon
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  	<!-- Mobile Specific Metas
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  	<!-- Fonts
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="../static/css/normalize.css">
+	<link rel="stylesheet" href="../static/css/skeleton.css">
+</head>
+
+<body>
+	<!-- JS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/gridiron.js"></script>
+
+	<div class="container" id="main">
+		<div class="row">
+        	<div class="twelve columns" style="text-align: center;">
+        		<div class="row">
+        			<h4 id="question"></h4>
+
+        			<div id="configurationInfo" class="twelve columns" style="text-align: center; font-size: 0.7em; margin-top: -25px;"></div>
+        		</div>
+
+        		<div class="row" style="text-align: center; margin-top: 5px;">
+        			<div class="row" id="streak-counter"/>
+        		</div>
+        	</div>
+
+        	<div class="twelve columns" style="text-align: center;">
+        		<hr/>
+        	</div>
+
+        	<div class="twelve columns" style="text-align: center;" id="options"/>
+        </div>
+    </div>
+</body>

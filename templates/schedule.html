@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Dashboard
+                                        <div style="display: flex; justify-content: space-between;">
+                                            
+                                            <!-- Content on the left side -->
+                                            <div>
+                                                <div class="games-section">
+                                                    <div class="game-days">
+                                                        <!-- Game day containers will be added here dynamically -->
+                                                        <div class="container mt-2" id="dashboard-content">
+                                                            <h1> Live and Upcoming Games</h1>
+                                                            {% for date, games in games_by_date.items() %}
+                                                            <div class="date-header mt-4">{{ date }}</div>
+                                                            {% for game in games %}
+                                                                <div class="card game-card">
+                                                                    <h5 class="card-title game-title">{{ game['title'] }}</h5>
+                                                                    <p class="card-text game-details">
+                                                                        {{ game['scheduled'].strftime('%A, %B %d, %Y %I:%M %p %Z') }}
+                                                                    </p>
+                                                                    <p class="card-text game-details">
+                                                                        {{ game['home']['name'] }} vs {{ game['away']['name'] }}
+                                                                    </p>
+                                                                    <p class="card-text game-location">
+                                                                        {{ game['venue']['name'] }}, {{ game['venue']['city'] }}, {{ game['venue']['state'] }}
+                                                                    </p>
+                                                                    {% if 'broadcast' in game %}
+                                                                        <p class="card-text broadcast-network">
+                                                                            <strong>Broadcast Network:</strong> {{ game['broadcast']['network'] }}
+                                                                        </p>
+                                                                    {% else %}
+                                                                        <p class="card-text broadcast-network">
+                                                                            <strong>Broadcast Network:</strong> Not available
+                                                                        </p>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                         
+                                        
+                                            
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                    </div>
+                    <!-- container -->
+
+                </div>
+                <!-- content -->
+
+                
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+    </body>
+</html> 
