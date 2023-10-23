@@ -1,0 +1,3 @@
+[submodule "nifi"]
+	path = nifi
+	url = https://gitbox.apache.org/repos/asf/nifi.git
