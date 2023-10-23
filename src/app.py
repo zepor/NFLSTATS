@@ -46,6 +46,8 @@ from bson import Binary
 from operator import itemgetter
 from json import JSONEncoder
 from itertools import groupby
+from redis import StrictRedis
+from redis_cache import RedisCache
 import redis
 import time
 import json
@@ -138,12 +140,10 @@ app.register_blueprint(bp_seasonal_stats)
 app.secret_key = 'sessionkey'
 # Error Handling
 
-
 @app.errorhandler(Exception)
 def handle_exception(e):
     be_logger.exception("An error occurred: %s", e)
     return str(e), 500
-
 
 def log_and_catch_exceptions(func):
     def func_wrapper(*args, **kwargs):
@@ -153,7 +153,6 @@ def log_and_catch_exceptions(func):
             be_logger.error(f"Error in {func.__name__}: {e}")
             raise Exception(f"Error in {func.__name__}: {e}")
     return func_wrapper
-
 
 class FootballData:
     def __init__(self):
@@ -167,18 +166,33 @@ class FootballData:
         self.selected_season_type = None
         self.selected_team = None
         self.selected_teams = {}
-
+        
     @log_and_catch_exceptions
     def fetch_all_season_team_stat_details(self):
+         
+        @log_and_catch_exceptions
+        def fetch_all_player_seasonal_data(self):
+            player_data_dict = {}
+            for player in player_data:
+                player_data_dict[player['_id']] = player
+            pass
         if not self.all_season_team_stat_details_cache:
             query = data.get_AllSeasonsTeamStatDetails()
             be_logger.info(msg=f"Executing query: {query}")
-            self.all_season_team_stat_details_cache = list(
-                SeasonStatTeam.objects.aggregate(*query))
-            be_logger.info(
-                msg=f"Number of Documents returned: {len(self.all_season_team_stat_details_cache)}")
-        return self.all_season_team_stat_details_cache
+            self.all_season_team_stat_details_cache = list(+SeasonStatTeam.objects.aggregate(*query))
+            be_logger.info(msg=f"Number of Documents returned: {len(self.all_season_team_stat_details_cache)}")
 
+        return player_data_dict
+            player_data_dict = {}
+        for player in player_data:
+            player_data_dict[player['_id']] = player
+            # Store data in Redis cache
+            r.set('player_data', json.dumps(player_data_dict))
+        return player_data_dict
+            # Store the list in Redis for quick access
+            redis_client = redis.Redis(host='localhost', port=6379, db=0)
+            redis_client.set('all_player_stats', value=json.dumps(fetch_all_player_seasonal_data(self):
+            ))
     @staticmethod
     @log_and_catch_exceptions
     def get_AllSeasonsTeamStatDetails():
@@ -298,6 +312,91 @@ class FootballData:
             }
         ]
 
+    @staticmethod
+    @log_and_catch_exceptions
+    def get_AllSeasonsTeamStatDetails():
+        return [
+           {
+            '$lookup': {
+                'from': 'SeasonInfo',
+                'localField': 'seasonid',
+                'foreignField': '_id',
+                'as': 'season_info'
+            }
+        },
+        {
+            '$unwind': '$season_info'
+        },
+        {
+            '$lookup': {
+                'from': 'TeamInfo',
+                'localField': 'teamid',
+                'foreignField': '_id',
+                'as': 'team_info'
+            }
+        },
+        {
+            '$unwind': '$team_info'
+        
+            }, 
+            {
+               
+               '$lookup': {
+                    'from': 'SeasonStatOppo',
+                    'let': {
+                        'team_id': '$teamid',
+                        'season_id': '$seasonid'
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+        },
+        {
+            '$project': {
+                '_id': 1,
+                'conversions': 1,
+                'defense': 1,
+                'fieldgoals': 1,
+                'fumbles': 1,
+                'gamesplayed': 1,
+                'gamesstarted': 1,
+                'intreturns': 1,
+                'jersey': 1,
+                'kickoffs': 1,
+                'kickreturns': 1,
+                'passing': 1,
+                'penalties': 1,
+                'playerid': 1,
+                'playername': 1,
+                'position': 1,
+                'puntreturns': 1,
+                'punts': 1,
+                'receiving': 1,
+                'rushing': 1,
+                'seasonid': 1,
+                'teamid': 1,
+                'season_info': 1,
+                'team_info': 1
+            }
+        }
+    ]
 
 data = FootballData()
 
@@ -807,7 +906,6 @@ def generate_nfl_weeks(year):
         nfl_weeks[start_date.strftime('%Y-%m-%d')] = f'WEEK {week}'
         start_date += timedelta(days=7)
     return nfl_weeks
-
 
 logger = logging.getLogger(__name__)
 if __name__ == "__main__":

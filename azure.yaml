@@ -4,8 +4,7 @@ name: simple-flask-webapp
 metadata:
   template: simple-flask-webapp@0.0.1-beta
 services:
-  web:
-    project: ./src/
-    dist: build
+  app:
+    project: ./src/run.py
     language: py
     host: appservice

@@ -1,13 +1,15 @@
 {
-    "folders": [
-        {
-            "path": "."
-        }
-    ],
-    "settings": {
-        "[python]": {
-            "editor.defaultFormatter": "ms-python.autopep8"
-        },
-        "python.formatting.provider": "none"
+  "folders": [
+    {
+      "path": "."
     }
+  ],
+  "settings": {
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    "DockerRun.DisableDockerrc": true,
+    "DockerRun.Containers": []
+  }
 }
