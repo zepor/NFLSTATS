@@ -73,7 +73,7 @@ sys.path.append('/src')
 sys.path.append('/src/models')
 # from models import AllSeasonsTeamStatDetails, SeasonInfo, SeasonStatTeam
 # from src.apimappings.SeasonalStats import bp as bp_seasonal_stats
-# Setup MongoDB
+# Setup MongoDB testing azure provider
 mongodb_service_name = os.getenv('MONGODB_SERVICE_NAME', 'localhost')
 mongodb_url = os.getenv(
     'MONGODB_URL', f"mongodb://{mongodb_service_name}:27017/current_season")
