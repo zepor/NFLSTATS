@@ -1,0 +1,526 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+nifi-solr-nar
+
+
+From: 'an unknown organization'
+
+  - Bytes Utility Library (https://github.com/patrickfav/bytes-java) at.favre.lib:bytes:bundle:1.6.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Caffeine cache (https://github.com/ben-manes/caffeine) com.github.ben-manes.caffeine:caffeine:jar:3.1.8
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Gson (https://github.com/google/gson/gson) com.google.code.gson:gson:jar:2.10.1
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Guava InternalFutureFailureAccess and InternalFutures (https://github.com/google/guava/failureaccess) com.google.guava:failureaccess:bundle:1.0.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Guava: Google Core Libraries for Java (https://github.com/google/guava) com.google.guava:guava:bundle:32.1.2-jre
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Guava ListenableFuture only (https://github.com/google/guava/listenablefuture) com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - J2ObjC Annotations (https://github.com/google/j2objc/) com.google.j2objc:j2objc-annotations:jar:2.8
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - json-path (https://github.com/jayway/JsonPath) com.jayway.jsonpath:json-path:jar:2.8.0
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - T-Digest (https://github.com/tdunning/t-digest) com.tdunning:t-digest:jar:3.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Metrics Core (https://metrics.dropwizard.io/metrics-core) io.dropwizard.metrics:metrics-core:bundle:4.2.20
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - Graphite Integration for Metrics (https://metrics.dropwizard.io/metrics-graphite) io.dropwizard.metrics:metrics-graphite:bundle:4.2.20
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - Metrics Integration with JMX (https://metrics.dropwizard.io/metrics-jmx) io.dropwizard.metrics:metrics-jmx:bundle:4.2.20
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - JVM Integration for Metrics (https://metrics.dropwizard.io/metrics-jvm) io.dropwizard.metrics:metrics-jvm:bundle:4.2.20
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Google S2 geometry library (https://github.com/sgr-io/s2-geometry-library-java) io.sgr:s2-geometry-library-java:jar:1.0.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - swagger-annotations (https://github.com/swagger-api/swagger-core/modules/swagger-annotations) io.swagger.core.v3:swagger-annotations:jar:2.2.16
+    License: Apache License 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - Apache Lucene (module: common) (https://lucene.apache.org/) org.apache.lucene:lucene-analysis-common:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: kuromoji) (https://lucene.apache.org/) org.apache.lucene:lucene-analysis-kuromoji:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: nori) (https://lucene.apache.org/) org.apache.lucene:lucene-analysis-nori:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: phonetic) (https://lucene.apache.org/) org.apache.lucene:lucene-analysis-phonetic:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: backward-codecs) (https://lucene.apache.org/) org.apache.lucene:lucene-backward-codecs:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: classification) (https://lucene.apache.org/) org.apache.lucene:lucene-classification:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: codecs) (https://lucene.apache.org/) org.apache.lucene:lucene-codecs:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: core) (https://lucene.apache.org/) org.apache.lucene:lucene-core:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: expressions) (https://lucene.apache.org/) org.apache.lucene:lucene-expressions:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: grouping) (https://lucene.apache.org/) org.apache.lucene:lucene-grouping:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: highlighter) (https://lucene.apache.org/) org.apache.lucene:lucene-highlighter:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: join) (https://lucene.apache.org/) org.apache.lucene:lucene-join:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: memory) (https://lucene.apache.org/) org.apache.lucene:lucene-memory:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: misc) (https://lucene.apache.org/) org.apache.lucene:lucene-misc:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: queries) (https://lucene.apache.org/) org.apache.lucene:lucene-queries:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: queryparser) (https://lucene.apache.org/) org.apache.lucene:lucene-queryparser:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: sandbox) (https://lucene.apache.org/) org.apache.lucene:lucene-sandbox:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: spatial-extras) (https://lucene.apache.org/) org.apache.lucene:lucene-spatial-extras:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: spatial3d) (https://lucene.apache.org/) org.apache.lucene:lucene-spatial3d:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Lucene (module: suggest) (https://lucene.apache.org/) org.apache.lucene:lucene-suggest:jar:9.8.0
+    License: Apache 2  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Solr (module: api) (https://solr.apache.org/) org.apache.solr:solr-api:jar:9.4.0
+    License: Apache 2  (https://apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Solr (module: core) (https://solr.apache.org/) org.apache.solr:solr-core:jar:9.4.0
+    License: Apache 2  (https://apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Solr (module: solrj) (https://solr.apache.org/) org.apache.solr:solr-solrj:jar:9.4.0
+    License: Apache 2  (https://apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Solr (module: solrj-streaming) (https://solr.apache.org/) org.apache.solr:solr-solrj-streaming:jar:9.4.0
+    License: Apache 2  (https://apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Solr (module: solrj-zookeeper) (https://solr.apache.org/) org.apache.solr:solr-solrj-zookeeper:jar:9.4.0
+    License: Apache 2  (https://apache.org/licenses/LICENSE-2.0.txt)
+
+  - Checker Qual (https://checkerframework.org/) org.checkerframework:checker-qual:jar:3.37.0
+    License: The MIT License  (http://opensource.org/licenses/MIT)
+
+  - semver4j (https://github.com/semver4j/semver4j) org.semver4j:semver4j:jar:5.2.1
+    License: The MIT License  (https://opensource.org/licenses/MIT)
+
+
+From: 'ANTLR' (http://www.antlr.org)
+
+  - ANTLR 3 Runtime (http://www.antlr.org) org.antlr:antlr-runtime:jar:3.5.3
+    License: BSD licence  (http://antlr.org/license.html)
+
+
+From: 'ANTLR' (https://www.antlr.org/)
+
+  - ANTLR 4 Runtime (https://www.antlr.org/antlr4-runtime/) org.antlr:antlr4-runtime:jar:4.11.1
+    License: BSD-3-Clause  (https://www.antlr.org/license.html)
+
+
+From: 'Apache NiFi Project' (https://nifi.apache.org/)
+
+  - nifi-record (https://nifi.apache.org/nifi-commons/nifi-record) org.apache.nifi:nifi-record:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-record-path (https://nifi.apache.org/nifi-commons/nifi-record-path) org.apache.nifi:nifi-record-path:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-security-kerberos (https://nifi.apache.org/nifi-commons/nifi-security-kerberos) org.apache.nifi:nifi-security-kerberos:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-solr-processors (https://nifi.apache.org/nifi-nar-bundles/nifi-solr-bundle/nifi-solr-processors) org.apache.nifi:nifi-solr-processors:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-standard-services-api-nar (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar) org.apache.nifi:nifi-standard-services-api-nar:nar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-uuid5 (https://nifi.apache.org/nifi-commons/nifi-uuid5) org.apache.nifi:nifi-uuid5:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'Carrot Search s.c.' (https://www.carrotsearch.com)
+
+  - High Performance Primitive Collections (https://github.com/carrotsearch/hppc) com.carrotsearch:hppc:jar:0.9.1
+    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Eclipse Foundation' (https://www.eclipse.org)
+
+  - Jakarta Annotations API (https://projects.eclipse.org/projects/ee4j.ca) jakarta.annotation:jakarta.annotation-api:jar:1.3.5
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - Jakarta Bean Validation API (https://beanvalidation.org) jakarta.validation:jakarta.validation-api:jar:2.0.2
+    License: Apache License 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jakarta XML Binding API (https://github.com/eclipse-ee4j/jaxb-api/jakarta.xml.bind-api) jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3
+    License: Eclipse Distribution License - v 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+
+  - OSGi resource locator (https://projects.eclipse.org/projects/ee4j/osgi-resource-locator) org.glassfish.hk2:osgi-resource-locator:jar:1.0.3
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+
+From: 'Eclipse Foundation' (https://www.eclipse.org/org/foundation/)
+
+  - jakarta.ws.rs-api (https://github.com/eclipse-ee4j/jaxrs-api) jakarta.ws.rs:jakarta.ws.rs-api:bundle:2.1.6
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - jersey-container-jetty-http (https://projects.eclipse.org/projects/ee4j.jersey/project/jersey-container-jetty-http) org.glassfish.jersey.containers:jersey-container-jetty-http:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+    License: BSD 2-Clause  (https://opensource.org/licenses/BSD-2-Clause)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Public Domain  (https://creativecommons.org/publicdomain/zero/1.0/)
+    License: Modified BSD  (https://asm.ow2.io/license.html)
+    License: jQuery license  (jquery.org/license)
+    License: MIT license  (http://www.opensource.org/licenses/mit-license.php)
+    License: W3C license  (https://www.w3.org/Consortium/Legal/copyright-documents-19990405)
+
+  - jersey-core-client (https://projects.eclipse.org/projects/ee4j.jersey/jersey-client) org.glassfish.jersey.core:jersey-client:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+    License: BSD 2-Clause  (https://opensource.org/licenses/BSD-2-Clause)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Public Domain  (https://creativecommons.org/publicdomain/zero/1.0/)
+    License: Modified BSD  (https://asm.ow2.io/license.html)
+    License: jQuery license  (jquery.org/license)
+    License: MIT license  (http://www.opensource.org/licenses/mit-license.php)
+    License: W3C license  (https://www.w3.org/Consortium/Legal/copyright-documents-19990405)
+
+  - jersey-core-common (https://projects.eclipse.org/projects/ee4j.jersey/jersey-common) org.glassfish.jersey.core:jersey-common:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: The GNU General Public License (GPL), Version 2, With Classpath Exception  (https://www.gnu.org/software/classpath/license.html)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Public Domain  (https://creativecommons.org/publicdomain/zero/1.0/)
+
+  - jersey-core-server (https://projects.eclipse.org/projects/ee4j.jersey/jersey-server) org.glassfish.jersey.core:jersey-server:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: The GNU General Public License (GPL), Version 2, With Classpath Exception  (https://www.gnu.org/software/classpath/license.html)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Modified BSD  (https://asm.ow2.io/license.html)
+
+  - jersey-ext-entity-filtering (https://projects.eclipse.org/projects/ee4j.jersey/project/jersey-entity-filtering) org.glassfish.jersey.ext:jersey-entity-filtering:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+    License: BSD 2-Clause  (https://opensource.org/licenses/BSD-2-Clause)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Public Domain  (https://creativecommons.org/publicdomain/zero/1.0/)
+    License: Modified BSD  (https://asm.ow2.io/license.html)
+    License: jQuery license  (jquery.org/license)
+    License: MIT license  (http://www.opensource.org/licenses/mit-license.php)
+    License: W3C license  (https://www.w3.org/Consortium/Legal/copyright-documents-19990405)
+
+  - jersey-inject-hk2 (https://projects.eclipse.org/projects/ee4j.jersey/project/jersey-hk2) org.glassfish.jersey.inject:jersey-hk2:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+    License: BSD 2-Clause  (https://opensource.org/licenses/BSD-2-Clause)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+    License: Public Domain  (https://creativecommons.org/publicdomain/zero/1.0/)
+    License: Modified BSD  (https://asm.ow2.io/license.html)
+    License: jQuery license  (jquery.org/license)
+    License: MIT license  (http://www.opensource.org/licenses/mit-license.php)
+    License: W3C license  (https://www.w3.org/Consortium/Legal/copyright-documents-19990405)
+
+  - jersey-media-json-jackson (https://projects.eclipse.org/projects/ee4j.jersey/project/jersey-media-json-jackson) org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.40
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: The GNU General Public License (GPL), Version 2, With Classpath Exception  (https://www.gnu.org/software/classpath/license.html)
+    License: Apache License, 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+From: 'FasterXML' (http://fasterxml.com)
+
+  - Woodstox (https://github.com/FasterXML/woodstox) com.fasterxml.woodstox:woodstox-core:bundle:6.5.1
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'FasterXML' (http://fasterxml.com/)
+
+  - Jackson-annotations (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-core (https://github.com/FasterXML/jackson-core) com.fasterxml.jackson.core:jackson-core:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - jackson-databind (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-databind:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson dataformat: CBOR (https://github.com/FasterXML/jackson-dataformats-binary) com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson dataformat: Smile (https://github.com/FasterXML/jackson-dataformats-binary) com.fasterxml.jackson.dataformat:jackson-dataformat-smile:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson module: Old JAXB Annotations (javax.xml.bind) (https://github.com/FasterXML/jackson-modules-base) com.fasterxml.jackson.module:jackson-module-jaxb-annotations:bundle:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'fasterxml.com' (http://fasterxml.com)
+
+  - Stax2 API (http://github.com/FasterXML/stax2-api) org.codehaus.woodstox:stax2-api:bundle:4.2.1
+    License: The BSD License  (http://www.opensource.org/licenses/bsd-license.php)
+
+
+From: 'Google LLC' (http://www.google.com)
+
+  - error-prone annotations (https://errorprone.info/error_prone_annotations) com.google.errorprone:error_prone_annotations:jar:2.21.1
+    License: Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'LocationTech' (http://www.locationtech.org/)
+
+  - Spatial4J (https://projects.eclipse.org/projects/locationtech.spatial4j) org.locationtech.spatial4j:spatial4j:bundle:0.8
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Mort Bay Consulting' (http://www.mortbay.com)
+
+  - Jetty :: Servlet API and Schemas for JPMS and OSGi (https://eclipse.org/jetty/jetty-servlet-api) org.eclipse.jetty.toolchain:jetty-servlet-api:jar:4.0.6
+    License: Apache Software License - Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
+    License: Eclipse Public License - Version 1.0  (http://www.eclipse.org/org/documents/epl-v10.php)
+
+
+From: 'OpenTracing' (http://opentracing.io/)
+
+  - OpenTracing API (https://github.com/opentracing/opentracing-java/opentracing-api) io.opentracing:opentracing-api:jar:0.33.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - OpenTracing-noop (https://github.com/opentracing/opentracing-java/opentracing-noop) io.opentracing:opentracing-noop:jar:0.33.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - OpenTracing-util (https://github.com/opentracing/opentracing-java/opentracing-util) io.opentracing:opentracing-util:jar:0.33.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Oracle Corporation' (http://www.oracle.com)
+
+  - HK2 API module (https://github.com/eclipse-ee4j/glassfish-hk2/hk2-api) org.glassfish.hk2:hk2-api:jar:2.6.1
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - ServiceLocator Default Implementation (https://github.com/eclipse-ee4j/glassfish-hk2/hk2-locator) org.glassfish.hk2:hk2-locator:jar:2.6.1
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - HK2 Implementation Utilities (https://github.com/eclipse-ee4j/glassfish-hk2/hk2-utils) org.glassfish.hk2:hk2-utils:jar:2.6.1
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - aopalliance version 1.0 repackaged as a module (https://github.com/eclipse-ee4j/glassfish-hk2/external/aopalliance-repackaged) org.glassfish.hk2.external:aopalliance-repackaged:jar:2.6.1
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+  - javax.inject:1 as OSGi bundle (https://github.com/eclipse-ee4j/glassfish-hk2/external/jakarta.inject) org.glassfish.hk2.external:jakarta.inject:jar:2.6.1
+    License: EPL 2.0  (http://www.eclipse.org/legal/epl-2.0)
+    License: GPL2 w/ CPE  (https://www.gnu.org/software/classpath/license.html)
+
+
+From: 'OW2' (http://www.ow2.org/)
+
+  - asm (http://asm.ow2.io/) org.ow2.asm:asm:jar:7.2
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-analysis (http://asm.ow2.io/) org.ow2.asm:asm-analysis:jar:7.2
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-commons (http://asm.ow2.io/) org.ow2.asm:asm-commons:jar:7.2
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-tree (http://asm.ow2.io/) org.ow2.asm:asm-tree:jar:7.2
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+
+From: 'Shigeru Chiba, www.javassist.org'
+
+  - Javassist (http://www.javassist.org/) org.javassist:javassist:bundle:3.29.2-GA
+    License: MPL 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html)
+    License: LGPL 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+
+  - Apache Commons Exec (http://commons.apache.org/proper/commons-exec/) org.apache.commons:commons-exec:jar:1.3
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Math (http://commons.apache.org/proper/commons-math/) org.apache.commons:commons-math3:jar:3.6.1
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache HttpClient (http://hc.apache.org/httpcomponents-client-ga) org.apache.httpcomponents:httpclient:jar:4.5.14
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache HttpCore (http://hc.apache.org/httpcomponents-core-ga) org.apache.httpcomponents:httpcore:jar:4.4.16
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache HttpClient Mime (http://hc.apache.org/httpcomponents-client-ga) org.apache.httpcomponents:httpmime:jar:4.5.14
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+
+  - Apache Commons CLI (https://commons.apache.org/proper/commons-cli/) commons-cli:commons-cli:jar:1.5.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Codec (https://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.16.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons IO (https://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.14.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Collections (https://commons.apache.org/proper/commons-collections/) org.apache.commons:commons-collections4:jar:4.4
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Lang (https://commons.apache.org/proper/commons-lang/) org.apache.commons:commons-lang3:jar:3.13.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Log4j API (https://logging.apache.org/log4j/2.x/log4j-api/) org.apache.logging.log4j:log4j-api:jar:2.20.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Log4j SLF4J 2.0 Binding (https://logging.apache.org/log4j/2.x/log4j-slf4j2-impl/) org.apache.logging.log4j:log4j-slf4j2-impl:jar:2.20.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache ZooKeeper - Server (http://zookeeper.apache.org/zookeeper) org.apache.zookeeper:zookeeper:jar:3.9.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache ZooKeeper - Jute (http://zookeeper.apache.org/zookeeper-jute) org.apache.zookeeper:zookeeper-jute:jar:3.9.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Netty Project' (https://netty.io/)
+
+  - Netty/Buffer (https://netty.io/netty-buffer/) io.netty:netty-buffer:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec (https://netty.io/netty-codec/) io.netty:netty-codec:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Common (https://netty.io/netty-common/) io.netty:netty-common:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Handler (https://netty.io/netty-handler/) io.netty:netty-handler:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Resolver (https://netty.io/netty-resolver/) io.netty:netty-resolver:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/TomcatNative [OpenSSL - Classes] (https://github.com/netty/netty-tcnative/netty-tcnative-classes/) io.netty:netty-tcnative-classes:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/Transport (https://netty.io/netty-transport/) io.netty:netty-transport:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Classes/Epoll (https://netty.io/netty-transport-classes-epoll/) io.netty:netty-transport-classes-epoll:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Native/Epoll (https://netty.io/netty-transport-native-epoll/) io.netty:netty-transport-native-epoll:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Native/Unix/Common (https://netty.io/netty-transport-native-unix-common/) io.netty:netty-transport-native-unix-common:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'Webtide' (https://webtide.com)
+
+  - Jetty :: ALPN :: Client (https://eclipse.dev/jetty/jetty-alpn-parent/jetty-alpn-client) org.eclipse.jetty:jetty-alpn-client:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: ALPN :: JDK9 Client Implementation (https://eclipse.dev/jetty/jetty-alpn-parent/jetty-alpn-java-client) org.eclipse.jetty:jetty-alpn-java-client:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: Asynchronous HTTP Client (https://eclipse.dev/jetty/jetty-client) org.eclipse.jetty:jetty-client:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: Http Utility (https://eclipse.dev/jetty/jetty-http) org.eclipse.jetty:jetty-http:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: IO Utility (https://eclipse.dev/jetty/jetty-io) org.eclipse.jetty:jetty-io:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: Utilities (https://eclipse.dev/jetty/jetty-util) org.eclipse.jetty:jetty-util:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: HTTP2 :: Client (https://eclipse.dev/jetty/http2-parent/http2-client) org.eclipse.jetty.http2:http2-client:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: HTTP2 :: Common (https://eclipse.dev/jetty/http2-parent/http2-common) org.eclipse.jetty.http2:http2-common:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: HTTP2 :: HPACK (https://eclipse.dev/jetty/http2-parent/http2-hpack) org.eclipse.jetty.http2:http2-hpack:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Jetty :: HTTP2 :: HTTP Client Transport (https://eclipse.dev/jetty/http2-parent/http2-http-client-transport) org.eclipse.jetty.http2:http2-http-client-transport:jar:10.0.17
+    License: Eclipse Public License - Version 2.0  (https://www.eclipse.org/legal/epl-2.0/)
+    License: Apache Software License - Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'xerial.org' (https://github.com/xerial/snappy-java)
+
+  - snappy-java (https://github.com/xerial/snappy-java) org.xerial.snappy:snappy-java:bundle:1.1.10.5
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+
+
+

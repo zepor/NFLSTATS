@@ -1,0 +1,168 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+nifi-groovyx-nar
+
+
+From: 'abego Software GmbH, Germany' (http://abego-software.de)
+
+  - abego TreeLayout Core (http://treelayout.sourceforge.net) org.abego.treelayout:org.abego.treelayout.core:bundle:1.0.3
+    License: BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)  (http://www.abego-software.de/legal/apl-v10.html)
+
+
+From: 'an unknown organization'
+
+  - Bytes Utility Library (https://github.com/patrickfav/bytes-java) at.favre.lib:bytes:bundle:1.6.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - javaparser-core (https://github.com/javaparser/javaparser-core) com.github.javaparser:javaparser-core:jar:3.25.5
+    License: GNU Lesser General Public License  (http://www.gnu.org/licenses/lgpl-3.0.html)
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - QDox (http://qdox.codehaus.org) com.thoughtworks.qdox:qdox:jar:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - picocli (https://picocli.info) info.picocli:picocli:jar:4.7.5
+    License: The Apache Software License, version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - JLine (http://nexus.sonatype.org/oss-repository-hosting.html/jline) jline:jline:jar:2.14.6
+    License: The BSD License  (http://www.opensource.org/licenses/bsd-license.php)
+
+  - SnakeYAML (https://bitbucket.org/snakeyaml/snakeyaml) org.yaml:snakeyaml:bundle:2.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Apache NiFi Project' (https://nifi.apache.org/)
+
+  - nifi-groovyx-processors (https://nifi.apache.org/nifi-nar-bundles/nifi-groovyx-bundle/nifi-groovyx-processors) org.apache.nifi:nifi-groovyx-processors:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-standard-services-api-nar (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar) org.apache.nifi:nifi-standard-services-api-nar:nar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'Apache Software Foundation' (https://apache.org)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-all:pom:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-ant:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-cli-picocli:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-console:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-datetime:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-dateutil:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-docgenerator:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-groovydoc:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-groovysh:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-jmx:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-json:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-jsr223:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-macro:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-nio:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-servlet:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-sql:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-swing:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-templates:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-xml:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Groovy (https://groovy-lang.org) org.apache.groovy:groovy-yaml:jar:4.0.15
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'FasterXML' (http://fasterxml.com/)
+
+  - Jackson-annotations (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-core (https://github.com/FasterXML/jackson-core) com.fasterxml.jackson.core:jackson-core:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - jackson-databind (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-databind:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-dataformat-YAML (https://github.com/FasterXML/jackson-dataformats-text) com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'OW2' (http://www.ow2.org/)
+
+  - asm (http://asm.ow2.io/) org.ow2.asm:asm:jar:9.5
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-analysis (http://asm.ow2.io/) org.ow2.asm:asm-analysis:jar:9.5
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-tree (http://asm.ow2.io/) org.ow2.asm:asm-tree:jar:9.5
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+  - asm-util (http://asm.ow2.io/) org.ow2.asm:asm-util:jar:9.5
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+
+  - Apache Ivy (http://ant.apache.org/ivy/) org.apache.ivy:ivy:jar:2.5.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+
+  - Apache Commons IO (https://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.14.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Ant Core (https://ant.apache.org/) org.apache.ant:ant:jar:1.10.14
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Ant + ANTLR (https://ant.apache.org/) org.apache.ant:ant-antlr:jar:1.10.14
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Ant Launcher (https://ant.apache.org/) org.apache.ant:ant-launcher:jar:1.10.14
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Collections (https://commons.apache.org/proper/commons-collections/) org.apache.commons:commons-collections4:jar:4.4
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+
+

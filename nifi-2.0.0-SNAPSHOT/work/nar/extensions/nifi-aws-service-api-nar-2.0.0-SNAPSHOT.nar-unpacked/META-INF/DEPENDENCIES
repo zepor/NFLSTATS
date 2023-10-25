@@ -1,0 +1,122 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+nifi-aws-service-api-nar
+
+
+From: 'an unknown organization'
+
+  - Bytes Utility Library (https://github.com/patrickfav/bytes-java) at.favre.lib:bytes:bundle:1.6.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - AWS SDK for Java - Core (https://aws.amazon.com/sdkforjava) com.amazonaws:aws-java-sdk-core:jar:1.12.550
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK for AWS KMS (https://aws.amazon.com/sdkforjava) com.amazonaws:aws-java-sdk-kms:jar:1.12.550
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK for Amazon S3 (https://aws.amazon.com/sdkforjava) com.amazonaws:aws-java-sdk-s3:jar:1.12.550
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - JMES Path Query library (https://aws.amazon.com/sdkforjava) com.amazonaws:jmespath-java:jar:1.12.550
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - reactive-streams (http://www.reactive-streams.org/) org.reactivestreams:reactive-streams:jar:1.0.4
+    License: MIT-0  (https://spdx.org/licenses/MIT-0.html)
+
+  - AWS Java SDK :: Annotations (https://aws.amazon.com/sdkforjava/core/annotations) software.amazon.awssdk:annotations:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: HTTP Clients :: Apache (https://aws.amazon.com/sdkforjava/http-clients/apache-client) software.amazon.awssdk:apache-client:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Auth (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:auth:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Endpoints SPI (https://aws.amazon.com/sdkforjava/core/endpoints-spi) software.amazon.awssdk:endpoints-spi:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: HTTP Client Interface (https://aws.amazon.com/sdkforjava/http-client-spi) software.amazon.awssdk:http-client-spi:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Core :: Protocols :: Json Utils (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:json-utils:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Metrics SPI (https://aws.amazon.com/sdkforjava/core/metrics-spi) software.amazon.awssdk:metrics-spi:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Profiles (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:profiles:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Regions (https://aws.amazon.com/sdkforjava/core/regions) software.amazon.awssdk:regions:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: SDK Core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:sdk-core:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Third Party :: Jackson-core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:third-party-jackson-core:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Java SDK :: Utilities (https://aws.amazon.com/sdkforjava/utils) software.amazon.awssdk:utils:jar:2.20.148
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - AWS Event Stream (https://github.com/awslabs/aws-eventstream-java) software.amazon.eventstream:eventstream:jar:1.0.1
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+  - software.amazon.ion:ion-java (https://github.com/amznlabs/ion-java/) software.amazon.ion:ion-java:bundle:1.0.2
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Apache NiFi Project' (https://nifi.apache.org/)
+
+  - nifi-aws-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-aws-bundle/nifi-aws-service-api) org.apache.nifi:nifi-aws-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-standard-services-api-nar (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-standard-services-api-nar) org.apache.nifi:nifi-standard-services-api-nar:nar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'FasterXML' (http://fasterxml.com/)
+
+  - Jackson-annotations (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-core (https://github.com/FasterXML/jackson-core) com.fasterxml.jackson.core:jackson-core:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - jackson-databind (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-databind:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson dataformat: CBOR (https://github.com/FasterXML/jackson-dataformats-binary) com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Joda.org' (http://www.joda.org)
+
+  - Joda-Time (http://www.joda.org/joda-time/) joda-time:joda-time:jar:2.8.1
+    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+
+  - Apache HttpClient (http://hc.apache.org/httpcomponents-client-ga) org.apache.httpcomponents:httpclient:jar:4.5.14
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache HttpCore (http://hc.apache.org/httpcomponents-core-ga) org.apache.httpcomponents:httpcore:jar:4.4.16
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+
+  - Apache Commons Codec (https://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.16.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Collections (https://commons.apache.org/proper/commons-collections/) org.apache.commons:commons-collections4:jar:4.4
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+
+

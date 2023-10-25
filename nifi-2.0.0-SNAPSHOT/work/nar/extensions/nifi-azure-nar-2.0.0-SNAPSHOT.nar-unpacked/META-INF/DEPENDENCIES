@@ -1,0 +1,392 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+nifi-azure-nar
+
+
+From: 'an unknown organization'
+
+  - Bytes Utility Library (https://github.com/patrickfav/bytes-java) at.favre.lib:bytes:bundle:1.6.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Caffeine cache (https://github.com/ben-manes/caffeine) com.github.ben-manes.caffeine:caffeine:jar:3.1.8
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - JCIP Annotations under Apache License (http://stephenc.github.com/jcip-annotations) com.github.stephenc.jcip:jcip-annotations:jar:1.0-1
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Gson (https://github.com/google/gson/gson) com.google.code.gson:gson:jar:2.10.1
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - msal4j (https://github.com/AzureAD/microsoft-authentication-library-for-java) com.microsoft.azure:msal4j:jar:1.13.10
+    License: MIT License 
+
+  - msal4j-persistence-extension (https://github.com/AzureAD/microsoft-authentication-extensions-for-java) com.microsoft.azure:msal4j-persistence-extension:jar:1.2.0
+    License: MIT License 
+
+  - Kusto data client library (https://github.com/Azure/azure-kusto-java/tree/master/data) com.microsoft.azure.kusto:kusto-data:jar:4.0.4
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+  - okhttp (https://square.github.io/okhttp/) com.squareup.okhttp3:okhttp:jar:4.11.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - okio (https://github.com/square/okio/) com.squareup.okio:okio:jar:3.5.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - okio (https://github.com/square/okio/) com.squareup.okio:okio-jvm:jar:3.5.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Metrics Core (http://metrics.dropwizard.io/metrics-core) io.dropwizard.metrics:metrics-core:bundle:4.1.0
+    License: Apache License 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - JVM Integration for Metrics (https://metrics.dropwizard.io/metrics-jvm) io.dropwizard.metrics:metrics-jvm:bundle:4.2.19
+    License: Apache License 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+  - micrometer-core (https://github.com/micrometer-metrics/micrometer) io.micrometer:micrometer-core:jar:1.9.12
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/TomcatNative [BoringSSL - Static] (https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/) io.netty:netty-tcnative-boringssl-static:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Java Native Access (https://github.com/java-native-access/jna) net.java.dev.jna:jna:jar:5.13.0
+    License: LGPL-2.1-or-later  (https://www.gnu.org/licenses/old-licenses/lgpl-2.1)
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Java Native Access Platform (https://github.com/java-native-access/jna) net.java.dev.jna:jna-platform:jar:5.6.0
+    License: LGPL, version 2.1  (http://www.gnu.org/licenses/licenses.html)
+    License: Apache License v2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Checker Qual (https://checkerframework.org/) org.checkerframework:checker-qual:jar:3.37.0
+    License: The MIT License  (http://opensource.org/licenses/MIT)
+
+  - HdrHistogram (http://hdrhistogram.github.io/HdrHistogram/) org.hdrhistogram:HdrHistogram:bundle:2.1.12
+    License: Public Domain, per Creative Commons CC0  (http://creativecommons.org/publicdomain/zero/1.0/)
+    License: BSD-2-Clause  (https://opensource.org/licenses/BSD-2-Clause)
+
+  - JetBrains Java Annotations (https://github.com/JetBrains/java-annotations) org.jetbrains:annotations:jar:22.0.0
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Kotlin Stdlib (https://kotlinlang.org/) org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.0
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Kotlin Stdlib Common (https://kotlinlang.org/) org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.0
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Kotlin Stdlib Jdk7 (https://kotlinlang.org/) org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.9.0
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Kotlin Stdlib Jdk8 (https://kotlinlang.org/) org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.9.0
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - LatencyUtils (http://latencyutils.github.io/LatencyUtils/) org.latencyutils:LatencyUtils:jar:2.0.3
+    License: Public Domain, per Creative Commons CC0  (http://creativecommons.org/publicdomain/zero/1.0/)
+
+  - reactive-streams (http://www.reactive-streams.org/) org.reactivestreams:reactive-streams:jar:1.0.4
+    License: MIT-0  (https://spdx.org/licenses/MIT-0.html)
+
+
+From: 'Apache NiFi Project' (https://nifi.apache.org/)
+
+  - nifi-azure-graph-authorizer (https://nifi.apache.org/nifi-nar-bundles/nifi-azure-bundle/nifi-azure-graph-authorizer) org.apache.nifi:nifi-azure-graph-authorizer:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-azure-parameter-providers (https://nifi.apache.org/nifi-nar-bundles/nifi-azure-bundle/nifi-azure-parameter-providers) org.apache.nifi:nifi-azure-parameter-providers:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-azure-processors (https://nifi.apache.org/nifi-nar-bundles/nifi-azure-bundle/nifi-azure-processors) org.apache.nifi:nifi-azure-processors:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-azure-reporting-task (https://nifi.apache.org/nifi-nar-bundles/nifi-azure-bundle/nifi-azure-reporting-task) org.apache.nifi:nifi-azure-reporting-task:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-azure-services-api-nar (https://nifi.apache.org/nifi-nar-bundles/nifi-azure-bundle/nifi-azure-services-api-nar) org.apache.nifi:nifi-azure-services-api-nar:nar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-listed-entity (https://nifi.apache.org/nifi-nar-bundles/nifi-extension-utils/nifi-listed-entity) org.apache.nifi:nifi-listed-entity:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-metrics (https://nifi.apache.org/nifi-commons/nifi-metrics) org.apache.nifi:nifi-metrics:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-record (https://nifi.apache.org/nifi-commons/nifi-record) org.apache.nifi:nifi-record:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-reporting-utils (https://nifi.apache.org/nifi-nar-bundles/nifi-extension-utils/nifi-reporting-utils) org.apache.nifi:nifi-reporting-utils:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-resource-transfer (https://nifi.apache.org/nifi-nar-bundles/nifi-extension-utils/nifi-resource-transfer) org.apache.nifi:nifi-resource-transfer:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-service-utils (https://nifi.apache.org/nifi-nar-bundles/nifi-extension-utils/nifi-service-utils) org.apache.nifi:nifi-service-utils:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'Chemouni Uriel' (https://urielch.github.io/)
+
+  - ASM based accessors helper used by json-smart (https://urielch.github.io/) net.minidev:accessors-smart:bundle:2.4.11
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - JSON Small and Fast Parser (https://urielch.github.io/) net.minidev:json-smart:bundle:2.4.11
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Connect2id Ltd.' (https://connect2id.com)
+
+  - Nimbus Content Type (https://bitbucket.org/connect2id/nimbus-content-type) com.nimbusds:content-type:jar:2.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Nimbus JOSE+JWT (https://bitbucket.org/connect2id/nimbus-jose-jwt) com.nimbusds:nimbus-jose-jwt:jar:9.33
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - OAuth 2.0 SDK with OpenID Connect extensions (https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions) com.nimbusds:oauth2-oidc-sdk:jar:10.7.1
+    License: Apache License, version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+From: 'Connect2id Ltd.' (https://connect2id.com/)
+
+  - Nimbus LangTag (https://bitbucket.org/connect2id/nimbus-language-tags) com.nimbusds:lang-tag:jar:1.7
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'FasterXML' (http://fasterxml.com)
+
+  - Woodstox (https://github.com/FasterXML/woodstox) com.fasterxml.woodstox:woodstox-core:bundle:6.5.1
+    License: The Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'FasterXML' (http://fasterxml.com/)
+
+  - Jackson-annotations (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-core (https://github.com/FasterXML/jackson-core) com.fasterxml.jackson.core:jackson-core:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - jackson-databind (https://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-databind:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson-dataformat-XML (https://github.com/FasterXML/jackson-dataformat-xml) com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.15.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson datatype: JSR310 (https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310) com.fasterxml.jackson.datatype:jackson-datatype-jsr310:bundle:2.15.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Jackson module: Afterburner (https://github.com/FasterXML/jackson-modules-base) com.fasterxml.jackson.module:jackson-module-afterburner:bundle:2.15.2
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'fasterxml.com' (http://fasterxml.com)
+
+  - Stax2 API (http://github.com/FasterXML/stax2-api) org.codehaus.woodstox:stax2-api:bundle:4.2.1
+    License: The BSD License  (http://www.opensource.org/licenses/bsd-license.php)
+
+
+From: 'Google LLC' (http://www.google.com)
+
+  - error-prone annotations (https://errorprone.info/error_prone_annotations) com.google.errorprone:error_prone_annotations:jar:2.21.1
+    License: Apache 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Microsoft' (https://github.com/microsoftgraph/msgraph-sdk-java)
+
+  - Microsoft Graph Java SDK (https://github.com/microsoftgraph/msgraph-sdk-java) com.microsoft.graph:microsoft-graph:jar:2.10.0
+    License: MIT License  (http://opensource.org/licenses/MIT)
+
+
+From: 'Microsoft' (https://github.com/microsoftgraph/msgraph-sdk-java-core)
+
+  - Microsoft Graph Java Core SDK (https://github.com/microsoftgraph/msgraph-sdk-java-core) com.microsoft.graph:microsoft-graph-core:jar:1.0.9
+    License: MIT License  (http://opensource.org/licenses/MIT)
+
+
+From: 'Microsoft Corporation' (http://microsoft.com)
+
+  - Microsoft Azure Java Core Library (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-core:jar:1.42.0
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure Java Core AMQP Library (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-core-amqp:jar:2.8.8
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure Netty HTTP Client Library (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-core-http-netty:jar:1.13.6
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure SDK for SQL API of Azure Cosmos DB Service (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-cosmos:jar:4.49.0
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for Identity (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-identity:jar:1.10.0
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure Java JSON Library (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-json:jar:1.1.0
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for Event Hubs (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-messaging-eventhubs:jar:5.15.8
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for storing checkpoints in Storage Blobs (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-messaging-eventhubs-checkpointstore-blob:jar:1.16.9
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for KeyVault Keys (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-security-keyvault-keys:jar:4.6.5
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for KeyVault Secrets (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-security-keyvault-secrets:jar:4.6.5
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for Blob Storage (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-blob:jar:12.23.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for Blob Storage cryptography (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-blob-cryptography:jar:12.22.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure common module for Storage (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-common:jar:12.22.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for File Storage Data Lake (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-file-datalake:jar:12.16.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure internal Avro module for Storage (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-internal-avro:jar:12.8.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Microsoft Azure client library for Queue Storage (https://github.com/Azure/azure-sdk-for-java) com.azure:azure-storage-queue:jar:12.18.1
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+  - Extensions on Apache Proton-J library (https://github.com/Azure/qpid-proton-j-extensions) com.microsoft.azure:qpid-proton-j-extensions:jar:1.2.4
+    License: The MIT License (MIT)  (http://opensource.org/licenses/MIT)
+
+
+From: 'Oracle' (http://www.oracle.com)
+
+  - JSR 374 (JSON Processing) Default Provider (https://javaee.github.io/jsonp) org.glassfish:javax.json:bundle:1.1.4
+    License: Dual license consisting of the CDDL v1.1 and GPL v2  (https://oss.oracle.com/licenses/CDDL+GPL-1.1)
+
+
+From: 'OW2' (http://www.ow2.org/)
+
+  - asm (http://asm.ow2.io/) org.ow2.asm:asm:jar:9.3
+    License: BSD-3-Clause  (https://asm.ow2.io/license.html)
+
+
+From: 'reactor' (https://github.com/reactor)
+
+  - Non-Blocking Reactive Foundation for the JVM (https://github.com/reactor/reactor-core) io.projectreactor:reactor-core:jar:3.4.30
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Core functionality for the Reactor Netty library (https://github.com/reactor/reactor-netty) io.projectreactor.netty:reactor-netty-core:jar:1.0.33
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - HTTP functionality for the Reactor Netty library (https://github.com/reactor/reactor-netty) io.projectreactor.netty:reactor-netty-http:jar:1.0.33
+    License: The Apache Software License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+
+  - Apache HttpClient (http://hc.apache.org/httpcomponents-client-ga) org.apache.httpcomponents:httpclient:jar:4.5.14
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache HttpCore (http://hc.apache.org/httpcomponents-core-ga) org.apache.httpcomponents:httpcore:jar:4.4.16
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+
+  - Apache Commons Codec (https://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.16.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons IO (https://commons.apache.org/proper/commons-io/) commons-io:commons-io:jar:2.14.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Collections (https://commons.apache.org/proper/commons-collections/) org.apache.commons:commons-collections4:jar:4.4
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Lang (https://commons.apache.org/proper/commons-lang/) org.apache.commons:commons-lang3:jar:3.13.0
+    License: Apache-2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Apache Commons Text (https://commons.apache.org/proper/commons-text) org.apache.commons:commons-text:jar:1.10.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Proton-J (https://qpid.apache.org/proton/proton-j) org.apache.qpid:proton-j:jar:0.34.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'The Netty Project' (https://netty.io/)
+
+  - Netty/Buffer (https://netty.io/netty-buffer/) io.netty:netty-buffer:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec (https://netty.io/netty-codec/) io.netty:netty-codec:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec/DNS (https://netty.io/netty-codec-dns/) io.netty:netty-codec-dns:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec/HTTP (https://netty.io/netty-codec-http/) io.netty:netty-codec-http:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec/HTTP2 (https://netty.io/netty-codec-http2/) io.netty:netty-codec-http2:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Codec/Socks (https://netty.io/netty-codec-socks/) io.netty:netty-codec-socks:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Common (https://netty.io/netty-common/) io.netty:netty-common:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Handler (https://netty.io/netty-handler/) io.netty:netty-handler:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Handler/Proxy (https://netty.io/netty-handler-proxy/) io.netty:netty-handler-proxy:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Resolver (https://netty.io/netty-resolver/) io.netty:netty-resolver:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Resolver/DNS (https://netty.io/netty-resolver-dns/) io.netty:netty-resolver-dns:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Resolver/DNS/Classes/MacOS (https://netty.io/netty-resolver-dns-classes-macos/) io.netty:netty-resolver-dns-classes-macos:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Resolver/DNS/Native/MacOS (https://netty.io/netty-resolver-dns-native-macos/) io.netty:netty-resolver-dns-native-macos:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/TomcatNative [OpenSSL - Classes] (https://github.com/netty/netty-tcnative/netty-tcnative-classes/) io.netty:netty-tcnative-classes:jar:2.0.61.Final
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+  - Netty/Transport (https://netty.io/netty-transport/) io.netty:netty-transport:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Classes/Epoll (https://netty.io/netty-transport-classes-epoll/) io.netty:netty-transport-classes-epoll:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Classes/KQueue (https://netty.io/netty-transport-classes-kqueue/) io.netty:netty-transport-classes-kqueue:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Native/Epoll (https://netty.io/netty-transport-native-epoll/) io.netty:netty-transport-native-epoll:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Native/KQueue (https://netty.io/netty-transport-native-kqueue/) io.netty:netty-transport-native-kqueue:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - Netty/Transport/Native/Unix/Common (https://netty.io/netty-transport-native-unix-common/) io.netty:netty-transport-native-unix-common:jar:4.1.100.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+
+
+

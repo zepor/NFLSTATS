@@ -130,5 +130,5 @@ dmypy.json
 .vscode/settings.json
 .azure
 
-
+nifi/
 .Website2.code-workspace

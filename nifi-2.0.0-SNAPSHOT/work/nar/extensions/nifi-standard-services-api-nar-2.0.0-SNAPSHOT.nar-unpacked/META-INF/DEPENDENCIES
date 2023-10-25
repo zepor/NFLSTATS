@@ -1,0 +1,101 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+nifi-standard-services-api-nar
+
+
+From: 'an unknown organization'
+
+  - Bytes Utility Library (https://github.com/patrickfav/bytes-java) at.favre.lib:bytes:bundle:1.6.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+From: 'Apache NiFi Project' (https://nifi.apache.org/)
+
+  - nifi-dbcp-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-dbcp-service-api) org.apache.nifi:nifi-dbcp-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-distributed-cache-client-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-client-service-api) org.apache.nifi:nifi-distributed-cache-client-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-file-resource-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-file-resource-service-api) org.apache.nifi:nifi-file-resource-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-hbase-client-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-hbase-client-service-api) org.apache.nifi:nifi-hbase-client-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-http-context-map-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-http-context-map-api) org.apache.nifi:nifi-http-context-map-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-jetty-bundle (https://nifi.apache.org/nifi-nar-bundles/nifi-jetty-bundle) org.apache.nifi:nifi-jetty-bundle:nar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-kerberos-credentials-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-credentials-service-api) org.apache.nifi:nifi-kerberos-credentials-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-kerberos-user-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-user-service-api) org.apache.nifi:nifi-kerberos-user-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-key-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-key-service-api) org.apache.nifi:nifi-key-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-lookup-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-lookup-service-api) org.apache.nifi:nifi-lookup-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-oauth2-provider-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-oauth2-provider-api) org.apache.nifi:nifi-oauth2-provider-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-proxy-configuration-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-api) org.apache.nifi:nifi-proxy-configuration-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-record (https://nifi.apache.org/nifi-commons/nifi-record) org.apache.nifi:nifi-record:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-record-serialization-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api) org.apache.nifi:nifi-record-serialization-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-record-sink-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-record-sink-api) org.apache.nifi:nifi-record-sink-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-schema-registry-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-schema-registry-service-api) org.apache.nifi:nifi-schema-registry-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-security-kerberos-api (https://nifi.apache.org/nifi-commons/nifi-security-kerberos-api) org.apache.nifi:nifi-security-kerberos-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-security-utils-api (https://nifi.apache.org/nifi-commons/nifi-security-utils-api) org.apache.nifi:nifi-security-utils-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-ssl-context-service-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api) org.apache.nifi:nifi-ssl-context-service-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-utils (https://nifi.apache.org/nifi-commons/nifi-utils) org.apache.nifi:nifi-utils:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-web-client-api (https://nifi.apache.org/nifi-commons/nifi-web-client-api) org.apache.nifi:nifi-web-client-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+  - nifi-web-client-provider-api (https://nifi.apache.org/nifi-nar-bundles/nifi-standard-services/nifi-web-client-provider-bundle/nifi-web-client-provider-api) org.apache.nifi:nifi-web-client-provider-api:jar:2.0.0-SNAPSHOT
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+
+From: 'Eclipse Foundation' (https://www.eclipse.org)
+
+  - Jakarta Activation API jar (https://github.com/eclipse-ee4j/jaf/jakarta.activation-api) jakarta.activation:jakarta.activation-api:jar:1.2.2
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+
+  - Jakarta XML Binding API (https://github.com/eclipse-ee4j/jaxb-api/jakarta.xml.bind-api) jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3
+    License: Eclipse Distribution License - v 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+
+  - Apache Commons Collections (https://commons.apache.org/proper/commons-collections/) org.apache.commons:commons-collections4:jar:4.4
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+
+
