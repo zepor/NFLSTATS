@@ -439,11 +439,11 @@
             <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#"
               role="button" aria-haspopup="false" aria-expanded="false">
               <span class="account-user-avatar">
-                <img src="{{ url_for('static', filename='images/users/avatar-1.jpg') }}" alt="user-image" width="32"
+                <img src="{{ url_for('static', filename='images/users/avatar-0.jpg') }}" alt="user-image" width="32"
                   class="rounded-circle" />
               </span>
               <span class="d-lg-flex flex-column gap-1 d-none">
-                <h5 class="my-0">Dominic Keller</h5>
+                <h5 class="my-0">John Bonnett</h5>
                 <h6 class="my-0 fw-normal">Founder</h6>
               </span>
             </a>
@@ -782,25 +782,10 @@
     <div class="content-page">
       <div class="content">
         <!-- Start Content-->
-        <div class="sr-widget" data-sr-widget="us.season.nfl.scores" data-sr-disable-pitch-switch="true"
-          data-sr-enable-team-select="true" data-sr-enable-player-select="true" data-sr-border="false"
-          data-sr-pre-match-links="default" data-sr-live-match-links="default" data-sr-post-match-links="default"
-          data-sr-season-id="2023"></div>
         <div class="container-fluid">
           <!-- start page title -->
 
           <div class="page-title-box">
-            <div class="page-title-right">
-              <ol class="breadcrumb m-0">
-                <li class="breadcrumb-item">
-                  <a href="javascript: void(0);">Hyper</a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="javascript: void(0);">Hyper</a>
-                </li>
-                <li class="breadcrumb-item active">Dashboard</li>
-              </ol>
-            </div>
             <h4 class="page-title">Dashboard</h4>
           </div>
           <div class="flex-content" style="display: flex; justify-content: space-between"></div>
@@ -811,11 +796,6 @@
       </div>
       <!-- content -->
 
-      <div class="sr-widget" data-sr-widget="us.match.score" data-sr-match-id="20716135"></div>
-
-
-
-      <div id="sr-widget"></div>
       <!-- Footer Start -->
       <footer class="footer">
         <div class="container-fluid">
@@ -1635,89 +1615,58 @@
       </div>
     </div>
   </div>
-  <!-- Script for loading live games content -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      (function (a, b, c, d, e, f, g, h, i) {
-        a[e] || (i = a[e] = function () { (a[e].q = a[e].q || []).push(arguments) }, i.l = 1 * new Date, i.o = f,
-          g = b.createElement(c), h = b.getElementsByTagName(c)[0], g.async = 1, g.src = d, g.setAttribute("n", e),
-          h.parentNode.insertBefore(g, h))
-      })(window, document, "script", "https://widgets.media.sportradar.com/uscommon/widgetloader", "SIR", { language: 'en_us' });
+ 
+  // Function to update the title
+  function updateTitle(title) {
+    document.querySelector(".page-title").textContent = title;
+  }
 
-      SIR('addWidget', '#sr-widget', 'us.season.nfl.scores', {
-        preMatchLinks: 'default',
-        liveMatchLinks: 'default',
-        postMatchLinks: 'default',
-        enableTeamSelect: true,
-        enablePlayerSelect: true,
-        onItemClick: function (type, obj) {
-          alert(type + ': ' + JSON.stringify(obj));
-        }
-      });
-    });
-    // start using global USW object
-    USW('addWidget', '#myWidgetDiv', 'us.match.score');
-  </script>
-  document
-  .getElementById("liveGamesButton")
-  .addEventListener("click", function () {
-  var content = document.querySelector(".flex-content");
-  content.innerHTML = ""; // Clear previous content
-  var iframe = document.createElement("iframe");
-  iframe.src = "/livegames";
-  iframe.style.width = "100%";
-  iframe.style.height = "1000px";
-  content.appendChild(iframe);
-  });
   // Script for loading venues content
-  document
-  .getElementById("stadiumsButton")
-  .addEventListener("click", function () {
-  var content = document.querySelector(".flex-content");
-  content.innerHTML = ""; // Clear previous content
-  var iframe = document.createElement("iframe");
-  iframe.src = "/venues";
-  iframe.style.width = "100%";
-  iframe.style.height = "1000px";
-  content.appendChild(iframe);
+  document.getElementById("stadiumsButton").addEventListener("click", function () {
+    var content = document.querySelector(".flex-content");
+    content.innerHTML = ""; // Clear previous content
+    var iframe = document.createElement("iframe");
+    iframe.src = "/venues";
+    iframe.style.width = "100%";
+    iframe.style.height = "1000px";
+    content.appendChild(iframe);
+    updateTitle("Stadiums");
   });
+
   // Load stats content
-  document
-  .getElementById("statsButton")
-  .addEventListener("click", function () {
-  var content = document.querySelector(".flex-content");
-  content.innerHTML = ""; // Clear previous content
-  var iframe = document.createElement("iframe");
-  iframe.src = "/get-data";
-  iframe.style.width = "100%";
-  iframe.style.height = "1000px";
-  content.appendChild(iframe);
-
-
+  document.getElementById("statsButton").addEventListener("click", function () {
+    var content = document.querySelector(".flex-content");
+    content.innerHTML = ""; // Clear previous content
+    var iframe = document.createElement("iframe");
+    iframe.src = "/get-data";
+    iframe.style.width = "100%";
+    iframe.style.height = "1000px";
+    content.appendChild(iframe);
+    updateTitle("NFL Stats");
   });
+
   // Function to load dashboard content
   function loadDashboardContent() {
-  var content = document.querySelector(".flex-content");
-  content.innerHTML = ""; // Clear previous content
-  // Add code here to load the actual dashboard content
+    var content = document.querySelector(".flex-content");
+    content.innerHTML = ""; // Clear previous content
+    var iframe = document.createElement("iframe");
+    iframe.src = "/livegames";
+    iframe.style.width = "100%";
+    iframe.style.height = "1000px";
+    content.appendChild(iframe);
+    updateTitle("Dashboard");
   }
 
   // Load dashboard content on initial page load
   document.addEventListener("DOMContentLoaded", function () {
-  loadDashboardContent();
+    loadDashboardContent();
   });
 
-  // Load dashboard content when the "Dashboard" button is clicked
-  document.getElementById("dashboardButton").addEventListener("click", function () {
-  loadDashboardContent();
-  });
-
-  // Existing code for the "Home" button
-  document.getElementById("homeButton").addEventListener("click", function () {
-  var content = document.querySelector(".flex-content");
-  content.innerHTML = ""; // Clear previous content
-  window.location.href = "/";
-  });
+  // Load dashboard content when the "Dashboard", "liveGamesButton", and "homeButton" buttons are clicked
+  document.getElementById("dashboardButton").addEventListener("click", loadDashboardContent);
+  document.getElementById("liveGamesButton").addEventListener("click", loadDashboardContent);
+  document.getElementById("homeButton").addEventListener("click", loadDashboardContent);
 
   </script>
   <!---------ALL SCRIPTS FOR VENUES END-->

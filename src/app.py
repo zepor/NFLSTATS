@@ -117,6 +117,8 @@ app.config['MONGODB_SETTINGS'] = {
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 # MongoDB and logging settings
 db = MongoEngine(app)
 # Determine the environment from the FLASK_ENV variable
@@ -153,6 +155,7 @@ def log_and_catch_exceptions(func):
             be_logger.error(f"Error in {func.__name__}: {e}")
             raise Exception(f"Error in {func.__name__}: {e}")
     return func_wrapper
+
 
 class FootballData:
     def __init__(self):
@@ -375,7 +378,29 @@ class FootballData:
             }
         ]
 
+    @staticmethod
+    @log_and_catch_exceptions
+    def alldetailcurrentseasonplaybyplay():
+        return [
+            {
+                '$lookup': {
+                    'from': 'BoxscoreInfo',
+                    'localField': 'gamegame._id',
+                    'foreignField': 'gamebs._id',
+                    'as': 'Boxscoreinfo'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'SeasonInfo',
+                    'localField': 'gamegame.seasonid',
+                    'foreignField': '_id',
+                    'as': 'season_info'
+                }
+            }
+        ]
+         
 data = FootballData()
+
 
 @app.before_first_request
 @log_and_catch_exceptions
@@ -883,6 +908,20 @@ def generate_nfl_weeks(year):
         start_date += timedelta(days=7)
     return nfl_weeks
 
+
+@app.route('/scores')
+def scores():
+    # Query your MongoDB collections to get the data. Sample query is shown below, replace it with your own
+    # data = MongoClient('mongodb://localhost:27017/').mydb.mycollection.find()
+
+    # If you can structure your data in the format {game1: {...}, game2: {...}, ...}
+    # then you can pass the whole data dictionary to your template and use game_info to access each game's info
+    # If your data isn't structured like this, modify the following code as needed
+
+    # This should be replaced with actual function to get data
+    data = get_data_from_database()
+
+    return render_template('scores.html', games=data)
 
 logger = logging.getLogger(__name__)
 if __name__ == "__main__":

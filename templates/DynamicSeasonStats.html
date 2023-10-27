@@ -1,14 +1,6 @@
 <head>
 
-  // Function to fetch and display NFL statistics
-  async function fetchAndDisplayNFLStats() {
-  // Your logic to fetch and display NFL statistics
-  console.log('Fetching and displaying NFL statistics...');
-  }
-
-  // Trigger the function when the page loads
-  window.addEventListener('load', fetchAndDisplayNFLStats);
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" />
@@ -75,7 +67,7 @@
               {% for team in teams_dict[selected_year_season_combo] %}
               <li>
                 <a class="dropdown-item {{ 'selected' if team.name == 'All Teams' }}" href="#">
-                  <img src="{{ team.logo }}" class="img-flag" width="20" height="20" alt-text-"Team-logo"/> {{ team.name }}
+                  <img src="{{ team.logo }}" class="img-flag" width="20" height="20" alt-text="Team Logo"> {{ team.name }}
                 </a>
               </li>
               {% endfor %}

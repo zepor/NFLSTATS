@@ -1,15 +1,41 @@
-{% block content %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
-    <title>Venues</title>
-  </head>
-  <body></body>
-</html>
-{% endblock %}
+<head>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" />
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  <!-- PopperJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <!-- Bootstrap-Select CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+  <!-- Bootstrap-Select JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+  <style>
+    .dropdown-toggle-no-caret::after {
+      display: none;
+    }
+  </style>
+</head>
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="team_logo_link" class="img-fluid rounded-start" alt="team logo">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Team A vs Team B</h5>
+        <h6 class="card-text">Score: 10 - 20</h6>
+        <p class="card-text"><small class="text-muted">Date, Location</small></p>
+        <a href="#" class="btn btn-primary">See Play-by-Play Details</a>
+      </div>
+    </div>
+  </div>
+</div>
