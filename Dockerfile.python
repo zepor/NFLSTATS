@@ -1,0 +1,29 @@
+# Use official Python image from the Docker Hub
+FROM python:3.9.18
+# Set the working directory inside the container
+WORKDIR /Website2
+VOLUME /Website2
+# Install system-level dependencies
+RUN apt-get update && \
+    apt-get install -y gnupg wget iputils-ping curl openssl gcc build-essential \
+    libxml2-dev libxslt-dev libssl-dev zlib1g-dev python3-dev libnss3-tools && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+# Create and activate virtual environment
+RUN python3 -m venv /Website2/.venv && . /Website2/.venv/bin/activate && pip install --upgrade pip && pip install wheel
+# Copy only the requirements.txt to leverage Docker cache
+# This is useful for not having to reinstall all packages whenever code changes
+COPY ./requirements.txt /Website2/requirements.txt
+# Debug: List files in /Website to verify if requirements.txt is copied
+RUN ls -l /Website2/
+# Install Python dependencies
+RUN pip install -r ./requirements.txt
+# Copy the rest of the code
+COPY . .
+# Set an argument for FLASK_ENV which can be passed during Docker build
+ARG FLASK_ENV=development
+# Set the FLASK_ENV environment variable inside the Docker container
+ENV FLASK_ENV=${FLASK_ENV}
+EXPOSE 5000:5000
+# Set the command to run the application
+CMD ["python", "src/run.py"]

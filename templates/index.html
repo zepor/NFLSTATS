@@ -28,8 +28,6 @@
     id="app-style" />
   <!-- Icons css -->
   <link href="{{ url_for('static', filename='css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-  <script type="application/javascript" src="https://widgets.media.sportradar.com/uscommon/widgetloader"
-    data-sr-language="en_us" async></script>
 </head>
 
 <body>
@@ -42,13 +40,6 @@
       <!-- Player statistics will be populated here -->
     </div>
   </div>
-  <!-- NFL Statistics Widget -->
-  <script type="application/javascript" src="https://widgets.media.sportradar.com/<your client alias>/widgetloader"
-    data-sr-language="en_us" async></script>
-  <div id="nfl-stats-widget"></div>
-  <!-- Season Scores Widget -->
-  <script type="application/javascript" src="https://widgets.media.sportradar.com/<your client alias>/widgetloader"
-    data-sr-language="en_us" async></script>
   <div class="wrapper">
     <!-- ========== Topbar Start ========== -->
     <div class="navbar-custom">
@@ -544,7 +535,7 @@
             </a>
           </li>
 
-          <li class="side-nav-title">Custom</li>
+          <li class="side-nav-title">Statistics</li>
 
           <li class="side-nav-item">
             <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
@@ -1664,7 +1655,7 @@
   });
 
   // Load dashboard content when the "Dashboard", "liveGamesButton", and "homeButton" buttons are clicked
-  document.getElementById("dashboardButton").addEventListener("click", loadDashboardContent);
+
   document.getElementById("liveGamesButton").addEventListener("click", loadDashboardContent);
   document.getElementById("homeButton").addEventListener("click", loadDashboardContent);
 

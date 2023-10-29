@@ -1,0 +1,51 @@
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+**/.DS_Store
+**/.dockerignore
+**/.git
+**/.gitignore
+**/.project
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.dbmdl
+**/*.jfm
+**/charts
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/secrets.dev.yaml
+**/values.dev.yaml
+.husky
+.pytest_cache
+.vs
+.vscode
+/cgi-bin
+/data
+/docs
+/error
+/icons
+/include
+/lib
+/modules
+/node_modules
+/mongodb
+/opensearch
+/tests
+/graylog
+server.js
+package-lock.json
+python-3.9.7-amd64.exe
+portainer-agent-loadbalancer.yaml
+/go
+/nifi
+/nifi-2.0.0-SNAPSHOT
+Website2.code-workspace
+Zepor.code-profile
+/logs

@@ -1,0 +1,39 @@
+version: '3.7'
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+volumes:
+  combined:
+  redis_data:
+    external: true
+services:
+  
+  combined_app:
+    dns:
+      - 8.8.8.8  # Google's DNS
+      - 8.8.4.4
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    image: python:3.9.18
+    container_name: nflapp
+    ports:
+      - 8000:8000 # Keeps localhost access on port 8000
+    volumes:
+      - combined:$WEBDEST
+    networks:
+      - mynetwork
+    working_dir: ${WEBDEST}
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=${DPP}
+      - WORKERES=${WORKERS}
+      - KEYFILE_PATH=${KEYFILE_PATH}
+      - CERTFILE_PATH=${CERTFILE_PATH}
+      - PYTHONDONTWRITEBYTECODE=1
+    command: python src/run.py
