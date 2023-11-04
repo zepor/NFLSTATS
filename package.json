@@ -1,0 +1,20 @@
+{
+  "name": "website2",
+  "version": "1.0.0",
+  "description": "The most basic Flask \"hello world\" application as an AZD template ready for Azure App Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zepor/NFLSTATS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zepor/NFLSTATS/issues"
+  },
+  "homepage": "https://github.com/zepor/NFLSTATS#readme"
+}

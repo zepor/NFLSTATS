@@ -5,7 +5,7 @@ flask_env = os.environ.get('FLASK_ENV', 'development')
 if flask_env == 'development':
     # Use Flask's built-in development server with debugging enabled
     print("Running in development mode...")
-    app.run(host='localhost', port=5000, debug=True, ssl_context="adhoc")
+    app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=True)
 else:
     from gunicorn.app.base import Application
     class StandaloneApplication(Application):

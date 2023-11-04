@@ -62,9 +62,9 @@ import logging
 import sys
 import os
 from dotenv import load_dotenv  # Import this if you're using load_dotenv
-if not hasattr(os, 'add_dll_directory'):
-    def add_dll_directory(path):
-        pass
+#if not hasattr(os, 'add_dll_directory'):
+ #   def add_dll_directory(path):
+  #      pass
 load_dotenv()  # Load environment variables from .env file
 LPATH = os.getenv('LPATH')
 # Append paths to sys.path
@@ -76,11 +76,20 @@ sys.path.append('/src/models')
 mongodb_service_name = os.getenv('MONGODB_SERVICE_NAME', 'localhost')
 mongodb_url = os.getenv(
     'MONGODB_URL', f"mongodb://{mongodb_service_name}:27017/current_season")
+MAX_RETRIES = 5  # Maximum number of retries
+RETRY_DELAY = 5 
 client = MongoClient(mongodb_url, connectTimeoutMS=30000, socketTimeoutMS=None)
-try:
-    client.admin.command('ismaster')
-except ConnectionFailure:
-    logging.error("MongoDB server not available")
+for attempt in range(1, MAX_RETRIES + 1):
+    try:
+        client.admin.command('ismaster')
+        break  # Exit the loop if connection is successful
+    except ConnectionFailure:
+        if attempt < MAX_RETRIES:
+            logging.warning(f"MongoDB server not available. Attempt {attempt} of {MAX_RETRIES}. Retrying in {RETRY_DELAY} seconds...")
+            time.sleep(RETRY_DELAY)  # Wait for a while before retrying
+        else:
+            logging.error("MongoDB server not available after maximum retries.")
+            # Handle maximum retries reached scenario, e.g., raise an exception or exit the script
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 app = Flask(__name__, template_folder=os.path.join(BASE_DIR, 'templates'),
             static_folder=os.path.join(BASE_DIR, 'templates', 'static'))
@@ -108,13 +117,23 @@ for key, value in app.config.items():
 CORS(app, origins='https://0.0.0.0')
 scheduler = BackgroundScheduler()
 try:
-    r = redis.Redis(host='127.0.0.1', port=6379, db=0) # replace with your Redis' host and port
+    r = redis.StrictRedis(host='redis', port=6379, decode_responses=False) # replace with your Redis' host and port
     r.ping() # this will raise an ConnectionError if the Redis server is not available
     be_logger.info("Connected to Redis")
 except redis.exceptions.ConnectionError as ex:
     be_logger.info("Could not connect to Redis:", str(ex))
+
+cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
+live_games_query_running = False
+# If the data exists, try to deserialize it
+if cached_data is not None:
+    try:
+        cached_data = pickle.loads(cached_data)
+    except Exception as e:
+        be_logger.info(f"Failed to deserialize data: {e}")
+        
 app.config['MONGODB_SETTINGS'] = {
-    'db': 'current_season',  # Replace with your database name
+    'db': 'current_season',  
     'host': mongodb_url
 }
 app.config['PROPAGATE_EXCEPTIONS'] = True
@@ -137,6 +156,7 @@ app.register_blueprint(bp_seasonal_stats)
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 
+
 @app.errorhandler(Exception)
 def handle_exception(e):
     be_logger.exception("An error occurred: %s", e)
@@ -155,6 +175,7 @@ def log_and_catch_exceptions(func):
 
 class FootballData:
     def __init__(self):
+        self.livegames_cache = None
         self.get_AllSeasonsTeamStatDetails_cache = None
         self.current_year_season_cache = None
         self.year_season_combinations_cache = None
@@ -292,53 +313,70 @@ def clear_cache():
     r.flushdb()  # Caution, this clears the entire Redis database. Only use if your Redis db is dedicated to caching.
     be_logger.info("Cache cleared.")
     
-
 @log_and_catch_exceptions
 @app.route('/')
 def index():
-    # Try getting the data from the cache
-    cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
-    be_logger.info(f"Type of data: {type(data)}")  # Debug be_logger.info: type of data
-    be_logger.info(f"Type of cached_data: {type(cached_data)}")  # Debug be_logger.info: type of cached_data
-    current_year, current_season_type, _, _ = get_season_info_and_selected(request)
-    data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
-    cache_key = f"seasons_{current_year}_{current_season_type}_statdetails"
-    cached_data = r.get(cache_key)
-    if cached_data is None:
-        be_logger.info("Cache is empty, fetching data...")
-        query_allteamstats = fetch_AllSeasonsTeamStatDetails()
-        results_data = list(SeasonStatTeam.objects.aggregate(*query_allteamstats))
-        be_logger.debug("Total number of documents fetched: %s", len(results_data))
-        redis_data = pickle.dumps(results_data)
-        r.set("get_AllSeasonsTeamStatDetails_cache", redis_data)
-        be_logger.debug("First 200 chars of cached data: %s", str(redis_data)[:200])
-        data.get_AllSeasonsTeamStatDetails_cache = results_data
-    else:
-        be_logger.info("Cache hit, loading cached data...")
-        try:
-            cached_results = pickle.loads(cached_data)
-        except pickle.UnpicklingError:
-            # This will handle old cache entries that were stored as JSON
-            cached_results = json.loads(cached_data.decode())
-        data.get_AllSeasonsTeamStatDetails_cache = cached_results
-    be_logger.info(f"data.get_AllSeasonsTeamStatDetails_cache: {data.get_AllSeasonsTeamStatDetails_cache[:200]}")  
-    current_year, current_season_type, _, _ = get_season_info_and_selected(request)
-    data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
-    year_season_combinations_cache = get_year_season_combinations(
-        current_year, current_season_type) 
-    data.selected_teams = get_or_generate_teams()
-    be_logger.debug(f"Total number of documents from cache: {len(data.get_AllSeasonsTeamStatDetails_cache)}")
-    html_content = render_template(
-        'index.html',
-        year_season_combinations=year_season_combinations_cache,
-        selected_year=data.selected_year,
-        selected_season_type=data.selected_season_type,
-        teams=data.selected_teams,
-        teams_dict=data.teams_dict_cache,
-    )
-    renderindexresponse = make_response(html_content)
-    renderindexresponse.headers['Access-Control-Allow-Origin'] = '*'
-    return renderindexresponse
+    try:
+        cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
+        be_logger.info(f"Type of cached_data: {type(cached_data)}")  # Debug be_logger.info: type of cached_data
+        # Fetch live games data
+        fetched_data = fetch_live_games_data()
+        if fetched_data and "upcominggames" in fetched_data:
+            live_games_data = fetched_data["upcominggames"]
+            if not live_games_data:
+                live_games_data = []
+                be_logger.warning("No live games data was fetched.")
+            else:
+                live_games_cache_key = "livegames_cache"
+                r.set(live_games_cache_key, pickle.dumps(live_games_data))
+        else:
+            live_games_data = []
+            be_logger.warning("fetch_live_games_data did not return expected data format.")
+        # Get season information
+        current_year, current_season_type, _, _ = get_season_info_and_selected(request)
+        data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
+        # Fetch data for season stats
+        cache_key = f"seasons_{current_year}_{current_season_type}_statdetails"
+        cached_data = r.get(cache_key)
+        if cached_data is None:
+            be_logger.info("Cache is empty, fetching data...")
+            query_allteamstats = fetch_AllSeasonsTeamStatDetails()
+            results_data = list(SeasonStatTeam.objects.aggregate(*query_allteamstats))
+            be_logger.debug("Total number of documents fetched: %s", len(results_data))
+            redis_data = pickle.dumps(results_data)
+            r.set("get_AllSeasonsTeamStatDetails_cache", redis_data)
+            be_logger.debug("First 200 chars of cached data: %s", str(redis_data)[:200])
+            data.get_AllSeasonsTeamStatDetails_cache = results_data
+        else:
+            be_logger.info("Cache hit, loading cached data...")
+            try:
+                cached_results = pickle.loads(cached_data)
+            except pickle.UnpicklingError:
+                # This will handle old cache entries that were stored as JSON
+                cached_results = json.loads(cached_data.decode())
+            data.get_AllSeasonsTeamStatDetails_cache = cached_results
+        be_logger.info(f"Count of documents in data.get_AllSeasonsTeamStatDetails_cache: {len(data.get_AllSeasonsTeamStatDetails_cache)}")
+        # More data fetching for the index page
+        year_season_combinations_cache = get_year_season_combinations(
+            current_year, current_season_type) 
+        data.selected_teams = get_or_generate_teams()
+        # Render the HTML content
+        html_content = render_template(
+            'index.html',
+            year_season_combinations=year_season_combinations_cache,
+            selected_year=data.selected_year,
+            selected_season_type=data.selected_season_type,
+            teams=data.selected_teams,
+            teams_dict=data.teams_dict_cache,
+            livegames=live_games_data  # Pass the live games data to the template
+        )
+        renderindexresponse = make_response(html_content)
+        renderindexresponse.headers['Access-Control-Allow-Origin'] = '*'
+        return renderindexresponse
+    except Exception as e:
+        be_logger.error(f"Error occurred in index route: {str(e)}")
+        return f"An error occurred: {str(e)}", 500
+
 
 
 @app.errorhandler(404)
@@ -435,7 +473,7 @@ def get_or_generate_teams():
                 cache[key] = teams_for_combo
                 
                 # Debugging log to print the key and the list of teams for this year and season type
-                be_logger.debug(f"Key: {key}, Teams: {teams_for_combo}")
+                be_logger.debug(f"Key: {key}, Team Count: {len(teams_for_combo)}")
     data.teams_dict_cache = cache
     return data.teams_dict_cache
 
@@ -747,113 +785,141 @@ def venues():
             venues.append(venue)
     return render_template('venues.html', venues=venues)
 
+@log_and_catch_exceptions
+def fetch_live_games_data():
+    global live_games_query_running
+    live_games_cache_key = "livegames_cache"
+    cached_live_games = r.get(live_games_cache_key)
+    if live_games_query_running:
+        be_logger.warning("Live games query is already running.")
+        return None
+    elif cached_live_games is not None:
+        be_logger.info("Using cached live games data.")
+        return pickle.loads(cached_live_games)
+    else:
+        be_logger.info("No cached live games data found.")
+    live_games_query_running = True
+    try:
+        now = datetime.now()
+        in_three_days = now + timedelta(days=3)
+        be_logger.debug("Fetching live games data")
+        thisweeksgames = [
+            {
+                "$match": {
+                    "gamegame.scheduled": { 
+                        "$gte": now,
+                        "$lt": in_three_days
+                    }
+                }
+            },
+            {
+                "$group": {
+                    "_id": None, 
+                    "distinctLeagueWeeks": { "$addToSet": "$gamegame.leagueweek" }
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "distinctLeagueWeeks": 1
+                }
+            },
+            {
+                "$unwind": "$distinctLeagueWeeks"
+            },
+            {
+                "$lookup": {
+                    "from": "GameInfo",
+                    "localField": "distinctLeagueWeeks",
+                    "foreignField": "gamegame.leagueweek",
+                    "as": "games"
+                }
+            },
+            {
+                "$unwind": "$games"
+            },  
+            {
+                "$lookup": {
+                    "from": "BoxscoreInfo",
+                    "localField": "games._id",
+                    "foreignField": "_id",
+                    "as": "games.boxscore_info"
+                }
+            },
+            {
+                "$unwind": "$games.boxscore_info"
+            },
+            {
+                "$lookup": {
+                    "from": "LeagueInfo",
+                    "localField": "games.gamegame.leagueweek",
+                    "foreignField": "_id",
+                    "as": "games.league_info"
+                }
+            },
+            {
+                "$unwind": "$games.league_info"
+            },
+            {
+                "$lookup": {
+                    "from": "SeasonStatPlayer",
+                    "localField": "games.hometeam.id",
+                    "foreignField": "teamid",
+                    "as": "games.season_stat_player"
+                }
+            }, 
+            {
+                "$unwind": "$games.season_stat_player"
+            },
+            {
+                "$lookup": {
+                    "from": "SeasonStatTeam",
+                    "localField": "games.hometeam.id",
+                    "foreignField": "teamid",
+                    "as": "games.season_stat_team"
+                }
+            },
+            {
+                "$unwind": "$games.season_stat_team"
+            },
+            {
+                "$lookup": {
+                    "from": "TeamInfo",
+                    "localField": "games.hometeam.id",
+                    "foreignField": "_id",
+                    "as": "games.team_info"
+                }
+            },
+            {
+                "$unwind": "$games.team_info"
+            },
+            {
+                "$replaceRoot": {
+                "newRoot": "$games"
+                }
+            }
+        ]
+        games = list(GameInfo.objects.aggregate(*thisweeksgames))
+        if not games:
+            be_logger.warning("No live games found for this week in the database.")
+        be_logger.debug(f"Retrieved {len(games)} games for this week.")
+        r.set(live_games_cache_key, pickle.dumps({"upcominggames": games}))
+        return {"upcominggames": games}
+    except Exception as e:
+        be_logger.error(f"Error occurred while fetching live games data: {str(e)}")
+        return None
+    finally:
+        live_games_query_running = False
+
 
 @log_and_catch_exceptions
 @app.route("/livegames", methods=['GET'])
 def live_games():
-    now = datetime.now()
-    in_three_days = now + timedelta(days=3)
-    be_logger.debug("Accessing /livegames")
-    thisweeksgames = [
-        {
-            "$match": {
-                "gamegame.scheduled": { 
-                    "$gte": now,
-                    "$lt": in_three_days
-                }
-            }
-        },
-        {
-            "$group": {
-                "_id": None, 
-                "distinctLeagueWeeks": { "$addToSet": "$gamegame.leagueweek" }
-            }
-        },
-        {
-            "$project": {
-                "_id": 0,
-                "distinctLeagueWeeks": 1
-            }
-        },
-        {
-            "$unwind": "$distinctLeagueWeeks"
-        },
-        {
-            "$lookup": {
-                "from": "GameInfo",
-                "localField": "distinctLeagueWeeks",
-                "foreignField": "gamegame.leagueweek",
-                "as": "games"
-            }
-        },
-        {
-            "$unwind": "$games"
-        },  
-        {
-            "$lookup": {
-                "from": "BoxscoreInfo",
-                "localField": "games._id",
-                "foreignField": "_id",
-                "as": "games.boxscore_info"
-            }
-        },
-        {
-            "$unwind": "$games.boxscore_info"
-        },
-        {
-            "$lookup": {
-                "from": "LeagueInfo",
-                "localField": "games.gamegame.leagueweek",
-                "foreignField": "_id",
-                "as": "games.league_info"
-            }
-        },
-        {
-            "$unwind": "$games.league_info"
-        },
-        {
-            "$lookup": {
-                "from": "SeasonStatPlayer",
-                "localField": "games.hometeam.id",
-                "foreignField": "teamid",
-                "as": "games.season_stat_player"
-            }
-        }, 
-        {
-            "$unwind": "$games.season_stat_player"
-        },
-        {
-            "$lookup": {
-                "from": "SeasonStatTeam",
-                "localField": "games.hometeam.id",
-                "foreignField": "teamid",
-                "as": "games.season_stat_team"
-            }
-        },
-        {
-            "$unwind": "$games.season_stat_team"
-        },
-        {
-            "$lookup": {
-                "from": "TeamInfo",
-                "localField": "games.hometeam.id",
-                "foreignField": "_id",
-                "as": "games.team_info"
-            }
-        },
-        {
-            "$unwind": "$games.team_info"
-        },
-        {
-            "$replaceRoot": {
-              "newRoot": "$games"
-            }
-        }
-    ]
-    be_logger.debug(f"thisweeksgames: {thisweeksgames}")
-    games = list(GameInfo.objects.aggregate(*thisweeksgames))
-
-    return jsonify({"upcominggames": games})
+    games_data = fetch_live_games_data()
+    if games_data:
+        return jsonify(games_data)
+    else:
+        return Response(json.dumps({"error": "Query is already running or an error occurred"}), status=500, mimetype='application/json')
 
 logger = logging.getLogger(__name__)
 flask_env = os.environ.get('FLASK_ENV')
@@ -862,7 +928,7 @@ if __name__ == "__main__":
     clear_cache()
     if flask_env == 'development' and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         data = data if data else FootballData()
-        app.run(host='localhost', port=5000, debug=True, ssl_context="adhoc", use_reloader=True)
+        app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=True)
     elif flask_env != 'development':
         # In production mode, just initialize as usual
         data = data if data else FootballData()

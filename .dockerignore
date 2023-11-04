@@ -3,6 +3,10 @@
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/engine/reference/builder/#dockerignore-file
+.azdo
+.github
+.pytest_cache
+assets
 
 **/.DS_Store
 **/.dockerignore
@@ -49,3 +53,7 @@ portainer-agent-loadbalancer.yaml
 Website2.code-workspace
 Zepor.code-profile
 /logs
+.ignore/
+/.ignore
+/.venv
+.venv/
