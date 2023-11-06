@@ -1,8 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
-
-name: Build and deploy Python app to Azure Web App - Django-Python-Backend
+name: Build, Push and Deploy to AKS
 
 on:
   push:
@@ -10,60 +6,53 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Python version
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
+    - name: Login to Azure Container Registry
+      uses: docker/login-action@v1 
+      with:
+        registry: loveofsports.azurecr.io
+        username: ${{ env.AZURE_CLIENT_ID }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - name: Create and start virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-
-      - name: Install dependencies
-        run: |
-          cd src
-          pip install -r requirements.txt
-
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-
-      - name: Upload artifact for deployment jobs
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-app
-          path: |
-            release.zip
-            !venv/
+    - name: Build and push Docker images
+      run: |
+        docker-compose -f docker-compose.yml build
+        docker-compose -f docker-compose.yml push
 
   deploy:
+    needs: build-and-push
     runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: python-app
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
+    - name: Set up Kubectl
+      uses: azure/setup-kubectl@v1
 
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
-        with:
-          app-name: 'Django-Python-Backend'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B8E7331541B46198DB8230BB7D369D6 }}
+    - name: Login to Azure AKS
+      run: az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+
+    - name: Deploy to AKS
+      run: kubectl apply -f path_to_kubernetes_manifests/
+
+    # If using Git LFS, ensure LFS objects are pulled
+    - name: Pull Git LFS objects
+      run: git lfs pull

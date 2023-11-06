@@ -1,37 +1,44 @@
-# Simple Flask AZD Template
+# NFLSTATS Development Environment
+This is the NFLSTATS project, designed to provide statistical insights for the NFL.
+## THIS APP NEEDS A TON OF WORK 
+## 1. PIPELINES FROM SPORTS RADAR APIS FOR LIVE DATA 
+## 2. OTHER ADVANCED ANALYTICS DATASOURCES FOR ADDTIONAL ANALYSIS FOR AN AI MODEL
+## 3. DATA VISUALIZATION/DISPLAY
+## 4. ADDING OTHER SPORTS
+## 5. MAKING AI MODELS FOR SPECIFIC GAMES AND THEIR CONFIDENCE INTERVALS IN A PARTICULAR BET
+This guide will help you set up the environment using GitHub Codespaces or set it up locally using Docker and Docker Compose. Be aware the application is half built right now. It needs quite a bit of TLC. THis is my first project, feel free to critisize and make recommendations as you see fit!
 
-The most basic Flask "hello world" application as an AZD template ready for Azure App Service
 
 ![system diagram](diagram.png)
 
-## Usage
+## Using GitHub Codespaces
 
-1. Install AZD and run the following command to initialize the project.
+1. **Fork and Clone**: Fork this repository to your GitHub account and then clone it.
+2. **Open in Codespaces**: In your GitHub repository, click on the "Code" button and select "Open with Codespaces". This will open the project in a virtual environment with all the dependencies and settings configured.
+3. **Run the App**: Once in Codespaces, you can start the backend and frontend services as you would on your local machine.
 
-```bash
-azd init --template tonybaloney/simple-flask-azd
-```
+## Setting Up Locally
 
-This command will clone the code to your current folder and prompt you for the following information:
-
-- `Environment Name`: This will be used as a prefix for the resource group that will be created to hold all Azure resources. This name should be unique within your Azure subscription.
-
-2. Run the following command to build a deployable copy of your application, provision the template's infrastructure to Azure and also deploy the applciation code to those newly provisioned resources.
+1. **Clone the Repository**: If you haven't already, clone this repository to your local machine.
 
 ```bash
-azd up
-```
+git clone https://github.com/[your_username]/NFLSTATS.git
+cd NFLSTATS
 
-This command will prompt you for the following information:
-- `Azure Location`: The Azure location where your resources will be deployed.
-- `Azure Subscription`: The Azure Subscription where your resources will be deployed.
+Docker and Docker Compose: Ensure you have Docker and Docker Compose installed on your local machine. If not, you can download them from the official Docker website.
 
-> NOTE: This may take a while to complete as it executes three commands: `azd package` (builds a deployable copy of your application), `azd provision` (provisions Azure resources), and `azd deploy` (deploys application code). You will see a progress indicator as it packages, provisions and deploys your application.
+Build and Start Services: Use Docker Compose to build and start the services defined in the docker-compose.yml file.
 
-3. Then make changes to app.py and run `azd deploy` again to update your changes.
+bash
+Copy code
+docker-compose up --build
+Access the App: Once the services are up and running, you can access the app via your web browser.
+Notes
+Ensure your Docker environment has enough resources (CPU, RAM) allocated to run all the services smoothly.
+If you encounter any issues or have suggestions, please raise an issue on the GitHub repository.
+Contributions are always welcome! Feel free to create pull requests with improvements or new features.
+csharp
+Copy code
 
-## Notes
 
-This uses the F1 (free) SKU for app service, which has limited CPU and RAM resources.
-
-See the [pricing calculator](https://azure.microsoft.com/en-au/pricing/calculator/) for details on paid SKUs replace the SKU option with a suitable choice.
+You can copy and paste this directly into your markdown file, and it should render as intended on platforms like GitHub.

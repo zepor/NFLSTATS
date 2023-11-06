@@ -28,8 +28,6 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script frAplate
-#  before PyInstaller builds the exe, so as to inject daA infos into it.
 *.manifest
 *.spec
 
@@ -84,13 +82,6 @@ ipython_config.py
 # pyenv
 .python-version
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to iAipfile.lock in version control.
-#   However, in case of collaboration, if having platforAic dependencies or dependencies
-#   having no cross-platform support, pipenv may installAncies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
@@ -100,15 +91,6 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -127,12 +109,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.vscode/settings.json
-.azure
 
-nifi/
-.Website2.code-workspace
-node_modules
-Secrets/
-frontend-container/public/static/images/users/Docker Desktop Installer.exe
-templates/
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Misc
+#.vscode/settings.json
+#.azure
+#nifi/
+#.Website2.code-workspace
+#node_modules
+#Secrets/
+#frontend-container/public/static/images/users/Docker Desktop #Installer.exe
+#templates/

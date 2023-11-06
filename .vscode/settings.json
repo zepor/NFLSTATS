@@ -1,0 +1,15 @@
+{
+  "python.testing.pytestArgs": ["src"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "none",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "yaml.schemas": {
+    "kubernetes://schema/v1@service": "file:///c%3A/Users/johnb/Website2/combined-k8s-manifests.yaml"
+  },
+  "DockerRun.DisableAutoGenerateConfig": true
+}
