@@ -5,6 +5,6 @@ metadata:
   template: simple-flask-webapp@0.0.1-beta
 services:
   app:
-    project: ./src/run.py
+    project: ./backend-container/src/run.py
     language: py
     host: appservice

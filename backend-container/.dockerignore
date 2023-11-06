@@ -1,0 +1,7 @@
+Dockerfile.python
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/

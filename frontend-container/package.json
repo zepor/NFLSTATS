@@ -1,0 +1,46 @@
+{
+  "name": "website2",
+  "version": "1.0.0",
+  "description": "The most basic Flask \"hello world\" application as an AZD template ready for Azure App Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start-server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zepor/NFLSTATS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zepor/NFLSTATS/issues"
+  },
+  "homepage": "https://github.com/zepor/NFLSTATS#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "/app/jest.setup.js",
+      "/app/filemock.js"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "/app/filemock.js"
+    }
+  }
+}

@@ -1,15 +1,13 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
-  ],
-  "settings": {
-    "[python]": {
-      "editor.defaultFormatter": "ms-python.autopep8"
-    },
-    "python.formatting.provider": "none",
-    "DockerRun.DisableDockerrc": true,
-    "DockerRun.Containers": []
-  }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"yaml.schemas": {
+			"kubernetes://schema/v1@service": "file:///c%3A/Users/johnb/Website2/combined-k8s-manifests.yaml"
+		},
+		"DockerRun.DisableAutoGenerateConfig": true
+	}
 }

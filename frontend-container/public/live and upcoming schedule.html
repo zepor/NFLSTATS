@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function GameDateHeader({ date }) {
+    return <h4>{new Date(date).toDateString()}</h4>;
+}
+
+function GameCard({ game }) {
+    return (
+        <div className="card mb-4">
+            <h5 className="card-header">
+                {game.awayteam.name} ({game.awayteam.alias}) VS 
+                {game.hometeam.name} ({game.hometeam.alias})
+            </h5>
+            <div className="card-body">
+                <p>Broadcast: {game.broadcast.network}</p>
+                <p>Game Type: {game.gamegame.game_type}</p>
+                <p>Scheduled Time: {new Date(game.gamegame.scheduled).toLocaleTimeString()}</p>
+                <p>Status: {game.gamegame.status}</p>
+                {/* Add more details as needed */}
+            </div>
+        </div>
+    );
+}
+
+
+function LiveGamesWidget() {
+    const [games, setGames] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios.get('/livegames')
+            .then(response => {
+                setGames(response.data.upcominggames);
+            })
+            .catch(err => {
+                setError("Error fetching live games data.");
+            });
+    }, []);
+
+    if (error) {
+        return <div className="alert alert-danger">{error}</div>;
+    }
+
+    // Organize games by date
+    let datewiseData = {};
+    games.forEach(game => {
+        let date = new Date(game.gamegame.scheduled);
+        let dateString = date.toISOString().split('T')[0];
+
+        if (!datewiseData[dateString]) {
+            datewiseData[dateString] = [];
+        }
+        datewiseData[dateString].push(game);
+    });
+
+    return (
+        <div className="container">
+            <h2>Live Games</h2>
+            {Object.keys(datewiseData).map(date => (
+                <div key={date} className="my-3">
+                    <GameDateHeader date={date} />
+                    {datewiseData[date].map(game => (
+                        <GameCard key={game._id} game={game} />
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default LiveGamesWidget;
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Put all your API routes here
+
+// The "catchall" handler: for any request that doesn't match any routes above, send back the React index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});

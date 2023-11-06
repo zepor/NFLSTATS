@@ -132,3 +132,7 @@ dmypy.json
 
 nifi/
 .Website2.code-workspace
+node_modules
+Secrets/
+frontend-container/public/static/images/users/Docker Desktop Installer.exe
+templates/
