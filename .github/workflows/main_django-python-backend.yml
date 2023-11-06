@@ -22,6 +22,33 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Create .env file
+      run: |
+        echo "FLASK_ENV=${{ secrets.FLASK_ENV }}" >> .env
+        echo "WORKERS=${{ secrets.WORKERS }}" >> .env
+        echo "WORKSPACE=${{ secrets.WORKSPACE }}" >> .env
+        echo "ACR_NAME=${{ secrets.ACR_NAME }}" >> .env
+        echo "ACR_PASSWORD=${{ secrets.ACR_PASSWORD }}" >> .env
+        echo "APIKEY=${{ secrets.APIKEY }}" >> .env
+        echo "API_THROTTLE=${{ secrets.API_THROTTLE }}" >> .env
+        echo "AZUREAPPSERVICE_PUBLISHPROFILE_0B8E7331541B46198DB8230BB7D369D6=${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B8E7331541B46198DB8230BB7D369D6 }}" >> .env
+        echo "AZURE_CREDENTIALS=${{ secrets.AZURE_CREDENTIALS }}" >> .env
+        echo "AZURE_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> .env
+        echo "AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}" >> .env
+        echo "CERTFILE_PATH=${{ secrets.CERTFILE_PATH }}" >> .env
+        echo "CRTFILEPATH=${{ secrets.CRTFILEPATH }}" >> .env
+        echo "DEBUG_MODE=${{ secrets.DEBUG_MODE }}" >> .env
+        echo "FLASK_APP=${{ secrets.FLASK_APP }}" >> .env
+        echo "GITTOKE=${{ secrets.GITTOKE }}" >> .env
+        echo "KEYFILE_PATH=${{ secrets.KEYFILE_PATH }}" >> .env
+        echo "LOGFILE_PATH=${{ secrets.LOGFILE_PATH }}" >> .env
+        echo "MAVEN_OPTS=${{ secrets.MAVEN_OPTS }}" >> .env
+        echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env
+        echo "REDIS_HOST=${{ secrets.REDIS_HOST }}" >> .env
+        echo "REDIS_PASS=${{ secrets.REDIS_PASS }}" >> .env
+        echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+        echo "SSL_KEY_PASSWORD=${{ secrets.SSL_KEY_PASSWORD }}" >> .env
 
     - name: Login to Azure Container Registry
       uses: docker/login-action@v1 
