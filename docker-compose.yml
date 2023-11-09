@@ -34,6 +34,8 @@ services:
       - ./backend-container/src:/Website2/src  # Updated relative path for the src directory
       - ./Secrets:/Website2/Secrets
       - ./backend-container/requirements.txt:/Website2/requirements.txt  # Updated path to requirements.txt
+      - ./frontend-container/public:/Website2/frontend/public
+      - ./frontend-container/src:/Website2/frontend/src
     networks:
       - mynetwork
     working_dir: /Website2
@@ -53,8 +55,9 @@ services:
       dockerfile: Dockerfile.react
     ports:
       - 3000:3000
+      - 3001:3001
     networks:
       - mynetwork
     working_dir: /app
     volumes:
-      - frontend_data:/app
+      - ./frontend-container/:/app

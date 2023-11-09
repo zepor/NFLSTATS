@@ -14,6 +14,21 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
+});
+
+server.on('error', (error) => {
+  console.error('Error starting server:', error);
+});
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    // Close your server here (if applicable)
+    process.exit();
+});
+
+process.on('SIGTERM', function() {
+    console.log("Caught termination signal");
+    // Close your server here (if applicable)
+    process.exit();
 });

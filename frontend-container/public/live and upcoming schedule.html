@@ -27,16 +27,23 @@ function GameCard({ game }) {
 function LiveGamesWidget() {
     const [games, setGames] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.get('/livegames')
             .then(response => {
                 setGames(response.data.upcominggames);
+                setLoading(false);
             })
             .catch(err => {
                 setError("Error fetching live games data.");
+                setLoading(false);
             });
     }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     if (error) {
         return <div className="alert alert-danger">{error}</div>;

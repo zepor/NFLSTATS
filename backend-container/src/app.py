@@ -91,8 +91,10 @@ for attempt in range(1, MAX_RETRIES + 1):
             logging.error("MongoDB server not available after maximum retries.")
             # Handle maximum retries reached scenario, e.g., raise an exception or exit the script
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-app = Flask(__name__, template_folder=os.path.join(BASE_DIR, 'templates'),
-            static_folder=os.path.join(BASE_DIR, 'templates', 'static'))
+template_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'Website2' ,'frontend', 'public')
+static_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'Website2' , 'frontend', 'public', 'static')
+app = Flask(__name__, template_folder=template_path, static_folder=static_path)
+
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.INFO)
 log_dir = './logs/'
@@ -110,10 +112,13 @@ console_formatter = logging.Formatter(
     '%(asctime)s - %(levelname)s - %(message)s')
 console_handler.setFormatter(console_formatter)
 be_logger.addHandler(console_handler)
-be_logger.info(os.getenv('FLASK_APP'))
-be_logger.info(os.getenv('FLASK_ENV'))
+be_logger.info('%s', os.getenv('FLASK_APP'))
+be_logger.info('%s', os.getenv('FLASK_ENV'))
+be_logger.info('Template Path: %s', template_path)
+be_logger.info('Static_path: %s', static_path)
+
 for key, value in app.config.items():
-    be_logger.info(f"{key}: {value}")
+    be_logger.info('%s: %s', key, value)
 CORS(app, origins='https://0.0.0.0')
 scheduler = BackgroundScheduler()
 try:
@@ -122,7 +127,6 @@ try:
     be_logger.info("Connected to Redis")
 except redis.exceptions.ConnectionError as ex:
     be_logger.info("Could not connect to Redis:", str(ex))
-
 cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
 live_games_query_running = False
 # If the data exists, try to deserialize it
@@ -136,6 +140,7 @@ app.config['MONGODB_SETTINGS'] = {
     'db': 'current_season',  
     'host': mongodb_url
 }
+app.debug = True
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
@@ -316,6 +321,7 @@ def clear_cache():
 @app.route('/')
 def index():
     try:
+        be_logger.info("Fetching live games data...")
         fetched_data = fetch_live_games_data()
         if fetched_data and "upcominggames" in fetched_data:
             live_games_data = fetched_data["upcominggames"]
@@ -325,11 +331,15 @@ def index():
             else:
                 live_games_cache_key = "livegames_cache"
                 r.set(live_games_cache_key, pickle.dumps(live_games_data))
+                be_logger.info("Live games data was fetched and cached successfully.")
         else:
             live_games_data = []
             be_logger.warning("fetch_live_games_data did not return expected data format.")
+        be_logger.info("Fetching current year and season type...")
         current_year, current_season_type, _, _ = get_season_info_and_selected(request)
         data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
+        be_logger.info(f"Current year: {current_year}, Current season type: {current_season_type}")
+        be_logger.info("Fetching AllSeasonsTeamStatDetails cache...")
         cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
         if cached_data is None:
             be_logger.info("Cache is empty, fetching data...")
@@ -340,6 +350,7 @@ def index():
             r.set("get_AllSeasonsTeamStatDetails_cache", redis_data)
             be_logger.debug("First 200 chars of cached data: %s", str(redis_data)[:200])
             data.get_AllSeasonsTeamStatDetails_cache = results_data
+            be_logger.info("AllSeasonsTeamStatDetails cache was fetched and cached successfully.")
         else:
             be_logger.info("Cache hit, loading cached data...")
             try:
@@ -347,10 +358,14 @@ def index():
             except pickle.UnpicklingError:
                 cached_results = json.loads(cached_data.decode())
             data.get_AllSeasonsTeamStatDetails_cache = cached_results
+            be_logger.info("AllSeasonsTeamStatDetails cache was loaded successfully.")
         be_logger.info(f"Count of documents in data.get_AllSeasonsTeamStatDetails_cache: {len(data.get_AllSeasonsTeamStatDetails_cache)}")
+        be_logger.info("Fetching year-season combinations cache...")
         year_season_combinations_cache = get_year_season_combinations(
             current_year, current_season_type) 
+        be_logger.info("Fetching or generating teams...")
         data.selected_teams = get_or_generate_teams()
+        be_logger.info("Rendering HTML content...")
         html_content = render_template(
             'index.html',
             year_season_combinations=year_season_combinations_cache,
@@ -362,9 +377,10 @@ def index():
         )
         renderindexresponse = make_response(html_content)
         renderindexresponse.headers['Access-Control-Allow-Origin'] = '*'
+        be_logger.info("Index route was executed successfully.")
         return renderindexresponse
     except Exception as e:
-        be_logger.error(f"Error occurred in index route: {str(e)}")
+        be_logger.error(f"Error occurred in index route: {str(e)}", exc_info=True)
         return f"An error occurred: {str(e)}", 500
 
 
@@ -559,7 +575,6 @@ def structure_data_for_categories():
             offensive_leaders = {}
             be_logger.error(
                 f"structure_data_for_categories: Offensive Leaders Data: {offensive_leaders}")
-        
         try:
             be_logger.info(
                 "structure_data_for_categories: Preparing Defensive Leaders...")
@@ -974,10 +989,7 @@ def fetch_live_games_data():
         }
     }, {
         '$replaceRoot': {
-            'newRoot': '$games'
-        }
-    }
-]
+            'newRoot': '$games'}}]
         games = list(GameInfo.objects.aggregate(*thisweeksgames))
         for game in games:
             if not validate_document(game):

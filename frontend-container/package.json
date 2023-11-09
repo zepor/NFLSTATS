@@ -4,8 +4,11 @@
   "description": "The most basic Flask \"hello world\" application as an AZD template ready for Azure App Service",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start-server": "node server.js"
+    "test": "jest src",
+    "start-server": "node server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/zepor/NFLSTATS#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@testing-library/jest-dom": "^6.1.4",
@@ -26,7 +30,8 @@
     "babel-jest": "^29.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "react-scripts": "^5.0.1"
   },
   "jest": {
     "verbose": true,
@@ -44,6 +49,37 @@
     }
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "axios": "^1.6.1",
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "web-vitals": "^3.5.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ]
   }
 }

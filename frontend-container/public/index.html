@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
   <meta content="Coderthemes" name="author" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
   <!-- PLACE IN BOTH INDEX.HTML HEAD AND VENUES.HTML HEAD-->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1667,8 +1667,8 @@
     updateTitle("NFL Stats");
   });
 
-  // Function to load dashboard content
-  function loadDashboardContent() {
+  // Function to load Live Games Content content
+  function loadLiveGamesContent() {
     var content = document.querySelector(".flex-content");
     content.innerHTML = ""; // Clear previous content
     var iframe = document.createElement("iframe");
@@ -1676,8 +1676,24 @@
     iframe.style.width = "100%";
     iframe.style.height = "1000px";
     content.appendChild(iframe);
-    updateTitle("Dashboard");
+    updateTitle("Current Week Schedule");
   }
+
+  // Function to load dashboard content
+    function loadDashboardContent() {
+      var content = document.querySelector(".flex-content");
+      content.innerHTML = ""; // Clear previous content
+      var iframe = document.createElement("iframe");
+      iframe.src = "/get-data";
+      iframe.src = "/populate-seasons";
+      iframe.src = "/populate-teams";
+      iframe.src = "/get-top10-dat";
+      iframe.style.width = "100%";
+      iframe.style.height = "1000px";
+      content.appendChild(iframe);
+      updateTitle("Dashboard");
+    }
+
 
   // Load dashboard content on initial page load
   document.addEventListener("DOMContentLoaded", function () {
@@ -1686,7 +1702,7 @@
 
   // Load dashboard content when the "Dashboard", "liveGamesButton", and "homeButton" buttons are clicked
 
-  document.getElementById("liveGamesButton").addEventListener("click", loadDashboardContent);
+  document.getElementById("liveGamesButton").addEventListener("click", loadLiveGamesContent);
   document.getElementById("homeButton").addEventListener("click", loadDashboardContent);
 
   </script>
