@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "applicationinsights": "^2.9.1",
     "bootstrap": "^5.3.2",
     "react-bootstrap": "^2.9.1"
   },
-  "BridgeToKubernetes": {    
+  "BridgeToKubernetes": {
     "commandName": "AzureDevSpacesLocal",
     "launchBrowser": true,
     "useKubeServiceEnvironmentVariables": true
-  } 
+  }
 }
-
