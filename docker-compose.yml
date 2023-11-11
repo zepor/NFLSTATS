@@ -22,20 +22,28 @@ services:
       - mynetwork
     ports:
       - 6379:6379
+    environment:
+      - REDIS_SERVICE_HOST=172.16.238.3
+      - REDIS_SERVICE_PORT=6379
+      - REDIS_PORT=tcp://172.16.238.3:6379
+      - REDIS_PORT_6379_TCP=tcp://172.16.238.3:6379
+      - REDIS_PORT_6379_TCP_PROTO=tcp
+      - REDIS_PORT_6379_TCP_PORT=6379
+      - REDIS_PORT_6379_TCP_ADDR=172.16.238.3
   backend:
     container_name: backend
     build:
-      context: ./backend-container  # Updated path to backend-container directory
+      context: ./backend-container
       dockerfile: Dockerfile.python
     image: python:3.9.18
     ports:
       - 5000:5000 
     volumes:
-      - ./backend-container/src:/Website2/src  # Updated relative path for the src directory
+      - ./backend-container/src:/Website2/src
       - ./Secrets:/Website2/Secrets
-      - ./backend-container/requirements.txt:/Website2/requirements.txt  # Updated path to requirements.txt
-      - ./frontend-container/public:/Website2/frontend/public
-      - ./frontend-container/src:/Website2/frontend/src
+      - ./backend-container/requirements.txt:/Website2/requirements.txt
+      - ./javascript/public:/Website2/frontend/public
+      - ./javascript/src:/Website2/frontend/src
     networks:
       - mynetwork
     working_dir: /Website2
@@ -47,11 +55,18 @@ services:
       - KEYFILE_PATH=/Website2/Secrets/key_without_pass.pem
       - CERTFILE_PATH=/Website2/Secrets/Loveoffootball.crt
       - PYTHONDONTWRITEBYTECODE=1
+      - BACKENDEND_SERVICE_HOST=172.16.238.2
+      - BACKENDEND_SERVICE_PORT=5000
+      - BACKENDEND_PORT=tcp://172.16.238.2:5000
+      - BACKENDEND_PORT_5000_TCP=tcp://172.16.238.2:5000
+      - BACKENDEND_PORT_5000_TCP_PROTO=tcp
+      - BACKENDEND_PORT_5000_TCP_PORT=5000
+      - BACKENDEND_PORT_5000_TCP_ADDR=172.16.238.2
     command: python src/run.py
   frontend:
     container_name: frontend
     build:
-      context: ./frontend-container  # Updated path to frontend-container directory
+      context: ./javascript
       dockerfile: Dockerfile.react
     ports:
       - 3000:3000
@@ -59,5 +74,13 @@ services:
     networks:
       - mynetwork
     working_dir: /app
-    volumes:
-      - ./frontend-container/:/app
+    environment:
+      - NODE_ENV=development
+      - FRONTEND_SERVICE_HOST=172.16.238.4
+      - FRONTEND_SERVICE_PORT=3000
+      - FRONTEND_PORT=tcp://172.16.238.4:3000
+      - FRONTEND_PORT_3000_TCP=tcp://172.16.238.4:3000
+      - FRONTEND_PORT_3000_TCP_PROTO=tcp
+      - FRONTEND_PORT_3000_TCP_PORT=3000
+      - FRONTEND_PORT_3000_TCP_ADDR=172.16.238.4
+
