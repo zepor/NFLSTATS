@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:d="http://feed.elasticstats.com/schema/draft/trades-v1.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/draft/trades-v1.0.xsd"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="common-v1.0.xsd" />
+
+    <xs:complexType name="draftType">
+        <xs:sequence>
+            <xs:element name="league" type="d:leagueType"/>
+            <xs:element name="broadcast" type="d:broadcastType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="venue" type="d:venueType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="trades" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="trade" minOccurs="0" maxOccurs="unbounded" type="d:tradeType" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup  ref="d:baseDraftAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="tradeType">
+        <xs:sequence>
+            <xs:element name="transactions" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="transaction" minOccurs="0" maxOccurs="unbounded" type="d:transactionType" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup  ref="d:baseTradeAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="transactionType">
+        <xs:sequence>
+            <xs:element name="team" minOccurs="2" maxOccurs="2">
+               <xs:complexType>
+                   <xs:attribute name="direction" use="optional" type="xs:string" />
+                   <xs:attributeGroup ref="d:baseTeamAttributes" />
+               </xs:complexType>
+           </xs:element>
+           <xs:element name="items" minOccurs="0" maxOccurs="1">
+               <xs:complexType>
+                   <xs:sequence>
+                       <xs:element name="item" minOccurs="0" maxOccurs="unbounded" type="d:itemType" />
+                   </xs:sequence>
+               </xs:complexType>
+           </xs:element>
+       </xs:sequence>
+       <xs:attribute name="id" use="required" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="itemType">
+        <xs:sequence>
+            <xs:element name="player" minOccurs="0" maxOccurs="unbounded" type="d:playerType" />
+            <xs:element name="coach" minOccurs="0" maxOccurs="unbounded" type="d:coachType" />
+            <xs:element name="pick" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="round" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="d:baseRoundAttributes" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="d:basePickAttributes" />
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="future_pick" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="year" use="optional" type="xs:integer" />
+                    <xs:attribute name="round" use="optional" type="xs:integer" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" use="required" type="xs:string" />
+        <xs:attribute name="type" use="required" type="xs:string" />
+        <xs:attribute name="amount" use="optional" type="xs:string" />
+    </xs:complexType>
+
+    <xs:element name="draft"  type="d:draftType"/>
+</xs:schema>

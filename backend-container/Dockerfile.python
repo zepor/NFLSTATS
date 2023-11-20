@@ -1,5 +1,5 @@
 FROM python:3.9.18
-WORKDIR /Website2
+WORKDIR /ssweb
 
 # System dependencies
 RUN apt-get update && \

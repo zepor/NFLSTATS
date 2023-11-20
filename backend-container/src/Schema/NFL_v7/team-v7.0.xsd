@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:t="http://feed.elasticstats.com/schema/football/team-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/team-v7.0.xsd"
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+  <xs:complexType name="teamProfileType">
+    <xs:sequence>
+      <xs:element ref="t:franchise" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="venue" minOccurs="0" maxOccurs="1" type="t:venueType"/>
+      <xs:element name="hierarchy" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="division"   type="t:organizationType" />
+            <xs:element name="conference" type="t:organizationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element ref="t:references" minOccurs="0" maxOccurs="1"/>
+
+      <xs:element name="coaches" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="coach" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:attribute name="id"         use="optional" type="xs:string"/>
+                <xs:attribute name="full_name"  use="optional" type="xs:string"/>
+                <xs:attribute name="first_name" use="optional" type="xs:string"/>
+                <xs:attribute name="last_name"  use="optional" type="xs:string" />
+                <xs:attribute name="position"   use="optional" type="xs:string" />
+                <xs:attribute name="name_suffix" use="optional" type="xs:string"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="team_colors" minOccurs="0" maxOccurs="1" type="t:teamColorsType"/>
+
+      <xs:element name="players" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="player" minOccurs="0" maxOccurs="unbounded" type="t:playerProfileType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="t:baseTeamAttributes" />
+    <xs:attribute name="owner" use="optional" type="xs:string" />
+    <xs:attribute name="general_manager" use="optional" type="xs:string" />
+    <xs:attribute name="president" use="optional" type="xs:string" />
+    <xs:attribute name="mascot" use="optional" type="xs:string" />
+    <xs:attribute name="nicknames" use="optional" type="xs:string" />
+    <xs:attribute name="fight_song" use="optional" type="xs:string" />
+    <xs:attribute name="championships_won" use="optional" type="xs:integer" />
+    <xs:attribute name="championship_seasons" use="optional" type="xs:string" />
+    <xs:attribute name="conference_titles" use="optional" type="xs:integer" />
+    <xs:attribute name="division_titles" use="optional" type="xs:integer" />
+    <xs:attribute name="playoff_appearances" use="optional" type="xs:integer" />
+  </xs:complexType>
+
+  <xs:element name="team" type="t:teamProfileType" />
+
+  <xs:complexType name="organizationType">
+    <xs:attributeGroup ref="t:baseOrganizationAttributes" />
+  </xs:complexType>
+
+    <xs:complexType name="playerProfileType">
+      <xs:sequence>
+        <xs:element name="draft" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="team" minOccurs="0" maxOccurs="1" type="t:teamType" />
+            </xs:sequence>
+            <xs:attribute name="number" use="optional" type="xs:integer"/>
+            <xs:attribute name="round"  use="optional" type="xs:integer"/>
+            <xs:attribute name="year"   use="optional" type="xs:integer"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="t:references" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+
+      <xs:attributeGroup ref="t:extPlayerAttributes" />
+
+    </xs:complexType>
+
+
+</xs:schema>

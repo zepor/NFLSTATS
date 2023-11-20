@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:s="http://feed.elasticstats.com/schema/football/statistics-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/statistics-v7.0.xsd"
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-game-v7.0.xsd" />
+  <xs:include schemaLocation="common-statistics-v7.0.xsd" />
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element name="weather" minOccurs="0" maxOccurs="1" type="s:weatherType"/>
+      <xs:element name="summary"  minOccurs="1" maxOccurs="1" type="s:summaryType"/>
+      <xs:element name="team" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rushing" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:rushingAttributes" />
+                      <xs:attributeGroup ref="s:extRushingAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:rushingAttributes" />
+                <xs:attributeGroup ref="s:extRushingAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="receiving" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:receivingAttributes" />
+                      <xs:attributeGroup ref="s:extReceivingAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:receivingAttributes" />
+                <xs:attributeGroup ref="s:extReceivingAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="punts" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element  name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:puntAttributes" />
+                      <xs:attributeGroup ref="s:extPuntAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:puntAttributes" />
+                <xs:attributeGroup ref="s:extPuntAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="punt_returns" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:puntReturnAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:puntReturnAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="penalties" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:penaltyAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:penaltyAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="passing" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:passingAttributes" />
+                      <xs:attributeGroup ref="s:extPassingAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:passingAttributes" />
+                <xs:attributeGroup ref="s:extPassingAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="misc_returns" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:miscReturnAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:miscReturnAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="kickoffs" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:kickoffAttributes" />
+                      <xs:attributeGroup ref="s:extKickoffAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:kickoffAttributes" />
+                <xs:attributeGroup ref="s:extKickoffAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="kick_returns" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:kickReturnAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:kickReturnAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="int_returns" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:baseReturnAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:baseReturnAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="fumbles" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:fumbleAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:fumbleAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="field_goals" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:fieldgoalAttributes" />
+                      <xs:attributeGroup ref="s:extFieldgoalAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:fieldgoalAttributes" />
+                <xs:attributeGroup ref="s:extFieldgoalAttributes" />
+                <xs:attribute name="net_attempts" type="xs:integer"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="defense" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:basePlayerAttributes" />
+                      <xs:attributeGroup ref="s:defenseAttributes" />
+                      <xs:attributeGroup ref="s:extDefenseAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="s:defenseAttributes" />
+                <xs:attributeGroup ref="s:extDefenseAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="extra_points" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="kicks" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attributeGroup ref="s:basePlayerAttributes" />
+                            <xs:attributeGroup ref="s:kickAttributes" />
+                            <xs:attributeGroup ref="s:extKickAttributes" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attributeGroup ref="s:kickAttributes" />
+                      <xs:attributeGroup ref="s:extKickAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="conversions" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attributeGroup ref="s:basePlayerAttributes" />
+                            <xs:attribute name="attempts" use="required" type="xs:integer" />
+                            <xs:attribute name="successes" use="required" type="xs:integer" />
+                            <xs:attribute name="category" use="required">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="pass" />
+                                  <xs:enumeration value="receive" />
+                                  <xs:enumeration value="rush" />
+                                  <xs:enumeration value="defense" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="pass_attempts"      use="required" type="xs:integer"/>
+                      <xs:attribute name="pass_successes"     use="required" type="xs:integer"/>
+                      <xs:attribute name="rush_attempts"      use="required" type="xs:integer"/>
+                      <xs:attribute name="rush_successes"     use="required" type="xs:integer"/>
+                      <xs:attribute name="turnover_successes" use="optional" type="xs:integer" />
+                      <xs:attribute name="defense_attempts"   use="optional" type="xs:integer" />
+                      <xs:attribute name="defense_successes"  use="optional" type="xs:integer" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="special_conversions" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attributeGroup ref="s:basePlayerAttributes" />
+                            <xs:attribute name="attempts" use="required" type="xs:integer" />
+                            <xs:attribute name="successes" use="required" type="xs:integer" />
+                            <xs:attribute name="category" use="required">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="pass" />
+                                  <xs:enumeration value="receive" />
+                                  <xs:enumeration value="rush" />
+                                  <xs:enumeration value="defense" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="pass_three_point_attempts"      use="required" type="xs:integer"/>
+                      <xs:attribute name="pass_three_point_successes"     use="required" type="xs:integer"/>
+                      <xs:attribute name="rush_three_point_attempts"      use="required" type="xs:integer"/>
+                      <xs:attribute name="rush_three_point_successes"     use="required" type="xs:integer"/>
+                      <xs:attribute name="defense_three_point_attempts"   use="optional" type="xs:integer" />
+                      <xs:attribute name="defense_three_point_successes"  use="optional" type="xs:integer" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="efficiency" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="goaltogo" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:efficiencyAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="redzone" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:efficiencyAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="thirddown" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:efficiencyAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="fourthdown" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:attributeGroup ref="s:efficiencyAttributes" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="first_downs" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:firstdownAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="interceptions" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:interceptionAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="touchdowns" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:touchdownAttributes" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attributeGroup ref="s:baseTeamAttributes" />
+          <xs:attribute name="avg_gain"        use="optional" type="xs:decimal"/>
+          <xs:attribute name="fumbles"         use="optional" type="xs:integer"/>
+          <xs:attribute name="lost_fumbles"    use="optional" type="xs:integer"/>
+          <xs:attribute name="penalties"       use="optional" type="xs:integer"/>
+          <xs:attribute name="penalty_yards"   use="optional" type="xs:integer"/>
+          <xs:attribute name="play_count"      use="optional" type="xs:integer"/>
+          <xs:attribute name="possession_time" use="optional" type="xs:string"/>
+          <xs:attribute name="return_yards"    use="optional" type="xs:integer"/>
+          <xs:attribute name="rush_plays"      use="optional" type="xs:integer"/>
+          <xs:attribute name="safeties"        use="optional" type="xs:integer"/>
+          <xs:attribute name="total_yards"     use="optional" type="xs:integer"/>
+          <xs:attribute name="turnovers"       use="optional" type="xs:integer"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseGameAttributes" />
+    <xs:attributeGroup ref="s:extGameAttributes" />
+  </xs:complexType>
+
+  <xs:element name="game" type="s:gameType" />
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+      <xs:element name="team" minOccurs="0"  maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="team_records" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="record"    minOccurs="0" maxOccurs="1" type="s:seasonalTeamRecordType"/>
+                  <xs:element name="opponents" minOccurs="0" maxOccurs="1" type="s:seasonalTeamRecordType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="player_records" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="player" minOccurs="0" maxOccurs="unbounded" type="s:seasonalPlayerRecordType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attributeGroup ref="s:baseTeamAttributes" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseSeasonAttributes" />
+  </xs:complexType>
+
+  <xs:element name="season" type="s:seasonType" />
+
+  <xs:complexType name="seasonalTeamRecordType">
+    <xs:sequence>
+      <xs:element name="touchdowns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:touchdownAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rushing" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:rushingAttributes" />
+          <xs:attributeGroup ref="s:extRushingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="receiving" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:receivingAttributes" />
+          <xs:attributeGroup ref="s:extReceivingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="punts" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:puntAttributes" />
+          <xs:attributeGroup ref="s:extPuntAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="punt_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:puntReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="penalties" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:penaltyAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="passing" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:passingAttributes" />
+          <xs:attributeGroup ref="s:extPassingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="misc_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:miscReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kickoffs" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:kickoffAttributes" />
+          <xs:attributeGroup ref="s:extKickoffAttributes"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kick_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:kickReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="interceptions" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:interceptionAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="int_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:baseReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fumbles" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:fumbleAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="first_downs" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:firstdownAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="field_goals" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:fieldgoalAttributes" />
+          <xs:attributeGroup ref="s:extFieldgoalAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="efficiency" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="goaltogo" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:efficiencyAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="redzone" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:efficiencyAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="thirddown" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:efficiencyAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="fourthdown" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:efficiencyAttributes" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defense" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:defenseAttributes" />
+          <xs:attributeGroup ref="s:extDefenseAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extra_points" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="kicks" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attributeGroup ref="s:kickAttributes" />
+                <xs:attributeGroup ref="s:extKickAttributes" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="conversions" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attribute name="pass_attempts"      use="required" type="xs:integer"/>
+                <xs:attribute name="pass_successes"     use="required" type="xs:integer"/>
+                <xs:attribute name="rush_attempts"      use="required" type="xs:integer"/>
+                <xs:attribute name="rush_successes"     use="required" type="xs:integer"/>
+                <xs:attribute name="turnover_successes" use="optional" type="xs:integer" />
+                <xs:attribute name="defense_attempts"   use="optional" type="xs:integer" />
+                <xs:attribute name="defense_successes"  use="optional" type="xs:integer" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="special_conversions" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:attribute name="pass_three_point_attempts"      use="required" type="xs:integer"/>
+                <xs:attribute name="pass_three_point_successes"     use="required" type="xs:integer"/>
+                <xs:attribute name="rush_three_point_attempts"      use="required" type="xs:integer"/>
+                <xs:attribute name="rush_three_point_successes"     use="required" type="xs:integer"/>
+                <xs:attribute name="receive_three_point_attempts"   use="optional" type="xs:integer"/>
+                <xs:attribute name="receive_three_point_successes"  use="optional" type="xs:integer"/>
+                <xs:attribute name="defense_three_point_attempts"   use="optional" type="xs:integer" />
+                <xs:attribute name="defense_three_point_successes"  use="optional" type="xs:integer" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="games_played" use="required" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="seasonalPlayerRecordType">
+    <xs:sequence>
+      <xs:element name="rushing" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:rushingAttributes" />
+          <xs:attributeGroup ref="s:extRushingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="receiving" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:receivingAttributes" />
+          <xs:attributeGroup ref="s:extReceivingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="punts" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:puntAttributes" />
+          <xs:attributeGroup ref="s:extPuntAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="punt_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:puntReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="penalties" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:penaltyAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="passing" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:passingAttributes" />
+          <xs:attributeGroup ref="s:extPassingAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="misc_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:miscReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kickoffs" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:kickoffAttributes" />
+          <xs:attributeGroup ref="s:extKickoffAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kick_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:kickReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="int_returns" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:baseReturnAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fumbles" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:fumbleAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="first_downs" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:firstdownAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="field_goals" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:fieldgoalAttributes" />
+          <xs:attributeGroup ref="s:extFieldgoalAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extra_points" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:kickAttributes" />
+          <xs:attributeGroup ref="s:extKickAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defense" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="s:defenseAttributes" />
+          <xs:attributeGroup ref="s:extDefenseAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="conversions" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="pass_attempts"      use="required" type="xs:integer"/>
+          <xs:attribute name="pass_successes"     use="required" type="xs:integer"/>
+          <xs:attribute name="rush_attempts"      use="required" type="xs:integer"/>
+          <xs:attribute name="rush_successes"     use="required" type="xs:integer"/>
+          <xs:attribute name="receive_attempts"   use="required" type="xs:integer"/>
+          <xs:attribute name="receive_successes"  use="required" type="xs:integer"/>
+          <xs:attribute name="defense_attempts"   use="optional" type="xs:integer" />
+          <xs:attribute name="defense_successes"  use="optional" type="xs:integer" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="special_conversions" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="pass_three_point_attempts"      use="required" type="xs:integer"/>
+          <xs:attribute name="pass_three_point_successes"     use="required" type="xs:integer"/>
+          <xs:attribute name="rush_three_point_attempts"      use="required" type="xs:integer"/>
+          <xs:attribute name="rush_three_point_successes"     use="required" type="xs:integer"/>
+          <xs:attribute name="receive_three_point_attempts"   use="required" type="xs:integer"/>
+          <xs:attribute name="receive_three_point_successes"  use="required" type="xs:integer"/>
+          <xs:attribute name="defense_three_point_attempts"   use="optional" type="xs:integer" />
+          <xs:attribute name="defense_three_point_successes"  use="optional" type="xs:integer" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:basePlayerAttributes" />
+    <xs:attribute name="games_played" use="required" type="xs:integer"/>
+    <xs:attribute name="games_started" use="required" type="xs:integer"/>
+  </xs:complexType>
+
+</xs:schema>

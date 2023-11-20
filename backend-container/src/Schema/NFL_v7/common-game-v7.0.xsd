@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:include schemaLocation="common-v7.0.xsd"/>
+
+    <xs:complexType name="summaryType">
+        <xs:sequence>
+            <xs:element name="season" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="baseSeasonAttributes"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="week" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="baseWeekAttributes"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="venue" minOccurs="0" maxOccurs="1" type="venueType"/>
+            <xs:element name="home" minOccurs="1" maxOccurs="1" type="gameTeamType"/>
+            <xs:element name="away" minOccurs="1" maxOccurs="1" type="gameTeamType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="gameTeamType">
+        <xs:complexContent>
+            <xs:extension base="teamType">
+                <xs:sequence>
+                    <xs:element name="record" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:attribute name="wins" use="required" type="xs:integer"/>
+                            <xs:attribute name="losses" use="required" type="xs:integer"/>
+                            <xs:attribute name="ties" use="required" type="xs:integer"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="points"              use="optional" type="xs:integer"/>
+                <xs:attribute name="remaining_timeouts"  use="optional" type="xs:integer"/>
+                <xs:attribute name="used_timeouts"       use="optional" type="xs:integer"/>
+                <xs:attribute name="remaining_challenges"  use="optional" type="xs:integer"/>
+                <xs:attribute name="used_challenges"       use="optional" type="xs:integer"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="fieldSituationType">
+        <xs:sequence>
+            <xs:element name="possession" minOccurs="0" maxOccurs="1" type="teamType"/>
+            <xs:element name="location" minOccurs="0" maxOccurs="1" type="fieldLocationType"/>
+        </xs:sequence>
+        <xs:attribute name="clock" use="required" type="xs:string"/>
+        <xs:attribute name="down" use="optional" type="xs:integer"/>
+        <xs:attribute name="yfd" use="required" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:complexType name="fieldLocationType">
+        <xs:attributeGroup ref="baseTeamAttributes"/>
+        <xs:attribute name="yardline" use="required" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="baseGameEventAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="sequence" use="required" type="xs:decimal"/>
+        <xs:attribute name="reference" use="optional" type="xs:integer"/>
+        <xs:attribute name="clock" use="optional" type="xs:string"/>
+        <xs:attribute name="wall_clock" use="optional" type="xs:dateTime"/>
+        <xs:attribute name="deleted" use="optional" type="xs:boolean"/>
+        <xs:attribute name="source" use="optional"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="gameEventType">
+        <xs:sequence minOccurs="0">
+            <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="alt-description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="baseGameEventAttributes"/>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="setup"/>
+                    <xs:enumeration value="timeout"/>
+                    <xs:enumeration value="comment"/>
+                    <xs:enumeration value="period_end"/>
+                    <xs:enumeration value="game_over"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="created_at" use="optional" type="xs:string"/>
+        <xs:attribute name="updated_at" use="optional" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="basePlayAttributes">
+        <xs:attribute name="created_at" use="optional" type="xs:string"/>
+        <xs:attribute name="updated_at" use="optional" type="xs:string"/>
+        <xs:attributeGroup ref="baseGameEventAttributes"/>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="pass"/>
+                    <xs:enumeration value="rush"/>
+                    <xs:enumeration value="faircatch_kick"/>
+                    <xs:enumeration value="extra_point"/>
+                    <xs:enumeration value="conversion"/>
+                    <xs:enumeration value="free_kick"/>
+                    <xs:enumeration value="kickoff"/>
+                    <xs:enumeration value="punt"/>
+                    <xs:enumeration value="field_goal"/>
+                    <xs:enumeration value="penalty"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+    </xs:attributeGroup>
+
+    <xs:complexType name="basePlayType">
+        <xs:sequence>
+            <xs:element name="start_situation" minOccurs="0" maxOccurs="1" type="fieldSituationType"/>
+            <xs:element name="end_situation" minOccurs="0" maxOccurs="1" type="fieldSituationType"/>
+            <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="alt-description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="scoring-description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="basePlayAttributes" />
+        <xs:attribute name="away_points" use="optional" type="xs:integer"/>
+        <xs:attribute name="home_points" use="optional" type="xs:integer"/>
+        <xs:attribute name="play_clock" use="optional" type="xs:integer"/>
+        <xs:attribute name="scoring_play" use="optional" type="xs:boolean"/>
+        <xs:attribute name="goaltogo" use="optional" type="xs:boolean"/>
+    </xs:complexType>
+
+    <xs:complexType name="gamePlayType">
+        <xs:complexContent>
+            <xs:extension base="basePlayType">
+                <xs:sequence>
+                    <xs:element name="drive-info" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:attribute name="duration" use="optional" type="xs:string"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="play_count" use="optional" type="xs:integer"/>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="score" minOccurs="0" maxOccurs="1" type="playScoreType"/>
+                    <xs:element name="statistics" minOccurs="0" maxOccurs="1" type="playStatisticsType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:attributeGroup name="baseDriveAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="sequence" use="required" type="xs:integer"/>
+        <xs:attribute name="start_reason" use="optional" type="driveReason"/>
+        <xs:attribute name="end_reason" use="optional" type="driveReason"/>
+        <xs:attribute name="duration" use="optional" type="xs:string"/>
+        <xs:attribute name="first_downs" use="required" type="xs:integer"/>
+        <xs:attribute name="gain" use="optional" type="xs:integer"/>
+        <xs:attribute name="inside_20" use="optional" type="xs:boolean"/>
+        <xs:attribute name="penalty_yards" use="optional" type="xs:integer"/>
+        <xs:attribute name="play_count" use="required" type="xs:integer"/>
+        <xs:attribute name="scoring_drive" use="optional" type="xs:boolean"/>
+        <xs:attribute name="created_at" use="optional" type="xs:string"/>
+        <xs:attribute name="updated_at" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="gameDriveType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="event" type="gameEventType"/>
+            <xs:element name="play" type="gamePlayType"/>
+        </xs:choice>
+        <xs:attributeGroup ref="baseDriveAttributes" />
+    </xs:complexType>
+
+    <xs:simpleType name="driveReason">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNKNOWN"/>
+            <xs:enumeration value="Touchdown"/>
+            <xs:enumeration value="Safety"/>
+            <xs:enumeration value="Field Goal"/>
+            <xs:enumeration value="Missed FG"/>
+            <xs:enumeration value="Blocked FG"/>
+            <xs:enumeration value="Blocked FG, Downs"/>
+            <xs:enumeration value="Blocked FG, Safety"/>
+            <xs:enumeration value="Punt"/>
+            <xs:enumeration value="Blocked Punt"/>
+            <xs:enumeration value="Blocked Punt, Downs"/>
+            <xs:enumeration value="Blocked Punt, Safety"/>
+            <xs:enumeration value="Downs"/>
+            <xs:enumeration value="Interception"/>
+            <xs:enumeration value="Fumble"/>
+            <xs:enumeration value="Fumble, Safety"/>
+            <xs:enumeration value="Muffed FG"/>
+            <xs:enumeration value="Muffed Punt"/>
+            <xs:enumeration value="Muffed Kickoff"/>
+            <xs:enumeration value="Kickoff"/>
+            <xs:enumeration value="Own Kickoff"/>
+            <xs:enumeration value="Onside Kick"/>
+            <xs:enumeration value="Kickoff, No Play"/>
+            <xs:enumeration value="End of Half"/>
+            <xs:enumeration value="End of Game"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="playScoreType">
+        <xs:sequence>
+            <xs:element name="points-after-play" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="baseGameEventAttributes"/>
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="extra_point"/>
+                                <xs:enumeration value="conversion"/>
+                                <xs:enumeration value="penalty"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="clock" use="required" type="xs:string"/>
+        <xs:attribute name="sequence" use="required" type="xs:integer"/>
+
+        <xs:attribute name="away_points" use="required" type="xs:integer"/>
+        <xs:attribute name="home_points" use="required" type="xs:integer"/>
+        <xs:attribute name="points" use="required" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:complexType name="playStatisticsType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="timeout">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="description" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="misc">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="pass">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="att_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="interception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack_yards" use="optional" type="xs:double"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="int_touchdown" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="receive">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="target" use="optional" type="xs:integer"/>
+                            <xs:attribute name="reception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards_after_catch" use="optional" type="xs:integer"/>
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="dropped" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rush">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lateral" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost_yards" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kick">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="gross_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="endzone" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_td" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="punt">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="endzone" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="field_goal">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="att_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="missed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="returned" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="extra_point">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="missed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="returned" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="aborted" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="penalty">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="penalty" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="fumble">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="forced" use="optional" type="xs:integer"/>
+                            <xs:attribute name="out_of_bounds" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_td" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec_td" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="play_category" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="return">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="return" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="faircatch" use="optional" type="xs:integer"/>
+                            <xs:attribute name="out_of_bounds" use="optional" type="xs:integer"/>
+                            <xs:attribute name="downed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lateral" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="punt_return" />
+                                        <xs:enumeration value="kick_return" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="play_category" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="block">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="block" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="field_goal" />
+                                        <xs:enumeration value="extra_point" />
+                                        <xs:enumeration value="punt" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="defense">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="tackle" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_tackle" use="optional" type="xs:integer"/>
+                            <xs:attribute name="primary" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack_yards" use="optional" type="xs:double"/>
+                            <xs:attribute name="block" use="optional" type="xs:integer"/>
+                            <xs:attribute name="pass_defended" use="optional" type="xs:integer"/>
+                            <xs:attribute name="qb_hit" use="optional" type="xs:integer"/>
+                            <xs:attribute name="interception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="int_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="int_touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="forced_fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="pass" />
+                                        <xs:enumeration value="receive" />
+                                        <xs:enumeration value="rush" />
+                                        <xs:enumeration value="turnover" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="defense_conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="conversion" />
+                                        <xs:enumeration value="extra_point" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="down_conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="down" use="optional" type="xs:integer"/>
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="first_down">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="pass" />
+                                        <xs:enumeration value="rush" />
+                                        <xs:enumeration value="penalty" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="basePlayStatisticType">
+        <xs:sequence>
+            <xs:element name="team" minOccurs="1" maxOccurs="1" type="teamType"/>
+            <xs:element name="player" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="basePlayerAttributes"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nullified" use="optional" type="xs:boolean"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="extPlayAttributes">
+        <xs:attribute name="qb_at_snap" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Shotgun" />
+                    <xs:enumeration value="Under Center" />
+                    <xs:enumeration value="Pistol" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="fake_punt" use="optional" type="xs:boolean" />
+        <xs:attribute name="fake_field_goal" use="optional" type="xs:boolean" />
+        <xs:attribute name="players_rushed" use="optional" type="xs:integer" />
+        <xs:attribute name="men_in_box" use="optional" type="xs:integer" />
+        <xs:attribute name="play_direction" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Left Sideline" />
+                    <xs:enumeration value="Left" />
+                    <xs:enumeration value="Middle" />
+                    <xs:enumeration value="Right" />
+                    <xs:enumeration value="Right Sideline" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="left_tightends" use="optional" type="xs:integer" />
+        <xs:attribute name="right_tightends" use="optional" type="xs:integer" />
+        <xs:attribute name="hash_mark" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Left Hash" />
+                    <xs:enumeration value="Right Hash" />
+                    <xs:enumeration value="Middle" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="screen_pass" use="optional" type="xs:boolean" />
+        <xs:attribute name="pocket_location" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Scramble Left" />
+                    <xs:enumeration value="Scramble Right" />
+                    <xs:enumeration value="Boot Left" />
+                    <xs:enumeration value="Boot Right" />
+                    <xs:enumeration value="Rollout Left" />
+                    <xs:enumeration value="Rollout Right" />
+                    <xs:enumeration value="Middle" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="blitz" use="optional" type="xs:boolean" />
+        <xs:attribute name="huddle" use="optional" type="xs:string" />
+        <xs:attribute name="pass_route" use="optional" type="xs:string" />
+        <xs:attribute name="running_lane" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:complexType name="extPlayStatisticsType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="timeout">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="description" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="misc">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="pass">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="att_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="interception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+
+                            <xs:attribute name="incompletion_type" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Thrown Away" />
+                                        <xs:enumeration value="Pass Defended" />
+                                        <xs:enumeration value="Dropped Pass" />
+                                        <xs:enumeration value="Spike" />
+                                        <xs:enumeration value="Poorly Thrown" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="blitz" use="optional" type="xs:integer" />
+                            <xs:attribute name="hurry" use="optional" type="xs:integer" />
+                            <xs:attribute name="knockdown" use="optional" type="xs:integer" />
+                            <xs:attribute name="pocket_time" use="optional" type="xs:double" />
+                            <xs:attribute name="batted_pass" use="optional" type="xs:integer" />
+                            <xs:attribute name="on_target_throw" use="optional" type="xs:integer" />
+                            <xs:attribute name="int_touchdown" use="optional" type="xs:integer" />
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="receive">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="target" use="optional" type="xs:integer"/>
+                            <xs:attribute name="reception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards_after_catch" use="optional" type="xs:integer"/>
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="dropped" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+
+                            <xs:attribute name="broken_tackles" use="optional" type="xs:integer" />
+                            <xs:attribute name="catchable" use="optional" type="xs:integer" />
+                            <xs:attribute name="yards_after_contact" use="optional" type="xs:integer" />
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rush">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="goaltogo" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lateral" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost_yards" use="optional" type="xs:integer"/>
+
+                            <xs:attribute name="broken_tackles" use="optional" type="xs:integer" />
+                            <xs:attribute name="kneel_down" use="optional" type="xs:integer" />
+                            <xs:attribute name="scramble" use="optional" type="xs:integer" />
+                            <xs:attribute name="yards_after_contact" use="optional" type="xs:integer" />
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kick">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="gross_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="endzone" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_td" use="optional" type="xs:integer"/>
+
+                            <xs:attribute name="onside_attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="onside_success" use="optional" type="xs:integer"/>
+                            <xs:attribute name="squib_kick" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="punt">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="inside_20" use="optional" type="xs:integer"/>
+                            <xs:attribute name="endzone" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+
+                            <xs:attribute name="hang_time" use="optional" type="xs:double" />
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="field_goal">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="att_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="missed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="made" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="returned" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="extra_point">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="missed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="made" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blocked" use="optional" type="xs:integer"/>
+                            <xs:attribute name="returned" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="aborted" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="penalty">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="penalty" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="fumble">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="forced" use="optional" type="xs:integer"/>
+                            <xs:attribute name="out_of_bounds" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="own_rec_td" use="optional" type="xs:integer"/>
+                            <xs:attribute name="opp_rec_td" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="play_category" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="return">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="return" use="optional" type="xs:integer"/>
+                            <xs:attribute name="yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="firstdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="faircatch" use="optional" type="xs:integer"/>
+                            <xs:attribute name="out_of_bounds" use="optional" type="xs:integer"/>
+                            <xs:attribute name="downed" use="optional" type="xs:integer"/>
+                            <xs:attribute name="touchback" use="optional" type="xs:integer"/>
+                            <xs:attribute name="lateral" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="punt_return" />
+                                        <xs:enumeration value="kick_return" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="play_category" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="block">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="block" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="field_goal" />
+                                        <xs:enumeration value="extra_point" />
+                                        <xs:enumeration value="punt" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="defense">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="tackle" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_tackle" use="optional" type="xs:integer"/>
+                            <xs:attribute name="primary" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_sack" use="optional" type="xs:integer"/>
+                            <xs:attribute name="sack_yards" use="optional" type="xs:double"/>
+                            <xs:attribute name="block" use="optional" type="xs:integer"/>
+                            <xs:attribute name="pass_defended" use="optional" type="xs:integer"/>
+                            <xs:attribute name="qb_hit" use="optional" type="xs:integer"/>
+                            <xs:attribute name="interception" use="optional" type="xs:integer"/>
+                            <xs:attribute name="int_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="int_touchdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="ast_tlost" use="optional" type="xs:integer"/>
+                            <xs:attribute name="tlost_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="forced_fumble" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional" type="xs:string"/>
+
+                            <xs:attribute name="def_target" use="optional" type="xs:integer"/>
+                            <xs:attribute name="def_comp" use="optional" type="xs:integer"/>
+                            <xs:attribute name="blitz" use="optional" type="xs:integer"/>
+                            <xs:attribute name="hurry" use="optional" type="xs:integer"/>
+                            <xs:attribute name="knockdown" use="optional" type="xs:integer"/>
+                            <xs:attribute name="missed_tackles" use="optional" type="xs:integer" />
+                            <xs:attribute name="batted_pass" use="optional" type="xs:integer" />
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="safety" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="pass" />
+                                        <xs:enumeration value="receive" />
+                                        <xs:enumeration value="rush" />
+                                        <xs:enumeration value="turnover" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="defense_conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="conversion" />
+                                        <xs:enumeration value="extra_point" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="down_conversion">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="down" use="optional" type="xs:integer"/>
+                            <xs:attribute name="attempt" use="optional" type="xs:integer"/>
+                            <xs:attribute name="complete" use="optional" type="xs:integer"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="first_down">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="basePlayStatisticType">
+                            <xs:attribute name="category" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="pass" />
+                                        <xs:enumeration value="rush" />
+                                        <xs:enumeration value="penalty" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="extGamePlayType">
+        <xs:complexContent>
+            <xs:extension base="basePlayType">
+                <xs:sequence>
+                    <xs:element name="drive-info" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:attribute name="duration" use="optional" type="xs:string"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="play_count" use="optional" type="xs:integer"/>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="score" minOccurs="0" maxOccurs="1" type="playScoreType"/>
+                    <xs:element name="statistics" minOccurs="0" maxOccurs="1" type="extPlayStatisticsType"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="extPlayAttributes" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="extGameDriveType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="event" type="gameEventType"/>
+            <xs:element name="play" type="extGamePlayType"/>
+        </xs:choice>
+        <xs:attributeGroup ref="baseDriveAttributes" />
+    </xs:complexType>
+
+    <xs:attributeGroup name="playDetailsAttributes">
+        <xs:attribute name="direction" use="optional" type="xs:string"/>
+        <xs:attribute name="category" use="optional" type="xs:string"/>
+        <xs:attribute name="description" use="optional" type="xs:string"/>
+        <xs:attribute name="sequence" use="optional" type="xs:string"/>
+        <xs:attribute name="yards" use="optional" type="xs:string"/>
+        <xs:attribute name="result" use="optional" type="xs:string"/>
+        <xs:attribute name="onside" use="optional" type="xs:string"/>
+        <xs:attribute name="sack_split" use="optional" type="xs:string"/>
+        <xs:attribute name="reason_missed" use="optional" type="xs:string"/>
+        <xs:attribute name="first_touch" use="optional" type="xs:string"/>
+        <xs:attribute name="no_attempt" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="playDetailsType">
+        <xs:sequence>
+            <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="start_location" minOccurs="0" maxOccurs="1" type="extFieldLocationType"/>
+            <xs:element name="end_location" minOccurs="0" maxOccurs="1" type="extFieldLocationType"/>
+            <xs:element name="penalty" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="team" type="teamType"/>
+                    </xs:sequence>
+                    <xs:attribute name="description" use="optional" type="xs:string"/>
+                    <xs:attribute name="result" use="optional" type="xs:string"/>
+                    <xs:attribute name="yards" use="optional" type="xs:string"/>
+                    <xs:attribute name="no_play" use="optional" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="recovery" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="team" type="teamType"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" use="optional" type="xs:string"/>
+                    <xs:attribute name="first_touch" use="optional" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="review" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="team" minOccurs="0" maxOccurs="1" type="teamType"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" use="optional" type="xs:string"/>
+                    <xs:attribute name="result" use="optional" type="xs:string"/>
+                    <xs:attribute name="reversed" use="optional" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="players" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="player" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="basePlayerAttributes"/>
+                                <xs:attribute name="role" use="optional" type="xs:string"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="playDetailsAttributes" />
+        <xs:attribute name="safety" type="xs:boolean"/>
+    </xs:complexType>
+
+    <xs:complexType name="extFieldLocationType">
+        <xs:attribute name="alias" use="optional" type="xs:string"/>
+        <xs:attribute name="yardline" use="optional" type="xs:integer"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="basePeriodAttributes">
+        <xs:attribute name="id"          use="required" type="xs:string"/>
+        <xs:attribute name="number"      use="required" type="xs:integer"/>
+        <xs:attribute name="sequence"    use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="gamePlayDetailsType">
+        <xs:complexContent>
+            <xs:extension base="basePlayType">
+                <xs:sequence>
+                    <xs:element name="drive-info" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:attribute name="duration" use="optional" type="xs:string"/>
+                            <xs:attribute name="net_yards" use="optional" type="xs:integer"/>
+                            <xs:attribute name="play_count" use="optional" type="xs:integer"/>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="score" minOccurs="0" maxOccurs="1" type="playScoreType"/>
+                    <xs:choice minOccurs="0" maxOccurs="1">
+                        <xs:element name="quarter">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="basePeriodAttributes" />
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="overtime">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="basePeriodAttributes" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                    <xs:element name="statistics" minOccurs="0" maxOccurs="1" type="extPlayStatisticsType"/>
+                    <xs:element name="details" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="detail" maxOccurs="unbounded" type="playDetailsType"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="extPlayAttributes" />
+                <xs:attribute name="play_action" type="xs:boolean"/>
+                <xs:attribute name="run_pass_option" type="xs:boolean"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="gameDetailsDriveType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="event" type="gameEventType"/>
+            <xs:element name="play" type="gamePlayDetailsType"/>
+        </xs:choice>
+        <xs:attributeGroup ref="baseDriveAttributes" />
+    </xs:complexType>
+
+    <xs:attributeGroup name="coinTossAttributes">
+        <xs:attribute name="outcome" use="required" type="xs:string"/>
+        <xs:attribute name="decision" use="optional" type="xs:string"/>
+        <xs:attribute name="direction" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="coinTossType">
+        <xs:sequence>
+            <xs:element name="home" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="coinTossAttributes" />
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="away" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="coinTossAttributes" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="quarter" use="optional" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="weatherType">
+        <xs:sequence>
+            <xs:element name="wind">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute type="xs:byte" name="speed"/>
+                            <xs:attribute type="xs:string" name="direction"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="condition"/>
+        <xs:attribute type="xs:byte" name="humidity"/>
+        <xs:attribute type="xs:byte" name="temp"/>
+    </xs:complexType>
+
+</xs:schema>

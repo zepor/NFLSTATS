@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:d="http://feed.elasticstats.com/schema/draft/summary-v1.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/draft/summary-v1.0.xsd"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="common-v1.0.xsd" />
+
+    <xs:complexType name="draftType">
+        <xs:sequence>
+            <xs:element name="league" type="d:leagueType"/>
+            <xs:element name="broadcast" type="d:broadcastType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="venue" type="d:venueType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="team" type="d:teamType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rounds" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="round" minOccurs="0" maxOccurs="unbounded" type="d:roundType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup  ref="d:baseDraftAttributes" />
+    </xs:complexType>
+
+    <xs:element name="draft"  type="d:draftType"/>
+</xs:schema>

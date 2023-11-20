@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:attributeGroup name="baseOrganizationAttributes">
+        <xs:attributeGroup ref="baseIdentityAttributes" />
+        <xs:attribute name="alias" use="optional" type="xs:string"/>
+        <xs:attribute name="name"  use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseTeamAttributes">
+        <xs:attributeGroup ref="baseOrganizationAttributes" />
+        <xs:attribute name="market"    use="optional" type="xs:string"/>
+        <xs:attribute name="founded"   use="optional" type="xs:integer" />
+        <xs:attribute name="reference" use="optional" type="xs:string" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseSeasonAttributes">
+        <xs:attribute name="id"   use="required" type="xs:string" />
+        <xs:attribute name="name" use="optional" type="xs:string" />
+        <xs:attribute name="year" use="required" type="xs:integer"/>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="PRE"/>
+                    <xs:enumeration value="REG"/>
+                    <xs:enumeration value="PST"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseWeekAttributes">
+        <xs:attribute name="id"       use="required" type="xs:string"/>
+        <xs:attribute name="sequence" use="required" type="xs:integer"/>
+        <xs:attribute name="title"    use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseGameAttributes">
+        <xs:attribute name="id"           use="required" type="xs:string"/>
+        <xs:attribute name="sr_id"        use="optional" type="xs:string"/>
+        <xs:attribute name="number"       use="optional" type="xs:integer"/>
+        <xs:attribute name="utc_offset"   use="optional" type="xs:integer"/>
+        <xs:attribute name="reference"    use="optional" type="xs:integer"/>
+        <xs:attribute name="scheduled"    use="required" type="xs:dateTime"/>
+        <xs:attribute name="title"        use="optional" type="xs:string"/>
+        <xs:attribute name="neutral_site" use="optional" type="xs:boolean"/>
+        <xs:attribute name="status"       use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="scheduled" />
+                    <xs:enumeration value="created" />
+                    <xs:enumeration value="inprogress" />
+                    <xs:enumeration value="halftime" />
+                    <xs:enumeration value="complete" />
+                    <xs:enumeration value="closed" />
+                    <xs:enumeration value="cancelled" />
+                    <xs:enumeration value="postponed" />
+                    <xs:enumeration value="delayed" />
+                    <xs:enumeration value="time-tbd" />
+                    <xs:enumeration value="flex-schedule" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="game_type" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="regular" />
+                    <xs:enumeration value="conference_championship" />
+                    <xs:enumeration value="bowl" />
+                    <xs:enumeration value="playoff" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="playoff_game_type" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="CFP Semifinal" />
+                    <xs:enumeration value="CFP National Championship" />
+                    <xs:enumeration value="FCS First Round" />
+                    <xs:enumeration value="FCS Second Round" />
+                    <xs:enumeration value="FCS Quarterfinal" />
+                    <xs:enumeration value="FCS Semifinal" />
+                    <xs:enumeration value="FCS Championship" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="attendance" use="optional" type="xs:integer"/>
+        <xs:attribute name="duration" use="optional" type="xs:string"/>
+        <xs:attribute name="coverage" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="full" />
+                    <xs:enumeration value="extended_boxscore" />
+                    <xs:enumeration value="boxscore" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extGameAttributes">
+        <xs:attribute name="clock"      use="optional" type="xs:string"/>
+        <xs:attribute name="quarter"    use="optional" type="xs:integer"/>
+        <xs:attribute name="entry_mode" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="INGEST" />
+                    <xs:enumeration value="LDE" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseIdentityAttributes">
+        <xs:attribute name="id"    use="optional" type="xs:string"/>
+        <xs:attribute name="sr_id" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="basePlayerAttributes">
+        <xs:attributeGroup ref="baseIdentityAttributes" />
+        <xs:attribute name="name"      use="optional" type="xs:string"/>
+        <xs:attribute name="jersey"    use="optional" type="xs:string"/>
+        <xs:attribute name="reference" use="optional" type="xs:string" />
+        <xs:attribute name="position"  use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ATH" />
+                    <xs:enumeration value="C" />
+                    <xs:enumeration value="C/G" />
+                    <xs:enumeration value="CB" />
+                    <xs:enumeration value="CB/RS" />
+                    <xs:enumeration value="CB/S" />
+                    <xs:enumeration value="DB" />
+                    <xs:enumeration value="DE" />
+                    <xs:enumeration value="DE/LB" />
+                    <xs:enumeration value="DL" />
+                    <xs:enumeration value="DT" />
+                    <xs:enumeration value="FB" />
+                    <xs:enumeration value="FB/RB" />
+                    <xs:enumeration value="FS" />
+                    <xs:enumeration value="G" />
+                    <xs:enumeration value="G/C" />
+                    <xs:enumeration value="G/T" />
+                    <xs:enumeration value="H/B" />
+                    <xs:enumeration value="H/B/T" />
+                    <xs:enumeration value="HB" />
+                    <xs:enumeration value="ILB" />
+                    <xs:enumeration value="K" />
+                    <xs:enumeration value="K/P" />
+                    <xs:enumeration value="KR" />
+                    <xs:enumeration value="L" />
+                    <xs:enumeration value="LB" />
+                    <xs:enumeration value="LB/DE" />
+                    <xs:enumeration value="LS" />
+                    <xs:enumeration value="MLB" />
+                    <xs:enumeration value="NT" />
+                    <xs:enumeration value="OG" />
+                    <xs:enumeration value="OL" />
+                    <xs:enumeration value="OLB" />
+                    <xs:enumeration value="OT" />
+                    <xs:enumeration value="P" />
+                    <xs:enumeration value="QB" />
+                    <xs:enumeration value="QB/WR" />
+                    <xs:enumeration value="RB" />
+                    <xs:enumeration value="RB/ST" />
+                    <xs:enumeration value="RB/WR" />
+                    <xs:enumeration value="RS" />
+                    <xs:enumeration value="S" />
+                    <xs:enumeration value="SS" />
+                    <xs:enumeration value="SAF" />
+                    <xs:enumeration value="T" />
+                    <xs:enumeration value="T/G" />
+                    <xs:enumeration value="TE" />
+                    <xs:enumeration value="TE/DT" />
+                    <xs:enumeration value="TE/FB" />
+                    <xs:enumeration value="TE/LS" />
+                    <xs:enumeration value="TEW" />
+                    <xs:enumeration value="WR" />
+                    <xs:enumeration value="WR/CB" />
+                    <xs:enumeration value="WR/KR" />
+                    <xs:enumeration value="WR/PR" />
+                    <xs:enumeration value="WR/RB" />
+                    <xs:enumeration value="WR/RS" />
+                    <xs:enumeration value="QB/WR" />
+                    <xs:enumeration value="DB/LB" />
+                    <xs:enumeration value="FB/DL" />
+                    <xs:enumeration value="DE/DT" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extPlayerAttributes">
+        <xs:attributeGroup ref="basePlayerAttributes" />
+        <xs:attribute name="abbr_name"      use="optional" type="xs:string"/>
+        <xs:attribute name="birth_date"     use="optional" type="xs:date"/>
+        <xs:attribute name="birth_place"    use="optional" type="xs:string"/>
+        <xs:attribute name="college"        use="optional" type="xs:string"/>
+        <xs:attribute name="college_conf"   use="optional" type="xs:string"/>
+        <xs:attribute name="first_name"     use="optional" type="xs:string"/>
+        <xs:attribute name="height"         use="optional" type="xs:integer"/>
+        <xs:attribute name="high_school"    use="optional" type="xs:string"/>
+        <xs:attribute name="last_name"      use="optional" type="xs:string"/>
+        <xs:attribute name="preferred_name" use="optional" type="xs:string"/>
+        <xs:attribute name="rookie_year"    use="optional" type="xs:integer"/>
+        <xs:attribute name="status"         use="optional" type="xs:string"/>
+        <xs:attribute name="weight"         use="optional" type="xs:decimal"/>
+        <xs:attribute name="name_suffix"    use="optional" type="xs:string"/>
+        <xs:attribute name="eligibility"    use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="FR" />
+                    <xs:enumeration value="SO" />
+                    <xs:enumeration value="JR" />
+                    <xs:enumeration value="SR" />
+                    <xs:enumeration value="GR" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:complexType name="referenceType">
+        <xs:attribute name="id"     use="required" type="xs:string"/>
+        <xs:attribute name="origin" use="required" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="venueType">
+        <xs:sequence>
+            <xs:element name="location" minOccurs="0" maxOccurs="1" >
+                <xs:complexType>
+                    <xs:attribute name="lat" type="xs:float"/>
+                    <xs:attribute name="lng" type="xs:float"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id"    use="required" type="xs:string"/>
+        <xs:attribute name="sr_id" use="optional" type="xs:string"/>
+        <xs:attribute name="name"  use="required" type="xs:string"/>
+
+        <xs:attribute name="address"   use="optional" type="xs:string"/>
+        <xs:attribute name="capacity"  use="optional" type="xs:integer"/>
+        <xs:attribute name="city"      use="optional" type="xs:string"/>
+        <xs:attribute name="country"   use="optional" type="xs:string"/>
+        <xs:attribute name="state"     use="optional" type="xs:string"/>
+        <xs:attribute name="zip"       use="optional" type="xs:string"/>
+        <xs:attribute name="roof_type" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="outdoor" />
+                    <xs:enumeration value="dome" />
+                    <xs:enumeration value="retractable_dome" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="surface"   use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="turf" />
+                    <xs:enumeration value="artificial" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="teamType">
+        <xs:attributeGroup  ref="baseTeamAttributes" />
+    </xs:complexType>
+
+    <xs:element name="references">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="reference" minOccurs="0" maxOccurs="unbounded" type="referenceType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="franchise">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="references" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="baseOrganizationAttributes" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attributeGroup name="teamColorAttributes">
+        <xs:attribute name="type" type="xs:string" />
+        <xs:attribute name="hex_color" type="xs:string" />
+        <xs:attribute name="alpha" type="xs:float" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="rgbColorAttributes">
+        <xs:attribute name="red" type="xs:integer" />
+        <xs:attribute name="green" type="xs:integer" />
+        <xs:attribute name="blue" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:complexType name="teamColorType">
+        <xs:sequence>
+            <xs:element name="rgb_color" >
+                <xs:complexType>
+                    <xs:attributeGroup ref="rgbColorAttributes"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="teamColorAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="teamColorsType">
+        <xs:sequence>
+            <xs:element name="team_color" type="teamColorType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

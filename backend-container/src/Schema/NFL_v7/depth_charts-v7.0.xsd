@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:d="http://feed.elasticstats.com/schema/football/depth_charts-v7.0.xsd"
+  targetNamespace="http://feed.elasticstats.com/schema/football/depth_charts-v7.0.xsd"
+  elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+
+      <xs:element name="week" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="id"       use="required" type="xs:string" />
+          <xs:attribute name="sequence" use="required" type="xs:integer" />
+          <xs:attribute name="title"    use="optional" type="xs:integer" />
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="depth_charts" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="team" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="d:teamType">
+                    <xs:choice maxOccurs="unbounded">
+                      <xs:element name="offense"       type="d:formationType" />
+                      <xs:element name="defense"       type="d:formationType" />
+                      <xs:element name="special_teams" type="d:formationType" />
+                    </xs:choice>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:sequence>
+    <xs:attributeGroup ref="d:baseSeasonAttributes" />
+  </xs:complexType>
+
+  <xs:element name="season" type="d:seasonType" />
+
+  <xs:complexType name="formationType">
+    <xs:sequence>
+      <xs:element name="position" type="d:positionType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="positionType">
+    <xs:sequence>
+      <xs:element name="player" type="d:playerType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string" />
+    <xs:attribute name="desc" use="optional" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="playerType">
+    <xs:attribute name="depth" use="required" type="xs:integer" />
+    <xs:attributeGroup ref="d:basePlayerAttributes" />
+  </xs:complexType>
+
+</xs:schema>

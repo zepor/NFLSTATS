@@ -39,21 +39,21 @@ services:
     ports:
       - 5000:5000 
     volumes:
-      - ./backend-container/src:/Website2/src
-      - ./Secrets:/Website2/Secrets
-      - ./backend-container/requirements.txt:/Website2/requirements.txt
-      - ./javascript/public:/Website2/frontend/public
-      - ./javascript/src:/Website2/frontend/src
+      - ./backend-container/src:/ssweb/src
+      - ./Secrets:/ssweb/Secrets
+      - ./backend-container/requirements.txt:/ssweb/requirements.txt
+      - ./jabascript/public:/ssweb/frontend/public
+      - ./jabascript/src:/ssweb/frontend/src
     networks:
       - mynetwork
-    working_dir: /Website2
+    working_dir: /ssweb
     env_file:
       - .env
     environment:
-      - PYTHONPATH=/Website2/.venv/Lib/site-packages
+      - PYTHONPATH=/ssweb/.venv/Lib/site-packages
       - WORKERES=4
-      - KEYFILE_PATH=/Website2/Secrets/key_without_pass.pem
-      - CERTFILE_PATH=/Website2/Secrets/Loveoffootball.crt
+      - KEYFILE_PATH=/ssweb/Secrets/key_without_pass.pem
+      - CERTFILE_PATH=/ssweb/Secrets/Loveoffootball.crt
       - PYTHONDONTWRITEBYTECODE=1
       - BACKENDEND_SERVICE_HOST=172.16.238.2
       - BACKENDEND_SERVICE_PORT=5000
@@ -66,7 +66,7 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: ./javascript
+      context: ./jabascript
       dockerfile: Dockerfile.react
     ports:
       - 3000:3000
@@ -83,4 +83,6 @@ services:
       - FRONTEND_PORT_3000_TCP_PROTO=tcp
       - FRONTEND_PORT_3000_TCP_PORT=3000
       - FRONTEND_PORT_3000_TCP_ADDR=172.16.238.4
+    volumes:
+      - ./jabascript:/app
 

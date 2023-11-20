@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:t="http://feed.elasticstats.com/schema/football/transactions-v7.0.xsd"
+  targetNamespace="http://feed.elasticstats.com/schema/football/transactions-v7.0.xsd"
+  elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+        <xs:element name="transactions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="transaction" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="player" minOccurs="1" maxOccurs="1">
+                       <xs:complexType>
+                          <xs:attribute name="college" use="optional" type="xs:string" />
+                          <xs:attributeGroup ref="t:basePlayerAttributes" />
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="player_status">
+                      <xs:complexType>
+                        <xs:attribute name="before" type="xs:string"></xs:attribute>
+                        <xs:attribute name="after"  type="xs:string"></xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="from_team" type="t:teamType" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="to_team"   type="t:teamType" minOccurs="0" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="number"      type="xs:string" />
+                  <xs:attribute name="status"      type="xs:string" />
+                  <xs:attribute name="description" type="xs:string" />
+                  <xs:attribute name="code"        type="xs:string" />
+                  <xs:attribute name="date"        type="xs:string" />
+                  <xs:attribute name="voided_date" use="optional" type="xs:string" />
+                  <xs:attribute name="sequence"    use="optional" type="xs:string" />
+                  <xs:attribute name="year"        use="optional" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+</xs:schema>

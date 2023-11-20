@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: azdevspace
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: loveofsports.azurecr.io/ssweb-frontend:latest
+          env:
+            - name: FRONTEND_SERVICE_HOST
+              value: frontend
+            - name: FRONTEND_SERVICE_PORT
+              value: "3000"
+            - name: NODE_ENV
+              value: development
+            - name: AZURE_STORAGE_ACCOUNT
+              value: sportfs
+            - name: AZURE_STORAGE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: azure-storage-account-secret
+                  key: azurestorageaccountkey
+            - name: AZURE_SHARE_NAME
+              value: sportshare
+            - name: MONGODB_URL
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: MONGODB_URL
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /ssweb/javascript
+              name: frontend-file
+          resources:
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+      imagePullSecrets:
+        - name: my-registry-secret
+      volumes:
+        - name: frontend-file
+          persistentVolumeClaim:
+            claimName: frontend-pvc

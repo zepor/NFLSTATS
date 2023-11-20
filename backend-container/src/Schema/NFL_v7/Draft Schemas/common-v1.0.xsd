@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:attributeGroup name="baseDraftAttributes">
+        <xs:attribute name="id"   use="required" type="xs:string" />
+        <xs:attribute name="year" use="required" type="xs:integer"/>
+        <xs:attribute name="start_date" use="optional" type="xs:date"/>
+        <xs:attribute name="end_date" use="optional" type="xs:date"/>
+        <xs:attribute name="status" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseLeagueAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="alias" use="required" type="xs:string"/>
+        <xs:attribute name="name" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseRoundAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="number" use="required" type="xs:integer"/>
+        <xs:attribute name="start_date" use="optional" type="xs:date"/>
+        <xs:attribute name="end_date" use="optional" type="xs:date"/>
+        <xs:attribute name="status" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="basePickAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="number" use="required" type="xs:integer"/>
+        <xs:attribute name="overall" use="required" type="xs:integer"/>
+        <xs:attribute name="traded" use="optional" type="xs:boolean"/>
+        <xs:attribute name="supplemental" use="optional" type="xs:boolean"/>
+        <xs:attribute name="compensatory" use="optional" type="xs:boolean"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseTeamAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="sr_id" use="optional" type="xs:string"/>
+        <xs:attribute name="sequence" use="optional" type="xs:integer"/>
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="market" use="required" type="xs:string"/>
+        <xs:attribute name="alias" use="required" type="xs:string"/>
+        <xs:attribute name="reference" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseProspectAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="source_id" use="optional" type="xs:string"/>
+        <xs:attribute name="first_name" use="required" type="xs:string"/>
+        <xs:attribute name="last_name" use="required" type="xs:string"/>
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="jersey_number" use="optional" type="xs:integer"/>
+        <xs:attribute name="position" use="optional" type="xs:string"/>
+        <xs:attribute name="high_school" use="optional" type="xs:string"/>
+        <xs:attribute name="height" use="optional" type="xs:integer"/>
+        <xs:attribute name="weight" use="optional" type="xs:integer"/>
+        <xs:attribute name="experience" use="optional" type="xs:string"/>
+        <xs:attribute name="birth_place" use="optional" type="xs:string"/>
+        <xs:attribute name="birthdate" use="optional" type="xs:date"/>
+        <xs:attribute name="top_prospect" use="optional" type="xs:boolean"/>
+        <xs:attribute name="league_id" use="optional" type="xs:string"/>
+        <xs:attribute name="team_name" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseConferenceAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="alias" use="optional" type="xs:string"/>
+        <xs:attribute name="name" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseDivisionAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="alias" use="optional" type="xs:string"/>
+        <xs:attribute name="name" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseTradeAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="sequence" use="required" type="xs:integer"/>
+        <xs:attribute name="complete" use="required" type="xs:boolean"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="basePlayerAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="sr_id" use="optional" type="xs:string"/>
+        <xs:attribute name="source_id" use="optional" type="xs:string"/>
+        <xs:attribute name="first_name" use="required" type="xs:string"/>
+        <xs:attribute name="last_name" use="required" type="xs:string"/>
+        <xs:attribute name="jersey_number" use="optional" type="xs:integer"/>
+        <xs:attribute name="position" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseCoachAttributes">
+        <xs:attribute name="id" use="required" type="xs:string"/>
+        <xs:attribute name="source_id" use="optional" type="xs:string"/>
+        <xs:attribute name="first_name" use="required" type="xs:string"/>
+        <xs:attribute name="last_name" use="required" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseBroadcastAttributes">
+        <xs:attribute name="channel" use="optional" type="xs:string"/>
+        <xs:attribute name="network" use="optional" type="xs:string"/>
+        <xs:attribute name="internet" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseVenueAttributes">
+        <xs:attribute name="name" use="optional" type="xs:string"/>
+        <xs:attribute name="address" use="optional" type="xs:string"/>
+        <xs:attribute name="city" use="optional" type="xs:string"/>
+        <xs:attribute name="state" use="optional" type="xs:string"/>
+        <xs:attribute name="country" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="leagueType">
+        <xs:attributeGroup ref="baseLeagueAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="roundType">
+        <xs:sequence>
+            <xs:element name="pick" minOccurs="0" maxOccurs="unbounded" type="pickType"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="baseRoundAttributes"/>
+    </xs:complexType>
+
+    <xs:complexType name="pickType">
+        <xs:sequence>
+            <xs:element name="team" minOccurs="0" maxOccurs="1" type="teamType"/>
+            <xs:element name="prospect" minOccurs="0" maxOccurs="1" type="prospectType"/>
+            <xs:element name="trades" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="trade" minOccurs="0" maxOccurs="unbounded" >
+                            <xs:complexType>
+                                <xs:attribute name="id" use="required" type="xs:string" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="basePickAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="teamType">
+        <xs:attributeGroup ref="baseTeamAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="playerType">
+        <xs:attributeGroup ref="basePlayerAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="coachType">
+        <xs:attributeGroup ref="baseCoachAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="prospectType">
+        <xs:sequence>
+            <xs:element name="conference" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="baseConferenceAttributes"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="division" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attributeGroup ref="baseDivisionAttributes"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="team" minOccurs="0" maxOccurs="1" type="teamType"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="baseProspectAttributes"/>
+    </xs:complexType>
+
+    <xs:complexType name="broadcastType">
+        <xs:attributeGroup ref="baseBroadcastAttributes" />
+    </xs:complexType>
+
+    <xs:complexType name="venueType">
+        <xs:attributeGroup ref="baseVenueAttributes" />
+    </xs:complexType>
+</xs:schema>

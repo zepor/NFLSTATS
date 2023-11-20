@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:b="http://feed.elasticstats.com/schema/football/boxscore-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/boxscore-v7.0.xsd"
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-game-v7.0.xsd"/>
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element name="weather" minOccurs="0" maxOccurs="1" type="b:weatherType"/>
+      <xs:element name="coin_toss" minOccurs="0" maxOccurs="unbounded" type="b:coinTossType" />
+      <xs:element name="summary"  minOccurs="1" maxOccurs="1" type="b:summaryType"/>
+      <xs:element name="situation" minOccurs="0" maxOccurs="1" type="b:fieldSituationType"/>
+      <xs:element name="last_event" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:choice maxOccurs="1">
+            <xs:element name="event" type="b:gameEventType"/>
+            <xs:element name="play"  type="b:gamePlayDetailsType"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="scoring" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="quarter"  minOccurs="0" maxOccurs="unbounded" type="b:periodType"/>
+            <xs:element name="overtime" minOccurs="0" maxOccurs="unbounded" type="b:periodType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="scoring_drives" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="drive"  minOccurs="0" maxOccurs="unbounded" type="b:scoringDriveType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="scoring_plays" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="play"  minOccurs="0" maxOccurs="unbounded" type="b:gamePlayScoresType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="b:baseGameAttributes" />
+    <xs:attributeGroup ref="b:extGameAttributes" />
+  </xs:complexType>
+
+  <xs:element name="game" type="b:gameType" />
+
+  <xs:complexType name="periodType">
+    <xs:attributeGroup ref="b:basePeriodAttributes" />
+    <xs:attribute name="away_points" use="optional" type="xs:integer"/>
+    <xs:attribute name="home_points" use="optional" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="scoringDriveType">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element name="quarter">
+          <xs:complexType>
+            <xs:attributeGroup ref="b:basePeriodAttributes" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="overtime">
+          <xs:complexType>
+            <xs:attributeGroup ref="b:basePeriodAttributes" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+      <xs:element name="team" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attributeGroup ref="b:baseTeamAttributes" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="plays" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element name="event" type="b:gameEventType"/>
+            <xs:element name="play" type="b:gamePlayDetailsType"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="b:baseDriveAttributes" />
+  </xs:complexType>
+
+   <xs:complexType name="gamePlayScoresType">
+        <xs:complexContent>
+            <xs:extension base="b:basePlayType">
+                <xs:sequence>
+                    <xs:element name="score" minOccurs="0" maxOccurs="1" type="b:playScoreType"/>
+                    <xs:choice minOccurs="0" maxOccurs="1">
+                        <xs:element name="quarter">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="b:basePeriodAttributes" />
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="overtime">
+                            <xs:complexType>
+                                <xs:attributeGroup ref="b:basePeriodAttributes" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                    <xs:element name="statistics" minOccurs="0" maxOccurs="1" type="b:extPlayStatisticsType"/>
+                    <xs:element name="details" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="detail" maxOccurs="unbounded" type="b:playDetailsType"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attributeGroup ref="b:extPlayAttributes" />
+                <xs:attribute name="play_action" type="xs:boolean"/>
+                <xs:attribute name="run_pass_option" type="xs:boolean"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

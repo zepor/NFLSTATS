@@ -1,0 +1,225 @@
+@import '../6-nfl-teams/_team_colors';
+
+// Arizona Cardinals
+.team-arizona-cardinals {
+  --primary-color: $color-arizona-cardinals-primary;
+  --secondary-color: $color-arizona-cardinals-secondary;
+  --tertiary-color: $color-arizona-cardinals-tertiary;
+}
+
+// Atlanta Falcons
+.team-atlanta-falcons {
+  --primary-color: $color-atlanta-falcons-primary;
+  --secondary-color: $color-atlanta-falcons-secondary;
+  --tertiary-color: $color-atlanta-falcons-tertiary;
+}
+
+// Baltimore Ravens
+.team-baltimore-ravens {
+  --primary-color: $color-baltimore-ravens-primary;
+  --secondary-color: $color-baltimore-ravens-secondary;
+  --tertiary-color: $color-baltimore-ravens-tertiary;
+}
+
+// Buffalo Bills
+.team-buffalo-bills {
+  --primary-color: $color-buffalo-bills-primary;
+  --secondary-color: $color-buffalo-bills-secondary;
+  --tertiary-color: $color-buffalo-bills-tertiary;
+}
+
+// Carolina Panthers
+.team-carolina-panthers {
+  --primary-color: $color-carolina-panthers-primary;
+  --secondary-color: $color-carolina-panthers-secondary;
+  --tertiary-color: $color-carolina-panthers-tertiary;
+}
+
+// Chicago Bears
+.team-chicago-bears {
+  --primary-color: $color-chicago-bears-primary;
+  --secondary-color: $color-chicago-bears-secondary;
+  --tertiary-color: $color-chicago-bears-tertiary;
+}
+
+// Cincinnati Bengals
+.team-cincinnati-bengals {
+  --primary-color: $color-cincinnati-bengals-primary;
+  --secondary-color: $color-cincinnati-bengals-secondary;
+  --tertiary-color: $color-cincinnati-bengals-tertiary;
+}
+
+// Cleveland Browns
+.team-cleveland-browns {
+  --primary-color: $color-cleveland-browns-primary;
+  --secondary-color: $color-cleveland-browns-secondary;
+  --tertiary-color: $color-cleveland-browns-tertiary;
+}
+
+// Dallas Cowboys
+.team-dallas-cowboys {
+  --primary-color: $color-dallas-cowboys-primary;
+  --secondary-color: $color-dallas-cowboys-secondary;
+  --tertiary-color: $color-dallas-cowboys-tertiary;
+}
+
+// Denver Broncos
+.team-denver-broncos {
+  --primary-color: $color-denver-broncos-primary;
+  --secondary-color: $color-denver-broncos-secondary;
+  --tertiary-color: $color-denver-broncos-tertiary;
+}
+
+// Detroit Lions
+.team-detroit-lions {
+  --primary-color: $color-detroit-lions-primary;
+  --secondary-color: $color-detroit-lions-secondary;
+  --tertiary-color: $color-detroit-lions-tertiary;
+}
+
+// Green Bay Packers
+.team-green-bay-packers {
+  --primary-color: $color-green-bay-packers-primary;
+  --secondary-color: $color-green-bay-packers-secondary;
+  --tertiary-color: $color-green-bay-packers-tertiary;
+}
+
+// Houston Texans
+.team-houston-texans {
+  --primary-color: $color-houston-texans-primary;
+  --secondary-color: $color-houston-texans-secondary;
+  --tertiary-color: $color-houston-texans-tertiary;
+}
+
+// Indianapolis Colts
+.team-indianapolis-colts {
+  --primary-color: $color-indianapolis-colts-primary;
+  --secondary-color: $color-indianapolis-colts-secondary;
+  --tertiary-color: $color-indianapolis-colts-tertiary;
+}
+
+// Jacksonville Jaguars
+.team-jacksonville-jaguars {
+  --primary-color: $color-jacksonville-jaguars-primary;
+  --secondary-color: $color-jacksonville-jaguars-secondary;
+  --tertiary-color: $color-jacksonville-jaguars-tertiary;
+}
+
+// Kansas City Chiefs
+.team-kansas-city-chiefs {
+  --primary-color: $color-kansas-city-chiefs-primary;
+  --secondary-color: $color-kansas-city-chiefs-secondary;
+  --tertiary-color: $color-kansas-city-chiefs-tertiary;
+}
+
+// Las Vegas Raiders
+.team-las-vegas-raiders {
+  --primary-color: $color-las-vegas-raiders-primary;
+  --secondary-color: $color-las-vegas-raiders-secondary;
+  --tertiary-color: $color-las-vegas-raiders-tertiary;
+}
+
+// Los Angeles Chargers
+.team-los-angeles-chargers {
+  --primary-color: $color-los-angeles-chargers-primary;
+  --secondary-color: $color-los-angeles-chargers-secondary;
+  --tertiary-color: $color-los-angeles-chargers-tertiary;
+}
+
+// Los Angeles Rams
+.team-los-angeles-rams {
+  --primary-color: $color-los-angeles-rams-primary;
+  --secondary-color: $color-los-angeles-rams-secondary;
+  --tertiary-color: $color-los-angeles-rams-tertiary;
+}
+
+// Miami Dolphins
+.team-miami-dolphins {
+  --primary-color: $color-miami-dolphins-primary;
+  --secondary-color: $color-miami-dolphins-secondary;
+  --tertiary-color: $color-miami-dolphins-tertiary;
+}
+
+// Minnesota Vikings
+.team-minnesota-vikings {
+  --primary-color: $color-minnesota-vikings-primary;
+  --secondary-color: $color-minnesota-vikings-secondary;
+  --tertiary-color: $color-minnesota-vikings-tertiary;
+}
+
+// New England Patriots
+.team-new-england-patriots {
+  --primary-color: $color-new-england-patriots-primary;
+  --secondary-color: $color-new-england-patriots-secondary;
+  --tertiary-color: $color-new-england-patriots-tertiary;
+}
+
+// New Orleans Saints
+.team-new-orleans-saints {
+  --primary-color: $color-new-orleans-saints-primary;
+  --secondary-color: $color-new-orleans-saints-secondary;
+  --tertiary-color: $color-new-orleans-saints-tertiary;
+}
+
+// New York Giants
+.team-new-york-giants {
+  --primary-color: $color-new-york-giants-primary;
+  --secondary-color: $color-new-york-giants-secondary;
+  --tertiary-color: $color-new-york-giants-tertiary;
+}
+
+// New York Jets
+.team-new-york-jets {
+  --primary-color: $color-new-york-jets-primary;
+  --secondary-color: $color-new-york-jets-secondary;
+  --tertiary-color: $color-new-york-jets-tertiary;
+}
+
+// Philadelphia Eagles
+.team-philadelphia-eagles {
+  --primary-color: $color-philadelphia-eagles-primary;
+  --secondary-color: $color-philadelphia-eagles-secondary;
+  --tertiary-color: $color-philadelphia-eagles-tertiary;
+}
+
+// Pittsburgh Steelers
+.team-pittsburgh-steelers {
+  --primary-color: $color-pittsburgh-steelers-primary;
+  --secondary-color: $color-pittsburgh-steelers-secondary;
+  --tertiary-color: $color-pittsburgh-steelers-tertiary;
+}
+
+// San Francisco 49ers
+.team-san-francisco-49ers {
+  --primary-color: $color-san-francisco-49ers-primary;
+  --secondary-color: $color-san-francisco-49ers-secondary;
+  --tertiary-color: $color-san-francisco-49ers-tertiary;
+}
+
+// Seattle Seahawks
+.team-seattle-seahawks {
+  --primary-color: $color-seattle-seahawks-primary;
+  --secondary-color: $color-seattle-seahawks-secondary;
+  --tertiary-color: $color-seattle-seahawks-tertiary;
+}
+
+// Tampa Bay Buccaneers
+.team-tampa-bay-buccaneers {
+  --primary-color: $color-tampa-bay-buccaneers-primary;
+  --secondary-color: $color-tampa-bay-buccaneers-secondary;
+  --tertiary-color: $color-tampa-bay-buccaneers-tertiary;
+}
+
+// Tennessee Titans
+.team-tennessee-titans {
+  --primary-color: $color-tennessee-titans-primary;
+  --secondary-color: $color-tennessee-titans-secondary;
+  --tertiary-color: $color-tennessee-titans-tertiary;
+}
+
+// Washington Commanders
+.team-washington-commanders {
+  --primary-color: $color-washington-commanders-primary;
+  --secondary-color: $color-washington-commanders-secondary;
+  --tertiary-color: $color-washington-commanders-tertiary;
+}

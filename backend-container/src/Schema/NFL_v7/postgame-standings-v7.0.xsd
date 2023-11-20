@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://feed.elasticstats.com/schema/football/nfl/postgame-standings-v7.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:include schemaLocation="../common-v7.0.xsd"/>
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+      <xs:element name="conference" minOccurs="0" maxOccurs="unbounded" type="s:conferenceType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseSeasonAttributes" />
+  </xs:complexType>
+
+  <xs:element name="season" type="s:seasonType" />
+
+  <xs:complexType name="conferenceType">
+    <xs:sequence>
+      <xs:element  name="division" minOccurs="0" maxOccurs="unbounded" type="s:divisionType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="divisionType">
+    <xs:sequence>
+      <xs:element name="team" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="s:teamType">
+              <xs:sequence>
+                <xs:element name="rank" minOccurs="0" maxOccurs="1">
+                  <xs:complexType>
+                    <xs:attribute name="division" type="xs:integer"/>
+                    <xs:attribute name="conference" type="xs:integer"/>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="streak" minOccurs="0" maxOccurs="1">
+                  <xs:complexType>
+                    <xs:attribute name="type" type="xs:string"/>
+                    <xs:attribute name="length" type="xs:integer"/>
+                    <xs:attribute name="desc" type="xs:string"/>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="strength-of-schedule" minOccurs="0" maxOccurs="1">
+                  <xs:complexType>
+                    <xs:attribute name="wins"   use="optional" type="xs:integer"/>
+                    <xs:attribute name="total"  use="optional" type="xs:integer" />
+                    <xs:attribute name="sos"    use="optional" type="xs:decimal"/>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="strength-of-victory" minOccurs="0" maxOccurs="1">
+                  <xs:complexType>
+                    <xs:attribute name="wins"   use="optional" type="xs:integer"/>
+                    <xs:attribute name="total"  use="optional" type="xs:integer" />
+                    <xs:attribute name="sov"    use="optional" type="xs:decimal"/>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="records" minOccurs="0" maxOccurs="1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="record" minOccurs="0" maxOccurs="unbounded" type="s:recordType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attributeGroup ref="s:recordAttributes" />
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:attributeGroup name="recordAttributes">
+    <xs:attribute name="wins"    use="required" type="xs:integer"/>
+    <xs:attribute name="losses"  use="required" type="xs:integer"/>
+    <xs:attribute name="ties"    use="optional" type="xs:integer"/>
+    <xs:attribute name="win_pct" use="optional" type="xs:decimal"/>
+
+    <xs:attribute name="points_against" use="optional" type="xs:integer"/>
+    <xs:attribute name="points_for"     use="optional" type="xs:integer"/>
+    <xs:attribute name="points_rank"    use="optional" type="xs:integer"/>
+  </xs:attributeGroup>
+
+  <xs:complexType name="streakType">
+    <xs:attribute name="desc"   use="optional" type="xs:string"/>
+    <xs:attribute name="length" use="required" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="recordType">
+    <xs:attributeGroup ref="s:recordAttributes" />
+    <xs:attribute name="category" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="conference" />
+          <xs:enumeration value="division" />
+          <xs:enumeration value="home" />
+          <xs:enumeration value="road" />
+          <xs:enumeration value="away" />
+          <xs:enumeration value="nfc" />
+          <xs:enumeration value="afc" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:h="http://feed.elasticstats.com/schema/football/seasons-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/seasons-v7.0.xsd"
+           elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+  <xs:complexType name="leagueType">
+    <xs:sequence>
+      <xs:element name="season" type="h:seasonType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="h:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:attributeGroup name="seasonAttributeGroup">
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="year" type="xs:integer" />
+    <xs:attribute name="start_date" type="xs:date"/>
+    <xs:attribute name="end_date" type="xs:date" />
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="seasonTypeElementAttributeGroup">
+    <xs:attribute name="code" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:attributeGroup>
+
+  <xs:complexType name="seasonTypeElement">
+    <xs:attributeGroup ref="h:seasonTypeElementAttributeGroup">
+    </xs:attributeGroup>
+  </xs:complexType>
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+      <xs:element name="type" type="h:seasonTypeElement" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="h:seasonAttributeGroup"/>
+  </xs:complexType>
+
+  <xs:element name="league" type="h:leagueType" />
+
+</xs:schema>

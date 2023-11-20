@@ -1,13 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"yaml.schemas": {
-			"kubernetes://schema/v1@service": "file:///c%3A/Users/johnb/Website2/combined-k8s-manifests.yaml"
-		},
-		"DockerRun.DisableAutoGenerateConfig": true
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "yaml.schemas": {
+      "kubernetes://schema/v1@service": "file:///c%3A/Users/johnb/Website2/combined-k8s-manifests.yaml"
+    },
+    "DockerRun.DisableAutoGenerateConfig": true
+  }
 }

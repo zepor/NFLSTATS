@@ -1,0 +1,10 @@
+piVersion: v1
+kind: Endpoints
+metadata:
+  annotations:
+    endpoints.kubernetes.io/last-change-trigger-time: "2023-11-13T00:44:50Z"
+  creationTimestamp: "2023-11-13T00:44:50Z"
+  name: frontend
+  namespace: azdevspace
+  resourceVersion: "847981"
+  uid: 11cca95c-cdad-4c50-b10c-1931c36305ca

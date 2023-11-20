@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "yaml.schemas": {
+      "kubernetes://schema/v1@service": "file:///c%3A/Users/johnb/Website2/combined-k8s-manifests.yaml",
+      "kubernetes://schema/apps/v1@deployment": "file:///home/zepor/ssweb/manifests/Azdev/frontend-deployment-azdev.yaml"
+    },
+    "DockerRun.DisableAutoGenerateConfig": true,
+    "debug.internalConsoleOptions": "neverOpen",
+    "azurite.location": "/home/zepor/.azurelogicapps/.azurite",
+    "terminal.integrated.env.linux": {
+      "PATH": "/home/zepor/.azurelogicapps/dependencies/DotNetSDK:${env:PATH}"
+    },
+    "omnisharp.dotNetCliPaths": [
+      "/home/zepor/.azurelogicapps/dependencies/DotNetSDK"
+    ]
+  }
+}

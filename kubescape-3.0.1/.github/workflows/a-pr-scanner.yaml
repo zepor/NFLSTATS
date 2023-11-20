@@ -1,0 +1,90 @@
+name: a-pr-scanner
+permissions: read-all
+on:
+  workflow_call:
+    inputs:
+      RELEASE:
+        description: 'release'
+        required: true
+        type: string
+      CLIENT:
+        description: 'Client name'
+        required: true
+        type: string
+      UNIT_TESTS_PATH:
+        required: false
+        type: string
+        default: "./..."
+jobs:
+  scanners:
+    env:
+      GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    name: PR Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # ratchet:actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # Install go because go-licenses use it ratchet:actions/setup-go@v3
+        name: Installing go
+        with:
+          go-version: '1.20'
+          cache: true
+      - name: Scanning - Forbidden Licenses (go-licenses)
+        id: licenses-scan
+        continue-on-error: true
+        run: |
+          echo "## Installing go-licenses tool"
+          go install github.com/google/go-licenses@latest
+          echo "## Scanning for forbiden licenses ##"
+          go-licenses check .
+      - name: Scanning - Credentials (GitGuardian)
+        if: ${{ env.GITGUARDIAN_API_KEY }}
+        continue-on-error: true
+        id: credentials-scan
+        uses: GitGuardian/ggshield-action@4ab2994172fadab959240525e6b833d9ae3aca61 # ratchet:GitGuardian/ggshield-action@master
+        with:
+          args: -v --all-policies
+        env:
+          GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+          GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+          GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+      - name: Scanning - Vulnerabilities (Snyk)
+        if: ${{ env.SNYK_TOKEN }}
+        id: vulnerabilities-scan
+        continue-on-error: true
+        uses: snyk/actions/golang@806182742461562b67788a64410098c9d9b96adb # ratchet:snyk/actions/golang@master
+        with:
+          command: test --all-projects
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Test coverage
+        id: unit-test
+        run: go test -v ${{ inputs.UNIT_TESTS_PATH }} -covermode=count -coverprofile=coverage.out
+
+      - name: Convert coverage count to lcov format
+        uses: jandelgado/gcov2lcov-action@v1
+
+      - name: Submit coverage tests to Coveralls
+        continue-on-error: true
+        uses: coverallsapp/github-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.lcov
+
+      - name: Comment results to PR
+        continue-on-error: true # Warning: This might break opening PRs from forks
+        uses: peter-evans/create-or-update-comment@5adcb0bb0f9fb3f95ef05400558bdb3f329ee808 # ratchet:peter-evans/create-or-update-comment@v2.1.0
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Scan results:
+            - License scan: ${{ steps.licenses-scan.outcome }}
+            - Credentials scan: ${{ steps.credentials-scan.outcome }}
+            - Vulnerabilities scan: ${{ steps.vulnerabilities-scan.outcome }}
+          reactions: 'eyes'

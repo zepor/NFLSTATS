@@ -1,0 +1,11 @@
+*.vs*
+*kubescape*
+!*Dockerfile*
+*debug*
+*vendor*
+*.pyc*
+.idea
+.history
+ca.srl
+*.out
+ks

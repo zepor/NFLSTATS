@@ -56,7 +56,6 @@ from dateutil.parser import parse
 from datetime import datetime, timedelta, timezone
 import pymongo
 import requests
-import redis
 from logging.handlers import RotatingFileHandler
 import logging
 import sys
@@ -91,8 +90,8 @@ for attempt in range(1, MAX_RETRIES + 1):
             logging.error("MongoDB server not available after maximum retries.")
             # Handle maximum retries reached scenario, e.g., raise an exception or exit the script
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-template_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'Website2' ,'frontend', 'public')
-static_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'Website2' , 'frontend', 'public', 'static')
+template_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'ssweb' ,'frontend', 'public')
+static_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'ssweb' , 'frontend', 'public', 'static')
 app = Flask(__name__, template_folder=template_path, static_folder=static_path)
 
 log = logging.getLogger('werkzeug')
@@ -121,12 +120,28 @@ for key, value in app.config.items():
     be_logger.info('%s: %s', key, value)
 CORS(app, origins='https://0.0.0.0')
 scheduler = BackgroundScheduler()
-try:
-    r = redis.StrictRedis(host='redis', port=6379, decode_responses=False) # replace with your Redis' host and port
-    r.ping() # this will raise an ConnectionError if the Redis server is not available
-    be_logger.info("Connected to Redis")
-except redis.exceptions.ConnectionError as ex:
-    be_logger.info("Could not connect to Redis:", str(ex))
+def connect_to_redis(primary_host, fallback_host, port=6379):
+    try:
+        # Try connecting to the primary Redis host
+        r = redis.StrictRedis(host=primary_host, port=port, decode_responses=False)
+        r.ping()
+        return r
+    except redis.exceptions.ConnectionError:
+        # If the primary host is unavailable, try the fallback host
+        try:
+            r = redis.StrictRedis(host=fallback_host, port=port, decode_responses=False)
+            r.ping()
+            return r
+        except redis.exceptions.ConnectionError as ex:
+            # If both connections fail, handle the exception appropriately
+            be_logger.info("Could not connect to Redis: %s", str(ex))
+            # You may want to raise an exception or handle it in some other way here
+            raise
+redis_primary_host = 'redis'  # The host used in the development environment
+redis_fallback_host = 'redis-service'  # The host used in the Kubernetes environment
+redis_port = 6379  # Default Redis port
+r = connect_to_redis(redis_primary_host, redis_fallback_host, redis_port)
+
 cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
 live_games_query_running = False
 # If the data exists, try to deserialize it

@@ -1,0 +1,17 @@
+// /app/src/assets/scss/3-components/_team-option.scss
+.team-option {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+
+  img {
+    width: 30px; // Adjust as needed
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}

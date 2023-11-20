@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:attributeGroup name="baseReturnAttributes">
+        <xs:attribute name="returns"           use="optional" type="xs:integer"/>
+        <xs:attribute name="touchdowns"        use="optional" type="xs:integer"/>
+        <xs:attribute name="yards"             use="optional" type="xs:integer"/>
+        <xs:attribute name="longest"           use="optional" type="xs:integer"/>
+        <xs:attribute name="longest_touchdown" use="optional" type="xs:integer"/>
+        <xs:attribute name="avg_yards"         use="optional" type="xs:decimal"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="baseOffenseAttributes">
+        <xs:attribute name="yards"             use="optional" type="xs:integer"/>
+        <xs:attribute name="avg_yards"         use="optional" type="xs:decimal"/>
+        <xs:attribute name="longest"           use="optional" type="xs:integer"/>
+        <xs:attribute name="longest_touchdown" use="optional" type="xs:integer"/>
+        <xs:attribute name="touchdowns"        use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="miscReturnAttributes">
+        <xs:attributeGroup ref="baseReturnAttributes" />
+        <xs:attribute name="blk_fg_touchdowns"     use="optional" type="xs:integer"/>
+        <xs:attribute name="blk_punt_touchdowns"   use="optional" type="xs:integer"/>
+        <xs:attribute name="ez_rec_touchdowns"     use="optional" type="xs:integer"/>
+        <xs:attribute name="fg_return_touchdowns"  use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="rushingAttributes">
+        <xs:attributeGroup ref="baseOffenseAttributes" />
+        <xs:attribute name="attempts"         use="required" type="xs:integer"/>
+        <xs:attribute name="tlost"            use="optional" type="xs:integer"/>
+        <xs:attribute name="tlost_yards"      use="optional" type="xs:integer"/>
+        <xs:attribute name="redzone_attempts" use="optional" type="xs:integer" />
+        <xs:attribute name="first_downs" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="receivingAttributes">
+        <xs:attributeGroup ref="baseOffenseAttributes" />
+        <xs:attribute name="receptions"        use="required" type="xs:integer"/>
+        <xs:attribute name="targets"           use="required" type="xs:integer"/>
+        <xs:attribute name="yards_after_catch" use="optional" type="xs:integer"/>
+        <xs:attribute name="redzone_targets"   use="optional" type="xs:integer" />
+        <xs:attribute name="air_yards"         use="optional" type="xs:integer" />
+        <xs:attribute name="first_downs" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="puntAttributes">
+        <xs:attributeGroup ref="baseOffenseAttributes" />
+        <xs:attribute name="attempts"      use="optional" type="xs:integer"/>
+        <xs:attribute name="avg_net_yards" use="optional" type="xs:decimal"/>
+        <xs:attribute name="blocked"       use="optional" type="xs:integer"/>
+        <xs:attribute name="inside_20"     use="optional" type="xs:integer"/>
+        <xs:attribute name="net_yards"     use="optional" type="xs:integer"/>
+        <xs:attribute name="return_yards"  use="optional" type="xs:integer"/>
+        <xs:attribute name="touchbacks"    use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="penaltyAttributes">
+        <xs:attribute name="penalties" use="optional" type="xs:integer" />
+        <xs:attribute name="yards" use="optional" type="xs:integer" />
+        <xs:attribute name="first_downs" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="puntReturnAttributes">
+        <xs:attributeGroup ref="miscReturnAttributes" />
+        <xs:attribute name="faircatches" use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="passingAttributes">
+        <xs:attributeGroup ref="baseOffenseAttributes" />
+        <xs:attribute name="attempts"         use="required" type="xs:integer"/>
+        <xs:attribute name="cmp_pct"          use="required" type="xs:decimal"/>
+        <xs:attribute name="completions"      use="required" type="xs:integer"/>
+        <xs:attribute name="gross_yards"      use="optional" type="xs:integer"/>
+        <xs:attribute name="interceptions"    use="required" type="xs:integer"/>
+        <xs:attribute name="net_yards"        use="optional" type="xs:integer"/>
+        <xs:attribute name="rating"           use="optional" type="xs:decimal"/>
+        <xs:attribute name="sack_yards"       use="optional" type="xs:integer"/>
+        <xs:attribute name="sacks"            use="required" type="xs:integer"/>
+        <xs:attribute name="redzone_attempts" use="optional" type="xs:integer" />
+        <xs:attribute name="air_yards"        use="optional" type="xs:integer" />
+        <xs:attribute name="int_touchdowns"   use="optional" type="xs:integer" />
+        <xs:attribute name="first_downs" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="kickoffAttributes">
+        <xs:attribute name="endzone"       use="optional" type="xs:integer"/>
+        <xs:attribute name="inside_20"     use="optional" type="xs:integer"/>
+        <xs:attribute name="kickoffs"      use="required" type="xs:integer"/>
+        <xs:attribute name="out_of_bounds" use="optional" type="xs:integer"/>
+        <xs:attribute name="return_yards"  use="optional" type="xs:integer"/>
+        <xs:attribute name="returned"      use="optional" type="xs:integer"/>
+        <xs:attribute name="touchbacks"    use="required" type="xs:integer"/>
+        <xs:attribute name="yards"         use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="kickReturnAttributes">
+        <xs:attributeGroup ref="baseReturnAttributes" />
+        <xs:attribute name="faircatches" use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="fumbleAttributes">
+        <xs:attribute name="fumbles"        use="required" type="xs:integer"/>
+        <xs:attribute name="lost_fumbles"   use="optional" type="xs:integer"/>
+        <xs:attribute name="ez_rec_tds"     use="optional" type="xs:integer"/>
+        <xs:attribute name="forced_fumbles" use="optional" type="xs:integer"/>
+        <xs:attribute name="out_of_bounds"  use="optional" type="xs:integer"/>
+        <xs:attribute name="opp_rec"        use="required" type="xs:integer"/>
+        <xs:attribute name="opp_rec_tds"    use="optional" type="xs:integer"/>
+        <xs:attribute name="opp_rec_yards"  use="required" type="xs:integer"/>
+        <xs:attribute name="own_rec"        use="required" type="xs:integer"/>
+        <xs:attribute name="own_rec_tds"    use="optional" type="xs:integer"/>
+        <xs:attribute name="own_rec_yards"  use="required" type="xs:integer"/>
+
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="kickAttributes">
+        <xs:attribute name="attempts" use="required" type="xs:integer"/>
+        <xs:attribute name="blocked"  use="optional" type="xs:integer"/>
+        <xs:attribute name="made"     use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="fieldgoalAttributes">
+        <xs:attributeGroup ref="kickAttributes" />
+        <xs:attribute name="avg_yards"    use="optional" type="xs:decimal"/>
+        <xs:attribute name="longest"      use="optional" type="xs:integer"/>
+        <xs:attribute name="yards"        use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="defenseAttributes">
+        <xs:attribute name="assists"                use="optional" type="xs:integer"/>
+        <xs:attribute name="combined"               use="optional" type="xs:integer"/>
+        <xs:attribute name="forced_fumbles"         use="optional" type="xs:integer"/>
+        <xs:attribute name="fumble_recoveries"      use="optional" type="xs:integer"/>
+        <xs:attribute name="interceptions"          use="optional" type="xs:integer"/>
+        <xs:attribute name="misc_assists"           use="optional" type="xs:integer"/>
+        <xs:attribute name="misc_forced_fumbles"    use="optional" type="xs:integer"/>
+        <xs:attribute name="misc_fumble_recoveries" use="optional" type="xs:integer"/>
+        <xs:attribute name="misc_tackles"           use="optional" type="xs:integer"/>
+        <xs:attribute name="passes_defended"        use="optional" type="xs:integer"/>
+        <xs:attribute name="qb_hits"                use="optional" type="xs:integer"/>
+        <xs:attribute name="sack_yards"             use="optional" type="xs:decimal"/>
+        <xs:attribute name="sacks"                  use="optional" type="xs:decimal"/>
+        <xs:attribute name="safeties"               use="optional" type="xs:integer"/>
+        <xs:attribute name="sp_assists"             use="optional" type="xs:integer"/>
+        <xs:attribute name="sp_blocks"              use="optional" type="xs:integer"/>
+        <xs:attribute name="sp_forced_fumbles"      use="optional" type="xs:integer"/>
+        <xs:attribute name="sp_fumble_recoveries"   use="optional" type="xs:integer"/>
+        <xs:attribute name="sp_tackles"             use="optional" type="xs:integer"/>
+        <xs:attribute name="tackles"                use="optional" type="xs:integer"/>
+        <xs:attribute name="tloss"                  use="optional" type="xs:decimal"/>
+        <xs:attribute name="tloss_yards"            use="optional" type="xs:decimal"/>
+        <xs:attribute name="three_and_outs_forced"  use="optional" type="xs:integer"/>
+        <xs:attribute name="fourth_down_stops"      use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="touchdownAttributes">
+        <xs:attribute name="fumble_return" use="required" type="xs:integer"/>
+        <xs:attribute name="int_return"    use="required" type="xs:integer"/>
+        <xs:attribute name="kick_return"   use="required" type="xs:integer"/>
+        <xs:attribute name="other"         use="required" type="xs:integer"/>
+        <xs:attribute name="pass"          use="required" type="xs:integer"/>
+        <xs:attribute name="punt_return"   use="required" type="xs:integer"/>
+        <xs:attribute name="rush"          use="required" type="xs:integer"/>
+        <xs:attribute name="total"         use="required" type="xs:integer"/>
+        <xs:attribute name="total_return"  use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="interceptionAttributes">
+        <xs:attribute name="interceptions" use="required" type="xs:integer"/>
+        <xs:attribute name="return_yards"  use="optional" type="xs:integer"/>
+        <xs:attribute name="returned"      use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="firstdownAttributes">
+        <xs:attribute name="pass"    use="required" type="xs:integer"/>
+        <xs:attribute name="penalty" use="required" type="xs:integer"/>
+        <xs:attribute name="rush"    use="required" type="xs:integer"/>
+        <xs:attribute name="total"   use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="efficiencyAttributes">
+        <xs:attribute name="attempts"  use="required" type="xs:integer"/>
+        <xs:attribute name="pct"       use="required" type="xs:decimal"/>
+        <xs:attribute name="successes" use="required" type="xs:integer"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extPassingAttributes">
+        <xs:attribute name="throw_aways"     use="optional" type="xs:integer" />
+        <xs:attribute name="defended_passes" use="optional" type="xs:integer" />
+        <xs:attribute name="dropped_passes"  use="optional" type="xs:integer" />
+        <xs:attribute name="spikes"          use="optional" type="xs:integer" />
+        <xs:attribute name="poor_throws"     use="optional" type="xs:integer" />
+
+        <xs:attribute name="blitzes"          use="optional" type="xs:integer" />
+        <xs:attribute name="hurries"          use="optional" type="xs:integer" />
+        <xs:attribute name="knockdowns"       use="optional" type="xs:integer" />
+        <xs:attribute name="pocket_time"      use="optional" type="xs:double" />
+        <xs:attribute name="avg_pocket_time"  use="optional" type="xs:double" />
+        <xs:attribute name="batted_passes"    use="optional" type="xs:integer" />
+        <xs:attribute name="on_target_throws" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extRushingAttributes">
+        <xs:attribute name="broken_tackles"      use="optional" type="xs:integer" />
+        <xs:attribute name="kneel_downs"         use="optional" type="xs:integer" />
+        <xs:attribute name="scrambles"           use="optional" type="xs:integer" />
+        <xs:attribute name="yards_after_contact" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extReceivingAttributes">
+        <xs:attribute name="broken_tackles"      use="optional" type="xs:integer" />
+        <xs:attribute name="dropped_passes"      use="optional" type="xs:integer" />
+        <xs:attribute name="catchable_passes"    use="optional" type="xs:integer" />
+        <xs:attribute name="yards_after_contact" use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extKickoffAttributes">
+        <xs:attribute name="onside_attempts"  use="optional" type="xs:integer" />
+        <xs:attribute name="onside_successes" use="optional" type="xs:integer" />
+        <xs:attribute name="squib_kicks"      use="optional" type="xs:integer" />
+        <xs:attribute name="total_endzone"    use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extDefenseAttributes">
+        <xs:attribute name="def_targets"    use="optional" type="xs:integer" />
+        <xs:attribute name="def_comps"      use="optional" type="xs:integer" />
+        <xs:attribute name="blitzes"        use="optional" type="xs:integer" />
+        <xs:attribute name="hurries"        use="optional" type="xs:integer" />
+        <xs:attribute name="knockdowns"     use="optional" type="xs:integer" />
+        <xs:attribute name="missed_tackles" use="optional" type="xs:integer" />
+        <xs:attribute name="batted_passes"  use="optional" type="xs:integer" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extPuntAttributes">
+        <xs:attribute name="hang_time"     use="optional" type="xs:double" />
+        <xs:attribute name="avg_hang_time" use="optional" type="xs:double" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extKickAttributes">
+        <xs:attribute name="missed" use="optional" type="xs:integer"/>
+        <xs:attribute name="pct"    use="optional" type="xs:decimal"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="extFieldgoalAttributes">
+        <xs:attributeGroup ref="extKickAttributes" />
+        <xs:attribute name="made_19"     use="optional" type="xs:integer"/>
+        <xs:attribute name="made_29"     use="optional" type="xs:integer"/>
+        <xs:attribute name="made_39"     use="optional" type="xs:integer"/>
+        <xs:attribute name="made_49"     use="optional" type="xs:integer"/>
+        <xs:attribute name="made_50"     use="optional" type="xs:integer"/>
+        <xs:attribute name="attempts_19" use="optional" type="xs:integer"/>
+        <xs:attribute name="attempts_29" use="optional" type="xs:integer"/>
+        <xs:attribute name="attempts_39" use="optional" type="xs:integer"/>
+        <xs:attribute name="attempts_49" use="optional" type="xs:integer"/>
+        <xs:attribute name="attempts_50" use="optional" type="xs:integer"/>
+    </xs:attributeGroup>
+
+</xs:schema>

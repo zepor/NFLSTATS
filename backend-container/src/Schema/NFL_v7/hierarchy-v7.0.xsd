@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:h="http://feed.elasticstats.com/schema/football/nfl/hierarchy-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/nfl/hierarchy-v7.0.xsd"
+           elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="../common-v7.0.xsd" />
+
+  <xs:complexType name="leagueType">
+    <xs:sequence>
+      <xs:element name="conference" minOccurs="0" maxOccurs="unbounded" type="h:conferenceType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="h:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:element name="league" type="h:leagueType"/>
+
+  <xs:complexType name="conferenceType">
+    <xs:sequence>
+      <xs:element  name="division" minOccurs="0" maxOccurs="unbounded" type="h:divisionType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="h:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="divisionType">
+    <xs:sequence>
+      <xs:element name="team" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="h:references" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element ref="h:franchise" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="venue" minOccurs="0" maxOccurs="1" type="h:venueType"/>
+            <xs:element name="team_colors" minOccurs="0" maxOccurs="1" type="h:teamColorsType"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="h:baseTeamAttributes" />
+          <xs:attribute name="owner" use="optional" type="xs:string" />
+          <xs:attribute name="general_manager" use="optional" type="xs:string" />
+          <xs:attribute name="president" use="optional" type="xs:string" />
+          <xs:attribute name="mascot" use="optional" type="xs:string" />
+          <xs:attribute name="nicknames" use="optional" type="xs:string" />
+          <xs:attribute name="fight_song" use="optional" type="xs:string" />
+          <xs:attribute name="championships_won" use="optional" type="xs:integer" />
+          <xs:attribute name="championship_seasons" use="optional" type="xs:string" />
+          <xs:attribute name="conference_titles" use="optional" type="xs:integer" />
+          <xs:attribute name="division_titles" use="optional" type="xs:integer" />
+          <xs:attribute name="playoff_appearances" use="optional" type="xs:integer" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="h:baseOrganizationAttributes" />
+  </xs:complexType>
+
+</xs:schema>

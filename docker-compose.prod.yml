@@ -12,7 +12,7 @@ services:
       - BACKEND_SERVICE_HOST=redis 
       - BACKEND_SERVICE_PORT=5000
     volumes:
-      - ./backend-container/src:/Website2/src:delegated
+      - ./backend-container/src:/ssweb/src:delegated
 
   frontend:
     environment:
@@ -21,5 +21,5 @@ services:
       - FRONTEND_SERVICE_HOST=frontend
       - FRONTEND_SERVICE_PORT=3000
     volumes:
-      - ./javascript/:/app:delegated
+      - ./jabascript/:/app:delegated
       - /app/node_modules

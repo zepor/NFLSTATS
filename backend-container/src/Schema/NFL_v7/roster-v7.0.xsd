@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:r="http://feed.elasticstats.com/schema/football/roster-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/roster-v7.0.xsd"
+           elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="common-game-v7.0.xsd" />
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element name="weather" minOccurs="0" maxOccurs="1" type="r:weatherType"/>
+      <xs:element name="summary"  minOccurs="1" maxOccurs="1" type="r:summaryType"/>
+      <xs:element name="home"     minOccurs="0" maxOccurs="1" type="r:teamRosterType"/>
+      <xs:element name="away"     minOccurs="0" maxOccurs="1" type="r:teamRosterType"/>
+      <xs:element name="officials" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="r:officialType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="r:baseGameAttributes" />
+    <xs:attributeGroup ref="r:extGameAttributes" />
+  </xs:complexType>
+
+  <xs:element name="game" type="r:gameType" />
+
+
+  <xs:complexType name="teamRosterType">
+    <xs:sequence>
+      <xs:element  name="coach" minOccurs="0" maxOccurs="3" type="r:coachType" />
+      <xs:element  name="player" minOccurs="0" maxOccurs="unbounded" type="r:playerProfileType" />
+    </xs:sequence>
+    <xs:attributeGroup ref="r:baseTeamAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="playerProfileType">
+    <xs:sequence>
+      <xs:element name="draft" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="team" minOccurs="0" maxOccurs="1" type="r:teamType" />
+          </xs:sequence>
+          <xs:attribute name="number" use="optional" type="xs:integer"/>
+          <xs:attribute name="round"  use="optional" type="xs:integer"/>
+          <xs:attribute name="year"   use="optional" type="xs:integer"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element ref="r:references" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="r:extPlayerAttributes" />
+    <xs:attribute name="age" use="optional" type="xs:integer" />
+  </xs:complexType>
+
+  <xs:complexType name="coachType">
+    <xs:attribute name="id" use="optional" type="xs:string" />
+    <xs:attribute name="full_name" use="optional" type="xs:string" />
+    <xs:attribute name="first_name" use="optional" type="xs:string" />
+    <xs:attribute name="last_name" use="optional" type="xs:string" />
+    <xs:attribute name="position" use="optional" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="officialType">
+    <xs:attribute name="id"         use="optional" type="xs:string"/>
+    <xs:attribute name="full_name"  use="optional" type="xs:string" />
+    <xs:attribute name="number"     use="optional" type="xs:string" />
+    <xs:attribute name="assignment" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="referee" />
+          <xs:enumeration value="umpire" />
+          <xs:enumeration value="headlinesman" />
+          <xs:enumeration value="linejudge" />
+          <xs:enumeration value="fieldjudge" />
+          <xs:enumeration value="sidejudge" />
+          <xs:enumeration value="downjudge" />
+          <xs:enumeration value="backjudge" />
+          <xs:enumeration value="replayofficial"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

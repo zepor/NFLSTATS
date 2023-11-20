@@ -1,103 +1,118 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "bridge-to-kubernetes.service",
-            "type": "bridge-to-kubernetes.service",
-            "service": "bikes",
-            "ports": [3000],
-            "useKubernetesServiceEnvironmentVariables": true
-        },
-        {
-            "label": "Start Web",
-            "type": "dotenv",
-            "targetTasks": [
-                "Restore Web",
-                "Web npm start"
-            ],
-            "file": "${input:dotEnvFilePath}"
-        },
-        {
-            "label": "Restore Web",
-            "type": "shell",
-            "command": "azd restore web",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "Web npm start",
-            "detail": "Helper task--use 'Start Web' task to ensure environment is set up correctly",
-            "type": "shell",
-            "command": "npm run start",
-            "options": {
-                "cwd": "${workspaceFolder}/src/web/",
-                "env": {
-                    "REACT_APP_API_BASE_URL": "http://localhost:3100",
-                    "BROWSER": "none"
-                }
-            },
-            "presentation": {
-                "panel": "dedicated",
-            },
-            "problemMatcher": []
-        },
-
-        {
-            "label": "Start API",
-            "type": "dotenv",
-            "targetTasks": [
-                "Restore API",
-                "API uvicorn launch"
-            ],
-            "file": "${input:dotEnvFilePath}"
-        },
-        {
-            "label": "Restore API",
-            "type": "shell",
-            "command": "azd restore api",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "API uvicorn launch",
-            "detail": "Helper task--use 'Start API' task to ensure environment is set up correctly",
-            "type": "shell",
-            "command": "${workspaceFolder}/src/api/api_env/bin/uvicorn todo.app:app --port 3100 --reload",
-            "options": {
-                "cwd": "${workspaceFolder}/src/api/",
-                "env": {
-                    "API_ENVIRONMENT": "develop"
-                }
-            },
-            "windows": {
-                "command": "${workspaceFolder}/src/api/api_env/scripts/uvicorn todo.app:app --port 3100 --reload"
-            },
-            "presentation": {
-                "panel": "dedicated",
-            },
-            "problemMatcher": []
-        },
-
-        {
-            "label": "Start API and Web",
-            "dependsOn":[
-                "Start API",
-                "Start Web"
-            ],
-            "problemMatcher": []
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "bridge-to-kubernetes.service",
+      "label": "Bridge to Kubernetes: Frontend",
+      "service": "frontend-service",
+      "ports": [3000],
+      "targetCluster": "DevCluster",
+      "useKubernetesServiceEnvironmentVariables": true
+    },
+    {
+      "type": "bridge-to-kubernetes.service",
+      "label": "Bridge to Kubernetes: Backend",
+      "service": "backend-service",
+      "ports": [5000],
+      "targetCluster": "DevCluster",
+      "useKubernetesServiceEnvironmentVariables": true
+    },
+    {
+      "type": "bridge-to-kubernetes.service",
+      "label": "Bridge to Kubernetes: Redis",
+      "service": "redis-service",
+      "ports": [6379],
+      "targetCluster": "DevCluster",
+      "useKubernetesServiceEnvironmentVariables": true
+    },
+    {
+      "label": "Start Web",
+      "type": "dotenv",
+      "targetTasks": ["Restore Web", "Web npm start"],
+      "file": "${input:dotEnvFilePath}"
+    },
+    {
+      "label": "Restore Web",
+      "type": "shell",
+      "command": "azd restore web",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web npm start",
+      "detail": "Helper task--use 'Start Web' task to ensure environment is set up correctly",
+      "type": "shell",
+      "command": "npm run start",
+      "options": {
+        "cwd": "${workspaceFolder}/src/web/",
+        "env": {
+          "REACT_APP_API_BASE_URL": "http://localhost:3100",
+          "BROWSER": "none"
         }
-    ],
+      },
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start API",
+      "type": "dotenv",
+      "targetTasks": ["Restore API", "API uvicorn launch"],
+      "file": "${input:dotEnvFilePath}"
+    },
+    {
+      "label": "Restore API",
+      "type": "shell",
+      "command": "azd restore api",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "API uvicorn launch",
+      "detail": "Helper task--use 'Start API' task to ensure environment is set up correctly",
+      "type": "shell",
+      "command": "${workspaceFolder}/src/api/api_env/bin/uvicorn todo.app:app --port 3100 --reload",
+      "options": {
+        "cwd": "${workspaceFolder}/src/api/",
+        "env": {
+          "API_ENVIRONMENT": "develop"
+        }
+      },
+      "windows": {
+        "command": "${workspaceFolder}/src/api/api_env/scripts/uvicorn todo.app:app --port 3100 --reload"
+      },
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start API and Web",
+      "dependsOn": ["Start API", "Start Web"],
+      "problemMatcher": []
+    },
+    {
+      "label": "bridge-to-kubernetes.resource",
+      "type": "bridge-to-kubernetes.resource",
+      "resource": "backend-service",
+      "resourceType": "service",
+      "ports": [5000],
+      "targetCluster": "DevCluster",
+      "targetNamespace": "azdevspace",
+      "useKubernetesServiceEnvironmentVariables": false
+    }
+  ],
 
-    "inputs": [
-        {
-            "id": "dotEnvFilePath",
-            "type": "command",
-            "command": "azure-dev.commands.getDotEnvFilePath"
-        },
-
-    ]
+  "inputs": [
+    {
+      "id": "dotEnvFilePath",
+      "type": "command",
+      "command": "azure-dev.commands.getDotEnvFilePath"
+    }
+  ]
 }

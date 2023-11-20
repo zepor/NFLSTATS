@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:i="http://feed.elasticstats.com/schema/football/injuries-v7.0.xsd"
+  targetNamespace="http://feed.elasticstats.com/schema/football/injuries-v7.0.xsd"
+  elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+
+      <xs:element name="week" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="id"       use="required" type="xs:string" />
+          <xs:attribute name="sequence" use="required" type="xs:integer" />
+          <xs:attribute name="title"    use="optional" type="xs:integer" />
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="injuries" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="team" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="i:teamType">
+                    <xs:sequence>
+                      <xs:element name="player" type="i:playerType" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:sequence>
+    <xs:attributeGroup ref="i:baseSeasonAttributes" />
+  </xs:complexType>
+
+  <xs:element name="season" type="i:seasonType" />
+
+  <xs:complexType name="playerType">
+    <xs:sequence>
+      <xs:element name="injury" type="i:injuryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="i:basePlayerAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="injuryType">
+    <xs:sequence>
+      <xs:element name="practice"  minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="status" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="primary"   minOccurs="0" maxOccurs="1" type="xs:string" />
+      <xs:element name="secondary" minOccurs="0" maxOccurs="1" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="status_date" use="required" type="xs:dateTime"/>
+  </xs:complexType>
+
+</xs:schema>

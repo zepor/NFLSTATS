@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:s="http://feed.elasticstats.com/schema/football/schedule-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/schedule-v7.0.xsd"
+           elementFormDefault="qualified">
+
+  <xs:include schemaLocation="common-v7.0.xsd"/>
+
+  <xs:complexType name="seasonType">
+    <xs:sequence>
+      <xs:element name="week" minOccurs="0" maxOccurs="unbounded" type="s:weekType"/>
+    </xs:sequence>
+    <xs:attributeGroup  ref="s:baseSeasonAttributes" />
+  </xs:complexType>
+
+  <xs:element name="season"  type="s:seasonType"/>
+
+  <xs:complexType name="weekType">
+    <xs:sequence>
+      <xs:element name="game" minOccurs="0" maxOccurs="unbounded" type="s:gameType"/>
+      <xs:element name="bye_week" minOccurs="0" maxOccurs="1" type="s:byeWeekType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseWeekAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element name="venue" minOccurs="0" maxOccurs="1" type="s:venueType"/>
+      <xs:element name="home"  minOccurs="1" maxOccurs="1" type="s:gameTeamType" />
+      <xs:element name="away"  minOccurs="1" maxOccurs="1" type="s:gameTeamType"/>
+      <xs:element name="broadcast" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="internet"  use="optional" type="xs:string"/>
+          <xs:attribute name="network"   use="optional" type="xs:string"/>
+          <xs:attribute name="satellite" use="optional" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="weather" minOccurs="0" maxOccurs="1" type="s:weatherType"/>
+      <xs:element name="scoring" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="quarter"  minOccurs="0" maxOccurs="unbounded" type="s:periodType"/>
+            <xs:element name="overtime" minOccurs="0" maxOccurs="unbounded" type="s:periodType"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="s:basePeriodScoringAttributes" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="s:baseGameAttributes" />
+    <xs:attributeGroup ref="s:extGameAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="byeWeekType">
+    <xs:sequence>
+      <xs:element name="team" minOccurs="0" maxOccurs="unbounded" type="s:gameTeamType"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:attributeGroup name="basePeriodScoringAttributes">
+    <xs:attribute name="away_points" use="optional" type="xs:integer"/>
+    <xs:attribute name="home_points" use="optional" type="xs:integer"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="basePeriodAttributes">
+    <xs:attribute name="id"          use="required" type="xs:string"/>
+    <xs:attribute name="number"      use="required" type="xs:integer"/>
+    <xs:attribute name="sequence"    use="required" type="xs:integer"/>
+  </xs:attributeGroup>
+
+  <xs:complexType name="periodType">
+    <xs:attributeGroup ref="s:basePeriodAttributes" />
+    <xs:attributeGroup ref="s:basePeriodScoringAttributes" />
+  </xs:complexType>
+
+  <xs:complexType name="gameTeamType">
+    <xs:complexContent>
+      <xs:extension base="s:teamType">
+        <xs:attribute name="game_number" use="optional" type="xs:integer" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="weatherType">
+    <xs:sequence>
+      <xs:element name="wind">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:byte" name="speed"/>
+              <xs:attribute type="xs:string" name="direction"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="condition"/>
+    <xs:attribute type="xs:byte" name="humidity"/>
+    <xs:attribute type="xs:byte" name="temp"/>
+  </xs:complexType>
+</xs:schema>

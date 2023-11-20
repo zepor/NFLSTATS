@@ -123,7 +123,7 @@ venv.bak/
 .vscode/settings.json
 .azure
 nifi/
-.Website2.code-workspace
+.ssweb.code-workspace
 node_modules
 Secrets/
 frontend-container/public/static/images/users/Docker Desktop #Installer.exe

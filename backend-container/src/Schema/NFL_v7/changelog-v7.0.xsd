@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:c="http://feed.elasticstats.com/schema/football/changelog-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/changelog-v7.0.xsd"
+           elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="common-v7.0.xsd" />
+
+  <xs:complexType name="changelogType">
+    <xs:sequence>
+      <xs:element name="changelog" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="profiles" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="teams" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="team" minOccurs="0" maxOccurs="unbounded" type="c:teamEntryType" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="players" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="player" minOccurs="0"  maxOccurs="unbounded" type="c:playerEntryType"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="games" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="schedule" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="game" minOccurs="0" maxOccurs="unbounded" type="c:gameEntryType"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="results" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="game" minOccurs="0" maxOccurs="unbounded" type="c:gameEntryType"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="standings" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="team" minOccurs="0" maxOccurs="unbounded" type="c:teamEntryType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="end_time"   use="required" type="xs:dateTime"/>
+          <xs:attribute name="start_time" use="required" type="xs:dateTime"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="c:baseOrganizationAttributes" />
+  </xs:complexType>
+
+  <xs:element name="league" type="c:changelogType" />
+
+  <xs:complexType name="teamEntryType">
+    <xs:attributeGroup ref="c:baseTeamAttributes" />
+    <xs:attribute name="last_modified" use="required" type="xs:dateTime"/>
+  </xs:complexType>
+
+  <xs:complexType name="playerEntryType">
+    <xs:attributeGroup ref="c:basePlayerAttributes" />
+    <xs:attribute name="full_name" use="optional" type="xs:string"/>
+    <xs:attribute name="last_modified" use="required" type="xs:dateTime"/>
+  </xs:complexType>
+
+  <xs:complexType name="gameEntryType">
+    <xs:attribute name="id" use="required" type="xs:string"/>
+    <xs:attribute name="last_modified" use="required" type="xs:dateTime"/>
+    <xs:attribute name="season_id" use="required" type="xs:string"/>
+  </xs:complexType>
+
+</xs:schema>

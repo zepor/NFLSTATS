@@ -1,0 +1,134 @@
+# Create secret or use an existing secret
+createAzureOperatorSecret: true
+
+# azureTenantID is the AAD tenant that the subscription is in
+azureTenantID: ""
+# azureSubscriptionID is the Azure Subscription the operator will act against.
+azureSubscriptionID: ""
+
+# azureClientID is the client ID of the Azure Service Principal or Managed Identity to use to authenticate with Azure.
+azureClientID: ""
+
+# azureClientSecret is the client secret of the Azure Service Principal used to authenticate with Azure.
+# This is required when using Service Principal authentication.
+azureClientSecret: ""
+
+#  A PEM or PKCS12 certificate string including the private key for Azure Credential Authentication. If certificate is password protected,  use 'azureClientCertificatePassword' for password.
+azureClientCertificate: ""
+
+# Password used to protect the client certificate (optional).
+azureClientCertificatePassword: ""
+
+# [Deprecated] Managed Identity (aad-pod-identity) Authentication
+# azureManagedIdentityResourceId is the resource ID (/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{managedIdentityName})
+# of the Azure Managed Identity used to authenticate with Azure if using aad-pod-identity authorization.
+aadPodIdentity:
+  enable: false
+  azureManagedIdentityResourceId: ""
+
+# azureSyncPeriod is the frequency at which resources are re-reconciled with Azure
+# when there have been no triggering changes in the Kubernetes resources. This sync
+# exists to detect and correct changes that happened in Azure that Kubernetes is not
+# aware about. BE VERY CAREFUL setting this value low - even a modest number of resources
+# can cause subscription level throttling if they are re-synced frequently.
+# If nil, no sync is performed. Durations are specified as "1h", "15m", or "60s". See
+# https://pkg.go.dev/time#ParseDuration for more details.
+azureSyncPeriod: ""
+
+# useWorkloadIdentityAuth can be set to use workload identity authentication
+# See https://azure.github.io/azure-workload-identity/docs/introduction.html for more details about Azure Workload Identity.
+# See https://azure.github.io/azure-service-operator/guide/authentication/ for details on setting up Workload Identity with ASO
+useWorkloadIdentityAuth: false
+
+# azureAuthorityHost is the URL of the AAD authority. If not specified, the default
+# is the AAD URL for the public cloud: https://login.microsoftonline.com/. See
+# https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud
+azureAuthorityHost: ""
+
+# azureResourceManagerEndpoint is the Azure Resource Manager endpoint.
+# If not specified, the default is the Public cloud resource manager endpoint.
+# See https://docs.microsoft.com/cli/azure/manage-clouds-azure-cli#list-available-clouds for details
+# about how to find available resource manager endpoints for your cloud. Note that the resource manager
+# endpoint is referred to as "resourceManager" in the Azure CLI.
+azureResourceManagerEndpoint: ""
+
+# azureResourceManagerAudience is the Azure Resource Manager AAD audience.
+# If not specified, the default is the Public cloud resource manager audience https://management.core.windows.net/.
+# See https://docs.microsoft.com/cli/azure/manage-clouds-azure-cli#list-available-clouds for details
+# about how to find available resource manager audiences for your cloud. Note that the resource manager
+# audience is referred to as "activeDirectoryResourceId" in the Azure CLI.
+azureResourceManagerAudience: ""
+
+# azureTargetNamespaces lists the namespaces the operator will watch
+# for Azure resources (if the mode includes running watchers). If
+# it's empty the operator will watch all namespaces.
+azureTargetNamespaces: []
+
+# azureOperatorMode determines whether the operator should run
+# watchers, webhooks or both.
+azureOperatorMode: ""
+
+# image defines the container image the ASO pod should run
+# Note: This should use the latest released tag number explicitly. If
+# it's ':latest' and someone deploys the chart after a new version has
+# been released but before the the chart is updated, they could get
+# errors, eg. due to types in the operator binary that have no
+# corresponding CRD yaml in the cart (and so no CRD in the k8s
+# repository).
+image:
+  repository: mcr.microsoft.com/k8s/azureserviceoperator:v2.3.0
+  kubeRBACProxy: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1
+
+# 'metrics' define settings for the metrics from controller.
+# 'address' field defines the metrics binding address on which metrics
+metrics:
+  enable: true
+  address: 0.0.0.0:{{ .Values.metrics.port }}
+  port: 8080
+
+# installCRDs configures if the operator attempts to install and manage the CRDs associated with ASO.
+# If the operator does not install and manage the CRDs on its own, you must manually install the appropriate
+# CRDs for version of the ASO operator you're running. Manually installing a subset of the CRDs is supported;
+# the operator will only reconcile that subset if those are the only CRDs it finds when the pod starts.
+installCRDs: true
+
+# crdPattern is a semicolon delimited string containing the CRD patterns for the operator to install.
+# Setting this has no effect if installCRDs is false.
+# This defines what new CRDs will be installed by ASO. Will always upgrade any existing CRDs even if no
+# crdPattern is defined. Leaving this field unspecified for a fresh install of ASO will result in the operator pod
+# exiting with an error saying no CRDs are configured. Leaving this field unspecified during an upgrade of ASO preserves
+# the existing set of CRDs already in the cluster. The existing CRDs will be upgraded to the latest version but no
+# new CRDs will be installed.
+# Values can be globs utilizing * or ?. The pattern is compared against the "{group}/{kind}" string of each CRD.
+# Patterns are case-insensitive.
+# Example: "resources.azure.com/*" would match the "resources.azure.com/ResourceGroup" resource.
+# Example: "compute.azure.com/*" would match all compute CRDs
+# Example: "resources.azure.com/*;compute.azure.com/*" would match all resources.azure.com resources as well as all
+# compute resources.
+# We strongly recommend including entire groups such as "dbformysql.azure.com/*". Individual CRDs such as
+# "dbformysql.azure.com/FlexibleServer" can be listed, but there are often other resources in the group which pair
+# together to enable other scenarios, such as dbformysql.azure.com/FlexibleServersFirewallRules, and it's generally
+# easier to just include the whole group.
+# See https://azure.github.io/azure-service-operator/guide/crd-management for more details.
+crdPattern: ''
+
+# podAnnotations contain the pod annotations for Azure Service Operator
+podAnnotations: {}
+
+# multitenant contains the value to enable multi-tenant mode for ASOv2. If multitenant.enable is true + azureOperatorMode set to "webhooks", chart will
+# install a cluster and if multitenant.enable is true + azureOperatorMode set to "watchers", chart will install a tenant.
+# NOTE: 'installCRDs' should be set to false while installing a tenant.
+multitenant:
+  enable: false
+
+# networkPolicies allows you to configure the NetworkPolicies deployed as part of the Chart
+networkPolicies:
+  enable: true
+  # TCP port to be configured for talking to the Kubernetes API
+  kubernetesApiPort: 6443
+  # Destination CIDR for talking to the Kubernetes API
+  kubernetesApiCIDR: 0.0.0.0/0
+  # Destination CIDR for talking to MySQL servers
+  mysqlCIDR: 0.0.0.0/0
+  # Destination CIDR for talking to PostgreSQL servers
+  postgresqlCIDR: 0.0.0.0/0

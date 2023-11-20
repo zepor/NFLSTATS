@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:p="http://feed.elasticstats.com/schema/football/pbp-v7.0.xsd"
+           targetNamespace="http://feed.elasticstats.com/schema/football/pbp-v7.0.xsd"
+            elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="common-game-v7.0.xsd" />
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element name="weather" minOccurs="0" maxOccurs="1" type="p:weatherType"/>
+      <xs:element name="summary"  minOccurs="1" maxOccurs="1" type="p:summaryType"/>
+      <xs:element name="quarter"  minOccurs="0" maxOccurs="unbounded" type="p:periodType"/>
+      <xs:element name="overtime" minOccurs="0" maxOccurs="unbounded" type="p:periodType"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="p:baseGameAttributes" />
+    <xs:attributeGroup ref="p:extGameAttributes" />
+  </xs:complexType>
+
+  <xs:element name="game" type="p:gameType" />
+
+  <xs:complexType name="periodType">
+    <xs:sequence>
+      <xs:element name="scoring" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="home" minOccurs="1" maxOccurs="1" type="p:gameTeamType"/>
+            <xs:element name="away" minOccurs="1" maxOccurs="1" type="p:gameTeamType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="coin_toss" type="p:coinTossType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="play-by-play">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="event" type="p:gameEventType"/>
+            <xs:element name="play"  type="p:gamePlayDetailsType"/>
+            <xs:element name="drive" type="p:gameDetailsDriveType"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id"       use="required" type="xs:string"/>
+    <xs:attribute name="number"   use="required" type="xs:integer"/>
+    <xs:attribute name="sequence" use="required" type="xs:integer"/>
+  </xs:complexType>
+
+</xs:schema>
