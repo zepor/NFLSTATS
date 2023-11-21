@@ -277,12 +277,15 @@ logs/
 kompose.exe
 kubectl.sha256
 kubescape-*
-workflow-designtime
+workflow-designtime/
 get_helm.sh
 Secrets/
-
+templates/
+javascript/
 # Node Modules
 node_modules
+openapi.yaml
+
 
 # Large Files or Directories
 # Add any other large files or directories here

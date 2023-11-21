@@ -1,83 +1,44 @@
-# Plural CLI
+# NFLSTATS Development Environment
+This is the NFLSTATS project, designed to provide statistical insights for the NFL.
+## THIS APP NEEDS A TON OF WORK 
+## 1. PIPELINES FROM SPORTS RADAR APIS FOR LIVE DATA 
+## 2. OTHER ADVANCED ANALYTICS DATASOURCES FOR ADDTIONAL ANALYSIS FOR AN AI MODEL
+## 3. DATA VISUALIZATION/DISPLAY
+## 4. ADDING OTHER SPORTS
+## 5. MAKING AI MODELS FOR SPECIFIC GAMES AND THEIR CONFIDENCE INTERVALS IN A PARTICULAR BET
+This guide will help you set up the environment using GitHub Codespaces or set it up locally using Docker and Docker Compose. Be aware the application is half built right now. It needs quite a bit of TLC. THis is my first project, feel free to critisize and make recommendations as you see fit!
 
-The plural cli automates all gitops operations for your deployments of plural applications.  The core workflow should mostly be as simple as:
 
-```bash
-plural build
-plural deploy
-```
+![system diagram](diagram.png)
 
-And if you want to teardown your infrastructure, you can simply run:
+## Using GitHub Codespaces
 
-```bash
-plural destroy
-```
+1. **Fork and Clone**: Fork this repository to your GitHub account and then clone it.
+2. **Open in Codespaces**: In your GitHub repository, click on the "Code" button and select "Open with Codespaces". This will open the project in a virtual environment with all the dependencies and settings configured.
+3. **Run the App**: Once in Codespaces, you can start the backend and frontend services as you would on your local machine.
 
-To add, update or reconfigure any applications deployed by plural.  But it goes even deeper and solves things like:
+## Setting Up Locally
 
-* Secret management (via a similar mechanism as git-crypt)
-* Application Health checking - `plural watch APP`
-* Log tailing - `plural logs list APP` and `plural logs tail APP LOGSTREAM`
-* Setting up secure proxies into databases, private web UIs - `plural proxy list APP` and `plural proxy connect APP NAME`
-
-## Installation
-
-There are a number of means to install plural, the simplest is to use our homebrew tap if you're using mac:
+1. **Clone the Repository**: If you haven't already, clone this repository to your local machine.
 
 ```bash
-brew install pluralsh/plural/plural
-```
+git clone https://github.com/[your_username]/NFLSTATS.git
+cd NFLSTATS
 
-More detailed instructions for other platforms can be found at https://docs.plural.sh/getting-started#1.-install-plural-cli-and-dependencies
+Docker and Docker Compose: Ensure you have Docker and Docker Compose installed on your local machine. If not, you can download them from the official Docker website.
 
-Plural does require a few other cli's to be installed, namely:
-* helm
-* terraform
-* kubectl
-* cloud provider cli for the infrastructure you're deploying to, like `awscli`, `gcloud`, etc
-* [kind](https://kind.sigs.k8s.io/) if using kind to deploy a local cluster for testing
+Build and Start Services: Use Docker Compose to build and start the services defined in the docker-compose.yml file.
 
-## Setup
-
-The core workflow is all git based, so you should create a git repository on github or wherever you're using SCM, clone it locally, then run:
-
-```bash
-plural init
-```
-
-You'll want to then install a bundle for whatever application you'd like, we'll use https://github.com/airbytehq/airbyte as an example.  You can search for the bundles using:
+bash
+Copy code
+docker-compose up --build
+Access the App: Once the services are up and running, you can access the app via your web browser.
+Notes
+Ensure your Docker environment has enough resources (CPU, RAM) allocated to run all the services smoothly.
+If you encounter any issues or have suggestions, please raise an issue on the GitHub repository.
+Contributions are always welcome! Feel free to create pull requests with improvements or new features.
+csharp
+Copy code
 
 
-```bash
-plural bundle list airbyte
-```
-
-And chose one (using aws as an example cloud provider target) like:
-
-```bash
-plural bundle install airbyte airbyte-aws
-```
-
-This will set the basic configuration parameters for all the infrastructure needed to install airbyte.  Then just run:
-
-```bash
-plural build
-plural deploy --commit "deploying my first plural app!"
-```
-
-To install it.
-
-
-## Installing the Plural Console
-
-We highly recommend installing the [plural console](https://github.com/pluralsh/console) alongside your plural applications.  That can be done easily with:
-
-```bash
-plural bundle install console console-aws
-plural build
-plural deploy --commit "deploying the plural console"
-```
-
-## Reaching Out
-
-If you have any issues with your plural installations, or just want to show us some love, feel free to drop into our discord [here](https://discord.gg/bEBAMXV64s)
+You can copy and paste this directly into your markdown file, and it should render as intended on platforms like GitHub.

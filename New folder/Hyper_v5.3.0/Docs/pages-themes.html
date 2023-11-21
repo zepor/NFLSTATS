@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Hyper - Responsive Bootstrap 5 Admin Dashboard - Documentation
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <link rel="shortcut icon" href="./public/images/favicon.ico" />
+    <style>
+      p {
+        line-height: 1.7;
+      }
+      body.loading {
+        visibility: hidden;
+      }
+      ol {
+        line-height: 2;
+      }
+    </style>
+    <link rel="icon" href="favicon.ico" />
+    <link href="css/vendor.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/core.css" rel="stylesheet" />
+  </head>
+
+  <body class="loading" data-layout="dark-sidenav">
+    <div class="wrapper">
+      <div class="left-side-menu" id="left-side-bar">
+        <div class="slimscroll-menu" id="left-side-menu-container">
+          <a href="index.html" class="logo text-center"
+            ><span class="logo-lg"
+              ><img
+                src="./public/images/logo.png"
+                alt=""
+                height="16"
+                id="side-main-logo"
+              /> </span
+            ><span class="logo-sm"
+              ><img
+                src="./public/images/logo_sm.png"
+                alt=""
+                height="16" /></span
+          ></a>
+          <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
+            <li class="side-nav-title side-nav-item">Getting Started</li>
+            <li class="side-nav-item">
+              <a href="index.html" class="side-nav-link"
+                ><i class="dripicons-box"></i> <span>Introduction</span></a
+              >
+            </li>
+            <li class="side-nav-item">
+              <a href="pages-installation.html" class="side-nav-link"
+                ><i class="dripicons-scale"></i> <span>Getting Started</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">Customization</li>
+            <li class="side-nav-item">
+              <a href="pages-themes.html" class="side-nav-link"
+                ><i class="dripicons-document-edit"></i>
+                <span>Layout &amp; Themes</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">UI Components</li>
+            <li class="side-nav-item">
+              <a href="pages-demo-widget.html" class="side-nav-link"
+                ><i class="dripicons-document-edit"></i> <span>Widgets</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">Other</li>
+            <li class="side-nav-item">
+              <a href="pages-changelog.html" class="side-nav-link"
+                ><i class="dripicons-blog"></i> <span>Change log</span></a
+              >
+            </li>
+            <li class="side-nav-item">
+              <a href="pages-upgrade.html" class="side-nav-link"
+                ><i class="dripicons-checklist"></i> <span>Upgrade</span></a
+              >
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="content">
+          <div class="navbar-custom">
+            <ul class="list-unstyled topbar-right-menu float-right mb-0">
+              <li class="notification-list topbar-dropdown d-lg-block"></li>
+            </ul>
+            <button class="button-menu-mobile open-left disable-btn">
+              <i class="mdi mdi-menu" id="button-menu-mobile-toggle"></i>
+            </button>
+            <div class="app-search">
+              <h4>
+                Documentation
+                <label class="badge badge-success float-right">v5.3.0</label>
+              </h4>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box">
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Hyper</a>
+                      </li>
+                      <li class="breadcrumb-item active">
+                        Layout &amp; Themes
+                      </li>
+                    </ol>
+                  </div>
+                  <h4 class="page-title">Layout &amp; Themes</h4>
+                </div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">Pre-Built Demos and Skins</h4>
+                    <p>
+                      Hyper offers three stunning demos, each with its own
+                      unique style: Saas, Modern, and Creative. To suit your
+                      preferences, each demo also comes with a corresponding
+                      dark mode. Switching between demos is easy - simply change
+                      the CSS file reference in your HTML file and your site
+                      will instantly transform with the new style.
+                    </p>
+
+                    <div class="mt-2">
+                      <h4 class="mt-0 mb-2 font-weight-bold">
+                        Customizing Color Palette
+                      </h4>
+                      <p>
+                        Customizing the color palette of any demo is a breeze.
+                        All you need to do is adjust a few SCSS variables and
+                        you're ready to go. With this simple modification, you
+                        can create a unique and personalized look for your theme
+                        that perfectly reflects your brand's identity.
+                      </p>
+                      <p class="mb-0">
+                        To modify colors in the existing themes, you can open
+                        the <code>_theme-mode.scss</code> file located in
+                        <code>src/assets/scss/config/&gt;DEMO_NAME&lt;</code>.
+                        Simply change the value of any variable to customize the
+                        color palette of the theme. Your changes will
+                        automatically reflect in any HTML elements or
+                        Bootstrap-based components. Please note that you need to
+                        set up and run the gulp flow provided in the
+                        installation steps earlier.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">RTL Support</h4>
+                    <p>
+                      Hyper also includes built-in support for right-to-left
+                      (RTL) languages. To use RTL support, simply replace the
+                      reference to the standard CSS file with the RTL version.
+                      This will automatically flip the layout and alignment of
+                      elements for proper RTL display. Note that both standard
+                      and RTL CSS files are included in the Hyper package.
+                    </p>
+                    <p class="mb-0">
+                      To enable RTL support in your chosen demo, navigate to the
+                      <code>src/&lt;DEMO_NAME&gt;/partials/head-css.html</code>
+                      file and replace the reference to
+                      <code>app-saas.min.css</code> with
+                      <code>app-saas-rtl.min.css</code> for Saas,
+                      <code>app-creative-rtl.min.css</code> for Creative, or
+                      <code>app-modern-rtl.min.css</code> for Modern.
+                      Additionally, don't forget to add the
+                      <code>dir="rtl"</code> attribute to the HTML tag, such as
+                      <code>&lt;html lang="en" dir="rtl"&gt;</code>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">
+                      Top Navigation Layouts (Horizontal)
+                    </h4>
+                    <p class="mb-0">
+                      To switch to the horizontal layout with a top navigation
+                      bar, follow these steps:
+                    </p>
+                    <ol>
+                      <li>
+                        Open the
+                        <code>src/&lt;DEMO_NAME&gt;/partials/html.html</code>
+                        file and add
+                        <code> &lt;html data-layout="topnav"&gt;</code> to the
+                        HTML tag.
+                      </li>
+                      <li>
+                        Open the
+                        <code>src/&lt;DEMO_NAME&gt;/partials/menu.html</code>
+                        file and remove the line
+                        <code>@<spna></spna>@include('left-sidebar.html')</code
+                        >.
+                      </li>
+                      <li>
+                        In the same file, add
+                        <code
+                          >@<spna></spna>@include('horizontal-nav.html')</code
+                        >
+                        instead
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">Detached Layouts</h4>
+                    <p class="mb-0">
+                      To enable the detached mode in the vertical layout with
+                      left sidebar menu, simply add the following code to the
+                      src/&lt;DEMO_NAME&gt;/partials/html.html file:
+                    </p>
+                    <p class="my-1">
+                      <code>&lt;html data-layout-mode="detached"&gt;</code>
+                    </p>
+                    <p class="mb-0">
+                      This will detach the menu from the main content and
+                      display it separately. Note that this feature is only
+                      available in the vertical layout with left sidebar menu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">Pre-built Layouts</h4>
+                    <p>
+                      Hyper provides multiple layout options, including vertical
+                      (main navigation on the left), horizontal (main navigation
+                      on top), and detached (main navigation on the left side,
+                      part of the main content area). To switch between these
+                      layouts, simply modify the necessary partials and add data
+                      attributes to HTML elements.
+                    </p>
+                    <p>
+                      To see how to activate a specific layout in Hyper, you can
+                      take a look at the layout examples provided in the
+                      following files:
+                    </p>
+                    <ol>
+                      <li>
+                        <code>layouts-horizontal.html</code>
+                      </li>
+                      <li>
+                        <code>layouts-full.html</code>
+                      </li>
+                      <li>
+                        <code>layouts-fullscreen.html</code>
+                      </li>
+                      <li>
+                        <code>layouts-detached.html</code>
+                      </li>
+                    </ol>
+                    <p class="mb-0">
+                      These files can be found in the <code>src/saas/</code> or
+                      <code>dist/sass/</code> directory
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">
+                      Customizing Left Sidebar, Layout Width and Right Sidebar
+                    </h4>
+                    <p>
+                      Hyper provides you with the flexibility to customize the
+                      appearance and functionality of the left sidebar, overall
+                      layout width, and right sidebar. You can choose from
+                      various sizes, themes, and types for the left sidebar, and
+                      even hide it if needed. You can also specify the overall
+                      layout width and enable/disable the right sidebar. These
+                      customizations can be easily done by setting the
+                      appropriate data attribute on the
+                      <code>html</code> element in your HTML file.
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Options</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><code class="text-nowrap">data-theme</code></td>
+                            <td>String</td>
+                            <td>"light" | "dark"</td>
+                            <td>Changes overall color scheme to dark</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code class="text-nowrap">data-layout-mode</code>
+                            </td>
+                            <td>String</td>
+                            <td>"fluid" | "boxed" | "detached"</td>
+                            <td>Changes the width of overall layout</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code class="text-nowrap">data-topbar-color</code>
+                            </td>
+                            <td>String</td>
+                            <td>"light" | "dark" | "brand"</td>
+                            <td>
+                              Changes the color scheme of the topbar to a given
+                              value
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <code class="text-nowrap">data-menu-color</code>
+                            </td>
+                            <td>String</td>
+                            <td>"light" | "dark" | "brand"</td>
+                            <td>
+                              Changes the color scheme of the menu to a given
+                              value
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code class="text-nowrap">data-sidenav-size</code>
+                            </td>
+                            <td>String</td>
+                            <td>
+                              "default" | "compact" | "condensed" | "sm-hover" |
+                              "sm-hover-active" | "full" | "fullscreen"
+                            </td>
+                            <td>
+                              The left sidebar size is reduced to a condensed
+                              (small) size
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <code class="text-nowrap"
+                                >data-layout-position</code
+                              >
+                            </td>
+                            <td>String</td>
+                            <td>"fixed" | "scrollable"</td>
+                            <td>Layout Position</td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <code class="text-nowrap">data-sidenav-user</code>
+                            </td>
+                            <td>Boolean</td>
+                            <td>"true" | "false"</td>
+                            <td>Shows the user info on the left sidebar</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p>Following are few examples:</p>
+                    <ul>
+                      <li>
+                        <h5>Changes the left sidebar theme to "dark"</h5>
+                        <code
+                          >&lt;html
+                          data-menu-color="dark"&gt;&lt;/html&gt;</code
+                        >
+                      </li>
+                      <li>
+                        <h5>Changes the left sidebar theme to "light"</h5>
+                        <code
+                          >&lt;html
+                          data-menu-color="light"&gt;&lt;/html&gt;</code
+                        >
+                      </li>
+                      <li>
+                        <h5>Changes the left sidebar to scrollable</h5>
+                        <code
+                          >&lt;html
+                          data-layout-position="scrollable"&gt;&lt;/html&gt;</code
+                        >
+                      </li>
+                      <li>
+                        <h5>Changes the left sidebar size to small</h5>
+                        <code
+                          >&lt;html
+                          data-sidenav-size="condensed"&gt;&lt;/html&gt;</code
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-1">
+                    <h4 class="mb-2 mt-0">Adding new page</h4>
+                    <p>
+                      We have provided a starter page (pages-starter.html)
+                      located in the src/saas folder that can help you get
+                      started quickly and easily when adding new pages. However,
+                      please keep in mind the following important points:
+                    </p>
+                    <p></p>
+                    <ol>
+                      <li>
+                        To ensure the proper functioning of the Hyper templates,
+                        make sure you have included the following files in your
+                        HTML code: <code>css/app-saas.min.css</code>,
+                        <code>css/icons.min.css</code>, and
+                        <code>js/app.min.js</code>. If you are using the Modern
+                        or Creative demos, be sure to replace
+                        <code>app-saas.min.css</code> with
+                        <code>app-modern.min.css</code> or
+                        <code>app-creative.min.css</code>, respectively.
+                      </li>
+                      <li>
+                        Most of the default and basic form elements, along with
+                        a few advanced elements, have their own CSS and
+                        JavaScript files included in Hyper.
+                      </li>
+                      <li>
+                        You can easily enhance the functionality of Hyper by
+                        adding features like charts, data tables, calendar,
+                        maps, and more. To use these features, you need to
+                        include the corresponding CSS and JavaScript files in
+                        your HTML. You can find the specific files needed for
+                        each feature on the corresponding documentation page.
+                      </li>
+                    </ol>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">2018 - 2023 © Hyper - Coderthemes.com</div>
+              <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-md-block">
+                  <a href="https://coderthemes.com/" target="_blank">About</a>
+                  <a href="https://coderthemes.com/" target="_blank">Support</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="js/runtime.ddea5333ccf94813930e.js"></script>
+    <script src="js/vendor.ddea5333ccf94813930e.js"></script>
+    <script src="js/icons.ddea5333ccf94813930e.js"></script>
+    <script src="js/core.ddea5333ccf94813930e.js"></script>
+    <script src="js/pagesshared.ddea5333ccf94813930e.js"></script>
+  </body>
+</html>

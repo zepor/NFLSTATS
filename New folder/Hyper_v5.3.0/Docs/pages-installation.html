@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Hyper - Responsive Bootstrap 5 Admin Dashboard - Documentation
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <link rel="shortcut icon" href="./public/images/favicon.ico" />
+    <style>
+      p {
+        line-height: 1.7;
+        font-size: 16px;
+      }
+      body.loading {
+        visibility: hidden;
+      }
+    </style>
+    <link rel="icon" href="favicon.ico" />
+    <link href="css/vendor.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/core.css" rel="stylesheet" />
+  </head>
+
+  <body class="loading" data-layout="dark-sidenav">
+    <div class="wrapper">
+      <div class="left-side-menu" id="left-side-bar">
+        <div class="slimscroll-menu" id="left-side-menu-container">
+          <a href="index.html" class="logo text-center"
+            ><span class="logo-lg"
+              ><img
+                src="./public/images/logo.png"
+                alt=""
+                height="16"
+                id="side-main-logo"
+              /> </span
+            ><span class="logo-sm"
+              ><img
+                src="./public/images/logo_sm.png"
+                alt=""
+                height="16" /></span
+          ></a>
+          <ul class="mt-3 metismenu side-nav" id="left-bar-menu">
+            <li class="side-nav-title side-nav-item">Getting Started</li>
+            <li class="side-nav-item">
+              <a href="index.html" class="side-nav-link"
+                ><i class="dripicons-box"></i> <span>Introduction</span></a
+              >
+            </li>
+            <li class="side-nav-item">
+              <a href="pages-installation.html" class="side-nav-link"
+                ><i class="dripicons-scale"></i> <span>Getting Started</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">Customization</li>
+            <li class="side-nav-item">
+              <a href="pages-themes.html" class="side-nav-link"
+                ><i class="dripicons-document-edit"></i>
+                <span>Layout &amp; Themes</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">UI Components</li>
+            <li class="side-nav-item">
+              <a href="pages-demo-widget.html" class="side-nav-link"
+                ><i class="dripicons-document-edit"></i> <span>Widgets</span></a
+              >
+            </li>
+            <li class="side-nav-title side-nav-item mt-2">Other</li>
+            <li class="side-nav-item">
+              <a href="pages-changelog.html" class="side-nav-link"
+                ><i class="dripicons-blog"></i> <span>Change log</span></a
+              >
+            </li>
+            <li class="side-nav-item">
+              <a href="pages-upgrade.html" class="side-nav-link"
+                ><i class="dripicons-checklist"></i> <span>Upgrade</span></a
+              >
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="content">
+          <div class="navbar-custom">
+            <ul class="list-unstyled topbar-right-menu float-right mb-0">
+              <li class="notification-list topbar-dropdown d-lg-block"></li>
+            </ul>
+            <button class="button-menu-mobile open-left disable-btn">
+              <i class="mdi mdi-menu" id="button-menu-mobile-toggle"></i>
+            </button>
+            <div class="app-search">
+              <h4>
+                Documentation
+                <label class="badge badge-success float-right">v5.3.0</label>
+              </h4>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box">
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Hyper</a>
+                      </li>
+                      <li class="breadcrumb-item active">Getting Started</li>
+                    </ol>
+                  </div>
+                  <h4 class="page-title">Getting Started</h4>
+                </div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="card">
+                <div class="card-body">
+                  <div class="p-lg-3">
+                    <div class="alert alert-success" role="alert">
+                      <p class="mb-0">
+                        <strong>Note:</strong>
+                        <b
+                          >Hyper offers enhanced real-time customization of your
+                          layout through the use of CSS variables, which are set
+                          via Sass.</b
+                        >
+                        If you are not familiar with Node.js and Gulp, don't
+                        worry. We've provided a ready-to-use (pre-compiled)
+                        version of Hyper in the <code>dist</code> folder, which
+                        you can use without any additional setup steps. However,
+                        if you want to take full advantage of Hyper's
+                        customization options, we recommend following the setup
+                        steps below to install Node.js and Gulp and build your
+                        own version of the template.
+                      </p>
+                    </div>
+                    <p class="mt-3">
+                      We utilize
+                      <a href="https://gulpjs.com/" target="_blank">Gulp</a> to
+                      automate our build flow, allowing for complete automation
+                      of our development workflows. Gulp is a powerful toolkit
+                      designed to help developers eliminate time-consuming
+                      tasks, allowing them to focus on what really matters:
+                      building great products. If you're not familiar with Gulp,
+                      you can learn more about it
+                      <a href="https://gulpjs.com/" target="_blank">here</a>.
+                    </p>
+                    <h4 class="mt-4">Prerequisites</h4>
+                    <p>
+                      To get started with Hyper, please follow the steps below
+                      to install and set up all the necessary prerequisites:
+                    </p>
+                    <ul>
+                      <li>
+                        <h5>Node.js - v16x or v18x</h5>
+                        <p class="mb-2">
+                          To use our build tools and take full advantage of
+                          Hyper's customization options, you will need to
+                          download and install Node.js. If you do not have
+                          Node.js v16.x or v18.x installed already, you can
+                          download the package installer from the official
+                          website. We recommend that you download the stable
+                          version of Node.js (LTS) to ensure the best possible
+                          experience.
+                        </p>
+                        <a href="https://nodejs.org/" target="_blank"
+                          >Download Node.js</a
+                        >
+                      </li>
+                      <li>
+                        <h5>Git</h5>
+                        <p class="mb-2">
+                          Ensure that you have Git installed and running on your
+                          system.
+                        </p>
+                        <a href="https://git-scm.com/" target="_blank"
+                          >Install Git</a
+                        >
+                      </li>
+                      <li class="pt-2">
+                        <h5>Gulp &amp; Gulp CLI</h5>
+                        <p>
+                          Ensure that you have
+                          <a href="https://gulpjs.com/" target="_blank">Gulp</a>
+                          installed and running on your computer. If you already
+                          have Gulp installed, you can skip this step. If not,
+                          you can install it by running the following command
+                          from your terminal:
+                          <code>npm install -g gulp@4.0.1</code>.
+                        </p>
+                      </li>
+                      <li>
+                        <h5>Yarn</h5>
+                        <p>
+                          Ensure that you have
+                          <a href="https://yarnpkg.com/lang/en/" target="_blank"
+                            >Yarn</a
+                          >
+                          installed and running on your computer. If you already
+                          have Yarn installed, you can skip this step.
+                        </p>
+                      </li>
+                    </ul>
+                    <h4 class="mt-4">Installation</h4>
+                    <p>
+                      To install all the required dependencies for the template,
+                      open your terminal, navigate to the folder where you have
+                      the Hyper files, and run the command
+                      <code>yarn install</code>. This will install all necessary
+                      dependencies in the <code>node_modules</code> folder. Once
+                      the installation is complete, you are ready to run Hyper
+                      for the first time.
+                    </p>
+                    <p class="mt-1">
+                      You can run the following commands to run projects
+                      locally: Or build for production use:
+                    </p>
+                    <table class="table table-bordered m-0">
+                      <thead>
+                        <tr>
+                          <th style="width: 20%">
+                            <i class="ti-file"></i> Command
+                          </th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>gulp</code></td>
+                          <td>
+                            The Hyper development environment enables you to
+                            choose a demo using the keyboard arrow keys, and it
+                            then launches the development server. The server
+                            will monitor changes to your demo code, including
+                            HTML, JavaScript, and Sass. Once the server is
+                            running, you can access it at http://localhost:3000.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><code>gulp build</code></td>
+                          <td>
+                            The gulp build command compiles the source code for
+                            the selected demo (using the keyboard arrow up/down
+                            keys) and bundles it with production mode
+                            optimization for the best performance. The compiled
+                            version of the code will be available inside the
+                            dist folder. This command is typically used when you
+                            are ready to build and deploy your project for
+                            production use.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="mt-3">
+                      <h5 class="mt-0 mb-2 font-weight-bold">
+                        Troubleshooting
+                      </h5>
+                      <ul>
+                        <li>
+                          If you encounter the error message "<code
+                            >Error: ENOENT: no such file or directory, scandir
+                            '/root/website/node_modules/node-sass/vendor'</code
+                          >" while running npm install, there are a couple of
+                          things you can try to resolve it:
+                          <ul>
+                            <li>
+                              1. Run <code>npm rebuild node-sass</code> to
+                              re-install node-sass
+                            </li>
+                            <li>
+                              2. Delete node_modules folder and re run
+                              <code>npm install</code>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <div class="alert alert-info mt-5">
+                        If you encounter any issues or have any questions during
+                        the setup process, please don't hesitate to reach out to
+                        us via email. We are always here to help and would be
+                        glad to assist you in any way we can.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">2018 - 2023 © Hyper - Coderthemes.com</div>
+            <div class="col-md-6">
+              <div class="text-md-right footer-links d-none d-md-block">
+                <a href="https://coderthemes.com/" target="_blank">About</a>
+                <a href="https://coderthemes.com/" target="_blank">Support</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/runtime.ddea5333ccf94813930e.js"></script>
+    <script src="js/vendor.ddea5333ccf94813930e.js"></script>
+    <script src="js/icons.ddea5333ccf94813930e.js"></script>
+    <script src="js/core.ddea5333ccf94813930e.js"></script>
+    <script src="js/pagesshared.ddea5333ccf94813930e.js"></script>
+  </body>
+</html>
