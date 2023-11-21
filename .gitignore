@@ -128,3 +128,167 @@ node_modules
 Secrets/
 frontend-container/public/static/images/users/Docker Desktop #Installer.exe
 templates/
+"New Folder"/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Misc
+.vscode/settings.json
+.azure
+nifi/
+.ssweb.code-workspace
+
+# Azure Artifacts
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json
+__azurite_db_queue__.json
+__azurite_db_queue_extent__.json
+__blobstorage__
+__queuestorage__
+
+# BFG Jar Files
+bfg-*.jar
+bfg-*.jar:Zone.Identifier
+
+# Log Files
+logs/
+
+# Miscellaneous and Temporary Files
+'New folder'
+*.code-workspace
+kompose.exe
+kubectl.sha256
+kubescape-*
+workflow-designtime
+get_helm.sh
+Secrets/
+
+# Node Modules
+node_modules
+
+# Large Files or Directories
+# Add any other large files or directories here
+
+# Docker and Kubernetes Artifacts
+# Add specific build artifacts or configuration files here
+
+# Build Artifacts and Compiled Code
+# Add any build artifacts or compiled code here
