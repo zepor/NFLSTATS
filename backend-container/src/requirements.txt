@@ -55,7 +55,7 @@ pipdeptree==2.13.0
 pipreqs==0.4.13
 platformdirs==3.11.0
 py-spy==0.3.14
-pyarrow==13.0.0
+pyarrow==14.0.1
 pycodestyle==2.11.1
 pycparser==2.21
 pylance==0.8.5
