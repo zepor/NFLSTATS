@@ -71,41 +71,11 @@ jobs:
           admin: 'false'
           use-kubelogin: 'true'
 
-      - name: Bake deployment
-        uses: azure/k8s-bake@v2
-        with:
-          renderEngine: "helm"
-          helmChart: ${{ secrets.HELM_CHART_PATH }}
-          overrides: |
-            replicas: 2
-          helm-version: "latest"
-        id: bake
+      - name: Apply Backend Deployment
+        run: kubectl apply -f manifests/backend-deployment.yaml -n azdevspace
 
-      - name: Upload baked manifest as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: baked-manifest
-          path: ${{ steps.bake.outputs.manifestsBundle }}
+      - name: Apply Frontend Deployment
+        run: kubectl apply -f manifests/frontend-deployment.yaml -n azdevspace
 
-      - name: Print baked manifest
-        run: cat ${{ steps.bake.outputs.manifestsBundle }}
-
-      - name: Deploy application
-        uses: Azure/k8s-deploy@v4
-        with:
-          action: deploy
-          manifests: ${{ steps.bake.outputs.manifestsBundle }}
-          images: |
-            ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }}
-            ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18:${{ github.sha }}
-          namespace: ${{ secrets.K8S_NAMESPACE }}
-          pull-images: true
-          strategy: basic
-          route-method: service
-          version-switch-buffer: 0
-          traffic-split-method: pod
-          percentage: 0
-          force: false
-          annotate-namespace: true
-          private-cluster: false
-          skip-tls-verify: false
+      - name: Apply Redis Deployment
+        run: kubectl apply -f manifests/redis-deployment.yaml -n azdevspace
