@@ -28,7 +28,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         light: resolve(__dirname, "src/assets/scss/light.scss"),
         dark: resolve(__dirname, "src/assets/scss/dark.scss"),
-        team_colors: resolve(__dirname, "src/assets/scss/team_colors.scss"),
+        team: resolve(__dirname, "src/assets/scss/team-theme.scss"),
       },
       output: {
         assetFileNames: "assets/[name][extname]",
