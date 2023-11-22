@@ -5,13 +5,6 @@ on:
     branches: main
   workflow_dispatch:
 
-env:
-  AZURE_CONTAINER_REGISTRY: "loveofsports"
-  RESOURCE_GROUP: "LoveofSports-Dev"
-  CLUSTER_NAME: "DevCluster"
-  CHART_PATH: "azure-service-operator/Chart.yaml"
-  CHART_OVERRIDE_PATH: "your-chart-override-path"
-
 jobs:
   buildImage:
     permissions:
@@ -26,13 +19,14 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
+          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
+
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image loveofsports.azurecr.io/python:3.9.18-${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18-${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+
   kubescape:
     runs-on: ubuntu-latest
     steps:
@@ -42,11 +36,13 @@ jobs:
       with:
         format: sarif
         outputFile: results.sarif
-        account: ${{secrets.KUBESCAPE_ACCOUNT}}
+        account: ${{ secrets.KUBESCAPE_ACCOUNT }}
+
     - name: Upload Kubescape scan results to Github Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: results.sarif
+
   deploy:
     permissions:
       actions: read
@@ -70,8 +66,8 @@ jobs:
       - name: Get K8s context
         uses: azure/aks-set-context@v3
         with:
-          resource-group: ${{ env.RESOURCE_GROUP }}
-          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ secrets.RESOURCE_GROUP }}
+          cluster-name: ${{ secrets.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
 
@@ -84,6 +80,7 @@ jobs:
             replicas: 2
           helm-version: "latest"
         id: bake
+
       - name: Upload baked manifest as artifact
         uses: actions/upload-artifact@v2
         with:
@@ -92,12 +89,23 @@ jobs:
 
       - name: Print baked manifest
         run: cat ${{ steps.bake.outputs.manifestsBundle }}
-  
+
       - name: Deploy application
         uses: Azure/k8s-deploy@v4
         with:
           action: deploy
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
           images: |
-            loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }}
-            loveofsports.azurecr.io/python:3.9.18:${{ github.sha }}
+            ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }}
+            ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18:${{ github.sha }}
+          namespace: ${{ secrets.K8S_NAMESPACE }}
+          pull-images: true
+          strategy: basic
+          route-method: service
+          version-switch-buffer: 0
+          traffic-split-method: pod
+          percentage: 0
+          force: false
+          annotate-namespace: true
+          private-cluster: false
+          skip-tls-verify: false
