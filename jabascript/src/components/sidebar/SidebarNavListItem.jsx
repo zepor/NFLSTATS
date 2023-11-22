@@ -27,33 +27,22 @@ const SidebarNavListItem = (props) => {
     setOpen((state) => !state);
   };
 
-  if (children) {
+if (children) {
     return (
       <li className={`sidebar-item ${open ? "active" : ""}`}>
-        <a
-          className={`sidebar-link ${open ? "" : "collapsed"}`}
+        <a className={`sidebar-link ${open ? "" : "collapsed"}`}
           data-bs-toggle="collapse"
           aria-expanded={open ? "true" : "false"}
           depth={depth}
-          onClick={handleToggle}
-        >
-          {Icon && <Icon className="feather align-middle" />}{" "}
-          <span className="align-middle" depth={depth}>
-            {title}
-          </span>
-          {badge && (
-            <Badge className="badge-sidebar-primary" bg="" size={18}>
-              {badge}
-            </Badge>
-          )}
-          {open ? <div /> : <div />}
+          onClick={handleToggle}>{Icon && <Icon className="feather align-middle" />}{" "}<span className="align-middle" depth={depth}>{title}</span>{badge && (<Badge className="badge-sidebar-primary" bg="" size={18}>{badge}</Badge>)}
         </a>
         <Collapse in={open}>
           <ul className="sidebar-dropdown list-unstyled">{children}</ul>
         </Collapse>
       </li>
     );
-  }
+}
+
 
   return (
     <li className="sidebar-item">

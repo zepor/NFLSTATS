@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-
 import { resolve } from "path";
 
 export default defineConfig({
@@ -11,7 +10,7 @@ export default defineConfig({
     hmr: {
       overlay: false,
     },
-  },
+  }, 
   plugins: [
     react(),
     svgrPlugin(),

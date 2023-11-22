@@ -84,5 +84,6 @@ services:
       - FRONTEND_PORT_3000_TCP_PORT=3000
       - FRONTEND_PORT_3000_TCP_ADDR=172.16.238.4
     volumes:
-      - ./jabascript:/app
+      - ./jabascript:/app:delegated
+      - /app/node_modules
 

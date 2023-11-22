@@ -14,6 +14,42 @@ export const LAYOUT = {
   BOXED: "boxed",
 };
 
+export const TEAMS = {
+  CARDINALS: { primary: "#97233F", secondary: "#000000" },
+  FALCONS: { primary: "#A71930", secondary: "#000000" },
+  RAVENS: { primary: "#241773", secondary: "#9E7C0C" },
+  BILLS: { primary: "#00338D", secondary: "#C60C30" },
+  PANTHERS: { primary: "#0085CA", secondary: "#101820" },
+  BEARS: { primary: "#0B162A", secondary: "#C83803" },
+  BENGALS: { primary: "#FB4F14", secondary: "#000000" },
+  BROWNS: { primary: "#311D00", secondary: "#FF3C00" },
+  COWBOYS: { primary: "#003594", secondary: "#869397" },
+  BRONCOS: { primary: "#FB4F14", secondary: "#002244" },
+  LIONS: { primary: "#0076B6", secondary: "#B0B7BC" },
+  PACKERS: { primary: "#203731", secondary: "#FFB612" },
+  TEXANS: { primary: "#03202F", secondary: "#A71930" },
+  COLTS: { primary: "#002C5F", secondary: "#A2AAAD" },
+  JAGUARS: { primary: "#006778", secondary: "#9F792C" },
+  CHIEFS: { primary: "#E31837", secondary: "#FFB81C" },
+  RAIDERS: { primary: "#000000", secondary: "#A5ACAF" },
+  CHARGERS: { primary: "#0080C6", secondary: "#FFC20E" },
+  RAMS: { primary: "#003594", secondary: "#FFA300" },
+  DOLPHINS: { primary: "#008E97", secondary: "#FC4C02" },
+  VIKINGS: { primary: "#4F2683", secondary: "#FFC62F" },
+  PATRIOTS: { primary: "#002244", secondary: "#C60C30" },
+  SAINTS: { primary: "#D3A625", secondary: "#101820" },
+  GIANTS: { primary: "#0B2265", secondary: "#A71930" },
+  JETS: { primary: "#203731", secondary: "#FFFFFF" },
+  EAGLES: { primary: "#014A53", secondary: "#000000" },
+  STEELERS: { primary: "#FFB612", secondary: "#101820" },
+  NINERS: { primary: "#AA0000", secondary: "#B3995D" },
+  SEAHAWKS: { primary: "#002244", secondary: "#69BE28" },
+  BUCCANEERS: { primary: "#D50A0A", secondary: "#34302B" },
+  TITANS: { primary: "#4B92DB", secondary: "#0C2340" },
+  COMMANDERS: { primary: "#773141", secondary: "#FFB612" },
+};
+
+
 export const THEME = {
   DEFAULT: "default",
   COLORED: "colored",

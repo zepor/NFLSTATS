@@ -1,65 +1,70 @@
 import React, { useContext, useState } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 import * as Constants from "../constants";
-import TeamOption from "./TeamOption";
+import { Carousel, Button, Card, Row, Col, Container } from 'react-bootstrap';
 
 const TeamSelector = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { setTheme } = useContext(ThemeContext);
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [confirmTeam, setConfirmTeam] = useState(false);
 
   const handleTeamSelect = (teamName) => {
     setSelectedTeam(teamName);
-    setTheme(teamName); // Set the selected team in the context
-
-    // Set the theme colors
-    document.documentElement.style.setProperty(
-      "--primary-color",
-      Constants[teamName]["primary-dark"]
-    );
-    document.documentElement.style.setProperty(
-      "--secondary-color",
-      Constants[teamName]["primary-light"]
-    );
+    setConfirmTeam(false);
   };
 
-  // Additional logic to handle different styles for dev and prod environments
-  useEffect(() => {
-    const stylesheet = document.querySelector(".js-stylesheet");
-    if (stylesheet) {
-      if (import.meta.env.PROD) {
-        stylesheet.setAttribute("href", `/assets/${theme}.css`);
-      } else {
-        stylesheet.setAttribute("href", `/src/assets/scss/${theme}.scss`);
-      }
+  const confirmSelection = (teamName) => {
+    if (teamName && Constants.TEAMS[teamName]) {
+      const teamColors = Constants.TEAMS[teamName];
+      document.documentElement.style.setProperty('--primary-color', teamColors.primary);
+      document.documentElement.style.setProperty('--secondary-color', teamColors.secondary);
+      setTheme(teamName);
+      setSelectedTeam(teamName);
+      setConfirmTeam(true);
     }
-  }, [theme]);
+  };
+
+  const teamNames = Object.keys(Constants.TEAMS).sort();
 
   return (
-    <div>
-      <h3>Select Your NFL Team</h3>
-      <div className="custom-dropdown">
-        {Object.keys(Constants)
-          .filter(
-            (key) =>
-              key !== "THEME_PALETTE_LIGHT" && key !== "THEME_PALETTE_DARK"
-          )
-          .map((teamName) => (
-            <TeamOption
-              key={teamName}
-              teamName={teamName}
-              logoPath={`/assets/img/teamlogos/${teamName
-                .toLowerCase()
-                .replace(/ /g, "-")}.png`}
-              onSelect={() => handleTeamSelect(teamName)}
-            />
-          ))}
-      </div>
+    <Container className="py-5">
+      <Row className="justify-content-center">
+        <Col lg={8}>
+          <h2 className="text-center mb-4">Select Your Favorite NFL Team</h2>
+          <Card>
+            <Card.Body>
+              <Carousel>
+                {teamNames.map(teamName => {
+                  const logoPath = `/src/assets/img/teamlogos/${teamName.toLowerCase().replace(/ /g, "-")}.png`;
+                  const fanPath = `/src/assets/img/fans/${teamName.toLowerCase().replace(/ /g, "")}fans.png`;
 
-      {/* Display selected team's colors */}
-      {selectedTeam && (
-        <div style={{backgroundColor: Constants[selectedTeam]["primary-dark"],
-            color: Constants[selectedTeam]["primary-light"],
-          }}><h4>Selected Team:{selectedTeam}</h4>Team Colors</div>)}</div>
+                  return (
+                    <Carousel.Item key={teamName}>
+                      <Row className="align-items-center">
+                        <Col md={6}>
+                          <img className="d-block w-100" src={logoPath} alt={`${teamName} logo`} />
+                        </Col>
+                        <Col md={6}>
+                          <img className="d-block w-100" src={fanPath} alt={`${teamName} fans`} />
+                        </Col>
+                      </Row>
+                      <Carousel.Caption className="mt-4 text-center">
+                        <Button variant="primary" onClick={() => confirmSelection(teamName)}>Select {teamName}</Button>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+                  );
+                })}
+              </Carousel>
+            </Card.Body>
+          </Card>
+          {confirmTeam && (
+            <div className="text-center mt-3">
+              <h4>Selected Team: {selectedTeam}</h4>
+            </div>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

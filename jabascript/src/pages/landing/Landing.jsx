@@ -166,11 +166,11 @@ const Navigation = () => (
       <Row>
         <Button
           href="/signup"
-          variant="primary"
+          variant="success"
           className="ms-2 btn-pill"
           size="lg"
         >
-          Sign Up
+          Sign IN
         </Button>
         <Button
           href="/signin"
@@ -815,14 +815,14 @@ const Footer = () => (
             rel="noopener noreferrer"
             className="mt-n1 btn-pill"
           >
-            Get AppStack
+            Get LoveofFootball.io
           </Button>
           {/* Add social media links or newsletter signup here */}
-          <div>
-            <TWIcon />
-            <FBIcon />
-            <INSTAIcon />
-            <LINKIcon />
+          <div>            
+            <TWIcon style={{ width: '20px', height: '20px' }} />
+            <FBIcon style={{ width: '20px', height: '20px' }} />
+            <INSTAIcon style={{ width: '20px', height: '20px' }} />
+            <LINKIcon style={{ width: '20px', height: '20px' }} />
           </div>
         </Col>
       </Row>
@@ -848,18 +848,16 @@ const Landing = () => {
     <React.Fragment>
       <Navigation />
       <Intro />
+      
+      <section className="team-selector-section">
+        <TeamSelector />
+      </section>
+      <DashboardsAndPages />
+      <Features />
       <ColorSchemesAndLayouts />
       <Integrations />
       <Testimonials />
-      <DashboardsAndPages />
-      <Features />
       <Faq />
-      {/* Add team selector section */}
-      <section className="team-selector-section">
-        <h2>Select Your Favorite NFL Team</h2>
-        <TeamSelector />
-        {/* ... more content, possibly the team icons ... */}
-      </section>
       <Footer />
     </React.Fragment>
   );

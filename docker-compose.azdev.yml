@@ -1,20 +1,76 @@
 version: '3.7'
 
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+
+volumes:
+  combined:
+    external: true
+  redis_data:
+  frontend_data:
+    driver: local
+
 services:
   redis:
+    image: redis:latest
+    container_name: redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - mynetwork
+    ports:
+      - 6379:6379
     environment:
       - REDIS_SERVICE_HOST=redis
       - REDIS_SERVICE_PORT=6379
+
   backend:
-    environment:
-      - DEBUG=True
-      - NODE_ENV=development
-      - BACKEND_SERVICE_HOST=backend 
-      - BACKEND_SERVICE_PORT=5000
+    container_name: backend
+    build:
+      context: ./backend-container
+      dockerfile: Dockerfile.python
+    image: python:3.9.18
+    ports:
+      - 5000:5000 
     volumes:
       - ./backend-container/src:/ssweb/src:delegated
+      - ./Secrets:/ssweb/Secrets
+      - ./backend-container/requirements.txt:/ssweb/requirements.txt
+      - ./jabascript/public:/ssweb/frontend/public
+      - ./jabascript/src:/ssweb/frontend/src
+    networks:
+      - mynetwork
+    working_dir: /ssweb
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/ssweb/.venv/Lib/site-packages
+      - WORKERES=4
+      - KEYFILE_PATH=/ssweb/Secrets/key_without_pass.pem
+      - CERTFILE_PATH=/ssweb/Secrets/Loveoffootball.crt
+      - PYTHONDONTWRITEBYTECODE=1
+      - BACKEND_SERVICE_HOST=backend 
+      - BACKEND_SERVICE_PORT=5000
+      - DEBUG=True
+      - NODE_ENV=development
+    command: python src/run.py
 
   frontend:
+    container_name: frontend
+    build:
+      context: ./jabascript
+      dockerfile: Dockerfile.react
+    ports:
+      - 3000:3000
+      - 3001:3001
+    networks:
+      - mynetwork
+    working_dir: /app
     environment:
       - NODE_ENV=development
       - FRONTEND_SERVICE_HOST=frontend

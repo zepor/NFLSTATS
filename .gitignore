@@ -282,9 +282,13 @@ get_helm.sh
 Secrets/
 templates/
 javascript/
+.ignore/
 # Node Modules
 node_modules
 openapi.yaml
+.azdo/
+.devcontainer/
+infra/
 
 
 # Large Files or Directories

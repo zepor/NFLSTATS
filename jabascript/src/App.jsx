@@ -17,7 +17,7 @@ import SidebarProvider from "./contexts/SidebarProvider";
 import LayoutProvider from "./contexts/LayoutProvider";
 import ChartJsDefaults from "./utils/ChartJsDefaults";
 
-import AuthProvider from "./contexts/JWTContext";
+import AuthProvider from "./contexts/JWTProvider";
 // import AuthProvider from "./contexts/FirebaseAuthProvider";
 // import AuthProvider from "./contexts/Auth0Provider";
 // import AuthProvider from "./contexts/CognitoProvider";

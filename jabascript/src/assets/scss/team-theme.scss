@@ -1,0 +1,11 @@
+// team-theme.scss
+:root {
+  --primary-color: #defaultPrimary; // default fallback color
+  --secondary-color: #defaultSecondary; // default fallback color
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  // other styles...
+}

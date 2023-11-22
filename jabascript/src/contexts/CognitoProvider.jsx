@@ -189,18 +189,13 @@ function AuthProvider({ children }) {
 
   const resetPassword = (email) => console.log(email);
 
-  return (
-    <AuthContext.Provider value={{...state,
-        method: "cognito",
-        user: {
-          displayName: state?.user?.name || "Undefined",
-          role: "user",
-          ...state.user},
-        signIn,
-        signUp,
-        signOut,
-        resetPassword}}>{children}</AuthContext.Provider>
-  );
-}
+return (
+  <AuthContext.Provider value={{...state, 
+      method: "cognito",
+      user: {
+        displayName: state?.user?.name || "Undefined",
+        role: "user", ...(state.user || {}) 
+      },
+      signIn, signUp, signOut, resetPassword}}>{children}</AuthContext.Provider>);
 
 export default AuthProvider;

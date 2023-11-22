@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
-
-import { THEME, THEME_PALETTE_LIGHT, THEME_PALETTE_DARK } from "../constants";
-
+import * as Constants from "../constants";
 import useTheme from "./useTheme";
 
 const usePalette = () => {
   const { theme } = useTheme();
-
-  const [palette, setPalette] = useState(THEME_PALETTE_LIGHT);
+  const [palette, setPalette] = useState(Constants.THEME_PALETTE_LIGHT);
 
   useEffect(() => {
-    if (theme === THEME.DARK) {
-      setPalette(THEME_PALETTE_DARK);
-      //}
-      //else if (theme === THEME.TEAM_COLORS && TEAM_COLORS) {
-      // Handle team color theme
-      //setPalette(TEAM_COLORS);
+    if (theme === Constants.THEME.DARK) {
+      setPalette(Constants.THEME_PALETTE_DARK);
+    } else if (Constants.TEAMS && Constants.TEAMS[theme]) {
+      // Use team-specific colors
+      const teamColors = Constants.TEAMS[theme];
+      setPalette({
+        ...Constants.THEME_PALETTE_LIGHT, // Assuming light theme as base
+        primary: teamColors.primary,
+        secondary: teamColors.secondary
+      });
     } else {
-      setPalette(THEME_PALETTE_LIGHT);
+      setPalette(Constants.THEME_PALETTE_LIGHT);
     }
-    //  }, [theme, team]);
   }, [theme]);
 
   return palette;

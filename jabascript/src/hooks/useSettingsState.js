@@ -5,7 +5,6 @@ function useSettingsState(key, initialValue) {
   const [value, setValue] = useLocalStorage(key, initialValue);
 
   useEffect(() => {
-    // Set data attribute on body element
     document.body.dataset[key] = value;
 
     // Replace stylesheet if dark theme gets toggled

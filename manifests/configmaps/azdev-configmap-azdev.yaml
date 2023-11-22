@@ -12,7 +12,7 @@ data:
   WEBDEST: "/ssweb"
   DPP: "/ssweb/.venv/Lib/site-packages"
   REDIS_HOST: "localhost"
-  FLASK_ENV: "development"
+  FLASK_DEBUG: "development"
   FLASK_APP: "src/app.py"
   MAVEN_OPTS: "-Xms1024m -Xmx3076m -XX:MaxPermSize=256m"
   REDIS_SERVICE_HOST: "redis"
