@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "loveofsports.azurecr.io"
+  AZURE_CONTAINER_REGISTRY: "loveofsports"
   RESOURCE_GROUP: "LoveofSports-Dev"
   CLUSTER_NAME: "DevCluster"
   CHART_PATH: "azure-service-operator/Chart.yaml"
@@ -29,11 +29,10 @@ jobs:
 
       - name: Build and push frontend image to ACR
         run: |
-           az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ssweb-frontend:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
-
+          az acr build --image loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/python:3.9.18:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+          az acr build --image loveofsports.azurecr.io/python:3.9.18:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
   kubescape:
     runs-on: ubuntu-latest
     steps:
@@ -43,10 +42,7 @@ jobs:
       with:
         format: sarif
         outputFile: results.sarif
-        # # Optional: Specify the Kubescape cloud account ID
         account: ${{secrets.KUBESCAPE_ACCOUNT}}
-        # # Optional: Scan a specific path. Default will scan the whole repository
-        # files: "examples/*.yaml"
     - name: Upload Kubescape scan results to Github Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
@@ -64,9 +60,7 @@ jobs:
       - name: Azure login
         uses: azure/login@v1.4.6
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Set up kubelogin for non-interactive login
         uses: azure/use-kubelogin@v1
@@ -98,5 +92,5 @@ jobs:
           action: deploy
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
           images: |
-            ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ssweb-frontend:${{ github.sha }}
-            ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/python:3.9.18:${{ github.sha }}
+            loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }}
+            loveofsports.azurecr.io/python:3.9.18:${{ github.sha }}
