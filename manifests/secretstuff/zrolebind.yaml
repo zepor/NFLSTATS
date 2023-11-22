@@ -23,7 +23,22 @@ subjects:
   name: "b7d95cfe-542a-4116-ae52-c64bf13ded90"  # The application ID of the Service Principal
   apiGroup: rbac.authorization.k8s.io
 roleRef:
-  kind: Role
-  name: Azure Kubernetes Fleet Manager RBAC Cluster Admin  # Or 'admin' if more permissions are needed
+  kind: ClusterRole
+  name: admin  # Using the built-in 'admin' ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: sp-rolebinding
+  namespace: azdevspace
+subjects:
+- kind: User
+  name: "b7d95cfe-542a-4116-ae52-c64bf13ded90"  # Application ID of the service principal
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: edit  # or another role that provides necessary permissions
   apiGroup: rbac.authorization.k8s.io
 
