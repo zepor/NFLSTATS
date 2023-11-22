@@ -19,7 +19,7 @@ dnspython==2.4.2
 docopt==0.6.2
 dparse==0.6.3
 email-validator==2.0.0.post2
-Flask==2.2.5
+Flask==1.1.2
 Flask-BabelEx==0.9.4
 Flask-Cors==4.0.0
 Flask-Login==0.6.2
@@ -55,7 +55,7 @@ pipdeptree==2.13.0
 pipreqs==0.4.13
 platformdirs==3.11.0
 py-spy==0.3.14
-pyarrow==14.0.1
+pyarrow==13.0.0
 pycodestyle==2.11.1
 pycparser==2.21
 pylance==0.8.5
@@ -83,10 +83,10 @@ tomlkit==0.12.1
 typing_extensions==4.8.0
 tzdata==2023.3
 tzlocal==5.1
-urllib3==2.0.7
+urllib3==2.0.4
 vulture==2.10
 waitress==2.1.2
-Werkzeug==2.3.8
+Werkzeug==2.0.1
 WTForms==3.1.0
 yarg==0.1.9
 yarl==1.9.2

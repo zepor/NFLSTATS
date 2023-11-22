@@ -29,11 +29,11 @@ jobs:
 
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ssweb-frontend:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} ./jabascript
+           az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ssweb-frontend:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
 
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/python:3.9.18:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} ./backend-container
+          az acr build --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/python:3.9.18:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
   kubescape:
     runs-on: ubuntu-latest
     steps:
