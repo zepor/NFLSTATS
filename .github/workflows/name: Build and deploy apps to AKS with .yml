@@ -79,10 +79,9 @@ jobs:
         uses: azure/k8s-bake@v2
         with:
           renderEngine: "helm"
-          helmChart: ${{ env.CHART_PATH }}
-          overrideFiles: ${{ env.CHART_OVERRIDE_PATH }}
+          helmChart: ${{ secrets.HELM_CHART_PATH }}
           overrides: |
-            replicas:2
+            replicas: 2
           helm-version: "latest"
         id: bake
 
