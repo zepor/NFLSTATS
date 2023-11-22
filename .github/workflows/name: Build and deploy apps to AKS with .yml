@@ -84,7 +84,15 @@ jobs:
             replicas: 2
           helm-version: "latest"
         id: bake
+      - name: Upload baked manifest as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: baked-manifest
+          path: ${{ steps.bake.outputs.manifestsBundle }}
 
+      - name: Print baked manifest
+        run: cat ${{ steps.bake.outputs.manifestsBundle }}
+  
       - name: Deploy application
         uses: Azure/k8s-deploy@v4
         with:
