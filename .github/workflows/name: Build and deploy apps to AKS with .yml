@@ -72,10 +72,10 @@ jobs:
           use-kubelogin: 'true'
 
       - name: Apply Backend Deployment
-        run: kubectl apply -f manifests/deployments/backend-deployment.yaml -n azdevspace
+        run: kubectl apply -f manifests/deployments/deploy-backend.yaml -n azdevspace
 
       - name: Apply Frontend Deployment
-        run: kubectl apply -f manifests/deployments/frontend-deployment.yaml -n azdevspace
+        run: kubectl apply -f manifests/deployments/deploy-frontend.yaml -n azdevspace
 
       - name: Apply Redis Deployment
-        run: kubectl apply -f manifests/deployments/redis-deployment.yaml -n azdevspace
+        run: kubectl apply -f manifests/deployments/deploy-redis.yaml -n azdevspace
