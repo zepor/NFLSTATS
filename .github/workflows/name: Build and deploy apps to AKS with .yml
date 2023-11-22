@@ -29,10 +29,11 @@ jobs:
 
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
+          az acr build --image loveofsports.azurecr.io/ssweb-frontend:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./      
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image loveofsports.azurecr.io/python:3.9.18:${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+          az acr build --image loveofsports.azurecr.io/python:3.9.18-${{ github.sha }} --registry loveofsports --resource-group ${{ env.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+
   kubescape:
     runs-on: ubuntu-latest
     steps:
