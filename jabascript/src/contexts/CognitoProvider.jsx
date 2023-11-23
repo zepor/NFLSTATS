@@ -1,15 +1,12 @@
 import { useCallback, useEffect, useReducer } from "react";
-
 import {
   AuthenticationDetails,
   CognitoUser,
   CognitoUserAttribute,
   CognitoUserPool,
 } from "amazon-cognito-identity-js";
-
 import axios from "../utils/axios";
 import { cognitoConfig } from "../config";
-
 import AuthContext from "./CognitoContext";
 
 const INITIALIZE = "INITIALIZE";
@@ -27,23 +24,23 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  if (action.type === INITIALIZE) {
-    const { isAuthenticated, user } = action.payload;
-    return {
-      ...state,
-      isAuthenticated,
-      isInitialized: true,
-      user,
-    };
+  switch (action.type) {
+    case INITIALIZE:
+      return {
+        ...state,
+        isAuthenticated: action.payload.isAuthenticated,
+        isInitialized: true,
+        user: action.payload.user,
+      };
+    case SIGN_OUT:
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+      };
+    default:
+      return state;
   }
-  if (action.type === SIGN_OUT) {
-    return {
-      ...state,
-      isAuthenticated: false,
-      user: null,
-    };
-  }
-  return state;
 };
 
 function AuthProvider({ children }) {
@@ -57,10 +54,9 @@ function AuthProvider({ children }) {
             reject(err);
           } else {
             const results = {};
-
-            attributes?.forEach((attribute) => {
+            for (const attribute of attributes) {
               results[attribute.Name] = attribute.Value;
-            });
+            }
             resolve(results);
           }
         });
@@ -78,61 +74,33 @@ function AuthProvider({ children }) {
               reject(err);
             } else {
               const attributes = await getUserAttributes(user);
-              const token = session?.getIdToken().getJwtToken();
-
+              const token = session.getIdToken().getJwtToken();
               axios.defaults.headers.common.Authorization = token;
-
               dispatch({
                 type: INITIALIZE,
                 payload: { isAuthenticated: true, user: attributes },
               });
-
-              resolve({
-                user,
-                session,
-                headers: { Authorization: token },
-              });
+              resolve({ user, session, headers: { Authorization: token } });
             }
           });
         } else {
           dispatch({
             type: INITIALIZE,
-            payload: {
-              isAuthenticated: false,
-              user: null,
-            },
+            payload: { isAuthenticated: false, user: null },
           });
         }
       }),
     [getUserAttributes]
   );
 
-  const initialize = useCallback(async () => {
-    try {
-      await getSession();
-    } catch {
-      dispatch({
-        type: INITIALIZE,
-        payload: {
-          isAuthenticated: false,
-          user: null,
-        },
-      });
-    }
-  }, [getSession]);
-
   useEffect(() => {
-    initialize();
-  }, [initialize]);
+    getSession();
+  }, [getSession]);
 
   const signIn = useCallback(
     (email, password) =>
       new Promise((resolve, reject) => {
-        const user = new CognitoUser({
-          Username: email,
-          Pool: UserPool,
-        });
-
+        const user = new CognitoUser({ Username: email, Pool: UserPool });
         const authDetails = new AuthenticationDetails({
           Username: email,
           Password: password,
@@ -140,8 +108,7 @@ function AuthProvider({ children }) {
 
         user.authenticateUser(authDetails, {
           onSuccess: (data) => {
-            getSession();
-            resolve(data);
+            getSession().then(() => resolve(data));
           },
           onFailure: (err) => {
             reject(err);
@@ -154,48 +121,63 @@ function AuthProvider({ children }) {
     [getSession]
   );
 
-  const signOut = () => {
+  const signOut = useCallback(() => {
     const user = UserPool.getCurrentUser();
     if (user) {
       user.signOut();
       dispatch({ type: SIGN_OUT });
     }
-  };
+  }, []);
 
-  const signUp = (email, password, firstName, lastName) =>
-    new Promise((resolve, reject) => {
-      UserPool.signUp(
-        email,
-        password,
-        [
-          new CognitoUserAttribute({ Name: "email", Value: email }),
-          new CognitoUserAttribute({
-            Name: "name",
-            Value: `${firstName} ${lastName}`,
-          }),
-        ],
-        [],
-        async (err) => {
-          if (err) {
-            reject(err);
-            return;
+  const signUp = useCallback(
+    (email, password, firstName, lastName) =>
+      new Promise((resolve, reject) => {
+        UserPool.signUp(
+          email,
+          password,
+          [
+            new CognitoUserAttribute({ Name: "email", Value: email }),
+            new CognitoUserAttribute({
+              Name: "name",
+              Value: `${firstName} ${lastName}`,
+            }),
+          ],
+          null,
+          (err) => {
+            if (err) {
+              reject(err);
+              return;
+            }
+            resolve();
           }
-          resolve(undefined);
-          // Set destination URL here
-          window.location.href = "";
-        }
-      );
-    });
+        );
+      }),
+    []
+  );
 
-  const resetPassword = (email) => console.log(email);
+  const resetPassword = useCallback((email) => {
+    console.log(email);
+    // Add password reset logic here
+  }, []);
 
-return (
-  <AuthContext.Provider value={{...state, 
-      method: "cognito",
-      user: {
-        displayName: state?.user?.name || "Undefined",
-        role: "user", ...(state.user || {}) 
-      },
-      signIn, signUp, signOut, resetPassword}}>{children}</AuthContext.Provider>);
+  return (
+    <AuthContext.Provider
+      value={{
+        ...state,
+        method: "cognito",
+        user: {
+          displayName: state.user?.name || "Undefined",
+          role: "user",
+        },
+        signIn,
+        signUp,
+        signOut,
+        resetPassword,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+}
 
 export default AuthProvider;

@@ -1,5 +1,5 @@
 "use Client";
-import React, { Suspense } from "react";
+import React, { StrictMode, Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
@@ -26,22 +26,24 @@ const App = () => {
   const content = useRoutes(routes);
 
   return (
-    <HelmetProvider>
-      <Helmet titleTemplate="%s | Love of Football - NFL Statistical Analytics Dashboard"
-        defaultTitle="Love of Football - NFL Statistical Analytics Dashboard"/>
-      <Suspense fallback={<Loader />}>
-        <Provider store={store}>
-          <ThemeProvider>
-            <SidebarProvider>
-              <LayoutProvider>
-                <ChartJsDefaults />
-                <AuthProvider>{content}</AuthProvider>
-              </LayoutProvider>
-            </SidebarProvider>
-          </ThemeProvider>
-        </Provider>
-      </Suspense>
-    </HelmetProvider>
+    <StrictMode>
+      <HelmetProvider>
+        <Helmet titleTemplate="%s | Love of Football - NFL Statistical Analytics Dashboard"
+          defaultTitle="Love of Football - NFL Statistical Analytics Dashboard"/>
+        <Suspense fallback={<Loader />}>
+          <Provider store={store}>
+            <ThemeProvider>
+              <SidebarProvider>
+                <LayoutProvider>
+                  <ChartJsDefaults />
+                  <AuthProvider>{content}</AuthProvider>
+                </LayoutProvider>
+              </SidebarProvider>
+            </ThemeProvider>
+          </Provider>
+        </Suspense>
+      </HelmetProvider>
+    </StrictMode>
   );
 };
 
