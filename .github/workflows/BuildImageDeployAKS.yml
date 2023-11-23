@@ -83,8 +83,10 @@ jobs:
         uses: Azure/k8s-deploy@v4
         with:
           action: deploy
+          namespace: azdevspace
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
           images: |
             ${{ secrets.FRONTEND_IMAGE }}
             ${{ secrets.BACKEND_IMAGE }}
             ${{ secrets.REDIS_IMAGE }}
+
