@@ -1,19 +1,9 @@
-
 name: Build and deploy apps to AKS with Helm
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
-env:
-  AZURE_CONTAINER_REGISTRY: loveofsports.azurecr.io
-  FRONTEND_IMAGE: ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:latest
-  BACKEND_IMAGE: ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18
-  REDIS_IMAGE: redis:latest
-  RESOURCE_GROUP: LoveofSports-Dev
-  CLUSTER_NAME: DevCluster
-  KUSTOMIZE_PATH: clusters/DevCluster
 
 jobs:
   buildImage:
@@ -27,17 +17,31 @@ jobs:
       - name: Azure login
         uses: azure/login@v1.4.6
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image ${{ secrets.FRONTEND_IMAGE }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./path-to-frontend/Dockerfile ./path-to-frontend
+          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
 
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image ${{ secrets.BACKEND_IMAGE }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./path-to-backend/Dockerfile ./path-to-backend
+          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18-${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./backend-container/Dockerfile.python ./backend-container
+
+    kubescape:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      - uses: kubescape/github-action@main
+        continue-on-error: true
+        with:
+          format: sarif
+          outputFile: results.sarif
+          account: ${{ secrets.KUBESCAPE_ACCOUNT }}
+
+      - name: Upload Kubescape scan results to Github Code Scanning
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif
 
   deploy:
     permissions:
@@ -52,9 +56,7 @@ jobs:
       - name: Azure login
         uses: azure/login@v1.4.6
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Set up kubelogin for non-interactive login
         uses: azure/use-kubelogin@v1
