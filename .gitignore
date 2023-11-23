@@ -288,7 +288,6 @@ node_modules
 openapi.yaml
 .azdo/
 .devcontainer/
-infra/
 
 
 # Large Files or Directories
