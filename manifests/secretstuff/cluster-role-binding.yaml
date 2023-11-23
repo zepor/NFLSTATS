@@ -2,7 +2,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: sp-cluster-admin
-  namespace: azdevspace
 rules:
 - apiGroups: ["*"]
   resources: ["*"]
@@ -13,12 +12,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: sp-cluster-admin-binding
-  namespace: azdevspace
 subjects:
 - kind: User
-  name: "b7d95cfe-542a-4116-ae52-c64bf13ded90" # The application ID of your Service Principal
+  name: "b7d95cfe-542a-4116-ae52-c64bf13ded90"
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
   name: sp-cluster-admin
   apiGroup: rbac.authorization.k8s.io
+
