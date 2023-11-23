@@ -8,8 +8,8 @@ on:
 
 env:
   AZURE_CONTAINER_REGISTRY: loveofsports.azurecr.io
-  FRONTEND_IMAGE: ${{ env.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:latest
-  BACKEND_IMAGE: ${{ env.AZURE_CONTAINER_REGISTRY }}/python:3.9.18
+  FRONTEND_IMAGE: ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:latest
+  BACKEND_IMAGE: ${{ secrets.AZURE_CONTAINER_REGISTRY }}/python:3.9.18
   REDIS_IMAGE: redis:latest
   RESOURCE_GROUP: LoveofSports-Dev
   CLUSTER_NAME: DevCluster
@@ -33,11 +33,11 @@ jobs:
 
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image ${{ env.FRONTEND_IMAGE }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./path-to-frontend/Dockerfile ./path-to-frontend
+          az acr build --image ${{ secrets.FRONTEND_IMAGE }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./path-to-frontend/Dockerfile ./path-to-frontend
 
       - name: Build and push backend image to ACR
         run: |
-          az acr build --image ${{ env.BACKEND_IMAGE }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} -f ./path-to-backend/Dockerfile ./path-to-backend
+          az acr build --image ${{ secrets.BACKEND_IMAGE }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./path-to-backend/Dockerfile ./path-to-backend
 
   deploy:
     permissions:
@@ -64,8 +64,8 @@ jobs:
       - name: Get K8s context
         uses: azure/aks-set-context@v3
         with:
-          resource-group: ${{ env.RESOURCE_GROUP }}
-          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ secrets.RESOURCE_GROUP }}
+          cluster-name: ${{ secrets.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
 
@@ -73,7 +73,7 @@ jobs:
         uses: azure/k8s-bake@v2
         with:
           renderEngine: "kustomize"
-          kustomizationPath: ${{ env.KUSTOMIZE_PATH }}
+          kustomizationPath: ${{ secrets.KUSTOMIZE_PATH }}
           kubectl-version: latest
         id: bake
 
@@ -83,6 +83,6 @@ jobs:
           action: deploy
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
           images: |
-            ${{ env.FRONTEND_IMAGE }}
-            ${{ env.BACKEND_IMAGE }}
-            ${{ env.REDIS_IMAGE }}
+            ${{ secrets.FRONTEND_IMAGE }}
+            ${{ secrets.BACKEND_IMAGE }}
+            ${{ secrets.REDIS_IMAGE }}
