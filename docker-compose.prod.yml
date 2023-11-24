@@ -21,5 +21,5 @@ services:
       - FRONTEND_SERVICE_HOST=frontend
       - FRONTEND_SERVICE_PORT=3000
     volumes:
-      - ./jabascript/:/app:delegated
+      - ./frontend-container/:/app:delegated
       - /app/node_modules

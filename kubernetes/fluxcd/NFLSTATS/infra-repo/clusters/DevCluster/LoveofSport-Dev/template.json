@@ -1,0 +1,1557 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vaults_NachoKey_name": {
+            "defaultValue": "NachoKey",
+            "type": "String"
+        },
+        "serverfarms_Dev_Service_Plan_name": {
+            "defaultValue": "Dev-Service-Plan",
+            "type": "String"
+        },
+        "virtualNetworks_LoveofVPN_name": {
+            "defaultValue": "LoveofVPN",
+            "type": "String"
+        },
+        "dnszones_loveoffootball_io_name": {
+            "defaultValue": "loveoffootball.io",
+            "type": "String"
+        },
+        "vaults_vault_lo6nl0z7_name": {
+            "defaultValue": "vault-lo6nl0z7",
+            "type": "String"
+        },
+        "vaults_secret_store_mBjOmIXsXJ_name": {
+            "defaultValue": "secret-store-mBjOmIXsXJ",
+            "type": "String"
+        },
+        "registries_LoveofSports_name": {
+            "defaultValue": "LoveofSports",
+            "type": "String"
+        },
+        "managedClusters_DevCluster_name": {
+            "defaultValue": "DevCluster",
+            "type": "String"
+        },
+        "activityLogAlerts_KeyforAppGateway_name": {
+            "defaultValue": "KeyforAppGateway",
+            "type": "String"
+        },
+        "userAssignedIdentities_zepor_name": {
+            "defaultValue": "zepor",
+            "type": "String"
+        },
+        "userAssignedIdentities_zepor2_name": {
+            "defaultValue": "zepor2",
+            "type": "String"
+        },
+        "virtualNetworks_LoveofSports_Dev_vnet_name": {
+            "defaultValue": "LoveofSports-Dev-vnet",
+            "type": "String"
+        },
+        "actionGroups_RecommendedAlertRules_AG_1_name": {
+            "defaultValue": "RecommendedAlertRules-AG-1",
+            "type": "String"
+        },
+        "actionGroups_ActionGroup_LoveofSports_Dev_name": {
+            "defaultValue": "ActionGroup-LoveofSports-Dev",
+            "type": "String"
+        },
+        "metricAlerts_CPU_Usage_Percentage___DevCluster_name": {
+            "defaultValue": "CPU Usage Percentage - DevCluster",
+            "type": "String"
+        },
+        "certificates_loveoffootball_io_Django_Python_Backend_name": {
+            "defaultValue": "loveoffootball.io-Django-Python-Backend",
+            "type": "String"
+        },
+        "metricAlerts_Memory_Working_Set_Percentage___DevCluster_name": {
+            "defaultValue": "Memory Working Set Percentage - DevCluster",
+            "type": "String"
+        },
+        "actionRules_AlertProcessingRule_LoveofSports_Dev_name": {
+            "defaultValue": "AlertProcessingRule-LoveofSports-Dev",
+            "type": "String"
+        },
+        "applicationGateways_ingress_appgateway_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/MC_LoveofSports-Dev_DevCluster_centralus/providers/Microsoft.Network/applicationGateways/ingress-appgateway",
+            "type": "String"
+        },
+        "workspaces_DevLogs_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/DefaultResourceGroup-CUS/providers/Microsoft.OperationalInsights/workspaces/DevLogs",
+            "type": "String"
+        },
+        "publicIPAddresses_ee9e0129_8b6c_4b4a_9e90_a969dd457701_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/MC_LoveofSports-Dev_DevCluster_centralus/providers/Microsoft.Network/publicIPAddresses/ee9e0129-8b6c-4b4a-9e90-a969dd457701",
+            "type": "String"
+        },
+        "userAssignedIdentities_DevCluster_agentpool_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/MC_LoveofSports-Dev_DevCluster_centralus/providers/Microsoft.ManagedIdentity/userAssignedIdentities/DevCluster-agentpool",
+            "type": "String"
+        },
+        "publicIPAddresses_ingress_appgateway_appgwpip_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/MC_LoveofSports-Dev_DevCluster_centralus/providers/Microsoft.Network/publicIPAddresses/ingress-appgateway-appgwpip",
+            "type": "String"
+        },
+        "routeTables_aks_agentpool_41047798_routetable_externalid": {
+            "defaultValue": "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/MC_LoveofSports-Dev_DevCluster_centralus/providers/Microsoft.Network/routeTables/aks-agentpool-41047798-routetable",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.ContainerRegistry/registries",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[parameters('registries_LoveofSports_name')]",
+            "location": "centralus",
+            "tags": {
+                "ENV": "Development"
+            },
+            "sku": {
+                "name": "Basic",
+                "tier": "Basic"
+            },
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourcegroups/LoveofSports-Dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/zepor": {}
+                }
+            },
+            "properties": {
+                "adminUserEnabled": true,
+                "policies": {
+                    "quarantinePolicy": {
+                        "status": "disabled"
+                    },
+                    "trustPolicy": {
+                        "type": "Notary",
+                        "status": "disabled"
+                    },
+                    "retentionPolicy": {
+                        "days": 7,
+                        "status": "disabled"
+                    },
+                    "exportPolicy": {
+                        "status": "enabled"
+                    },
+                    "azureADAuthenticationAsArmPolicy": {
+                        "status": "enabled"
+                    },
+                    "softDeletePolicy": {
+                        "retentionDays": 7,
+                        "status": "disabled"
+                    }
+                },
+                "encryption": {
+                    "status": "disabled"
+                },
+                "dataEndpointEnabled": false,
+                "publicNetworkAccess": "Enabled",
+                "networkRuleBypassOptions": "AzureServices",
+                "zoneRedundancy": "Disabled",
+                "anonymousPullEnabled": false
+            }
+        },
+        {
+            "type": "microsoft.insights/actionGroups",
+            "apiVersion": "2023-01-01",
+            "name": "[parameters('actionGroups_ActionGroup_LoveofSports_Dev_name')]",
+            "location": "Global",
+            "properties": {
+                "groupShortName": "ag-LoveofSpo",
+                "enabled": true,
+                "emailReceivers": [
+                    {
+                        "name": "emailReceivers-iyr2vz5ndipqe",
+                        "emailAddress": "user1@contoso.com",
+                        "useCommonAlertSchema": true
+                    },
+                    {
+                        "name": "emailReceivers-ggkegulrcdv4i",
+                        "emailAddress": "user2@contoso.com",
+                        "useCommonAlertSchema": true
+                    }
+                ],
+                "smsReceivers": [],
+                "webhookReceivers": [],
+                "eventHubReceivers": [],
+                "itsmReceivers": [],
+                "azureAppPushReceivers": [],
+                "automationRunbookReceivers": [],
+                "voiceReceivers": [],
+                "logicAppReceivers": [],
+                "azureFunctionReceivers": [],
+                "armRoleReceivers": []
+            }
+        },
+        {
+            "type": "microsoft.insights/actionGroups",
+            "apiVersion": "2023-01-01",
+            "name": "[parameters('actionGroups_RecommendedAlertRules_AG_1_name')]",
+            "location": "Global",
+            "properties": {
+                "groupShortName": "recalert1",
+                "enabled": true,
+                "emailReceivers": [
+                    {
+                        "name": "Email_-EmailAction-",
+                        "emailAddress": "johnbonnett3@gmail.com",
+                        "useCommonAlertSchema": true
+                    }
+                ],
+                "smsReceivers": [],
+                "webhookReceivers": [],
+                "eventHubReceivers": [],
+                "itsmReceivers": [],
+                "azureAppPushReceivers": [],
+                "automationRunbookReceivers": [],
+                "voiceReceivers": [],
+                "logicAppReceivers": [],
+                "azureFunctionReceivers": [],
+                "armRoleReceivers": []
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2023-07-01",
+            "name": "[parameters('vaults_NachoKey_name')]",
+            "location": "centralus",
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "Standard"
+                },
+                "tenantId": "20613b5a-77e7-496c-ab28-ac76ee0d6e12",
+                "accessPolicies": [],
+                "enabledForDeployment": true,
+                "enabledForDiskEncryption": true,
+                "enabledForTemplateDeployment": true,
+                "enableSoftDelete": true,
+                "softDeleteRetentionInDays": 90,
+                "enableRbacAuthorization": true,
+                "vaultUri": "https://nachokey.vault.azure.net/",
+                "provisioningState": "Succeeded",
+                "publicNetworkAccess": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2023-07-01",
+            "name": "[parameters('vaults_secret_store_mBjOmIXsXJ_name')]",
+            "location": "centralus",
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "standard"
+                },
+                "tenantId": "20613b5a-77e7-496c-ab28-ac76ee0d6e12",
+                "accessPolicies": [
+                    {
+                        "tenantId": "20613b5a-77e7-496c-ab28-ac76ee0d6e12",
+                        "objectId": "e1a555a5-b731-4dfe-8f57-33aee5b0307e",
+                        "permissions": {
+                            "keys": [
+                                "all"
+                            ],
+                            "secrets": [
+                                "all"
+                            ],
+                            "certificates": [
+                                "all"
+                            ],
+                            "storage": [
+                                "all"
+                            ]
+                        }
+                    },
+                    {
+                        "tenantId": "20613b5a-77e7-496c-ab28-ac76ee0d6e12",
+                        "objectId": "ec43d04d-7352-40f6-b8c5-7cf8c07e8a3d",
+                        "permissions": {
+                            "secrets": [
+                                "get"
+                            ]
+                        }
+                    }
+                ],
+                "enabledForDeployment": false,
+                "enableSoftDelete": true,
+                "softDeleteRetentionInDays": 90,
+                "vaultUri": "https://secret-store-mbjomixsxj.vault.azure.net/",
+                "provisioningState": "Succeeded",
+                "publicNetworkAccess": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+            "apiVersion": "2023-01-31",
+            "name": "[parameters('userAssignedIdentities_zepor_name')]",
+            "location": "centralus"
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+            "apiVersion": "2023-01-31",
+            "name": "[parameters('userAssignedIdentities_zepor2_name')]",
+            "location": "centralus"
+        },
+        {
+            "type": "Microsoft.Network/dnszones",
+            "apiVersion": "2018-05-01",
+            "name": "[parameters('dnszones_loveoffootball_io_name')]",
+            "location": "global",
+            "properties": {
+                "zoneType": "Public"
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2023-05-01",
+            "name": "[parameters('virtualNetworks_LoveofSports_Dev_vnet_name')]",
+            "location": "centralus",
+            "tags": {
+                "ENV": "Development"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.224.0.0/12"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "default",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                        "properties": {
+                            "addressPrefix": "10.224.0.0/16",
+                            "routeTable": {
+                                "id": "[parameters('routeTables_aks_agentpool_41047798_routetable_externalid')]"
+                            },
+                            "serviceEndpoints": [
+                                {
+                                    "service": "Microsoft.ContainerRegistry",
+                                    "locations": [
+                                        "*"
+                                    ]
+                                }
+                            ],
+                            "delegations": [],
+                            "privateEndpointNetworkPolicies": "Disabled",
+                            "privateLinkServiceNetworkPolicies": "Enabled"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets"
+                    },
+                    {
+                        "name": "ingress-appgateway-subnet",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'ingress-appgateway-subnet')]",
+                        "properties": {
+                            "addressPrefix": "10.225.0.0/16",
+                            "routeTable": {
+                                "id": "[parameters('routeTables_aks_agentpool_41047798_routetable_externalid')]"
+                            },
+                            "applicationGatewayIPConfigurations": [
+                                {
+                                    "id": "[concat(parameters('applicationGateways_ingress_appgateway_externalid'), '/gatewayIPConfigurations/appGatewayIpConfig')]"
+                                }
+                            ],
+                            "delegations": [],
+                            "privateEndpointNetworkPolicies": "Disabled",
+                            "privateLinkServiceNetworkPolicies": "Enabled"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets"
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2023-05-01",
+            "name": "[parameters('virtualNetworks_LoveofVPN_name')]",
+            "location": "centralus",
+            "tags": {
+                "ENV": "Development"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "default",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofVPN_name'), 'default')]",
+                        "properties": {
+                            "addressPrefix": "10.0.4.0/24",
+                            "serviceEndpoints": [
+                                {
+                                    "service": "Microsoft.Storage",
+                                    "locations": [
+                                        "centralus",
+                                        "eastus2"
+                                    ]
+                                }
+                            ],
+                            "delegations": [
+                                {
+                                    "name": "delegation",
+                                    "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofVPN_name'), 'default'), '/delegations/delegation')]",
+                                    "properties": {
+                                        "serviceName": "Microsoft.Web/serverfarms"
+                                    },
+                                    "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+                                }
+                            ],
+                            "privateEndpointNetworkPolicies": "Disabled",
+                            "privateLinkServiceNetworkPolicies": "Enabled"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets"
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults",
+            "apiVersion": "2023-06-01",
+            "name": "[parameters('vaults_vault_lo6nl0z7_name')]",
+            "location": "centralus",
+            "sku": {
+                "name": "RS0",
+                "tier": "Standard"
+            },
+            "properties": {
+                "redundancySettings": {},
+                "securitySettings": {
+                    "softDeleteSettings": {
+                        "softDeleteRetentionPeriodInDays": 14,
+                        "softDeleteState": "Enabled"
+                    },
+                    "multiUserAuthorization": "Disabled"
+                },
+                "publicNetworkAccess": "Enabled",
+                "restoreSettings": {
+                    "crossSubscriptionRestoreSettings": {
+                        "crossSubscriptionRestoreState": "Enabled"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Web/certificates",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('certificates_loveoffootball_io_Django_Python_Backend_name')]",
+            "location": "Central US",
+            "properties": {
+                "hostNames": [
+                    "loveoffootball.io"
+                ],
+                "canonicalName": "loveoffootball.io"
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('serverfarms_Dev_Service_Plan_name')]",
+            "location": "East US",
+            "tags": {
+                "ENV": "Development"
+            },
+            "sku": {
+                "name": "F1",
+                "tier": "Free",
+                "size": "F1",
+                "family": "F",
+                "capacity": 1
+            },
+            "kind": "linux",
+            "properties": {
+                "perSiteScaling": false,
+                "elasticScaleEnabled": false,
+                "maximumElasticWorkerCount": 1,
+                "isSpot": false,
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "zoneRedundant": false
+            }
+        },
+        {
+            "type": "Microsoft.AlertsManagement/actionRules",
+            "apiVersion": "2021-08-08",
+            "name": "[parameters('actionRules_AlertProcessingRule_LoveofSports_Dev_name')]",
+            "location": "Global",
+            "dependsOn": [
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_ActionGroup_LoveofSports_Dev_name'))]"
+            ],
+            "properties": {
+                "scopes": [
+                    "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1"
+                ],
+                "conditions": [
+                    {
+                        "field": "TargetResourceType",
+                        "operator": "Equals",
+                        "values": [
+                            "microsoft.recoveryservices/vaults"
+                        ]
+                    }
+                ],
+                "enabled": true,
+                "actions": [
+                    {
+                        "actionGroupIds": [
+                            "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_ActionGroup_LoveofSports_Dev_name'))]"
+                        ],
+                        "actionType": "AddActionGroups"
+                    }
+                ],
+                "description": "Sample alert processing rule"
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/_repositories_admin')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]"
+            ],
+            "properties": {
+                "description": "Can perform all read, write and delete operations on the registry",
+                "actions": [
+                    "repositories/*/metadata/read",
+                    "repositories/*/metadata/write",
+                    "repositories/*/content/read",
+                    "repositories/*/content/write",
+                    "repositories/*/content/delete"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/_repositories_pull')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]"
+            ],
+            "properties": {
+                "description": "Can pull any repository of the registry",
+                "actions": [
+                    "repositories/*/content/read"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/_repositories_pull_metadata_read')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]"
+            ],
+            "properties": {
+                "description": "Can perform all read operations on the registry",
+                "actions": [
+                    "repositories/*/content/read",
+                    "repositories/*/metadata/read"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/_repositories_push')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]"
+            ],
+            "properties": {
+                "description": "Can push to any repository of the registry",
+                "actions": [
+                    "repositories/*/content/read",
+                    "repositories/*/content/write"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/scopeMaps",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/_repositories_push_metadata_write')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]"
+            ],
+            "properties": {
+                "description": "Can perform all read and write operations on the registry",
+                "actions": [
+                    "repositories/*/metadata/read",
+                    "repositories/*/metadata/write",
+                    "repositories/*/content/read",
+                    "repositories/*/content/write"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ContainerService/managedClusters",
+            "apiVersion": "2023-08-02-preview",
+            "name": "[parameters('managedClusters_DevCluster_name')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]"
+            ],
+            "tags": {
+                "ENV": "Development"
+            },
+            "sku": {
+                "name": "Base",
+                "tier": "Standard"
+            },
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "kubernetesVersion": "1.27.3",
+                "dnsPrefix": "pre",
+                "agentPoolProfiles": [
+                    {
+                        "name": "agentpool",
+                        "count": 4,
+                        "vmSize": "Standard_DS2_v2",
+                        "osDiskSizeGB": 128,
+                        "osDiskType": "Managed",
+                        "kubeletDiskType": "OS",
+                        "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                        "maxPods": 110,
+                        "type": "VirtualMachineScaleSets",
+                        "maxCount": 40,
+                        "minCount": 2,
+                        "enableAutoScaling": true,
+                        "powerState": {
+                            "code": "Running"
+                        },
+                        "orchestratorVersion": "1.27.3",
+                        "enableNodePublicIP": false,
+                        "tags": {
+                            "ENV": "Development"
+                        },
+                        "mode": "System",
+                        "osType": "Linux",
+                        "osSKU": "Ubuntu",
+                        "upgradeSettings": {},
+                        "enableFIPS": false,
+                        "securityProfile": {
+                            "sshAccess": "LocalUser"
+                        }
+                    },
+                    {
+                        "name": "nudepool2",
+                        "count": 2,
+                        "vmSize": "Standard_D2as_v4",
+                        "osDiskSizeGB": 128,
+                        "osDiskType": "Managed",
+                        "kubeletDiskType": "OS",
+                        "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                        "maxPods": 110,
+                        "type": "VirtualMachineScaleSets",
+                        "availabilityZones": [
+                            "2"
+                        ],
+                        "maxCount": 40,
+                        "minCount": 2,
+                        "enableAutoScaling": true,
+                        "scaleDownMode": "Delete",
+                        "powerState": {
+                            "code": "Running"
+                        },
+                        "orchestratorVersion": "1.27.3",
+                        "enableNodePublicIP": false,
+                        "tags": {
+                            "ENV": "Development"
+                        },
+                        "mode": "System",
+                        "osType": "Linux",
+                        "osSKU": "Ubuntu",
+                        "upgradeSettings": {},
+                        "enableFIPS": false,
+                        "securityProfile": {
+                            "sshAccess": "LocalUser"
+                        }
+                    },
+                    {
+                        "name": "ephemeral",
+                        "count": 4,
+                        "vmSize": "Standard_DS3_v2",
+                        "osDiskSizeGB": 128,
+                        "osDiskType": "Ephemeral",
+                        "kubeletDiskType": "OS",
+                        "workloadRuntime": "OCIContainer",
+                        "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                        "maxPods": 110,
+                        "type": "VirtualMachineScaleSets",
+                        "maxCount": 40,
+                        "minCount": 2,
+                        "enableAutoScaling": true,
+                        "scaleDownMode": "Delete",
+                        "powerState": {
+                            "code": "Running"
+                        },
+                        "orchestratorVersion": "1.27.3",
+                        "enableNodePublicIP": false,
+                        "enableCustomCATrust": false,
+                        "mode": "User",
+                        "enableEncryptionAtHost": false,
+                        "enableUltraSSD": false,
+                        "osType": "Linux",
+                        "osSKU": "Ubuntu",
+                        "upgradeSettings": {},
+                        "enableFIPS": false,
+                        "networkProfile": {},
+                        "securityProfile": {
+                            "sshAccess": "LocalUser"
+                        }
+                    }
+                ],
+                "servicePrincipalProfile": {
+                    "clientId": "msi"
+                },
+                "addonProfiles": {
+                    "azureKeyvaultSecretsProvider": {
+                        "enabled": true,
+                        "config": {
+                            "enableSecretRotation": "false",
+                            "rotationPollInterval": "2m"
+                        }
+                    },
+                    "azurepolicy": {
+                        "enabled": true
+                    },
+                    "extensionManager": {
+                        "enabled": true
+                    },
+                    "httpApplicationRouting": {
+                        "enabled": false
+                    },
+                    "ingressApplicationGateway": {
+                        "enabled": true,
+                        "config": {
+                            "applicationGatewayName": "ingress-appgateway",
+                            "effectiveApplicationGatewayId": "[parameters('applicationGateways_ingress_appgateway_externalid')]",
+                            "subnetPrefix": "10.225.0.0/16"
+                        }
+                    },
+                    "omsAgent": {
+                        "enabled": true,
+                        "config": {
+                            "logAnalyticsWorkspaceResourceID": "[parameters('workspaces_DevLogs_externalid')]"
+                        }
+                    },
+                    "openServiceMesh": {
+                        "enabled": true
+                    }
+                },
+                "nodeResourceGroup": "[concat('MC_LoveofSports-Dev_', parameters('managedClusters_DevCluster_name'), '_centralus')]",
+                "enableRBAC": true,
+                "supportPlan": "KubernetesOfficial",
+                "networkProfile": {
+                    "networkPlugin": "kubenet",
+                    "networkPolicy": "none",
+                    "loadBalancerSku": "Standard",
+                    "loadBalancerProfile": {
+                        "managedOutboundIPs": {
+                            "count": 1
+                        },
+                        "effectiveOutboundIPs": [
+                            {
+                                "id": "[parameters('publicIPAddresses_ee9e0129_8b6c_4b4a_9e90_a969dd457701_externalid')]"
+                            }
+                        ],
+                        "backendPoolType": "nodeIPConfiguration"
+                    },
+                    "podCidr": "10.244.0.0/16",
+                    "serviceCidr": "10.0.0.0/16",
+                    "dnsServiceIP": "10.0.0.10",
+                    "outboundType": "loadBalancer",
+                    "podCidrs": [
+                        "10.244.0.0/16"
+                    ],
+                    "serviceCidrs": [
+                        "10.0.0.0/16"
+                    ],
+                    "ipFamilies": [
+                        "IPv4"
+                    ]
+                },
+                "aadProfile": {
+                    "managed": true,
+                    "enableAzureRBAC": true,
+                    "tenantID": "20613b5a-77e7-496c-ab28-ac76ee0d6e12"
+                },
+                "identityProfile": {
+                    "kubeletidentity": {
+                        "resourceId": "[parameters('userAssignedIdentities_DevCluster_agentpool_externalid')]",
+                        "clientId": "606c5fb7-c87f-446c-8f73-7fa6cb8bb5f1",
+                        "objectId": "3d684649-42fa-4174-8df4-6d9b51953bf0"
+                    }
+                },
+                "autoScalerProfile": {
+                    "balance-similar-node-groups": "false",
+                    "daemonset-eviction-for-empty-nodes": false,
+                    "daemonset-eviction-for-occupied-nodes": true,
+                    "expander": "random",
+                    "expanders": [
+                        "random"
+                    ],
+                    "ignore-daemonsets-utilization": false,
+                    "max-empty-bulk-delete": "10",
+                    "max-graceful-termination-sec": "600",
+                    "max-node-provision-time": "15m",
+                    "max-total-unready-percentage": "45",
+                    "new-pod-scale-up-delay": "0s",
+                    "ok-total-unready-count": "3",
+                    "scale-down-delay-after-add": "10m",
+                    "scale-down-delay-after-delete": "10s",
+                    "scale-down-delay-after-failure": "3m",
+                    "scale-down-unneeded-time": "10m",
+                    "scale-down-unready-time": "20m",
+                    "scale-down-utilization-threshold": "0.5",
+                    "scan-interval": "10s",
+                    "skip-nodes-with-local-storage": "false",
+                    "skip-nodes-with-system-pods": "true"
+                },
+                "autoUpgradeProfile": {
+                    "upgradeChannel": "stable",
+                    "nodeOSUpgradeChannel": "NodeImage"
+                },
+                "disableLocalAccounts": true,
+                "securityProfile": {},
+                "storageProfile": {
+                    "diskCSIDriver": {
+                        "enabled": true,
+                        "version": "v1"
+                    },
+                    "fileCSIDriver": {
+                        "enabled": true
+                    },
+                    "snapshotController": {
+                        "enabled": true
+                    }
+                },
+                "oidcIssuerProfile": {
+                    "enabled": true
+                },
+                "ingressProfile": {
+                    "webAppRouting": {
+                        "enabled": true
+                    }
+                },
+                "workloadAutoScalerProfile": {},
+                "metricsProfile": {
+                    "costAnalysis": {
+                        "enabled": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Insights/activityLogAlerts",
+            "apiVersion": "2020-10-01",
+            "name": "[parameters('activityLogAlerts_KeyforAppGateway_name')]",
+            "location": "global",
+            "dependsOn": [
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_ActionGroup_LoveofSports_Dev_name'))]"
+            ],
+            "properties": {
+                "scopes": [
+                    "/subscriptions/c072eae7-1f8e-4142-a540-676e1a357dd1/resourceGroups/LoveofSports-Dev"
+                ],
+                "condition": {
+                    "allOf": [
+                        {
+                            "field": "category",
+                            "equals": "Recommendation"
+                        },
+                        {
+                            "field": "operationName",
+                            "equals": "Microsoft.Advisor/recommendations/available/action"
+                        },
+                        {
+                            "field": "properties.recommendationType",
+                            "equals": "3467464b-955a-4caf-95e5-547344ba0281"
+                        }
+                    ]
+                },
+                "actions": {
+                    "actionGroups": [
+                        {
+                            "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_ActionGroup_LoveofSports_Dev_name'))]",
+                            "webhookProperties": {}
+                        }
+                    ]
+                },
+                "enabled": true
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/keys",
+            "apiVersion": "2023-07-01",
+            "name": "[concat(parameters('vaults_secret_store_mBjOmIXsXJ_name'), '/aks-ingress-cert')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_secret_store_mBjOmIXsXJ_name'))]"
+            ],
+            "properties": {
+                "attributes": {
+                    "enabled": true,
+                    "nbf": 1699912412,
+                    "exp": 1731448412
+                }
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/keys",
+            "apiVersion": "2023-07-01",
+            "name": "[concat(parameters('vaults_secret_store_mBjOmIXsXJ_name'), '/football')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_secret_store_mBjOmIXsXJ_name'))]"
+            ],
+            "properties": {
+                "attributes": {
+                    "enabled": true,
+                    "nbf": 1700725070,
+                    "exp": 1732348070
+                }
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "apiVersion": "2023-07-01",
+            "name": "[concat(parameters('vaults_secret_store_mBjOmIXsXJ_name'), '/aks-ingress-cert')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_secret_store_mBjOmIXsXJ_name'))]"
+            ],
+            "properties": {
+                "contentType": "application/x-pkcs12",
+                "attributes": {
+                    "enabled": true,
+                    "nbf": 1699912412,
+                    "exp": 1731448412
+                }
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "apiVersion": "2023-07-01",
+            "name": "[concat(parameters('vaults_secret_store_mBjOmIXsXJ_name'), '/football')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_secret_store_mBjOmIXsXJ_name'))]"
+            ],
+            "properties": {
+                "contentType": "application/x-pkcs12",
+                "attributes": {
+                    "enabled": true,
+                    "nbf": 1700725070,
+                    "exp": 1732348070
+                }
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "apiVersion": "2023-07-01",
+            "name": "[concat(parameters('vaults_secret_store_mBjOmIXsXJ_name'), '/secret1')]",
+            "location": "centralus",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_secret_store_mBjOmIXsXJ_name'))]"
+            ],
+            "tags": {
+                "file-encoding": "utf-8"
+            },
+            "properties": {
+                "attributes": {
+                    "enabled": true
+                }
+            }
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials",
+            "apiVersion": "2023-01-31",
+            "name": "[concat(parameters('userAssignedIdentities_zepor_name'), '/aksfederatedidentity')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_zepor_name'))]"
+            ],
+            "properties": {
+                "issuer": "https://centralus.oic.prod-aks.azure.com/20613b5a-77e7-496c-ab28-ac76ee0d6e12/e27ce7c7-1889-4582-8bd1-aff6f95f4b4d/",
+                "subject": "system:serviceaccount:default:workload-identity-sa",
+                "audiences": [
+                    "api://AzureADTokenExchange"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials",
+            "apiVersion": "2023-01-31",
+            "name": "[concat(parameters('userAssignedIdentities_zepor_name'), '/DeploytoAKS')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_zepor_name'))]"
+            ],
+            "properties": {
+                "issuer": "https://token.actions.githubusercontent.com",
+                "subject": "repo:zepor/https://github.com/zepor/NFLSTATS.git:ref:refs/heads/main",
+                "audiences": [
+                    "api://AzureADTokenExchange"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/dnszones/A",
+            "apiVersion": "2018-05-01",
+            "name": "[concat(parameters('dnszones_loveoffootball_io_name'), '/www')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/dnszones', parameters('dnszones_loveoffootball_io_name'))]"
+            ],
+            "properties": {
+                "TTL": 3600,
+                "targetResource": {
+                    "id": "[parameters('publicIPAddresses_ingress_appgateway_appgwpip_externalid')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/dnszones/NS",
+            "apiVersion": "2018-05-01",
+            "name": "[concat(parameters('dnszones_loveoffootball_io_name'), '/@')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/dnszones', parameters('dnszones_loveoffootball_io_name'))]"
+            ],
+            "properties": {
+                "TTL": 172800,
+                "NSRecords": [
+                    {
+                        "nsdname": "ns1-36.azure-dns.com."
+                    },
+                    {
+                        "nsdname": "ns2-36.azure-dns.net."
+                    },
+                    {
+                        "nsdname": "ns3-36.azure-dns.org."
+                    },
+                    {
+                        "nsdname": "ns4-36.azure-dns.info."
+                    }
+                ],
+                "targetResource": {}
+            }
+        },
+        {
+            "type": "Microsoft.Network/dnszones/SOA",
+            "apiVersion": "2018-05-01",
+            "name": "[concat(parameters('dnszones_loveoffootball_io_name'), '/@')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/dnszones', parameters('dnszones_loveoffootball_io_name'))]"
+            ],
+            "properties": {
+                "TTL": 3600,
+                "SOARecord": {
+                    "email": "azuredns-hostmaster.microsoft.com",
+                    "expireTime": 2419200,
+                    "host": "ns1-36.azure-dns.com.",
+                    "minimumTTL": 300,
+                    "refreshTime": 3600,
+                    "retryTime": 300,
+                    "serialNumber": 1
+                },
+                "targetResource": {}
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "apiVersion": "2023-05-01",
+            "name": "[concat(parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'))]"
+            ],
+            "properties": {
+                "addressPrefix": "10.224.0.0/16",
+                "routeTable": {
+                    "id": "[parameters('routeTables_aks_agentpool_41047798_routetable_externalid')]"
+                },
+                "serviceEndpoints": [
+                    {
+                        "service": "Microsoft.ContainerRegistry",
+                        "locations": [
+                            "*"
+                        ]
+                    }
+                ],
+                "delegations": [],
+                "privateEndpointNetworkPolicies": "Disabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "apiVersion": "2023-05-01",
+            "name": "[concat(parameters('virtualNetworks_LoveofVPN_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_LoveofVPN_name'))]"
+            ],
+            "properties": {
+                "addressPrefix": "10.0.4.0/24",
+                "serviceEndpoints": [
+                    {
+                        "service": "Microsoft.Storage",
+                        "locations": [
+                            "centralus",
+                            "eastus2"
+                        ]
+                    }
+                ],
+                "delegations": [
+                    {
+                        "name": "delegation",
+                        "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofVPN_name'), 'default'), '/delegations/delegation')]",
+                        "properties": {
+                            "serviceName": "Microsoft.Web/serverfarms"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+                    }
+                ],
+                "privateEndpointNetworkPolicies": "Disabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "apiVersion": "2023-05-01",
+            "name": "[concat(parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), '/ingress-appgateway-subnet')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'))]"
+            ],
+            "properties": {
+                "addressPrefix": "10.225.0.0/16",
+                "routeTable": {
+                    "id": "[parameters('routeTables_aks_agentpool_41047798_routetable_externalid')]"
+                },
+                "applicationGatewayIPConfigurations": [
+                    {
+                        "id": "[concat(parameters('applicationGateways_ingress_appgateway_externalid'), '/gatewayIPConfigurations/appGatewayIpConfig')]"
+                    }
+                ],
+                "delegations": [],
+                "privateEndpointNetworkPolicies": "Disabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/DailyPolicy-lo6nl121')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureStorage",
+                "workLoadType": "AzureFileShare",
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicy",
+                    "scheduleRunFrequency": "Daily",
+                    "scheduleRunTimes": [
+                        "2023-10-25T19:30:00Z"
+                    ],
+                    "scheduleWeeklyFrequency": 0
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-10-25T19:30:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/DefaultPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureIaasVM",
+                "instantRPDetails": {},
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicy",
+                    "scheduleRunFrequency": "Daily",
+                    "scheduleRunTimes": [
+                        "2023-10-26T13:30:00Z"
+                    ],
+                    "scheduleWeeklyFrequency": 0
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-10-26T13:30:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "instantRpRetentionRangeInDays": 2,
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/EnhancedPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureIaasVM",
+                "policyType": "V2",
+                "instantRPDetails": {},
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicyV2",
+                    "scheduleRunFrequency": "Hourly",
+                    "hourlySchedule": {
+                        "interval": 4,
+                        "scheduleWindowStartTime": "2023-10-26T08:00:00Z",
+                        "scheduleWindowDuration": 12
+                    }
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-10-26T08:00:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "instantRpRetentionRangeInDays": 2,
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/HourlyLogBackup')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureWorkload",
+                "workLoadType": "SQLDataBase",
+                "settings": {
+                    "timeZone": "UTC",
+                    "issqlcompression": false,
+                    "isCompression": false
+                },
+                "subProtectionPolicy": [
+                    {
+                        "policyType": "Full",
+                        "schedulePolicy": {
+                            "schedulePolicyType": "SimpleSchedulePolicy",
+                            "scheduleRunFrequency": "Daily",
+                            "scheduleRunTimes": [
+                                "2023-10-26T13:30:00Z"
+                            ],
+                            "scheduleWeeklyFrequency": 0
+                        },
+                        "retentionPolicy": {
+                            "retentionPolicyType": "LongTermRetentionPolicy",
+                            "dailySchedule": {
+                                "retentionTimes": [
+                                    "2023-10-26T13:30:00Z"
+                                ],
+                                "retentionDuration": {
+                                    "count": 30,
+                                    "durationType": "Days"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "policyType": "Log",
+                        "schedulePolicy": {
+                            "schedulePolicyType": "LogSchedulePolicy",
+                            "scheduleFrequencyInMins": 60
+                        },
+                        "retentionPolicy": {
+                            "retentionPolicyType": "SimpleRetentionPolicy",
+                            "retentionDuration": {
+                                "count": 30,
+                                "durationType": "Days"
+                            }
+                        }
+                    }
+                ],
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationAlertSettings",
+            "apiVersion": "2023-06-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/defaultAlertSetting')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {
+                "sendToOwners": "DoNotSend",
+                "customEmailAddresses": []
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationVaultSettings",
+            "apiVersion": "2023-06-01",
+            "name": "[concat(parameters('vaults_vault_lo6nl0z7_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vault_lo6nl0z7_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries/tokens",
+            "apiVersion": "2023-08-01-preview",
+            "name": "[concat(parameters('registries_LoveofSports_name'), '/ClusterAuth')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerRegistry/registries', parameters('registries_LoveofSports_name'))]",
+                "[resourceId('Microsoft.ContainerRegistry/registries/scopeMaps', parameters('registries_LoveofSports_name'), '_repositories_admin')]"
+            ],
+            "properties": {
+                "scopeMapId": "[resourceId('Microsoft.ContainerRegistry/registries/scopeMaps', parameters('registries_LoveofSports_name'), '_repositories_admin')]",
+                "credentials": {
+                    "passwords": [
+                        {
+                            "creationTime": "2023-11-23T21:33:51.5573723+00:00",
+                            "name": "password1"
+                        }
+                    ]
+                },
+                "status": "enabled"
+            }
+        },
+        {
+            "type": "Microsoft.ContainerService/managedClusters/agentPools",
+            "apiVersion": "2023-08-02-preview",
+            "name": "[concat(parameters('managedClusters_DevCluster_name'), '/agentpool')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]"
+            ],
+            "properties": {
+                "count": 4,
+                "vmSize": "Standard_DS2_v2",
+                "osDiskSizeGB": 128,
+                "osDiskType": "Managed",
+                "kubeletDiskType": "OS",
+                "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                "maxPods": 110,
+                "type": "VirtualMachineScaleSets",
+                "maxCount": 40,
+                "minCount": 2,
+                "enableAutoScaling": true,
+                "powerState": {
+                    "code": "Running"
+                },
+                "orchestratorVersion": "1.27.3",
+                "enableNodePublicIP": false,
+                "tags": {
+                    "ENV": "Development"
+                },
+                "mode": "System",
+                "osType": "Linux",
+                "osSKU": "Ubuntu",
+                "upgradeSettings": {},
+                "enableFIPS": false,
+                "securityProfile": {
+                    "sshAccess": "LocalUser"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.ContainerService/managedClusters/agentPools",
+            "apiVersion": "2023-08-02-preview",
+            "name": "[concat(parameters('managedClusters_DevCluster_name'), '/ephemeral')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]"
+            ],
+            "properties": {
+                "count": 4,
+                "vmSize": "Standard_DS3_v2",
+                "osDiskSizeGB": 128,
+                "osDiskType": "Ephemeral",
+                "kubeletDiskType": "OS",
+                "workloadRuntime": "OCIContainer",
+                "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                "maxPods": 110,
+                "type": "VirtualMachineScaleSets",
+                "maxCount": 40,
+                "minCount": 2,
+                "enableAutoScaling": true,
+                "scaleDownMode": "Delete",
+                "powerState": {
+                    "code": "Running"
+                },
+                "orchestratorVersion": "1.27.3",
+                "enableNodePublicIP": false,
+                "enableCustomCATrust": false,
+                "mode": "User",
+                "enableEncryptionAtHost": false,
+                "enableUltraSSD": false,
+                "osType": "Linux",
+                "osSKU": "Ubuntu",
+                "upgradeSettings": {},
+                "enableFIPS": false,
+                "networkProfile": {},
+                "securityProfile": {
+                    "sshAccess": "LocalUser"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.ContainerService/managedClusters/agentPools",
+            "apiVersion": "2023-08-02-preview",
+            "name": "[concat(parameters('managedClusters_DevCluster_name'), '/nudepool2')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]"
+            ],
+            "properties": {
+                "count": 2,
+                "vmSize": "Standard_D2as_v4",
+                "osDiskSizeGB": 128,
+                "osDiskType": "Managed",
+                "kubeletDiskType": "OS",
+                "vnetSubnetID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_LoveofSports_Dev_vnet_name'), 'default')]",
+                "maxPods": 110,
+                "type": "VirtualMachineScaleSets",
+                "availabilityZones": [
+                    "2"
+                ],
+                "maxCount": 40,
+                "minCount": 2,
+                "enableAutoScaling": true,
+                "scaleDownMode": "Delete",
+                "powerState": {
+                    "code": "Running"
+                },
+                "orchestratorVersion": "1.27.3",
+                "enableNodePublicIP": false,
+                "tags": {
+                    "ENV": "Development"
+                },
+                "mode": "System",
+                "osType": "Linux",
+                "osSKU": "Ubuntu",
+                "upgradeSettings": {},
+                "enableFIPS": false,
+                "securityProfile": {
+                    "sshAccess": "LocalUser"
+                }
+            }
+        },
+        {
+            "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('metricAlerts_CPU_Usage_Percentage___DevCluster_name')]",
+            "location": "Global",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]",
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"
+            ],
+            "properties": {
+                "severity": 3,
+                "enabled": true,
+                "scopes": [
+                    "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                            "threshold": 95,
+                            "name": "Metric1",
+                            "metricNamespace": "Microsoft.ContainerService/managedClusters",
+                            "metricName": "node_cpu_usage_percentage",
+                            "operator": "GreaterThan",
+                            "timeAggregation": "Average",
+                            "criterionType": "StaticThresholdCriterion"
+                        }
+                    ],
+                    "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },
+                "targetResourceType": "Microsoft.ContainerService/managedClusters",
+                "actions": [
+                    {
+                        "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]",
+                        "webHookProperties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('metricAlerts_Memory_Working_Set_Percentage___DevCluster_name')]",
+            "location": "Global",
+            "dependsOn": [
+                "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]",
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"
+            ],
+            "properties": {
+                "severity": 3,
+                "enabled": true,
+                "scopes": [
+                    "[resourceId('Microsoft.ContainerService/managedClusters', parameters('managedClusters_DevCluster_name'))]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                            "threshold": 100,
+                            "name": "Metric1",
+                            "metricNamespace": "Microsoft.ContainerService/managedClusters",
+                            "metricName": "node_memory_working_set_percentage",
+                            "operator": "GreaterThan",
+                            "timeAggregation": "Average",
+                            "criterionType": "StaticThresholdCriterion"
+                        }
+                    ],
+                    "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },
+                "targetResourceType": "Microsoft.ContainerService/managedClusters",
+                "actions": [
+                    {
+                        "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]",
+                        "webHookProperties": {}
+                    }
+                ]
+            }
+        }
+    ]
+}

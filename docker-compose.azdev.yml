@@ -41,8 +41,8 @@ services:
       - ./backend-container/src:/ssweb/src:delegated
       - ./Secrets:/ssweb/Secrets
       - ./backend-container/requirements.txt:/ssweb/requirements.txt
-      - ./jabascript/public:/ssweb/frontend/public
-      - ./jabascript/src:/ssweb/frontend/src
+      - ./frontend-container/public:/ssweb/frontend/public
+      - ./frontend-container/src:/ssweb/frontend/src
     networks:
       - mynetwork
     working_dir: /ssweb
@@ -63,7 +63,7 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: ./jabascript
+      context: ./frontend-container
       dockerfile: Dockerfile.react
     ports:
       - 3000:3000
@@ -76,5 +76,5 @@ services:
       - FRONTEND_SERVICE_HOST=frontend
       - FRONTEND_SERVICE_PORT=3000
     volumes:
-      - ./jabascript/:/app:delegated
+      - ./frontend-container/:/app:delegated
       - /app/node_modules

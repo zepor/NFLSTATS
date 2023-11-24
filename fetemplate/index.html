@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppStack - React Admin &amp; Dashboard Template</title>
+    
+    <link rel="shortcut icon" href="/src/assets/img/favicon.ico">
+
+    <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <% if(isDev){ %>
+      <link href="/src/assets/scss/light.scss" rel="stylesheet" class="js-stylesheet">
+    <% } else { %>
+      <!-- PICK ONE OF THE STYLES BELOW (light or dark) -->
+      <link href="/assets/light.css" rel="stylesheet" class="js-stylesheet">
+      <!-- <link href="/assets/dark.css" rel="stylesheet" class="js-stylesheet"> -->
+    <% } %>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

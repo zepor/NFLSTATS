@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and push frontend image to ACR
         run: |
-          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./jabascript/Dockerfile.Prod ./jabascript
+          az acr build --image ${{ secrets.AZURE_CONTAINER_REGISTRY }}/ssweb-frontend:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.RESOURCE_GROUP }} -f ./frontend-container/Dockerfile.Prod ./frontend-container
 
       - name: Build and push backend image to ACR
         run: |

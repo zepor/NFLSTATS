@@ -1,0 +1,78 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vaults_NachoKey_name": {
+            "value": null
+        },
+        "serverfarms_Dev_Service_Plan_name": {
+            "value": null
+        },
+        "virtualNetworks_LoveofVPN_name": {
+            "value": null
+        },
+        "dnszones_loveoffootball_io_name": {
+            "value": null
+        },
+        "vaults_vault_lo6nl0z7_name": {
+            "value": null
+        },
+        "vaults_secret_store_mBjOmIXsXJ_name": {
+            "value": null
+        },
+        "registries_LoveofSports_name": {
+            "value": null
+        },
+        "managedClusters_DevCluster_name": {
+            "value": null
+        },
+        "activityLogAlerts_KeyforAppGateway_name": {
+            "value": null
+        },
+        "userAssignedIdentities_zepor_name": {
+            "value": null
+        },
+        "userAssignedIdentities_zepor2_name": {
+            "value": null
+        },
+        "virtualNetworks_LoveofSports_Dev_vnet_name": {
+            "value": null
+        },
+        "actionGroups_RecommendedAlertRules_AG_1_name": {
+            "value": null
+        },
+        "actionGroups_ActionGroup_LoveofSports_Dev_name": {
+            "value": null
+        },
+        "metricAlerts_CPU_Usage_Percentage___DevCluster_name": {
+            "value": null
+        },
+        "certificates_loveoffootball_io_Django_Python_Backend_name": {
+            "value": null
+        },
+        "metricAlerts_Memory_Working_Set_Percentage___DevCluster_name": {
+            "value": null
+        },
+        "actionRules_AlertProcessingRule_LoveofSports_Dev_name": {
+            "value": null
+        },
+        "applicationGateways_ingress_appgateway_externalid": {
+            "value": null
+        },
+        "workspaces_DevLogs_externalid": {
+            "value": null
+        },
+        "publicIPAddresses_ee9e0129_8b6c_4b4a_9e90_a969dd457701_externalid": {
+            "value": null
+        },
+        "userAssignedIdentities_DevCluster_agentpool_externalid": {
+            "value": null
+        },
+        "publicIPAddresses_ingress_appgateway_appgwpip_externalid": {
+            "value": null
+        },
+        "routeTables_aks_agentpool_41047798_routetable_externalid": {
+            "value": null
+        }
+    }
+}
