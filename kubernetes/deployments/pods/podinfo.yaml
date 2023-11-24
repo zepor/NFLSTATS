@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: podinfo
-  path: "clusters/DevCuster/flux-system/kustomization.yaml"
+  path: ${{ secrets.KUSTOMIZE_PATH }}
   prune: true
   timeout: 1m
