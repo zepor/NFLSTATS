@@ -289,7 +289,7 @@ node_modules
 openapi.yaml
 .azdo/
 .devcontainer/
-
+fetemplate/
 
 # Large Files or Directories
 # Add any other large files or directories here
