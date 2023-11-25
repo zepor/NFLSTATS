@@ -28,7 +28,7 @@ const Hybrid = () => {
           <GoogleMapReact
             options={getMapOptions}
             bootstrapURLKeys={{
-              key: "AIzaSyA-aWrwgr64q4b3TEZwQ0lkHI4lZK-moM4",
+              key: "${{   secrets.GOOGLEMAPAPI }}",
             }}
             defaultCenter={{
               lat: 40.712784,

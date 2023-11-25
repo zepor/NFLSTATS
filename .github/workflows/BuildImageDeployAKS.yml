@@ -71,6 +71,15 @@ jobs:
           admin: 'false'
           use-kubelogin: 'true'
 
+      - name: List Kustomize Directory
+        run: ls -alh ${{ secrets.KUSTOMIZE_PATH }}
+                        
+
+      - name: Debug Kustomize Path
+        run: |
+          echo "Kustomize Path: ${{ secrets.KUSTOMIZE_PATH }}"
+          ls -alh "${{ secrets.KUSTOMIZE_PATH }}"
+
       - name: Bake deployment
         uses: azure/k8s-bake@v2
         with:
@@ -78,9 +87,6 @@ jobs:
           kustomizationPath: ${{ secrets.KUSTOMIZE_PATH }}
           kubectl-version: latest
         id: bake
-
-      - name: List Kustomize Directory
-        run: ls -alh ${{ secrets.KUSTOMIZE_PATH }}
 
       - name: Deploy application
         uses: Azure/k8s-deploy@v4
