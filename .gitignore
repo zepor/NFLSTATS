@@ -158,7 +158,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-
 # PyInstaller
 *.manifest
 *.spec
@@ -299,3 +298,4 @@ fetemplate/
 
 # Build Artifacts and Compiled Code
 # Add any build artifacts or compiled code here
+tfc-getting-started
