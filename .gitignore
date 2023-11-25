@@ -289,7 +289,7 @@ openapi.yaml
 .azdo/
 .devcontainer/
 fetemplate/
-
+tfc-getting-started/
 # Large Files or Directories
 # Add any other large files or directories here
 
