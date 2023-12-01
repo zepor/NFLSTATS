@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: frontend-pvc
+  namespace: azdevspace # Make sure it matches the namespace of your pods
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 35Gi # Adjust the storage size as needed
+  storageClassName: storageclass # Make sure it matches your StorageClass
+  volumeName: frontend-file #
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: frontend-pdb
+  namespace: azdevspace
+spec:
+  minAvailable: 2  # Set the minimum available pods to 2 (to allow 1 disruption)
+  selector:
+    matchLabels:
+      app: frontend

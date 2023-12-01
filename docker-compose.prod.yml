@@ -2,24 +2,19 @@ version: '3.7'
 
 services:
   redis:
-    environment:
-      - REDIS_SERVICE_HOST=redis
-      - REDIS_SERVICE_PORT=6379
+    image: redis:latest
+
   backend:
-    environment:
-      - DEBUG=false
-      - NODE_ENV=production
-      - BACKEND_SERVICE_HOST=redis 
-      - BACKEND_SERVICE_PORT=5000
+    image: loveofsports/python:3.9.18
+    env_file:
+      - production.env
     volumes:
       - ./backend-container/src:/ssweb/src:delegated
 
   frontend:
-    environment:
-      - DEBUG=false
-      - NODE_ENV=production
-      - FRONTEND_SERVICE_HOST=frontend
-      - FRONTEND_SERVICE_PORT=3000
+    image: loveofsports/ssweb-frontend:latest
+    env_file:
+      - production.env
     volumes:
       - ./frontend-container/:/app:delegated
       - /app/node_modules
