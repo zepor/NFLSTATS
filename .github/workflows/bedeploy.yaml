@@ -30,7 +30,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Build and push image to ACR
-        run: az acr build --image loveofsports/backend:${{ github.sha }} --registry LoveofSports -g LoveofSports-Dev -f Dockerfile .
+        run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry LoveofSports -g LoveofSports-Dev -f backend-container/Dockerfile backend-container/
 
   deploy:
     permissions:
@@ -49,5 +49,5 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ env.CLUSTER_NAME }}
           resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
-      - name: Deploy application
-        run: helm upgrade --wait -i -f ${{ env.CHART_OVERRIDE_PATH }} --set ${{ env.CHART_OVERRIDES }} automated-deployment ${{ env.CHART_PATH }} --namespace azdevspace
+      - name: Deploy application with Helm
+        run: helm upgrade --install --wait -f ${{ env.CHART_OVERRIDE_PATH }} --set ${{ env.CHART_OVERRIDES }} automated-deployment ${{ env.CHART_PATH }} --namespace azdevspace
