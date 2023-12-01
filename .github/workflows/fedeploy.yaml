@@ -47,9 +47,9 @@ jobs:
       - uses: azure/use-kubelogin@v1
         name: Set up kubelogin for non-interactive login
         with:
-          kubelogin-version: 'v0.0.25'
+            kubelogin-version: 'v0.0.25'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITOKE }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: azure/aks-set-context@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
