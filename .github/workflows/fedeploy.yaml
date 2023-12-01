@@ -1,4 +1,4 @@
-name: fedeploy
+name: Frontend Deployment
 "on":
     push:
         branches:
@@ -13,6 +13,10 @@ env:
     CLUSTER_NAME: DevCluster
     CLUSTER_RESOURCE_GROUP: LoveofSports-Dev
     CONTAINER_NAME: loveofsports/ssweb-frontend
+    MANIFEST_PATHS: |
+        manifests/frontend-pvc.yaml
+        manifests/my-chart
+
 jobs:
     buildImage:
         permissions:
@@ -24,11 +28,9 @@ jobs:
             - uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
               name: Azure login
               with:
-                client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-                tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                creds: ${{ secrets.AZURE_CREDENTIALS }}
             - name: Build and push image to ACR
-              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./docker-compose.prod.yml . /frontend-container
+              run: az acr build --image loveofsports/ssweb-frontend:${{ github.sha }} --registry LoveofSports -g LoveofSports-Dev -f Dockerfile .
     deploy:
         permissions:
             actions: read
