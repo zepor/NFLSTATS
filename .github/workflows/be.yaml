@@ -12,7 +12,7 @@ env:
     CONTAINER_NAME: be
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deploy-be.yaml
-        manifests/svc-fe.yaml
+        manifests/svc-be.yaml
 jobs:
     buildImage:
         permissions:

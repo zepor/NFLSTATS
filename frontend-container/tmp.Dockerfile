@@ -2,7 +2,7 @@
 FROM node:16-alpine as build
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm instal
 COPY . .
 RUN npm run build
 
@@ -13,4 +13,4 @@ COPY --from=build /app/dist ./dist
 COPY server.js ./
 RUN npm install express
 EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
