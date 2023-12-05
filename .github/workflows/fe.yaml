@@ -28,7 +28,7 @@ jobs:
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
-              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f frontend-container/Dockerfile.Prod frontend-container/
+              run: az acr build --image ${{ env.CONTAINER_NAME }}:latest --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f frontend-container/Dockerfile.Prod frontend-container/
     deploy:
         permissions:
             actions: read

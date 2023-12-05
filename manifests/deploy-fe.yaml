@@ -13,11 +13,11 @@ spec:
   template:
     metadata:
       labels:
-        app: frontend
+        app: fe
     spec:
       containers:
-      - name: frontend
-        image: loveofsports.azurecr.io/loveofsports/ssweb-frontend:34c362351cd2cd6ff6f2a2ae1eba16810194e24b
+      - name: fe
+        image: loveofsports.azurecr.io/loveofsports/fe:latest
         env:
         - name: FRONTEND_SERVICE_HOST
           value: frontend
