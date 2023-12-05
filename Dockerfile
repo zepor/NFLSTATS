@@ -1,12 +1,11 @@
-FROM python:3.9-slim
-ENV PORT 5000
-EXPOSE 5000
+FROM node:16
+ENV PORT 3000
+EXPOSE 3000
+
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+COPY package.json .
+RUN npm install
 COPY . .
 
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD ["npm", "start"]
