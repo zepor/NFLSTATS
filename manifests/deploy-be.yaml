@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deploy
+  name: be
   namespace: azdevspace
   labels:
-    app: backend
+    app: be
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: be
   template:
     metadata:
       labels:
-        app: backend
+        app: be
     spec:
       containers:
         - name: backend
@@ -59,28 +59,3 @@ spec:
         - name: backend-file
           persistentVolumeClaim:
             claimName: backend-pvc
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend-service
-  namespace: azdevspace
-spec:
-  ports:
-    - port: 5000
-      protocol: TCP
-      targetPort: 5000
-  selector:
-    app: backend
-  type: LoadBalancer
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: backend-pdb
-  namespace: azdevspace
-spec:
-  minAvailable: 2  # Set the minimum available pods to 2 (to allow 1 disruption)
-  selector:
-    matchLabels:
-      app: backend

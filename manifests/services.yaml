@@ -1,0 +1,47 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: be
+  namespace: azdevspace
+spec:
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: be
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: azdevspace
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 6379
+    targetPort: 6379
+  selector:
+    app: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+  namespace: azdevspace
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+  - name: https
+    port: 443
+    targetPort: 3000
+  selector:
+    app: fe
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}

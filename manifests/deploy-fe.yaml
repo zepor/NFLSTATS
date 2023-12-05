@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deploy
+  name: fe
   namespace: azdevspace
   labels:
-    app: frontend
+    app: fe
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: frontend
+      app: fe
   template:
     metadata:
       labels:
@@ -61,34 +61,4 @@ spec:
       - name: frontend-file
         persistentVolumeClaim:
           claimName: frontend-pvc
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: frontend-pdb
-  namespace: azdevspace
-spec:
-  minAvailable: 2 # Set the minimum available pods to 2 (to allow 1 disruption)
-  selector:
-    matchLabels:
-      app: frontend
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-service
-  namespace: azdevspace
-spec:
-  ports:
-  - name: http
-    port: 80
-    targetPort: 3000
-  - name: https
-    port: 443
-    targetPort: 3000
-  selector:
-    app: frontend
-  sessionAffinity: None
-  type: LoadBalancer
-status:
-  loadBalancer: {}
+

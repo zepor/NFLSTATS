@@ -6,7 +6,7 @@ metadata:
     app: be
   namespace: azdevspace
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: be
@@ -20,3 +20,26 @@ spec:
           image: loveofsports.azurecr.io/be:latest
           ports:
             - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe
+  labels:
+    app: fe
+  namespace: azdevspace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fe
+  template:
+    metadata:
+      labels:
+        app: fe
+    spec:
+      containers:
+        - name: fe
+          image: loveofsports.azurecr.io/fe:latest
+          ports:
+            - containerPort: 3000

@@ -55,27 +55,4 @@ spec:
       - name: redis-file
         persistentVolumeClaim:
           claimName: redis-pvc
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: redis-pdb
-  namespace: azdevspace
-spec:
-  minAvailable: 2 # Set the minimum available pods to 2 (to allow 1 disruption)
-  selector:
-    matchLabels:
-      app: redis
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: redis-service
-  namespace: azdevspace
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 6379
-    targetPort: 6379
-  selector:
-    app: redis
+
