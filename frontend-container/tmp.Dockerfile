@@ -1,26 +1,16 @@
-# Use the official Node.js 16 Alpine image as a base
-FROM node:20-alpine
-
-# Set the working directory inside the container to /app
+# Stage 1: Build the application
+FROM node:16-alpine as build
 WORKDIR /app
-
-# Add `/app/node_modules/.bin` to the PATH environment variable
-ENV PATH /app/node_modules/.bin:$PATH
-
-# Copy package.json and package-lock.json files to the working directory
-COPY package.json ./
-COPY package-lock.json ./
-
-# Install dependencies in the container
-RUN npm install -g npm@10.2.3
-
-# Copy the rest of the application's code to the working directory
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY . .
-RUN chown -R node:node /app
-USER node
-# Expose port 3000 for the application
+RUN npm run build
+
+# Stage 2: Set up the Express server to serve the build directory
+FROM node:16-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY server.js ./
+RUN npm install express
 EXPOSE 3000
-
-# Run the application using npm start
-CMD ["npm", "start"]
-
+CMD ["node", "server.js"]
