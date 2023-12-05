@@ -5,11 +5,6 @@ name: fe
             - main
     workflow_dispatch: {}
 env:
-    ACR_RESOURCE_GROUP: LoveofSports-Dev
-    AZURE_CONTAINER_REGISTRY: LoveofSports
-    CLUSTER_NAME: DevCluster
-    CLUSTER_RESOURCE_GROUP: LoveofSports-Dev
-    CONTAINER_NAME: fe
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deploy-fe.yaml
         manifests/svc-fe.yaml
@@ -28,7 +23,7 @@ jobs:
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push image to ACR
-              run: az acr build --image ${{ env.CONTAINER_NAME }}:latest --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f frontend-container/Dockerfile.Prod frontend-container/
+              run: az acr build --image ${{ secrets.FRONTEND_IMAGE }}:latest --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f frontend-container/Dockerfile.Prod frontend-container/
     deploy:
       permissions:
         contents: read
@@ -43,8 +38,8 @@ jobs:
         - uses: azure/aks-set-context@v1
           with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
-            cluster-name: ${{ env.CLUSTER_NAME }}
-            resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+            cluster-name: ${{ secrets.CLUSTER_NAME }}
+            resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
         - name: Deploy to Kubernetes
           run: |
             kubectl apply -f manifests/deploy-fe.yaml
