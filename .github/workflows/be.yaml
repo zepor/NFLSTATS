@@ -11,8 +11,8 @@ env:
     CLUSTER_RESOURCE_GROUP: LoveofSports-Dev
     CONTAINER_NAME: be
     DEPLOYMENT_MANIFEST_PATH: |
-        manifests/deployment.yaml
-        manifests/service.yaml
+        manifests/deploy-be.yaml
+        manifests/svc-fe.yaml
 jobs:
     buildImage:
         permissions:
