@@ -1,21 +1,30 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
+  name: frontend-deploy
   namespace: azdevspace
-  name: frontend-pod
   labels:
     app: frontend
 spec:
-  containers:
-    - name: frontend
-      image: loveofsports.azurecr.io/ssweb-frontend:latest
-      env:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: loveofsports.azurecr.io/loveofsports/ssweb-frontend:34c362351cd2cd6ff6f2a2ae1eba16810194e24b
+        env:
         - name: FRONTEND_SERVICE_HOST
           value: frontend
         - name: FRONTEND_SERVICE_PORT
           value: "3000"
         - name: NODE_ENV
-          value: development
+          value: production
         - name: AZURE_STORAGE_ACCOUNT
           value: sportfs
         - name: AZURE_STORAGE_KEY
@@ -25,26 +34,33 @@ spec:
               key: azurestorageaccountkey
         - name: AZURE_SHARE_NAME
           value: sportshare
-        - name: MONGODB_URL  # Add this environment variable
+        - name: MONGODB_URL
           valueFrom:
             secretKeyRef:
               name: my-cluster-secrets
-              key: MONGODB_URL  # Use the correct key name
-      ports:
+              key: MONGODB_URL
+        - name: REDIS_HOST
+          value: "redis-service"
+        - name: BACKEND_HOST
+          value: "backend-service"
+        ports:
         - containerPort: 3000
-      volumeMounts:
-        - mountPath: /ssweb/javascript
+        volumeMounts:
+        - mountPath: /ssweb/frontend-container
           name: frontend-file
-      resources:
-        limits:
-          cpu: "2"
-          memory: "2Gi"
-  imagePullSecrets:
-  - name: my-registry-secret
-  volumes:
-    - name: frontend-file
-      persistentVolumeClaim:
-        claimName: frontend-pvc
+        resources:
+          requests:
+            cpu: "1"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "2Gi"
+      imagePullSecrets:
+      - name: my-registry-secret
+      volumes:
+      - name: frontend-file
+        persistentVolumeClaim:
+          claimName: frontend-pvc
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
@@ -52,7 +68,7 @@ metadata:
   name: frontend-pdb
   namespace: azdevspace
 spec:
-  minAvailable: 2  # Set the minimum available pods to 2 (to allow 1 disruption)
+  minAvailable: 2 # Set the minimum available pods to 2 (to allow 1 disruption)
   selector:
     matchLabels:
       app: frontend
@@ -60,24 +76,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2023-11-12T18:57:14Z"
   name: frontend-service
   namespace: azdevspace
-  resourceVersion: "736207"
-  uid: a545598a-3357-470f-a7f2-f404253a8e14
 spec:
-  clusterIP: 10.0.103.223
-  clusterIPs:
-  - 10.0.103.223
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
-  - name: frontend
-    port: 3000
-    protocol: TCP
-    targetPort: 3000
   - name: http
     port: 80
     targetPort: 3000
@@ -87,6 +89,6 @@ spec:
   selector:
     app: frontend
   sessionAffinity: None
-  type: ClusterIP
+  type: LoadBalancer
 status:
   loadBalancer: {}
