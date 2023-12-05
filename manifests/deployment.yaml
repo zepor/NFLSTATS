@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fe
+  name: be
   labels:
-    app: fe
+    app: be
   namespace: azdevspace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fe
+      app: be
   template:
     metadata:
       labels:
-        app: fe
+        app: be
     spec:
       containers:
-        - name: fe
-          image: loveofsports.azurecr.io/frontend:latest
+        - name: be
+          image: loveofsports.azurecr.io/be:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 5000
