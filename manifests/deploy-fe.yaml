@@ -16,49 +16,49 @@ spec:
         app: fe
     spec:
       containers:
-      - name: fe
-        image: loveofsports.azurecr.io/loveofsports/fe:latest
-        env:
-        - name: FRONTEND_SERVICE_HOST
-          value: frontend
-        - name: FRONTEND_SERVICE_PORT
-          value: "3000"
-        - name: NODE_ENV
-          value: production
-        - name: AZURE_STORAGE_ACCOUNT
-          value: sportfs
-        - name: AZURE_STORAGE_KEY
-          valueFrom:
-            secretKeyRef:
-              name: azure-storage-account-secret
-              key: azurestorageaccountkey
-        - name: AZURE_SHARE_NAME
-          value: sportshare
-        - name: MONGODB_URL
-          valueFrom:
-            secretKeyRef:
-              name: my-cluster-secrets
-              key: MONGODB_URL
-        - name: REDIS_HOST
-          value: "redis-service"
-        - name: BACKEND_HOST
-          value: "backend-service"
-        ports:
-        - containerPort: 3000
-        volumeMounts:
-        - mountPath: /ssweb/frontend-container
-          name: frontend-file
-        resources:
-          requests:
-            cpu: "1"
-            memory: "1Gi"
-          limits:
-            cpu: "2"
-            memory: "2Gi"
-      imagePullSecrets:
-      - name: my-registry-secret
-      volumes:
-      - name: frontend-file
-        persistentVolumeClaim:
-          claimName: frontend-pvc
+        - name: fe
+          image: loveofsports.azurecr.io/fe:latest
+          env:
+          - name: FRONTEND_SERVICE_HOST
+            value: frontend
+          - name: FRONTEND_SERVICE_PORT
+            value: "3000"
+          - name: NODE_ENV
+            value: production
+          - name: AZURE_STORAGE_ACCOUNT
+            value: sportfs
+          - name: AZURE_STORAGE_KEY
+            valueFrom:
+              secretKeyRef:
+                name: azure-storage-account-secret
+                key: azurestorageaccountkey
+          - name: AZURE_SHARE_NAME
+            value: sportshare
+          - name: MONGODB_URL
+            valueFrom:
+              secretKeyRef:
+                name: my-cluster-secrets
+                key: MONGODB_URL
+          - name: REDIS_HOST
+            value: "redis-service"
+          - name: BACKEND_HOST
+            value: "backend-service"
+          ports:
+          - containerPort: 3000
+          volumeMounts:
+          - mountPath: /ssweb/frontend-container
+            name: frontend-file
+          resources:
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+          imagePullSecrets:
+          - name: my-registry-secret
+          volumes:
+          - name: frontend-file
+            persistentVolumeClaim:
+              claimName: frontend-pvc
 

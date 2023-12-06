@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: be
-          image: loveofsports.azurecr.io/loveofsports/be:latest
+          image: loveofsports.azurecr.io/be:latest
           env:
             - name: BACKEND_SERVICE_HOST
               value: backend
