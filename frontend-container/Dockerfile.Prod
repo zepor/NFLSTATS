@@ -9,7 +9,8 @@ RUN npm run build
 # Stage 2: Set up the Express server to serve the build directory
 FROM node:16-alpine
 WORKDIR /app
-COPY --from=build /app/dist ./dist
+# Copying from /app/dist of the build stage to /app/build of the final image
+COPY --from=build /app/dist ./build
 COPY server.js ./
 RUN npm install express
 EXPOSE 3000
