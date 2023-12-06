@@ -23,8 +23,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
       - name: Build and push image to ACR
-        run: |
-          az acr build --image be:latest --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f backend-container/Dockerfile backend-container/
+        run: az acr build --image be:latest --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f backend-container/Dockerfile.python backend-container/
   deploy:
     permissions:
       contents: read
