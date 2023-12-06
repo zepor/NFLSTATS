@@ -4,7 +4,7 @@ metadata:
   name: redis-service
   namespace: azdevspace
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 6379
     targetPort: 6379

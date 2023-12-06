@@ -48,6 +48,13 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+docker-compose.azdev.yml
+docker-compose.prod.yml
+docker-compose.yml
+Dockerfile
+tmp.Dockerfile
+mu-chart/
+
 
 # Translations
 *.mo

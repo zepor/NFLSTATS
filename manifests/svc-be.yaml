@@ -10,4 +10,4 @@ spec:
       targetPort: 5000
   selector:
     app: be
-  type: LoadBalancer
+  type: ClusterIP
