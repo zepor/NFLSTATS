@@ -53,7 +53,7 @@ docker-compose.prod.yml
 docker-compose.yml
 Dockerfile
 tmp.Dockerfile
-mu-chart/
+my-chart/
 
 
 # Translations
