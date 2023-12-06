@@ -1,14 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+
 metadata:
   name: loveoffootball-ingress
   namespace: azdevspace
+  annotations:
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
 spec:
   defaultBackend:
     service:
       name: fe
       port:
-        number: 3000
+        number: 80
   ingressClassName: azure-application-gateway
   rules:
   - host: loveoffootball.io
@@ -20,7 +23,14 @@ spec:
           service:
             name: fe
             port:
-              number: 3000
+              number: 80
+      - path: /.well-known/acme-challenge/
+        pathType: Exact
+        backend:
+          service:
+            name: cm-acme-http-solver-qdx96
+            port:
+              number: 80
   tls:
     - hosts:
         - loveoffootball.io

@@ -14,6 +14,6 @@ spec:
   selector:
     app: fe
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}
