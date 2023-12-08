@@ -37,6 +37,8 @@ const Page404 = lazy(() => import("./pages/auth/Page404"));
 const SignIn = lazy(() => import("./pages/auth/SignIn"));
 const SignUp = lazy(() => import("./pages/auth/SignUp"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const PrivacyPolicy = lazy(() => import("./pages/auth/PrivacyPolicy"));
+const TermsofService = lazy(() => import("./pages/auth/TermsofService"));
 
 // UI components
 const Alerts = lazy(() => import("./pages/ui/Alerts"));
@@ -214,6 +216,10 @@ const routes = [
       {
         path: "500",
         element: <Page500 />,
+      },
+      {
+        path: "privacypolicy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

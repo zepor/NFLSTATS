@@ -17,10 +17,10 @@ import SidebarProvider from "./contexts/SidebarProvider";
 import LayoutProvider from "./contexts/LayoutProvider";
 import ChartJsDefaults from "./utils/ChartJsDefaults";
 
-import AuthProvider from "./contexts/JWTProvider";
+//import AuthProvider from "./contexts/JWTProvider";
 // import AuthProvider from "./contexts/FirebaseAuthProvider";
 // import AuthProvider from "./contexts/Auth0Provider";
-// import AuthProvider from "./contexts/CognitoProvider";
+import AuthProvider from "./contexts/CognitoProvider";
 
 const App = () => {
   const content = useRoutes(routes);
@@ -28,8 +28,10 @@ const App = () => {
   return (
     <StrictMode>
       <HelmetProvider>
-        <Helmet titleTemplate="%s | Love of Football - NFL Statistical Analytics Dashboard"
-          defaultTitle="Love of Football - NFL Statistical Analytics Dashboard"/>
+        <Helmet
+          titleTemplate="%s | Love of Football - NFL Statistical Analytics Dashboard"
+          defaultTitle="Love of Football - NFL Statistical Analytics Dashboard"
+        />
         <Suspense fallback={<Loader />}>
           <Provider store={store}>
             <ThemeProvider>
