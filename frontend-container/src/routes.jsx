@@ -221,6 +221,10 @@ const routes = [
         path: "privacypolicy",
         element: <PrivacyPolicy />,
       },
+      {
+        path: "TermsofService",
+        element: <TermsofService />,
+      },
     ],
   },
   {
