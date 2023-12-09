@@ -1,9 +1,9 @@
-// TermsOfServicePage.jsx
+// TermsofServicePage.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "react-bootstrap";
-import TermsofService from "../../components/auth/TermsOfService"; // Import the TermsOfService component
+import TermsofService from "../../components/auth/TermsofService"; // Import the TermsofService component
 
 const TermsofServicePage = () => (
   <React.Fragment>
