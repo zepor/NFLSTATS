@@ -4,11 +4,11 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import { Alert, Button, Form } from "react-bootstrap";
 
-import useAuth from "../../hooks/useAuth";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 function ResetPassword() {
   const navigate = useNavigate();
-  const { resetPassword } = useAuth();
+  const { resetPassword } = useAuthenticator((context) => [context.user]);
 
   return (
     <Formik

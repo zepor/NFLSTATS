@@ -18,7 +18,10 @@ const Doc = ({ children }) => (
       <Main>
         <NavbarMinimal />
         <Content>
-          <Suspense fallback={<Loader />}>{children}<Outlet /></Suspense>
+          <Suspense fallback={<Loader />}>
+            {children}
+            <Outlet />
+          </Suspense>
         </Content>
       </Main>
     </Wrapper>

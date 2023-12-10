@@ -20,7 +20,16 @@ export default defineConfig({
     }),
     splitVendorChunkPlugin(),
   ],
+  resolve: {
+    alias: [
+      {
+        find: "./runtimeConfig",
+        replacement: "./runtimeConfig.browser", // ensures browser compatible version of AWS JS SDK is used
+      },
+    ],
+  },
   build: {
+    outDir: "build",
     cssCodeSplit: true,
     chunkSizeWarningLimit: 3000,
     rollupOptions: {
@@ -33,20 +42,27 @@ export default defineConfig({
       output: {
         assetFileNames: "assets/[name][extname]",
         manualChunks(id) {
-          if (id.includes('node_modules/apexcharts')) {
-            return 'apexcharts';
+          if (id.includes("node_modules/apexcharts")) {
+            return "apexcharts";
           }
-          if (id.includes('node_modules/chart.js') || id.includes('node_modules/react-chartjs-2')) {
-            return 'chartjs';
+          if (
+            id.includes("node_modules/chart.js") ||
+            id.includes("node_modules/react-chartjs-2")
+          ) {
+            return "chartjs";
           }
-          if (id.includes('node_modules/google-map-react')) {
-            return 'googlemaps';
+          if (id.includes("node_modules/google-map-react")) {
+            return "googlemaps";
           }
-          if (id.includes('node_modules/jsvectormap') || id.includes('src/vendor/us_aea_en.js') || id.includes('src/vendor/world.js')) {
-            return 'vectormaps';
+          if (
+            id.includes("node_modules/jsvectormap") ||
+            id.includes("src/vendor/us_aea_en.js") ||
+            id.includes("src/vendor/world.js")
+          ) {
+            return "vectormaps";
           }
-          if (id.includes('node_modules/@fullcalendar')) {
-            return 'fullcalendar';
+          if (id.includes("node_modules/@fullcalendar")) {
+            return "fullcalendar";
           }
         },
       },

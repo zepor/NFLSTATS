@@ -36,7 +36,7 @@ function App() {
   )
 }`}</Code>
 
-    <h4>2. Enable useAuth hook</h4>
+    <h4>2. Enable useAuthenticator hook</h4>
 
     <p className="text-lg">
       Enable Auth0's <code>useAuth</code> hook in{" "}
@@ -45,7 +45,7 @@ function App() {
 
     <Code>{`import { AuthContext } from "../contexts/Auth0Context";
         
-const useAuth = () => {
+const useAuthenticator = () => {
   return useContext(AuthContext);
 };`}</Code>
   </div>
@@ -59,10 +59,10 @@ const HowToUse = () => (
       included, including sign in, sign up and sign out.
     </p>
     <h4>Retrieve user info</h4>
-    <Code>{`import useAuth from '../hooks/useAuth';
+    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
 
 const App = () => {
-  const { displayName } = useAuth();
+  const { displayName } = useAuthenticator((context) => [context.user]);
 
   return (
     <span>
@@ -71,10 +71,10 @@ const App = () => {
   );
 };`}</Code>
     <h4>Execute actions</h4>
-    <Code>{`import useAuth from '../hooks/useAuth';
+    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
 
 const App = () => {
-  const { signIn } = useAuth();
+  const { signIn } = useAuthenticator((context) => [context.user]);
 
   return (
     <button onClick={() => signIn()}>

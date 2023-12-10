@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import {
   Accordion,
   Badge,
@@ -24,16 +23,22 @@ import {
 //} from "react-feather";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faPalette, faStar, faChartLine,
+import {
+  faPalette,
+  faStar,
+  faChartLine,
   faFootballBall,
   faClipboardList,
   faHistory,
   faChartBar,
   faDesktop} from "@fortawesome/free-solid-svg-icons";
 
-import {SIDEBAR_POSITION, SIDEBAR_BEHAVIOR,
+import {
+  SIDEBAR_POSITION,
+  SIDEBAR_BEHAVIOR,
   LAYOUT,
-  THEME} from "../../constants";
+  THEME,
+} from "../../constants";
 import useTheme from "../../hooks/useTheme";
 import useSidebar from "../../hooks/useSidebar";
 import useLayout from "../../hooks/useLayout";
@@ -80,7 +85,7 @@ import screenshotDashboard6 from "../../assets/img/photos/screenshot-dashboard-6
 //import brandESLint from "../../assets/img/brands/eslint.svg";
 //import brandJavaScript from "../../assets/img/brands/javascript.svg";
 //import brandTypeScript from "../../assets/img/brands/typescript.svg";
-import { ReactComponent as LOFLogo } from "../../assets/img/loveoffootball-logo.svg";
+import { ReactComponent as LOFLogo } from "../../assets/img/logo.svg";
 import { ReactComponent as FBIcon } from "../../assets/img/brands/faFacebook.svg";
 import { ReactComponent as INSTAIcon } from "../../assets/img/brands/faInstagram.svg";
 import { ReactComponent as TWIcon } from "../../assets/img/brands/faTwitter.svg";
@@ -88,102 +93,69 @@ import { ReactComponent as LINKIcon } from "../../assets/img/brands/faLinkedin.s
 
 import TeamSelector from "../../components/TeamSelection";
 
-const Navigation = () => (
-  <Navbar expand="md" className="landing-navbar">
-    <Container>
-      <Navbar.Brand className="landing-brand" href="/">
-        <LOFLogo /> LoveofFootball.io {""}
-        <Badge as="sup" bg="" className="badge-soft-primary p-1">
-          Football
-        </Badge>
-      </Navbar.Brand>
-      <Nav className="ms-auto" navbar>
-        <Nav.Item className="d-none d-md-inline-block">
-          <Nav.Link
-            href="/analytics"
-            target="_blank"
-            rel="noreferrer"
-            active
-            className="text-lg px-lg-3"
-          >
-            Analytics
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="/fantasy-draft"
-            target="_blank"
-            rel="noreferrer"
-            active
-            className="text-lg px-lg-3"
-          >
-            Fantasy Draft
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="/predictions"
-            target="_blank"
-            rel="noreferrer"
-            active
-            className="text-lg px-lg-3"
-          >
-            Predictions
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="/player-comparison"
-            target="_blank"
-            rel="noreferrer"
-            active
-            className="text-lg px-lg-3"
-          >
-            Player Comparison
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="/about"
-            target="_blank"
-            rel="noreferrer"
-            active
-            className="text-lg px-lg-3"
-          >
-            About Us
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="mailto:support@loveoffootball.io"
-            active
-            className="text-lg px-lg-3"
-          >
-            Support
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-      <Row>
-        <Button
-          href="/signup"
-          variant="success"
-          className="ms-2 btn-pill"
-          size="lg"
-        >
-          Sign IN
-        </Button>
-        <Button
-          href="/signin"
-          variant="primary"
-          className="ms-2 btn-pill"
-          size="lg"
-        >
-          Sign Up
-        </Button>
-      </Row>
+const Navigation = () => {
+  return (
+    <Container className="bg-primary-subtle py-3 mb-4">
+      <Navbar
+        expand="md"
+        className="d-flex flex-wrap align-items-center justify-content-between"
+      >
+        <Navbar.Brand href="/" className="landing-brand">
+          <LOFLogo style={{ height: "40px", marginRight: "10px" }} />
+          <Button variant="inverse" size="lg" className="text-lg">
+            LoveofFootball.io
+          </Button>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link
+              href="/analytics"
+              className="nav-item-ghost text-lg px-lg-3 border border-secondary bg-inverse"
+            >
+              Analytics
+            </Nav.Link>
+            <Nav.Link
+              href="/fantasy-draft"
+              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
+            >
+              Fantasy Draft
+            </Nav.Link>
+            <Nav.Link
+              href="/predictions"
+              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
+            >
+              Predictions
+            </Nav.Link>
+            <Nav.Link
+              href="/player-comparison"
+              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
+            >
+              Player Comparison
+            </Nav.Link>
+            <Nav.Link href="/about" className="nav-item-ghost text-lg px-lg-3">
+              Abo ut Us
+            </Nav.Link>
+            <Nav.Link
+              href="mailto:support@loveoffootball.io"
+              className="nav-item-ghost text-lg px-lg-3"
+            >
+              Support
+            </Nav.Link>
+          </Nav>
+          <div className="btn-group">
+            <Link to="/auth/sign-in" className="btn btn-primary">
+              Sign In
+            </Link>
+            <Link to="/auth/sign-up" className="btn btn-success">
+              Get Started
+            </Link>
+          </div>
+        </Navbar.Collapse>
+      </Navbar>
     </Container>
-  </Navbar>
-);
+  );
+};
 
 const Intro = () => (
   <section className="landing-intro pt-5 pt-lg-6 pb-5 pb-lg-7">
@@ -848,7 +820,7 @@ const Landing = () => {
     <React.Fragment>
       <Navigation />
       <Intro />
-      
+
       <section className="team-selector-section">
         <TeamSelector />
       </section>

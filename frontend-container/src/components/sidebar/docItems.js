@@ -37,10 +37,10 @@ const developmentSection = [
         href: "/docs/auth/auth0",
         title: "Auth0",
       },
-      {
-        href: "/docs/auth/cognito",
-        title: "Cognito",
-      },
+      //{
+      //  href: "/docs/auth/cognito",
+      //  title: "Cognito",
+      //},
       {
         href: "/docs/auth/firebase",
         title: "Firebase",

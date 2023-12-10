@@ -9,9 +9,13 @@ SyntaxHighlighter.registerLanguage("javascript", js);
 
 const Code = ({ children }) => {
   return (
-    <SyntaxHighlighter className="rounded p-3 bg-dark"
+    <SyntaxHighlighter
+      className="rounded p-3 bg-dark"
       language="javascript"
-      style={vs2015}>{children}</SyntaxHighlighter>
+      style={vs2015}
+    >
+      {children}
+    </SyntaxHighlighter>
   );
 };
 

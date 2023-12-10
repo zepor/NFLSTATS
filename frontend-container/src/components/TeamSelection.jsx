@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 import * as Constants from "../constants";
-import { Carousel, Button, Card, Row, Col, Container } from 'react-bootstrap';
+import { Carousel, Button, Card, Row, Col, Container } from "react-bootstrap";
 
 const TeamSelector = () => {
   const { setTheme } = useContext(ThemeContext);
@@ -16,8 +16,14 @@ const TeamSelector = () => {
   const confirmSelection = (teamName) => {
     if (teamName && Constants.TEAMS[teamName]) {
       const teamColors = Constants.TEAMS[teamName];
-      document.documentElement.style.setProperty('--primary-color', teamColors.primary);
-      document.documentElement.style.setProperty('--secondary-color', teamColors.secondary);
+      document.documentElement.style.setProperty(
+        "--primary-color",
+        teamColors.primary
+      );
+      document.documentElement.style.setProperty(
+        "--secondary-color",
+        teamColors.secondary
+      );
       setTheme(teamName);
       setSelectedTeam(teamName);
       setConfirmTeam(true);
@@ -34,22 +40,39 @@ const TeamSelector = () => {
           <Card>
             <Card.Body>
               <Carousel>
-                {teamNames.map(teamName => {
-                  const logoPath = `/src/assets/img/teamlogos/${teamName.toLowerCase().replace(/ /g, "-")}.png`;
-                  const fanPath = `/src/assets/img/fans/${teamName.toLowerCase().replace(/ /g, "")}fans.png`;
+                {teamNames.map((teamName) => {
+                  const logoPath = `/src/assets/img/teamlogos/${teamName
+                    .toLowerCase()
+                    .replace(/ /g, "-")}.png`;
+                  const fanPath = `/src/assets/img/fans/${teamName
+                    .toLowerCase()
+                    .replace(/ /g, "")}fans.png`;
 
                   return (
                     <Carousel.Item key={teamName}>
                       <Row className="align-items-center">
                         <Col md={6}>
-                          <img className="d-block w-100" src={logoPath} alt={`${teamName} logo`} />
+                          <img
+                            className="d-block w-100"
+                            src={logoPath}
+                            alt={`${teamName} logo`}
+                          />
                         </Col>
                         <Col md={6}>
-                          <img className="d-block w-100" src={fanPath} alt={`${teamName} fans`} />
+                          <img
+                            className="d-block w-100"
+                            src={fanPath}
+                            alt={`${teamName} fans`}
+                          />
                         </Col>
                       </Row>
                       <Carousel.Caption className="mt-4 text-center">
-                        <Button variant="primary" onClick={() => confirmSelection(teamName)}>Select {teamName}</Button>
+                        <Button
+                          variant="primary"
+                          onClick={() => confirmSelection(teamName)}
+                        >
+                          Select {teamName}
+                        </Button>
                       </Carousel.Caption>
                     </Carousel.Item>
                   );
