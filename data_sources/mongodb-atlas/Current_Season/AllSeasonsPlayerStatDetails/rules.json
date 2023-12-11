@@ -1,0 +1,16 @@
+{
+    "database": "Current_Season",
+    "collection": "AllSeasonsPlayerStatDetails",
+    "roles": [
+        {
+            "name": "SetSchema",
+            "apply_when": {},
+            "document_filters": {
+                "read": {},
+                "write": {}
+            },
+            "read": true,
+            "write": true
+        }
+    ]
+}

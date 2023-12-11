@@ -1,0 +1,17 @@
+{
+  "projectName": "loveofsports",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "./frontend-container/src",
+      "DistributionDir": "./frontend-container/dist",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm start"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}

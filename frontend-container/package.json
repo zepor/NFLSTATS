@@ -30,6 +30,7 @@
     "@loadable/component": "5.15.3",
     "@mui/material": "^5.14.18",
     "@reduxjs/toolkit": "1.9.5",
+    "abort-controller": "^3.0.0",
     "amazon-cognito-identity-js": "5.2.14",
     "apexcharts": "3.41.0",
     "aws-amplify": "^6.0.6",
@@ -49,6 +50,7 @@
     "jsvectormap": "1.5.3",
     "jwt-decode": "3.1.2",
     "moment": "2.29.4",
+    "node-fetch": "^3.3.2",
     "nodejs": "^0.0.0",
     "notyf": "3.10.0",
     "react": "^18.2.0",
@@ -71,6 +73,8 @@
     "react-select": "5.7.3",
     "react-syntax-highlighter": "15.5.0",
     "react-table": "7.8.0",
+    "realm": "^12.3.1",
+    "realm-web": "^2.0.0",
     "yup": "1.2.0"
   },
   "devDependencies": {

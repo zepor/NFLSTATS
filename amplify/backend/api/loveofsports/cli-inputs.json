@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "loveofsports",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2024-12-10T06:37:52.139Z",
+      "keyDescription": "mFYKpYsVMq9mu5iGQ2PSWTJTj9BoP9EiwqVevNVo6p9DXC1nEe63KMy86m1XRiCb"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

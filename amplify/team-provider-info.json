@@ -1,0 +1,20 @@
+{
+  "azdevspace": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-loveofsports-azdevspace-121801-authRole",
+      "UnauthRoleArn": "arn:aws:iam::288689368731:role/amplify-loveofsports-azdevspace-121801-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::288689368731:role/amplify-loveofsports-azdevspace-121801-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-loveofsports-azdevspace-121801-deployment",
+      "UnauthRoleName": "amplify-loveofsports-azdevspace-121801-unauthRole",
+      "StackName": "amplify-loveofsports-azdevspace-121801",
+      "StackId": "arn:aws:cloudformation:us-east-1:288689368731:stack/amplify-loveofsports-azdevspace-121801/4bd89870-96bf-11ee-a8ca-0aef6754a28f",
+      "AmplifyAppId": "d3bkoo4onkxym0"
+    },
+    "categories": {
+      "auth": {
+        "loveofsports947f3d63": {}
+      }
+    }
+  }
+}
