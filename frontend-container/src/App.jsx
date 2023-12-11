@@ -17,7 +17,7 @@ import ChartJsDefaults from "./utils/ChartJsDefaults";
 
 // Import Amplify and configure it
 import { Amplify } from "aws-amplify";
-import amplifyconfig from "./amplifyconfiguration.json";
+import amplifyconfig from "amplifyconfiguration.json";
 Amplify.configure(amplifyconfig);
 
 if (process.env.NODE_ENV === "development") {
