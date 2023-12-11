@@ -5,6 +5,7 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import json from "@rollup/plugin-json"; // Add this line
 import { resolve } from "path";
+import checker from "vite-plugin-checker";
 
 export default defineConfig({
   server: {
@@ -20,6 +21,7 @@ export default defineConfig({
       protocolImports: true,
     }),
     json(),
+    checker(),
     splitVendorChunkPlugin(),
   ],
   resolve: {
