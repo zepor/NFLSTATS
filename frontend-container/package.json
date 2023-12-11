@@ -74,6 +74,7 @@
     "yup": "1.2.0"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^6.0.1",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-config-react-app": "7.0.1",

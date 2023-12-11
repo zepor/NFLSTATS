@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
+import json from "@rollup/plugin-json"; // Add this line
 import { resolve } from "path";
 
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
     nodePolyfills({
       protocolImports: true,
     }),
+    json(),
     splitVendorChunkPlugin(),
   ],
   resolve: {
