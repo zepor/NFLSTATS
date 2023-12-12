@@ -1,9 +1,8 @@
 {
-    "app_id": "application-0-masip",
+    "app_id": "sportsradarfeed-ljtpz",
     "config_version": 20210101,
-    "name": "Application-0",
+    "name": "SportsRadarFeed",
     "location": "US-VA",
     "provider_region": "gcp-us-central1",
-    "deployment_model": "LOCAL",
-    "environment": "development"
+    "deployment_model": "LOCAL"
 }
