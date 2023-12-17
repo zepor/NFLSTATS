@@ -1,0 +1,280 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/boxscore-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"xs:include": {
+			"@schemaLocation": "common-game-v7.0.xsd"
+		},
+		"xs:complexType": [
+			{
+				"@name": "gameType",
+				"xs:sequence": {
+					"xs:element": [
+						{
+							"@name": "weather",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"@type": "b:weatherType"
+						},
+						{
+							"@name": "coin_toss",
+							"@minOccurs": 0,
+							"@maxOccurs": "unbounded",
+							"@type": "b:coinTossType"
+						},
+						{
+							"@name": "summary",
+							"@minOccurs": 1,
+							"@maxOccurs": 1,
+							"@type": "b:summaryType"
+						},
+						{
+							"@name": "situation",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"@type": "b:fieldSituationType"
+						},
+						{
+							"@name": "last_event",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:choice": {
+									"@maxOccurs": 1,
+									"xs:element": [
+										{
+											"@name": "event",
+											"@type": "b:gameEventType"
+										},
+										{
+											"@name": "play",
+											"@type": "b:gamePlayDetailsType"
+										}
+									]
+								}
+							}
+						},
+						{
+							"@name": "scoring",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:sequence": {
+									"xs:element": [
+										{
+											"@name": "quarter",
+											"@minOccurs": 0,
+											"@maxOccurs": "unbounded",
+											"@type": "b:periodType"
+										},
+										{
+											"@name": "overtime",
+											"@minOccurs": 0,
+											"@maxOccurs": "unbounded",
+											"@type": "b:periodType"
+										}
+									]
+								}
+							}
+						},
+						{
+							"@name": "scoring_drives",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:sequence": {
+									"xs:element": {
+										"@name": "drive",
+										"@minOccurs": 0,
+										"@maxOccurs": "unbounded",
+										"@type": "b:scoringDriveType"
+									}
+								}
+							}
+						},
+						{
+							"@name": "scoring_plays",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:sequence": {
+									"xs:element": {
+										"@name": "play",
+										"@minOccurs": 0,
+										"@maxOccurs": "unbounded",
+										"@type": "b:gamePlayScoresType"
+									}
+								}
+							}
+						}
+					]
+				},
+				"xs:attributeGroup": [
+					{
+						"@ref": "b:baseGameAttributes"
+					},
+					{
+						"@ref": "b:extGameAttributes"
+					}
+				]
+			},
+			{
+				"@name": "periodType",
+				"xs:attributeGroup": {
+					"@ref": "b:basePeriodAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "away_points",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "home_points",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "scoringDriveType",
+				"xs:sequence": {
+					"xs:choice": {
+						"@minOccurs": 1,
+						"@maxOccurs": 1,
+						"xs:element": [
+							{
+								"@name": "quarter",
+								"xs:complexType": {
+									"xs:attributeGroup": {
+										"@ref": "b:basePeriodAttributes"
+									}
+								}
+							},
+							{
+								"@name": "overtime",
+								"xs:complexType": {
+									"xs:attributeGroup": {
+										"@ref": "b:basePeriodAttributes"
+									}
+								}
+							}
+						]
+					},
+					"xs:element": [
+						{
+							"@name": "team",
+							"@minOccurs": 1,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "b:baseTeamAttributes"
+								}
+							}
+						},
+						{
+							"@name": "plays",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:choice": {
+									"@maxOccurs": "unbounded",
+									"xs:element": [
+										{
+											"@name": "event",
+											"@type": "b:gameEventType"
+										},
+										{
+											"@name": "play",
+											"@type": "b:gamePlayDetailsType"
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				"xs:attributeGroup": {
+					"@ref": "b:baseDriveAttributes"
+				}
+			},
+			{
+				"@name": "gamePlayScoresType",
+				"xs:complexContent": {
+					"xs:extension": {
+						"@base": "b:basePlayType",
+						"xs:sequence": {
+							"xs:element": [
+								{
+									"@name": "score",
+									"@minOccurs": 0,
+									"@maxOccurs": 1,
+									"@type": "b:playScoreType"
+								},
+								{
+									"@name": "statistics",
+									"@minOccurs": 0,
+									"@maxOccurs": 1,
+									"@type": "b:extPlayStatisticsType"
+								},
+								{
+									"@name": "details",
+									"@minOccurs": 0,
+									"@maxOccurs": 1,
+									"xs:complexType": {
+										"xs:sequence": {
+											"xs:element": {
+												"@name": "detail",
+												"@maxOccurs": "unbounded",
+												"@type": "b:playDetailsType"
+											}
+										}
+									}
+								}
+							],
+							"xs:choice": {
+								"@minOccurs": 0,
+								"@maxOccurs": 1,
+								"xs:element": [
+									{
+										"@name": "quarter",
+										"xs:complexType": {
+											"xs:attributeGroup": {
+												"@ref": "b:basePeriodAttributes"
+											}
+										}
+									},
+									{
+										"@name": "overtime",
+										"xs:complexType": {
+											"xs:attributeGroup": {
+												"@ref": "b:basePeriodAttributes"
+											}
+										}
+									}
+								]
+							}
+						},
+						"xs:attributeGroup": {
+							"@ref": "b:extPlayAttributes"
+						},
+						"xs:attribute": [
+							{
+								"@name": "play_action",
+								"@type": "xs:boolean"
+							},
+							{
+								"@name": "run_pass_option",
+								"@type": "xs:boolean"
+							}
+						]
+					}
+				}
+			}
+		],
+		"xs:element": {
+			"@name": "game",
+			"@type": "b:gameType"
+		}
+	}
+}

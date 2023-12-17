@@ -1,0 +1,144 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/nfl/hierarchy-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"xs:include": {
+			"@schemaLocation": "common-v7.0.xsd"
+		},
+		"xs:complexType": [
+			{
+				"@name": "leagueType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "conference",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded",
+						"@type": "h:conferenceType"
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "h:baseOrganizationAttributes"
+				}
+			},
+			{
+				"@name": "conferenceType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "division",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded",
+						"@type": "h:divisionType"
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "h:baseOrganizationAttributes"
+				}
+			},
+			{
+				"@name": "divisionType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "team",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded",
+						"xs:complexType": {
+							"xs:sequence": {
+								"xs:element": [
+									{
+										"@ref": "h:references",
+										"@minOccurs": 0,
+										"@maxOccurs": "unbounded"
+									},
+									{
+										"@ref": "h:franchise",
+										"@minOccurs": 0,
+										"@maxOccurs": 1
+									},
+									{
+										"@name": "venue",
+										"@minOccurs": 0,
+										"@maxOccurs": 1,
+										"@type": "h:venueType"
+									},
+									{
+										"@name": "team_colors",
+										"@minOccurs": 0,
+										"@maxOccurs": 1,
+										"@type": "h:teamColorsType"
+									}
+								]
+							},
+							"xs:attributeGroup": {
+								"@ref": "h:baseTeamAttributes"
+							},
+							"xs:attribute": [
+								{
+									"@name": "owner",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "general_manager",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "president",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "mascot",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "nicknames",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "fight_song",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "championships_won",
+									"@use": "optional",
+									"@type": "xs:integer"
+								},
+								{
+									"@name": "championship_seasons",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "conference_titles",
+									"@use": "optional",
+									"@type": "xs:integer"
+								},
+								{
+									"@name": "division_titles",
+									"@use": "optional",
+									"@type": "xs:integer"
+								},
+								{
+									"@name": "playoff_appearances",
+									"@use": "optional",
+									"@type": "xs:integer"
+								}
+							]
+						}
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "h:baseOrganizationAttributes"
+				}
+			}
+		],
+		"xs:element": {
+			"@name": "league",
+			"@type": "h:leagueType"
+		}
+	}
+}

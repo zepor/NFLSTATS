@@ -34,8 +34,8 @@ const Blank = lazy(() => import("./pages/pages/Blank"));
 // Auth
 const Page500 = lazy(() => import("./pages/auth/Page500"));
 const Page404 = lazy(() => import("./pages/auth/Page404"));
-//const SignIn = lazy(() => import("./pages/auth/SignIn"));
-//const SignUp = lazy(() => import("./pages/auth/SignUp"));
+const SignIn = lazy(() => import("./pages/auth/SignIn"));
+const SignUp = lazy(() => import("./pages/auth/SignUp"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const PrivacyPolicy = lazy(() => import("./pages/auth/PrivacyPolicy"));
 const TermsofService = lazy(() => import("./pages/auth/TermsofService"));
@@ -93,17 +93,17 @@ const Introduction = lazy(() => import("./pages/docs/Introduction"));
 const GettingStarted = lazy(() => import("./pages/docs/GettingStarted"));
 const Routing = lazy(() => import("./pages/docs/Routing"));
 //const Auth0 = lazy(() => import("./pages/docs/auth/Auth0"));
-//const Cognito = lazy(() => import("./pages/docs/auth/Cognito"));
+const Cognito = lazy(() => import("./pages/docs/auth/Cognito"));
 //const Firebase = lazy(() => import("./pages/docs/auth/Firebase"));
 //const JWT = lazy(() => import("./pages/docs/auth/JWT"));
 const Guards = lazy(() => import("./pages/docs/Guards"));
 const APICalls = lazy(() => import("./pages/docs/APICalls"));
 const Redux = lazy(() => import("./pages/docs/Redux"));
-const Internationalization = lazy(() =>
-  import("./pages/docs/Internationalization")
+const Internationalization = lazy(
+  () => import("./pages/docs/Internationalization"),
 );
-const EnvironmentVariables = lazy(() =>
-  import("./pages/docs/EnvironmentVariables")
+const EnvironmentVariables = lazy(
+  () => import("./pages/docs/EnvironmentVariables"),
 );
 const ESLintAndPrettier = lazy(() => import("./pages/docs/ESLintAndPrettier"));
 const Deployment = lazy(() => import("./pages/docs/Deployment"));
@@ -197,14 +197,14 @@ const routes = [
     path: "auth",
     element: <AuthLayout />,
     children: [
-      //{
-      //  path: "sign-in",
-      //  element: <SignIn />,
-      //},
-      //{
-      //  path: "sign-up",
-      //  element: <SignUp />,
-      //},
+      {
+        path: "sign-in",
+        element: <SignIn />,
+      },
+      {
+        path: "sign-up",
+        element: <SignUp />,
+      },
       {
         path: "reset-password",
         element: <ResetPassword />,
@@ -435,10 +435,10 @@ const routes = [
       //  path: "auth/auth0",
       //  element: <Auth0 />,
       //},
-      //{
-      //  path: "auth/cognito",
-      //  element: <Cognito />,
-      //},
+      {
+        path: "auth/cognito",
+        element: <Cognito />,
+      },
       //{
       //  path: "auth/firebase",
       //  element: <Firebase />,

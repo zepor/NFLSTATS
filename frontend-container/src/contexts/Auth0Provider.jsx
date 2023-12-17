@@ -100,7 +100,9 @@ function AuthProvider({ children }) {
   const resetPassword = (email) => {};
 
   return (
-    <AuthContext.Provider value={{...state,
+    <AuthContext.Provider
+      value={{
+        ...state,
         method: "auth0",
         user: {
           id: state?.user?.sub,
@@ -111,7 +113,10 @@ function AuthProvider({ children }) {
         signIn,
         signOut,
         resetPassword,
-      }}>{children}</AuthContext.Provider>
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
 }
 

@@ -1,6 +1,0 @@
-{
-  "AppSyncApiName": "loveofsports",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-12-11T06:38:03.691Z"
-}

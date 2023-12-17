@@ -61,7 +61,7 @@ function AuthProvider({ children }) {
           }
         });
       }),
-    []
+    [],
   );
 
   const getSession = useCallback(
@@ -90,7 +90,7 @@ function AuthProvider({ children }) {
           });
         }
       }),
-    [getUserAttributes]
+    [getUserAttributes],
   );
 
   useEffect(() => {
@@ -118,7 +118,7 @@ function AuthProvider({ children }) {
           },
         });
       }),
-    [getSession]
+    [getSession],
   );
 
   const signOut = useCallback(() => {
@@ -149,10 +149,10 @@ function AuthProvider({ children }) {
               return;
             }
             resolve();
-          }
+          },
         );
       }),
-    []
+    [],
   );
 
   const resetPassword = useCallback((email) => {

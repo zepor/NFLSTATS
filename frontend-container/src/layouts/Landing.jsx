@@ -1,27 +1,19 @@
-import React, { useEffect } from "react";
-import { useAuthenticator } from "@aws-amplify/ui-react";
+import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
-
 import Main from "../components/Main";
+import AuthContext from "../contexts/CognitoContext";
 
 const Landing = ({ children }) => {
-  const { user } = useAuthenticator((context) => [context.user]);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
-      // User is authenticated, redirect to dashboard
       navigate("/dashboard/default");
     }
   }, [user, navigate]);
 
-  return (
-    <Main>
-      {children}
-      <Outlet />
-    </Main>
-  );
+  return <Main>{children}</Main>;
 };
 
 export default Landing;

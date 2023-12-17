@@ -1,0 +1,151 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/nfl/postgame-standings-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"@attributeFormDefault": "unqualified",
+		"xs:include": {
+			"@schemaLocation": "common-v7.0.xsd"
+		},
+		"xs:complexType": [
+			{
+				"@name": "seasonType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "conference",
+						"@type": "ns1:conferenceType",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded"
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "ns1:baseSeasonAttributes"
+				}
+			},
+			{
+				"@name": "conferenceType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "division",
+						"@type": "ns1:divisionType",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded"
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "ns1:baseOrganizationAttributes"
+				}
+			},
+			{
+				"@name": "divisionType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "team",
+						"@type": "ns1:teamType",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded"
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "ns1:baseOrganizationAttributes"
+				}
+			},
+			{
+				"@name": "streakType",
+				"xs:attribute": [
+					{
+						"@name": "desc",
+						"@type": "xs:string",
+						"@use": "optional"
+					},
+					{
+						"@name": "length",
+						"@type": "xs:integer",
+						"@use": "required"
+					}
+				]
+			},
+			{
+				"@name": "recordType",
+				"xs:attributeGroup": {
+					"@ref": "ns1:recordAttributes"
+				},
+				"xs:attribute": {
+					"@name": "category",
+					"@use": "required",
+					"xs:simpleType": {
+						"xs:restriction": {
+							"@base": "xs:string",
+							"xs:enumeration": [
+								{
+									"@value": "conference"
+								},
+								{
+									"@value": "division"
+								},
+								{
+									"@value": "home"
+								},
+								{
+									"@value": "road"
+								},
+								{
+									"@value": "away"
+								},
+								{
+									"@value": "nfc"
+								},
+								{
+									"@value": "afc"
+								}
+							]
+						}
+					}
+				}
+			}
+		],
+		"xs:element": {
+			"@name": "season",
+			"@type": "ns1:seasonType"
+		},
+		"xs:attributeGroup": {
+			"@name": "recordAttributes",
+			"xs:attribute": [
+				{
+					"@name": "wins",
+					"@type": "xs:integer",
+					"@use": "required"
+				},
+				{
+					"@name": "losses",
+					"@type": "xs:integer",
+					"@use": "required"
+				},
+				{
+					"@name": "ties",
+					"@type": "xs:integer",
+					"@use": "optional"
+				},
+				{
+					"@name": "win_pct",
+					"@type": "xs:decimal",
+					"@use": "optional"
+				},
+				{
+					"@name": "points_against",
+					"@type": "xs:integer",
+					"@use": "optional"
+				},
+				{
+					"@name": "points_for",
+					"@type": "xs:integer",
+					"@use": "optional"
+				},
+				{
+					"@name": "points_rank",
+					"@type": "xs:integer",
+					"@use": "optional"
+				}
+			]
+		}
+	}
+}

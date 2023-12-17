@@ -12,7 +12,6 @@ class ConfigurationError(Exception):
 # Only load the environment variables once, ideally in a separate script
 dotenv_path = os.path.join(os.path.dirname(__file__), '../.env')
 load_dotenv(dotenv_path)
-print(os.getenv('MONGODB_URL'))
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass

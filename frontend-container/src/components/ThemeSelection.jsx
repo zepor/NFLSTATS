@@ -11,9 +11,13 @@ const ThemeSelector = () => {
 
   return (
     <div>
-      <button onClick={() => handleThemeChange(THEME.LIGHT)}>Light Theme</button>
+      <button onClick={() => handleThemeChange(THEME.LIGHT)}>
+        Light Theme
+      </button>
       <button onClick={() => handleThemeChange(THEME.DARK)}>Dark Theme</button>
-      <button onClick={() => handleThemeChange(THEME.TEAM_COLOR)}>Team Colors</button>
+      <button onClick={() => handleThemeChange(THEME.TEAM_COLOR)}>
+        Team Colors
+      </button>
     </div>
   );
 };

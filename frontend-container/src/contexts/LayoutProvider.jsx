@@ -5,8 +5,14 @@ import useSettingsState from "../hooks/useSettingsState";
 
 import LayoutContext from "./LayoutContext"; // Import the context
 
-function LayoutProvider({ children }){const [layout, setLayout] = useSettingsState("layout", LAYOUT.FLUID);
+function LayoutProvider({ children }) {
+  const [layout, setLayout] = useSettingsState("layout", LAYOUT.FLUID);
 
-  return (<LayoutContext.Provider value={{layout,setLayout,}}>{children}</LayoutContext.Provider>);}
+  return (
+    <LayoutContext.Provider value={{ layout, setLayout }}>
+      {children}
+    </LayoutContext.Provider>
+  );
+}
 
 export default LayoutProvider;

@@ -1,3 +1,4 @@
+import os.path
 from models.season_stat_player_info import (SeasonStatPlayer, intreturns,
                                             passing, receiving, defense, fieldgoals, punts, rushing, extrapoints,
                                             kickreturns, puntreturns, conversions, kickoffs, fumbles, penalties)
@@ -33,6 +34,8 @@ from apimappings.LeagueHierarchy import bp as bp_league_hierarchy
 from apimappings.LeagueHierarchy import fetchandsaveLeagueHierarchy
 from apimappings.current_season_schedule import bp as bp_current_season_schedule
 from apimappings.current_season_schedule import fetch_and_save_weekly_schedule
+from apimappings.PBP import bp as bp_pbp
+from apimappings.PBP import process_games_for_year
 from dotenv import load_dotenv
 from mongoengine import connect
 from pymongo.errors import ConnectionFailure
@@ -41,12 +44,13 @@ from waitress import serve
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_mongoengine import MongoEngine
 from flask_cors import CORS
-from flask import Flask, Blueprint, render_template, request, jsonify, make_response, session
+from flask import Flask, Blueprint, render_template, request, jsonify, make_response, session, send_from_directory
 from bson import Binary
 from operator import itemgetter
 from json import JSONEncoder
 from itertools import groupby
 from threading import Thread
+import utils
 import redis
 import pickle
 import time
@@ -61,13 +65,12 @@ import logging
 import sys
 import os
 from dotenv import load_dotenv  # Import this if you're using load_dotenv
-#if not hasattr(os, 'add_dll_directory'):
- #   def add_dll_directory(path):
-  #      pass
+# if not hasattr(os, 'add_dll_directory'):
+#   def add_dll_directory(path):
+#      pass
 load_dotenv()  # Load environment variables from .env file
 LPATH = os.getenv('LPATH')
 # Append paths to sys.path
-import os.path
 sys.path.append(os.path.join(str(LPATH), '.venv', 'lib', 'site-packages'))
 sys.path.append(str(LPATH))
 sys.path.append('/src')
@@ -76,7 +79,7 @@ mongodb_service_name = os.getenv('MONGODB_SERVICE_NAME', 'localhost')
 mongodb_url = os.getenv(
     'MONGODB_URL', f"mongodb://{mongodb_service_name}:27017/current_season")
 MAX_RETRIES = 5  # Maximum number of retries
-RETRY_DELAY = 5 
+RETRY_DELAY = 5
 client = MongoClient(mongodb_url, connectTimeoutMS=30000, socketTimeoutMS=None)
 for attempt in range(1, MAX_RETRIES + 1):
     try:
@@ -84,16 +87,14 @@ for attempt in range(1, MAX_RETRIES + 1):
         break  # Exit the loop if connection is successful
     except ConnectionFailure:
         if attempt < MAX_RETRIES:
-            logging.warning(f"MongoDB server not available. Attempt {attempt} of {MAX_RETRIES}. Retrying in {RETRY_DELAY} seconds...")
+            logging.warning(
+                f"MongoDB server not available. Attempt {attempt} of {MAX_RETRIES}. Retrying in {RETRY_DELAY} seconds...")
             time.sleep(RETRY_DELAY)  # Wait for a while before retrying
         else:
-            logging.error("MongoDB server not available after maximum retries.")
+            logging.error(
+                "MongoDB server not available after maximum retries.")
             # Handle maximum retries reached scenario, e.g., raise an exception or exit the script
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-template_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'ssweb' ,'frontend', 'public')
-static_path = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),'ssweb' , 'frontend', 'public', 'static')
-app = Flask(__name__, template_folder=template_path, static_folder=static_path)
-
+app = Flask(__name__)
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.INFO)
 log_dir = './logs/'
@@ -101,7 +102,7 @@ if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 log_file = os.path.join(log_dir, 'app.log')
 be_logger = logging.getLogger('backend-logger')
-be_logger.setLevel(logging.DEBUG)  
+be_logger.setLevel(logging.DEBUG)
 file_handler = RotatingFileHandler(log_file, maxBytes=10000000, backupCount=5)
 file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
@@ -113,23 +114,25 @@ console_handler.setFormatter(console_formatter)
 be_logger.addHandler(console_handler)
 be_logger.info('%s', os.getenv('FLASK_APP'))
 be_logger.info('%s', os.getenv('FLASK_ENV'))
-be_logger.info('Template Path: %s', template_path)
-be_logger.info('Static_path: %s', static_path)
 
 for key, value in app.config.items():
     be_logger.info('%s: %s', key, value)
 CORS(app, origins='https://0.0.0.0')
 scheduler = BackgroundScheduler()
+
+
 def connect_to_redis(primary_host, fallback_host, port=6379):
     try:
         # Try connecting to the primary Redis host
-        r = redis.StrictRedis(host=primary_host, port=port, decode_responses=False)
+        r = redis.StrictRedis(host=primary_host, port=port,
+                              decode_responses=False)
         r.ping()
         return r
     except redis.exceptions.ConnectionError:
         # If the primary host is unavailable, try the fallback host
         try:
-            r = redis.StrictRedis(host=fallback_host, port=port, decode_responses=False)
+            r = redis.StrictRedis(host=fallback_host,
+                                  port=port, decode_responses=False)
             r.ping()
             return r
         except redis.exceptions.ConnectionError as ex:
@@ -137,8 +140,11 @@ def connect_to_redis(primary_host, fallback_host, port=6379):
             be_logger.info("Could not connect to Redis: %s", str(ex))
             # You may want to raise an exception or handle it in some other way here
             raise
+
+
 redis_primary_host = 'redis'  # The host used in the development environment
-redis_fallback_host = 'redis-service'  # The host used in the Kubernetes environment
+# The host used in the Kubernetes environment
+redis_fallback_host = 'redis-service'
 redis_port = 6379  # Default Redis port
 r = connect_to_redis(redis_primary_host, redis_fallback_host, redis_port)
 
@@ -150,9 +156,9 @@ if cached_data is not None:
         cached_data = pickle.loads(cached_data)
     except Exception as e:
         be_logger.info(f"Failed to deserialize data: {e}")
-        
+
 app.config['MONGODB_SETTINGS'] = {
-    'db': 'current_season',  
+    'db': 'current_season',
     'host': mongodb_url
 }
 app.debug = True
@@ -173,6 +179,7 @@ app.register_blueprint(bp_league_hierarchy)
 app.register_blueprint(bp_team_profile)
 app.register_blueprint(bp_seasons)
 app.register_blueprint(bp_seasonal_stats)
+app.register_blueprint(bp_pbp, url_prefix='/pbp')
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 
@@ -207,46 +214,49 @@ class FootballData:
         self.selected_team = None
         self.selected_teams = {}
         self.last_refreshed = datetime.now()
+
+
 data = FootballData()
+
 
 @log_and_catch_exceptions
 def fetch_AllSeasonsTeamStatDetails():
     be_logger.info("Starting fetch for fetch_AllSeasonsTeamStatDetails...")
-    return[
+    return [
         {
             '$lookup': {
-                'from': 'TeamInfo', 
-                'localField': 'teamid', 
-                'foreignField': '_id', 
+                'from': 'TeamInfo',
+                'localField': 'teamid',
+                'foreignField': '_id',
                 'as': 'teamInfo'
             }
         }, {
             '$unwind': '$teamInfo'
         }, {
             '$lookup': {
-                'from': 'FranchiseInfo', 
-                'localField': 'teamid', 
-                'foreignField': 'teamid', 
+                'from': 'FranchiseInfo',
+                'localField': 'teamid',
+                'foreignField': 'teamid',
                 'as': 'franchiseInfo'
             }
         }, {
             '$unwind': '$franchiseInfo'
         }, {
             '$lookup': {
-                'from': 'SeasonInfo', 
-                'localField': 'seasonid', 
-                'foreignField': '_id', 
+                'from': 'SeasonInfo',
+                'localField': 'seasonid',
+                'foreignField': '_id',
                 'as': 'seasonInfo'
             }
         }, {
             '$unwind': '$seasonInfo'
         }, {
             '$lookup': {
-                'from': 'SeasonStatOppo', 
+                'from': 'SeasonStatOppo',
                 'let': {
-                    'team_id': '$teamid', 
+                    'team_id': '$teamid',
                     'season_id': '$seasonid'
-                }, 
+                },
                 'pipeline': [
                     {
                         '$match': {
@@ -265,18 +275,18 @@ def fetch_AllSeasonsTeamStatDetails():
                             }
                         }
                     }
-                ], 
+                ],
                 'as': 'seasonStatOppo'
             }
         }, {
             '$unwind': '$seasonStatOppo'
         }, {
             '$lookup': {
-                'from': 'SeasonStatTeam', 
+                'from': 'SeasonStatTeam',
                 'let': {
-                    'team_id': '$teamid', 
+                    'team_id': '$teamid',
                     'season_id': '$seasonid'
-                }, 
+                },
                 'pipeline': [
                     {
                         '$match': {
@@ -295,7 +305,7 @@ def fetch_AllSeasonsTeamStatDetails():
                             }
                         }
                     }
-                ], 
+                ],
                 'as': 'seasonStatTeam'
             }
         }, {
@@ -303,26 +313,26 @@ def fetch_AllSeasonsTeamStatDetails():
         }, {
             '$group': {
                 '_id': {
-                    'year': '$seasonInfo.year', 
-                    'season_type': '$seasonInfo.type', 
+                    'year': '$seasonInfo.year',
+                    'season_type': '$seasonInfo.type',
                     'team': '$teamInfo.team.name'
-                }, 
+                },
                 'teamInfo': {
                     '$first': '$teamInfo'
-                }, 
+                },
                 'franchiseInfo': {
                     '$first': '$franchiseInfo'
-                }, 
+                },
                 'seasonStatOppo': {
                     '$first': '$seasonStatOppo'
-                }, 
+                },
                 'seasonStatTeam': {
                     '$first': '$seasonStatTeam'
                 }
             }
         }, {
             '$sort': {
-                '_id.year': -1, 
+                '_id.year': -1,
                 '_id.season_type': 1
             }
         }
@@ -331,73 +341,64 @@ def fetch_AllSeasonsTeamStatDetails():
 
 def clear_cache():
     be_logger.info("Cache cleared.")
-    
+
+
 @log_and_catch_exceptions
-@app.route('/')
-def index():
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
     try:
         be_logger.info("Fetching live games data...")
         fetched_data = fetch_live_games_data()
-        if fetched_data and "upcominggames" in fetched_data:
-            live_games_data = fetched_data["upcominggames"]
-            if not live_games_data:
-                live_games_data = []
-                be_logger.warning("No live games data was fetched.")
-            else:
-                live_games_cache_key = "livegames_cache"
-                r.set(live_games_cache_key, pickle.dumps(live_games_data))
-                be_logger.info("Live games data was fetched and cached successfully.")
+        live_games_data = fetched_data.get("upcominggames", [])
+        if live_games_data:
+            live_games_cache_key = "livegames_cache"
+            r.set(live_games_cache_key, pickle.dumps(live_games_data))
+            be_logger.info(
+                "Live games data was fetched and cached successfully.")
         else:
-            live_games_data = []
-            be_logger.warning("fetch_live_games_data did not return expected data format.")
+            be_logger.warning("No live games data was fetched.")
         be_logger.info("Fetching current year and season type...")
-        current_year, current_season_type, _, _ = get_season_info_and_selected(request)
+        current_year, current_season_type, _, _ = get_season_info_and_selected(
+            request)
         data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
-        be_logger.info(f"Current year: {current_year}, Current season type: {current_season_type}")
+        be_logger.info(
+            f"Current year: {current_year}, Current season type: {current_season_type}")
         be_logger.info("Fetching AllSeasonsTeamStatDetails cache...")
         cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
         if cached_data is None:
             be_logger.info("Cache is empty, fetching data...")
             query_allteamstats = fetch_AllSeasonsTeamStatDetails()
-            results_data = list(SeasonStatTeam.objects.aggregate(*query_allteamstats))
-            be_logger.debug("Total number of documents fetched: %s", len(results_data))
+            results_data = list(
+                SeasonStatTeam.objects.aggregate(*query_allteamstats))
+            be_logger.debug(
+                "Total number of documents fetched: %s", len(results_data))
             redis_data = pickle.dumps(results_data)
             r.set("get_AllSeasonsTeamStatDetails_cache", redis_data)
-            be_logger.debug("First 200 chars of cached data: %s", str(redis_data)[:200])
+            be_logger.debug("First 200 chars of cached data: %s",
+                            str(redis_data)[:200])
             data.get_AllSeasonsTeamStatDetails_cache = results_data
-            be_logger.info("AllSeasonsTeamStatDetails cache was fetched and cached successfully.")
+            be_logger.info(
+                "AllSeasonsTeamStatDetails cache was fetched and cached successfully.")
         else:
             be_logger.info("Cache hit, loading cached data...")
-            try:
-                cached_results = pickle.loads(cached_data)
-            except pickle.UnpicklingError:
-                cached_results = json.loads(cached_data.decode())
+            cached_results = pickle.loads(cached_data)
             data.get_AllSeasonsTeamStatDetails_cache = cached_results
-            be_logger.info("AllSeasonsTeamStatDetails cache was loaded successfully.")
-        be_logger.info(f"Count of documents in data.get_AllSeasonsTeamStatDetails_cache: {len(data.get_AllSeasonsTeamStatDetails_cache)}")
-        be_logger.info("Fetching year-season combinations cache...")
-        year_season_combinations_cache = get_year_season_combinations(
-            current_year, current_season_type) 
-        be_logger.info("Fetching or generating teams...")
-        data.selected_teams = get_or_generate_teams()
-        be_logger.info("Rendering HTML content...")
-        html_content = render_template(
-            'index.html',
-            year_season_combinations=year_season_combinations_cache,
-            selected_year=data.selected_year,
-            selected_season_type=data.selected_season_type,
-            teams=data.selected_teams,
-            teams_dict=data.teams_dict_cache,
-            livegames=live_games_data  # Pass the live games data to the template
-        )
-        renderindexresponse = make_response(html_content)
-        renderindexresponse.headers['Access-Control-Allow-Origin'] = '*'
-        be_logger.info("Index route was executed successfully.")
-        return renderindexresponse
+            be_logger.info(
+                "AllSeasonsTeamStatDetails cache was loaded successfully.")
+        be_logger.info(
+            f"Count of documents in data.get_AllSeasonsTeamStatDetails_cache: {len(data.get_AllSeasonsTeamStatDetails_cache)}")
+        response_data = {
+            "live_games": live_games_data,
+            "year": current_year,
+            "season_type": current_season_type,
+            "team_stats": data.get_AllSeasonsTeamStatDetails_cache
+        }
+        be_logger.info("Returning JSON response...")
+        return jsonify(response_data)
     except Exception as e:
-        be_logger.error(f"Error occurred in index route: {str(e)}", exc_info=True)
-        return f"An error occurred: {str(e)}", 500
-
+        be_logger.error(f"Error occurred: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
 
 
 @app.errorhandler(404)
@@ -477,24 +478,26 @@ def get_or_generate_teams():
     teams = data.get_AllSeasonsTeamStatDetails_cache
     cache = {}
     for team in teams:
-        if "_id" in team and "year" in team["_id"] and "season_type" in team["_id"]:  # Check if keys exist before accessing
+        # Check if keys exist before accessing
+        if "_id" in team and "year" in team["_id"] and "season_type" in team["_id"]:
             year = team["_id"]["year"]
             season_type = team["_id"]["season_type"]
             if f"{year}_{season_type}" not in cache:
                 matched_data = [team for team in teams if (team["_id"]["year"] == year and team["_id"]["season_type"] == season_type
-                            and ('seasonStatTeam' in team and 'games_played' in team['seasonStatTeam'] and int(team['seasonStatTeam']['games_played']) > 0))]
+                                                           and ('seasonStatTeam' in team and 'games_played' in team['seasonStatTeam'] and int(team['seasonStatTeam']['games_played']) > 0))]
                 teams_for_combo = [{"name": f"{team['teamInfo']['team']['market']} {team['teamInfo']['team']['name']}" if team['teamInfo']['team']['name'] and team['teamInfo']['team']['market'] else "",
-                                "imageLink": base_image_url.format(TeamAlias=team['teamInfo']['team']['alias'])}
-                               for team in matched_data]
+                                    "imageLink": base_image_url.format(TeamAlias=team['teamInfo']['team']['alias'])}
+                                   for team in matched_data]
                 teams_for_combo = sorted(
-                teams_for_combo, key=lambda x: x["name"].split(" ")[0])
+                    teams_for_combo, key=lambda x: x["name"].split(" ")[0])
                 teams_for_combo.insert(0, default_team_entry)
-                
+
                 key = f"{year}_{season_type}"
                 cache[key] = teams_for_combo
-                
+
                 # Debugging log to print the key and the list of teams for this year and season type
-                be_logger.debug(f"Key: {key}, Team Count: {len(teams_for_combo)}")
+                be_logger.debug(
+                    f"Key: {key}, Team Count: {len(teams_for_combo)}")
     data.teams_dict_cache = cache
     return data.teams_dict_cache
 
@@ -503,7 +506,7 @@ def get_or_generate_teams():
 @app.route('/get-top10-data', methods=['GET'])
 def structure_data_for_categories():
     team_top_10_cache = {}
-    team_top_10_data = {} 
+    team_top_10_data = {}
     try:
         be_logger.info("structure_data_for_categories: being accessed)")
         selected_year_from_frontend = request.args.get(
@@ -524,22 +527,25 @@ def structure_data_for_categories():
         if not updated:
             be_logger.info(
                 "structure_data_for_categories: with no updates from frontend")
-        
+
         key = f"{data.selected_year}_{data.selected_season_type}"
 
         # Debugging code
-        be_logger.debug(f"data.get_AllSeasonsTeamStatDetails_cache: {str(data.get_AllSeasonsTeamStatDetails_cache)[:200]}")
+        be_logger.debug(
+            f"data.get_AllSeasonsTeamStatDetails_cache: {str(data.get_AllSeasonsTeamStatDetails_cache)[:200]}")
 
         filtered_items = [item for item in data.get_AllSeasonsTeamStatDetails_cache
-                           if item['_id']['year'] == data.selected_year
-                        ]
-        be_logger.debug(f"Filtered data after applying year condition: {str(filtered_items)[:200]}")
+                          if item['_id']['year'] == data.selected_year
+                          ]
+        be_logger.debug(
+            f"Filtered data after applying year condition: {str(filtered_items)[:200]}")
 
         filtered_items = [item for item in data.get_AllSeasonsTeamStatDetails_cache
-                           if item['_id']['year'] == data.selected_year
-                           and item['_id']['season_type'] == data.selected_season_type
-                        ]
-        be_logger.debug(f"Filtered data after applying season_type condition: {str(filtered_items)[:200]}")
+                          if item['_id']['year'] == data.selected_year
+                          and item['_id']['season_type'] == data.selected_season_type
+                          ]
+        be_logger.debug(
+            f"Filtered data after applying season_type condition: {str(filtered_items)[:200]}")
 
         # Original filtering
         data.selected_teams_stats_cache = [item for item in data.get_AllSeasonsTeamStatDetails_cache
@@ -607,7 +613,7 @@ def structure_data_for_categories():
             defensive_leaders = {}
             be_logger.error(
                 f"structure_data_for_categories: Defensive Leaders Data: {defensive_leaders}")
-        
+
         team_top_10_data = {
             'Offensive Leaders': offensive_leaders,
             'Defensive Leaders': defensive_leaders
@@ -616,14 +622,14 @@ def structure_data_for_categories():
         be_logger.info(
             f"structure_data_for_categories: Preparing data for key: {key}")
         data.team_top_10_data_cache[key] = team_top_10_data
-        
+
         team_top_10_cache = {}
         team_top_10_cache[key] = team_top_10_data
 
         if not bool(data.team_top_10_data_cache):
             be_logger.info(
                 "get_data: Executed structure_data_for_categories function as top 10 data was not found in cache")
-        
+
         try:
             sample_offensive_data = team_top_10_data['Offensive Leaders']['Yards per Game'][:2]
             be_logger.info(
@@ -631,7 +637,7 @@ def structure_data_for_categories():
         except (KeyError, TypeError) as e:
             be_logger.error(
                 f"structure_data_for_categories:Error fetching 'Total Yards' for 'Offensive Leaders': {str(e)}")
-        
+
         try:
             sample_defensive_data = team_top_10_data['Defensive Leaders']['Total Yards Allowed'][:2]
             be_logger.info(
@@ -643,26 +649,36 @@ def structure_data_for_categories():
         return jsonify(team_top_10_cache)
 
     except Exception as e:
-        be_logger.error(f"Error in structure_data_for_categories: {str(e)}. Current state: team_top_10_data_cache: {data.team_top_10_data_cache}, team_top_10_cache: {team_top_10_cache}")
+        be_logger.error(
+            f"Error in structure_data_for_categories: {str(e)}. Current state: team_top_10_data_cache: {data.team_top_10_data_cache}, team_top_10_cache: {team_top_10_cache}")
+
 
 @log_and_catch_exceptions
 @app.route('/get-data', methods=['GET'])
 def get_data():
     try:
-        selected_year_from_frontend = request.args.get('year', default=None, type=int)
-        selected_season_type_from_frontend = request.args.get('season_type', default=None, type=str)
-        selected_team_from_frontend = request.args.get('single_team', default=None, type=str)
-        be_logger.info(f"get_data: From frontend - Year: {selected_year_from_frontend}, Season: {selected_season_type_from_frontend}, Team: {selected_team_from_frontend}")
+        selected_year_from_frontend = request.args.get(
+            'year', default=None, type=int)
+        selected_season_type_from_frontend = request.args.get(
+            'season_type', default=None, type=str)
+        selected_team_from_frontend = request.args.get(
+            'single_team', default=None, type=str)
+        be_logger.info(
+            f"get_data: From frontend - Year: {selected_year_from_frontend}, Season: {selected_season_type_from_frontend}, Team: {selected_team_from_frontend}")
         updated = False
         if data.current_year_season_cache:
             current_year, current_season_type, _, _ = data.current_year_season_cache
-            be_logger.info(f"get_data: Using cached year and season: {current_year} {current_season_type}")
+            be_logger.info(
+                f"get_data: Using cached year and season: {current_year} {current_season_type}")
         else:
-            current_year, current_season_type, _, _ = get_season_info_and_selected(request)
+            current_year, current_season_type, _, _ = get_season_info_and_selected(
+                request)
             data.current_year_season_cache = current_year, current_season_type, data.selected_year, data.selected_season_type
-            be_logger.info("get_data: Data fetched with get_season_info_and_selected and saved to cache")
+            be_logger.info(
+                "get_data: Data fetched with get_season_info_and_selected and saved to cache")
         key = f"{data.selected_year}_{data.selected_season_type}"
-        be_logger.info(f"get_data: Generated key for selected year and season: {key}")
+        be_logger.info(
+            f"get_data: Generated key for selected year and season: {key}")
         if selected_year_from_frontend is not None and selected_year_from_frontend != data.selected_year:
             data.selected_year = selected_year_from_frontend
             updated = True
@@ -674,11 +690,13 @@ def get_data():
             updated = True
         be_logger.info(f"get_data: Updated flag: {updated}")
         team_top_10_data_cache_json = structure_data_for_categories()
-        if team_top_10_data_cache_json is None:  
-            be_logger.error(f"get_data: structure_data_for_categories() returned None")
+        if team_top_10_data_cache_json is None:
+            be_logger.error(
+                f"get_data: structure_data_for_categories() returned None")
             return jsonify({"error": "Error in getting top 10 data"}), 500
         else:
-            be_logger.info("get_data: Fetched data with structure_data_for_categories as it was not found in cache")
+            be_logger.info(
+                "get_data: Fetched data with structure_data_for_categories as it was not found in cache")
         if not data.year_season_combinations_cache:
             data.year_season_combinations_cache = get_year_season_combinations(
                 data.selected_year, data.selected_season_type)
@@ -691,10 +709,12 @@ def get_data():
             be_logger.warning(
                 f"get_data: Key {key} not found in data.teams_dict_cache")
         data.selected_teams = data.teams_dict_cache.get(key, [])
-        be_logger.info(f"get_data: Selected Teams (first 2): {data.selected_teams[:2]}")
+        be_logger.info(
+            f"get_data: Selected Teams (first 2): {data.selected_teams[:2]}")
         team_top_10_data = data.team_top_10_data_cache.get(key)
         if team_top_10_data is None:  # Add this check
-            be_logger.error(f"get_data: No team top 10 data Cache: {data.team_top_10_data_cache}")
+            be_logger.error(
+                f"get_data: No team top 10 data Cache: {data.team_top_10_data_cache}")
             return jsonify({"error": "No team top 10 data found"}), 500
         offensive_leaders = team_top_10_data.get('Offensive Leaders', {})
         defensive_leaders = team_top_10_data.get('Defensive Leaders', {})
@@ -741,6 +761,7 @@ def fetch_data_from_mongodb(year, season_type, view_mode, team, stat_category):
         return fetched_data, headers
     return [], []
 
+
 @log_and_catch_exceptions
 @app.route('/populate-teams', methods=['GET'])
 def populate_teams():
@@ -753,8 +774,10 @@ def populate_teams():
         selected_season_type_from_frontend = request.args.get(
             'season_type', default=data.selected_season_type, type=str)
         # Debugging line:
-        be_logger.debug("Selected year from frontend: " + str(selected_year_from_frontend))
-        be_logger.debug("Selected season type from frontend: " + selected_season_type_from_frontend)
+        be_logger.debug("Selected year from frontend: " +
+                        str(selected_year_from_frontend))
+        be_logger.debug("Selected season type from frontend: " +
+                        selected_season_type_from_frontend)
         if selected_season_type_from_frontend == data.selected_season_type and selected_year_from_frontend == data.selected_year:
             be_logger.info("/populate-teams: No change in Team Dropdown List")
         key = f"{selected_year_from_frontend}_{selected_season_type_from_frontend}"
@@ -788,6 +811,237 @@ def populate_seasons():
 
 
 @log_and_catch_exceptions
+def fetch_live_games_data():
+    global live_games_query_running
+    live_games_cache_key = "livegames_cache"
+    cached_live_games = r.get(live_games_cache_key)
+    if live_games_query_running:
+        be_logger.warning("Live games query is already running.")
+        return None
+    elif cached_live_games is not None:
+        be_logger.info("Using cached live games data.")
+        return pickle.loads(cached_live_games)
+    else:
+        be_logger.info("No cached live games data found.")
+    live_games_query_running = True
+    try:
+        now_utc = datetime.now(timezone.utc)
+        in_three_days_utc = now_utc + timedelta(days=3)
+        be_logger.debug("Querying games between %s and %s",
+                        now_utc, in_three_days_utc)
+        thisweeksgames = [
+            {
+                '$match': {
+                    'gamegame.scheduled': {
+                        '$gte': now_utc,
+                        '$lt': in_three_days_utc
+                    }
+                }
+            }, {
+                '$group': {
+                    '_id': '$gamegame.leagueweek'
+                }
+            }, {
+                '$project': {
+                    '_id': 0,
+                    'leagueweek': '$_id'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'GameInfo',
+                    'localField': 'leagueweek',
+                    'foreignField': 'gamegame.leagueweek',
+                    'as': 'games'
+                }
+            }, {
+                '$unwind': '$games'
+            }, {
+                '$lookup': {
+                    'from': 'BoxscoreInfo',
+                    'localField': 'games._id',
+                    'foreignField': '_id',
+                    'as': 'games.boxscore_info'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'LeagueInfo',
+                    'localField': 'games.gamegame.leagueweek',
+                    'foreignField': '_id',
+                    'as': 'games.league_info'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'SeasonStatPlayer',
+                    'let': {
+                        'teamIds': [
+                            '$games.hometeam.id', '$games.awayteam.id'
+                        ]
+                    },
+                    'pipeline': [
+                        {
+                            '$match': {
+                                '$expr': {
+                                    '$in': [
+                                        '$teamid', '$$teamIds'
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    'as': 'games.season_stat_player'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'SeasonStatPlayer',
+                    'let': {
+                        'teamIds': [
+                            '$games.hometeam.id', '$games.awayteam.id'
+                        ],
+                        'gameSeasonId': '$games.gamegame.seasonid'
+                    },
+                    'pipeline': [
+                        {
+                            '$match': {
+                                '$expr': {
+                                    '$and': [
+                                        {
+                                            '$in': [
+                                                '$teamid', '$$teamIds'
+                                            ]
+                                        }, {
+                                            '$eq': [
+                                                '$seasonid', '$$gameSeasonId'
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    'as': 'games.season_stat_player'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'SeasonStatOppo',
+                    'let': {
+                        'teamIds': [
+                            '$games.hometeam.id', '$games.awayteam.id'
+                        ],
+                        'gameSeasonId': '$games.gamegame.seasonid'
+                    },
+                    'pipeline': [
+                        {
+                            '$match': {
+                                '$expr': {
+                                    '$and': [
+                                        {
+                                            '$in': [
+                                                '$teamid', '$$teamIds'
+                                            ]
+                                        }, {
+                                            '$eq': [
+                                                '$seasonid', '$$gameSeasonId'
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    'as': 'games.season_stat_oppo'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'SeasonStatTeam',
+                    'let': {
+                        'teamIds': [
+                            '$games.hometeam.id', '$games.awayteam.id'
+                        ],
+                        'gameSeasonId': '$games.gamegame.seasonid'
+                    },
+                    'pipeline': [
+                        {
+                            '$match': {
+                                '$expr': {
+                                    '$and': [
+                                        {
+                                            '$in': [
+                                                '$teamid', '$$teamIds'
+                                            ]
+                                        }, {
+                                            '$eq': [
+                                                '$seasonid', '$$gameSeasonId'
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    'as': 'games.season_stat_team'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'TeamInfo',
+                    'let': {
+                        'homeTeamId': '$games.hometeam.id',
+                        'awayTeamId': '$games.awayteam.id'
+                    },
+                    'pipeline': [
+                        {
+                            '$match': {
+                                '$expr': {
+                                    '$or': [
+                                        {
+                                            '$eq': [
+                                                '$_id', '$$homeTeamId'
+                                            ]
+                                        }, {
+                                            '$eq': [
+                                                '$_id', '$$awayTeamId'
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    'as': 'games.team_info'
+                }
+            }, {
+                '$replaceRoot': {
+                    'newRoot': '$games'}}]
+        games = list(GameInfo.objects.aggregate(*thisweeksgames))
+        for game in games:
+            if not validate_document(game):
+                be_logger.warning(
+                    f"Game document with ID {game['_id']} is invalid.")
+        if not games:
+            be_logger.warning(
+                "No live games found for this week in the database after aggregation.")
+            r.delete(live_games_cache_key)
+            be_logger.info("Deleted cache key: %s", live_games_cache_key)
+            return None
+        else:
+            if 'gamegame' in games[0] and 'hometeam' in games[0]:
+                be_logger.debug(
+                    "Retrieved %d games for this week.", len(games))
+                r.set(live_games_cache_key, pickle.dumps(
+                    {"upcominggames": games}))
+                return {"upcominggames": games}
+            else:
+                be_logger.warning(
+                    "fetch_live_games_data did not return expected data format.")
+                return None
+    except Exception as e:
+        be_logger.error(
+            f"Error occurred while fetching live games data: {str(e)}")
+        return None
+    finally:
+        live_games_query_running = False
+
+
+@log_and_catch_exceptions
 @app.route('/venues')
 def venues():
     be_logger.debug("Accessing /venues")
@@ -805,228 +1059,6 @@ def venues():
             venues.append(venue)
     return render_template('venues.html', venues=venues)
 
-@log_and_catch_exceptions
-def fetch_live_games_data():
-    global live_games_query_running
-    live_games_cache_key = "livegames_cache"
-    cached_live_games = r.get(live_games_cache_key)
-    if live_games_query_running:
-        be_logger.warning("Live games query is already running.")
-        return None
-    elif cached_live_games is not None:
-        be_logger.info("Using cached live games data.")
-        return pickle.loads(cached_live_games)
-    else:
-        be_logger.info("No cached live games data found.")
-    live_games_query_running = True
-    try:
-        now_utc = datetime.now(timezone.utc)
-        in_three_days_utc = now_utc + timedelta(days=3)
-        be_logger.debug("Querying games between %s and %s", now_utc, in_three_days_utc)
-        thisweeksgames = [
-    {
-        '$match': {
-            'gamegame.scheduled': {
-                '$gte': now_utc, 
-                '$lt': in_three_days_utc
-            }
-        }
-    }, {
-        '$group': {
-            '_id': '$gamegame.leagueweek'
-        }
-    }, {
-        '$project': {
-            '_id': 0, 
-            'leagueweek': '$_id'
-        }
-    }, {
-        '$lookup': {
-            'from': 'GameInfo', 
-            'localField': 'leagueweek', 
-            'foreignField': 'gamegame.leagueweek', 
-            'as': 'games'
-        }
-    }, {
-        '$unwind': '$games'
-    }, {
-        '$lookup': {
-            'from': 'BoxscoreInfo', 
-            'localField': 'games._id', 
-            'foreignField': '_id', 
-            'as': 'games.boxscore_info'
-        }
-    }, {
-        '$lookup': {
-            'from': 'LeagueInfo', 
-            'localField': 'games.gamegame.leagueweek', 
-            'foreignField': '_id', 
-            'as': 'games.league_info'
-        }
-    }, {
-        '$lookup': {
-            'from': 'SeasonStatPlayer', 
-            'let': {
-                'teamIds': [
-                    '$games.hometeam.id', '$games.awayteam.id'
-                ]
-            }, 
-            'pipeline': [
-                {
-                    '$match': {
-                        '$expr': {
-                            '$in': [
-                                '$teamid', '$$teamIds'
-                            ]
-                        }
-                    }
-                }
-            ], 
-            'as': 'games.season_stat_player'
-        }
-    }, {
-        '$lookup': {
-            'from': 'SeasonStatPlayer', 
-            'let': {
-                'teamIds': [
-                    '$games.hometeam.id', '$games.awayteam.id'
-                ], 
-                'gameSeasonId': '$games.gamegame.seasonid'
-            }, 
-            'pipeline': [
-                {
-                    '$match': {
-                        '$expr': {
-                            '$and': [
-                                {
-                                    '$in': [
-                                        '$teamid', '$$teamIds'
-                                    ]
-                                }, {
-                                    '$eq': [
-                                        '$seasonid', '$$gameSeasonId'
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            ], 
-            'as': 'games.season_stat_player'
-        }
-    }, {
-        '$lookup': {
-            'from': 'SeasonStatOppo', 
-            'let': {
-                'teamIds': [
-                    '$games.hometeam.id', '$games.awayteam.id'
-                ], 
-                'gameSeasonId': '$games.gamegame.seasonid'
-            }, 
-            'pipeline': [
-                {
-                    '$match': {
-                        '$expr': {
-                            '$and': [
-                                {
-                                    '$in': [
-                                        '$teamid', '$$teamIds'
-                                    ]
-                                }, {
-                                    '$eq': [
-                                        '$seasonid', '$$gameSeasonId'
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            ], 
-            'as': 'games.season_stat_oppo'
-        }
-    }, {
-        '$lookup': {
-            'from': 'SeasonStatTeam', 
-            'let': {
-                'teamIds': [
-                    '$games.hometeam.id', '$games.awayteam.id'
-                ], 
-                'gameSeasonId': '$games.gamegame.seasonid'
-            }, 
-            'pipeline': [
-                {
-                    '$match': {
-                        '$expr': {
-                            '$and': [
-                                {
-                                    '$in': [
-                                        '$teamid', '$$teamIds'
-                                    ]
-                                }, {
-                                    '$eq': [
-                                        '$seasonid', '$$gameSeasonId'
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            ], 
-            'as': 'games.season_stat_team'
-        }
-    }, {
-        '$lookup': {
-            'from': 'TeamInfo', 
-            'let': {
-                'homeTeamId': '$games.hometeam.id', 
-                'awayTeamId': '$games.awayteam.id'
-            }, 
-            'pipeline': [
-                {
-                    '$match': {
-                        '$expr': {
-                            '$or': [
-                                {
-                                    '$eq': [
-                                        '$_id', '$$homeTeamId'
-                                    ]
-                                }, {
-                                    '$eq': [
-                                        '$_id', '$$awayTeamId'
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            ], 
-            'as': 'games.team_info'
-        }
-    }, {
-        '$replaceRoot': {
-            'newRoot': '$games'}}]
-        games = list(GameInfo.objects.aggregate(*thisweeksgames))
-        for game in games:
-            if not validate_document(game):
-                be_logger.warning(f"Game document with ID {game['_id']} is invalid.")
-        if not games:
-            be_logger.warning("No live games found for this week in the database after aggregation.")
-            r.delete(live_games_cache_key)
-            be_logger.info("Deleted cache key: %s", live_games_cache_key)
-            return None
-        else:
-            if 'gamegame' in games[0] and 'hometeam' in games[0]:
-                be_logger.debug("Retrieved %d games for this week.", len(games))
-                r.set(live_games_cache_key, pickle.dumps({"upcominggames": games}))
-                return {"upcominggames": games}
-            else:
-                be_logger.warning("fetch_live_games_data did not return expected data format.")
-                return None
-    except Exception as e:
-        be_logger.error(f"Error occurred while fetching live games data: {str(e)}")
-        return None
-    finally:
-        live_games_query_running = False
 
 @log_and_catch_exceptions
 @app.route("/livegames", methods=['GET'])
@@ -1036,6 +1068,7 @@ def live_games():
         return jsonify(games_data)
     else:
         return Response(json.dumps({"error": "Query is already running or an error occurred"}), status=500, mimetype='application/json')
+
 
 @log_and_catch_exceptions
 def validate_document(doc):
@@ -1074,7 +1107,8 @@ def validate_document(doc):
             doc['boxscore_info'] = {
                 '_id': "Game not yet started"
             }
-        assert 'gamegame' in doc and all(key in doc['gamegame'] for key in ['_id', 'seasonid', 'leagueweek']), "Missing field in gamegame"
+        assert 'gamegame' in doc and all(key in doc['gamegame'] for key in [
+                                         '_id', 'seasonid', 'leagueweek']), "Missing field in gamegame"
         assert 'hometeam' in doc and 'id' in doc['hometeam'], "Missing field: hometeam.id"
         assert 'boxscore_info' in doc and '_id' in doc['boxscore_info'], "Missing field: boxscore_info._id"
         home_team_id = doc['hometeam']['id']
@@ -1090,7 +1124,8 @@ def validate_document(doc):
         assert away_team_found, f"Missing away team information for team ID {away_team_id}"
         return True
     except AssertionError as e:
-        be_logger.warning(f"Invalid document reason for ID {doc.get('_id', 'unknown')}: {str(e)}")
+        be_logger.warning(
+            f"Invalid document reason for ID {doc.get('_id', 'unknown')}: {str(e)}")
         return False
 
 

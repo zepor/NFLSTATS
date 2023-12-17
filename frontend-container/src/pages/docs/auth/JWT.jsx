@@ -59,7 +59,7 @@ const HowToUse = () => (
       including sign in, sign up and sign out.
     </p>
     <h4>Retrieve user info</h4>
-    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
 
 const App = () => {
   const { displayName } = useAuthenticator((context) => [context.user]);
@@ -71,7 +71,7 @@ const App = () => {
   );
 };`}</Code>
     <h4>Execute actions</h4>
-    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
 
 const App = () => {
   const { signIn } = useAuthenticator((context) => [context.user]);

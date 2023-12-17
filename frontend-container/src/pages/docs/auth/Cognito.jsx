@@ -45,7 +45,7 @@ function App() {
       <code>/src/hooks/useAuth.js</code>.
     </p>
 
-    <Code>{`import { AuthContext } from "../contexts/CognitoContext";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
         
 const useAuthenticator = () => {
   return useContext(AuthContext);
@@ -61,7 +61,7 @@ const HowToUse = () => (
       included, including sign in, sign up and sign out.
     </p>
     <h4>Retrieve user info</h4>
-    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
 
 const App = () => {
   const { displayName } = useAuthenticator((context) => [context.user]);
@@ -73,7 +73,7 @@ const App = () => {
   );
 };`}</Code>
     <h4>Execute actions</h4>
-    <Code>{`import useAuthenticator from "@aws-amplify/ui-react";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
 
 const App = () => {
   const { signIn } = useAuthenticator((context) => [context.user]);

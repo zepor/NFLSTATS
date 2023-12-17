@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Alert, Button, Form } from "react-bootstrap";
-
-import { useAuthenticator } from "@aws-amplify/ui-react";
+import useAuth from "../../hooks/useAuth";
 
 function ResetPassword() {
   const navigate = useNavigate();
-  const { resetPassword } = useAuthenticator((context) => [context.user]);
+  const { resetPassword } = useAuth();
 
   return (
     <Formik

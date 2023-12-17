@@ -1,20 +1,39 @@
+from models.boxscore_info import (
+    gamebs, quarter, overtime, BoxscoreInfo)
+import json
+import pandas
+from models.game_info import (
+    gamegame, awayteam, hometeam, broadcast, weather, wind, GameInfo)
+from models.league_info import (
+    game, season, changelog, leagueweek, LeagueInfo)
+from models.venue_info import (venue1, location, VenueInfo)
+import time
+import os
+import requests
+from bson import ObjectId
+from mongoengine import DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
+from uuid import UUID
+from datetime import datetime
+from flask import Blueprint, jsonify, Flask
 import sys
 sys.path.append("os.getenv('LPATH')/src/")
-import requests, pandas, json
-from flask import Blueprint, jsonify, Flask
-import os, time
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
-from datetime import datetime
-from uuid import UUID
-from models.boxscore_info import(gamebs, quarter, overtime, BoxscoreInfo)   
-from models.venue_info import(venue1, location, VenueInfo)
-from models.league_info import(game, season, changelog, leagueweek, LeagueInfo)
-from models.game_info import(gamegame, awayteam, hometeam, broadcast, weather, wind, GameInfo)
-from mongoengine import DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from bson import ObjectId
 bp = Blueprint('current_season_schedule', __name__)
+
+
+def log_and_catch_exceptions(func):
+    def func_wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except Exception as e:
+            be_logger.error(f"Error in {func.__name__}: {e}")
+            raise Exception(f"Error in {func.__name__}: {e}")
+    return func_wrapper
+
+
+@log_and_catch_exceptions
 @bp.route('/fetchAndSaveAllSeasonsSchedule', methods=['GET'])
 def fetch_and_save_all_seasons_schedule():
     print("fetch_and_save_all_seasons_schedule called")
@@ -22,7 +41,8 @@ def fetch_and_save_all_seasons_schedule():
     SEASONS_API_URL = "http://api.sportradar.us/nfl/official/trial/v7/en/games/{year}/{season_type}/schedule.json?api_key={API_KEY}"
     for year in range(2016, 2024):
         for season_type in ['REG', 'PST']:
-            url = SEASONS_API_URL.format(year=year, season_type=season_type, API_KEY=API_KEY)
+            url = SEASONS_API_URL.format(
+                year=year, season_type=season_type, API_KEY=API_KEY)
             print(datetime.now(), "Requesting URL:", url)
             response = requests.get(url)
             print("Response status code:", response.status_code)
@@ -37,26 +57,32 @@ def fetch_and_save_all_seasons_schedule():
             mapped_leagues = map_league_info(league_info_dict)
             mapped_games = map_game_info(game_info_dict)
             mapped_boxscores = map_boxscore_info(boxscore_info_dict)
-            save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscores)
+            save_to_database(mapped_venues, mapped_leagues,
+                             mapped_games, mapped_boxscores)
             print("Games saved to database")
             time.sleep(2)
     return "Schedule data for all seasons fetched and saved successfully."
+
+
+@log_and_catch_exceptions
 @bp.route('/fetchAndSaveWeeklySchedule', methods=['GET'])
 def fetch_and_save_weekly_schedule():
     print("fetch_and_save_weekly_schedule called")
     API_KEY = os.getenv('APIKEY')
     season_year = datetime.now().year
     season_type = 'REG'  # or 'PRE' or 'POST' depending on the current season
-    week_number = datetime.now().isocalendar()[1] - 34  # adjust this calculation as needed
+    # adjust this calculation as needed
+    week_number = datetime.now().isocalendar()[1] - 34
     WEEKLY_SCHEDULE_API_URL = 'http://api.sportradar.us/nfl/official/trial/v7/en/games/{season_year}/{season_type}/{week_number}/schedule.json?api_key={API_KEY}'
-    url = WEEKLY_SCHEDULE_API_URL.format(season_year=season_year, season_type=season_type, week_number=week_number, API_KEY=API_KEY)
+    url = WEEKLY_SCHEDULE_API_URL.format(
+        season_year=season_year, season_type=season_type, week_number=week_number, API_KEY=API_KEY)
     print(datetime.now(), "Requesting URL:", url)
     response = requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
         return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: " + str(response.status_code)
     data = response.json()
-    #print("data:", data)
+    # print("data:", data)
     venue_info_dict = extract_venue_info(data)
     league_info_dict = extract_league_info(data)
     game_info_dict = extract_game_info(data)
@@ -65,10 +91,14 @@ def fetch_and_save_weekly_schedule():
     mapped_leagues = map_league_info(league_info_dict)
     mapped_games = map_game_info(game_info_dict)
     mapped_boxscores = map_boxscore_info(boxscore_info_dict)
-    save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscores)
-    
+    save_to_database(mapped_venues, mapped_leagues,
+                     mapped_games, mapped_boxscores)
+
     time.sleep(2)
     return ("Schedule data for all seasons fetched and saved successfully")
+
+
+@log_and_catch_exceptions
 def extract_boxscore_info(data):
     boxscore_info_dict = {}
     weeks_or_week = data.get('weeks') or data.get('week')
@@ -84,8 +114,10 @@ def extract_boxscore_info(data):
             boxscore_info['home_teambs'] = game['home']['alias']
             boxscore_info['away_teambs'] = game['away']['alias']
             scoring = game.get('scoring', {})
-            boxscore_info['home_team_total_points'] = scoring.get('home_points')
-            boxscore_info['away_team_total_points'] = scoring.get('away_points')
+            boxscore_info['home_team_total_points'] = scoring.get(
+                'home_points')
+            boxscore_info['away_team_total_points'] = scoring.get(
+                'away_points')
             boxscore_info['quarters'] = []
             for quarter in scoring.get('periods', []):
                 quarter_info = {}
@@ -106,6 +138,9 @@ def extract_boxscore_info(data):
                 boxscore_info['overtime'].append(overtime_info)
             boxscore_info_dict[game['id']] = boxscore_info
     return boxscore_info_dict
+
+
+@log_and_catch_exceptions
 def map_boxscore_info(boxscore_info_dict):
     if boxscore_info_dict is None:
         return {}
@@ -152,8 +187,11 @@ def map_boxscore_info(boxscore_info_dict):
         except Exception as e:
             print(f"Error processing gamebs_id {gamebs_id}: {e}")
             raise e
-    #print("Mapped Boxscore Info:", mapped_boxscores) 
+    # print("Mapped Boxscore Info:", mapped_boxscores)
     return mapped_boxscores
+
+
+@log_and_catch_exceptions
 def extract_game_info(data):
     game_info_dict = {}
     weeks_or_week = data.get('weeks') or data.get('week')
@@ -170,14 +208,21 @@ def extract_game_info(data):
             game_ginfo['game_id'] = game['id']
             game_ginfo['status'] = game['status']
             game_ginfo['scheduled'] = game['scheduled']
-            game_ginfo['attendance'] = game.get('attendance', None) # or some default value
-            game_ginfo['entry_mode'] = game.get('entry_mode', None) # or some default value
+            game_ginfo['attendance'] = game.get(
+                'attendance', None)  # or some default value
+            game_ginfo['entry_mode'] = game.get(
+                'entry_mode', None)  # or some default value
             game_ginfo['sr_id'] = game.get('sr_id')
-            game_ginfo['neutral_site'] = game.get('neutral_site', None) # or some default value
-            game_ginfo['game_type'] = game.get('game_type', None) # or some default value
-            game_ginfo['conference_game'] = game.get('conference_game', None) # or some default value
-            game_ginfo['title'] = game.get('title', None) # or some default value
-            game_ginfo['duration'] = game.get('duration', None) # or some default value
+            game_ginfo['neutral_site'] = game.get(
+                'neutral_site', None)  # or some default value
+            game_ginfo['game_type'] = game.get(
+                'game_type', None)  # or some default value
+            game_ginfo['conference_game'] = game.get(
+                'conference_game', None)  # or some default value
+            game_ginfo['title'] = game.get(
+                'title', None)  # or some default value
+            game_ginfo['duration'] = game.get(
+                'duration', None)  # or some default value
             game_ginfo['home_id'] = game['home']['id']
             game_ginfo['home_name'] = game['home']['name']
             game_ginfo['home_alias'] = game['home']['alias']
@@ -188,42 +233,54 @@ def extract_game_info(data):
             game_ginfo['away_alias'] = game['away']['alias']
             game_ginfo['away_game_number'] = game['away'].get('game_number')
             game_ginfo['away_sr_id'] = game['away'].get('sr_id')
-            game_ginfo['broadcast_network'] = game.get('broadcast', {}).get('network', None) # or some default value
-            game_ginfo['broadcast_channel'] = game.get('broadcast', {}).get('channel', None) 
-            game_ginfo['broadcast_satellite'] = game.get('broadcast', {}).get('satellite', None)
-            game_ginfo['broadcast_internet'] = game.get('broadcast', {}).get('internet', None)  
-            game_ginfo['weather_condition'] = game.get('weather', {}).get('condition', None)  
-            game_ginfo['weather_humidity'] = game.get('weather', {}).get('humidity', None) 
-            game_ginfo['weather_temp'] = game.get('weather', {}).get('temp', None)  
-            game_ginfo['wind_speed'] = game.get('weather', {}).get('wind',{}).get('speed',None)
-            game_ginfo['wind_direction'] = game.get('weather', {}).get('wind',{}).get('direction',None)  
+            game_ginfo['broadcast_network'] = game.get('broadcast', {}).get(
+                'network', None)  # or some default value
+            game_ginfo['broadcast_channel'] = game.get(
+                'broadcast', {}).get('channel', None)
+            game_ginfo['broadcast_satellite'] = game.get(
+                'broadcast', {}).get('satellite', None)
+            game_ginfo['broadcast_internet'] = game.get(
+                'broadcast', {}).get('internet', None)
+            game_ginfo['weather_condition'] = game.get(
+                'weather', {}).get('condition', None)
+            game_ginfo['weather_humidity'] = game.get(
+                'weather', {}).get('humidity', None)
+            game_ginfo['weather_temp'] = game.get(
+                'weather', {}).get('temp', None)
+            game_ginfo['wind_speed'] = game.get(
+                'weather', {}).get('wind', {}).get('speed', None)
+            game_ginfo['wind_direction'] = game.get(
+                'weather', {}).get('wind', {}).get('direction', None)
             game_info_dict[game['id']] = game_ginfo
-        #print("game_info_dict:", game_info_dict) 
+        # print("game_info_dict:", game_info_dict)
     return game_info_dict
+
+
+@log_and_catch_exceptions
 def map_game_info(game_info_dict):
     mapped_games = {}
     for game_id in game_info_dict:
         game_details = game_info_dict[game_id]
-        #print("game_details:", game_details)
+        # print("game_details:", game_details)
         # Convert integer IDs to string UUIDs if needed
         game_embedded1 = gamegame(
             id=game_details['game_id'],
-            #number=None,
+            # number=None,
             conference_game=game_details['conference_game'],
-            #coverage=None,
+            # coverage=None,
             duration=game_details['duration'],
             entry_mode=game_details['entry_mode'],
             game_type=game_details['game_type'],
             sr_id=game_details['sr_id'],
-            #last_modified=None,
+            # last_modified=None,
             scheduled=game_details['scheduled'],
             status=game_details['status'],
             title=game_details['title'],
             neutral_site=game_details['neutral_site'],
-            seasonid = game_details['season_id'],
-            leagueweek = game_details['week_id'],
-            venueid = game_details['venue_id']
-            #season_id=None
+            seasonid=game_details['season_id'],
+            leagueweek=game_details['week_id'],
+            venueid=game_details['venue_id']
+            # season_id=None
         )
         away_embedded1 = awayteam(
             alias=game_details['away_alias'],
@@ -231,7 +288,7 @@ def map_game_info(game_info_dict):
             name=game_details['away_name'],
             game_number=game_details['away_game_number'],
             sr_id=game_details['away_sr_id'],
-            #market=None
+            # market=None
         )
         home_embedded1 = hometeam(
             alias=game_details['home_alias'],
@@ -239,7 +296,7 @@ def map_game_info(game_info_dict):
             name=game_details['home_name'],
             game_number=game_details['home_game_number'],
             sr_id=game_details['home_sr_id'],
-            #market=None
+            # market=None
         )
         broadcast_embedded = broadcast(
             channel=game_details['broadcast_channel'],
@@ -265,8 +322,11 @@ def map_game_info(game_info_dict):
             wind=wind_embedded
         )
         mapped_games[game_id] = game_info_instance
-    #print("Mapped Game Info:", mapped_games) 
-    return mapped_games  
+    # print("Mapped Game Info:", mapped_games)
+    return mapped_games
+
+
+@log_and_catch_exceptions
 def extract_league_info(data):
     league_info_dict = {}
     season = data  # Assuming there's only one season in the list
@@ -291,11 +351,16 @@ def extract_league_info(data):
             team_id = team_info.get('id')
             team_name = team_info.get('name')
             team_alias = team_info.get('alias')
-            team_sr_id = team_info.get('sr_id', None)  # Set a default value if 'sr_id' is missing
-            bye_week_team_info.append({'id': team_id, 'name': team_name, 'alias': team_alias, 'sr_id': team_sr_id})
+            # Set a default value if 'sr_id' is missing
+            team_sr_id = team_info.get('sr_id', None)
+            bye_week_team_info.append(
+                {'id': team_id, 'name': team_name, 'alias': team_alias, 'sr_id': team_sr_id})
         league_info['Bye Week Team Info'] = bye_week_team_info
         league_info_dict[league_info['Week Id']] = league_info
     return league_info_dict
+
+
+@log_and_catch_exceptions
 def map_league_info(league_info_dict):
     mapped_leagues = {}
     for weekid, league_details in league_info_dict.items():
@@ -328,15 +393,18 @@ def map_league_info(league_info_dict):
                 title=league_details['Week Title']
             )
             week_embedded_list.append(week_embedded)
-        
+
         # Create a new dictionary for each LeagueInfo instance
         league_info_instance = LeagueInfo(
             season=season_embedded,
             leagueweek=week_embedded_list
         )
-        mapped_leagues[weekid] = league_info_instance  
+        mapped_leagues[weekid] = league_info_instance
     print("Mapped Leagues:", mapped_leagues)
     return mapped_leagues
+
+
+@log_and_catch_exceptions
 def extract_venue_info(data):
     venue_info_dict = {}
     weeks_or_week = data.get('weeks') or data.get('week')
@@ -358,15 +426,20 @@ def extract_venue_info(data):
             venue_info['surface'] = game['venue']['surface']
             venue_info['roof_type'] = game['venue']['roof_type']
             venue_info['sr_id'] = game['venue']['sr_id']
-            venue_info['lat'] = game.get('venue', {}).get('location', {}).get('lat', None)
-            venue_info['lng'] = game.get('venue', {}).get('location', {}).get('lng', None)
+            venue_info['lat'] = game.get('venue', {}).get(
+                'location', {}).get('lat', None)
+            venue_info['lng'] = game.get('venue', {}).get(
+                'location', {}).get('lng', None)
             venue_info_dict[game['venue']['id']] = venue_info
-            #print("venue_info_dict:", venue_info_dict)            
+            # print("venue_info_dict:", venue_info_dict)
     return venue_info_dict
+
+
+@log_and_catch_exceptions
 def map_venue_info(venue_info_dict):
     mapped_venues = {}
     for venue_id, venue_details in venue_info_dict.items():
-        
+
         venue_embedded = venue1(
             id=venue_details['id'],
             address=venue_details['address'],
@@ -390,15 +463,15 @@ def map_venue_info(venue_info_dict):
             venue1=venue_embedded,
             location=location_embedded
         )
-        mapped_venues[venue_id] = venue_info_instance  
-    #print(len(mapped_venues))   
-    #print("Mapped_Venues", mapped_venues)
+        mapped_venues[venue_id] = venue_info_instance
+    # print(len(mapped_venues))
+    # print("Mapped_Venues", mapped_venues)
     return mapped_venues
 
-
+@log_and_catch_exceptions
 def save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscores):
     print("save_to_database called")
-    
+
     def update_collection(model_cls, mapped_data, collection_name):
         updated_count = 0
         new_count = 0
@@ -406,9 +479,10 @@ def save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscor
             mapped_entry = mapped_entry_info
             mapped_entry_id = mapped_entry.id  # Extract the ID from the mapped entry
             existing_entry = model_cls.objects(id=mapped_entry_id).first()
-            
-            print(f"Checking {collection_name} with ID: {mapped_entry_id}")  # Print the ID being checked
-            
+
+            # Print the ID being checked
+            print(f"Checking {collection_name} with ID: {mapped_entry_id}")
+
             if existing_entry:
                 updated_fields = []
                 for field_name in existing_entry._fields.keys():
@@ -420,21 +494,24 @@ def save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscor
                 if updated_fields:
                     existing_entry.save()
                     updated_count += 1
-                    print(f"Updated {collection_name} {mapped_entry_id}: Updated fields: {', '.join(updated_fields)}")
+                    print(
+                        f"Updated {collection_name} {mapped_entry_id}: Updated fields: {', '.join(updated_fields)}")
                 else:
-                    print(f"No updates needed for {collection_name} {mapped_entry_id}")
+                    print(
+                        f"No updates needed for {collection_name} {mapped_entry_id}")
             else:
                 mongo_representation = mapped_entry.to_mongo()
-                print(f"Mapped entry: {mapped_entry}, Mongo representation: {mongo_representation}")
+                print(
+                    f"Mapped entry: {mapped_entry}, Mongo representation: {mongo_representation}")
                 new_entry = model_cls(**mapped_entry.to_mongo())
                 new_entry.save()
                 new_count += 1
                 print(f"Added new {collection_name} with id {mapped_entry_id}")
-        
-        print(f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
-    
+
+        print(
+            f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
+
     update_collection(VenueInfo, mapped_venues.values(), "venue")
     update_collection(LeagueInfo, mapped_leagues.values(), "league")
     update_collection(GameInfo, mapped_games.values(), "game")
     update_collection(BoxscoreInfo, mapped_boxscores.values(), "boxscore")
-

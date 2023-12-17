@@ -1,0 +1,395 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/profile-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"xs:include": [
+			{
+				"@schemaLocation": "common-game-v7.0.xsd"
+			},
+			{
+				"@schemaLocation": "common-statistics-v7.0.xsd"
+			}
+		],
+		"xs:complexType": [
+			{
+				"@name": "playerProfileType",
+				"xs:sequence": {
+					"xs:element": [
+						{
+							"@ref": "p:references",
+							"@minOccurs": 0,
+							"@maxOccurs": 1
+						},
+						{
+							"@name": "team",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"@type": "p:teamType"
+						},
+						{
+							"@name": "draft",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:sequence": {
+									"xs:element": {
+										"@name": "team",
+										"@minOccurs": 0,
+										"@maxOccurs": 1,
+										"@type": "p:teamType"
+									}
+								},
+								"xs:attribute": [
+									{
+										"@name": "number",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "round",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "year",
+										"@use": "optional",
+										"@type": "xs:integer"
+									}
+								]
+							}
+						},
+						{
+							"@name": "season",
+							"@minOccurs": 0,
+							"@maxOccurs": "unbounded",
+							"xs:complexType": {
+								"xs:sequence": {
+									"xs:element": {
+										"@name": "team",
+										"@minOccurs": 0,
+										"@maxOccurs": "unbounded",
+										"xs:complexType": {
+											"xs:sequence": {
+												"xs:element": {
+													"@name": "statistics",
+													"@minOccurs": 0,
+													"@maxOccurs": 1,
+													"@type": "p:seasonalPlayerRecordType"
+												}
+											},
+											"xs:attributeGroup": {
+												"@ref": "p:baseTeamAttributes"
+											}
+										}
+									}
+								},
+								"xs:attributeGroup": {
+									"@ref": "p:baseSeasonAttributes"
+								}
+							}
+						}
+					]
+				},
+				"xs:attributeGroup": {
+					"@ref": "p:extPlayerAttributes"
+				}
+			},
+			{
+				"@name": "seasonalPlayerRecordType",
+				"xs:sequence": {
+					"xs:element": [
+						{
+							"@name": "rushing",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:rushingAttributes"
+									},
+									{
+										"@ref": "p:extRushingAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "receiving",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:receivingAttributes"
+									},
+									{
+										"@ref": "p:extReceivingAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "punts",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:puntAttributes"
+									},
+									{
+										"@ref": "p:extPuntAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "punt_returns",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:puntReturnAttributes"
+								}
+							}
+						},
+						{
+							"@name": "kickoffs",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:kickoffAttributes"
+									},
+									{
+										"@ref": "p:extKickoffAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "kick_returns",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:kickReturnAttributes"
+								}
+							}
+						},
+						{
+							"@name": "penalties",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:penaltyAttributes"
+								}
+							}
+						},
+						{
+							"@name": "passing",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:passingAttributes"
+									},
+									{
+										"@ref": "p:extPassingAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "int_returns",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:baseReturnAttributes"
+								}
+							}
+						},
+						{
+							"@name": "fumbles",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:fumbleAttributes"
+								}
+							}
+						},
+						{
+							"@name": "first_downs",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:firstdownAttributes"
+								}
+							}
+						},
+						{
+							"@name": "field_goals",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": {
+									"@ref": "p:fieldgoalAttributes"
+								}
+							}
+						},
+						{
+							"@name": "extra_points",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:kickAttributes"
+									},
+									{
+										"@ref": "p:extKickAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "defense",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attributeGroup": [
+									{
+										"@ref": "p:defenseAttributes"
+									},
+									{
+										"@ref": "p:extDefenseAttributes"
+									}
+								]
+							}
+						},
+						{
+							"@name": "conversions",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attribute": [
+									{
+										"@name": "pass_attempts",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "pass_successes",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "rush_attempts",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "rush_successes",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "receive_attempts",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "receive_successes",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "defense_attempts",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "defense_successes",
+										"@use": "optional",
+										"@type": "xs:integer"
+									}
+								]
+							}
+						},
+						{
+							"@name": "special_conversions",
+							"@minOccurs": 0,
+							"@maxOccurs": 1,
+							"xs:complexType": {
+								"xs:attribute": [
+									{
+										"@name": "pass_three_point_attempts",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "pass_three_point_successes",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "rush_three_point_attempts",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "rush_three_point_successes",
+										"@use": "required",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "receive_three_point_attempts",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "receive_three_point_successes",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "defense_three_point_attempts",
+										"@use": "optional",
+										"@type": "xs:integer"
+									},
+									{
+										"@name": "defense_three_point_successes",
+										"@use": "optional",
+										"@type": "xs:integer"
+									}
+								]
+							}
+						}
+					]
+				},
+				"xs:attribute": [
+					{
+						"@name": "games_played",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "games_started",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			}
+		],
+		"xs:element": {
+			"@name": "player",
+			"@type": "p:playerProfileType"
+		}
+	}
+}

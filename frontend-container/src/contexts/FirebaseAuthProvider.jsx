@@ -100,21 +100,28 @@ function AuthProvider({ children }) {
   const _auth = { ...state.user };
 
   return (
-    <AuthContext.Provider value={{...state,
+    <AuthContext.Provider
+      value={{
+        ...state,
         method: "firebase",
         user: {
           id: _auth.uid,
           email: _auth.email,
           avatar: _auth.avatar,
           displayName: _auth.displayName,
-          role: "user"},
+          role: "user",
+        },
         signIn,
         signUp,
         signInWithGoogle,
         signInWithFaceBook,
         signInWithTwitter,
         signOut: _signOut,
-        resetPassword}}>{children}</AuthContext.Provider>
+        resetPassword,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
 }
 

@@ -1,13 +1,10 @@
+// src/index.jsx
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import { Authenticator } from "@aws-amplify/ui-react";
 import App from "./App";
-// Note: Remove the following line if you want to disable the API mocks.
-import "./mocks";
-import "jsvectormap";
-import "./vendor/world.js";
-import "./vendor/us_aea_en.js";
+import { ApolloProvider } from "@apollo/client";
+import client from "./apolloClient";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -15,9 +12,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Authenticator.Provider>
+      <ApolloProvider client={client}>
         <App />
-      </Authenticator.Provider>
+      </ApolloProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

@@ -1,0 +1,870 @@
+{
+	"xs:schema": {
+		"@elementFormDefault": "qualified",
+		"xs:attributeGroup": [
+			{
+				"@name": "baseOrganizationAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseIdentityAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "alias",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "name",
+						"@use": "optional",
+						"@type": "xs:string"
+					}
+				]
+			},
+			{
+				"@name": "baseTeamAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseOrganizationAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "market",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "founded",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "reference",
+						"@use": "optional",
+						"@type": "xs:string"
+					}
+				]
+			},
+			{
+				"@name": "baseSeasonAttributes",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "year",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "type",
+						"@use": "required",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "PRE"
+									},
+									{
+										"@value": "REG"
+									},
+									{
+										"@value": "PST"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "baseWeekAttributes",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "sequence",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "title",
+						"@use": "optional",
+						"@type": "xs:string"
+					}
+				]
+			},
+			{
+				"@name": "baseGameAttributes",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "sr_id",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "number",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "utc_offset",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "reference",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "scheduled",
+						"@use": "required",
+						"@type": "xs:dateTime"
+					},
+					{
+						"@name": "title",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "neutral_site",
+						"@use": "optional",
+						"@type": "xs:boolean"
+					},
+					{
+						"@name": "status",
+						"@use": "required",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "scheduled"
+									},
+									{
+										"@value": "created"
+									},
+									{
+										"@value": "inprogress"
+									},
+									{
+										"@value": "halftime"
+									},
+									{
+										"@value": "complete"
+									},
+									{
+										"@value": "closed"
+									},
+									{
+										"@value": "cancelled"
+									},
+									{
+										"@value": "postponed"
+									},
+									{
+										"@value": "delayed"
+									},
+									{
+										"@value": "time-tbd"
+									},
+									{
+										"@value": "flex-schedule"
+									}
+								]
+							}
+						}
+					},
+					{
+						"@name": "game_type",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "regular"
+									},
+									{
+										"@value": "conference_championship"
+									},
+									{
+										"@value": "bowl"
+									},
+									{
+										"@value": "playoff"
+									}
+								]
+							}
+						}
+					},
+					{
+						"@name": "playoff_game_type",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "CFP Semifinal"
+									},
+									{
+										"@value": "CFP National Championship"
+									},
+									{
+										"@value": "FCS First Round"
+									},
+									{
+										"@value": "FCS Second Round"
+									},
+									{
+										"@value": "FCS Quarterfinal"
+									},
+									{
+										"@value": "FCS Semifinal"
+									},
+									{
+										"@value": "FCS Championship"
+									}
+								]
+							}
+						}
+					},
+					{
+						"@name": "attendance",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "duration",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "coverage",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "full"
+									},
+									{
+										"@value": "extended_boxscore"
+									},
+									{
+										"@value": "boxscore"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "extGameAttributes",
+				"xs:attribute": [
+					{
+						"@name": "clock",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "quarter",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "entry_mode",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "INGEST"
+									},
+									{
+										"@value": "LDE"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "baseIdentityAttributes",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "sr_id",
+						"@use": "optional",
+						"@type": "xs:string"
+					}
+				]
+			},
+			{
+				"@name": "basePlayerAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseIdentityAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "jersey",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "reference",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "position",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "ATH"
+									},
+									{
+										"@value": "C"
+									},
+									{
+										"@value": "C/G"
+									},
+									{
+										"@value": "CB"
+									},
+									{
+										"@value": "CB/RS"
+									},
+									{
+										"@value": "CB/S"
+									},
+									{
+										"@value": "DB"
+									},
+									{
+										"@value": "DE"
+									},
+									{
+										"@value": "DE/LB"
+									},
+									{
+										"@value": "DL"
+									},
+									{
+										"@value": "DT"
+									},
+									{
+										"@value": "FB"
+									},
+									{
+										"@value": "FB/RB"
+									},
+									{
+										"@value": "FS"
+									},
+									{
+										"@value": "G"
+									},
+									{
+										"@value": "G/C"
+									},
+									{
+										"@value": "G/T"
+									},
+									{
+										"@value": "H/B"
+									},
+									{
+										"@value": "H/B/T"
+									},
+									{
+										"@value": "HB"
+									},
+									{
+										"@value": "ILB"
+									},
+									{
+										"@value": "K"
+									},
+									{
+										"@value": "K/P"
+									},
+									{
+										"@value": "KR"
+									},
+									{
+										"@value": "L"
+									},
+									{
+										"@value": "LB"
+									},
+									{
+										"@value": "LB/DE"
+									},
+									{
+										"@value": "LS"
+									},
+									{
+										"@value": "MLB"
+									},
+									{
+										"@value": "NT"
+									},
+									{
+										"@value": "OG"
+									},
+									{
+										"@value": "OL"
+									},
+									{
+										"@value": "OLB"
+									},
+									{
+										"@value": "OT"
+									},
+									{
+										"@value": "P"
+									},
+									{
+										"@value": "QB"
+									},
+									{
+										"@value": "QB/WR"
+									},
+									{
+										"@value": "RB"
+									},
+									{
+										"@value": "RB/ST"
+									},
+									{
+										"@value": "RB/WR"
+									},
+									{
+										"@value": "RS"
+									},
+									{
+										"@value": "S"
+									},
+									{
+										"@value": "SS"
+									},
+									{
+										"@value": "SAF"
+									},
+									{
+										"@value": "T"
+									},
+									{
+										"@value": "T/G"
+									},
+									{
+										"@value": "TE"
+									},
+									{
+										"@value": "TE/DT"
+									},
+									{
+										"@value": "TE/FB"
+									},
+									{
+										"@value": "TE/LS"
+									},
+									{
+										"@value": "TEW"
+									},
+									{
+										"@value": "WR"
+									},
+									{
+										"@value": "WR/CB"
+									},
+									{
+										"@value": "WR/KR"
+									},
+									{
+										"@value": "WR/PR"
+									},
+									{
+										"@value": "WR/RB"
+									},
+									{
+										"@value": "WR/RS"
+									},
+									{
+										"@value": "QB/WR"
+									},
+									{
+										"@value": "DB/LB"
+									},
+									{
+										"@value": "FB/DL"
+									},
+									{
+										"@value": "DE/DT"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "extPlayerAttributes",
+				"xs:attributeGroup": {
+					"@ref": "basePlayerAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "abbr_name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "birth_date",
+						"@use": "optional",
+						"@type": "xs:date"
+					},
+					{
+						"@name": "birth_place",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "college",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "college_conf",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "first_name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "height",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "high_school",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "last_name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "preferred_name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "rookie_year",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "status",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "weight",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "name_suffix",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "eligibility",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "FR"
+									},
+									{
+										"@value": "SO"
+									},
+									{
+										"@value": "JR"
+									},
+									{
+										"@value": "SR"
+									},
+									{
+										"@value": "GR"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "teamColorAttributes",
+				"xs:attribute": [
+					{
+						"@name": "type",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "hex_color",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "alpha",
+						"@type": "xs:float"
+					}
+				]
+			},
+			{
+				"@name": "rgbColorAttributes",
+				"xs:attribute": [
+					{
+						"@name": "red",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "green",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "blue",
+						"@type": "xs:integer"
+					}
+				]
+			}
+		],
+		"xs:complexType": [
+			{
+				"@name": "referenceType",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "origin",
+						"@use": "required",
+						"@type": "xs:string"
+					}
+				]
+			},
+			{
+				"@name": "venueType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "location",
+						"@minOccurs": 0,
+						"@maxOccurs": 1,
+						"xs:complexType": {
+							"xs:attribute": [
+								{
+									"@name": "lat",
+									"@type": "xs:float"
+								},
+								{
+									"@name": "lng",
+									"@type": "xs:float"
+								}
+							]
+						}
+					}
+				},
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "sr_id",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "name",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "address",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "capacity",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "city",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "country",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "state",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "zip",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "roof_type",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "outdoor"
+									},
+									{
+										"@value": "dome"
+									},
+									{
+										"@value": "retractable_dome"
+									}
+								]
+							}
+						}
+					},
+					{
+						"@name": "surface",
+						"@use": "optional",
+						"xs:simpleType": {
+							"xs:restriction": {
+								"@base": "xs:string",
+								"xs:enumeration": [
+									{
+										"@value": "turf"
+									},
+									{
+										"@value": "artificial"
+									}
+								]
+							}
+						}
+					}
+				]
+			},
+			{
+				"@name": "teamType",
+				"xs:attributeGroup": {
+					"@ref": "baseTeamAttributes"
+				}
+			},
+			{
+				"@name": "teamColorType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "rgb_color",
+						"xs:complexType": {
+							"xs:attributeGroup": {
+								"@ref": "rgbColorAttributes"
+							}
+						}
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "teamColorAttributes"
+				}
+			},
+			{
+				"@name": "teamColorsType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "team_color",
+						"@type": "teamColorType",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded"
+					}
+				}
+			}
+		],
+		"xs:element": [
+			{
+				"@name": "references",
+				"xs:complexType": {
+					"xs:sequence": {
+						"xs:element": {
+							"@name": "reference",
+							"@minOccurs": 0,
+							"@maxOccurs": "unbounded",
+							"@type": "referenceType"
+						}
+					}
+				}
+			},
+			{
+				"@name": "franchise",
+				"xs:complexType": {
+					"xs:sequence": {
+						"xs:element": {
+							"@ref": "references",
+							"@minOccurs": 0,
+							"@maxOccurs": "unbounded"
+						}
+					},
+					"xs:attributeGroup": {
+						"@ref": "baseOrganizationAttributes"
+					}
+				}
+			}
+		]
+	}
+}

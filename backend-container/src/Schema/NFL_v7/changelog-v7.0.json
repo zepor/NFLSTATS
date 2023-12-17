@@ -1,0 +1,192 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/changelog-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"xs:include": {
+			"@schemaLocation": "common-v7.0.xsd"
+		},
+		"xs:complexType": [
+			{
+				"@name": "changelogType",
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "changelog",
+						"@minOccurs": 1,
+						"@maxOccurs": 1,
+						"xs:complexType": {
+							"xs:sequence": {
+								"xs:element": [
+									{
+										"@name": "profiles",
+										"@minOccurs": 1,
+										"@maxOccurs": 1,
+										"xs:complexType": {
+											"xs:sequence": {
+												"xs:element": [
+													{
+														"@name": "teams",
+														"@minOccurs": 0,
+														"@maxOccurs": 1,
+														"xs:complexType": {
+															"xs:sequence": {
+																"xs:element": {
+																	"@name": "team",
+																	"@minOccurs": 0,
+																	"@maxOccurs": "unbounded",
+																	"@type": "c:teamEntryType"
+																}
+															}
+														}
+													},
+													{
+														"@name": "players",
+														"@minOccurs": 0,
+														"@maxOccurs": 1,
+														"xs:complexType": {
+															"xs:sequence": {
+																"xs:element": {
+																	"@name": "player",
+																	"@minOccurs": 0,
+																	"@maxOccurs": "unbounded",
+																	"@type": "c:playerEntryType"
+																}
+															}
+														}
+													}
+												]
+											}
+										}
+									},
+									{
+										"@name": "games",
+										"@minOccurs": 1,
+										"@maxOccurs": 1,
+										"xs:complexType": {
+											"xs:sequence": {
+												"xs:element": [
+													{
+														"@name": "schedule",
+														"@minOccurs": 0,
+														"@maxOccurs": 1,
+														"xs:complexType": {
+															"xs:sequence": {
+																"xs:element": {
+																	"@name": "game",
+																	"@minOccurs": 0,
+																	"@maxOccurs": "unbounded",
+																	"@type": "c:gameEntryType"
+																}
+															}
+														}
+													},
+													{
+														"@name": "results",
+														"@minOccurs": 0,
+														"@maxOccurs": 1,
+														"xs:complexType": {
+															"xs:sequence": {
+																"xs:element": {
+																	"@name": "game",
+																	"@minOccurs": 0,
+																	"@maxOccurs": "unbounded",
+																	"@type": "c:gameEntryType"
+																}
+															}
+														}
+													}
+												]
+											}
+										}
+									},
+									{
+										"@name": "standings",
+										"@minOccurs": 0,
+										"@maxOccurs": 1,
+										"xs:complexType": {
+											"xs:sequence": {
+												"xs:element": {
+													"@name": "team",
+													"@minOccurs": 0,
+													"@maxOccurs": "unbounded",
+													"@type": "c:teamEntryType"
+												}
+											}
+										}
+									}
+								]
+							},
+							"xs:attribute": [
+								{
+									"@name": "end_time",
+									"@use": "required",
+									"@type": "xs:dateTime"
+								},
+								{
+									"@name": "start_time",
+									"@use": "required",
+									"@type": "xs:dateTime"
+								}
+							]
+						}
+					}
+				},
+				"xs:attributeGroup": {
+					"@ref": "c:baseOrganizationAttributes"
+				}
+			},
+			{
+				"@name": "teamEntryType",
+				"xs:attributeGroup": {
+					"@ref": "c:baseTeamAttributes"
+				},
+				"xs:attribute": {
+					"@name": "last_modified",
+					"@use": "required",
+					"@type": "xs:dateTime"
+				}
+			},
+			{
+				"@name": "playerEntryType",
+				"xs:attributeGroup": {
+					"@ref": "c:basePlayerAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "full_name",
+						"@use": "optional",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "last_modified",
+						"@use": "required",
+						"@type": "xs:dateTime"
+					}
+				]
+			},
+			{
+				"@name": "gameEntryType",
+				"xs:attribute": [
+					{
+						"@name": "id",
+						"@use": "required",
+						"@type": "xs:string"
+					},
+					{
+						"@name": "last_modified",
+						"@use": "required",
+						"@type": "xs:dateTime"
+					},
+					{
+						"@name": "season_id",
+						"@use": "required",
+						"@type": "xs:string"
+					}
+				]
+			}
+		],
+		"xs:element": {
+			"@name": "league",
+			"@type": "c:changelogType"
+		}
+	}
+}

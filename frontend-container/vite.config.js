@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import json from "@rollup/plugin-json"; // Add this line
+import json from "@rollup/plugin-json";
 import { resolve } from "path";
 import checker from "vite-plugin-checker";
 
@@ -25,15 +25,14 @@ export default defineConfig({
     splitVendorChunkPlugin(),
   ],
   resolve: {
-    alias: [
-      {
-        find: "./runtimeConfig",
-        replacement: "./runtimeConfig.browser", // ensures browser compatible version of AWS JS SDK is used
-      },
-    ],
+    alias: {
+      "./runtimeConfig": "./runtimeConfig.browser",
+      "realm-web": resolve(__dirname, "./node_modules/realm-web"),
+      "@contexts": resolve(__dirname, "src/contexts"),
+    },
   },
   build: {
-    outDir: "build",
+    outDir: "dist",
     cssCodeSplit: true,
     chunkSizeWarningLimit: 3000,
     rollupOptions: {

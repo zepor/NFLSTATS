@@ -19,7 +19,10 @@ const Dashboard = ({ children }) => (
       <Main>
         <Navbar />
         <Content>
-          <Suspense fallback={<Loader />}>{children}<Outlet /></Suspense>
+          <Suspense fallback={<Loader />}>
+            {children}
+            <Outlet />
+          </Suspense>
         </Content>
         <Footer />
       </Main>

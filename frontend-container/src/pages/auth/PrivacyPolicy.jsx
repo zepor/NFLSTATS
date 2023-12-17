@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "react-bootstrap";
-import PrivacyPolicy from "../../components/auth/PrivacyPolicy"; // Import the PrivacyPolicy component
+import PrivacyPolicy from "../../components/auth/PrivacyPolicy";
 
 const PrivacyPolicyPage = () => (
   <React.Fragment>

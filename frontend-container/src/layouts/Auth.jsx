@@ -12,7 +12,10 @@ const Auth = ({ children }) => (
       <Container className="d-flex flex-column">
         <Row className="h-100">
           <Col sm="10" md="8" lg="6" xl="5" className="mx-auto d-table h-100">
-            <div className="d-table-cell align-middle">{children}<Outlet /></div>
+            <div className="d-table-cell align-middle">
+              {children}
+              <Outlet />
+            </div>
           </Col>
         </Row>
       </Container>

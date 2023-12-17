@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml"/>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt"/>
+	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery;xqu"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="boxscore-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="changelog-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="common-game-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="common-statistics-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="common-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="depth_charts-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="hierarchy-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="injuries-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="pbp-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="postgame-standings-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="profile-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="roster-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="schedule-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="seasons-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="statistics-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="team-v7.0.xsd" HomeFolder="Yes"/>
+		<File FilePath="transactions-v7.0.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent"/>
+	<File FilePath=" generateDS.py" HomeFolder="Yes"/>
+	<File FilePath="boxscore-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="changelog-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="common-game-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="common-statistics-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="common-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="depth_charts-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="hierarchy-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="injuries-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="pbp-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="postgame-standings-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="profile-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="roster-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="schedule-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="seasons-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="statistics-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="team-v7.0.py" HomeFolder="Yes"/>
+	<File FilePath="transactions-v7.0.py" HomeFolder="Yes"/>
+</Project>

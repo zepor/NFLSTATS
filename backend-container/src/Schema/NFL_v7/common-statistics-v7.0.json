@@ -1,0 +1,985 @@
+{
+	"xs:schema": {
+		"@elementFormDefault": "qualified",
+		"xs:attributeGroup": [
+			{
+				"@name": "baseReturnAttributes",
+				"xs:attribute": [
+					{
+						"@name": "returns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "longest",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "longest_touchdown",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "avg_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					}
+				]
+			},
+			{
+				"@name": "baseOffenseAttributes",
+				"xs:attribute": [
+					{
+						"@name": "yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "avg_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "longest",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "longest_touchdown",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "miscReturnAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseReturnAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "blk_fg_touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "blk_punt_touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "ez_rec_touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "fg_return_touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "rushingAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseOffenseAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "attempts",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "tlost",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "tlost_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "redzone_attempts",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "first_downs",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "receivingAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseOffenseAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "receptions",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "targets",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards_after_catch",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "redzone_targets",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "air_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "first_downs",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "puntAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseOffenseAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "attempts",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "avg_net_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "blocked",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "inside_20",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "net_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "return_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "touchbacks",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "penaltyAttributes",
+				"xs:attribute": [
+					{
+						"@name": "penalties",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "first_downs",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "puntReturnAttributes",
+				"xs:attributeGroup": {
+					"@ref": "miscReturnAttributes"
+				},
+				"xs:attribute": {
+					"@name": "faircatches",
+					"@use": "optional",
+					"@type": "xs:integer"
+				}
+			},
+			{
+				"@name": "passingAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseOffenseAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "attempts",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "cmp_pct",
+						"@use": "required",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "completions",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "gross_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "interceptions",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "net_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "rating",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "sack_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sacks",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "redzone_attempts",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "air_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "int_touchdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "first_downs",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "kickoffAttributes",
+				"xs:attribute": [
+					{
+						"@name": "endzone",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "inside_20",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "kickoffs",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "out_of_bounds",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "return_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "returned",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "touchbacks",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "kickReturnAttributes",
+				"xs:attributeGroup": {
+					"@ref": "baseReturnAttributes"
+				},
+				"xs:attribute": {
+					"@name": "faircatches",
+					"@use": "optional",
+					"@type": "xs:integer"
+				}
+			},
+			{
+				"@name": "fumbleAttributes",
+				"xs:attribute": [
+					{
+						"@name": "fumbles",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "lost_fumbles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "ez_rec_tds",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "forced_fumbles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "out_of_bounds",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "opp_rec",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "opp_rec_tds",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "opp_rec_yards",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "own_rec",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "own_rec_tds",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "own_rec_yards",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "kickAttributes",
+				"xs:attribute": [
+					{
+						"@name": "attempts",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "blocked",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "made",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "fieldgoalAttributes",
+				"xs:attributeGroup": {
+					"@ref": "kickAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "avg_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "longest",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "defenseAttributes",
+				"xs:attribute": [
+					{
+						"@name": "assists",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "combined",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "forced_fumbles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "fumble_recoveries",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "interceptions",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "misc_assists",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "misc_forced_fumbles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "misc_fumble_recoveries",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "misc_tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "passes_defended",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "qb_hits",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sack_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "sacks",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "safeties",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sp_assists",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sp_blocks",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sp_forced_fumbles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sp_fumble_recoveries",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "sp_tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "tloss",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "tloss_yards",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "three_and_outs_forced",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "fourth_down_stops",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "touchdownAttributes",
+				"xs:attribute": [
+					{
+						"@name": "fumble_return",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "int_return",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "kick_return",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "other",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "pass",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "punt_return",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "rush",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "total",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "total_return",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "interceptionAttributes",
+				"xs:attribute": [
+					{
+						"@name": "interceptions",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "return_yards",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "returned",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "firstdownAttributes",
+				"xs:attribute": [
+					{
+						"@name": "pass",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "penalty",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "rush",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "total",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "efficiencyAttributes",
+				"xs:attribute": [
+					{
+						"@name": "attempts",
+						"@use": "required",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "pct",
+						"@use": "required",
+						"@type": "xs:decimal"
+					},
+					{
+						"@name": "successes",
+						"@use": "required",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extPassingAttributes",
+				"xs:attribute": [
+					{
+						"@name": "throw_aways",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "defended_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "dropped_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "spikes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "poor_throws",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "blitzes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "hurries",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "knockdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "pocket_time",
+						"@use": "optional",
+						"@type": "xs:double"
+					},
+					{
+						"@name": "avg_pocket_time",
+						"@use": "optional",
+						"@type": "xs:double"
+					},
+					{
+						"@name": "batted_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "on_target_throws",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extRushingAttributes",
+				"xs:attribute": [
+					{
+						"@name": "broken_tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "kneel_downs",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "scrambles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards_after_contact",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extReceivingAttributes",
+				"xs:attribute": [
+					{
+						"@name": "broken_tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "dropped_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "catchable_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "yards_after_contact",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extKickoffAttributes",
+				"xs:attribute": [
+					{
+						"@name": "onside_attempts",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "onside_successes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "squib_kicks",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "total_endzone",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extDefenseAttributes",
+				"xs:attribute": [
+					{
+						"@name": "def_targets",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "def_comps",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "blitzes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "hurries",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "knockdowns",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "missed_tackles",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "batted_passes",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			},
+			{
+				"@name": "extPuntAttributes",
+				"xs:attribute": [
+					{
+						"@name": "hang_time",
+						"@use": "optional",
+						"@type": "xs:double"
+					},
+					{
+						"@name": "avg_hang_time",
+						"@use": "optional",
+						"@type": "xs:double"
+					}
+				]
+			},
+			{
+				"@name": "extKickAttributes",
+				"xs:attribute": [
+					{
+						"@name": "missed",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "pct",
+						"@use": "optional",
+						"@type": "xs:decimal"
+					}
+				]
+			},
+			{
+				"@name": "extFieldgoalAttributes",
+				"xs:attributeGroup": {
+					"@ref": "extKickAttributes"
+				},
+				"xs:attribute": [
+					{
+						"@name": "made_19",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "made_29",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "made_39",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "made_49",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "made_50",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "attempts_19",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "attempts_29",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "attempts_39",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "attempts_49",
+						"@use": "optional",
+						"@type": "xs:integer"
+					},
+					{
+						"@name": "attempts_50",
+						"@use": "optional",
+						"@type": "xs:integer"
+					}
+				]
+			}
+		]
+	}
+}

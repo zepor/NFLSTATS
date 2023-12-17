@@ -1,0 +1,106 @@
+{
+	"xs:schema": {
+		"@targetNamespace": "http://feed.elasticstats.com/schema/football/transactions-v7.0.xsd",
+		"@elementFormDefault": "qualified",
+		"xs:include": {
+			"@schemaLocation": "common-v7.0.xsd"
+		},
+		"xs:element": {
+			"@name": "transactions",
+			"xs:complexType": {
+				"xs:sequence": {
+					"xs:element": {
+						"@name": "transaction",
+						"@minOccurs": 0,
+						"@maxOccurs": "unbounded",
+						"xs:complexType": {
+							"xs:sequence": {
+								"xs:element": [
+									{
+										"@name": "player",
+										"@minOccurs": 1,
+										"@maxOccurs": 1,
+										"xs:complexType": {
+											"xs:attribute": {
+												"@name": "college",
+												"@use": "optional",
+												"@type": "xs:string"
+											},
+											"xs:attributeGroup": {
+												"@ref": "t:basePlayerAttributes"
+											}
+										}
+									},
+									{
+										"@name": "player_status",
+										"xs:complexType": {
+											"xs:attribute": [
+												{
+													"@name": "before",
+													"@type": "xs:string"
+												},
+												{
+													"@name": "after",
+													"@type": "xs:string"
+												}
+											]
+										}
+									},
+									{
+										"@name": "from_team",
+										"@type": "t:teamType",
+										"@minOccurs": 0,
+										"@maxOccurs": 1
+									},
+									{
+										"@name": "to_team",
+										"@type": "t:teamType",
+										"@minOccurs": 0,
+										"@maxOccurs": 1
+									}
+								]
+							},
+							"xs:attribute": [
+								{
+									"@name": "number",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "status",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "description",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "code",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "date",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "voided_date",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "sequence",
+									"@use": "optional",
+									"@type": "xs:string"
+								},
+								{
+									"@name": "year",
+									"@use": "optional",
+									"@type": "xs:string"
+								}
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

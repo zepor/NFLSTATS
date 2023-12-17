@@ -1,0 +1,7503 @@
+{
+	"$defs": {
+		"..basePlayStatisticType.1": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@block": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"field_goal",
+						"extra_point",
+						"punt"
+					],
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.10": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@endzone": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@gross_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@net_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@onside_attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@onside_success": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@squib_kick": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.11": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.12": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@att_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@batted_pass": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blitz": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@hurry": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@incompletion_type": {
+					"enum": [
+						"Thrown Away",
+						"Pass Defended",
+						"Dropped Pass",
+						"Spike",
+						"Poorly Thrown"
+					],
+					"type": "string"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@interception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@knockdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@on_target_throw": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@pocket_time": {
+					"$ref": "#/$defs/xs:double"
+				},
+				"@sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.13": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@penalty": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.14": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@endzone": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@hang_time": {
+					"$ref": "#/$defs/xs:double"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@net_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.15": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@broken_tackles": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@catchable": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@dropped": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@reception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@target": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards_after_catch": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards_after_contact": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.16": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@category": {
+					"enum": [
+						"punt_return",
+						"kick_return"
+					],
+					"type": "string"
+				},
+				"@downed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@faircatch": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lateral": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@out_of_bounds": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@return": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.17": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@broken_tackles": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@kneel_down": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lateral": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scramble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards_after_contact": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.18": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@description": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.19": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@block": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"field_goal",
+						"extra_point",
+						"punt"
+					],
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.2": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"pass",
+						"receive",
+						"rush",
+						"turnover"
+					],
+					"type": "string"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.20": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"pass",
+						"receive",
+						"rush",
+						"turnover"
+					],
+					"type": "string"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.21": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@ast_sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@ast_tackle": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@ast_tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@block": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@forced_fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@interception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@pass_defended": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@primary": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@qb_hit": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack_yards": {
+					"$ref": "#/$defs/xs:double"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tackle": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.22": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"conversion",
+						"extra_point"
+					],
+					"type": "string"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.23": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@down": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.24": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@aborted": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@missed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@returned": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.25": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@att_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@missed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@returned": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.26": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@category": {
+					"enum": [
+						"pass",
+						"rush",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.27": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@forced": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@opp_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@opp_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@opp_rec_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@out_of_bounds": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.28": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@endzone": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@gross_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@net_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@own_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.29": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.3": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@ast_sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@ast_tackle": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@ast_tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@batted_pass": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blitz": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@block": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@def_comp": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@def_target": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@forced_fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@hurry": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@interception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@knockdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@missed_tackles": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@pass_defended": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@primary": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@qb_hit": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack_yards": {
+					"$ref": "#/$defs/xs:double"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tackle": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.30": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@att_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@int_touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@interception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sack": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sack_yards": {
+					"$ref": "#/$defs/xs:double"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.31": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@penalty": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.32": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@endzone": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@net_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.33": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@dropped": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@reception": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@target": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards_after_catch": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.34": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@category": {
+					"enum": [
+						"punt_return",
+						"kick_return"
+					],
+					"type": "string"
+				},
+				"@downed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@faircatch": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lateral": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@out_of_bounds": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@return": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchback": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.35": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@firstdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lateral": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@tlost_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@touchdown": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.36": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@description": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.4": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@category": {
+					"enum": [
+						"conversion",
+						"extra_point"
+					],
+					"type": "string"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.5": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@complete": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@down": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.6": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@aborted": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@made": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@missed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@returned": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.7": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@att_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@attempt": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blocked": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@made": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@missed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@returned": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.8": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@category": {
+					"enum": [
+						"pass",
+						"rush",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..basePlayStatisticType.9": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@forced": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@fumble": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@lost": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@opp_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@opp_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@opp_rec_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@out_of_bounds": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_td": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@own_rec_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"..xs:string.1": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"$": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@direction": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@speed": {
+					"$ref": "#/$defs/xs:byte"
+				}
+			},
+			"type": [
+				"object",
+				"string",
+				"number",
+				"boolean"
+			]
+		},
+		".franchise": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alias": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@name": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@sr_id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"references": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/.references"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/.references"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"type": "object"
+		},
+		".references": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"reference": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/referenceType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/referenceType"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"type": "object"
+		},
+		"basePlayStatisticType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@nullified": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"player": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@jersey": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@position": {
+							"enum": [
+								"ATH",
+								"C",
+								"C/G",
+								"CB",
+								"CB/RS",
+								"CB/S",
+								"DB",
+								"DE",
+								"DE/LB",
+								"DL",
+								"DT",
+								"FB",
+								"FB/RB",
+								"FS",
+								"G",
+								"G/C",
+								"G/T",
+								"H/B",
+								"H/B/T",
+								"HB",
+								"ILB",
+								"K",
+								"K/P",
+								"KR",
+								"L",
+								"LB",
+								"LB/DE",
+								"LS",
+								"MLB",
+								"NT",
+								"OG",
+								"OL",
+								"OLB",
+								"OT",
+								"P",
+								"QB",
+								"QB/WR",
+								"RB",
+								"RB/ST",
+								"RB/WR",
+								"RS",
+								"S",
+								"SS",
+								"SAF",
+								"T",
+								"T/G",
+								"TE",
+								"TE/DT",
+								"TE/FB",
+								"TE/LS",
+								"TEW",
+								"WR",
+								"WR/CB",
+								"WR/KR",
+								"WR/PR",
+								"WR/RB",
+								"WR/RS",
+								"DB/LB",
+								"FB/DL",
+								"DE/DT"
+							],
+							"type": "string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sr_id": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": "object"
+				},
+				"team": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"team"
+			],
+			"type": "object"
+		},
+		"basePlayType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@away_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@deleted": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@home_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@play_clock": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_play": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:decimal"
+				},
+				"@source": {
+					"$ref": "#/$defs/xs:anySimpleType"
+				},
+				"@type": {
+					"enum": [
+						"pass",
+						"rush",
+						"faircatch_kick",
+						"extra_point",
+						"conversion",
+						"free_kick",
+						"kickoff",
+						"punt",
+						"field_goal",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@wall_clock": {
+					"$ref": "#/$defs/xs:dateTime"
+				},
+				"alt-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"end_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"scoring-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"start_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				}
+			},
+			"required": [
+				"@sequence",
+				"@type",
+				"@id"
+			],
+			"type": "object"
+		},
+		"coinTossType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@quarter": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"away": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@decision": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@direction": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@outcome": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"required": [
+						"@outcome"
+					],
+					"type": "object"
+				},
+				"home": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@decision": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@direction": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@outcome": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"required": [
+						"@outcome"
+					],
+					"type": "object"
+				}
+			},
+			"required": [
+				"away",
+				"home"
+			],
+			"type": "object"
+		},
+		"driveReason": {
+			"enum": [
+				"UNKNOWN",
+				"Touchdown",
+				"Safety",
+				"Field Goal",
+				"Missed FG",
+				"Blocked FG",
+				"Blocked FG, Downs",
+				"Blocked FG, Safety",
+				"Punt",
+				"Blocked Punt",
+				"Blocked Punt, Downs",
+				"Blocked Punt, Safety",
+				"Downs",
+				"Interception",
+				"Fumble",
+				"Fumble, Safety",
+				"Muffed FG",
+				"Muffed Punt",
+				"Muffed Kickoff",
+				"Kickoff",
+				"Own Kickoff",
+				"Onside Kick",
+				"Kickoff, No Play",
+				"End of Half",
+				"End of Game"
+			],
+			"type": "string"
+		},
+		"extFieldLocationType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alias": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@yardline": {
+					"$ref": "#/$defs/xs:integer"
+				}
+			},
+			"type": "object"
+		},
+		"extGameDriveType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@duration": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@end_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@first_downs": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@gain": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@penalty_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_count": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_drive": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@start_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"event": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/gameEventType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/gameEventType"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"play": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/extGamePlayType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/extGamePlayType"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"required": [
+				"@id",
+				"@sequence",
+				"@first_downs",
+				"@play_count"
+			],
+			"type": "object"
+		},
+		"extGamePlayType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@away_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blitz": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@deleted": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@fake_field_goal": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@fake_punt": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@hash_mark": {
+					"enum": [
+						"Left Hash",
+						"Right Hash",
+						"Middle"
+					],
+					"type": "string"
+				},
+				"@home_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@huddle": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@left_tightends": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@men_in_box": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@pass_route": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@play_clock": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_direction": {
+					"enum": [
+						"Left Sideline",
+						"Left",
+						"Middle",
+						"Right",
+						"Right Sideline"
+					],
+					"type": "string"
+				},
+				"@players_rushed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@pocket_location": {
+					"enum": [
+						"Scramble Left",
+						"Scramble Right",
+						"Boot Left",
+						"Boot Right",
+						"Rollout Left",
+						"Rollout Right",
+						"Middle"
+					],
+					"type": "string"
+				},
+				"@qb_at_snap": {
+					"enum": [
+						"Shotgun",
+						"Under Center",
+						"Pistol"
+					],
+					"type": "string"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@right_tightends": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@running_lane": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_play": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@screen_pass": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:decimal"
+				},
+				"@source": {
+					"$ref": "#/$defs/xs:anySimpleType"
+				},
+				"@type": {
+					"enum": [
+						"pass",
+						"rush",
+						"faircatch_kick",
+						"extra_point",
+						"conversion",
+						"free_kick",
+						"kickoff",
+						"punt",
+						"field_goal",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@wall_clock": {
+					"$ref": "#/$defs/xs:dateTime"
+				},
+				"alt-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"drive-info": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@duration": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@net_yards": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@play_count": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"type": "object"
+				},
+				"end_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"score": {
+					"$ref": "#/$defs/playScoreType"
+				},
+				"scoring-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"start_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"statistics": {
+					"$ref": "#/$defs/extPlayStatisticsType"
+				}
+			},
+			"required": [
+				"@sequence",
+				"@type",
+				"@id"
+			],
+			"type": "object"
+		},
+		"extPlayStatisticsType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"block": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.1"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.1"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.2"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.2"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"defense": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.3"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.3"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"defense_conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.4"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.4"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"down_conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.5"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.5"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"extra_point": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.6"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.6"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"field_goal": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.7"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.7"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"first_down": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.8"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.8"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"fumble": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.9"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.9"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"kick": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.10"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.10"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"misc": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.11"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.11"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"pass": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.12"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.12"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"penalty": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.13"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.13"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"punt": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.14"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.14"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"receive": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.15"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.15"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"return": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.16"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.16"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"rush": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.17"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.17"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"timeout": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.18"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.18"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"type": "object"
+		},
+		"fieldLocationType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alias": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@founded": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@market": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@name": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@sr_id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@yardline": {
+					"$ref": "#/$defs/xs:integer"
+				}
+			},
+			"required": [
+				"@yardline"
+			],
+			"type": "object"
+		},
+		"fieldSituationType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@down": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@yfd": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"location": {
+					"$ref": "#/$defs/fieldLocationType"
+				},
+				"possession": {
+					"$ref": "#/$defs/teamType"
+				}
+			},
+			"required": [
+				"@clock",
+				"@yfd"
+			],
+			"type": "object"
+		},
+		"gameDetailsDriveType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@duration": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@end_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@first_downs": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@gain": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@penalty_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_count": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_drive": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@start_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"event": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/gameEventType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/gameEventType"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"play": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/gamePlayDetailsType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/gamePlayDetailsType"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"required": [
+				"@id",
+				"@sequence",
+				"@first_downs",
+				"@play_count"
+			],
+			"type": "object"
+		},
+		"gameDriveType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@duration": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@end_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@first_downs": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@gain": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@inside_20": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@penalty_yards": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_count": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_drive": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@start_reason": {
+					"$ref": "#/$defs/driveReason"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"event": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/gameEventType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/gameEventType"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"play": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/gamePlayType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/gamePlayType"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"required": [
+				"@id",
+				"@sequence",
+				"@first_downs",
+				"@play_count"
+			],
+			"type": "object"
+		},
+		"gameEventType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@deleted": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:decimal"
+				},
+				"@source": {
+					"$ref": "#/$defs/xs:anySimpleType"
+				},
+				"@type": {
+					"enum": [
+						"setup",
+						"timeout",
+						"comment",
+						"period_end",
+						"game_over"
+					],
+					"type": "string"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@wall_clock": {
+					"$ref": "#/$defs/xs:dateTime"
+				},
+				"alt-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				}
+			},
+			"required": [
+				"@id",
+				"@type",
+				"@sequence"
+			],
+			"type": "object"
+		},
+		"gamePlayDetailsType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@away_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@blitz": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@deleted": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@fake_field_goal": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@fake_punt": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@hash_mark": {
+					"enum": [
+						"Left Hash",
+						"Right Hash",
+						"Middle"
+					],
+					"type": "string"
+				},
+				"@home_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@huddle": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@left_tightends": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@men_in_box": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@pass_route": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@play_action": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@play_clock": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@play_direction": {
+					"enum": [
+						"Left Sideline",
+						"Left",
+						"Middle",
+						"Right",
+						"Right Sideline"
+					],
+					"type": "string"
+				},
+				"@players_rushed": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@pocket_location": {
+					"enum": [
+						"Scramble Left",
+						"Scramble Right",
+						"Boot Left",
+						"Boot Right",
+						"Rollout Left",
+						"Rollout Right",
+						"Middle"
+					],
+					"type": "string"
+				},
+				"@qb_at_snap": {
+					"enum": [
+						"Shotgun",
+						"Under Center",
+						"Pistol"
+					],
+					"type": "string"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@right_tightends": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@run_pass_option": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@running_lane": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_play": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@screen_pass": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:decimal"
+				},
+				"@source": {
+					"$ref": "#/$defs/xs:anySimpleType"
+				},
+				"@type": {
+					"enum": [
+						"pass",
+						"rush",
+						"faircatch_kick",
+						"extra_point",
+						"conversion",
+						"free_kick",
+						"kickoff",
+						"punt",
+						"field_goal",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@wall_clock": {
+					"$ref": "#/$defs/xs:dateTime"
+				},
+				"alt-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"details": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"detail": {
+							"anyOf": [
+								{
+									"$ref": "#/$defs/playDetailsType"
+								},
+								{
+									"items": {
+										"$ref": "#/$defs/playDetailsType"
+									},
+									"minItems": 1,
+									"type": "array"
+								}
+							]
+						}
+					},
+					"required": [
+						"detail"
+					],
+					"type": "object"
+				},
+				"drive-info": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@duration": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@net_yards": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@play_count": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"type": "object"
+				},
+				"end_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"overtime": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@number": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@sequence": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"required": [
+						"@id",
+						"@number",
+						"@sequence"
+					],
+					"type": "object"
+				},
+				"quarter": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@number": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@sequence": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"required": [
+						"@id",
+						"@number",
+						"@sequence"
+					],
+					"type": "object"
+				},
+				"score": {
+					"$ref": "#/$defs/playScoreType"
+				},
+				"scoring-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"start_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"statistics": {
+					"$ref": "#/$defs/extPlayStatisticsType"
+				}
+			},
+			"required": [
+				"@sequence",
+				"@type",
+				"@id"
+			],
+			"type": "object"
+		},
+		"gamePlayType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@away_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@created_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@deleted": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@goaltogo": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@home_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@play_clock": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@scoring_play": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:decimal"
+				},
+				"@source": {
+					"$ref": "#/$defs/xs:anySimpleType"
+				},
+				"@type": {
+					"enum": [
+						"pass",
+						"rush",
+						"faircatch_kick",
+						"extra_point",
+						"conversion",
+						"free_kick",
+						"kickoff",
+						"punt",
+						"field_goal",
+						"penalty"
+					],
+					"type": "string"
+				},
+				"@updated_at": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@wall_clock": {
+					"$ref": "#/$defs/xs:dateTime"
+				},
+				"alt-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"drive-info": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@duration": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@net_yards": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@play_count": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"type": "object"
+				},
+				"end_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"score": {
+					"$ref": "#/$defs/playScoreType"
+				},
+				"scoring-description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"start_situation": {
+					"$ref": "#/$defs/fieldSituationType"
+				},
+				"statistics": {
+					"$ref": "#/$defs/playStatisticsType"
+				}
+			},
+			"required": [
+				"@sequence",
+				"@type",
+				"@id"
+			],
+			"type": "object"
+		},
+		"gameTeamType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alias": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@founded": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@market": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@name": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@remaining_challenges": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@remaining_timeouts": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sr_id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@used_challenges": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@used_timeouts": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"record": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@losses": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@ties": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@wins": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"required": [
+						"@wins",
+						"@losses",
+						"@ties"
+					],
+					"type": "object"
+				}
+			},
+			"type": "object"
+		},
+		"playDetailsType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@category": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@description": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@direction": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@first_touch": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@no_attempt": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@onside": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@reason_missed": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@result": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@sack_split": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@safety": {
+					"$ref": "#/$defs/xs:boolean"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@yards": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"$": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"type": [
+						"object",
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"end_location": {
+					"$ref": "#/$defs/extFieldLocationType"
+				},
+				"penalty": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@description": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@no_play": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@result": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@yards": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"team": {
+							"$ref": "#/$defs/teamType"
+						}
+					},
+					"required": [
+						"team"
+					],
+					"type": "object"
+				},
+				"players": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"player": {
+							"anyOf": [
+								{
+									"additionalProperties": false,
+									"properties": {
+										"#": {
+											"type": "string"
+										},
+										"@id": {
+											"$ref": "#/$defs/xs:string"
+										},
+										"@jersey": {
+											"$ref": "#/$defs/xs:string"
+										},
+										"@name": {
+											"$ref": "#/$defs/xs:string"
+										},
+										"@position": {
+											"enum": [
+												"ATH",
+												"C",
+												"C/G",
+												"CB",
+												"CB/RS",
+												"CB/S",
+												"DB",
+												"DE",
+												"DE/LB",
+												"DL",
+												"DT",
+												"FB",
+												"FB/RB",
+												"FS",
+												"G",
+												"G/C",
+												"G/T",
+												"H/B",
+												"H/B/T",
+												"HB",
+												"ILB",
+												"K",
+												"K/P",
+												"KR",
+												"L",
+												"LB",
+												"LB/DE",
+												"LS",
+												"MLB",
+												"NT",
+												"OG",
+												"OL",
+												"OLB",
+												"OT",
+												"P",
+												"QB",
+												"QB/WR",
+												"RB",
+												"RB/ST",
+												"RB/WR",
+												"RS",
+												"S",
+												"SS",
+												"SAF",
+												"T",
+												"T/G",
+												"TE",
+												"TE/DT",
+												"TE/FB",
+												"TE/LS",
+												"TEW",
+												"WR",
+												"WR/CB",
+												"WR/KR",
+												"WR/PR",
+												"WR/RB",
+												"WR/RS",
+												"DB/LB",
+												"FB/DL",
+												"DE/DT"
+											],
+											"type": "string"
+										},
+										"@reference": {
+											"$ref": "#/$defs/xs:string"
+										},
+										"@role": {
+											"$ref": "#/$defs/xs:string"
+										},
+										"@sr_id": {
+											"$ref": "#/$defs/xs:string"
+										}
+									},
+									"type": "object"
+								},
+								{
+									"items": {
+										"additionalProperties": false,
+										"properties": {
+											"#": {
+												"type": "string"
+											},
+											"@id": {
+												"$ref": "#/$defs/xs:string"
+											},
+											"@jersey": {
+												"$ref": "#/$defs/xs:string"
+											},
+											"@name": {
+												"$ref": "#/$defs/xs:string"
+											},
+											"@position": {
+												"enum": [
+													"ATH",
+													"C",
+													"C/G",
+													"CB",
+													"CB/RS",
+													"CB/S",
+													"DB",
+													"DE",
+													"DE/LB",
+													"DL",
+													"DT",
+													"FB",
+													"FB/RB",
+													"FS",
+													"G",
+													"G/C",
+													"G/T",
+													"H/B",
+													"H/B/T",
+													"HB",
+													"ILB",
+													"K",
+													"K/P",
+													"KR",
+													"L",
+													"LB",
+													"LB/DE",
+													"LS",
+													"MLB",
+													"NT",
+													"OG",
+													"OL",
+													"OLB",
+													"OT",
+													"P",
+													"QB",
+													"QB/WR",
+													"RB",
+													"RB/ST",
+													"RB/WR",
+													"RS",
+													"S",
+													"SS",
+													"SAF",
+													"T",
+													"T/G",
+													"TE",
+													"TE/DT",
+													"TE/FB",
+													"TE/LS",
+													"TEW",
+													"WR",
+													"WR/CB",
+													"WR/KR",
+													"WR/PR",
+													"WR/RB",
+													"WR/RS",
+													"DB/LB",
+													"FB/DL",
+													"DE/DT"
+												],
+												"type": "string"
+											},
+											"@reference": {
+												"$ref": "#/$defs/xs:string"
+											},
+											"@role": {
+												"$ref": "#/$defs/xs:string"
+											},
+											"@sr_id": {
+												"$ref": "#/$defs/xs:string"
+											}
+										},
+										"type": "object"
+									},
+									"type": "array"
+								}
+							]
+						}
+					},
+					"type": "object"
+				},
+				"recovery": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@first_touch": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@type": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"team": {
+							"$ref": "#/$defs/teamType"
+						}
+					},
+					"required": [
+						"team"
+					],
+					"type": "object"
+				},
+				"review": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@result": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@reversed": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@type": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"team": {
+							"$ref": "#/$defs/teamType"
+						}
+					},
+					"type": "object"
+				},
+				"start_location": {
+					"$ref": "#/$defs/extFieldLocationType"
+				}
+			},
+			"type": "object"
+		},
+		"playScoreType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@away_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@clock": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@home_points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@points": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@sequence": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"points-after-play": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@clock": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@deleted": {
+							"$ref": "#/$defs/xs:boolean"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@reference": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@sequence": {
+							"$ref": "#/$defs/xs:decimal"
+						},
+						"@source": {
+							"$ref": "#/$defs/xs:anySimpleType"
+						},
+						"@type": {
+							"enum": [
+								"extra_point",
+								"conversion",
+								"penalty"
+							],
+							"type": "string"
+						},
+						"@wall_clock": {
+							"$ref": "#/$defs/xs:dateTime"
+						}
+					},
+					"required": [
+						"@type",
+						"@id",
+						"@sequence"
+					],
+					"type": "object"
+				}
+			},
+			"required": [
+				"@sequence",
+				"@clock",
+				"@away_points",
+				"@home_points",
+				"@points"
+			],
+			"type": "object"
+		},
+		"playStatisticsType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"block": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.19"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.19"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.20"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.20"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"defense": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.21"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.21"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"defense_conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.22"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.22"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"down_conversion": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.23"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.23"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"extra_point": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.24"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.24"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"field_goal": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.25"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.25"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"first_down": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.26"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.26"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"fumble": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.27"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.27"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"kick": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.28"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.28"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"misc": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.29"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.29"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"pass": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.30"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.30"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"penalty": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.31"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.31"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"punt": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.32"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.32"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"receive": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.33"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.33"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"return": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.34"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.34"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"rush": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.35"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.35"
+							},
+							"type": "array"
+						}
+					]
+				},
+				"timeout": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/..basePlayStatisticType.36"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/..basePlayStatisticType.36"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"type": "object"
+		},
+		"referenceType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@origin": {
+					"$ref": "#/$defs/xs:string"
+				}
+			},
+			"required": [
+				"@id",
+				"@origin"
+			],
+			"type": "object"
+		},
+		"summaryType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"away": {
+					"$ref": "#/$defs/gameTeamType"
+				},
+				"home": {
+					"$ref": "#/$defs/gameTeamType"
+				},
+				"season": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@name": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@type": {
+							"enum": [
+								"PRE",
+								"REG",
+								"PST"
+							],
+							"type": "string"
+						},
+						"@year": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"required": [
+						"@type",
+						"@id",
+						"@year"
+					],
+					"type": "object"
+				},
+				"venue": {
+					"$ref": "#/$defs/venueType"
+				},
+				"week": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@id": {
+							"$ref": "#/$defs/xs:string"
+						},
+						"@sequence": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@title": {
+							"$ref": "#/$defs/xs:string"
+						}
+					},
+					"required": [
+						"@id",
+						"@sequence"
+					],
+					"type": "object"
+				}
+			},
+			"required": [
+				"away",
+				"home",
+				"season",
+				"week"
+			],
+			"type": "object"
+		},
+		"teamColorType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alpha": {
+					"$ref": "#/$defs/xs:float"
+				},
+				"@hex_color": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@type": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"rgb_color": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@blue": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@green": {
+							"$ref": "#/$defs/xs:integer"
+						},
+						"@red": {
+							"$ref": "#/$defs/xs:integer"
+						}
+					},
+					"type": "object"
+				}
+			},
+			"required": [
+				"rgb_color"
+			],
+			"type": "object"
+		},
+		"teamColorsType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"team_color": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/teamColorType"
+						},
+						{
+							"items": {
+								"$ref": "#/$defs/teamColorType"
+							},
+							"type": "array"
+						}
+					]
+				}
+			},
+			"type": "object"
+		},
+		"teamType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@alias": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@founded": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@market": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@name": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@reference": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@sr_id": {
+					"$ref": "#/$defs/xs:string"
+				}
+			},
+			"type": "object"
+		},
+		"venueType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@address": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@capacity": {
+					"$ref": "#/$defs/xs:integer"
+				},
+				"@city": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@country": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@name": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@roof_type": {
+					"enum": [
+						"outdoor",
+						"dome",
+						"retractable_dome"
+					],
+					"type": "string"
+				},
+				"@sr_id": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@state": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@surface": {
+					"enum": [
+						"turf",
+						"artificial"
+					],
+					"type": "string"
+				},
+				"@zip": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"location": {
+					"additionalProperties": false,
+					"properties": {
+						"#": {
+							"type": "string"
+						},
+						"@lat": {
+							"$ref": "#/$defs/xs:float"
+						},
+						"@lng": {
+							"$ref": "#/$defs/xs:float"
+						}
+					},
+					"type": "object"
+				}
+			},
+			"required": [
+				"@id",
+				"@name"
+			],
+			"type": "object"
+		},
+		"weatherType": {
+			"additionalProperties": false,
+			"properties": {
+				"#": {
+					"type": "string"
+				},
+				"@condition": {
+					"$ref": "#/$defs/xs:string"
+				},
+				"@humidity": {
+					"$ref": "#/$defs/xs:byte"
+				},
+				"@temp": {
+					"$ref": "#/$defs/xs:byte"
+				},
+				"wind": {
+					"$ref": "#/$defs/..xs:string.1"
+				}
+			},
+			"required": [
+				"wind"
+			],
+			"type": "object"
+		},
+		"xs:anySimpleType": {
+			"type": [
+				"string",
+				"number",
+				"boolean"
+			]
+		},
+		"xs:boolean": {
+			"type": "boolean"
+		},
+		"xs:byte": {
+			"maximum": 127,
+			"minimum": -128,
+			"type": "integer"
+		},
+		"xs:dateTime": {
+			"type": "string"
+		},
+		"xs:decimal": {
+			"type": "number"
+		},
+		"xs:double": {
+			"type": "number"
+		},
+		"xs:float": {
+			"type": "number"
+		},
+		"xs:integer": {
+			"type": "integer"
+		},
+		"xs:string": {
+			"type": "string"
+		}
+	},
+	"$schema": "http://json-schema.org/schema#",
+	"additionalProperties": false,
+	"description": "JSON Schema generated by XMLSpy v2024 (x64) (http://www.altova.com)",
+	"properties": {
+		"#": {
+			"type": "string"
+		},
+		"@xmlns:xs": {
+			"default": "http://www.w3.org/2001/XMLSchema"
+		},
+		"franchise": {
+			"$ref": "#/$defs/.franchise"
+		},
+		"references": {
+			"$ref": "#/$defs/.references"
+		}
+	},
+	"type": "object"
+}

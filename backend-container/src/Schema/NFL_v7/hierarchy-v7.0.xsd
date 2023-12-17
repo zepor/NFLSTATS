@@ -4,7 +4,7 @@
            targetNamespace="http://feed.elasticstats.com/schema/football/nfl/hierarchy-v7.0.xsd"
            elementFormDefault="qualified" >
 
-  <xs:include schemaLocation="../common-v7.0.xsd" />
+  <xs:include schemaLocation="common-v7.0.xsd" />
 
   <xs:complexType name="leagueType">
     <xs:sequence>
