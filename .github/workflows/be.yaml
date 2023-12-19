@@ -23,7 +23,10 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
       - name: Build and push image to ACR
-        run: az acr build --image be:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f backend-container/Dockerfile.python backend-container/
+        run: |
+          az acr build --image be:${{ github.sha }} --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f backend-container/Dockerfile.python backend-container/
+          az acr build --image be:latest --registry ${{ secrets.AZURE_CONTAINER_REGISTRY }} -g ${{ secrets.ACR_RESOURCE_GROUP }} -f backend-container/Dockerfile.python backend-container/
+
   deploy:
     permissions:
       contents: read
@@ -40,10 +43,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ secrets.CLUSTER_NAME }}
           resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
-      - name: Update Image Tag in Kubernetes Manifest  
-        run: |
-          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/deploy-be.yaml
-          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/svc-be.yaml
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f manifests/deploy-be.yaml
