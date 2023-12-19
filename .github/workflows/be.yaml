@@ -40,9 +40,10 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ secrets.CLUSTER_NAME }}
           resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
-      - name: Update Image Tag in Kubernetes Manifest
+      - name: Update Image Tag in Kubernetes Manifest  
         run: |
-          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' ${{ env.DEPLOYMENT_MANIFEST_PATH }}
+          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/deploy-be.yaml
+          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/svc-be.yaml
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f manifests/deploy-be.yaml

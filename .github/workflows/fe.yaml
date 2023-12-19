@@ -42,7 +42,8 @@ jobs:
           resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
       - name: Update Image Tag in Kubernetes Manifest
         run: |
-          sed -i 's|loveofsports.azurecr.io/fe:latest|loveofsports.azurecr.io/fe:${{ github.sha }}|' ${{ env.DEPLOYMENT_MANIFEST_PATH }}
+          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/deploy-fe.yaml
+          sed -i 's|image: .*|image: myacr.azurecr.io/be:${{ github.sha }}|' manifests/svc-fe.yaml
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f manifests/deploy-fe.yaml
