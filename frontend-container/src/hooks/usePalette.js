@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import * as Constants from "../constants";
-import useTheme from "./useTheme";
+import { useTheme } from "./useTheme";
 
 const usePalette = () => {
   const { theme } = useTheme();
@@ -15,7 +15,7 @@ const usePalette = () => {
       setPalette({
         ...Constants.THEME_PALETTE_LIGHT, // Assuming light theme as base
         primary: teamColors.primary,
-        secondary: teamColors.secondary
+        secondary: teamColors.secondary,
       });
     } else {
       setPalette(Constants.THEME_PALETTE_LIGHT);

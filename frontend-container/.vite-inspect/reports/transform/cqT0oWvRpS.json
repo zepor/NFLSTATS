@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/docs/APICalls.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst Intro = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Introduction</h3>\r\n    <p className=\"text-lg\">\r\n      A common use case for code actions is to make API calls to external\r\n      services. AppStack includes{\" \"}\r\n      <a\r\n        href=\"https://github.com/axios/axios\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Axios\r\n      </a>{\" \"}\r\n      for making XMLHttpRequests from the browser.{\" \"}\r\n      <a\r\n        href=\"https://github.com/ctimmerm/axios-mock-adapter#readme\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Axios Mock Adapter\r\n      </a>{\" \"}\r\n      is also included to mock those requests.{\" \"}\r\n      <a\r\n        href=\"https://github.com/axios/axios\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Learn more\r\n      </a>\r\n      .\r\n    </p>\r\n  </div>\r\n);\r\n\r\nconst Axios = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Axios</h3>\r\n    <p className=\"text-lg\">Performing a GET request:</p>\r\n    <Code>{`axios.get('/api/user?id=12345')\r\n.then(function (response) {\r\n  // handle success\r\n  console.log(response);\r\n})\r\n.catch(function (error) {\r\n  // handle error\r\n  console.log(error);\r\n});`}</Code>\r\n    <p className=\"text-lg\">Performing a POST request:</p>\r\n    <Code>{`axios.post('/api/user', {\r\n  firstName: 'Fred',\r\n  lastName: 'Flintstone'\r\n})\r\n.then(function (response) {\r\n  // handle success\r\n  console.log(response);\r\n})\r\n.catch(function (error) {\r\n  // handle error\r\n  console.log(error);\r\n});`}</Code>\r\n  </div>\r\n);\r\n\r\nconst AxiosMockAdapter = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Axios Mock Adapter</h3>\r\n    <p className=\"text-lg\">\r\n      Axios adapter that allows to easily mock requests.{\" \"}\r\n      <a\r\n        href=\"https://github.com/ctimmerm/axios-mock-adapter#readme\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Learn more\r\n      </a>\r\n      .\r\n    </p>\r\n    <p className=\"text-lg\">Mocking a GET request:</p>\r\n    <Code>{`mock.onGet(\"/api/user\").reply((config) => {\r\n  return [\r\n    200,\r\n    {\r\n      users: [{ id: 12345, firstName: \"Fred\", lastName: \"Flintstone\" }],\r\n    },\r\n  ];\r\n});`}</Code>\r\n    <p className=\"text-lg\">Mocking a POST request:</p>\r\n    <Code>\r\n      {`mock.onPost(\"/api/user\").reply((config) => {\r\n  const { firstName, lastName } = JSON.parse(config.data);\r\n\r\n  if (firstName && lastName) {\r\n    return [200, {\r\n      id: \"12345\",\r\n      firstName: \"Fred\",\r\n      lastName: \"Flintstone\",\r\n    };];\r\n  }\r\n\r\n  return [400, { message: \"Looks like you didn't provide the required data.\" }];\r\n});`}\r\n    </Code>\r\n  </div>\r\n);\r\n\r\nconst APICalls = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"API Calls\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>API Calls</h1>\r\n          <hr className=\"my-4\" />\r\n          <Intro />\r\n          <Axios />\r\n          <AxiosMockAdapter />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default APICalls;\r\n",
+      "start": 1702937440808,
+      "end": 1702937440872,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440872,
+      "end": 1702937440872,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440872,
+      "end": 1702937440872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Col, Container, Row } from \"react-bootstrap\";\nimport Code from \"../../components/Code\";\nconst Intro = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Introduction\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg\", children: [\n    \"A common use case for code actions is to make API calls to external services. AppStack includes\",\n    \" \",\n    /* @__PURE__ */ jsx(\n      \"a\",\n      {\n        href: \"https://github.com/axios/axios\",\n        target: \"_blank\",\n        rel: \"noreferrer noopener\",\n        children: \"Axios\"\n      }\n    ),\n    \" \",\n    \"for making XMLHttpRequests from the browser.\",\n    \" \",\n    /* @__PURE__ */ jsx(\n      \"a\",\n      {\n        href: \"https://github.com/ctimmerm/axios-mock-adapter#readme\",\n        target: \"_blank\",\n        rel: \"noreferrer noopener\",\n        children: \"Axios Mock Adapter\"\n      }\n    ),\n    \" \",\n    \"is also included to mock those requests.\",\n    \" \",\n    /* @__PURE__ */ jsx(\n      \"a\",\n      {\n        href: \"https://github.com/axios/axios\",\n        target: \"_blank\",\n        rel: \"noreferrer noopener\",\n        children: \"Learn more\"\n      }\n    ),\n    \".\"\n  ] })\n] });\nconst Axios = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Axios\" }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"Performing a GET request:\" }),\n  /* @__PURE__ */ jsx(Code, { children: `axios.get('/api/user?id=12345')\n.then(function (response) {\n  // handle success\n  console.log(response);\n})\n.catch(function (error) {\n  // handle error\n  console.log(error);\n});` }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"Performing a POST request:\" }),\n  /* @__PURE__ */ jsx(Code, { children: `axios.post('/api/user', {\n  firstName: 'Fred',\n  lastName: 'Flintstone'\n})\n.then(function (response) {\n  // handle success\n  console.log(response);\n})\n.catch(function (error) {\n  // handle error\n  console.log(error);\n});` })\n] });\nconst AxiosMockAdapter = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Axios Mock Adapter\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg\", children: [\n    \"Axios adapter that allows to easily mock requests.\",\n    \" \",\n    /* @__PURE__ */ jsx(\n      \"a\",\n      {\n        href: \"https://github.com/ctimmerm/axios-mock-adapter#readme\",\n        target: \"_blank\",\n        rel: \"noreferrer noopener\",\n        children: \"Learn more\"\n      }\n    ),\n    \".\"\n  ] }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"Mocking a GET request:\" }),\n  /* @__PURE__ */ jsx(Code, { children: `mock.onGet(\"/api/user\").reply((config) => {\n  return [\n    200,\n    {\n      users: [{ id: 12345, firstName: \"Fred\", lastName: \"Flintstone\" }],\n    },\n  ];\n});` }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"Mocking a POST request:\" }),\n  /* @__PURE__ */ jsx(Code, { children: `mock.onPost(\"/api/user\").reply((config) => {\n  const { firstName, lastName } = JSON.parse(config.data);\n\n  if (firstName && lastName) {\n    return [200, {\n      id: \"12345\",\n      firstName: \"Fred\",\n      lastName: \"Flintstone\",\n    };];\n  }\n\n  return [400, { message: \"Looks like you didn't provide the required data.\" }];\n});` })\n] });\nconst APICalls = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"API Calls\" }),\n  /* @__PURE__ */ jsx(Container, { fluid: true, className: \"p-0\", children: /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsxs(Col, { lg: 10, xl: 8, className: \"col-xxl-7 mx-auto\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { children: \"API Calls\" }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-4\" }),\n    /* @__PURE__ */ jsx(Intro, {}),\n    /* @__PURE__ */ jsx(Axios, {}),\n    /* @__PURE__ */ jsx(AxiosMockAdapter, {})\n  ] }) }) })\n] });\nexport default APICalls;\n",
+      "start": 1702937440872,
+      "end": 1702937440874,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/docs/APICalls.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst Intro = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Introduction</h3>\r\n    <p className=\"text-lg\">\r\n      A common use case for code actions is to make API calls to external\r\n      services. AppStack includes{\" \"}\r\n      <a\r\n        href=\"https://github.com/axios/axios\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Axios\r\n      </a>{\" \"}\r\n      for making XMLHttpRequests from the browser.{\" \"}\r\n      <a\r\n        href=\"https://github.com/ctimmerm/axios-mock-adapter#readme\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Axios Mock Adapter\r\n      </a>{\" \"}\r\n      is also included to mock those requests.{\" \"}\r\n      <a\r\n        href=\"https://github.com/axios/axios\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Learn more\r\n      </a>\r\n      .\r\n    </p>\r\n  </div>\r\n);\r\n\r\nconst Axios = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Axios</h3>\r\n    <p className=\"text-lg\">Performing a GET request:</p>\r\n    <Code>{`axios.get('/api/user?id=12345')\r\n.then(function (response) {\r\n  // handle success\r\n  console.log(response);\r\n})\r\n.catch(function (error) {\r\n  // handle error\r\n  console.log(error);\r\n});`}</Code>\r\n    <p className=\"text-lg\">Performing a POST request:</p>\r\n    <Code>{`axios.post('/api/user', {\r\n  firstName: 'Fred',\r\n  lastName: 'Flintstone'\r\n})\r\n.then(function (response) {\r\n  // handle success\r\n  console.log(response);\r\n})\r\n.catch(function (error) {\r\n  // handle error\r\n  console.log(error);\r\n});`}</Code>\r\n  </div>\r\n);\r\n\r\nconst AxiosMockAdapter = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Axios Mock Adapter</h3>\r\n    <p className=\"text-lg\">\r\n      Axios adapter that allows to easily mock requests.{\" \"}\r\n      <a\r\n        href=\"https://github.com/ctimmerm/axios-mock-adapter#readme\"\r\n        target=\"_blank\"\r\n        rel=\"noreferrer noopener\"\r\n      >\r\n        Learn more\r\n      </a>\r\n      .\r\n    </p>\r\n    <p className=\"text-lg\">Mocking a GET request:</p>\r\n    <Code>{`mock.onGet(\"/api/user\").reply((config) => {\r\n  return [\r\n    200,\r\n    {\r\n      users: [{ id: 12345, firstName: \"Fred\", lastName: \"Flintstone\" }],\r\n    },\r\n  ];\r\n});`}</Code>\r\n    <p className=\"text-lg\">Mocking a POST request:</p>\r\n    <Code>\r\n      {`mock.onPost(\"/api/user\").reply((config) => {\r\n  const { firstName, lastName } = JSON.parse(config.data);\r\n\r\n  if (firstName && lastName) {\r\n    return [200, {\r\n      id: \"12345\",\r\n      firstName: \"Fred\",\r\n      lastName: \"Flintstone\",\r\n    };];\r\n  }\r\n\r\n  return [400, { message: \"Looks like you didn't provide the required data.\" }];\r\n});`}\r\n    </Code>\r\n  </div>\r\n);\r\n\r\nconst APICalls = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"API Calls\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>API Calls</h1>\r\n          <hr className=\"my-4\" />\r\n          <Intro />\r\n          <Axios />\r\n          <AxiosMockAdapter />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default APICalls;\r\n"
+        ],
+        "mappings": "AAQI,cACA,YADA;AARJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,KAAK,WAAW,WAAW;AAEpC,OAAO,UAAU;AAEjB,MAAM,QAAQ,MACZ,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,0BAAY;AAAA,EAChB,qBAAC,OAAE,WAAU,WAAU;AAAA;AAAA,IAEO;AAAA,IAC5B;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,QAAO;AAAA,QACP,KAAI;AAAA,QACL;AAAA;AAAA,IAED;AAAA,IAAK;AAAA,IAAI;AAAA,IACoC;AAAA,IAC7C;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,QAAO;AAAA,QACP,KAAI;AAAA,QACL;AAAA;AAAA,IAED;AAAA,IAAK;AAAA,IAAI;AAAA,IACgC;AAAA,IACzC;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,QAAO;AAAA,QACP,KAAI;AAAA,QACL;AAAA;AAAA,IAED;AAAA,IAAI;AAAA,KAEN;AAAA,GACF;AAGF,MAAM,QAAQ,MACZ,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,mBAAK;AAAA,EACT,oBAAC,OAAE,WAAU,WAAU,uCAAyB;AAAA,EAChD,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAQN;AAAA,EACD,oBAAC,OAAE,WAAU,WAAU,wCAA0B;AAAA,EACjD,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAWN;AAAA,GACH;AAGF,MAAM,mBAAmB,MACvB,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,gCAAkB;AAAA,EACtB,qBAAC,OAAE,WAAU,WAAU;AAAA;AAAA,IAC8B;AAAA,IACnD;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,QAAO;AAAA,QACP,KAAI;AAAA,QACL;AAAA;AAAA,IAED;AAAA,IAAI;AAAA,KAEN;AAAA,EACA,oBAAC,OAAE,WAAU,WAAU,oCAAsB;AAAA,EAC7C,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAON;AAAA,EACD,oBAAC,OAAE,WAAU,WAAU,qCAAuB;AAAA,EAC9C,oBAAC,QACE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAaH;AAAA,GACF;AAGF,MAAM,WAAW,MACf,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,aAAY;AAAA,EAC1B,oBAAC,aAAU,OAAK,MAAC,WAAU,OACzB,8BAAC,OACC,+BAAC,OAAI,IAAI,IAAI,IAAI,GAAG,WAAU,qBAC5B;AAAA,wBAAC,QAAG,uBAAS;AAAA,IACb,oBAAC,QAAG,WAAU,QAAO;AAAA,IACrB,oBAAC,SAAM;AAAA,IACP,oBAAC,SAAM;AAAA,IACP,oBAAC,oBAAiB;AAAA,KACpB,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    }
+  ]
+}

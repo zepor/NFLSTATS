@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/kumir.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = kumir\nkumir.displayName = 'kumir'\nkumir.aliases = ['kum']\nfunction kumir(Prism) {\n  /* eslint-disable regexp/no-dupe-characters-character-class */\n  ;(function (Prism) {\n    /**\n     * Regular expression for characters that are not allowed in identifiers.\n     *\n     * @type {string}\n     */\n    var nonId = /\\s\\x00-\\x1f\\x22-\\x2f\\x3a-\\x3f\\x5b-\\x5e\\x60\\x7b-\\x7e/.source\n    /**\n     * Surround a regular expression for IDs with patterns for non-ID sequences.\n     *\n     * @param {string} pattern A regular expression for identifiers.\n     * @param {string} [flags] The regular expression flags.\n     * @returns {RegExp} A wrapped regular expression for identifiers.\n     */\n    function wrapId(pattern, flags) {\n      return RegExp(pattern.replace(/<nonId>/g, nonId), flags)\n    }\n    Prism.languages.kumir = {\n      comment: {\n        pattern: /\\|.*/\n      },\n      prolog: {\n        pattern: /#.*/,\n        greedy: true\n      },\n      string: {\n        pattern: /\"[^\\n\\r\"]*\"|'[^\\n\\r']*'/,\n        greedy: true\n      },\n      boolean: {\n        pattern: wrapId(/(^|[<nonId>])(?:да|нет)(?=[<nonId>]|$)/.source),\n        lookbehind: true\n      },\n      'operator-word': {\n        pattern: wrapId(/(^|[<nonId>])(?:и|или|не)(?=[<nonId>]|$)/.source),\n        lookbehind: true,\n        alias: 'keyword'\n      },\n      'system-variable': {\n        pattern: wrapId(/(^|[<nonId>])знач(?=[<nonId>]|$)/.source),\n        lookbehind: true,\n        alias: 'keyword'\n      },\n      type: [\n        {\n          pattern: wrapId(\n            /(^|[<nonId>])(?:вещ|лит|лог|сим|цел)(?:\\x20*таб)?(?=[<nonId>]|$)/\n              .source\n          ),\n          lookbehind: true,\n          alias: 'builtin'\n        },\n        {\n          pattern: wrapId(\n            /(^|[<nonId>])(?:компл|сканкод|файл|цвет)(?=[<nonId>]|$)/.source\n          ),\n          lookbehind: true,\n          alias: 'important'\n        }\n      ],\n      /**\n       * Should be performed after searching for type names because of \"таб\".\n       * \"таб\" is a reserved word, but never used without a preceding type name.\n       * \"НАЗНАЧИТЬ\", \"Фввод\", and \"Фвывод\" are not reserved words.\n       */\n      keyword: {\n        pattern: wrapId(\n          /(^|[<nonId>])(?:алг|арг(?:\\x20*рез)?|ввод|ВКЛЮЧИТЬ|вс[её]|выбор|вывод|выход|дано|для|до|дс|если|иначе|исп|использовать|кон(?:(?:\\x20+|_)исп)?|кц(?:(?:\\x20+|_)при)?|надо|нач|нс|нц|от|пауза|пока|при|раза?|рез|стоп|таб|то|утв|шаг)(?=[<nonId>]|$)/\n            .source\n        ),\n        lookbehind: true\n      },\n      /** Should be performed after searching for reserved words. */\n      name: {\n        // eslint-disable-next-line regexp/no-super-linear-backtracking\n        pattern: wrapId(\n          /(^|[<nonId>])[^\\d<nonId>][^<nonId>]*(?:\\x20+[^<nonId>]+)*(?=[<nonId>]|$)/\n            .source\n        ),\n        lookbehind: true\n      },\n      /** Should be performed after searching for names. */\n      number: {\n        pattern: wrapId(\n          /(^|[<nonId>])(?:\\B\\$[\\da-f]+\\b|(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:e[+-]?\\d+)?)(?=[<nonId>]|$)/\n            .source,\n          'i'\n        ),\n        lookbehind: true\n      },\n      /** Should be performed after searching for words. */\n      punctuation: /:=|[(),:;\\[\\]]/,\n      /**\n       * Should be performed after searching for\n       * - numeric constants (because of \"+\" and \"-\");\n       * - punctuation marks (because of \":=\" and \"=\").\n       */\n      'operator-char': {\n        pattern: /\\*\\*?|<[=>]?|>=?|[-+/=]/,\n        alias: 'operator'\n      }\n    }\n    Prism.languages.kum = Prism.languages.kumir\n  })(Prism)\n}\n",
+      "start": 1702937444942,
+      "end": 1702937444966,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar kumir_1;\nvar hasRequiredKumir;\n\nfunction requireKumir () {\n\tif (hasRequiredKumir) return kumir_1;\n\thasRequiredKumir = 1;\n\t'use strict'\n\n\tkumir_1 = kumir\n\tkumir.displayName = 'kumir'\n\tkumir.aliases = ['kum']\n\tfunction kumir(Prism) {\n\t  /* eslint-disable regexp/no-dupe-characters-character-class */\n\t  ;(function (Prism) {\n\t    /**\n\t     * Regular expression for characters that are not allowed in identifiers.\n\t     *\n\t     * @type {string}\n\t     */\n\t    var nonId = /\\s\\x00-\\x1f\\x22-\\x2f\\x3a-\\x3f\\x5b-\\x5e\\x60\\x7b-\\x7e/.source\n\t    /**\n\t     * Surround a regular expression for IDs with patterns for non-ID sequences.\n\t     *\n\t     * @param {string} pattern A regular expression for identifiers.\n\t     * @param {string} [flags] The regular expression flags.\n\t     * @returns {RegExp} A wrapped regular expression for identifiers.\n\t     */\n\t    function wrapId(pattern, flags) {\n\t      return RegExp(pattern.replace(/<nonId>/g, nonId), flags)\n\t    }\n\t    Prism.languages.kumir = {\n\t      comment: {\n\t        pattern: /\\|.*/\n\t      },\n\t      prolog: {\n\t        pattern: /#.*/,\n\t        greedy: true\n\t      },\n\t      string: {\n\t        pattern: /\"[^\\n\\r\"]*\"|'[^\\n\\r']*'/,\n\t        greedy: true\n\t      },\n\t      boolean: {\n\t        pattern: wrapId(/(^|[<nonId>])(?:да|нет)(?=[<nonId>]|$)/.source),\n\t        lookbehind: true\n\t      },\n\t      'operator-word': {\n\t        pattern: wrapId(/(^|[<nonId>])(?:и|или|не)(?=[<nonId>]|$)/.source),\n\t        lookbehind: true,\n\t        alias: 'keyword'\n\t      },\n\t      'system-variable': {\n\t        pattern: wrapId(/(^|[<nonId>])знач(?=[<nonId>]|$)/.source),\n\t        lookbehind: true,\n\t        alias: 'keyword'\n\t      },\n\t      type: [\n\t        {\n\t          pattern: wrapId(\n\t            /(^|[<nonId>])(?:вещ|лит|лог|сим|цел)(?:\\x20*таб)?(?=[<nonId>]|$)/\n\t              .source\n\t          ),\n\t          lookbehind: true,\n\t          alias: 'builtin'\n\t        },\n\t        {\n\t          pattern: wrapId(\n\t            /(^|[<nonId>])(?:компл|сканкод|файл|цвет)(?=[<nonId>]|$)/.source\n\t          ),\n\t          lookbehind: true,\n\t          alias: 'important'\n\t        }\n\t      ],\n\t      /**\n\t       * Should be performed after searching for type names because of \"таб\".\n\t       * \"таб\" is a reserved word, but never used without a preceding type name.\n\t       * \"НАЗНАЧИТЬ\", \"Фввод\", and \"Фвывод\" are not reserved words.\n\t       */\n\t      keyword: {\n\t        pattern: wrapId(\n\t          /(^|[<nonId>])(?:алг|арг(?:\\x20*рез)?|ввод|ВКЛЮЧИТЬ|вс[её]|выбор|вывод|выход|дано|для|до|дс|если|иначе|исп|использовать|кон(?:(?:\\x20+|_)исп)?|кц(?:(?:\\x20+|_)при)?|надо|нач|нс|нц|от|пауза|пока|при|раза?|рез|стоп|таб|то|утв|шаг)(?=[<nonId>]|$)/\n\t            .source\n\t        ),\n\t        lookbehind: true\n\t      },\n\t      /** Should be performed after searching for reserved words. */\n\t      name: {\n\t        // eslint-disable-next-line regexp/no-super-linear-backtracking\n\t        pattern: wrapId(\n\t          /(^|[<nonId>])[^\\d<nonId>][^<nonId>]*(?:\\x20+[^<nonId>]+)*(?=[<nonId>]|$)/\n\t            .source\n\t        ),\n\t        lookbehind: true\n\t      },\n\t      /** Should be performed after searching for names. */\n\t      number: {\n\t        pattern: wrapId(\n\t          /(^|[<nonId>])(?:\\B\\$[\\da-f]+\\b|(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:e[+-]?\\d+)?)(?=[<nonId>]|$)/\n\t            .source,\n\t          'i'\n\t        ),\n\t        lookbehind: true\n\t      },\n\t      /** Should be performed after searching for words. */\n\t      punctuation: /:=|[(),:;\\[\\]]/,\n\t      /**\n\t       * Should be performed after searching for\n\t       * - numeric constants (because of \"+\" and \"-\");\n\t       * - punctuation marks (because of \":=\" and \"=\").\n\t       */\n\t      'operator-char': {\n\t        pattern: /\\*\\*?|<[=>]?|>=?|[-+/=]/,\n\t        alias: 'operator'\n\t      }\n\t    }\n\t    Prism.languages.kum = Prism.languages.kumir\n\t  })(Prism)\n\t}\n\treturn kumir_1;\n}\n\nexport { requireKumir as __require };",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444967,
+      "end": 1702937444967,
+      "order": "normal"
+    }
+  ]
+}

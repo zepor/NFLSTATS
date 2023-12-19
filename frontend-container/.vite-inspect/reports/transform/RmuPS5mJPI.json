@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/invariant/browser.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n'use strict';\n\n/**\n * Use invariant() to assert state which your program assumes to be true.\n *\n * Provide sprintf-style format (only %s is supported) and arguments\n * to provide information about what broke and what you were\n * expecting.\n *\n * The invariant message will be stripped in production, but the invariant\n * will remain to ensure logic does not differ in production.\n */\n\nvar invariant = function(condition, format, a, b, c, d, e, f) {\n  if (process.env.NODE_ENV !== 'production') {\n    if (format === undefined) {\n      throw new Error('invariant requires an error message argument');\n    }\n  }\n\n  if (!condition) {\n    var error;\n    if (format === undefined) {\n      error = new Error(\n        'Minified exception occurred; use the non-minified dev environment ' +\n        'for the full error message and additional helpful warnings.'\n      );\n    } else {\n      var args = [a, b, c, d, e, f];\n      var argIndex = 0;\n      error = new Error(\n        format.replace(/%s/g, function() { return args[argIndex++]; })\n      );\n      error.name = 'Invariant Violation';\n    }\n\n    error.framesToPop = 1; // we don't care about invariant's own frame\n    throw error;\n  }\n};\n\nmodule.exports = invariant;\n",
+      "start": 1702937436251,
+      "end": 1702937436388,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436388,
+      "end": 1702937436388,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436388,
+      "end": 1702937436388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937436388,
+      "end": 1702937436388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436388,
+      "end": 1702937436388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436389,
+      "end": 1702937436389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use strict\";\nvar invariant = function(condition, format, a, b, c, d, e, f) {\n  if (false) {\n    if (format === void 0) {\n      throw new Error(\"invariant requires an error message argument\");\n    }\n  }\n  if (!condition) {\n    var error;\n    if (format === void 0) {\n      error = new Error(\n        \"Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.\"\n      );\n    } else {\n      var args = [a, b, c, d, e, f];\n      var argIndex = 0;\n      error = new Error(\n        format.replace(/%s/g, function() {\n          return args[argIndex++];\n        })\n      );\n      error.name = \"Invariant Violation\";\n    }\n    error.framesToPop = 1;\n    throw error;\n  }\n};\nmodule.exports = invariant;\n",
+      "start": 1702937436389,
+      "end": 1702937436477,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n\"use strict\";\nvar invariant = function(condition, format, a, b, c, d, e, f) {\n  if (false) {\n    if (format === void 0) {\n      throw new Error(\"invariant requires an error message argument\");\n    }\n  }\n  if (!condition) {\n    var error;\n    if (format === void 0) {\n      error = new Error(\n        \"Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.\"\n      );\n    } else {\n      var args = [a, b, c, d, e, f];\n      var argIndex = 0;\n      error = new Error(\n        format.replace(/%s/g, function() {\n          return args[argIndex++];\n        })\n      );\n      error.name = \"Invariant Violation\";\n    }\n    error.framesToPop = 1;\n    throw error;\n  }\n};\nvar browser = invariant;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(browser);\nexport { browser as __moduleExports };",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY,CAAC;AACb,IAAI,SAAS,GAAG,SAAS,SAAS,EAAE,MAAM,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AAC9D,EAAE,IAAI,KAAK;AACX;AACA;AACA;AACA,GAAG;AACH,EAAE,IAAI,CAAC,SAAS,EAAE;AAClB,IAAI,IAAI,KAAK,CAAC;AACd,IAAI,IAAI,MAAM,KAAK,KAAK,CAAC,EAAE;AAC3B,MAAM,KAAK,GAAG,IAAI,KAAK;AACvB,QAAQ,+HAA+H;AACvI,OAAO,CAAC;AACR,KAAK,MAAM;AACX,MAAM,IAAI,IAAI,GAAG,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC;AACpC,MAAM,IAAI,QAAQ,GAAG,CAAC,CAAC;AACvB,MAAM,KAAK,GAAG,IAAI,KAAK;AACvB,QAAQ,MAAM,CAAC,OAAO,CAAC,KAAK,EAAE,WAAW;AACzC,UAAU,OAAO,IAAI,CAAC,QAAQ,EAAE,CAAC,CAAC;AAClC,SAAS,CAAC;AACV,OAAO,CAAC;AACR,MAAM,KAAK,CAAC,IAAI,GAAG,qBAAqB,CAAC;AACzC,KAAK;AACL,IAAI,KAAK,CAAC,WAAW,GAAG,CAAC,CAAC;AAC1B,IAAI,MAAM,KAAK,CAAC;AAChB,GAAG;AACH,CAAC,CAAC;IACF,OAAc,GAAG,SAAS"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436477,
+      "end": 1702937436477,
+      "order": "normal"
+    }
+  ]
+}

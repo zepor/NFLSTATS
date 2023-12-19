@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@restart/ui/esm/Button.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const _excluded = [\"as\", \"disabled\"];\nfunction _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }\nimport * as React from 'react';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nexport function isTrivialHref(href) {\n  return !href || href.trim() === '#';\n}\nexport function useButtonProps({\n  tagName,\n  disabled,\n  href,\n  target,\n  rel,\n  role,\n  onClick,\n  tabIndex = 0,\n  type\n}) {\n  if (!tagName) {\n    if (href != null || target != null || rel != null) {\n      tagName = 'a';\n    } else {\n      tagName = 'button';\n    }\n  }\n  const meta = {\n    tagName\n  };\n  if (tagName === 'button') {\n    return [{\n      type: type || 'button',\n      disabled\n    }, meta];\n  }\n  const handleClick = event => {\n    if (disabled || tagName === 'a' && isTrivialHref(href)) {\n      event.preventDefault();\n    }\n    if (disabled) {\n      event.stopPropagation();\n      return;\n    }\n    onClick == null ? void 0 : onClick(event);\n  };\n  const handleKeyDown = event => {\n    if (event.key === ' ') {\n      event.preventDefault();\n      handleClick(event);\n    }\n  };\n  if (tagName === 'a') {\n    // Ensure there's a href so Enter can trigger anchor button.\n    href || (href = '#');\n    if (disabled) {\n      href = undefined;\n    }\n  }\n  return [{\n    role: role != null ? role : 'button',\n    // explicitly undefined so that it overrides the props disabled in a spread\n    // e.g. <Tag {...props} {...hookProps} />\n    disabled: undefined,\n    tabIndex: disabled ? undefined : tabIndex,\n    href,\n    target: tagName === 'a' ? target : undefined,\n    'aria-disabled': !disabled ? undefined : disabled,\n    rel: tagName === 'a' ? rel : undefined,\n    onClick: handleClick,\n    onKeyDown: handleKeyDown\n  }, meta];\n}\nconst Button = /*#__PURE__*/React.forwardRef((_ref, ref) => {\n  let {\n      as: asProp,\n      disabled\n    } = _ref,\n    props = _objectWithoutPropertiesLoose(_ref, _excluded);\n  const [buttonProps, {\n    tagName: Component\n  }] = useButtonProps(Object.assign({\n    tagName: asProp,\n    disabled\n  }, props));\n  return /*#__PURE__*/_jsx(Component, Object.assign({}, props, buttonProps, {\n    ref: ref\n  }));\n});\nButton.displayName = 'Button';\nexport default Button;",
+      "start": 1702937441955,
+      "end": 1702937442025,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442025,
+      "end": 1702937442025,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_isIndex.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** Used as references for various `Number` constants. */\nvar MAX_SAFE_INTEGER = 9007199254740991;\n\n/** Used to detect unsigned integer values. */\nvar reIsUint = /^(?:0|[1-9]\\d*)$/;\n\n/**\n * Checks if `value` is a valid array-like index.\n *\n * @private\n * @param {*} value The value to check.\n * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.\n * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.\n */\nfunction isIndex(value, length) {\n  var type = typeof value;\n  length = length == null ? MAX_SAFE_INTEGER : length;\n\n  return !!length &&\n    (type == 'number' ||\n      (type != 'symbol' && reIsUint.test(value))) &&\n        (value > -1 && value % 1 == 0 && value < length);\n}\n\nexport default isIndex;\n",
+      "start": 1702937445189,
+      "end": 1702937445289,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445289,
+      "end": 1702937445289,
+      "order": "normal"
+    }
+  ]
+}

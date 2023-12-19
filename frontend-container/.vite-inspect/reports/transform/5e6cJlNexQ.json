@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_memoizeCapped.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import memoize from './memoize.js';\n\n/** Used as the maximum memoize cache size. */\nvar MAX_MEMOIZE_SIZE = 500;\n\n/**\n * A specialized version of `_.memoize` which clears the memoized function's\n * cache when it exceeds `MAX_MEMOIZE_SIZE`.\n *\n * @private\n * @param {Function} func The function to have its output memoized.\n * @returns {Function} Returns the new memoized function.\n */\nfunction memoizeCapped(func) {\n  var result = memoize(func, function(key) {\n    if (cache.size === MAX_MEMOIZE_SIZE) {\n      cache.clear();\n    }\n    return key;\n  });\n\n  var cache = result.cache;\n  return result;\n}\n\nexport default memoizeCapped;\n",
+      "start": 1702937444064,
+      "end": 1702937444080,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444080,
+      "end": 1702937444080,
+      "order": "normal"
+    }
+  ]
+}

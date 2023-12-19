@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/contexts/CognitoProvider.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useCallback, useEffect, useReducer } from \"react\";\r\nimport {\r\n  AuthenticationDetails,\r\n  CognitoUser,\r\n  CognitoUserAttribute,\r\n  CognitoUserPool,\r\n} from \"amazon-cognito-identity-js\";\r\nimport axios from \"../utils/axios\";\r\nimport { cognitoConfig } from \"../config\";\r\nimport AuthContext from \"./CognitoContext\";\r\n\r\nconst INITIALIZE = \"INITIALIZE\";\r\nconst SIGN_OUT = \"SIGN_OUT\";\r\n\r\nconst UserPool = new CognitoUserPool({\r\n  UserPoolId: cognitoConfig.userPoolId || \"\",\r\n  ClientId: cognitoConfig.clientId || \"\",\r\n});\r\n\r\nconst initialState = {\r\n  isAuthenticated: false,\r\n  isInitialized: false,\r\n  user: null,\r\n};\r\n\r\nconst reducer = (state, action) => {\r\n  switch (action.type) {\r\n    case INITIALIZE:\r\n      return {\r\n        ...state,\r\n        isAuthenticated: action.payload.isAuthenticated,\r\n        isInitialized: true,\r\n        user: action.payload.user,\r\n      };\r\n    case SIGN_OUT:\r\n      return {\r\n        ...state,\r\n        isAuthenticated: false,\r\n        user: null,\r\n      };\r\n    default:\r\n      return state;\r\n  }\r\n};\r\n\r\nfunction AuthProvider({ children }) {\r\n  const [state, dispatch] = useReducer(reducer, initialState);\r\n\r\n  const getUserAttributes = useCallback(\r\n    (currentUser) =>\r\n      new Promise((resolve, reject) => {\r\n        currentUser.getUserAttributes((err, attributes) => {\r\n          if (err) {\r\n            reject(err);\r\n          } else {\r\n            const results = {};\r\n            for (const attribute of attributes) {\r\n              results[attribute.Name] = attribute.Value;\r\n            }\r\n            resolve(results);\r\n          }\r\n        });\r\n      }),\r\n    [],\r\n  );\r\n\r\n  const getSession = useCallback(\r\n    () =>\r\n      new Promise((resolve, reject) => {\r\n        const user = UserPool.getCurrentUser();\r\n        if (user) {\r\n          user.getSession(async (err, session) => {\r\n            if (err) {\r\n              reject(err);\r\n            } else {\r\n              const attributes = await getUserAttributes(user);\r\n              const token = session.getIdToken().getJwtToken();\r\n              axios.defaults.headers.common.Authorization = token;\r\n              dispatch({\r\n                type: INITIALIZE,\r\n                payload: { isAuthenticated: true, user: attributes },\r\n              });\r\n              resolve({ user, session, headers: { Authorization: token } });\r\n            }\r\n          });\r\n        } else {\r\n          dispatch({\r\n            type: INITIALIZE,\r\n            payload: { isAuthenticated: false, user: null },\r\n          });\r\n        }\r\n      }),\r\n    [getUserAttributes],\r\n  );\r\n\r\n  useEffect(() => {\r\n    getSession();\r\n  }, [getSession]);\r\n\r\n  const signIn = useCallback(\r\n    (email, password) =>\r\n      new Promise((resolve, reject) => {\r\n        const user = new CognitoUser({ Username: email, Pool: UserPool });\r\n        const authDetails = new AuthenticationDetails({\r\n          Username: email,\r\n          Password: password,\r\n        });\r\n\r\n        user.authenticateUser(authDetails, {\r\n          onSuccess: (data) => {\r\n            getSession().then(() => resolve(data));\r\n          },\r\n          onFailure: (err) => {\r\n            reject(err);\r\n          },\r\n          newPasswordRequired: () => {\r\n            resolve({ message: \"New password required\" });\r\n          },\r\n        });\r\n      }),\r\n    [getSession],\r\n  );\r\n\r\n  const signOut = useCallback(() => {\r\n    const user = UserPool.getCurrentUser();\r\n    if (user) {\r\n      user.signOut();\r\n      dispatch({ type: SIGN_OUT });\r\n    }\r\n  }, []);\r\n\r\n  const signUp = useCallback(\r\n    (email, password, firstName, lastName) =>\r\n      new Promise((resolve, reject) => {\r\n        UserPool.signUp(\r\n          email,\r\n          password,\r\n          [\r\n            new CognitoUserAttribute({ Name: \"email\", Value: email }),\r\n            new CognitoUserAttribute({\r\n              Name: \"name\",\r\n              Value: `${firstName} ${lastName}`,\r\n            }),\r\n          ],\r\n          null,\r\n          (err) => {\r\n            if (err) {\r\n              reject(err);\r\n              return;\r\n            }\r\n            resolve();\r\n          },\r\n        );\r\n      }),\r\n    [],\r\n  );\r\n\r\n  const resetPassword = useCallback((email) => {\r\n    console.log(email);\r\n    // Add password reset logic here\r\n  }, []);\r\n\r\n  return (\r\n    <AuthContext.Provider\r\n      value={{\r\n        ...state,\r\n        method: \"cognito\",\r\n        user: {\r\n          displayName: state.user?.name || \"Undefined\",\r\n          role: \"user\",\r\n        },\r\n        signIn,\r\n        signUp,\r\n        signOut,\r\n        resetPassword,\r\n      }}\r\n    >\r\n      {children}\r\n    </AuthContext.Provider>\r\n  );\r\n}\r\n\r\nexport default AuthProvider;\r\n",
+      "start": 1702937435960,
+      "end": 1702937436070,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436070,
+      "end": 1702937436070,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436070,
+      "end": 1702937436070,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport { useCallback, useEffect, useReducer } from \"react\";\nimport {\n  AuthenticationDetails,\n  CognitoUser,\n  CognitoUserAttribute,\n  CognitoUserPool\n} from \"amazon-cognito-identity-js\";\nimport axios from \"../utils/axios\";\nimport { cognitoConfig } from \"../config\";\nimport AuthContext from \"./CognitoContext\";\nconst INITIALIZE = \"INITIALIZE\";\nconst SIGN_OUT = \"SIGN_OUT\";\nconst UserPool = new CognitoUserPool({\n  UserPoolId: cognitoConfig.userPoolId || \"\",\n  ClientId: cognitoConfig.clientId || \"\"\n});\nconst initialState = {\n  isAuthenticated: false,\n  isInitialized: false,\n  user: null\n};\nconst reducer = (state, action) => {\n  switch (action.type) {\n    case INITIALIZE:\n      return {\n        ...state,\n        isAuthenticated: action.payload.isAuthenticated,\n        isInitialized: true,\n        user: action.payload.user\n      };\n    case SIGN_OUT:\n      return {\n        ...state,\n        isAuthenticated: false,\n        user: null\n      };\n    default:\n      return state;\n  }\n};\nfunction AuthProvider({ children }) {\n  const [state, dispatch] = useReducer(reducer, initialState);\n  const getUserAttributes = useCallback(\n    (currentUser) => new Promise((resolve, reject) => {\n      currentUser.getUserAttributes((err, attributes) => {\n        if (err) {\n          reject(err);\n        } else {\n          const results = {};\n          for (const attribute of attributes) {\n            results[attribute.Name] = attribute.Value;\n          }\n          resolve(results);\n        }\n      });\n    }),\n    []\n  );\n  const getSession = useCallback(\n    () => new Promise((resolve, reject) => {\n      const user = UserPool.getCurrentUser();\n      if (user) {\n        user.getSession(async (err, session) => {\n          if (err) {\n            reject(err);\n          } else {\n            const attributes = await getUserAttributes(user);\n            const token = session.getIdToken().getJwtToken();\n            axios.defaults.headers.common.Authorization = token;\n            dispatch({\n              type: INITIALIZE,\n              payload: { isAuthenticated: true, user: attributes }\n            });\n            resolve({ user, session, headers: { Authorization: token } });\n          }\n        });\n      } else {\n        dispatch({\n          type: INITIALIZE,\n          payload: { isAuthenticated: false, user: null }\n        });\n      }\n    }),\n    [getUserAttributes]\n  );\n  useEffect(() => {\n    getSession();\n  }, [getSession]);\n  const signIn = useCallback(\n    (email, password) => new Promise((resolve, reject) => {\n      const user = new CognitoUser({ Username: email, Pool: UserPool });\n      const authDetails = new AuthenticationDetails({\n        Username: email,\n        Password: password\n      });\n      user.authenticateUser(authDetails, {\n        onSuccess: (data) => {\n          getSession().then(() => resolve(data));\n        },\n        onFailure: (err) => {\n          reject(err);\n        },\n        newPasswordRequired: () => {\n          resolve({ message: \"New password required\" });\n        }\n      });\n    }),\n    [getSession]\n  );\n  const signOut = useCallback(() => {\n    const user = UserPool.getCurrentUser();\n    if (user) {\n      user.signOut();\n      dispatch({ type: SIGN_OUT });\n    }\n  }, []);\n  const signUp = useCallback(\n    (email, password, firstName, lastName) => new Promise((resolve, reject) => {\n      UserPool.signUp(\n        email,\n        password,\n        [\n          new CognitoUserAttribute({ Name: \"email\", Value: email }),\n          new CognitoUserAttribute({\n            Name: \"name\",\n            Value: `${firstName} ${lastName}`\n          })\n        ],\n        null,\n        (err) => {\n          if (err) {\n            reject(err);\n            return;\n          }\n          resolve();\n        }\n      );\n    }),\n    []\n  );\n  const resetPassword = useCallback((email) => {\n    console.log(email);\n  }, []);\n  return /* @__PURE__ */ jsx(\n    AuthContext.Provider,\n    {\n      value: {\n        ...state,\n        method: \"cognito\",\n        user: {\n          displayName: state.user?.name || \"Undefined\",\n          role: \"user\"\n        },\n        signIn,\n        signUp,\n        signOut,\n        resetPassword\n      },\n      children\n    }\n  );\n}\nexport default AuthProvider;\n",
+      "start": 1702937436070,
+      "end": 1702937436195,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/contexts/CognitoProvider.jsx"
+        ],
+        "sourcesContent": [
+          "import { useCallback, useEffect, useReducer } from \"react\";\r\nimport {\r\n  AuthenticationDetails,\r\n  CognitoUser,\r\n  CognitoUserAttribute,\r\n  CognitoUserPool,\r\n} from \"amazon-cognito-identity-js\";\r\nimport axios from \"../utils/axios\";\r\nimport { cognitoConfig } from \"../config\";\r\nimport AuthContext from \"./CognitoContext\";\r\n\r\nconst INITIALIZE = \"INITIALIZE\";\r\nconst SIGN_OUT = \"SIGN_OUT\";\r\n\r\nconst UserPool = new CognitoUserPool({\r\n  UserPoolId: cognitoConfig.userPoolId || \"\",\r\n  ClientId: cognitoConfig.clientId || \"\",\r\n});\r\n\r\nconst initialState = {\r\n  isAuthenticated: false,\r\n  isInitialized: false,\r\n  user: null,\r\n};\r\n\r\nconst reducer = (state, action) => {\r\n  switch (action.type) {\r\n    case INITIALIZE:\r\n      return {\r\n        ...state,\r\n        isAuthenticated: action.payload.isAuthenticated,\r\n        isInitialized: true,\r\n        user: action.payload.user,\r\n      };\r\n    case SIGN_OUT:\r\n      return {\r\n        ...state,\r\n        isAuthenticated: false,\r\n        user: null,\r\n      };\r\n    default:\r\n      return state;\r\n  }\r\n};\r\n\r\nfunction AuthProvider({ children }) {\r\n  const [state, dispatch] = useReducer(reducer, initialState);\r\n\r\n  const getUserAttributes = useCallback(\r\n    (currentUser) =>\r\n      new Promise((resolve, reject) => {\r\n        currentUser.getUserAttributes((err, attributes) => {\r\n          if (err) {\r\n            reject(err);\r\n          } else {\r\n            const results = {};\r\n            for (const attribute of attributes) {\r\n              results[attribute.Name] = attribute.Value;\r\n            }\r\n            resolve(results);\r\n          }\r\n        });\r\n      }),\r\n    [],\r\n  );\r\n\r\n  const getSession = useCallback(\r\n    () =>\r\n      new Promise((resolve, reject) => {\r\n        const user = UserPool.getCurrentUser();\r\n        if (user) {\r\n          user.getSession(async (err, session) => {\r\n            if (err) {\r\n              reject(err);\r\n            } else {\r\n              const attributes = await getUserAttributes(user);\r\n              const token = session.getIdToken().getJwtToken();\r\n              axios.defaults.headers.common.Authorization = token;\r\n              dispatch({\r\n                type: INITIALIZE,\r\n                payload: { isAuthenticated: true, user: attributes },\r\n              });\r\n              resolve({ user, session, headers: { Authorization: token } });\r\n            }\r\n          });\r\n        } else {\r\n          dispatch({\r\n            type: INITIALIZE,\r\n            payload: { isAuthenticated: false, user: null },\r\n          });\r\n        }\r\n      }),\r\n    [getUserAttributes],\r\n  );\r\n\r\n  useEffect(() => {\r\n    getSession();\r\n  }, [getSession]);\r\n\r\n  const signIn = useCallback(\r\n    (email, password) =>\r\n      new Promise((resolve, reject) => {\r\n        const user = new CognitoUser({ Username: email, Pool: UserPool });\r\n        const authDetails = new AuthenticationDetails({\r\n          Username: email,\r\n          Password: password,\r\n        });\r\n\r\n        user.authenticateUser(authDetails, {\r\n          onSuccess: (data) => {\r\n            getSession().then(() => resolve(data));\r\n          },\r\n          onFailure: (err) => {\r\n            reject(err);\r\n          },\r\n          newPasswordRequired: () => {\r\n            resolve({ message: \"New password required\" });\r\n          },\r\n        });\r\n      }),\r\n    [getSession],\r\n  );\r\n\r\n  const signOut = useCallback(() => {\r\n    const user = UserPool.getCurrentUser();\r\n    if (user) {\r\n      user.signOut();\r\n      dispatch({ type: SIGN_OUT });\r\n    }\r\n  }, []);\r\n\r\n  const signUp = useCallback(\r\n    (email, password, firstName, lastName) =>\r\n      new Promise((resolve, reject) => {\r\n        UserPool.signUp(\r\n          email,\r\n          password,\r\n          [\r\n            new CognitoUserAttribute({ Name: \"email\", Value: email }),\r\n            new CognitoUserAttribute({\r\n              Name: \"name\",\r\n              Value: `${firstName} ${lastName}`,\r\n            }),\r\n          ],\r\n          null,\r\n          (err) => {\r\n            if (err) {\r\n              reject(err);\r\n              return;\r\n            }\r\n            resolve();\r\n          },\r\n        );\r\n      }),\r\n    [],\r\n  );\r\n\r\n  const resetPassword = useCallback((email) => {\r\n    console.log(email);\r\n    // Add password reset logic here\r\n  }, []);\r\n\r\n  return (\r\n    <AuthContext.Provider\r\n      value={{\r\n        ...state,\r\n        method: \"cognito\",\r\n        user: {\r\n          displayName: state.user?.name || \"Undefined\",\r\n          role: \"user\",\r\n        },\r\n        signIn,\r\n        signUp,\r\n        signOut,\r\n        resetPassword,\r\n      }}\r\n    >\r\n      {children}\r\n    </AuthContext.Provider>\r\n  );\r\n}\r\n\r\nexport default AuthProvider;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436195,
+      "end": 1702937436195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436195,
+      "end": 1702937436195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436195,
+      "end": 1702937436195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436195,
+      "end": 1702937436195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436195,
+      "end": 1702937436195,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436200,
+      "end": 1702937436200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436200,
+      "end": 1702937436200,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436200,
+      "end": 1702937436200,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436200,
+      "end": 1702937436200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436200,
+      "end": 1702937436200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436206,
+      "end": 1702937436206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436206,
+      "end": 1702937436206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436206,
+      "end": 1702937436206,
+      "order": "normal"
+    }
+  ]
+}

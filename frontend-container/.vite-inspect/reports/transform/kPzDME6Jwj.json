@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/qsharp.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = qsharp\nqsharp.displayName = 'qsharp'\nqsharp.aliases = ['qs']\nfunction qsharp(Prism) {\n  ;(function (Prism) {\n    /**\n     * Replaces all placeholders \"<<n>>\" of given pattern with the n-th replacement (zero based).\n     *\n     * Note: This is a simple text based replacement. Be careful when using backreferences!\n     *\n     * @param {string} pattern the given pattern.\n     * @param {string[]} replacements a list of replacement which can be inserted into the given pattern.\n     * @returns {string} the pattern with all placeholders replaced with their corresponding replacements.\n     * @example replace(/a<<0>>a/.source, [/b+/.source]) === /a(?:b+)a/.source\n     */\n    function replace(pattern, replacements) {\n      return pattern.replace(/<<(\\d+)>>/g, function (m, index) {\n        return '(?:' + replacements[+index] + ')'\n      })\n    }\n    /**\n     * @param {string} pattern\n     * @param {string[]} replacements\n     * @param {string} [flags]\n     * @returns {RegExp}\n     */\n    function re(pattern, replacements, flags) {\n      return RegExp(replace(pattern, replacements), flags || '')\n    }\n    /**\n     * Creates a nested pattern where all occurrences of the string `<<self>>` are replaced with the pattern itself.\n     *\n     * @param {string} pattern\n     * @param {number} depthLog2\n     * @returns {string}\n     */\n    function nested(pattern, depthLog2) {\n      for (var i = 0; i < depthLog2; i++) {\n        pattern = pattern.replace(/<<self>>/g, function () {\n          return '(?:' + pattern + ')'\n        })\n      }\n      return pattern.replace(/<<self>>/g, '[^\\\\s\\\\S]')\n    } // https://docs.microsoft.com/en-us/azure/quantum/user-guide/language/typesystem/\n    // https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar\n    var keywordKinds = {\n      // keywords which represent a return or variable type\n      type: 'Adj BigInt Bool Ctl Double false Int One Pauli PauliI PauliX PauliY PauliZ Qubit Range Result String true Unit Zero',\n      // all other keywords\n      other:\n        'Adjoint adjoint apply as auto body borrow borrowing Controlled controlled distribute elif else fail fixup for function if in internal intrinsic invert is let mutable namespace new newtype open operation repeat return self set until use using while within'\n    } // keywords\n    function keywordsToPattern(words) {\n      return '\\\\b(?:' + words.trim().replace(/ /g, '|') + ')\\\\b'\n    }\n    var keywords = RegExp(\n      keywordsToPattern(keywordKinds.type + ' ' + keywordKinds.other)\n    ) // types\n    var identifier = /\\b[A-Za-z_]\\w*\\b/.source\n    var qualifiedName = replace(/<<0>>(?:\\s*\\.\\s*<<0>>)*/.source, [identifier])\n    var typeInside = {\n      keyword: keywords,\n      punctuation: /[<>()?,.:[\\]]/\n    } // strings\n    var regularString = /\"(?:\\\\.|[^\\\\\"])*\"/.source\n    Prism.languages.qsharp = Prism.languages.extend('clike', {\n      comment: /\\/\\/.*/,\n      string: [\n        {\n          pattern: re(/(^|[^$\\\\])<<0>>/.source, [regularString]),\n          lookbehind: true,\n          greedy: true\n        }\n      ],\n      'class-name': [\n        {\n          // open Microsoft.Quantum.Canon;\n          // open Microsoft.Quantum.Canon as CN;\n          pattern: re(/(\\b(?:as|open)\\s+)<<0>>(?=\\s*(?:;|as\\b))/.source, [\n            qualifiedName\n          ]),\n          lookbehind: true,\n          inside: typeInside\n        },\n        {\n          // namespace Quantum.App1;\n          pattern: re(/(\\bnamespace\\s+)<<0>>(?=\\s*\\{)/.source, [qualifiedName]),\n          lookbehind: true,\n          inside: typeInside\n        }\n      ],\n      keyword: keywords,\n      number:\n        /(?:\\b0(?:x[\\da-f]+|b[01]+|o[0-7]+)|(?:\\B\\.\\d+|\\b\\d+(?:\\.\\d*)?)(?:e[-+]?\\d+)?)l?\\b/i,\n      operator:\n        /\\band=|\\bor=|\\band\\b|\\bnot\\b|\\bor\\b|<[-=]|[-=]>|>>>=?|<<<=?|\\^\\^\\^=?|\\|\\|\\|=?|&&&=?|w\\/=?|~~~|[*\\/+\\-^=!%]=?/,\n      punctuation: /::|[{}[\\];(),.:]/\n    })\n    Prism.languages.insertBefore('qsharp', 'number', {\n      range: {\n        pattern: /\\.\\./,\n        alias: 'operator'\n      }\n    }) // single line\n    var interpolationExpr = nested(\n      replace(/\\{(?:[^\"{}]|<<0>>|<<self>>)*\\}/.source, [regularString]),\n      2\n    )\n    Prism.languages.insertBefore('qsharp', 'string', {\n      'interpolation-string': {\n        pattern: re(/\\$\"(?:\\\\.|<<0>>|[^\\\\\"{])*\"/.source, [interpolationExpr]),\n        greedy: true,\n        inside: {\n          interpolation: {\n            pattern: re(/((?:^|[^\\\\])(?:\\\\\\\\)*)<<0>>/.source, [\n              interpolationExpr\n            ]),\n            lookbehind: true,\n            inside: {\n              punctuation: /^\\{|\\}$/,\n              expression: {\n                pattern: /[\\s\\S]+/,\n                alias: 'language-qsharp',\n                inside: Prism.languages.qsharp\n              }\n            }\n          },\n          string: /[\\s\\S]+/\n        }\n      }\n    })\n  })(Prism)\n  Prism.languages.qs = Prism.languages.qsharp\n}\n",
+      "start": 1702937445032,
+      "end": 1702937445057,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar qsharp_1;\nvar hasRequiredQsharp;\n\nfunction requireQsharp () {\n\tif (hasRequiredQsharp) return qsharp_1;\n\thasRequiredQsharp = 1;\n\t'use strict'\n\n\tqsharp_1 = qsharp\n\tqsharp.displayName = 'qsharp'\n\tqsharp.aliases = ['qs']\n\tfunction qsharp(Prism) {\n\t  ;(function (Prism) {\n\t    /**\n\t     * Replaces all placeholders \"<<n>>\" of given pattern with the n-th replacement (zero based).\n\t     *\n\t     * Note: This is a simple text based replacement. Be careful when using backreferences!\n\t     *\n\t     * @param {string} pattern the given pattern.\n\t     * @param {string[]} replacements a list of replacement which can be inserted into the given pattern.\n\t     * @returns {string} the pattern with all placeholders replaced with their corresponding replacements.\n\t     * @example replace(/a<<0>>a/.source, [/b+/.source]) === /a(?:b+)a/.source\n\t     */\n\t    function replace(pattern, replacements) {\n\t      return pattern.replace(/<<(\\d+)>>/g, function (m, index) {\n\t        return '(?:' + replacements[+index] + ')'\n\t      })\n\t    }\n\t    /**\n\t     * @param {string} pattern\n\t     * @param {string[]} replacements\n\t     * @param {string} [flags]\n\t     * @returns {RegExp}\n\t     */\n\t    function re(pattern, replacements, flags) {\n\t      return RegExp(replace(pattern, replacements), flags || '')\n\t    }\n\t    /**\n\t     * Creates a nested pattern where all occurrences of the string `<<self>>` are replaced with the pattern itself.\n\t     *\n\t     * @param {string} pattern\n\t     * @param {number} depthLog2\n\t     * @returns {string}\n\t     */\n\t    function nested(pattern, depthLog2) {\n\t      for (var i = 0; i < depthLog2; i++) {\n\t        pattern = pattern.replace(/<<self>>/g, function () {\n\t          return '(?:' + pattern + ')'\n\t        })\n\t      }\n\t      return pattern.replace(/<<self>>/g, '[^\\\\s\\\\S]')\n\t    } // https://docs.microsoft.com/en-us/azure/quantum/user-guide/language/typesystem/\n\t    // https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar\n\t    var keywordKinds = {\n\t      // keywords which represent a return or variable type\n\t      type: 'Adj BigInt Bool Ctl Double false Int One Pauli PauliI PauliX PauliY PauliZ Qubit Range Result String true Unit Zero',\n\t      // all other keywords\n\t      other:\n\t        'Adjoint adjoint apply as auto body borrow borrowing Controlled controlled distribute elif else fail fixup for function if in internal intrinsic invert is let mutable namespace new newtype open operation repeat return self set until use using while within'\n\t    } // keywords\n\t    function keywordsToPattern(words) {\n\t      return '\\\\b(?:' + words.trim().replace(/ /g, '|') + ')\\\\b'\n\t    }\n\t    var keywords = RegExp(\n\t      keywordsToPattern(keywordKinds.type + ' ' + keywordKinds.other)\n\t    ) // types\n\t    var identifier = /\\b[A-Za-z_]\\w*\\b/.source\n\t    var qualifiedName = replace(/<<0>>(?:\\s*\\.\\s*<<0>>)*/.source, [identifier])\n\t    var typeInside = {\n\t      keyword: keywords,\n\t      punctuation: /[<>()?,.:[\\]]/\n\t    } // strings\n\t    var regularString = /\"(?:\\\\.|[^\\\\\"])*\"/.source\n\t    Prism.languages.qsharp = Prism.languages.extend('clike', {\n\t      comment: /\\/\\/.*/,\n\t      string: [\n\t        {\n\t          pattern: re(/(^|[^$\\\\])<<0>>/.source, [regularString]),\n\t          lookbehind: true,\n\t          greedy: true\n\t        }\n\t      ],\n\t      'class-name': [\n\t        {\n\t          // open Microsoft.Quantum.Canon;\n\t          // open Microsoft.Quantum.Canon as CN;\n\t          pattern: re(/(\\b(?:as|open)\\s+)<<0>>(?=\\s*(?:;|as\\b))/.source, [\n\t            qualifiedName\n\t          ]),\n\t          lookbehind: true,\n\t          inside: typeInside\n\t        },\n\t        {\n\t          // namespace Quantum.App1;\n\t          pattern: re(/(\\bnamespace\\s+)<<0>>(?=\\s*\\{)/.source, [qualifiedName]),\n\t          lookbehind: true,\n\t          inside: typeInside\n\t        }\n\t      ],\n\t      keyword: keywords,\n\t      number:\n\t        /(?:\\b0(?:x[\\da-f]+|b[01]+|o[0-7]+)|(?:\\B\\.\\d+|\\b\\d+(?:\\.\\d*)?)(?:e[-+]?\\d+)?)l?\\b/i,\n\t      operator:\n\t        /\\band=|\\bor=|\\band\\b|\\bnot\\b|\\bor\\b|<[-=]|[-=]>|>>>=?|<<<=?|\\^\\^\\^=?|\\|\\|\\|=?|&&&=?|w\\/=?|~~~|[*\\/+\\-^=!%]=?/,\n\t      punctuation: /::|[{}[\\];(),.:]/\n\t    })\n\t    Prism.languages.insertBefore('qsharp', 'number', {\n\t      range: {\n\t        pattern: /\\.\\./,\n\t        alias: 'operator'\n\t      }\n\t    }) // single line\n\t    var interpolationExpr = nested(\n\t      replace(/\\{(?:[^\"{}]|<<0>>|<<self>>)*\\}/.source, [regularString]),\n\t      2\n\t    )\n\t    Prism.languages.insertBefore('qsharp', 'string', {\n\t      'interpolation-string': {\n\t        pattern: re(/\\$\"(?:\\\\.|<<0>>|[^\\\\\"{])*\"/.source, [interpolationExpr]),\n\t        greedy: true,\n\t        inside: {\n\t          interpolation: {\n\t            pattern: re(/((?:^|[^\\\\])(?:\\\\\\\\)*)<<0>>/.source, [\n\t              interpolationExpr\n\t            ]),\n\t            lookbehind: true,\n\t            inside: {\n\t              punctuation: /^\\{|\\}$/,\n\t              expression: {\n\t                pattern: /[\\s\\S]+/,\n\t                alias: 'language-qsharp',\n\t                inside: Prism.languages.qsharp\n\t              }\n\t            }\n\t          },\n\t          string: /[\\s\\S]+/\n\t        }\n\t      }\n\t    })\n\t  })(Prism)\n\t  Prism.languages.qs = Prism.languages.qsharp\n\t}\n\treturn qsharp_1;\n}\n\nexport { requireQsharp as __require };",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445058,
+      "end": 1702937445058,
+      "order": "normal"
+    }
+  ]
+}

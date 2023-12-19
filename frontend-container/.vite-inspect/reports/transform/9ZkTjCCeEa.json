@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/birb.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = birb\nbirb.displayName = 'birb'\nbirb.aliases = []\nfunction birb(Prism) {\n  Prism.languages.birb = Prism.languages.extend('clike', {\n    string: {\n      pattern: /r?(\"|')(?:\\\\.|(?!\\1)[^\\\\])*\\1/,\n      greedy: true\n    },\n    'class-name': [\n      /\\b[A-Z](?:[\\d_]*[a-zA-Z]\\w*)?\\b/, // matches variable and function return types (parameters as well).\n      /\\b(?:[A-Z]\\w*|(?!(?:var|void)\\b)[a-z]\\w*)(?=\\s+\\w+\\s*[;,=()])/\n    ],\n    keyword:\n      /\\b(?:assert|break|case|class|const|default|else|enum|final|follows|for|grab|if|nest|new|next|noSeeb|return|static|switch|throw|var|void|while)\\b/,\n    operator: /\\+\\+|--|&&|\\|\\||<<=?|>>=?|~(?:\\/=?)?|[+\\-*\\/%&^|=!<>]=?|\\?|:/,\n    variable: /\\b[a-z_]\\w*\\b/\n  })\n  Prism.languages.insertBefore('birb', 'function', {\n    metadata: {\n      pattern: /<\\w+>/,\n      greedy: true,\n      alias: 'symbol'\n    }\n  })\n}\n",
+      "start": 1702937444827,
+      "end": 1702937444851,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar birb_1;\nvar hasRequiredBirb;\n\nfunction requireBirb () {\n\tif (hasRequiredBirb) return birb_1;\n\thasRequiredBirb = 1;\n\t'use strict'\n\n\tbirb_1 = birb\n\tbirb.displayName = 'birb'\n\tbirb.aliases = []\n\tfunction birb(Prism) {\n\t  Prism.languages.birb = Prism.languages.extend('clike', {\n\t    string: {\n\t      pattern: /r?(\"|')(?:\\\\.|(?!\\1)[^\\\\])*\\1/,\n\t      greedy: true\n\t    },\n\t    'class-name': [\n\t      /\\b[A-Z](?:[\\d_]*[a-zA-Z]\\w*)?\\b/, // matches variable and function return types (parameters as well).\n\t      /\\b(?:[A-Z]\\w*|(?!(?:var|void)\\b)[a-z]\\w*)(?=\\s+\\w+\\s*[;,=()])/\n\t    ],\n\t    keyword:\n\t      /\\b(?:assert|break|case|class|const|default|else|enum|final|follows|for|grab|if|nest|new|next|noSeeb|return|static|switch|throw|var|void|while)\\b/,\n\t    operator: /\\+\\+|--|&&|\\|\\||<<=?|>>=?|~(?:\\/=?)?|[+\\-*\\/%&^|=!<>]=?|\\?|:/,\n\t    variable: /\\b[a-z_]\\w*\\b/\n\t  })\n\t  Prism.languages.insertBefore('birb', 'function', {\n\t    metadata: {\n\t      pattern: /<\\w+>/,\n\t      greedy: true,\n\t      alias: 'symbol'\n\t    }\n\t  })\n\t}\n\treturn birb_1;\n}\n\nexport { requireBirb as __require };",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CACzD,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,+BAA+B;CAC9C,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,iCAAiC;CACvC,MAAM,+DAA+D;CACrE,KAAK;CACL,IAAI,OAAO;CACX,MAAM,kJAAkJ;CACxJ,IAAI,QAAQ,EAAE,8DAA8D;CAC5E,IAAI,QAAQ,EAAE,eAAe;CAC7B,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,UAAU,EAAE;CACnD,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,OAAO;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444851,
+      "end": 1702937444851,
+      "order": "normal"
+    }
+  ]
+}

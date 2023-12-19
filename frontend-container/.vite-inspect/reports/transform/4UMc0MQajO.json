@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/plaintext.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Plain text\nAuthor: Egor Rogov (e.rogov@postgrespro.ru)\nDescription: Plain text without any highlighting.\nCategory: common\n*/\n\nfunction plaintext(hljs) {\n  return {\n    name: 'Plain text',\n    aliases: [\n      'text',\n      'txt'\n    ],\n    disableAutodetect: true\n  };\n}\n\nmodule.exports = plaintext;\n",
+      "start": 1702937444525,
+      "end": 1702937444551,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Plain text\nAuthor: Egor Rogov (e.rogov@postgrespro.ru)\nDescription: Plain text without any highlighting.\nCategory: common\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar plaintext_1;\nvar hasRequiredPlaintext;\n\nfunction requirePlaintext () {\n\tif (hasRequiredPlaintext) return plaintext_1;\n\thasRequiredPlaintext = 1;\n\tfunction plaintext(hljs) {\n\t  return {\n\t    name: 'Plain text',\n\t    aliases: [\n\t      'text',\n\t      'txt'\n\t    ],\n\t    disableAutodetect: true\n\t  };\n\t}\n\n\tplaintext_1 = plaintext;\n\treturn plaintext_1;\n}\n\nexport { requirePlaintext as __require };",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA,SAAS,SAAS,CAAC,IAAI,EAAE;CACzB,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,YAAY;CACtB,IAAI,OAAO,EAAE;CACb,MAAM,MAAM;CACZ,MAAM,KAAK;CACX,KAAK;CACL,IAAI,iBAAiB,EAAE,IAAI;CAC3B,GAAG,CAAC;CACJ,CAAC;AACD;AACA,YAAc,GAAG,SAAS"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/guards/AuthGuard.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import * as React from \"react\";\r\nimport { Navigate } from \"react-router-dom\";\r\nimport useAuth from \"../../hooks/useAuth\";\r\n\r\n// For routes that can only be accessed by authenticated users\r\nfunction AuthGuard({ children }) {\r\n  const { isAuthenticated, isInitialized } = useAuth();\r\n\r\n  if (isInitialized && !isAuthenticated) {\r\n    return <Navigate to=\"/auth/sign-in\" />;\r\n  }\r\n\r\n  return <React.Fragment>{children}</React.Fragment>;\r\n}\r\n\r\nexport default AuthGuard;\r\n",
+      "start": 1702937436391,
+      "end": 1702937436867,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436867,
+      "end": 1702937436867,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436867,
+      "end": 1702937436867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport * as React from \"react\";\nimport { Navigate } from \"react-router-dom\";\nimport useAuth from \"../../hooks/useAuth\";\nfunction AuthGuard({ children }) {\n  const { isAuthenticated, isInitialized } = useAuth();\n  if (isInitialized && !isAuthenticated) {\n    return /* @__PURE__ */ jsx(Navigate, { to: \"/auth/sign-in\" });\n  }\n  return /* @__PURE__ */ jsx(React.Fragment, { children });\n}\nexport default AuthGuard;\n",
+      "start": 1702937436867,
+      "end": 1702937436948,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/guards/AuthGuard.jsx"
+        ],
+        "sourcesContent": [
+          "import * as React from \"react\";\r\nimport { Navigate } from \"react-router-dom\";\r\nimport useAuth from \"../../hooks/useAuth\";\r\n\r\n// For routes that can only be accessed by authenticated users\r\nfunction AuthGuard({ children }) {\r\n  const { isAuthenticated, isInitialized } = useAuth();\r\n\r\n  if (isInitialized && !isAuthenticated) {\r\n    return <Navigate to=\"/auth/sign-in\" />;\r\n  }\r\n\r\n  return <React.Fragment>{children}</React.Fragment>;\r\n}\r\n\r\nexport default AuthGuard;\r\n"
+        ],
+        "mappings": "AASW;AATX,YAAY,WAAW;AACvB,SAAS,gBAAgB;AACzB,OAAO,aAAa;AAGpB,SAAS,UAAU,EAAE,SAAS,GAAG;AAC/B,QAAM,EAAE,iBAAiB,cAAc,IAAI,QAAQ;AAEnD,MAAI,iBAAiB,CAAC,iBAAiB;AACrC,WAAO,oBAAC,YAAS,IAAG,iBAAgB;AAAA,EACtC;AAEA,SAAO,oBAAC,MAAM,UAAN,EAAgB,UAAS;AACnC;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    }
+  ]
+}

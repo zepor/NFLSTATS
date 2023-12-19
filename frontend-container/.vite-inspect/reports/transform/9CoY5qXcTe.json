@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/property-information/find.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nvar normalize = require('./normalize')\nvar DefinedInfo = require('./lib/util/defined-info')\nvar Info = require('./lib/util/info')\n\nvar data = 'data'\n\nmodule.exports = find\n\nvar valid = /^data[-\\w.:]+$/i\nvar dash = /-[a-z]/g\nvar cap = /[A-Z]/g\n\nfunction find(schema, value) {\n  var normal = normalize(value)\n  var prop = value\n  var Type = Info\n\n  if (normal in schema.normal) {\n    return schema.property[schema.normal[normal]]\n  }\n\n  if (normal.length > 4 && normal.slice(0, 4) === data && valid.test(value)) {\n    // Attribute or property.\n    if (value.charAt(4) === '-') {\n      prop = datasetToProperty(value)\n    } else {\n      value = datasetToAttribute(value)\n    }\n\n    Type = DefinedInfo\n  }\n\n  return new Type(prop, value)\n}\n\nfunction datasetToProperty(attribute) {\n  var value = attribute.slice(5).replace(dash, camelcase)\n  return data + value.charAt(0).toUpperCase() + value.slice(1)\n}\n\nfunction datasetToAttribute(property) {\n  var value = property.slice(4)\n\n  if (dash.test(value)) {\n    return property\n  }\n\n  value = value.replace(cap, kebab)\n\n  if (value.charAt(0) !== '-') {\n    value = '-' + value\n  }\n\n  return data + value\n}\n\nfunction kebab($0) {\n  return '-' + $0.toLowerCase()\n}\n\nfunction camelcase($0) {\n  return $0.charAt(1).toUpperCase()\n}\n",
+      "start": 1702937445364,
+      "end": 1702937445377,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445377,
+      "end": 1702937445377,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/normalize.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/defined-info.js?commonjs-proxy\";\nimport require$$2 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/info.js?commonjs-proxy\";\n\n'use strict'\n\nvar normalize = require$$0\nvar DefinedInfo = require$$1\nvar Info = require$$2\n\nvar data = 'data'\n\nvar find_1 = find\n\nvar valid = /^data[-\\w.:]+$/i\nvar dash = /-[a-z]/g\nvar cap = /[A-Z]/g\n\nfunction find(schema, value) {\n  var normal = normalize(value)\n  var prop = value\n  var Type = Info\n\n  if (normal in schema.normal) {\n    return schema.property[schema.normal[normal]]\n  }\n\n  if (normal.length > 4 && normal.slice(0, 4) === data && valid.test(value)) {\n    // Attribute or property.\n    if (value.charAt(4) === '-') {\n      prop = datasetToProperty(value)\n    } else {\n      value = datasetToAttribute(value)\n    }\n\n    Type = DefinedInfo\n  }\n\n  return new Type(prop, value)\n}\n\nfunction datasetToProperty(attribute) {\n  var value = attribute.slice(5).replace(dash, camelcase)\n  return data + value.charAt(0).toUpperCase() + value.slice(1)\n}\n\nfunction datasetToAttribute(property) {\n  var value = property.slice(4)\n\n  if (dash.test(value)) {\n    return property\n  }\n\n  value = value.replace(cap, kebab)\n\n  if (value.charAt(0) !== '-') {\n    value = '-' + value\n  }\n\n  return data + value\n}\n\nfunction kebab($0) {\n  return '-' + $0.toLowerCase()\n}\n\nfunction camelcase($0) {\n  return $0.charAt(1).toUpperCase()\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(find_1);\nexport { find_1 as __moduleExports };",
+      "start": 1702937445377,
+      "end": 1702937445401,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,YAAY;AACZ;AACA,IAAI,SAAS,GAAG,UAAsB;AACtC,IAAI,WAAW,GAAG,UAAkC;AACpD,IAAI,IAAI,GAAG,UAA0B;AACrC;AACA,IAAI,IAAI,GAAG,MAAM;AACjB;IACA,MAAc,GAAG,IAAI;AACrB;AACA,IAAI,KAAK,GAAG,iBAAiB;AAC7B,IAAI,IAAI,GAAG,SAAS;AACpB,IAAI,GAAG,GAAG,QAAQ;AAClB;AACA,SAAS,IAAI,CAAC,MAAM,EAAE,KAAK,EAAE;AAC7B,EAAE,IAAI,MAAM,GAAG,SAAS,CAAC,KAAK,CAAC;AAC/B,EAAE,IAAI,IAAI,GAAG,KAAK;AAClB,EAAE,IAAI,IAAI,GAAG,IAAI;AACjB;AACA,EAAE,IAAI,MAAM,IAAI,MAAM,CAAC,MAAM,EAAE;AAC/B,IAAI,OAAO,MAAM,CAAC,QAAQ,CAAC,MAAM,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC;AACjD,GAAG;AACH;AACA,EAAE,IAAI,MAAM,CAAC,MAAM,GAAG,CAAC,IAAI,MAAM,CAAC,KAAK,CAAC,CAAC,EAAE,CAAC,CAAC,KAAK,IAAI,IAAI,KAAK,CAAC,IAAI,CAAC,KAAK,CAAC,EAAE;AAC7E;AACA,IAAI,IAAI,KAAK,CAAC,MAAM,CAAC,CAAC,CAAC,KAAK,GAAG,EAAE;AACjC,MAAM,IAAI,GAAG,iBAAiB,CAAC,KAAK,CAAC;AACrC,KAAK,MAAM;AACX,MAAM,KAAK,GAAG,kBAAkB,CAAC,KAAK,CAAC;AACvC,KAAK;AACL;AACA,IAAI,IAAI,GAAG,WAAW;AACtB,GAAG;AACH;AACA,EAAE,OAAO,IAAI,IAAI,CAAC,IAAI,EAAE,KAAK,CAAC;AAC9B,CAAC;AACD;AACA,SAAS,iBAAiB,CAAC,SAAS,EAAE;AACtC,EAAE,IAAI,KAAK,GAAG,SAAS,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,IAAI,EAAE,SAAS,CAAC;AACzD,EAAE,OAAO,IAAI,GAAG,KAAK,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE,GAAG,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC;AAC9D,CAAC;AACD;AACA,SAAS,kBAAkB,CAAC,QAAQ,EAAE;AACtC,EAAE,IAAI,KAAK,GAAG,QAAQ,CAAC,KAAK,CAAC,CAAC,CAAC;AAC/B;AACA,EAAE,IAAI,IAAI,CAAC,IAAI,CAAC,KAAK,CAAC,EAAE;AACxB,IAAI,OAAO,QAAQ;AACnB,GAAG;AACH;AACA,EAAE,KAAK,GAAG,KAAK,CAAC,OAAO,CAAC,GAAG,EAAE,KAAK,CAAC;AACnC;AACA,EAAE,IAAI,KAAK,CAAC,MAAM,CAAC,CAAC,CAAC,KAAK,GAAG,EAAE;AAC/B,IAAI,KAAK,GAAG,GAAG,GAAG,KAAK;AACvB,GAAG;AACH;AACA,EAAE,OAAO,IAAI,GAAG,KAAK;AACrB,CAAC;AACD;AACA,SAAS,KAAK,CAAC,EAAE,EAAE;AACnB,EAAE,OAAO,GAAG,GAAG,EAAE,CAAC,WAAW,EAAE;AAC/B,CAAC;AACD;AACA,SAAS,SAAS,CAAC,EAAE,EAAE;AACvB,EAAE,OAAO,EAAE,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE;AACnC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445401,
+      "end": 1702937445401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445401,
+      "end": 1702937445401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445401,
+      "end": 1702937445401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445401,
+      "end": 1702937445401,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445401,
+      "end": 1702937445401,
+      "order": "normal"
+    }
+  ]
+}

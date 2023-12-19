@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_arrayFilter.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * A specialized version of `_.filter` for arrays without support for\n * iteratee shorthands.\n *\n * @private\n * @param {Array} [array] The array to iterate over.\n * @param {Function} predicate The function invoked per iteration.\n * @returns {Array} Returns the new filtered array.\n */\nfunction arrayFilter(array, predicate) {\n  var index = -1,\n      length = array == null ? 0 : array.length,\n      resIndex = 0,\n      result = [];\n\n  while (++index < length) {\n    var value = array[index];\n    if (predicate(value, index, array)) {\n      result[resIndex++] = value;\n    }\n  }\n  return result;\n}\n\nmodule.exports = arrayFilter;\n",
+      "start": 1702937445349,
+      "end": 1702937445367,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * A specialized version of `_.filter` for arrays without support for\n * iteratee shorthands.\n *\n * @private\n * @param {Array} [array] The array to iterate over.\n * @param {Function} predicate The function invoked per iteration.\n * @returns {Array} Returns the new filtered array.\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nfunction arrayFilter(array, predicate) {\n  var index = -1,\n      length = array == null ? 0 : array.length,\n      resIndex = 0,\n      result = [];\n\n  while (++index < length) {\n    var value = array[index];\n    if (predicate(value, index, array)) {\n      result[resIndex++] = value;\n    }\n  }\n  return result;\n}\n\nvar _arrayFilter = arrayFilter;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_arrayFilter);\nexport { _arrayFilter as __moduleExports };",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;AASA,SAAS,WAAW,CAAC,KAAK,EAAE,SAAS,EAAE;AACvC,EAAE,IAAI,KAAK,GAAG,CAAC,CAAC;AAChB,MAAM,MAAM,GAAG,KAAK,IAAI,IAAI,GAAG,CAAC,GAAG,KAAK,CAAC,MAAM;AAC/C,MAAM,QAAQ,GAAG,CAAC;AAClB,MAAM,MAAM,GAAG,EAAE,CAAC;AAClB;AACA,EAAE,OAAO,EAAE,KAAK,GAAG,MAAM,EAAE;AAC3B,IAAI,IAAI,KAAK,GAAG,KAAK,CAAC,KAAK,CAAC,CAAC;AAC7B,IAAI,IAAI,SAAS,CAAC,KAAK,EAAE,KAAK,EAAE,KAAK,CAAC,EAAE;AACxC,MAAM,MAAM,CAAC,QAAQ,EAAE,CAAC,GAAG,KAAK,CAAC;AACjC,KAAK;AACL,GAAG;AACH,EAAE,OAAO,MAAM,CAAC;AAChB,CAAC;AACD;IACA,YAAc,GAAG,WAAW"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445367,
+      "end": 1702937445367,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/autohotkey.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: AutoHotkey\nAuthor: Seongwon Lee <dlimpid@gmail.com>\nDescription: AutoHotkey language definition\nCategory: scripting\n*/\n\n/** @type LanguageFn */\nfunction autohotkey(hljs) {\n  const BACKTICK_ESCAPE = {\n    begin: '`[\\\\s\\\\S]'\n  };\n\n  return {\n    name: 'AutoHotkey',\n    case_insensitive: true,\n    aliases: ['ahk'],\n    keywords: {\n      keyword: 'Break Continue Critical Exit ExitApp Gosub Goto New OnExit Pause return SetBatchLines SetTimer Suspend Thread Throw Until ahk_id ahk_class ahk_pid ahk_exe ahk_group',\n      literal: 'true false NOT AND OR',\n      built_in: 'ComSpec Clipboard ClipboardAll ErrorLevel'\n    },\n    contains: [\n      BACKTICK_ESCAPE,\n      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n        contains: [BACKTICK_ESCAPE]\n      }),\n      hljs.COMMENT(';', '$', {\n        relevance: 0\n      }),\n      hljs.C_BLOCK_COMMENT_MODE,\n      {\n        className: 'number',\n        begin: hljs.NUMBER_RE,\n        relevance: 0\n      },\n      {\n        // subst would be the most accurate however fails the point of\n        // highlighting. variable is comparably the most accurate that actually\n        // has some effect\n        className: 'variable',\n        begin: '%[a-zA-Z0-9#_$@]+%'\n      },\n      {\n        className: 'built_in',\n        begin: '^\\\\s*\\\\w+\\\\s*(,|%)'\n        // I don't really know if this is totally relevant\n      },\n      {\n        // symbol would be most accurate however is highlighted just like\n        // built_in and that makes up a lot of AutoHotkey code meaning that it\n        // would fail to highlight anything\n        className: 'title',\n        variants: [\n          {\n            begin: '^[^\\\\n\";]+::(?!=)'\n          },\n          {\n            begin: '^[^\\\\n\";]+:(?!=)',\n            // zero relevance as it catches a lot of things\n            // followed by a single ':' in many languages\n            relevance: 0\n          }\n        ]\n      },\n      {\n        className: 'meta',\n        begin: '^\\\\s*#\\\\w+',\n        end: '$',\n        relevance: 0\n      },\n      {\n        className: 'built_in',\n        begin: 'A_[a-zA-Z0-9]+'\n      },\n      {\n        // consecutive commas, not for highlighting but just for relevance\n        begin: ',\\\\s*,'\n      }\n    ]\n  };\n}\n\nmodule.exports = autohotkey;\n",
+      "start": 1702937444230,
+      "end": 1702937444268,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444272,
+      "end": 1702937444272,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: AutoHotkey\nAuthor: Seongwon Lee <dlimpid@gmail.com>\nDescription: AutoHotkey language definition\nCategory: scripting\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar autohotkey_1;\nvar hasRequiredAutohotkey;\n\nfunction requireAutohotkey () {\n\tif (hasRequiredAutohotkey) return autohotkey_1;\n\thasRequiredAutohotkey = 1;\n\t/** @type LanguageFn */\n\tfunction autohotkey(hljs) {\n\t  const BACKTICK_ESCAPE = {\n\t    begin: '`[\\\\s\\\\S]'\n\t  };\n\n\t  return {\n\t    name: 'AutoHotkey',\n\t    case_insensitive: true,\n\t    aliases: ['ahk'],\n\t    keywords: {\n\t      keyword: 'Break Continue Critical Exit ExitApp Gosub Goto New OnExit Pause return SetBatchLines SetTimer Suspend Thread Throw Until ahk_id ahk_class ahk_pid ahk_exe ahk_group',\n\t      literal: 'true false NOT AND OR',\n\t      built_in: 'ComSpec Clipboard ClipboardAll ErrorLevel'\n\t    },\n\t    contains: [\n\t      BACKTICK_ESCAPE,\n\t      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t        contains: [BACKTICK_ESCAPE]\n\t      }),\n\t      hljs.COMMENT(';', '$', {\n\t        relevance: 0\n\t      }),\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      {\n\t        className: 'number',\n\t        begin: hljs.NUMBER_RE,\n\t        relevance: 0\n\t      },\n\t      {\n\t        // subst would be the most accurate however fails the point of\n\t        // highlighting. variable is comparably the most accurate that actually\n\t        // has some effect\n\t        className: 'variable',\n\t        begin: '%[a-zA-Z0-9#_$@]+%'\n\t      },\n\t      {\n\t        className: 'built_in',\n\t        begin: '^\\\\s*\\\\w+\\\\s*(,|%)'\n\t        // I don't really know if this is totally relevant\n\t      },\n\t      {\n\t        // symbol would be most accurate however is highlighted just like\n\t        // built_in and that makes up a lot of AutoHotkey code meaning that it\n\t        // would fail to highlight anything\n\t        className: 'title',\n\t        variants: [\n\t          {\n\t            begin: '^[^\\\\n\";]+::(?!=)'\n\t          },\n\t          {\n\t            begin: '^[^\\\\n\";]+:(?!=)',\n\t            // zero relevance as it catches a lot of things\n\t            // followed by a single ':' in many languages\n\t            relevance: 0\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'meta',\n\t        begin: '^\\\\s*#\\\\w+',\n\t        end: '$',\n\t        relevance: 0\n\t      },\n\t      {\n\t        className: 'built_in',\n\t        begin: 'A_[a-zA-Z0-9]+'\n\t      },\n\t      {\n\t        // consecutive commas, not for highlighting but just for relevance\n\t        begin: ',\\\\s*,'\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tautohotkey_1 = autohotkey;\n\treturn autohotkey_1;\n}\n\nexport { requireAutohotkey as __require };",
+      "start": 1702937444272,
+      "end": 1702937444273,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA;CACA,SAAS,UAAU,CAAC,IAAI,EAAE;CAC1B,EAAE,MAAM,eAAe,GAAG;CAC1B,IAAI,KAAK,EAAE,WAAW;CACtB,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,YAAY;CACtB,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,OAAO,EAAE,CAAC,KAAK,CAAC;CACpB,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,sKAAsK;CACrL,MAAM,OAAO,EAAE,uBAAuB;CACtC,MAAM,QAAQ,EAAE,2CAA2C;CAC3D,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,eAAe;CACrB,MAAM,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,iBAAiB,EAAE;CAC3C,QAAQ,QAAQ,EAAE,CAAC,eAAe,CAAC;CACnC,OAAO,CAAC;CACR,MAAM,IAAI,CAAC,OAAO,CAAC,GAAG,EAAE,GAAG,EAAE;CAC7B,QAAQ,SAAS,EAAE,CAAC;CACpB,OAAO,CAAC;CACR,MAAM,IAAI,CAAC,oBAAoB;CAC/B,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,KAAK,EAAE,IAAI,CAAC,SAAS;CAC7B,QAAQ,SAAS,EAAE,CAAC;CACpB,OAAO;CACP,MAAM;CACN;CACA;CACA;CACA,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,oBAAoB;CACnC,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,oBAAoB;CACnC;CACA,OAAO;CACP,MAAM;CACN;CACA;CACA;CACA,QAAQ,SAAS,EAAE,OAAO;CAC1B,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,KAAK,EAAE,mBAAmB;CACtC,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,kBAAkB;CACrC;CACA;CACA,YAAY,SAAS,EAAE,CAAC;CACxB,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,KAAK,EAAE,YAAY;CAC3B,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,SAAS,EAAE,CAAC;CACpB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,gBAAgB;CAC/B,OAAO;CACP,MAAM;CACN;CACA,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,aAAc,GAAG,UAAU"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444273,
+      "end": 1702937444273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444273,
+      "end": 1702937444273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444273,
+      "end": 1702937444273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444273,
+      "end": 1702937444273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444273,
+      "end": 1702937444273,
+      "order": "normal"
+    }
+  ]
+}

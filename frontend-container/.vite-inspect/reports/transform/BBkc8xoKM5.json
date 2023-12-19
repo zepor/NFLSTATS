@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/hooks/usePalette.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useState, useEffect } from \"react\";\r\nimport * as Constants from \"../constants\";\r\nimport { useTheme } from \"./useTheme\";\r\n\r\nconst usePalette = () => {\r\n  const { theme } = useTheme();\r\n  const [palette, setPalette] = useState(Constants.THEME_PALETTE_LIGHT);\r\n\r\n  useEffect(() => {\r\n    if (theme === Constants.THEME.DARK) {\r\n      setPalette(Constants.THEME_PALETTE_DARK);\r\n    } else if (Constants.TEAMS && Constants.TEAMS[theme]) {\r\n      // Use team-specific colors\r\n      const teamColors = Constants.TEAMS[theme];\r\n      setPalette({\r\n        ...Constants.THEME_PALETTE_LIGHT, // Assuming light theme as base\r\n        primary: teamColors.primary,\r\n        secondary: teamColors.secondary,\r\n      });\r\n    } else {\r\n      setPalette(Constants.THEME_PALETTE_LIGHT);\r\n    }\r\n  }, [theme]);\r\n\r\n  return palette;\r\n};\r\n\r\nexport default usePalette;\r\n",
+      "start": 1702937436265,
+      "end": 1702937436683,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436683,
+      "end": 1702937436683,
+      "order": "normal"
+    }
+  ]
+}

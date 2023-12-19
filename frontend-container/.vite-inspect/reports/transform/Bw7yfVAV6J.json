@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/cpp.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorC = require('./c.js')\nmodule.exports = cpp\ncpp.displayName = 'cpp'\ncpp.aliases = []\nfunction cpp(Prism) {\n  Prism.register(refractorC)\n  ;(function (Prism) {\n    var keyword =\n      /\\b(?:alignas|alignof|asm|auto|bool|break|case|catch|char|char16_t|char32_t|char8_t|class|co_await|co_return|co_yield|compl|concept|const|const_cast|consteval|constexpr|constinit|continue|decltype|default|delete|do|double|dynamic_cast|else|enum|explicit|export|extern|final|float|for|friend|goto|if|import|inline|int|int16_t|int32_t|int64_t|int8_t|long|module|mutable|namespace|new|noexcept|nullptr|operator|override|private|protected|public|register|reinterpret_cast|requires|return|short|signed|sizeof|static|static_assert|static_cast|struct|switch|template|this|thread_local|throw|try|typedef|typeid|typename|uint16_t|uint32_t|uint64_t|uint8_t|union|unsigned|using|virtual|void|volatile|wchar_t|while)\\b/\n    var modName = /\\b(?!<keyword>)\\w+(?:\\s*\\.\\s*\\w+)*\\b/.source.replace(\n      /<keyword>/g,\n      function () {\n        return keyword.source\n      }\n    )\n    Prism.languages.cpp = Prism.languages.extend('c', {\n      'class-name': [\n        {\n          pattern: RegExp(\n            /(\\b(?:class|concept|enum|struct|typename)\\s+)(?!<keyword>)\\w+/.source.replace(\n              /<keyword>/g,\n              function () {\n                return keyword.source\n              }\n            )\n          ),\n          lookbehind: true\n        }, // This is intended to capture the class name of method implementations like:\n        //   void foo::bar() const {}\n        // However! The `foo` in the above example could also be a namespace, so we only capture the class name if\n        // it starts with an uppercase letter. This approximation should give decent results.\n        /\\b[A-Z]\\w*(?=\\s*::\\s*\\w+\\s*\\()/, // This will capture the class name before destructors like:\n        //   Foo::~Foo() {}\n        /\\b[A-Z_]\\w*(?=\\s*::\\s*~\\w+\\s*\\()/i, // This also intends to capture the class name of method implementations but here the class has template\n        // parameters, so it can't be a namespace (until C++ adds generic namespaces).\n        /\\b\\w+(?=\\s*<(?:[^<>]|<(?:[^<>]|<[^<>]*>)*>)*>\\s*::\\s*\\w+\\s*\\()/\n      ],\n      keyword: keyword,\n      number: {\n        pattern:\n          /(?:\\b0b[01']+|\\b0x(?:[\\da-f']+(?:\\.[\\da-f']*)?|\\.[\\da-f']+)(?:p[+-]?[\\d']+)?|(?:\\b[\\d']+(?:\\.[\\d']*)?|\\B\\.[\\d']+)(?:e[+-]?[\\d']+)?)[ful]{0,4}/i,\n        greedy: true\n      },\n      operator:\n        />>=?|<<=?|->|--|\\+\\+|&&|\\|\\||[?:~]|<=>|[-+*/%&|^!=<>]=?|\\b(?:and|and_eq|bitand|bitor|not|not_eq|or|or_eq|xor|xor_eq)\\b/,\n      boolean: /\\b(?:false|true)\\b/\n    })\n    Prism.languages.insertBefore('cpp', 'string', {\n      module: {\n        // https://en.cppreference.com/w/cpp/language/modules\n        pattern: RegExp(\n          /(\\b(?:import|module)\\s+)/.source +\n            '(?:' + // header-name\n            /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"|<[^<>\\r\\n]*>/.source +\n            '|' + // module name or partition or both\n            /<mod-name>(?:\\s*:\\s*<mod-name>)?|:\\s*<mod-name>/.source.replace(\n              /<mod-name>/g,\n              function () {\n                return modName\n              }\n            ) +\n            ')'\n        ),\n        lookbehind: true,\n        greedy: true,\n        inside: {\n          string: /^[<\"][\\s\\S]+/,\n          operator: /:/,\n          punctuation: /\\./\n        }\n      },\n      'raw-string': {\n        pattern: /R\"([^()\\\\ ]{0,16})\\([\\s\\S]*?\\)\\1\"/,\n        alias: 'string',\n        greedy: true\n      }\n    })\n    Prism.languages.insertBefore('cpp', 'keyword', {\n      'generic-function': {\n        pattern: /\\b(?!operator\\b)[a-z_]\\w*\\s*<(?:[^<>]|<[^<>]*>)*>(?=\\s*\\()/i,\n        inside: {\n          function: /^\\w+/,\n          generic: {\n            pattern: /<[\\s\\S]+/,\n            alias: 'class-name',\n            inside: Prism.languages.cpp\n          }\n        }\n      }\n    })\n    Prism.languages.insertBefore('cpp', 'operator', {\n      'double-colon': {\n        pattern: /::/,\n        alias: 'punctuation'\n      }\n    })\n    Prism.languages.insertBefore('cpp', 'class-name', {\n      // the base clause is an optional list of parent classes\n      // https://en.cppreference.com/w/cpp/language/class\n      'base-clause': {\n        pattern:\n          /(\\b(?:class|struct)\\s+\\w+\\s*:\\s*)[^;{}\"'\\s]+(?:\\s+[^;{}\"'\\s]+)*(?=\\s*[;{])/,\n        lookbehind: true,\n        greedy: true,\n        inside: Prism.languages.extend('cpp', {})\n      }\n    })\n    Prism.languages.insertBefore(\n      'inside',\n      'double-colon',\n      {\n        // All untokenized words that are not namespaces should be class names\n        'class-name': /\\b[a-z_]\\w*\\b(?!\\s*::)/i\n      },\n      Prism.languages.cpp['base-clause']\n    )\n  })(Prism)\n}\n",
+      "start": 1702937444849,
+      "end": 1702937444867,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444867,
+      "end": 1702937444867,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/c.js?commonjs-wrapped\";\n\nvar cpp_1;\nvar hasRequiredCpp;\n\nfunction requireCpp () {\n\tif (hasRequiredCpp) return cpp_1;\n\thasRequiredCpp = 1;\n\t'use strict'\n\tvar refractorC = require$$0()\n\tcpp_1 = cpp\n\tcpp.displayName = 'cpp'\n\tcpp.aliases = []\n\tfunction cpp(Prism) {\n\t  Prism.register(refractorC)\n\t  ;(function (Prism) {\n\t    var keyword =\n\t      /\\b(?:alignas|alignof|asm|auto|bool|break|case|catch|char|char16_t|char32_t|char8_t|class|co_await|co_return|co_yield|compl|concept|const|const_cast|consteval|constexpr|constinit|continue|decltype|default|delete|do|double|dynamic_cast|else|enum|explicit|export|extern|final|float|for|friend|goto|if|import|inline|int|int16_t|int32_t|int64_t|int8_t|long|module|mutable|namespace|new|noexcept|nullptr|operator|override|private|protected|public|register|reinterpret_cast|requires|return|short|signed|sizeof|static|static_assert|static_cast|struct|switch|template|this|thread_local|throw|try|typedef|typeid|typename|uint16_t|uint32_t|uint64_t|uint8_t|union|unsigned|using|virtual|void|volatile|wchar_t|while)\\b/\n\t    var modName = /\\b(?!<keyword>)\\w+(?:\\s*\\.\\s*\\w+)*\\b/.source.replace(\n\t      /<keyword>/g,\n\t      function () {\n\t        return keyword.source\n\t      }\n\t    )\n\t    Prism.languages.cpp = Prism.languages.extend('c', {\n\t      'class-name': [\n\t        {\n\t          pattern: RegExp(\n\t            /(\\b(?:class|concept|enum|struct|typename)\\s+)(?!<keyword>)\\w+/.source.replace(\n\t              /<keyword>/g,\n\t              function () {\n\t                return keyword.source\n\t              }\n\t            )\n\t          ),\n\t          lookbehind: true\n\t        }, // This is intended to capture the class name of method implementations like:\n\t        //   void foo::bar() const {}\n\t        // However! The `foo` in the above example could also be a namespace, so we only capture the class name if\n\t        // it starts with an uppercase letter. This approximation should give decent results.\n\t        /\\b[A-Z]\\w*(?=\\s*::\\s*\\w+\\s*\\()/, // This will capture the class name before destructors like:\n\t        //   Foo::~Foo() {}\n\t        /\\b[A-Z_]\\w*(?=\\s*::\\s*~\\w+\\s*\\()/i, // This also intends to capture the class name of method implementations but here the class has template\n\t        // parameters, so it can't be a namespace (until C++ adds generic namespaces).\n\t        /\\b\\w+(?=\\s*<(?:[^<>]|<(?:[^<>]|<[^<>]*>)*>)*>\\s*::\\s*\\w+\\s*\\()/\n\t      ],\n\t      keyword: keyword,\n\t      number: {\n\t        pattern:\n\t          /(?:\\b0b[01']+|\\b0x(?:[\\da-f']+(?:\\.[\\da-f']*)?|\\.[\\da-f']+)(?:p[+-]?[\\d']+)?|(?:\\b[\\d']+(?:\\.[\\d']*)?|\\B\\.[\\d']+)(?:e[+-]?[\\d']+)?)[ful]{0,4}/i,\n\t        greedy: true\n\t      },\n\t      operator:\n\t        />>=?|<<=?|->|--|\\+\\+|&&|\\|\\||[?:~]|<=>|[-+*/%&|^!=<>]=?|\\b(?:and|and_eq|bitand|bitor|not|not_eq|or|or_eq|xor|xor_eq)\\b/,\n\t      boolean: /\\b(?:false|true)\\b/\n\t    })\n\t    Prism.languages.insertBefore('cpp', 'string', {\n\t      module: {\n\t        // https://en.cppreference.com/w/cpp/language/modules\n\t        pattern: RegExp(\n\t          /(\\b(?:import|module)\\s+)/.source +\n\t            '(?:' + // header-name\n\t            /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"|<[^<>\\r\\n]*>/.source +\n\t            '|' + // module name or partition or both\n\t            /<mod-name>(?:\\s*:\\s*<mod-name>)?|:\\s*<mod-name>/.source.replace(\n\t              /<mod-name>/g,\n\t              function () {\n\t                return modName\n\t              }\n\t            ) +\n\t            ')'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: {\n\t          string: /^[<\"][\\s\\S]+/,\n\t          operator: /:/,\n\t          punctuation: /\\./\n\t        }\n\t      },\n\t      'raw-string': {\n\t        pattern: /R\"([^()\\\\ ]{0,16})\\([\\s\\S]*?\\)\\1\"/,\n\t        alias: 'string',\n\t        greedy: true\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('cpp', 'keyword', {\n\t      'generic-function': {\n\t        pattern: /\\b(?!operator\\b)[a-z_]\\w*\\s*<(?:[^<>]|<[^<>]*>)*>(?=\\s*\\()/i,\n\t        inside: {\n\t          function: /^\\w+/,\n\t          generic: {\n\t            pattern: /<[\\s\\S]+/,\n\t            alias: 'class-name',\n\t            inside: Prism.languages.cpp\n\t          }\n\t        }\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('cpp', 'operator', {\n\t      'double-colon': {\n\t        pattern: /::/,\n\t        alias: 'punctuation'\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('cpp', 'class-name', {\n\t      // the base clause is an optional list of parent classes\n\t      // https://en.cppreference.com/w/cpp/language/class\n\t      'base-clause': {\n\t        pattern:\n\t          /(\\b(?:class|struct)\\s+\\w+\\s*:\\s*)[^;{}\"'\\s]+(?:\\s+[^;{}\"'\\s]+)*(?=\\s*[;{])/,\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: Prism.languages.extend('cpp', {})\n\t      }\n\t    })\n\t    Prism.languages.insertBefore(\n\t      'inside',\n\t      'double-colon',\n\t      {\n\t        // All untokenized words that are not namespaces should be class names\n\t        'class-name': /\\b[a-z_]\\w*\\b(?!\\s*::)/i\n\t      },\n\t      Prism.languages.cpp['base-clause']\n\t    )\n\t  })(Prism)\n\t}\n\treturn cpp_1;\n}\n\nexport { requireCpp as __require };",
+      "start": 1702937444867,
+      "end": 1702937444869,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444869,
+      "end": 1702937444869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444869,
+      "end": 1702937444869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444869,
+      "end": 1702937444869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444869,
+      "end": 1702937444869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444869,
+      "end": 1702937444869,
+      "order": "normal"
+    }
+  ]
+}

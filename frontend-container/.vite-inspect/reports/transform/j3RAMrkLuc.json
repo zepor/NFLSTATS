@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/docker.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = docker\ndocker.displayName = 'docker'\ndocker.aliases = ['dockerfile']\nfunction docker(Prism) {\n  ;(function (Prism) {\n    // Many of the following regexes will contain negated lookaheads like `[ \\t]+(?![ \\t])`. This is a trick to ensure\n    // that quantifiers behave *atomically*. Atomic quantifiers are necessary to prevent exponential backtracking.\n    var spaceAfterBackSlash =\n      /\\\\[\\r\\n](?:\\s|\\\\[\\r\\n]|#.*(?!.))*(?![\\s#]|\\\\[\\r\\n])/.source // At least one space, comment, or line break\n    var space = /(?:[ \\t]+(?![ \\t])(?:<SP_BS>)?|<SP_BS>)/.source.replace(\n      /<SP_BS>/g,\n      function () {\n        return spaceAfterBackSlash\n      }\n    )\n    var string =\n      /\"(?:[^\"\\\\\\r\\n]|\\\\(?:\\r\\n|[\\s\\S]))*\"|'(?:[^'\\\\\\r\\n]|\\\\(?:\\r\\n|[\\s\\S]))*'/\n        .source\n    var option = /--[\\w-]+=(?:<STR>|(?![\"'])(?:[^\\s\\\\]|\\\\.)+)/.source.replace(\n      /<STR>/g,\n      function () {\n        return string\n      }\n    )\n    var stringRule = {\n      pattern: RegExp(string),\n      greedy: true\n    }\n    var commentRule = {\n      pattern: /(^[ \\t]*)#.*/m,\n      lookbehind: true,\n      greedy: true\n    }\n    /**\n     * @param {string} source\n     * @param {string} flags\n     * @returns {RegExp}\n     */\n    function re(source, flags) {\n      source = source\n        .replace(/<OPT>/g, function () {\n          return option\n        })\n        .replace(/<SP>/g, function () {\n          return space\n        })\n      return RegExp(source, flags)\n    }\n    Prism.languages.docker = {\n      instruction: {\n        pattern:\n          /(^[ \\t]*)(?:ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)(?=\\s)(?:\\\\.|[^\\r\\n\\\\])*(?:\\\\$(?:\\s|#.*$)*(?![\\s#])(?:\\\\.|[^\\r\\n\\\\])*)*/im,\n        lookbehind: true,\n        greedy: true,\n        inside: {\n          options: {\n            pattern: re(\n              /(^(?:ONBUILD<SP>)?\\w+<SP>)<OPT>(?:<SP><OPT>)*/.source,\n              'i'\n            ),\n            lookbehind: true,\n            greedy: true,\n            inside: {\n              property: {\n                pattern: /(^|\\s)--[\\w-]+/,\n                lookbehind: true\n              },\n              string: [\n                stringRule,\n                {\n                  pattern: /(=)(?![\"'])(?:[^\\s\\\\]|\\\\.)+/,\n                  lookbehind: true\n                }\n              ],\n              operator: /\\\\$/m,\n              punctuation: /=/\n            }\n          },\n          keyword: [\n            {\n              // https://docs.docker.com/engine/reference/builder/#healthcheck\n              pattern: re(\n                /(^(?:ONBUILD<SP>)?HEALTHCHECK<SP>(?:<OPT><SP>)*)(?:CMD|NONE)\\b/\n                  .source,\n                'i'\n              ),\n              lookbehind: true,\n              greedy: true\n            },\n            {\n              // https://docs.docker.com/engine/reference/builder/#from\n              pattern: re(\n                /(^(?:ONBUILD<SP>)?FROM<SP>(?:<OPT><SP>)*(?!--)[^ \\t\\\\]+<SP>)AS/\n                  .source,\n                'i'\n              ),\n              lookbehind: true,\n              greedy: true\n            },\n            {\n              // https://docs.docker.com/engine/reference/builder/#onbuild\n              pattern: re(/(^ONBUILD<SP>)\\w+/.source, 'i'),\n              lookbehind: true,\n              greedy: true\n            },\n            {\n              pattern: /^\\w+/,\n              greedy: true\n            }\n          ],\n          comment: commentRule,\n          string: stringRule,\n          variable: /\\$(?:\\w+|\\{[^{}\"'\\\\]*\\})/,\n          operator: /\\\\$/m\n        }\n      },\n      comment: commentRule\n    }\n    Prism.languages.dockerfile = Prism.languages.docker\n  })(Prism)\n}\n",
+      "start": 1702937444865,
+      "end": 1702937444892,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar docker_1;\nvar hasRequiredDocker;\n\nfunction requireDocker () {\n\tif (hasRequiredDocker) return docker_1;\n\thasRequiredDocker = 1;\n\t'use strict'\n\n\tdocker_1 = docker\n\tdocker.displayName = 'docker'\n\tdocker.aliases = ['dockerfile']\n\tfunction docker(Prism) {\n\t  ;(function (Prism) {\n\t    // Many of the following regexes will contain negated lookaheads like `[ \\t]+(?![ \\t])`. This is a trick to ensure\n\t    // that quantifiers behave *atomically*. Atomic quantifiers are necessary to prevent exponential backtracking.\n\t    var spaceAfterBackSlash =\n\t      /\\\\[\\r\\n](?:\\s|\\\\[\\r\\n]|#.*(?!.))*(?![\\s#]|\\\\[\\r\\n])/.source // At least one space, comment, or line break\n\t    var space = /(?:[ \\t]+(?![ \\t])(?:<SP_BS>)?|<SP_BS>)/.source.replace(\n\t      /<SP_BS>/g,\n\t      function () {\n\t        return spaceAfterBackSlash\n\t      }\n\t    )\n\t    var string =\n\t      /\"(?:[^\"\\\\\\r\\n]|\\\\(?:\\r\\n|[\\s\\S]))*\"|'(?:[^'\\\\\\r\\n]|\\\\(?:\\r\\n|[\\s\\S]))*'/\n\t        .source\n\t    var option = /--[\\w-]+=(?:<STR>|(?![\"'])(?:[^\\s\\\\]|\\\\.)+)/.source.replace(\n\t      /<STR>/g,\n\t      function () {\n\t        return string\n\t      }\n\t    )\n\t    var stringRule = {\n\t      pattern: RegExp(string),\n\t      greedy: true\n\t    }\n\t    var commentRule = {\n\t      pattern: /(^[ \\t]*)#.*/m,\n\t      lookbehind: true,\n\t      greedy: true\n\t    }\n\t    /**\n\t     * @param {string} source\n\t     * @param {string} flags\n\t     * @returns {RegExp}\n\t     */\n\t    function re(source, flags) {\n\t      source = source\n\t        .replace(/<OPT>/g, function () {\n\t          return option\n\t        })\n\t        .replace(/<SP>/g, function () {\n\t          return space\n\t        })\n\t      return RegExp(source, flags)\n\t    }\n\t    Prism.languages.docker = {\n\t      instruction: {\n\t        pattern:\n\t          /(^[ \\t]*)(?:ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)(?=\\s)(?:\\\\.|[^\\r\\n\\\\])*(?:\\\\$(?:\\s|#.*$)*(?![\\s#])(?:\\\\.|[^\\r\\n\\\\])*)*/im,\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: {\n\t          options: {\n\t            pattern: re(\n\t              /(^(?:ONBUILD<SP>)?\\w+<SP>)<OPT>(?:<SP><OPT>)*/.source,\n\t              'i'\n\t            ),\n\t            lookbehind: true,\n\t            greedy: true,\n\t            inside: {\n\t              property: {\n\t                pattern: /(^|\\s)--[\\w-]+/,\n\t                lookbehind: true\n\t              },\n\t              string: [\n\t                stringRule,\n\t                {\n\t                  pattern: /(=)(?![\"'])(?:[^\\s\\\\]|\\\\.)+/,\n\t                  lookbehind: true\n\t                }\n\t              ],\n\t              operator: /\\\\$/m,\n\t              punctuation: /=/\n\t            }\n\t          },\n\t          keyword: [\n\t            {\n\t              // https://docs.docker.com/engine/reference/builder/#healthcheck\n\t              pattern: re(\n\t                /(^(?:ONBUILD<SP>)?HEALTHCHECK<SP>(?:<OPT><SP>)*)(?:CMD|NONE)\\b/\n\t                  .source,\n\t                'i'\n\t              ),\n\t              lookbehind: true,\n\t              greedy: true\n\t            },\n\t            {\n\t              // https://docs.docker.com/engine/reference/builder/#from\n\t              pattern: re(\n\t                /(^(?:ONBUILD<SP>)?FROM<SP>(?:<OPT><SP>)*(?!--)[^ \\t\\\\]+<SP>)AS/\n\t                  .source,\n\t                'i'\n\t              ),\n\t              lookbehind: true,\n\t              greedy: true\n\t            },\n\t            {\n\t              // https://docs.docker.com/engine/reference/builder/#onbuild\n\t              pattern: re(/(^ONBUILD<SP>)\\w+/.source, 'i'),\n\t              lookbehind: true,\n\t              greedy: true\n\t            },\n\t            {\n\t              pattern: /^\\w+/,\n\t              greedy: true\n\t            }\n\t          ],\n\t          comment: commentRule,\n\t          string: stringRule,\n\t          variable: /\\$(?:\\w+|\\{[^{}\"'\\\\]*\\})/,\n\t          operator: /\\\\$/m\n\t        }\n\t      },\n\t      comment: commentRule\n\t    }\n\t    Prism.languages.dockerfile = Prism.languages.docker\n\t  })(Prism)\n\t}\n\treturn docker_1;\n}\n\nexport { requireDocker as __require };",
+      "start": 1702937444892,
+      "end": 1702937444893,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    }
+  ]
+}

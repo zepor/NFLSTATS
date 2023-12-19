@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/tt2.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorMarkupTemplating = require('./markup-templating.js')\nmodule.exports = tt2\ntt2.displayName = 'tt2'\ntt2.aliases = []\nfunction tt2(Prism) {\n  Prism.register(refractorMarkupTemplating)\n  ;(function (Prism) {\n    Prism.languages.tt2 = Prism.languages.extend('clike', {\n      comment: /#.*|\\[%#[\\s\\S]*?%\\]/,\n      keyword:\n        /\\b(?:BLOCK|CALL|CASE|CATCH|CLEAR|DEBUG|DEFAULT|ELSE|ELSIF|END|FILTER|FINAL|FOREACH|GET|IF|IN|INCLUDE|INSERT|LAST|MACRO|META|NEXT|PERL|PROCESS|RAWPERL|RETURN|SET|STOP|SWITCH|TAGS|THROW|TRY|UNLESS|USE|WHILE|WRAPPER)\\b/,\n      punctuation: /[[\\]{},()]/\n    })\n    Prism.languages.insertBefore('tt2', 'number', {\n      operator: /=[>=]?|!=?|<=?|>=?|&&|\\|\\|?|\\b(?:and|not|or)\\b/,\n      variable: {\n        pattern: /\\b[a-z]\\w*(?:\\s*\\.\\s*(?:\\d+|\\$?[a-z]\\w*))*\\b/i\n      }\n    })\n    Prism.languages.insertBefore('tt2', 'keyword', {\n      delimiter: {\n        pattern: /^(?:\\[%|%%)-?|-?%\\]$/,\n        alias: 'punctuation'\n      }\n    })\n    Prism.languages.insertBefore('tt2', 'string', {\n      'single-quoted-string': {\n        pattern: /'[^\\\\']*(?:\\\\[\\s\\S][^\\\\']*)*'/,\n        greedy: true,\n        alias: 'string'\n      },\n      'double-quoted-string': {\n        pattern: /\"[^\\\\\"]*(?:\\\\[\\s\\S][^\\\\\"]*)*\"/,\n        greedy: true,\n        alias: 'string',\n        inside: {\n          variable: {\n            pattern: /\\$(?:[a-z]\\w*(?:\\.(?:\\d+|\\$?[a-z]\\w*))*)/i\n          }\n        }\n      }\n    }) // The different types of TT2 strings \"replace\" the C-like standard string\n    delete Prism.languages.tt2.string\n    Prism.hooks.add('before-tokenize', function (env) {\n      var tt2Pattern = /\\[%[\\s\\S]+?%\\]/g\n      Prism.languages['markup-templating'].buildPlaceholders(\n        env,\n        'tt2',\n        tt2Pattern\n      )\n    })\n    Prism.hooks.add('after-tokenize', function (env) {\n      Prism.languages['markup-templating'].tokenizePlaceholders(env, 'tt2')\n    })\n  })(Prism)\n}\n",
+      "start": 1702937445091,
+      "end": 1702937445119,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/markup-templating.js?commonjs-wrapped\";\n\nvar tt2_1;\nvar hasRequiredTt2;\n\nfunction requireTt2 () {\n\tif (hasRequiredTt2) return tt2_1;\n\thasRequiredTt2 = 1;\n\t'use strict'\n\tvar refractorMarkupTemplating = require$$0()\n\ttt2_1 = tt2\n\ttt2.displayName = 'tt2'\n\ttt2.aliases = []\n\tfunction tt2(Prism) {\n\t  Prism.register(refractorMarkupTemplating)\n\t  ;(function (Prism) {\n\t    Prism.languages.tt2 = Prism.languages.extend('clike', {\n\t      comment: /#.*|\\[%#[\\s\\S]*?%\\]/,\n\t      keyword:\n\t        /\\b(?:BLOCK|CALL|CASE|CATCH|CLEAR|DEBUG|DEFAULT|ELSE|ELSIF|END|FILTER|FINAL|FOREACH|GET|IF|IN|INCLUDE|INSERT|LAST|MACRO|META|NEXT|PERL|PROCESS|RAWPERL|RETURN|SET|STOP|SWITCH|TAGS|THROW|TRY|UNLESS|USE|WHILE|WRAPPER)\\b/,\n\t      punctuation: /[[\\]{},()]/\n\t    })\n\t    Prism.languages.insertBefore('tt2', 'number', {\n\t      operator: /=[>=]?|!=?|<=?|>=?|&&|\\|\\|?|\\b(?:and|not|or)\\b/,\n\t      variable: {\n\t        pattern: /\\b[a-z]\\w*(?:\\s*\\.\\s*(?:\\d+|\\$?[a-z]\\w*))*\\b/i\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('tt2', 'keyword', {\n\t      delimiter: {\n\t        pattern: /^(?:\\[%|%%)-?|-?%\\]$/,\n\t        alias: 'punctuation'\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('tt2', 'string', {\n\t      'single-quoted-string': {\n\t        pattern: /'[^\\\\']*(?:\\\\[\\s\\S][^\\\\']*)*'/,\n\t        greedy: true,\n\t        alias: 'string'\n\t      },\n\t      'double-quoted-string': {\n\t        pattern: /\"[^\\\\\"]*(?:\\\\[\\s\\S][^\\\\\"]*)*\"/,\n\t        greedy: true,\n\t        alias: 'string',\n\t        inside: {\n\t          variable: {\n\t            pattern: /\\$(?:[a-z]\\w*(?:\\.(?:\\d+|\\$?[a-z]\\w*))*)/i\n\t          }\n\t        }\n\t      }\n\t    }) // The different types of TT2 strings \"replace\" the C-like standard string\n\t    delete Prism.languages.tt2.string\n\t    Prism.hooks.add('before-tokenize', function (env) {\n\t      var tt2Pattern = /\\[%[\\s\\S]+?%\\]/g\n\t      Prism.languages['markup-templating'].buildPlaceholders(\n\t        env,\n\t        'tt2',\n\t        tt2Pattern\n\t      )\n\t    })\n\t    Prism.hooks.add('after-tokenize', function (env) {\n\t      Prism.languages['markup-templating'].tokenizePlaceholders(env, 'tt2')\n\t    })\n\t  })(Prism)\n\t}\n\treturn tt2_1;\n}\n\nexport { requireTt2 as __require };",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,yBAAyB,GAAG,YAAiC;AACjE,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,KAAK,CAAC,QAAQ,CAAC,yBAAyB,CAAC;CAC3C,GAAG,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CAC1D,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,OAAO;CACb,QAAQ,yNAAyN;CACjO,MAAM,WAAW,EAAE,YAAY;CAC/B,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,KAAK,EAAE,QAAQ,EAAE;CAClD,MAAM,QAAQ,EAAE,gDAAgD;CAChE,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO,EAAE,+CAA+C;CAChE,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,KAAK,EAAE,SAAS,EAAE;CACnD,MAAM,SAAS,EAAE;CACjB,QAAQ,OAAO,EAAE,sBAAsB;CACvC,QAAQ,KAAK,EAAE,aAAa;CAC5B,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,KAAK,EAAE,QAAQ,EAAE;CAClD,MAAM,sBAAsB,EAAE;CAC9B,QAAQ,OAAO,EAAE,+BAA+B;CAChD,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,MAAM,sBAAsB,EAAE;CAC9B,QAAQ,OAAO,EAAE,+BAA+B;CAChD,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,QAAQ;CACvB,QAAQ,MAAM,EAAE;CAChB,UAAU,QAAQ,EAAE;CACpB,YAAY,OAAO,EAAE,2CAA2C;CAChE,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,IAAI,OAAO,KAAK,CAAC,SAAS,CAAC,GAAG,CAAC,MAAM;CACrC,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,iBAAiB,EAAE,UAAU,GAAG,EAAE;CACtD,MAAM,IAAI,UAAU,GAAG,iBAAiB;CACxC,MAAM,KAAK,CAAC,SAAS,CAAC,mBAAmB,CAAC,CAAC,iBAAiB;CAC5D,QAAQ,GAAG;CACX,QAAQ,KAAK;CACb,QAAQ,UAAU;CAClB,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,gBAAgB,EAAE,UAAU,GAAG,EAAE;CACrD,MAAM,KAAK,CAAC,SAAS,CAAC,mBAAmB,CAAC,CAAC,oBAAoB,CAAC,GAAG,EAAE,KAAK,CAAC;CAC3E,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    }
+  ]
+}

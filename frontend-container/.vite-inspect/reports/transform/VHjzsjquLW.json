@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/docs/GettingStarted.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst QuickStart = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Installation</h3>\r\n    <p className=\"text-lg\">\r\n      This project is using <a href=\"https://github.com/vitejs/vite\">Vite</a>.\r\n      You'll need to install <a href=\"https://nodejs.org/en/\">Node.js</a> before\r\n      using Appstack React.\r\n    </p>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Once Node.js is installed, run <code>npm install</code> to install the\r\n      rest of AppStack React's dependencies. All dependencies will be downloaded\r\n      to the <code>node_modules</code> directory.\r\n    </p>\r\n    <Code>npm install</Code>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Now you're ready to modify the source files and generate new{\" \"}\r\n      <code>build/</code> files. AppStack is using webpack and webpack-serve to\r\n      automatically detect file changes and start a local webserver at{\" \"}\r\n      <code>http://localhost:3000</code>.\r\n    </p>\r\n    <Code>npm start</Code>\r\n  </div>\r\n);\r\n\r\nconst BuildTools = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Build tools</h3>\r\n    <p className=\"text-lg mb-3\">\r\n      Start a local webserver at <code>http://localhost:3000</code> and detect\r\n      file changes:\r\n    </p>\r\n    <Code>npm start</Code>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Compile, optimize, minify and uglify all source files to{\" \"}\r\n      <code>build/</code>:\r\n    </p>\r\n    <Code>npm run build</Code>\r\n  </div>\r\n);\r\n\r\nconst Contents = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Contents</h3>\r\n    <p className=\"text-lg mb-3\">\r\n      Inside the zip-file you'll find the following directories and files. Both\r\n      compiled and minified distrubution files, as well as the source files are\r\n      included in the package.\r\n    </p>\r\n\r\n    <Code>{`theme/\r\n  ├── .eslintrc\r\n  ├── .gitignore\r\n  ├── .prettierrc\r\n  ├── package.json\r\n  ├── package-lock.json\r\n  ├── README.md\r\n  ├── build/\r\n  ├── public/\r\n  │   ├── favicon.ico\r\n  │   └── index.html\r\n  └── src/\r\n      ├── assets/\r\n      │   ├── img/\r\n      │   └── scss/\r\n      ├── components/\r\n      ├── contexts/\r\n      ├── helpers/\r\n      ├── hooks/\r\n      ├── layouts/\r\n      ├── pages/\r\n      ├── App.js\r\n      ├── constants.js\r\n      ├── routes.js\r\n      └── index.js\r\n      `}</Code>\r\n  </div>\r\n);\r\n\r\nconst GettingStarted = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Getting Started\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Getting Started</h1>\r\n          <hr className=\"my-4\" />\r\n          <QuickStart />\r\n          <BuildTools />\r\n          <Contents />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default GettingStarted;\r\n",
+      "start": 1702937440808,
+      "end": 1702937440871,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440871,
+      "end": 1702937440871,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440871,
+      "end": 1702937440871,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Col, Container, Row } from \"react-bootstrap\";\nimport Code from \"../../components/Code\";\nconst QuickStart = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Installation\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg\", children: [\n    \"This project is using \",\n    /* @__PURE__ */ jsx(\"a\", { href: \"https://github.com/vitejs/vite\", children: \"Vite\" }),\n    \". You'll need to install \",\n    /* @__PURE__ */ jsx(\"a\", { href: \"https://nodejs.org/en/\", children: \"Node.js\" }),\n    \" before using Appstack React.\"\n  ] }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg mb-3\", children: [\n    \"Once Node.js is installed, run \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"npm install\" }),\n    \" to install the rest of AppStack React's dependencies. All dependencies will be downloaded to the \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"node_modules\" }),\n    \" directory.\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: \"npm install\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg mb-3\", children: [\n    \"Now you're ready to modify the source files and generate new\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"build/\" }),\n    \" files. AppStack is using webpack and webpack-serve to automatically detect file changes and start a local webserver at\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"http://localhost:3000\" }),\n    \".\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: \"npm start\" })\n] });\nconst BuildTools = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Build tools\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg mb-3\", children: [\n    \"Start a local webserver at \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"http://localhost:3000\" }),\n    \" and detect file changes:\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: \"npm start\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg mb-3\", children: [\n    \"Compile, optimize, minify and uglify all source files to\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"build/\" }),\n    \":\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: \"npm run build\" })\n] });\nconst Contents = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Contents\" }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg mb-3\", children: \"Inside the zip-file you'll find the following directories and files. Both compiled and minified distrubution files, as well as the source files are included in the package.\" }),\n  /* @__PURE__ */ jsx(Code, { children: `theme/\n  ├── .eslintrc\n  ├── .gitignore\n  ├── .prettierrc\n  ├── package.json\n  ├── package-lock.json\n  ├── README.md\n  ├── build/\n  ├── public/\n  │   ├── favicon.ico\n  │   └── index.html\n  └── src/\n      ├── assets/\n      │   ├── img/\n      │   └── scss/\n      ├── components/\n      ├── contexts/\n      ├── helpers/\n      ├── hooks/\n      ├── layouts/\n      ├── pages/\n      ├── App.js\n      ├── constants.js\n      ├── routes.js\n      └── index.js\n      ` })\n] });\nconst GettingStarted = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Getting Started\" }),\n  /* @__PURE__ */ jsx(Container, { fluid: true, className: \"p-0\", children: /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsxs(Col, { lg: 10, xl: 8, className: \"col-xxl-7 mx-auto\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { children: \"Getting Started\" }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-4\" }),\n    /* @__PURE__ */ jsx(QuickStart, {}),\n    /* @__PURE__ */ jsx(BuildTools, {}),\n    /* @__PURE__ */ jsx(Contents, {})\n  ] }) }) })\n] });\nexport default GettingStarted;\n",
+      "start": 1702937440871,
+      "end": 1702937440874,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/docs/GettingStarted.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst QuickStart = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Installation</h3>\r\n    <p className=\"text-lg\">\r\n      This project is using <a href=\"https://github.com/vitejs/vite\">Vite</a>.\r\n      You'll need to install <a href=\"https://nodejs.org/en/\">Node.js</a> before\r\n      using Appstack React.\r\n    </p>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Once Node.js is installed, run <code>npm install</code> to install the\r\n      rest of AppStack React's dependencies. All dependencies will be downloaded\r\n      to the <code>node_modules</code> directory.\r\n    </p>\r\n    <Code>npm install</Code>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Now you're ready to modify the source files and generate new{\" \"}\r\n      <code>build/</code> files. AppStack is using webpack and webpack-serve to\r\n      automatically detect file changes and start a local webserver at{\" \"}\r\n      <code>http://localhost:3000</code>.\r\n    </p>\r\n    <Code>npm start</Code>\r\n  </div>\r\n);\r\n\r\nconst BuildTools = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Build tools</h3>\r\n    <p className=\"text-lg mb-3\">\r\n      Start a local webserver at <code>http://localhost:3000</code> and detect\r\n      file changes:\r\n    </p>\r\n    <Code>npm start</Code>\r\n\r\n    <p className=\"text-lg mb-3\">\r\n      Compile, optimize, minify and uglify all source files to{\" \"}\r\n      <code>build/</code>:\r\n    </p>\r\n    <Code>npm run build</Code>\r\n  </div>\r\n);\r\n\r\nconst Contents = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Contents</h3>\r\n    <p className=\"text-lg mb-3\">\r\n      Inside the zip-file you'll find the following directories and files. Both\r\n      compiled and minified distrubution files, as well as the source files are\r\n      included in the package.\r\n    </p>\r\n\r\n    <Code>{`theme/\r\n  ├── .eslintrc\r\n  ├── .gitignore\r\n  ├── .prettierrc\r\n  ├── package.json\r\n  ├── package-lock.json\r\n  ├── README.md\r\n  ├── build/\r\n  ├── public/\r\n  │   ├── favicon.ico\r\n  │   └── index.html\r\n  └── src/\r\n      ├── assets/\r\n      │   ├── img/\r\n      │   └── scss/\r\n      ├── components/\r\n      ├── contexts/\r\n      ├── helpers/\r\n      ├── hooks/\r\n      ├── layouts/\r\n      ├── pages/\r\n      ├── App.js\r\n      ├── constants.js\r\n      ├── routes.js\r\n      └── index.js\r\n      `}</Code>\r\n  </div>\r\n);\r\n\r\nconst GettingStarted = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Getting Started\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Getting Started</h1>\r\n          <hr className=\"my-4\" />\r\n          <QuickStart />\r\n          <BuildTools />\r\n          <Contents />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default GettingStarted;\r\n"
+        ],
+        "mappings": "AAQI,cACA,YADA;AARJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,KAAK,WAAW,WAAW;AAEpC,OAAO,UAAU;AAEjB,MAAM,aAAa,MACjB,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,0BAAY;AAAA,EAChB,qBAAC,OAAE,WAAU,WAAU;AAAA;AAAA,IACC,oBAAC,OAAE,MAAK,kCAAiC,kBAAI;AAAA,IAAI;AAAA,IAChD,oBAAC,OAAE,MAAK,0BAAyB,qBAAO;AAAA,IAAI;AAAA,KAErE;AAAA,EAEA,qBAAC,OAAE,WAAU,gBAAe;AAAA;AAAA,IACK,oBAAC,UAAK,yBAAW;AAAA,IAAO;AAAA,IAEhD,oBAAC,UAAK,0BAAY;AAAA,IAAO;AAAA,KAClC;AAAA,EACA,oBAAC,QAAK,yBAAW;AAAA,EAEjB,qBAAC,OAAE,WAAU,gBAAe;AAAA;AAAA,IACmC;AAAA,IAC7D,oBAAC,UAAK,oBAAM;AAAA,IAAO;AAAA,IAC8C;AAAA,IACjE,oBAAC,UAAK,mCAAqB;AAAA,IAAO;AAAA,KACpC;AAAA,EACA,oBAAC,QAAK,uBAAS;AAAA,GACjB;AAGF,MAAM,aAAa,MACjB,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,yBAAW;AAAA,EACf,qBAAC,OAAE,WAAU,gBAAe;AAAA;AAAA,IACC,oBAAC,UAAK,mCAAqB;AAAA,IAAO;AAAA,KAE/D;AAAA,EACA,oBAAC,QAAK,uBAAS;AAAA,EAEf,qBAAC,OAAE,WAAU,gBAAe;AAAA;AAAA,IAC+B;AAAA,IACzD,oBAAC,UAAK,oBAAM;AAAA,IAAO;AAAA,KACrB;AAAA,EACA,oBAAC,QAAK,2BAAa;AAAA,GACrB;AAGF,MAAM,WAAW,MACf,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,sBAAQ;AAAA,EACZ,oBAAC,OAAE,WAAU,gBAAe,0LAI5B;AAAA,EAEA,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,SAyBH;AAAA,GACN;AAGF,MAAM,iBAAiB,MACrB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,mBAAkB;AAAA,EAChC,oBAAC,aAAU,OAAK,MAAC,WAAU,OACzB,8BAAC,OACC,+BAAC,OAAI,IAAI,IAAI,IAAI,GAAG,WAAU,qBAC5B;AAAA,wBAAC,QAAG,6BAAe;AAAA,IACnB,oBAAC,QAAG,WAAU,QAAO;AAAA,IACrB,oBAAC,cAAW;AAAA,IACZ,oBAAC,cAAW;AAAA,IACZ,oBAAC,YAAS;AAAA,KACZ,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    }
+  ]
+}

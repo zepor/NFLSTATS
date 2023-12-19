@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@emotion/react/_isolated-hnrs/dist/emotion-react-_isolated-hnrs.browser.esm.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import hoistNonReactStatics$1 from 'hoist-non-react-statics';\n\n// this file isolates this package that is not tree-shakeable\n// and if this module doesn't actually contain any logic of its own\n// then Rollup just use 'hoist-non-react-statics' directly in other chunks\n\nvar hoistNonReactStatics = (function (targetComponent, sourceComponent) {\n  return hoistNonReactStatics$1(targetComponent, sourceComponent);\n});\n\nexport { hoistNonReactStatics as default };\n",
+      "start": 1702937443167,
+      "end": 1702937443719,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443719,
+      "end": 1702937443719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { isElement, isHTMLElement } from \"./instanceOf.js\";\nimport { round } from \"../utils/math.js\";\nimport getWindow from \"./getWindow.js\";\nimport isLayoutViewport from \"./isLayoutViewport.js\";\nexport default function getBoundingClientRect(element, includeScale, isFixedStrategy) {\n  if (includeScale === void 0) {\n    includeScale = false;\n  }\n\n  if (isFixedStrategy === void 0) {\n    isFixedStrategy = false;\n  }\n\n  var clientRect = element.getBoundingClientRect();\n  var scaleX = 1;\n  var scaleY = 1;\n\n  if (includeScale && isHTMLElement(element)) {\n    scaleX = element.offsetWidth > 0 ? round(clientRect.width) / element.offsetWidth || 1 : 1;\n    scaleY = element.offsetHeight > 0 ? round(clientRect.height) / element.offsetHeight || 1 : 1;\n  }\n\n  var _ref = isElement(element) ? getWindow(element) : window,\n      visualViewport = _ref.visualViewport;\n\n  var addVisualOffsets = !isLayoutViewport() && isFixedStrategy;\n  var x = (clientRect.left + (addVisualOffsets && visualViewport ? visualViewport.offsetLeft : 0)) / scaleX;\n  var y = (clientRect.top + (addVisualOffsets && visualViewport ? visualViewport.offsetTop : 0)) / scaleY;\n  var width = clientRect.width / scaleX;\n  var height = clientRect.height / scaleY;\n  return {\n    width: width,\n    height: height,\n    top: y,\n    right: x + width,\n    bottom: y + height,\n    left: x,\n    x: x,\n    y: y\n  };\n}",
+      "start": 1702937445292,
+      "end": 1702937445325,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445325,
+      "end": 1702937445325,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445325,
+      "end": 1702937445326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445326,
+      "end": 1702937445326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445326,
+      "end": 1702937445326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445326,
+      "end": 1702937445326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445326,
+      "end": 1702937445326,
+      "order": "normal"
+    }
+  ]
+}

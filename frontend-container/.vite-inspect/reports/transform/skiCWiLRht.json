@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-dragula/react-dragula.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar dragula = require('dragula');\nvar atoa = require('atoa');\n\nfunction reactDragula () {\n  return dragula.apply(this, atoa(arguments)).on('cloned', cloned);\n\n  function cloned (clone) {\n    rm(clone);\n    atoa(clone.getElementsByTagName('*')).forEach(rm);\n  }\n\n  function rm (el) {\n    el.removeAttribute('data-reactid');\n  }\n}\n\nmodule.exports = reactDragula;\n",
+      "start": 1702937441646,
+      "end": 1702937441793,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441793,
+      "end": 1702937441793,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/dragula/dragula.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/atoa/atoa.js?commonjs-proxy\";\n\n'use strict';\n\nvar dragula = require$$0;\nvar atoa = require$$1;\n\nfunction reactDragula () {\n  return dragula.apply(this, atoa(arguments)).on('cloned', cloned);\n\n  function cloned (clone) {\n    rm(clone);\n    atoa(clone.getElementsByTagName('*')).forEach(rm);\n  }\n\n  function rm (el) {\n    el.removeAttribute('data-reactid');\n  }\n}\n\nvar reactDragula_1 = reactDragula;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(reactDragula_1);\nexport { reactDragula_1 as __moduleExports };",
+      "start": 1702937441793,
+      "end": 1702937444217,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;AAAA,YAAY,CAAC;AACb;AACA,IAAI,OAAO,GAAG,UAAkB,CAAC;AACjC,IAAI,IAAI,GAAG,UAAe,CAAC;AAC3B;AACA,SAAS,YAAY,IAAI;AACzB,EAAE,OAAO,OAAO,CAAC,KAAK,CAAC,IAAI,EAAE,IAAI,CAAC,SAAS,CAAC,CAAC,CAAC,EAAE,CAAC,QAAQ,EAAE,MAAM,CAAC,CAAC;AACnE;AACA,EAAE,SAAS,MAAM,EAAE,KAAK,EAAE;AAC1B,IAAI,EAAE,CAAC,KAAK,CAAC,CAAC;AACd,IAAI,IAAI,CAAC,KAAK,CAAC,oBAAoB,CAAC,GAAG,CAAC,CAAC,CAAC,OAAO,CAAC,EAAE,CAAC,CAAC;AACtD,GAAG;AACH;AACA,EAAE,SAAS,EAAE,EAAE,EAAE,EAAE;AACnB,IAAI,EAAE,CAAC,eAAe,CAAC,cAAc,CAAC,CAAC;AACvC,GAAG;AACH,CAAC;AACD;IACA,cAAc,GAAG,YAAY"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444217,
+      "end": 1702937444217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444217,
+      "end": 1702937444217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444217,
+      "end": 1702937444217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444217,
+      "end": 1702937444217,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444217,
+      "end": 1702937444217,
+      "order": "normal"
+    }
+  ]
+}

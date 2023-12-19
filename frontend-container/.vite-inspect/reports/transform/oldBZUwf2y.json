@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/cache/inmemory/helpers.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { isReference, isField, DeepMerger, resultKeyNameFromField, shouldInclude, isNonNullObject, compact, createFragmentMap, getFragmentDefinitions, isArray, } from \"../../utilities/index.js\";\nexport var hasOwn = Object.prototype.hasOwnProperty;\nexport function isNullish(value) {\n    return value === null || value === void 0;\n}\nexport { isArray };\nexport function defaultDataIdFromObject(_a, context) {\n    var __typename = _a.__typename, id = _a.id, _id = _a._id;\n    if (typeof __typename === \"string\") {\n        if (context) {\n            context.keyObject =\n                !isNullish(id) ? { id: id }\n                    : !isNullish(_id) ? { _id: _id }\n                        : void 0;\n        }\n        // If there is no object.id, fall back to object._id.\n        if (isNullish(id) && !isNullish(_id)) {\n            id = _id;\n        }\n        if (!isNullish(id)) {\n            return \"\".concat(__typename, \":\").concat(typeof id === \"number\" || typeof id === \"string\" ?\n                id\n                : JSON.stringify(id));\n        }\n    }\n}\nvar defaultConfig = {\n    dataIdFromObject: defaultDataIdFromObject,\n    addTypename: true,\n    resultCaching: true,\n    // Thanks to the shouldCanonizeResults helper, this should be the only line\n    // you have to change to reenable canonization by default in the future.\n    canonizeResults: false,\n};\nexport function normalizeConfig(config) {\n    return compact(defaultConfig, config);\n}\nexport function shouldCanonizeResults(config) {\n    var value = config.canonizeResults;\n    return value === void 0 ? defaultConfig.canonizeResults : value;\n}\nexport function getTypenameFromStoreObject(store, objectOrReference) {\n    return isReference(objectOrReference) ?\n        store.get(objectOrReference.__ref, \"__typename\")\n        : objectOrReference && objectOrReference.__typename;\n}\nexport var TypeOrFieldNameRegExp = /^[_a-z][_0-9a-z]*/i;\nexport function fieldNameFromStoreName(storeFieldName) {\n    var match = storeFieldName.match(TypeOrFieldNameRegExp);\n    return match ? match[0] : storeFieldName;\n}\nexport function selectionSetMatchesResult(selectionSet, result, variables) {\n    if (isNonNullObject(result)) {\n        return isArray(result) ?\n            result.every(function (item) {\n                return selectionSetMatchesResult(selectionSet, item, variables);\n            })\n            : selectionSet.selections.every(function (field) {\n                if (isField(field) && shouldInclude(field, variables)) {\n                    var key = resultKeyNameFromField(field);\n                    return (hasOwn.call(result, key) &&\n                        (!field.selectionSet ||\n                            selectionSetMatchesResult(field.selectionSet, result[key], variables)));\n                }\n                // If the selection has been skipped with @skip(true) or\n                // @include(false), it should not count against the matching. If\n                // the selection is not a field, it must be a fragment (inline or\n                // named). We will determine if selectionSetMatchesResult for that\n                // fragment when we get to it, so for now we return true.\n                return true;\n            });\n    }\n    return false;\n}\nexport function storeValueIsStoreObject(value) {\n    return isNonNullObject(value) && !isReference(value) && !isArray(value);\n}\nexport function makeProcessedFieldsMerger() {\n    return new DeepMerger();\n}\nexport function extractFragmentContext(document, fragments) {\n    // FragmentMap consisting only of fragments defined directly in document, not\n    // including other fragments registered in the FragmentRegistry.\n    var fragmentMap = createFragmentMap(getFragmentDefinitions(document));\n    return {\n        fragmentMap: fragmentMap,\n        lookupFragment: function (name) {\n            var def = fragmentMap[name];\n            if (!def && fragments) {\n                def = fragments.lookup(name);\n            }\n            return def || null;\n        },\n    };\n}\n//# sourceMappingURL=helpers.js.map",
+      "start": 1702937440874,
+      "end": 1702937440954,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440954,
+      "end": 1702937440954,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/jsdoc.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorJavadoclike = require('./javadoclike.js')\nvar refractorTypescript = require('./typescript.js')\nmodule.exports = jsdoc\njsdoc.displayName = 'jsdoc'\njsdoc.aliases = []\nfunction jsdoc(Prism) {\n  Prism.register(refractorJavadoclike)\n  Prism.register(refractorTypescript)\n  ;(function (Prism) {\n    var javascript = Prism.languages.javascript\n    var type = /\\{(?:[^{}]|\\{(?:[^{}]|\\{[^{}]*\\})*\\})+\\}/.source\n    var parameterPrefix =\n      '(@(?:arg|argument|param|property)\\\\s+(?:' + type + '\\\\s+)?)'\n    Prism.languages.jsdoc = Prism.languages.extend('javadoclike', {\n      parameter: {\n        // @param {string} foo - foo bar\n        pattern: RegExp(\n          parameterPrefix + /(?:(?!\\s)[$\\w\\xA0-\\uFFFF.])+(?=\\s|$)/.source\n        ),\n        lookbehind: true,\n        inside: {\n          punctuation: /\\./\n        }\n      }\n    })\n    Prism.languages.insertBefore('jsdoc', 'keyword', {\n      'optional-parameter': {\n        // @param {string} [baz.foo=\"bar\"] foo bar\n        pattern: RegExp(\n          parameterPrefix +\n            /\\[(?:(?!\\s)[$\\w\\xA0-\\uFFFF.])+(?:=[^[\\]]+)?\\](?=\\s|$)/.source\n        ),\n        lookbehind: true,\n        inside: {\n          parameter: {\n            pattern: /(^\\[)[$\\w\\xA0-\\uFFFF\\.]+/,\n            lookbehind: true,\n            inside: {\n              punctuation: /\\./\n            }\n          },\n          code: {\n            pattern: /(=)[\\s\\S]*(?=\\]$)/,\n            lookbehind: true,\n            inside: javascript,\n            alias: 'language-javascript'\n          },\n          punctuation: /[=[\\]]/\n        }\n      },\n      'class-name': [\n        {\n          pattern: RegExp(\n            /(@(?:augments|class|extends|interface|memberof!?|template|this|typedef)\\s+(?:<TYPE>\\s+)?)[A-Z]\\w*(?:\\.[A-Z]\\w*)*/.source.replace(\n              /<TYPE>/g,\n              function () {\n                return type\n              }\n            )\n          ),\n          lookbehind: true,\n          inside: {\n            punctuation: /\\./\n          }\n        },\n        {\n          pattern: RegExp('(@[a-z]+\\\\s+)' + type),\n          lookbehind: true,\n          inside: {\n            string: javascript.string,\n            number: javascript.number,\n            boolean: javascript.boolean,\n            keyword: Prism.languages.typescript.keyword,\n            operator: /=>|\\.\\.\\.|[&|?:*]/,\n            punctuation: /[.,;=<>{}()[\\]]/\n          }\n        }\n      ],\n      example: {\n        pattern:\n          /(@example\\s+(?!\\s))(?:[^@\\s]|\\s+(?!\\s))+?(?=\\s*(?:\\*\\s*)?(?:@\\w|\\*\\/))/,\n        lookbehind: true,\n        inside: {\n          code: {\n            pattern: /^([\\t ]*(?:\\*\\s*)?)\\S.*$/m,\n            lookbehind: true,\n            inside: javascript,\n            alias: 'language-javascript'\n          }\n        }\n      }\n    })\n    Prism.languages.javadoclike.addSupport('javascript', Prism.languages.jsdoc)\n  })(Prism)\n}\n",
+      "start": 1702937444929,
+      "end": 1702937444957,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444957,
+      "end": 1702937444957,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/javadoclike.js?commonjs-wrapped\";\nimport { __require as require$$1 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/typescript.js?commonjs-wrapped\";\n\nvar jsdoc_1;\nvar hasRequiredJsdoc;\n\nfunction requireJsdoc () {\n\tif (hasRequiredJsdoc) return jsdoc_1;\n\thasRequiredJsdoc = 1;\n\t'use strict'\n\tvar refractorJavadoclike = require$$0()\n\tvar refractorTypescript = require$$1()\n\tjsdoc_1 = jsdoc\n\tjsdoc.displayName = 'jsdoc'\n\tjsdoc.aliases = []\n\tfunction jsdoc(Prism) {\n\t  Prism.register(refractorJavadoclike)\n\t  Prism.register(refractorTypescript)\n\t  ;(function (Prism) {\n\t    var javascript = Prism.languages.javascript\n\t    var type = /\\{(?:[^{}]|\\{(?:[^{}]|\\{[^{}]*\\})*\\})+\\}/.source\n\t    var parameterPrefix =\n\t      '(@(?:arg|argument|param|property)\\\\s+(?:' + type + '\\\\s+)?)'\n\t    Prism.languages.jsdoc = Prism.languages.extend('javadoclike', {\n\t      parameter: {\n\t        // @param {string} foo - foo bar\n\t        pattern: RegExp(\n\t          parameterPrefix + /(?:(?!\\s)[$\\w\\xA0-\\uFFFF.])+(?=\\s|$)/.source\n\t        ),\n\t        lookbehind: true,\n\t        inside: {\n\t          punctuation: /\\./\n\t        }\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('jsdoc', 'keyword', {\n\t      'optional-parameter': {\n\t        // @param {string} [baz.foo=\"bar\"] foo bar\n\t        pattern: RegExp(\n\t          parameterPrefix +\n\t            /\\[(?:(?!\\s)[$\\w\\xA0-\\uFFFF.])+(?:=[^[\\]]+)?\\](?=\\s|$)/.source\n\t        ),\n\t        lookbehind: true,\n\t        inside: {\n\t          parameter: {\n\t            pattern: /(^\\[)[$\\w\\xA0-\\uFFFF\\.]+/,\n\t            lookbehind: true,\n\t            inside: {\n\t              punctuation: /\\./\n\t            }\n\t          },\n\t          code: {\n\t            pattern: /(=)[\\s\\S]*(?=\\]$)/,\n\t            lookbehind: true,\n\t            inside: javascript,\n\t            alias: 'language-javascript'\n\t          },\n\t          punctuation: /[=[\\]]/\n\t        }\n\t      },\n\t      'class-name': [\n\t        {\n\t          pattern: RegExp(\n\t            /(@(?:augments|class|extends|interface|memberof!?|template|this|typedef)\\s+(?:<TYPE>\\s+)?)[A-Z]\\w*(?:\\.[A-Z]\\w*)*/.source.replace(\n\t              /<TYPE>/g,\n\t              function () {\n\t                return type\n\t              }\n\t            )\n\t          ),\n\t          lookbehind: true,\n\t          inside: {\n\t            punctuation: /\\./\n\t          }\n\t        },\n\t        {\n\t          pattern: RegExp('(@[a-z]+\\\\s+)' + type),\n\t          lookbehind: true,\n\t          inside: {\n\t            string: javascript.string,\n\t            number: javascript.number,\n\t            boolean: javascript.boolean,\n\t            keyword: Prism.languages.typescript.keyword,\n\t            operator: /=>|\\.\\.\\.|[&|?:*]/,\n\t            punctuation: /[.,;=<>{}()[\\]]/\n\t          }\n\t        }\n\t      ],\n\t      example: {\n\t        pattern:\n\t          /(@example\\s+(?!\\s))(?:[^@\\s]|\\s+(?!\\s))+?(?=\\s*(?:\\*\\s*)?(?:@\\w|\\*\\/))/,\n\t        lookbehind: true,\n\t        inside: {\n\t          code: {\n\t            pattern: /^([\\t ]*(?:\\*\\s*)?)\\S.*$/m,\n\t            lookbehind: true,\n\t            inside: javascript,\n\t            alias: 'language-javascript'\n\t          }\n\t        }\n\t      }\n\t    })\n\t    Prism.languages.javadoclike.addSupport('javascript', Prism.languages.jsdoc)\n\t  })(Prism)\n\t}\n\treturn jsdoc_1;\n}\n\nexport { requireJsdoc as __require };",
+      "start": 1702937444957,
+      "end": 1702937445127,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445127,
+      "end": 1702937445127,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445127,
+      "end": 1702937445127,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445127,
+      "end": 1702937445127,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445127,
+      "end": 1702937445127,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445127,
+      "end": 1702937445127,
+      "order": "normal"
+    }
+  ]
+}

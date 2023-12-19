@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/AbstractModalHeader.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport * as React from 'react';\nimport { useContext } from 'react';\nimport useEventCallback from '@restart/hooks/useEventCallback';\nimport CloseButton from './CloseButton';\nimport ModalContext from './ModalContext';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\nconst AbstractModalHeader = /*#__PURE__*/React.forwardRef(({\n  closeLabel = 'Close',\n  closeVariant,\n  closeButton = false,\n  onHide,\n  children,\n  ...props\n}, ref) => {\n  const context = useContext(ModalContext);\n  const handleClick = useEventCallback(() => {\n    context == null ? void 0 : context.onHide();\n    onHide == null ? void 0 : onHide();\n  });\n  return /*#__PURE__*/_jsxs(\"div\", {\n    ref: ref,\n    ...props,\n    children: [children, closeButton && /*#__PURE__*/_jsx(CloseButton, {\n      \"aria-label\": closeLabel,\n      variant: closeVariant,\n      onClick: handleClick\n    })]\n  });\n});\nexport default AbstractModalHeader;",
+      "start": 1702937442086,
+      "end": 1702937442099,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442099,
+      "end": 1702937442099,
+      "order": "normal"
+    }
+  ]
+}

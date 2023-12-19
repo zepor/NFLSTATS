@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/objectivec.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorC = require('./c.js')\nmodule.exports = objectivec\nobjectivec.displayName = 'objectivec'\nobjectivec.aliases = ['objc']\nfunction objectivec(Prism) {\n  Prism.register(refractorC)\n  Prism.languages.objectivec = Prism.languages.extend('c', {\n    string: {\n      pattern: /@?\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"/,\n      greedy: true\n    },\n    keyword:\n      /\\b(?:asm|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|in|inline|int|long|register|return|self|short|signed|sizeof|static|struct|super|switch|typedef|typeof|union|unsigned|void|volatile|while)\\b|(?:@interface|@end|@implementation|@protocol|@class|@public|@protected|@private|@property|@try|@catch|@finally|@throw|@synthesize|@dynamic|@selector)\\b/,\n    operator: /-[->]?|\\+\\+?|!=?|<<?=?|>>?=?|==?|&&?|\\|\\|?|[~^%?*\\/@]/\n  })\n  delete Prism.languages.objectivec['class-name']\n  Prism.languages.objc = Prism.languages.objectivec\n}\n",
+      "start": 1702937444985,
+      "end": 1702937445014,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/c.js?commonjs-wrapped\";\n\nvar objectivec_1;\nvar hasRequiredObjectivec;\n\nfunction requireObjectivec () {\n\tif (hasRequiredObjectivec) return objectivec_1;\n\thasRequiredObjectivec = 1;\n\t'use strict'\n\tvar refractorC = require$$0()\n\tobjectivec_1 = objectivec\n\tobjectivec.displayName = 'objectivec'\n\tobjectivec.aliases = ['objc']\n\tfunction objectivec(Prism) {\n\t  Prism.register(refractorC)\n\t  Prism.languages.objectivec = Prism.languages.extend('c', {\n\t    string: {\n\t      pattern: /@?\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"/,\n\t      greedy: true\n\t    },\n\t    keyword:\n\t      /\\b(?:asm|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|in|inline|int|long|register|return|self|short|signed|sizeof|static|struct|super|switch|typedef|typeof|union|unsigned|void|volatile|while)\\b|(?:@interface|@end|@implementation|@protocol|@class|@public|@protected|@private|@property|@try|@catch|@finally|@throw|@synthesize|@dynamic|@selector)\\b/,\n\t    operator: /-[->]?|\\+\\+?|!=?|<<?=?|>>?=?|==?|&&?|\\|\\|?|[~^%?*\\/@]/\n\t  })\n\t  delete Prism.languages.objectivec['class-name']\n\t  Prism.languages.objc = Prism.languages.objectivec\n\t}\n\treturn objectivec_1;\n}\n\nexport { requireObjectivec as __require };",
+      "start": 1702937445014,
+      "end": 1702937445014,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,UAAU,GAAG,YAAiB;AAClC,aAAc,GAAG,UAAU;CAC3B,UAAU,CAAC,WAAW,GAAG,YAAY;CACrC,UAAU,CAAC,OAAO,GAAG,CAAC,MAAM,CAAC;CAC7B,SAAS,UAAU,CAAC,KAAK,EAAE;CAC3B,EAAE,KAAK,CAAC,QAAQ,CAAC,UAAU,CAAC;CAC5B,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,GAAG,EAAE;CAC3D,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,uCAAuC;CACtD,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,uYAAuY;CAC7Y,IAAI,QAAQ,EAAE,uDAAuD;CACrE,GAAG,CAAC;CACJ,EAAE,OAAO,KAAK,CAAC,SAAS,CAAC,UAAU,CAAC,YAAY,CAAC;CACjD,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,UAAU;CACnD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445015,
+      "end": 1702937445015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445015,
+      "end": 1702937445015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445015,
+      "end": 1702937445015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445015,
+      "end": 1702937445015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445015,
+      "end": 1702937445015,
+      "order": "normal"
+    }
+  ]
+}

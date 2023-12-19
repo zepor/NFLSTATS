@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/autoit.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = autoit\nautoit.displayName = 'autoit'\nautoit.aliases = []\nfunction autoit(Prism) {\n  Prism.languages.autoit = {\n    comment: [\n      /;.*/,\n      {\n        // The multi-line comments delimiters can actually be commented out with \";\"\n        pattern:\n          /(^[\\t ]*)#(?:comments-start|cs)[\\s\\S]*?^[ \\t]*#(?:ce|comments-end)/m,\n        lookbehind: true\n      }\n    ],\n    url: {\n      pattern: /(^[\\t ]*#include\\s+)(?:<[^\\r\\n>]+>|\"[^\\r\\n\"]+\")/m,\n      lookbehind: true\n    },\n    string: {\n      pattern: /([\"'])(?:\\1\\1|(?!\\1)[^\\r\\n])*\\1/,\n      greedy: true,\n      inside: {\n        variable: /([%$@])\\w+\\1/\n      }\n    },\n    directive: {\n      pattern: /(^[\\t ]*)#[\\w-]+/m,\n      lookbehind: true,\n      alias: 'keyword'\n    },\n    function: /\\b\\w+(?=\\()/,\n    // Variables and macros\n    variable: /[$@]\\w+/,\n    keyword:\n      /\\b(?:Case|Const|Continue(?:Case|Loop)|Default|Dim|Do|Else(?:If)?|End(?:Func|If|Select|Switch|With)|Enum|Exit(?:Loop)?|For|Func|Global|If|In|Local|Next|Null|ReDim|Select|Static|Step|Switch|Then|To|Until|Volatile|WEnd|While|With)\\b/i,\n    number: /\\b(?:0x[\\da-f]+|\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?)\\b/i,\n    boolean: /\\b(?:False|True)\\b/i,\n    operator: /<[=>]?|[-+*\\/=&>]=?|[?^]|\\b(?:And|Not|Or)\\b/i,\n    punctuation: /[\\[\\]().,:]/\n  }\n}\n",
+      "start": 1702937444819,
+      "end": 1702937444844,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar autoit_1;\nvar hasRequiredAutoit;\n\nfunction requireAutoit () {\n\tif (hasRequiredAutoit) return autoit_1;\n\thasRequiredAutoit = 1;\n\t'use strict'\n\n\tautoit_1 = autoit\n\tautoit.displayName = 'autoit'\n\tautoit.aliases = []\n\tfunction autoit(Prism) {\n\t  Prism.languages.autoit = {\n\t    comment: [\n\t      /;.*/,\n\t      {\n\t        // The multi-line comments delimiters can actually be commented out with \";\"\n\t        pattern:\n\t          /(^[\\t ]*)#(?:comments-start|cs)[\\s\\S]*?^[ \\t]*#(?:ce|comments-end)/m,\n\t        lookbehind: true\n\t      }\n\t    ],\n\t    url: {\n\t      pattern: /(^[\\t ]*#include\\s+)(?:<[^\\r\\n>]+>|\"[^\\r\\n\"]+\")/m,\n\t      lookbehind: true\n\t    },\n\t    string: {\n\t      pattern: /([\"'])(?:\\1\\1|(?!\\1)[^\\r\\n])*\\1/,\n\t      greedy: true,\n\t      inside: {\n\t        variable: /([%$@])\\w+\\1/\n\t      }\n\t    },\n\t    directive: {\n\t      pattern: /(^[\\t ]*)#[\\w-]+/m,\n\t      lookbehind: true,\n\t      alias: 'keyword'\n\t    },\n\t    function: /\\b\\w+(?=\\()/,\n\t    // Variables and macros\n\t    variable: /[$@]\\w+/,\n\t    keyword:\n\t      /\\b(?:Case|Const|Continue(?:Case|Loop)|Default|Dim|Do|Else(?:If)?|End(?:Func|If|Select|Switch|With)|Enum|Exit(?:Loop)?|For|Func|Global|If|In|Local|Next|Null|ReDim|Select|Static|Step|Switch|Then|To|Until|Volatile|WEnd|While|With)\\b/i,\n\t    number: /\\b(?:0x[\\da-f]+|\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?)\\b/i,\n\t    boolean: /\\b(?:False|True)\\b/i,\n\t    operator: /<[=>]?|[-+*\\/=&>]=?|[?^]|\\b(?:And|Not|Or)\\b/i,\n\t    punctuation: /[\\[\\]().,:]/\n\t  }\n\t}\n\treturn autoit_1;\n}\n\nexport { requireAutoit as __require };",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,OAAO,EAAE;CACb,MAAM,KAAK;CACX,MAAM;CACN;CACA,QAAQ,OAAO;CACf,UAAU,qEAAqE;CAC/E,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,IAAI,GAAG,EAAE;CACT,MAAM,OAAO,EAAE,kDAAkD;CACjE,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,iCAAiC;CAChD,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,cAAc;CAChC,OAAO;CACP,KAAK;CACL,IAAI,SAAS,EAAE;CACf,MAAM,OAAO,EAAE,mBAAmB;CAClC,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,aAAa;CAC3B;CACA,IAAI,QAAQ,EAAE,SAAS;CACvB,IAAI,OAAO;CACX,MAAM,wOAAwO;CAC9O,IAAI,MAAM,EAAE,iDAAiD;CAC7D,IAAI,OAAO,EAAE,qBAAqB;CAClC,IAAI,QAAQ,EAAE,8CAA8C;CAC5D,IAAI,WAAW,EAAE,aAAa;CAC9B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444844,
+      "end": 1702937444844,
+      "order": "normal"
+    }
+  ]
+}

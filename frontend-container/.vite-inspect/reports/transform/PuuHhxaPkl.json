@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/squirrel.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = squirrel\nsquirrel.displayName = 'squirrel'\nsquirrel.aliases = []\nfunction squirrel(Prism) {\n  Prism.languages.squirrel = Prism.languages.extend('clike', {\n    comment: [\n      Prism.languages.clike['comment'][0],\n      {\n        pattern: /(^|[^\\\\:])(?:\\/\\/|#).*/,\n        lookbehind: true,\n        greedy: true\n      }\n    ],\n    string: {\n      pattern: /(^|[^\\\\\"'@])(?:@\"(?:[^\"]|\"\")*\"(?!\")|\"(?:[^\\\\\\r\\n\"]|\\\\.)*\")/,\n      lookbehind: true,\n      greedy: true\n    },\n    'class-name': {\n      pattern: /(\\b(?:class|enum|extends|instanceof)\\s+)\\w+(?:\\.\\w+)*/,\n      lookbehind: true,\n      inside: {\n        punctuation: /\\./\n      }\n    },\n    keyword:\n      /\\b(?:__FILE__|__LINE__|base|break|case|catch|class|clone|const|constructor|continue|default|delete|else|enum|extends|for|foreach|function|if|in|instanceof|local|null|resume|return|static|switch|this|throw|try|typeof|while|yield)\\b/,\n    number: /\\b(?:0x[0-9a-fA-F]+|\\d+(?:\\.(?:\\d+|[eE][+-]?\\d+))?)\\b/,\n    operator: /\\+\\+|--|<=>|<[-<]|>>>?|&&?|\\|\\|?|[-+*/%!=<>]=?|[~^]|::?/,\n    punctuation: /[(){}\\[\\],;.]/\n  })\n  Prism.languages.insertBefore('squirrel', 'string', {\n    char: {\n      pattern: /(^|[^\\\\\"'])'(?:[^\\\\']|\\\\(?:[xuU][0-9a-fA-F]{0,8}|[\\s\\S]))'/,\n      lookbehind: true,\n      greedy: true\n    }\n  })\n  Prism.languages.insertBefore('squirrel', 'operator', {\n    'attribute-punctuation': {\n      pattern: /<\\/|\\/>/,\n      alias: 'important'\n    },\n    lambda: {\n      pattern: /@(?=\\()/,\n      alias: 'operator'\n    }\n  })\n}\n",
+      "start": 1702937445068,
+      "end": 1702937445102,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445102,
+      "end": 1702937445102,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar squirrel_1;\nvar hasRequiredSquirrel;\n\nfunction requireSquirrel () {\n\tif (hasRequiredSquirrel) return squirrel_1;\n\thasRequiredSquirrel = 1;\n\t'use strict'\n\n\tsquirrel_1 = squirrel\n\tsquirrel.displayName = 'squirrel'\n\tsquirrel.aliases = []\n\tfunction squirrel(Prism) {\n\t  Prism.languages.squirrel = Prism.languages.extend('clike', {\n\t    comment: [\n\t      Prism.languages.clike['comment'][0],\n\t      {\n\t        pattern: /(^|[^\\\\:])(?:\\/\\/|#).*/,\n\t        lookbehind: true,\n\t        greedy: true\n\t      }\n\t    ],\n\t    string: {\n\t      pattern: /(^|[^\\\\\"'@])(?:@\"(?:[^\"]|\"\")*\"(?!\")|\"(?:[^\\\\\\r\\n\"]|\\\\.)*\")/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    'class-name': {\n\t      pattern: /(\\b(?:class|enum|extends|instanceof)\\s+)\\w+(?:\\.\\w+)*/,\n\t      lookbehind: true,\n\t      inside: {\n\t        punctuation: /\\./\n\t      }\n\t    },\n\t    keyword:\n\t      /\\b(?:__FILE__|__LINE__|base|break|case|catch|class|clone|const|constructor|continue|default|delete|else|enum|extends|for|foreach|function|if|in|instanceof|local|null|resume|return|static|switch|this|throw|try|typeof|while|yield)\\b/,\n\t    number: /\\b(?:0x[0-9a-fA-F]+|\\d+(?:\\.(?:\\d+|[eE][+-]?\\d+))?)\\b/,\n\t    operator: /\\+\\+|--|<=>|<[-<]|>>>?|&&?|\\|\\|?|[-+*/%!=<>]=?|[~^]|::?/,\n\t    punctuation: /[(){}\\[\\],;.]/\n\t  })\n\t  Prism.languages.insertBefore('squirrel', 'string', {\n\t    char: {\n\t      pattern: /(^|[^\\\\\"'])'(?:[^\\\\']|\\\\(?:[xuU][0-9a-fA-F]{0,8}|[\\s\\S]))'/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    }\n\t  })\n\t  Prism.languages.insertBefore('squirrel', 'operator', {\n\t    'attribute-punctuation': {\n\t      pattern: /<\\/|\\/>/,\n\t      alias: 'important'\n\t    },\n\t    lambda: {\n\t      pattern: /@(?=\\()/,\n\t      alias: 'operator'\n\t    }\n\t  })\n\t}\n\treturn squirrel_1;\n}\n\nexport { requireSquirrel as __require };",
+      "start": 1702937445102,
+      "end": 1702937445103,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,WAAc,GAAG,QAAQ;CACzB,QAAQ,CAAC,WAAW,GAAG,UAAU;CACjC,QAAQ,CAAC,OAAO,GAAG,EAAE;CACrB,SAAS,QAAQ,CAAC,KAAK,EAAE;CACzB,EAAE,KAAK,CAAC,SAAS,CAAC,QAAQ,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CAC7D,IAAI,OAAO,EAAE;CACb,MAAM,KAAK,CAAC,SAAS,CAAC,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC;CACzC,MAAM;CACN,QAAQ,OAAO,EAAE,wBAAwB;CACzC,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,4DAA4D;CAC3E,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO,EAAE,uDAAuD;CACtE,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,IAAI;CACzB,OAAO;CACP,KAAK;CACL,IAAI,OAAO;CACX,MAAM,wOAAwO;CAC9O,IAAI,MAAM,EAAE,uDAAuD;CACnE,IAAI,QAAQ,EAAE,yDAAyD;CACvE,IAAI,WAAW,EAAE,eAAe;CAChC,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,UAAU,EAAE,QAAQ,EAAE;CACrD,IAAI,IAAI,EAAE;CACV,MAAM,OAAO,EAAE,4DAA4D;CAC3E,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,UAAU,EAAE,UAAU,EAAE;CACvD,IAAI,uBAAuB,EAAE;CAC7B,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,KAAK,EAAE,WAAW;CACxB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    }
+  ]
+}

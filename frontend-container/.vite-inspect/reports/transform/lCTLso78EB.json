@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/keysIn.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import arrayLikeKeys from './_arrayLikeKeys.js';\nimport baseKeysIn from './_baseKeysIn.js';\nimport isArrayLike from './isArrayLike.js';\n\n/**\n * Creates an array of the own and inherited enumerable property names of `object`.\n *\n * **Note:** Non-object values are coerced to objects.\n *\n * @static\n * @memberOf _\n * @since 3.0.0\n * @category Object\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names.\n * @example\n *\n * function Foo() {\n *   this.a = 1;\n *   this.b = 2;\n * }\n *\n * Foo.prototype.c = 3;\n *\n * _.keysIn(new Foo);\n * // => ['a', 'b', 'c'] (iteration order is not guaranteed)\n */\nfunction keysIn(object) {\n  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);\n}\n\nexport default keysIn;\n",
+      "start": 1702937444061,
+      "end": 1702937444077,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444077,
+      "end": 1702937444077,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/optimism/lib/dep.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { parentEntrySlot } from \"./context.js\";\nimport { hasOwnProperty, maybeUnsubscribe, arrayFromSet, } from \"./helpers.js\";\nconst EntryMethods = {\n    setDirty: true,\n    dispose: true,\n    forget: true, // Fully remove parent Entry from LRU cache and computation graph\n};\nexport function dep(options) {\n    const depsByKey = new Map();\n    const subscribe = options && options.subscribe;\n    function depend(key) {\n        const parent = parentEntrySlot.getValue();\n        if (parent) {\n            let dep = depsByKey.get(key);\n            if (!dep) {\n                depsByKey.set(key, dep = new Set);\n            }\n            parent.dependOn(dep);\n            if (typeof subscribe === \"function\") {\n                maybeUnsubscribe(dep);\n                dep.unsubscribe = subscribe(key);\n            }\n        }\n    }\n    depend.dirty = function dirty(key, entryMethodName) {\n        const dep = depsByKey.get(key);\n        if (dep) {\n            const m = (entryMethodName &&\n                hasOwnProperty.call(EntryMethods, entryMethodName)) ? entryMethodName : \"setDirty\";\n            // We have to use arrayFromSet(dep).forEach instead of dep.forEach,\n            // because modifying a Set while iterating over it can cause elements in\n            // the Set to be removed from the Set before they've been iterated over.\n            arrayFromSet(dep).forEach(entry => entry[m]());\n            depsByKey.delete(key);\n            maybeUnsubscribe(dep);\n        }\n    };\n    return depend;\n}\n//# sourceMappingURL=dep.js.map",
+      "start": 1702937442924,
+      "end": 1702937443025,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443025,
+      "end": 1702937443025,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443025,
+      "end": 1702937443026,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443026,
+      "end": 1702937443026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443026,
+      "end": 1702937443026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443026,
+      "end": 1702937443026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443026,
+      "end": 1702937443026,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443026,
+      "end": 1702937443026,
+      "order": "normal"
+    }
+  ]
+}

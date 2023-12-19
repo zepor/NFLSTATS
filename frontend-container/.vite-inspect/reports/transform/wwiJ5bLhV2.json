@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/custom/NoSchemaIntrospectionCustomRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../../error/GraphQLError.mjs';\nimport { getNamedType } from '../../../type/definition.mjs';\nimport { isIntrospectionType } from '../../../type/introspection.mjs';\n\n/**\n * Prohibit introspection queries\n *\n * A GraphQL document is only valid if all fields selected are not fields that\n * return an introspection type.\n *\n * Note: This rule is optional and is not part of the Validation section of the\n * GraphQL Specification. This rule effectively disables introspection, which\n * does not reflect best practices and should only be done if absolutely necessary.\n */\nexport function NoSchemaIntrospectionCustomRule(context) {\n  return {\n    Field(node) {\n      const type = getNamedType(context.getType());\n\n      if (type && isIntrospectionType(type)) {\n        context.reportError(\n          new GraphQLError(\n            `GraphQL introspection has been disabled, but the requested query contained the field \"${node.name.value}\".`,\n            {\n              nodes: node,\n            },\n          ),\n        );\n      }\n    },\n  };\n}\n",
+      "start": 1702937443096,
+      "end": 1702937443109,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443109,
+      "end": 1702937443109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    }
+  ]
+}

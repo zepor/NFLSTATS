@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/Pagination.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport PageItem, { Ellipsis, First, Last, Next, Prev } from './PageItem';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst Pagination = /*#__PURE__*/React.forwardRef(({\n  bsPrefix,\n  className,\n  size,\n  ...props\n}, ref) => {\n  const decoratedBsPrefix = useBootstrapPrefix(bsPrefix, 'pagination');\n  return /*#__PURE__*/_jsx(\"ul\", {\n    ref: ref,\n    ...props,\n    className: classNames(className, decoratedBsPrefix, size && `${decoratedBsPrefix}-${size}`)\n  });\n});\nPagination.displayName = 'Pagination';\nexport default Object.assign(Pagination, {\n  First,\n  Prev,\n  Ellipsis,\n  Item: PageItem,\n  Next,\n  Last\n});",
+      "start": 1702937441502,
+      "end": 1702937441524,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441524,
+      "end": 1702937441524,
+      "order": "normal"
+    }
+  ]
+}

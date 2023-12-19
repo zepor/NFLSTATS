@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/editorconfig.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = editorconfig\neditorconfig.displayName = 'editorconfig'\neditorconfig.aliases = []\nfunction editorconfig(Prism) {\n  Prism.languages.editorconfig = {\n    // https://editorconfig-specification.readthedocs.io\n    comment: /[;#].*/,\n    section: {\n      pattern: /(^[ \\t]*)\\[.+\\]/m,\n      lookbehind: true,\n      alias: 'selector',\n      inside: {\n        regex: /\\\\\\\\[\\[\\]{},!?.*]/,\n        // Escape special characters with '\\\\'\n        operator: /[!?]|\\.\\.|\\*{1,2}/,\n        punctuation: /[\\[\\]{},]/\n      }\n    },\n    key: {\n      pattern: /(^[ \\t]*)[^\\s=]+(?=[ \\t]*=)/m,\n      lookbehind: true,\n      alias: 'attr-name'\n    },\n    value: {\n      pattern: /=.*/,\n      alias: 'attr-value',\n      inside: {\n        punctuation: /^=/\n      }\n    }\n  }\n}\n",
+      "start": 1702937444867,
+      "end": 1702937444895,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar editorconfig_1;\nvar hasRequiredEditorconfig;\n\nfunction requireEditorconfig () {\n\tif (hasRequiredEditorconfig) return editorconfig_1;\n\thasRequiredEditorconfig = 1;\n\t'use strict'\n\n\teditorconfig_1 = editorconfig\n\teditorconfig.displayName = 'editorconfig'\n\teditorconfig.aliases = []\n\tfunction editorconfig(Prism) {\n\t  Prism.languages.editorconfig = {\n\t    // https://editorconfig-specification.readthedocs.io\n\t    comment: /[;#].*/,\n\t    section: {\n\t      pattern: /(^[ \\t]*)\\[.+\\]/m,\n\t      lookbehind: true,\n\t      alias: 'selector',\n\t      inside: {\n\t        regex: /\\\\\\\\[\\[\\]{},!?.*]/,\n\t        // Escape special characters with '\\\\'\n\t        operator: /[!?]|\\.\\.|\\*{1,2}/,\n\t        punctuation: /[\\[\\]{},]/\n\t      }\n\t    },\n\t    key: {\n\t      pattern: /(^[ \\t]*)[^\\s=]+(?=[ \\t]*=)/m,\n\t      lookbehind: true,\n\t      alias: 'attr-name'\n\t    },\n\t    value: {\n\t      pattern: /=.*/,\n\t      alias: 'attr-value',\n\t      inside: {\n\t        punctuation: /^=/\n\t      }\n\t    }\n\t  }\n\t}\n\treturn editorconfig_1;\n}\n\nexport { requireEditorconfig as __require };",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,eAAc,GAAG,YAAY;CAC7B,YAAY,CAAC,WAAW,GAAG,cAAc;CACzC,YAAY,CAAC,OAAO,GAAG,EAAE;CACzB,SAAS,YAAY,CAAC,KAAK,EAAE;CAC7B,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,GAAG;CACjC;CACA,IAAI,OAAO,EAAE,QAAQ;CACrB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,kBAAkB;CACjC,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,UAAU;CACvB,MAAM,MAAM,EAAE;CACd,QAAQ,KAAK,EAAE,mBAAmB;CAClC;CACA,QAAQ,QAAQ,EAAE,mBAAmB;CACrC,QAAQ,WAAW,EAAE,WAAW;CAChC,OAAO;CACP,KAAK;CACL,IAAI,GAAG,EAAE;CACT,MAAM,OAAO,EAAE,8BAA8B;CAC7C,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,WAAW;CACxB,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,KAAK,EAAE,YAAY;CACzB,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,IAAI;CACzB,OAAO;CACP,KAAK;CACL,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444895,
+      "end": 1702937444895,
+      "order": "normal"
+    }
+  ]
+}

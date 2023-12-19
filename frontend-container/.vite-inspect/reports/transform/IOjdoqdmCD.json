@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/turtle.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = turtle\nturtle.displayName = 'turtle'\nturtle.aliases = []\nfunction turtle(Prism) {\n  Prism.languages.turtle = {\n    comment: {\n      pattern: /#.*/,\n      greedy: true\n    },\n    'multiline-string': {\n      pattern:\n        /\"\"\"(?:(?:\"\"?)?(?:[^\"\\\\]|\\\\.))*\"\"\"|'''(?:(?:''?)?(?:[^'\\\\]|\\\\.))*'''/,\n      greedy: true,\n      alias: 'string',\n      inside: {\n        comment: /#.*/\n      }\n    },\n    string: {\n      pattern: /\"(?:[^\\\\\"\\r\\n]|\\\\.)*\"|'(?:[^\\\\'\\r\\n]|\\\\.)*'/,\n      greedy: true\n    },\n    url: {\n      pattern:\n        /<(?:[^\\x00-\\x20<>\"{}|^`\\\\]|\\\\(?:u[\\da-fA-F]{4}|U[\\da-fA-F]{8}))*>/,\n      greedy: true,\n      inside: {\n        punctuation: /[<>]/\n      }\n    },\n    function: {\n      pattern:\n        /(?:(?![-.\\d\\xB7])[-.\\w\\xB7\\xC0-\\uFFFD]+)?:(?:(?![-.])(?:[-.:\\w\\xC0-\\uFFFD]|%[\\da-f]{2}|\\\\.)+)?/i,\n      inside: {\n        'local-name': {\n          pattern: /([^:]*:)[\\s\\S]+/,\n          lookbehind: true\n        },\n        prefix: {\n          pattern: /[\\s\\S]+/,\n          inside: {\n            punctuation: /:/\n          }\n        }\n      }\n    },\n    number: /[+-]?\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n    punctuation: /[{}.,;()[\\]]|\\^\\^/,\n    boolean: /\\b(?:false|true)\\b/,\n    keyword: [/(?:\\ba|@prefix|@base)\\b|=/, /\\b(?:base|graph|prefix)\\b/i],\n    tag: {\n      pattern: /@[a-z]+(?:-[a-z\\d]+)*/i,\n      inside: {\n        punctuation: /@/\n      }\n    }\n  }\n  Prism.languages.trig = Prism.languages['turtle']\n}\n",
+      "start": 1702937445092,
+      "end": 1702937445119,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445119,
+      "end": 1702937445119,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar turtle_1;\nvar hasRequiredTurtle;\n\nfunction requireTurtle () {\n\tif (hasRequiredTurtle) return turtle_1;\n\thasRequiredTurtle = 1;\n\t'use strict'\n\n\tturtle_1 = turtle\n\tturtle.displayName = 'turtle'\n\tturtle.aliases = []\n\tfunction turtle(Prism) {\n\t  Prism.languages.turtle = {\n\t    comment: {\n\t      pattern: /#.*/,\n\t      greedy: true\n\t    },\n\t    'multiline-string': {\n\t      pattern:\n\t        /\"\"\"(?:(?:\"\"?)?(?:[^\"\\\\]|\\\\.))*\"\"\"|'''(?:(?:''?)?(?:[^'\\\\]|\\\\.))*'''/,\n\t      greedy: true,\n\t      alias: 'string',\n\t      inside: {\n\t        comment: /#.*/\n\t      }\n\t    },\n\t    string: {\n\t      pattern: /\"(?:[^\\\\\"\\r\\n]|\\\\.)*\"|'(?:[^\\\\'\\r\\n]|\\\\.)*'/,\n\t      greedy: true\n\t    },\n\t    url: {\n\t      pattern:\n\t        /<(?:[^\\x00-\\x20<>\"{}|^`\\\\]|\\\\(?:u[\\da-fA-F]{4}|U[\\da-fA-F]{8}))*>/,\n\t      greedy: true,\n\t      inside: {\n\t        punctuation: /[<>]/\n\t      }\n\t    },\n\t    function: {\n\t      pattern:\n\t        /(?:(?![-.\\d\\xB7])[-.\\w\\xB7\\xC0-\\uFFFD]+)?:(?:(?![-.])(?:[-.:\\w\\xC0-\\uFFFD]|%[\\da-f]{2}|\\\\.)+)?/i,\n\t      inside: {\n\t        'local-name': {\n\t          pattern: /([^:]*:)[\\s\\S]+/,\n\t          lookbehind: true\n\t        },\n\t        prefix: {\n\t          pattern: /[\\s\\S]+/,\n\t          inside: {\n\t            punctuation: /:/\n\t          }\n\t        }\n\t      }\n\t    },\n\t    number: /[+-]?\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n\t    punctuation: /[{}.,;()[\\]]|\\^\\^/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    keyword: [/(?:\\ba|@prefix|@base)\\b|=/, /\\b(?:base|graph|prefix)\\b/i],\n\t    tag: {\n\t      pattern: /@[a-z]+(?:-[a-z\\d]+)*/i,\n\t      inside: {\n\t        punctuation: /@/\n\t      }\n\t    }\n\t  }\n\t  Prism.languages.trig = Prism.languages['turtle']\n\t}\n\treturn turtle_1;\n}\n\nexport { requireTurtle as __require };",
+      "start": 1702937445119,
+      "end": 1702937445120,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,kBAAkB,EAAE;CACxB,MAAM,OAAO;CACb,QAAQ,qEAAqE;CAC7E,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,QAAQ;CACrB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,KAAK;CACtB,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,6CAA6C;CAC5D,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,GAAG,EAAE;CACT,MAAM,OAAO;CACb,QAAQ,mEAAmE;CAC3E,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,MAAM;CAC3B,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,iGAAiG;CACzG,MAAM,MAAM,EAAE;CACd,QAAQ,YAAY,EAAE;CACtB,UAAU,OAAO,EAAE,iBAAiB;CACpC,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ,MAAM,EAAE;CAChB,UAAU,OAAO,EAAE,SAAS;CAC5B,UAAU,MAAM,EAAE;CAClB,YAAY,WAAW,EAAE,GAAG;CAC5B,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE,qCAAqC;CACjD,IAAI,WAAW,EAAE,mBAAmB;CACpC,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,OAAO,EAAE,CAAC,2BAA2B,EAAE,4BAA4B,CAAC;CACxE,IAAI,GAAG,EAAE;CACT,MAAM,OAAO,EAAE,wBAAwB;CACvC,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,GAAG;CACxB,OAAO;CACP,KAAK;CACL,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,QAAQ,CAAC;CAClD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445120,
+      "end": 1702937445120,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445120,
+      "end": 1702937445120,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445120,
+      "end": 1702937445120,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445120,
+      "end": 1702937445120,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445120,
+      "end": 1702937445120,
+      "order": "normal"
+    }
+  ]
+}

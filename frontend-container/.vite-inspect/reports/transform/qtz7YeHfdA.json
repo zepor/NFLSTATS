@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/vbnet.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorBasic = require('./basic.js')\nmodule.exports = vbnet\nvbnet.displayName = 'vbnet'\nvbnet.aliases = []\nfunction vbnet(Prism) {\n  Prism.register(refractorBasic)\n  Prism.languages.vbnet = Prism.languages.extend('basic', {\n    comment: [\n      {\n        pattern: /(?:!|REM\\b).+/i,\n        inside: {\n          keyword: /^REM/i\n        }\n      },\n      {\n        pattern: /(^|[^\\\\:])'.*/,\n        lookbehind: true,\n        greedy: true\n      }\n    ],\n    string: {\n      pattern: /(^|[^\"])\"(?:\"\"|[^\"])*\"(?!\")/,\n      lookbehind: true,\n      greedy: true\n    },\n    keyword:\n      /(?:\\b(?:ADDHANDLER|ADDRESSOF|ALIAS|AND|ANDALSO|AS|BEEP|BLOAD|BOOLEAN|BSAVE|BYREF|BYTE|BYVAL|CALL(?: ABSOLUTE)?|CASE|CATCH|CBOOL|CBYTE|CCHAR|CDATE|CDBL|CDEC|CHAIN|CHAR|CHDIR|CINT|CLASS|CLEAR|CLNG|CLOSE|CLS|COBJ|COM|COMMON|CONST|CONTINUE|CSBYTE|CSHORT|CSNG|CSTR|CTYPE|CUINT|CULNG|CUSHORT|DATA|DATE|DECIMAL|DECLARE|DEF(?: FN| SEG|DBL|INT|LNG|SNG|STR)|DEFAULT|DELEGATE|DIM|DIRECTCAST|DO|DOUBLE|ELSE|ELSEIF|END|ENUM|ENVIRON|ERASE|ERROR|EVENT|EXIT|FALSE|FIELD|FILES|FINALLY|FOR(?: EACH)?|FRIEND|FUNCTION|GET|GETTYPE|GETXMLNAMESPACE|GLOBAL|GOSUB|GOTO|HANDLES|IF|IMPLEMENTS|IMPORTS|IN|INHERITS|INPUT|INTEGER|INTERFACE|IOCTL|IS|ISNOT|KEY|KILL|LET|LIB|LIKE|LINE INPUT|LOCATE|LOCK|LONG|LOOP|LSET|ME|MKDIR|MOD|MODULE|MUSTINHERIT|MUSTOVERRIDE|MYBASE|MYCLASS|NAME|NAMESPACE|NARROWING|NEW|NEXT|NOT|NOTHING|NOTINHERITABLE|NOTOVERRIDABLE|OBJECT|OF|OFF|ON(?: COM| ERROR| KEY| TIMER)?|OPEN|OPERATOR|OPTION(?: BASE)?|OPTIONAL|OR|ORELSE|OUT|OVERLOADS|OVERRIDABLE|OVERRIDES|PARAMARRAY|PARTIAL|POKE|PRIVATE|PROPERTY|PROTECTED|PUBLIC|PUT|RAISEEVENT|READ|READONLY|REDIM|REM|REMOVEHANDLER|RESTORE|RESUME|RETURN|RMDIR|RSET|RUN|SBYTE|SELECT(?: CASE)?|SET|SHADOWS|SHARED|SHELL|SHORT|SINGLE|SLEEP|STATIC|STEP|STOP|STRING|STRUCTURE|SUB|SWAP|SYNCLOCK|SYSTEM|THEN|THROW|TIMER|TO|TROFF|TRON|TRUE|TRY|TRYCAST|TYPE|TYPEOF|UINTEGER|ULONG|UNLOCK|UNTIL|USHORT|USING|VIEW PRINT|WAIT|WEND|WHEN|WHILE|WIDENING|WITH|WITHEVENTS|WRITE|WRITEONLY|XOR)|\\B(?:#CONST|#ELSE|#ELSEIF|#END|#IF))(?:\\$|\\b)/i,\n    punctuation: /[,;:(){}]/\n  })\n}\n",
+      "start": 1702937445108,
+      "end": 1702937445129,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/basic.js?commonjs-wrapped\";\n\nvar vbnet_1;\nvar hasRequiredVbnet;\n\nfunction requireVbnet () {\n\tif (hasRequiredVbnet) return vbnet_1;\n\thasRequiredVbnet = 1;\n\t'use strict'\n\tvar refractorBasic = require$$0()\n\tvbnet_1 = vbnet\n\tvbnet.displayName = 'vbnet'\n\tvbnet.aliases = []\n\tfunction vbnet(Prism) {\n\t  Prism.register(refractorBasic)\n\t  Prism.languages.vbnet = Prism.languages.extend('basic', {\n\t    comment: [\n\t      {\n\t        pattern: /(?:!|REM\\b).+/i,\n\t        inside: {\n\t          keyword: /^REM/i\n\t        }\n\t      },\n\t      {\n\t        pattern: /(^|[^\\\\:])'.*/,\n\t        lookbehind: true,\n\t        greedy: true\n\t      }\n\t    ],\n\t    string: {\n\t      pattern: /(^|[^\"])\"(?:\"\"|[^\"])*\"(?!\")/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    keyword:\n\t      /(?:\\b(?:ADDHANDLER|ADDRESSOF|ALIAS|AND|ANDALSO|AS|BEEP|BLOAD|BOOLEAN|BSAVE|BYREF|BYTE|BYVAL|CALL(?: ABSOLUTE)?|CASE|CATCH|CBOOL|CBYTE|CCHAR|CDATE|CDBL|CDEC|CHAIN|CHAR|CHDIR|CINT|CLASS|CLEAR|CLNG|CLOSE|CLS|COBJ|COM|COMMON|CONST|CONTINUE|CSBYTE|CSHORT|CSNG|CSTR|CTYPE|CUINT|CULNG|CUSHORT|DATA|DATE|DECIMAL|DECLARE|DEF(?: FN| SEG|DBL|INT|LNG|SNG|STR)|DEFAULT|DELEGATE|DIM|DIRECTCAST|DO|DOUBLE|ELSE|ELSEIF|END|ENUM|ENVIRON|ERASE|ERROR|EVENT|EXIT|FALSE|FIELD|FILES|FINALLY|FOR(?: EACH)?|FRIEND|FUNCTION|GET|GETTYPE|GETXMLNAMESPACE|GLOBAL|GOSUB|GOTO|HANDLES|IF|IMPLEMENTS|IMPORTS|IN|INHERITS|INPUT|INTEGER|INTERFACE|IOCTL|IS|ISNOT|KEY|KILL|LET|LIB|LIKE|LINE INPUT|LOCATE|LOCK|LONG|LOOP|LSET|ME|MKDIR|MOD|MODULE|MUSTINHERIT|MUSTOVERRIDE|MYBASE|MYCLASS|NAME|NAMESPACE|NARROWING|NEW|NEXT|NOT|NOTHING|NOTINHERITABLE|NOTOVERRIDABLE|OBJECT|OF|OFF|ON(?: COM| ERROR| KEY| TIMER)?|OPEN|OPERATOR|OPTION(?: BASE)?|OPTIONAL|OR|ORELSE|OUT|OVERLOADS|OVERRIDABLE|OVERRIDES|PARAMARRAY|PARTIAL|POKE|PRIVATE|PROPERTY|PROTECTED|PUBLIC|PUT|RAISEEVENT|READ|READONLY|REDIM|REM|REMOVEHANDLER|RESTORE|RESUME|RETURN|RMDIR|RSET|RUN|SBYTE|SELECT(?: CASE)?|SET|SHADOWS|SHARED|SHELL|SHORT|SINGLE|SLEEP|STATIC|STEP|STOP|STRING|STRUCTURE|SUB|SWAP|SYNCLOCK|SYSTEM|THEN|THROW|TIMER|TO|TROFF|TRON|TRUE|TRY|TRYCAST|TYPE|TYPEOF|UINTEGER|ULONG|UNLOCK|UNTIL|USHORT|USING|VIEW PRINT|WAIT|WEND|WHEN|WHILE|WIDENING|WITH|WITHEVENTS|WRITE|WRITEONLY|XOR)|\\B(?:#CONST|#ELSE|#ELSEIF|#END|#IF))(?:\\$|\\b)/i,\n\t    punctuation: /[,;:(){}]/\n\t  })\n\t}\n\treturn vbnet_1;\n}\n\nexport { requireVbnet as __require };",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,cAAc,GAAG,YAAqB;AAC1C,QAAc,GAAG,KAAK;CACtB,KAAK,CAAC,WAAW,GAAG,OAAO;CAC3B,KAAK,CAAC,OAAO,GAAG,EAAE;CAClB,SAAS,KAAK,CAAC,KAAK,EAAE;CACtB,EAAE,KAAK,CAAC,QAAQ,CAAC,cAAc,CAAC;CAChC,EAAE,KAAK,CAAC,SAAS,CAAC,KAAK,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CAC1D,IAAI,OAAO,EAAE;CACb,MAAM;CACN,QAAQ,OAAO,EAAE,gBAAgB;CACjC,QAAQ,MAAM,EAAE;CAChB,UAAU,OAAO,EAAE,OAAO;CAC1B,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,OAAO,EAAE,eAAe;CAChC,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,6BAA6B;CAC5C,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,66CAA66C;CACn7C,IAAI,WAAW,EAAE,WAAW;CAC5B,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445129,
+      "end": 1702937445129,
+      "order": "normal"
+    }
+  ]
+}

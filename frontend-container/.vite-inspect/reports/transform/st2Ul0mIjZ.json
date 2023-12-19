@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/language/location.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { invariant } from '../jsutils/invariant.mjs';\nconst LineRegExp = /\\r\\n|[\\n\\r]/g;\n/**\n * Represents a location in a Source.\n */\n\n/**\n * Takes a Source and a UTF-8 character offset, and returns the corresponding\n * line and column as a SourceLocation.\n */\nexport function getLocation(source, position) {\n  let lastLineStart = 0;\n  let line = 1;\n\n  for (const match of source.body.matchAll(LineRegExp)) {\n    typeof match.index === 'number' || invariant(false);\n\n    if (match.index >= position) {\n      break;\n    }\n\n    lastLineStart = match.index + match[0].length;\n    line += 1;\n  }\n\n  return {\n    line,\n    column: position + 1 - lastLineStart,\n  };\n}\n",
+      "start": 1702937443044,
+      "end": 1702937443070,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443071,
+      "end": 1702937443071,
+      "order": "normal"
+    }
+  ]
+}

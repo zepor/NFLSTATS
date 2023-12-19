@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-syntax-highlighter/dist/esm/styles/hljs/night-owl.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default {\n  \"hljs\": {\n    \"display\": \"block\",\n    \"overflowX\": \"auto\",\n    \"padding\": \"0.5em\",\n    \"background\": \"#011627\",\n    \"color\": \"#d6deeb\"\n  },\n  \"hljs-keyword\": {\n    \"color\": \"#c792ea\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-built_in\": {\n    \"color\": \"#addb67\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-type\": {\n    \"color\": \"#82aaff\"\n  },\n  \"hljs-literal\": {\n    \"color\": \"#ff5874\"\n  },\n  \"hljs-number\": {\n    \"color\": \"#F78C6C\"\n  },\n  \"hljs-regexp\": {\n    \"color\": \"#5ca7e4\"\n  },\n  \"hljs-string\": {\n    \"color\": \"#ecc48d\"\n  },\n  \"hljs-subst\": {\n    \"color\": \"#d3423e\"\n  },\n  \"hljs-symbol\": {\n    \"color\": \"#82aaff\"\n  },\n  \"hljs-class\": {\n    \"color\": \"#ffcb8b\"\n  },\n  \"hljs-function\": {\n    \"color\": \"#82AAFF\"\n  },\n  \"hljs-title\": {\n    \"color\": \"#DCDCAA\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-params\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-comment\": {\n    \"color\": \"#637777\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-doctag\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-meta\": {\n    \"color\": \"#82aaff\"\n  },\n  \"hljs-meta-keyword\": {\n    \"color\": \"#82aaff\"\n  },\n  \"hljs-meta-string\": {\n    \"color\": \"#ecc48d\"\n  },\n  \"hljs-section\": {\n    \"color\": \"#82b1ff\"\n  },\n  \"hljs-tag\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-name\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-builtin-name\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-attr\": {\n    \"color\": \"#7fdbca\"\n  },\n  \"hljs-attribute\": {\n    \"color\": \"#80cbc4\"\n  },\n  \"hljs-variable\": {\n    \"color\": \"#addb67\"\n  },\n  \"hljs-bullet\": {\n    \"color\": \"#d9f5dd\"\n  },\n  \"hljs-code\": {\n    \"color\": \"#80CBC4\"\n  },\n  \"hljs-emphasis\": {\n    \"color\": \"#c792ea\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-strong\": {\n    \"color\": \"#addb67\",\n    \"fontWeight\": \"bold\"\n  },\n  \"hljs-formula\": {\n    \"color\": \"#c792ea\"\n  },\n  \"hljs-link\": {\n    \"color\": \"#ff869a\"\n  },\n  \"hljs-quote\": {\n    \"color\": \"#697098\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-selector-tag\": {\n    \"color\": \"#ff6363\"\n  },\n  \"hljs-selector-id\": {\n    \"color\": \"#fad430\"\n  },\n  \"hljs-selector-class\": {\n    \"color\": \"#addb67\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-selector-attr\": {\n    \"color\": \"#c792ea\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-selector-pseudo\": {\n    \"color\": \"#c792ea\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-template-tag\": {\n    \"color\": \"#c792ea\"\n  },\n  \"hljs-template-variable\": {\n    \"color\": \"#addb67\"\n  },\n  \"hljs-addition\": {\n    \"color\": \"#addb67ff\",\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-deletion\": {\n    \"color\": \"#EF535090\",\n    \"fontStyle\": \"italic\"\n  }\n};",
+      "start": 1702937443910,
+      "end": 1702937443922,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443922,
+      "end": 1702937443922,
+      "order": "normal"
+    }
+  ]
+}

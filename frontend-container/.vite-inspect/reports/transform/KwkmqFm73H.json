@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/jsonp.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorJson = require('./json.js')\nmodule.exports = jsonp\njsonp.displayName = 'jsonp'\njsonp.aliases = []\nfunction jsonp(Prism) {\n  Prism.register(refractorJson)\n  Prism.languages.jsonp = Prism.languages.extend('json', {\n    punctuation: /[{}[\\]();,.]/\n  })\n  Prism.languages.insertBefore('jsonp', 'punctuation', {\n    function: /(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*\\()/\n  })\n}\n",
+      "start": 1702937444936,
+      "end": 1702937444959,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444959,
+      "end": 1702937444959,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/json.js?commonjs-wrapped\";\n\nvar jsonp_1;\nvar hasRequiredJsonp;\n\nfunction requireJsonp () {\n\tif (hasRequiredJsonp) return jsonp_1;\n\thasRequiredJsonp = 1;\n\t'use strict'\n\tvar refractorJson = require$$0()\n\tjsonp_1 = jsonp\n\tjsonp.displayName = 'jsonp'\n\tjsonp.aliases = []\n\tfunction jsonp(Prism) {\n\t  Prism.register(refractorJson)\n\t  Prism.languages.jsonp = Prism.languages.extend('json', {\n\t    punctuation: /[{}[\\]();,.]/\n\t  })\n\t  Prism.languages.insertBefore('jsonp', 'punctuation', {\n\t    function: /(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*\\()/\n\t  })\n\t}\n\treturn jsonp_1;\n}\n\nexport { requireJsonp as __require };",
+      "start": 1702937444959,
+      "end": 1702937444960,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,aAAa,GAAG,YAAoB;AACxC,QAAc,GAAG,KAAK;CACtB,KAAK,CAAC,WAAW,GAAG,OAAO;CAC3B,KAAK,CAAC,OAAO,GAAG,EAAE;CAClB,SAAS,KAAK,CAAC,KAAK,EAAE;CACtB,EAAE,KAAK,CAAC,QAAQ,CAAC,aAAa,CAAC;CAC/B,EAAE,KAAK,CAAC,SAAS,CAAC,KAAK,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,MAAM,EAAE;CACzD,IAAI,WAAW,EAAE,cAAc;CAC/B,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,OAAO,EAAE,aAAa,EAAE;CACvD,IAAI,QAAQ,EAAE,iEAAiE;CAC/E,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444960,
+      "end": 1702937444960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444960,
+      "end": 1702937444960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444960,
+      "end": 1702937444960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444960,
+      "end": 1702937444960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444960,
+      "end": 1702937444960,
+      "order": "normal"
+    }
+  ]
+}

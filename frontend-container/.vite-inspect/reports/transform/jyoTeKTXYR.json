@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/jsutils/promiseReduce.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { isPromise } from './isPromise.mjs';\n\n/**\n * Similar to Array.prototype.reduce(), however the reducing callback may return\n * a Promise, in which case reduction will continue after each promise resolves.\n *\n * If the callback does not return a Promise, then this function will also not\n * return a Promise.\n */\nexport function promiseReduce(values, callbackFn, initialValue) {\n  let accumulator = initialValue;\n\n  for (const value of values) {\n    accumulator = isPromise(accumulator)\n      ? accumulator.then((resolved) => callbackFn(resolved, value))\n      : callbackFn(accumulator, value);\n  }\n\n  return accumulator;\n}\n",
+      "start": 1702937443980,
+      "end": 1702937443996,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443996,
+      "end": 1702937443996,
+      "order": "normal"
+    }
+  ]
+}

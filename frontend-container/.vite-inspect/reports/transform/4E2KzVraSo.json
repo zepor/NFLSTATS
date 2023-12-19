@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarDropdown.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Dropdown, ListGroup } from \"react-bootstrap\";\r\n\r\nconst NavbarDropdown = ({\r\n  children,\r\n  count,\r\n  showBadge,\r\n  header,\r\n  footer,\r\n  icon: Icon,\r\n}) => (\r\n  <Dropdown className=\"me-2 nav-item\" align=\"end\">\r\n    <Dropdown.Toggle as=\"a\" className=\"nav-link nav-icon dropdown-toggle\">\r\n      <div className=\"position-relative\">\r\n        <Icon className=\"align-middle\" size={18} />\r\n        {showBadge ? <span className=\"indicator\">{count}</span> : null}\r\n      </div>\r\n    </Dropdown.Toggle>\r\n    <Dropdown.Menu drop=\"end\" className=\"dropdown-menu-lg py-0\">\r\n      <div className=\"dropdown-menu-header position-relative\">\r\n        {count}\r\n        {header}\r\n      </div>\r\n      <ListGroup>{children}</ListGroup>\r\n      <Dropdown.Header className=\"dropdown-menu-footer\">\r\n        <span className=\"text-muted\">{footer}</span>\r\n      </Dropdown.Header>\r\n    </Dropdown.Menu>\r\n  </Dropdown>\r\n);\r\n\r\nexport default NavbarDropdown;\r\n",
+      "start": 1702937442101,
+      "end": 1702937442121,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Dropdown, ListGroup } from \"react-bootstrap\";\nconst NavbarDropdown = ({\n  children,\n  count,\n  showBadge,\n  header,\n  footer,\n  icon: Icon\n}) => /* @__PURE__ */ jsxs(Dropdown, { className: \"me-2 nav-item\", align: \"end\", children: [\n  /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", className: \"nav-link nav-icon dropdown-toggle\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"position-relative\", children: [\n    /* @__PURE__ */ jsx(Icon, { className: \"align-middle\", size: 18 }),\n    showBadge ? /* @__PURE__ */ jsx(\"span\", { className: \"indicator\", children: count }) : null\n  ] }) }),\n  /* @__PURE__ */ jsxs(Dropdown.Menu, { drop: \"end\", className: \"dropdown-menu-lg py-0\", children: [\n    /* @__PURE__ */ jsxs(\"div\", { className: \"dropdown-menu-header position-relative\", children: [\n      count,\n      header\n    ] }),\n    /* @__PURE__ */ jsx(ListGroup, { children }),\n    /* @__PURE__ */ jsx(Dropdown.Header, { className: \"dropdown-menu-footer\", children: /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: footer }) })\n  ] })\n] });\nexport default NavbarDropdown;\n",
+      "start": 1702937442122,
+      "end": 1702937442160,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarDropdown.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Dropdown, ListGroup } from \"react-bootstrap\";\r\n\r\nconst NavbarDropdown = ({\r\n  children,\r\n  count,\r\n  showBadge,\r\n  header,\r\n  footer,\r\n  icon: Icon,\r\n}) => (\r\n  <Dropdown className=\"me-2 nav-item\" align=\"end\">\r\n    <Dropdown.Toggle as=\"a\" className=\"nav-link nav-icon dropdown-toggle\">\r\n      <div className=\"position-relative\">\r\n        <Icon className=\"align-middle\" size={18} />\r\n        {showBadge ? <span className=\"indicator\">{count}</span> : null}\r\n      </div>\r\n    </Dropdown.Toggle>\r\n    <Dropdown.Menu drop=\"end\" className=\"dropdown-menu-lg py-0\">\r\n      <div className=\"dropdown-menu-header position-relative\">\r\n        {count}\r\n        {header}\r\n      </div>\r\n      <ListGroup>{children}</ListGroup>\r\n      <Dropdown.Header className=\"dropdown-menu-footer\">\r\n        <span className=\"text-muted\">{footer}</span>\r\n      </Dropdown.Header>\r\n    </Dropdown.Menu>\r\n  </Dropdown>\r\n);\r\n\r\nexport default NavbarDropdown;\r\n"
+        ],
+        "mappings": "AAcM,SACE,KADF;AAdN,OAAO,WAAW;AAElB,SAAS,UAAU,iBAAiB;AAEpC,MAAM,iBAAiB,CAAC;AAAA,EACtB;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA,MAAM;AACR,MACE,qBAAC,YAAS,WAAU,iBAAgB,OAAM,OACxC;AAAA,sBAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,WAAU,qCAChC,+BAAC,SAAI,WAAU,qBACb;AAAA,wBAAC,QAAK,WAAU,gBAAe,MAAM,IAAI;AAAA,IACxC,YAAY,oBAAC,UAAK,WAAU,aAAa,iBAAM,IAAU;AAAA,KAC5D,GACF;AAAA,EACA,qBAAC,SAAS,MAAT,EAAc,MAAK,OAAM,WAAU,yBAClC;AAAA,yBAAC,SAAI,WAAU,0CACZ;AAAA;AAAA,MACA;AAAA,OACH;AAAA,IACA,oBAAC,aAAW,UAAS;AAAA,IACrB,oBAAC,SAAS,QAAT,EAAgB,WAAU,wBACzB,8BAAC,UAAK,WAAU,cAAc,kBAAO,GACvC;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    }
+  ]
+}

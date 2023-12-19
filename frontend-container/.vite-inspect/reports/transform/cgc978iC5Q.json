@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/jsutils/memoize3.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Memoizes the provided three-argument function.\n */\nexport function memoize3(fn) {\n  let cache0;\n  return function memoized(a1, a2, a3) {\n    if (cache0 === undefined) {\n      cache0 = new WeakMap();\n    }\n\n    let cache1 = cache0.get(a1);\n\n    if (cache1 === undefined) {\n      cache1 = new WeakMap();\n      cache0.set(a1, cache1);\n    }\n\n    let cache2 = cache1.get(a2);\n\n    if (cache2 === undefined) {\n      cache2 = new WeakMap();\n      cache1.set(a2, cache2);\n    }\n\n    let fnResult = cache2.get(a3);\n\n    if (fnResult === undefined) {\n      fnResult = fn(a1, a2, a3);\n      cache2.set(a3, fnResult);\n    }\n\n    return fnResult;\n  };\n}\n",
+      "start": 1702937443973,
+      "end": 1702937443992,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443993,
+      "end": 1702937443993,
+      "order": "normal"
+    }
+  ]
+}

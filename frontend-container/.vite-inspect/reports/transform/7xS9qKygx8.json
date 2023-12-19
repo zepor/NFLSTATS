@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/uri.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = uri\nuri.displayName = 'uri'\nuri.aliases = ['url']\nfunction uri(Prism) {\n  // https://tools.ietf.org/html/rfc3986#appendix-A\n  Prism.languages.uri = {\n    scheme: {\n      pattern: /^[a-z][a-z0-9+.-]*:/im,\n      greedy: true,\n      inside: {\n        'scheme-delimiter': /:$/\n      }\n    },\n    fragment: {\n      pattern: /#[\\w\\-.~!$&'()*+,;=%:@/?]*/,\n      inside: {\n        'fragment-delimiter': /^#/\n      }\n    },\n    query: {\n      pattern: /\\?[\\w\\-.~!$&'()*+,;=%:@/?]*/,\n      inside: {\n        'query-delimiter': {\n          pattern: /^\\?/,\n          greedy: true\n        },\n        'pair-delimiter': /[&;]/,\n        pair: {\n          pattern: /^[^=][\\s\\S]*/,\n          inside: {\n            key: /^[^=]+/,\n            value: {\n              pattern: /(^=)[\\s\\S]+/,\n              lookbehind: true\n            }\n          }\n        }\n      }\n    },\n    authority: {\n      pattern: RegExp(\n        /^\\/\\//.source + // [ userinfo \"@\" ]\n          /(?:[\\w\\-.~!$&'()*+,;=%:]*@)?/.source + // host\n          ('(?:' + // IP-literal\n            /\\[(?:[0-9a-fA-F:.]{2,48}|v[0-9a-fA-F]+\\.[\\w\\-.~!$&'()*+,;=]+)\\]/\n              .source +\n            '|' + // IPv4address or registered name\n            /[\\w\\-.~!$&'()*+,;=%]*/.source +\n            ')') + // [ \":\" port ]\n          /(?::\\d*)?/.source,\n        'm'\n      ),\n      inside: {\n        'authority-delimiter': /^\\/\\//,\n        'user-info-segment': {\n          pattern: /^[\\w\\-.~!$&'()*+,;=%:]*@/,\n          inside: {\n            'user-info-delimiter': /@$/,\n            'user-info': /^[\\w\\-.~!$&'()*+,;=%:]+/\n          }\n        },\n        'port-segment': {\n          pattern: /:\\d*$/,\n          inside: {\n            'port-delimiter': /^:/,\n            port: /^\\d+/\n          }\n        },\n        host: {\n          pattern: /[\\s\\S]+/,\n          inside: {\n            'ip-literal': {\n              pattern: /^\\[[\\s\\S]+\\]$/,\n              inside: {\n                'ip-literal-delimiter': /^\\[|\\]$/,\n                'ipv-future': /^v[\\s\\S]+/,\n                'ipv6-address': /^[\\s\\S]+/\n              }\n            },\n            'ipv4-address':\n              /^(?:(?:[03-9]\\d?|[12]\\d{0,2})\\.){3}(?:[03-9]\\d?|[12]\\d{0,2})$/\n          }\n        }\n      }\n    },\n    path: {\n      pattern: /^[\\w\\-.~!$&'()*+,;=%:@/]+/m,\n      inside: {\n        'path-separator': /\\//\n      }\n    }\n  }\n  Prism.languages.url = Prism.languages.uri\n}\n",
+      "start": 1702937445103,
+      "end": 1702937445125,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar uri_1;\nvar hasRequiredUri;\n\nfunction requireUri () {\n\tif (hasRequiredUri) return uri_1;\n\thasRequiredUri = 1;\n\t'use strict'\n\n\turi_1 = uri\n\turi.displayName = 'uri'\n\turi.aliases = ['url']\n\tfunction uri(Prism) {\n\t  // https://tools.ietf.org/html/rfc3986#appendix-A\n\t  Prism.languages.uri = {\n\t    scheme: {\n\t      pattern: /^[a-z][a-z0-9+.-]*:/im,\n\t      greedy: true,\n\t      inside: {\n\t        'scheme-delimiter': /:$/\n\t      }\n\t    },\n\t    fragment: {\n\t      pattern: /#[\\w\\-.~!$&'()*+,;=%:@/?]*/,\n\t      inside: {\n\t        'fragment-delimiter': /^#/\n\t      }\n\t    },\n\t    query: {\n\t      pattern: /\\?[\\w\\-.~!$&'()*+,;=%:@/?]*/,\n\t      inside: {\n\t        'query-delimiter': {\n\t          pattern: /^\\?/,\n\t          greedy: true\n\t        },\n\t        'pair-delimiter': /[&;]/,\n\t        pair: {\n\t          pattern: /^[^=][\\s\\S]*/,\n\t          inside: {\n\t            key: /^[^=]+/,\n\t            value: {\n\t              pattern: /(^=)[\\s\\S]+/,\n\t              lookbehind: true\n\t            }\n\t          }\n\t        }\n\t      }\n\t    },\n\t    authority: {\n\t      pattern: RegExp(\n\t        /^\\/\\//.source + // [ userinfo \"@\" ]\n\t          /(?:[\\w\\-.~!$&'()*+,;=%:]*@)?/.source + // host\n\t          ('(?:' + // IP-literal\n\t            /\\[(?:[0-9a-fA-F:.]{2,48}|v[0-9a-fA-F]+\\.[\\w\\-.~!$&'()*+,;=]+)\\]/\n\t              .source +\n\t            '|' + // IPv4address or registered name\n\t            /[\\w\\-.~!$&'()*+,;=%]*/.source +\n\t            ')') + // [ \":\" port ]\n\t          /(?::\\d*)?/.source,\n\t        'm'\n\t      ),\n\t      inside: {\n\t        'authority-delimiter': /^\\/\\//,\n\t        'user-info-segment': {\n\t          pattern: /^[\\w\\-.~!$&'()*+,;=%:]*@/,\n\t          inside: {\n\t            'user-info-delimiter': /@$/,\n\t            'user-info': /^[\\w\\-.~!$&'()*+,;=%:]+/\n\t          }\n\t        },\n\t        'port-segment': {\n\t          pattern: /:\\d*$/,\n\t          inside: {\n\t            'port-delimiter': /^:/,\n\t            port: /^\\d+/\n\t          }\n\t        },\n\t        host: {\n\t          pattern: /[\\s\\S]+/,\n\t          inside: {\n\t            'ip-literal': {\n\t              pattern: /^\\[[\\s\\S]+\\]$/,\n\t              inside: {\n\t                'ip-literal-delimiter': /^\\[|\\]$/,\n\t                'ipv-future': /^v[\\s\\S]+/,\n\t                'ipv6-address': /^[\\s\\S]+/\n\t              }\n\t            },\n\t            'ipv4-address':\n\t              /^(?:(?:[03-9]\\d?|[12]\\d{0,2})\\.){3}(?:[03-9]\\d?|[12]\\d{0,2})$/\n\t          }\n\t        }\n\t      }\n\t    },\n\t    path: {\n\t      pattern: /^[\\w\\-.~!$&'()*+,;=%:@/]+/m,\n\t      inside: {\n\t        'path-separator': /\\//\n\t      }\n\t    }\n\t  }\n\t  Prism.languages.url = Prism.languages.uri\n\t}\n\treturn uri_1;\n}\n\nexport { requireUri as __require };",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,CAAC,KAAK,CAAC;CACrB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,uBAAuB;CACtC,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,kBAAkB,EAAE,IAAI;CAChC,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,4BAA4B;CAC3C,MAAM,MAAM,EAAE;CACd,QAAQ,oBAAoB,EAAE,IAAI;CAClC,OAAO;CACP,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,6BAA6B;CAC5C,MAAM,MAAM,EAAE;CACd,QAAQ,iBAAiB,EAAE;CAC3B,UAAU,OAAO,EAAE,KAAK;CACxB,UAAU,MAAM,EAAE,IAAI;CACtB,SAAS;CACT,QAAQ,gBAAgB,EAAE,MAAM;CAChC,QAAQ,IAAI,EAAE;CACd,UAAU,OAAO,EAAE,cAAc;CACjC,UAAU,MAAM,EAAE;CAClB,YAAY,GAAG,EAAE,QAAQ;CACzB,YAAY,KAAK,EAAE;CACnB,cAAc,OAAO,EAAE,aAAa;CACpC,cAAc,UAAU,EAAE,IAAI;CAC9B,aAAa;CACb,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,SAAS,EAAE;CACf,MAAM,OAAO,EAAE,MAAM;CACrB,QAAQ,OAAO,CAAC,MAAM;CACtB,UAAU,8BAA8B,CAAC,MAAM;CAC/C,WAAW,KAAK;CAChB,YAAY,iEAAiE;CAC7E,eAAe,MAAM;CACrB,YAAY,GAAG;CACf,YAAY,uBAAuB,CAAC,MAAM;CAC1C,YAAY,GAAG,CAAC;CAChB,UAAU,WAAW,CAAC,MAAM;CAC5B,QAAQ,GAAG;CACX,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ,qBAAqB,EAAE,OAAO;CACtC,QAAQ,mBAAmB,EAAE;CAC7B,UAAU,OAAO,EAAE,0BAA0B;CAC7C,UAAU,MAAM,EAAE;CAClB,YAAY,qBAAqB,EAAE,IAAI;CACvC,YAAY,WAAW,EAAE,yBAAyB;CAClD,WAAW;CACX,SAAS;CACT,QAAQ,cAAc,EAAE;CACxB,UAAU,OAAO,EAAE,OAAO;CAC1B,UAAU,MAAM,EAAE;CAClB,YAAY,gBAAgB,EAAE,IAAI;CAClC,YAAY,IAAI,EAAE,MAAM;CACxB,WAAW;CACX,SAAS;CACT,QAAQ,IAAI,EAAE;CACd,UAAU,OAAO,EAAE,SAAS;CAC5B,UAAU,MAAM,EAAE;CAClB,YAAY,YAAY,EAAE;CAC1B,cAAc,OAAO,EAAE,eAAe;CACtC,cAAc,MAAM,EAAE;CACtB,gBAAgB,sBAAsB,EAAE,SAAS;CACjD,gBAAgB,YAAY,EAAE,WAAW;CACzC,gBAAgB,cAAc,EAAE,UAAU;CAC1C,eAAe;CACf,aAAa;CACb,YAAY,cAAc;CAC1B,cAAc,+DAA+D;CAC7E,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,IAAI,EAAE;CACV,MAAM,OAAO,EAAE,4BAA4B;CAC3C,MAAM,MAAM,EAAE;CACd,QAAQ,gBAAgB,EAAE,IAAI;CAC9B,OAAO;CACP,KAAK;CACL,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,GAAG;CAC3C"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445125,
+      "end": 1702937445125,
+      "order": "normal"
+    }
+  ]
+}

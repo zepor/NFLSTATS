@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Polar.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { PolarArea } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PolarChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Speed\", \"Reliability\", \"Comfort\", \"Safety\", \"Efficiency\"],\r\n    datasets: [\r\n      {\r\n        label: \"Model S\",\r\n        data: [35, 38, 65, 70, 24],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.success,\r\n          palette.danger,\r\n          palette.warning,\r\n          \"#5b7dff\",\r\n        ],\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = { maintainAspectRatio: false };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Polar Area Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Polar area charts are similar to pie charts, but each segment has the\r\n          same angle.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <PolarArea data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PolarChart;\r\n",
+      "start": 1702937441796,
+      "end": 1702937441852,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441852,
+      "end": 1702937441852,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441852,
+      "end": 1702937441852,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { PolarArea } from \"react-chartjs-2\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst PolarChart = () => {\n  const palette = usePalette();\n  const data = {\n    labels: [\"Speed\", \"Reliability\", \"Comfort\", \"Safety\", \"Efficiency\"],\n    datasets: [\n      {\n        label: \"Model S\",\n        data: [35, 38, 65, 70, 24],\n        backgroundColor: [\n          palette.primary,\n          palette.success,\n          palette.danger,\n          palette.warning,\n          \"#5b7dff\"\n        ]\n      }\n    ]\n  };\n  const options = { maintainAspectRatio: false };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Polar Area Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Polar area charts are similar to pie charts, but each segment has the same angle.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(PolarArea, { data, options }) }) })\n  ] });\n};\nexport default PolarChart;\n",
+      "start": 1702937441852,
+      "end": 1702937441855,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Polar.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { PolarArea } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PolarChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Speed\", \"Reliability\", \"Comfort\", \"Safety\", \"Efficiency\"],\r\n    datasets: [\r\n      {\r\n        label: \"Model S\",\r\n        data: [35, 38, 65, 70, 24],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.success,\r\n          palette.danger,\r\n          palette.warning,\r\n          \"#5b7dff\",\r\n        ],\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = { maintainAspectRatio: false };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Polar Area Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Polar area charts are similar to pie charts, but each segment has the\r\n          same angle.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <PolarArea data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PolarChart;\r\n"
+        ],
+        "mappings": "AA+BM,SACE,KADF;AA/BN,OAAO,WAAW;AAClB,SAAS,iBAAiB;AAE1B,SAAS,YAAY;AAErB,OAAO,gBAAgB;AAEvB,MAAM,aAAa,MAAM;AACvB,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO;AAAA,IACX,QAAQ,CAAC,SAAS,eAAe,WAAW,UAAU,YAAY;AAAA,IAClE,UAAU;AAAA,MACR;AAAA,QACE,OAAO;AAAA,QACP,MAAM,CAAC,IAAI,IAAI,IAAI,IAAI,EAAE;AAAA,QACzB,iBAAiB;AAAA,UACf,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR;AAAA,QACF;AAAA,MACF;AAAA,IACF;AAAA,EACF;AAEA,QAAM,UAAU,EAAE,qBAAqB,MAAM;AAE7C,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,8BAAgB;AAAA,MAC5B,oBAAC,QAAG,WAAU,4BAA2B,+FAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,SACb,8BAAC,aAAU,MAAY,SAAkB,GAC3C,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    }
+  ]
+}

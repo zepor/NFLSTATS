@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/toPath.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import arrayMap from './_arrayMap.js';\nimport copyArray from './_copyArray.js';\nimport isArray from './isArray.js';\nimport isSymbol from './isSymbol.js';\nimport stringToPath from './_stringToPath.js';\nimport toKey from './_toKey.js';\nimport toString from './toString.js';\n\n/**\n * Converts `value` to a property path array.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Util\n * @param {*} value The value to convert.\n * @returns {Array} Returns the new property path array.\n * @example\n *\n * _.toPath('a.b.c');\n * // => ['a', 'b', 'c']\n *\n * _.toPath('a[0].b.c');\n * // => ['a', '0', 'b', 'c']\n */\nfunction toPath(value) {\n  if (isArray(value)) {\n    return arrayMap(value, toKey);\n  }\n  return isSymbol(value) ? [value] : copyArray(stringToPath(toString(value)));\n}\n\nexport default toPath;\n",
+      "start": 1702937442763,
+      "end": 1702937442925,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442925,
+      "end": 1702937442925,
+      "order": "normal"
+    }
+  ]
+}

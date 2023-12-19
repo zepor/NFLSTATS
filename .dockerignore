@@ -1,2 +1,7 @@
 Dockerfile
 charts/
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

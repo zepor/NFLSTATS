@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/gcode.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = gcode\ngcode.displayName = 'gcode'\ngcode.aliases = []\nfunction gcode(Prism) {\n  Prism.languages.gcode = {\n    comment: /;.*|\\B\\(.*?\\)\\B/,\n    string: {\n      pattern: /\"(?:\"\"|[^\"])*\"/,\n      greedy: true\n    },\n    keyword: /\\b[GM]\\d+(?:\\.\\d+)?\\b/,\n    property: /\\b[A-Z]/,\n    checksum: {\n      pattern: /(\\*)\\d+/,\n      lookbehind: true,\n      alias: 'number'\n    },\n    // T0:0:0\n    punctuation: /[:*]/\n  }\n}\n",
+      "start": 1702937444893,
+      "end": 1702937444912,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar gcode_1;\nvar hasRequiredGcode;\n\nfunction requireGcode () {\n\tif (hasRequiredGcode) return gcode_1;\n\thasRequiredGcode = 1;\n\t'use strict'\n\n\tgcode_1 = gcode\n\tgcode.displayName = 'gcode'\n\tgcode.aliases = []\n\tfunction gcode(Prism) {\n\t  Prism.languages.gcode = {\n\t    comment: /;.*|\\B\\(.*?\\)\\B/,\n\t    string: {\n\t      pattern: /\"(?:\"\"|[^\"])*\"/,\n\t      greedy: true\n\t    },\n\t    keyword: /\\b[GM]\\d+(?:\\.\\d+)?\\b/,\n\t    property: /\\b[A-Z]/,\n\t    checksum: {\n\t      pattern: /(\\*)\\d+/,\n\t      lookbehind: true,\n\t      alias: 'number'\n\t    },\n\t    // T0:0:0\n\t    punctuation: /[:*]/\n\t  }\n\t}\n\treturn gcode_1;\n}\n\nexport { requireGcode as __require };",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,QAAc,GAAG,KAAK;CACtB,KAAK,CAAC,WAAW,GAAG,OAAO;CAC3B,KAAK,CAAC,OAAO,GAAG,EAAE;CAClB,SAAS,KAAK,CAAC,KAAK,EAAE;CACtB,EAAE,KAAK,CAAC,SAAS,CAAC,KAAK,GAAG;CAC1B,IAAI,OAAO,EAAE,iBAAiB;CAC9B,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,gBAAgB;CAC/B,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO,EAAE,uBAAuB;CACpC,IAAI,QAAQ,EAAE,SAAS;CACvB,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL;CACA,IAAI,WAAW,EAAE,MAAM;CACvB,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    }
+  ]
+}

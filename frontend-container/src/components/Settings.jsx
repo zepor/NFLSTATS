@@ -12,7 +12,7 @@ import {
   THEME,
 } from "../constants";
 import useOuterClick from "../hooks/useOuterClick";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 import useSidebar from "../hooks/useSidebar";
 import useLayout from "../hooks/useLayout";
 

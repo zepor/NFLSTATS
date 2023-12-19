@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/KnownFragmentNamesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * Known fragment names\n *\n * A GraphQL document is only valid if all `...Fragment` fragment spreads refer\n * to fragments defined in the same document.\n *\n * See https://spec.graphql.org/draft/#sec-Fragment-spread-target-defined\n */\nexport function KnownFragmentNamesRule(context) {\n  return {\n    FragmentSpread(node) {\n      const fragmentName = node.name.value;\n      const fragment = context.getFragment(fragmentName);\n\n      if (!fragment) {\n        context.reportError(\n          new GraphQLError(`Unknown fragment \"${fragmentName}\".`, {\n            nodes: node.name,\n          }),\n        );\n      }\n    },\n  };\n}\n",
+      "start": 1702937443071,
+      "end": 1702937443092,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    }
+  ]
+}

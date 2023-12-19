@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/vbscript-html.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: VBScript in HTML\nRequires: xml.js, vbscript.js\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nDescription: \"Bridge\" language defining fragments of VBScript in HTML within <% .. %>\nWebsite: https://en.wikipedia.org/wiki/VBScript\nCategory: scripting\n*/\n\nfunction vbscriptHtml(hljs) {\n  return {\n    name: 'VBScript in HTML',\n    subLanguage: 'xml',\n    contains: [\n      {\n        begin: '<%',\n        end: '%>',\n        subLanguage: 'vbscript'\n      }\n    ]\n  };\n}\n\nmodule.exports = vbscriptHtml;\n",
+      "start": 1702937444600,
+      "end": 1702937444689,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: VBScript in HTML\nRequires: xml.js, vbscript.js\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nDescription: \"Bridge\" language defining fragments of VBScript in HTML within <% .. %>\nWebsite: https://en.wikipedia.org/wiki/VBScript\nCategory: scripting\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar vbscriptHtml_1;\nvar hasRequiredVbscriptHtml;\n\nfunction requireVbscriptHtml () {\n\tif (hasRequiredVbscriptHtml) return vbscriptHtml_1;\n\thasRequiredVbscriptHtml = 1;\n\tfunction vbscriptHtml(hljs) {\n\t  return {\n\t    name: 'VBScript in HTML',\n\t    subLanguage: 'xml',\n\t    contains: [\n\t      {\n\t        begin: '<%',\n\t        end: '%>',\n\t        subLanguage: 'vbscript'\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tvbscriptHtml_1 = vbscriptHtml;\n\treturn vbscriptHtml_1;\n}\n\nexport { requireVbscriptHtml as __require };",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;CASA,SAAS,YAAY,CAAC,IAAI,EAAE;CAC5B,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,kBAAkB;CAC5B,IAAI,WAAW,EAAE,KAAK;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,KAAK,EAAE,IAAI;CACnB,QAAQ,GAAG,EAAE,IAAI;CACjB,QAAQ,WAAW,EAAE,UAAU;CAC/B,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,eAAc,GAAG,YAAY"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444689,
+      "end": 1702937444689,
+      "order": "normal"
+    }
+  ]
+}

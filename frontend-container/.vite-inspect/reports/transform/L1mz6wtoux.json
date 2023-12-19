@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/jboss-cli.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\n Language: JBoss CLI\n Author: Raphaël Parrëe <rparree@edc4it.com>\n Description: language definition jboss cli\n Website: https://docs.jboss.org/author/display/WFLY/Command+Line+Interface\n Category: config\n */\n\nfunction jbossCli(hljs) {\n  const PARAM = {\n    begin: /[\\w-]+ *=/,\n    returnBegin: true,\n    relevance: 0,\n    contains: [\n      {\n        className: 'attr',\n        begin: /[\\w-]+/\n      }\n    ]\n  };\n  const PARAMSBLOCK = {\n    className: 'params',\n    begin: /\\(/,\n    end: /\\)/,\n    contains: [PARAM],\n    relevance: 0\n  };\n  const OPERATION = {\n    className: 'function',\n    begin: /:[\\w\\-.]+/,\n    relevance: 0\n  };\n  const PATH = {\n    className: 'string',\n    begin: /\\B([\\/.])[\\w\\-.\\/=]+/\n  };\n  const COMMAND_PARAMS = {\n    className: 'params',\n    begin: /--[\\w\\-=\\/]+/\n  };\n  return {\n    name: 'JBoss CLI',\n    aliases: ['wildfly-cli'],\n    keywords: {\n      $pattern: '[a-z\\-]+',\n      keyword: 'alias batch cd clear command connect connection-factory connection-info data-source deploy ' +\n      'deployment-info deployment-overlay echo echo-dmr help history if jdbc-driver-info jms-queue|20 jms-topic|20 ls ' +\n      'patch pwd quit read-attribute read-operation reload rollout-plan run-batch set shutdown try unalias ' +\n      'undeploy unset version xa-data-source', // module\n      literal: 'true false'\n    },\n    contains: [\n      hljs.HASH_COMMENT_MODE,\n      hljs.QUOTE_STRING_MODE,\n      COMMAND_PARAMS,\n      OPERATION,\n      PATH,\n      PARAMSBLOCK\n    ]\n  };\n}\n\nmodule.exports = jbossCli;\n",
+      "start": 1702937444357,
+      "end": 1702937444403,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444403,
+      "end": 1702937444403,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\n Language: JBoss CLI\n Author: Raphaël Parrëe <rparree@edc4it.com>\n Description: language definition jboss cli\n Website: https://docs.jboss.org/author/display/WFLY/Command+Line+Interface\n Category: config\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar jbossCli_1;\nvar hasRequiredJbossCli;\n\nfunction requireJbossCli () {\n\tif (hasRequiredJbossCli) return jbossCli_1;\n\thasRequiredJbossCli = 1;\n\tfunction jbossCli(hljs) {\n\t  const PARAM = {\n\t    begin: /[\\w-]+ *=/,\n\t    returnBegin: true,\n\t    relevance: 0,\n\t    contains: [\n\t      {\n\t        className: 'attr',\n\t        begin: /[\\w-]+/\n\t      }\n\t    ]\n\t  };\n\t  const PARAMSBLOCK = {\n\t    className: 'params',\n\t    begin: /\\(/,\n\t    end: /\\)/,\n\t    contains: [PARAM],\n\t    relevance: 0\n\t  };\n\t  const OPERATION = {\n\t    className: 'function',\n\t    begin: /:[\\w\\-.]+/,\n\t    relevance: 0\n\t  };\n\t  const PATH = {\n\t    className: 'string',\n\t    begin: /\\B([\\/.])[\\w\\-.\\/=]+/\n\t  };\n\t  const COMMAND_PARAMS = {\n\t    className: 'params',\n\t    begin: /--[\\w\\-=\\/]+/\n\t  };\n\t  return {\n\t    name: 'JBoss CLI',\n\t    aliases: ['wildfly-cli'],\n\t    keywords: {\n\t      $pattern: '[a-z\\-]+',\n\t      keyword: 'alias batch cd clear command connect connection-factory connection-info data-source deploy ' +\n\t      'deployment-info deployment-overlay echo echo-dmr help history if jdbc-driver-info jms-queue|20 jms-topic|20 ls ' +\n\t      'patch pwd quit read-attribute read-operation reload rollout-plan run-batch set shutdown try unalias ' +\n\t      'undeploy unset version xa-data-source', // module\n\t      literal: 'true false'\n\t    },\n\t    contains: [\n\t      hljs.HASH_COMMENT_MODE,\n\t      hljs.QUOTE_STRING_MODE,\n\t      COMMAND_PARAMS,\n\t      OPERATION,\n\t      PATH,\n\t      PARAMSBLOCK\n\t    ]\n\t  };\n\t}\n\n\tjbossCli_1 = jbossCli;\n\treturn jbossCli_1;\n}\n\nexport { requireJbossCli as __require };",
+      "start": 1702937444403,
+      "end": 1702937444404,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,QAAQ,CAAC,IAAI,EAAE;CACxB,EAAE,MAAM,KAAK,GAAG;CAChB,IAAI,KAAK,EAAE,WAAW;CACtB,IAAI,WAAW,EAAE,IAAI;CACrB,IAAI,SAAS,EAAE,CAAC;CAChB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,MAAM,WAAW,GAAG;CACtB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,IAAI;CACf,IAAI,GAAG,EAAE,IAAI;CACb,IAAI,QAAQ,EAAE,CAAC,KAAK,CAAC;CACrB,IAAI,SAAS,EAAE,CAAC;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,SAAS,GAAG;CACpB,IAAI,SAAS,EAAE,UAAU;CACzB,IAAI,KAAK,EAAE,WAAW;CACtB,IAAI,SAAS,EAAE,CAAC;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,IAAI,GAAG;CACf,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,sBAAsB;CACjC,GAAG,CAAC;CACJ,EAAE,MAAM,cAAc,GAAG;CACzB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,cAAc;CACzB,GAAG,CAAC;CACJ,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,WAAW;CACrB,IAAI,OAAO,EAAE,CAAC,aAAa,CAAC;CAC5B,IAAI,QAAQ,EAAE;CACd,MAAM,QAAQ,EAAE,UAAU;CAC1B,MAAM,OAAO,EAAE,6FAA6F;CAC5G,MAAM,iHAAiH;CACvH,MAAM,sGAAsG;CAC5G,MAAM,uCAAuC;CAC7C,MAAM,OAAO,EAAE,YAAY;CAC3B,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,cAAc;CACpB,MAAM,SAAS;CACf,MAAM,IAAI;CACV,MAAM,WAAW;CACjB,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,WAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    }
+  ]
+}

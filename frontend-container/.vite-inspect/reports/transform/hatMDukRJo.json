@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/void-elements/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * This file automatically generated from `pre-publish.js`.\n * Do not manually edit.\n */\n\nmodule.exports = {\n  \"area\": true,\n  \"base\": true,\n  \"br\": true,\n  \"col\": true,\n  \"embed\": true,\n  \"hr\": true,\n  \"img\": true,\n  \"input\": true,\n  \"link\": true,\n  \"meta\": true,\n  \"param\": true,\n  \"source\": true,\n  \"track\": true,\n  \"wbr\": true\n};\n",
+      "start": 1702937443113,
+      "end": 1702937443132,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * This file automatically generated from `pre-publish.js`.\n * Do not manually edit.\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar voidElements = {\n  \"area\": true,\n  \"base\": true,\n  \"br\": true,\n  \"col\": true,\n  \"embed\": true,\n  \"hr\": true,\n  \"img\": true,\n  \"input\": true,\n  \"link\": true,\n  \"meta\": true,\n  \"param\": true,\n  \"source\": true,\n  \"track\": true,\n  \"wbr\": true\n};\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(voidElements);\nexport { voidElements as __moduleExports };",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;IAKA,YAAc,GAAG;AACjB,EAAE,MAAM,EAAE,IAAI;AACd,EAAE,MAAM,EAAE,IAAI;AACd,EAAE,IAAI,EAAE,IAAI;AACZ,EAAE,KAAK,EAAE,IAAI;AACb,EAAE,OAAO,EAAE,IAAI;AACf,EAAE,IAAI,EAAE,IAAI;AACZ,EAAE,KAAK,EAAE,IAAI;AACb,EAAE,OAAO,EAAE,IAAI;AACf,EAAE,MAAM,EAAE,IAAI;AACd,EAAE,MAAM,EAAE,IAAI;AACd,EAAE,OAAO,EAAE,IAAI;AACf,EAAE,QAAQ,EAAE,IAAI;AAChB,EAAE,OAAO,EAAE,IAAI;AACf,EAAE,KAAK,EAAE,IAAI;AACb,CAAC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443132,
+      "end": 1702937443132,
+      "order": "normal"
+    }
+  ]
+}

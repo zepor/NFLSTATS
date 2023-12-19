@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/php-template.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: PHP Template\nRequires: xml.js, php.js\nAuthor: Josh Goebel <hello@joshgoebel.com>\nWebsite: https://www.php.net\nCategory: common\n*/\n\nfunction phpTemplate(hljs) {\n  return {\n    name: \"PHP template\",\n    subLanguage: 'xml',\n    contains: [\n      {\n        begin: /<\\?(php|=)?/,\n        end: /\\?>/,\n        subLanguage: 'php',\n        contains: [\n          // We don't want the php closing tag ?> to close the PHP block when\n          // inside any of the following blocks:\n          {\n            begin: '/\\\\*',\n            end: '\\\\*/',\n            skip: true\n          },\n          {\n            begin: 'b\"',\n            end: '\"',\n            skip: true\n          },\n          {\n            begin: 'b\\'',\n            end: '\\'',\n            skip: true\n          },\n          hljs.inherit(hljs.APOS_STRING_MODE, {\n            illegal: null,\n            className: null,\n            contains: null,\n            skip: true\n          }),\n          hljs.inherit(hljs.QUOTE_STRING_MODE, {\n            illegal: null,\n            className: null,\n            contains: null,\n            skip: true\n          })\n        ]\n      }\n    ]\n  };\n}\n\nmodule.exports = phpTemplate;\n",
+      "start": 1702937444524,
+      "end": 1702937444551,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: PHP Template\nRequires: xml.js, php.js\nAuthor: Josh Goebel <hello@joshgoebel.com>\nWebsite: https://www.php.net\nCategory: common\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar phpTemplate_1;\nvar hasRequiredPhpTemplate;\n\nfunction requirePhpTemplate () {\n\tif (hasRequiredPhpTemplate) return phpTemplate_1;\n\thasRequiredPhpTemplate = 1;\n\tfunction phpTemplate(hljs) {\n\t  return {\n\t    name: \"PHP template\",\n\t    subLanguage: 'xml',\n\t    contains: [\n\t      {\n\t        begin: /<\\?(php|=)?/,\n\t        end: /\\?>/,\n\t        subLanguage: 'php',\n\t        contains: [\n\t          // We don't want the php closing tag ?> to close the PHP block when\n\t          // inside any of the following blocks:\n\t          {\n\t            begin: '/\\\\*',\n\t            end: '\\\\*/',\n\t            skip: true\n\t          },\n\t          {\n\t            begin: 'b\"',\n\t            end: '\"',\n\t            skip: true\n\t          },\n\t          {\n\t            begin: 'b\\'',\n\t            end: '\\'',\n\t            skip: true\n\t          },\n\t          hljs.inherit(hljs.APOS_STRING_MODE, {\n\t            illegal: null,\n\t            className: null,\n\t            contains: null,\n\t            skip: true\n\t          }),\n\t          hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t            illegal: null,\n\t            className: null,\n\t            contains: null,\n\t            skip: true\n\t          })\n\t        ]\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tphpTemplate_1 = phpTemplate;\n\treturn phpTemplate_1;\n}\n\nexport { requirePhpTemplate as __require };",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,WAAW,CAAC,IAAI,EAAE;CAC3B,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,cAAc;CACxB,IAAI,WAAW,EAAE,KAAK;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,KAAK,EAAE,aAAa;CAC5B,QAAQ,GAAG,EAAE,KAAK;CAClB,QAAQ,WAAW,EAAE,KAAK;CAC1B,QAAQ,QAAQ,EAAE;CAClB;CACA;CACA,UAAU;CACV,YAAY,KAAK,EAAE,MAAM;CACzB,YAAY,GAAG,EAAE,MAAM;CACvB,YAAY,IAAI,EAAE,IAAI;CACtB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,IAAI;CACvB,YAAY,GAAG,EAAE,GAAG;CACpB,YAAY,IAAI,EAAE,IAAI;CACtB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,KAAK;CACxB,YAAY,GAAG,EAAE,IAAI;CACrB,YAAY,IAAI,EAAE,IAAI;CACtB,WAAW;CACX,UAAU,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,gBAAgB,EAAE;CAC9C,YAAY,OAAO,EAAE,IAAI;CACzB,YAAY,SAAS,EAAE,IAAI;CAC3B,YAAY,QAAQ,EAAE,IAAI;CAC1B,YAAY,IAAI,EAAE,IAAI;CACtB,WAAW,CAAC;CACZ,UAAU,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,iBAAiB,EAAE;CAC/C,YAAY,OAAO,EAAE,IAAI;CACzB,YAAY,SAAS,EAAE,IAAI;CAC3B,YAAY,QAAQ,EAAE,IAAI;CAC1B,YAAY,IAAI,EAAE,IAAI;CACtB,WAAW,CAAC;CACZ,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,cAAc,GAAG,WAAW"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444551,
+      "end": 1702937444551,
+      "order": "normal"
+    }
+  ]
+}

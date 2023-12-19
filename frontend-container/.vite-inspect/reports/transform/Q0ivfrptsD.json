@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/language/predicates.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { Kind } from './kinds.mjs';\nexport function isDefinitionNode(node) {\n  return (\n    isExecutableDefinitionNode(node) ||\n    isTypeSystemDefinitionNode(node) ||\n    isTypeSystemExtensionNode(node)\n  );\n}\nexport function isExecutableDefinitionNode(node) {\n  return (\n    node.kind === Kind.OPERATION_DEFINITION ||\n    node.kind === Kind.FRAGMENT_DEFINITION\n  );\n}\nexport function isSelectionNode(node) {\n  return (\n    node.kind === Kind.FIELD ||\n    node.kind === Kind.FRAGMENT_SPREAD ||\n    node.kind === Kind.INLINE_FRAGMENT\n  );\n}\nexport function isValueNode(node) {\n  return (\n    node.kind === Kind.VARIABLE ||\n    node.kind === Kind.INT ||\n    node.kind === Kind.FLOAT ||\n    node.kind === Kind.STRING ||\n    node.kind === Kind.BOOLEAN ||\n    node.kind === Kind.NULL ||\n    node.kind === Kind.ENUM ||\n    node.kind === Kind.LIST ||\n    node.kind === Kind.OBJECT\n  );\n}\nexport function isConstValueNode(node) {\n  return (\n    isValueNode(node) &&\n    (node.kind === Kind.LIST\n      ? node.values.some(isConstValueNode)\n      : node.kind === Kind.OBJECT\n      ? node.fields.some((field) => isConstValueNode(field.value))\n      : node.kind !== Kind.VARIABLE)\n  );\n}\nexport function isTypeNode(node) {\n  return (\n    node.kind === Kind.NAMED_TYPE ||\n    node.kind === Kind.LIST_TYPE ||\n    node.kind === Kind.NON_NULL_TYPE\n  );\n}\nexport function isTypeSystemDefinitionNode(node) {\n  return (\n    node.kind === Kind.SCHEMA_DEFINITION ||\n    isTypeDefinitionNode(node) ||\n    node.kind === Kind.DIRECTIVE_DEFINITION\n  );\n}\nexport function isTypeDefinitionNode(node) {\n  return (\n    node.kind === Kind.SCALAR_TYPE_DEFINITION ||\n    node.kind === Kind.OBJECT_TYPE_DEFINITION ||\n    node.kind === Kind.INTERFACE_TYPE_DEFINITION ||\n    node.kind === Kind.UNION_TYPE_DEFINITION ||\n    node.kind === Kind.ENUM_TYPE_DEFINITION ||\n    node.kind === Kind.INPUT_OBJECT_TYPE_DEFINITION\n  );\n}\nexport function isTypeSystemExtensionNode(node) {\n  return node.kind === Kind.SCHEMA_EXTENSION || isTypeExtensionNode(node);\n}\nexport function isTypeExtensionNode(node) {\n  return (\n    node.kind === Kind.SCALAR_TYPE_EXTENSION ||\n    node.kind === Kind.OBJECT_TYPE_EXTENSION ||\n    node.kind === Kind.INTERFACE_TYPE_EXTENSION ||\n    node.kind === Kind.UNION_TYPE_EXTENSION ||\n    node.kind === Kind.ENUM_TYPE_EXTENSION ||\n    node.kind === Kind.INPUT_OBJECT_TYPE_EXTENSION\n  );\n}\n",
+      "start": 1702937443048,
+      "end": 1702937443077,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443077,
+      "end": 1702937443077,
+      "order": "normal"
+    }
+  ]
+}

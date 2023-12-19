@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/step21.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: STEP Part 21\nContributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>\nDescription: Syntax highlighter for STEP Part 21 files (ISO 10303-21).\nWebsite: https://en.wikipedia.org/wiki/ISO_10303-21\n*/\n\nfunction step21(hljs) {\n  const STEP21_IDENT_RE = '[A-Z_][A-Z0-9_.]*';\n  const STEP21_KEYWORDS = {\n    $pattern: STEP21_IDENT_RE,\n    keyword: 'HEADER ENDSEC DATA'\n  };\n  const STEP21_START = {\n    className: 'meta',\n    begin: 'ISO-10303-21;',\n    relevance: 10\n  };\n  const STEP21_CLOSE = {\n    className: 'meta',\n    begin: 'END-ISO-10303-21;',\n    relevance: 10\n  };\n\n  return {\n    name: 'STEP Part 21',\n    aliases: [\n      'p21',\n      'step',\n      'stp'\n    ],\n    case_insensitive: true, // STEP 21 is case insensitive in theory, in practice all non-comments are capitalized.\n    keywords: STEP21_KEYWORDS,\n    contains: [\n      STEP21_START,\n      STEP21_CLOSE,\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      hljs.COMMENT('/\\\\*\\\\*!', '\\\\*/'),\n      hljs.C_NUMBER_MODE,\n      hljs.inherit(hljs.APOS_STRING_MODE, {\n        illegal: null\n      }),\n      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n        illegal: null\n      }),\n      {\n        className: 'string',\n        begin: \"'\",\n        end: \"'\"\n      },\n      {\n        className: 'symbol',\n        variants: [\n          {\n            begin: '#',\n            end: '\\\\d+',\n            illegal: '\\\\W'\n          }\n        ]\n      }\n    ]\n  };\n}\n\nmodule.exports = step21;\n",
+      "start": 1702937444579,
+      "end": 1702937444630,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444630,
+      "end": 1702937444630,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444630,
+      "end": 1702937444630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: STEP Part 21\nContributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>\nDescription: Syntax highlighter for STEP Part 21 files (ISO 10303-21).\nWebsite: https://en.wikipedia.org/wiki/ISO_10303-21\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar step21_1;\nvar hasRequiredStep21;\n\nfunction requireStep21 () {\n\tif (hasRequiredStep21) return step21_1;\n\thasRequiredStep21 = 1;\n\tfunction step21(hljs) {\n\t  const STEP21_IDENT_RE = '[A-Z_][A-Z0-9_.]*';\n\t  const STEP21_KEYWORDS = {\n\t    $pattern: STEP21_IDENT_RE,\n\t    keyword: 'HEADER ENDSEC DATA'\n\t  };\n\t  const STEP21_START = {\n\t    className: 'meta',\n\t    begin: 'ISO-10303-21;',\n\t    relevance: 10\n\t  };\n\t  const STEP21_CLOSE = {\n\t    className: 'meta',\n\t    begin: 'END-ISO-10303-21;',\n\t    relevance: 10\n\t  };\n\n\t  return {\n\t    name: 'STEP Part 21',\n\t    aliases: [\n\t      'p21',\n\t      'step',\n\t      'stp'\n\t    ],\n\t    case_insensitive: true, // STEP 21 is case insensitive in theory, in practice all non-comments are capitalized.\n\t    keywords: STEP21_KEYWORDS,\n\t    contains: [\n\t      STEP21_START,\n\t      STEP21_CLOSE,\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      hljs.COMMENT('/\\\\*\\\\*!', '\\\\*/'),\n\t      hljs.C_NUMBER_MODE,\n\t      hljs.inherit(hljs.APOS_STRING_MODE, {\n\t        illegal: null\n\t      }),\n\t      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t        illegal: null\n\t      }),\n\t      {\n\t        className: 'string',\n\t        begin: \"'\",\n\t        end: \"'\"\n\t      },\n\t      {\n\t        className: 'symbol',\n\t        variants: [\n\t          {\n\t            begin: '#',\n\t            end: '\\\\d+',\n\t            illegal: '\\\\W'\n\t          }\n\t        ]\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tstep21_1 = step21;\n\treturn step21_1;\n}\n\nexport { requireStep21 as __require };",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA,SAAS,MAAM,CAAC,IAAI,EAAE;CACtB,EAAE,MAAM,eAAe,GAAG,mBAAmB,CAAC;CAC9C,EAAE,MAAM,eAAe,GAAG;CAC1B,IAAI,QAAQ,EAAE,eAAe;CAC7B,IAAI,OAAO,EAAE,oBAAoB;CACjC,GAAG,CAAC;CACJ,EAAE,MAAM,YAAY,GAAG;CACvB,IAAI,SAAS,EAAE,MAAM;CACrB,IAAI,KAAK,EAAE,eAAe;CAC1B,IAAI,SAAS,EAAE,EAAE;CACjB,GAAG,CAAC;CACJ,EAAE,MAAM,YAAY,GAAG;CACvB,IAAI,SAAS,EAAE,MAAM;CACrB,IAAI,KAAK,EAAE,mBAAmB;CAC9B,IAAI,SAAS,EAAE,EAAE;CACjB,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,cAAc;CACxB,IAAI,OAAO,EAAE;CACb,MAAM,KAAK;CACX,MAAM,MAAM;CACZ,MAAM,KAAK;CACX,KAAK;CACL,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,QAAQ,EAAE,eAAe;CAC7B,IAAI,QAAQ,EAAE;CACd,MAAM,YAAY;CAClB,MAAM,YAAY;CAClB,MAAM,IAAI,CAAC,mBAAmB;CAC9B,MAAM,IAAI,CAAC,oBAAoB;CAC/B,MAAM,IAAI,CAAC,OAAO,CAAC,UAAU,EAAE,MAAM,CAAC;CACtC,MAAM,IAAI,CAAC,aAAa;CACxB,MAAM,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,gBAAgB,EAAE;CAC1C,QAAQ,OAAO,EAAE,IAAI;CACrB,OAAO,CAAC;CACR,MAAM,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,iBAAiB,EAAE;CAC3C,QAAQ,OAAO,EAAE,IAAI;CACrB,OAAO,CAAC;CACR,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,KAAK,EAAE,GAAG;CAClB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,KAAK,EAAE,GAAG;CACtB,YAAY,GAAG,EAAE,MAAM;CACvB,YAAY,OAAO,EAAE,KAAK;CAC1B,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,SAAc,GAAG,MAAM"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444631,
+      "end": 1702937444631,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/cache/QueryReference.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign } from \"tslib\";\nimport { equal } from \"@wry/equality\";\nimport { isNetworkRequestSettled } from \"../../core/index.js\";\nimport { createFulfilledPromise, createRejectedPromise, } from \"../../utilities/index.js\";\nvar QUERY_REFERENCE_SYMBOL = Symbol();\nexport function wrapQueryRef(internalQueryRef) {\n    var _a;\n    return _a = {}, _a[QUERY_REFERENCE_SYMBOL] = internalQueryRef, _a;\n}\nexport function unwrapQueryRef(queryRef) {\n    return queryRef[QUERY_REFERENCE_SYMBOL];\n}\nvar OBSERVED_CHANGED_OPTIONS = [\n    \"canonizeResults\",\n    \"context\",\n    \"errorPolicy\",\n    \"fetchPolicy\",\n    \"refetchWritePolicy\",\n    \"returnPartialData\",\n];\nvar InternalQueryReference = /** @class */ (function () {\n    function InternalQueryReference(observable, options) {\n        var _this = this;\n        this.listeners = new Set();\n        this.status = \"loading\";\n        this.references = 0;\n        this.handleNext = this.handleNext.bind(this);\n        this.handleError = this.handleError.bind(this);\n        this.dispose = this.dispose.bind(this);\n        this.observable = observable;\n        // Don't save this result as last result to prevent delivery of last result\n        // when first subscribing\n        this.result = observable.getCurrentResult(false);\n        this.key = options.key;\n        if (options.onDispose) {\n            this.onDispose = options.onDispose;\n        }\n        if (isNetworkRequestSettled(this.result.networkStatus) ||\n            (this.result.data &&\n                (!this.result.partial || this.watchQueryOptions.returnPartialData))) {\n            this.promise = createFulfilledPromise(this.result);\n            this.status = \"idle\";\n        }\n        else {\n            this.promise = new Promise(function (resolve, reject) {\n                _this.resolve = resolve;\n                _this.reject = reject;\n            });\n        }\n        this.subscription = observable\n            .filter(function (_a) {\n            var data = _a.data;\n            return !equal(data, {});\n        })\n            .subscribe({\n            next: this.handleNext,\n            error: this.handleError,\n        });\n        // Start a timer that will automatically dispose of the query if the\n        // suspended resource does not use this queryRef in the given time. This\n        // helps prevent memory leaks when a component has unmounted before the\n        // query has finished loading.\n        var startDisposeTimer = function () {\n            var _a;\n            if (!_this.references) {\n                _this.autoDisposeTimeoutId = setTimeout(_this.dispose, (_a = options.autoDisposeTimeoutMs) !== null && _a !== void 0 ? _a : 30000);\n            }\n        };\n        // We wait until the request has settled to ensure we don't dispose of the\n        // query ref before the request finishes, otherwise we would leave the\n        // promise in a pending state rendering the suspense boundary indefinitely.\n        this.promise.then(startDisposeTimer, startDisposeTimer);\n    }\n    Object.defineProperty(InternalQueryReference.prototype, \"watchQueryOptions\", {\n        get: function () {\n            return this.observable.options;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    InternalQueryReference.prototype.retain = function () {\n        var _this = this;\n        this.references++;\n        clearTimeout(this.autoDisposeTimeoutId);\n        var disposed = false;\n        return function () {\n            if (disposed) {\n                return;\n            }\n            disposed = true;\n            _this.references--;\n            // Wait before fully disposing in case the app is running in strict mode.\n            setTimeout(function () {\n                if (!_this.references) {\n                    _this.dispose();\n                }\n            });\n        };\n    };\n    InternalQueryReference.prototype.didChangeOptions = function (watchQueryOptions) {\n        var _this = this;\n        return OBSERVED_CHANGED_OPTIONS.some(function (option) {\n            return !equal(_this.watchQueryOptions[option], watchQueryOptions[option]);\n        });\n    };\n    InternalQueryReference.prototype.applyOptions = function (watchQueryOptions) {\n        var _a = this.watchQueryOptions, currentFetchPolicy = _a.fetchPolicy, currentCanonizeResults = _a.canonizeResults;\n        // \"standby\" is used when `skip` is set to `true`. Detect when we've\n        // enabled the query (i.e. `skip` is `false`) to execute a network request.\n        if (currentFetchPolicy === \"standby\" &&\n            currentFetchPolicy !== watchQueryOptions.fetchPolicy) {\n            this.initiateFetch(this.observable.reobserve(watchQueryOptions));\n        }\n        else {\n            this.observable.silentSetOptions(watchQueryOptions);\n            if (currentCanonizeResults !== watchQueryOptions.canonizeResults) {\n                this.result = __assign(__assign({}, this.result), this.observable.getCurrentResult());\n                this.promise = createFulfilledPromise(this.result);\n            }\n        }\n        return this.promise;\n    };\n    InternalQueryReference.prototype.listen = function (listener) {\n        var _this = this;\n        this.listeners.add(listener);\n        return function () {\n            _this.listeners.delete(listener);\n        };\n    };\n    InternalQueryReference.prototype.refetch = function (variables) {\n        return this.initiateFetch(this.observable.refetch(variables));\n    };\n    InternalQueryReference.prototype.fetchMore = function (options) {\n        return this.initiateFetch(this.observable.fetchMore(options));\n    };\n    InternalQueryReference.prototype.dispose = function () {\n        this.subscription.unsubscribe();\n        this.onDispose();\n    };\n    InternalQueryReference.prototype.onDispose = function () {\n        // noop. overridable by options\n    };\n    InternalQueryReference.prototype.handleNext = function (result) {\n        var _a;\n        switch (this.status) {\n            case \"loading\": {\n                // Maintain the last successful `data` value if the next result does not\n                // have one.\n                if (result.data === void 0) {\n                    result.data = this.result.data;\n                }\n                this.status = \"idle\";\n                this.result = result;\n                (_a = this.resolve) === null || _a === void 0 ? void 0 : _a.call(this, result);\n                break;\n            }\n            case \"idle\": {\n                // This occurs when switching to a result that is fully cached when this\n                // class is instantiated. ObservableQuery will run reobserve when\n                // subscribing, which delivers a result from the cache.\n                if (result.data === this.result.data) {\n                    return;\n                }\n                // Maintain the last successful `data` value if the next result does not\n                // have one.\n                if (result.data === void 0) {\n                    result.data = this.result.data;\n                }\n                this.result = result;\n                this.promise = createFulfilledPromise(result);\n                this.deliver(this.promise);\n                break;\n            }\n        }\n    };\n    InternalQueryReference.prototype.handleError = function (error) {\n        var _a;\n        this.subscription.unsubscribe();\n        this.subscription = this.observable.resubscribeAfterError(this.handleNext, this.handleError);\n        switch (this.status) {\n            case \"loading\": {\n                this.status = \"idle\";\n                (_a = this.reject) === null || _a === void 0 ? void 0 : _a.call(this, error);\n                break;\n            }\n            case \"idle\": {\n                this.promise = createRejectedPromise(error);\n                this.deliver(this.promise);\n            }\n        }\n    };\n    InternalQueryReference.prototype.deliver = function (promise) {\n        this.listeners.forEach(function (listener) { return listener(promise); });\n    };\n    InternalQueryReference.prototype.initiateFetch = function (returnedPromise) {\n        var _this = this;\n        this.status = \"loading\";\n        this.promise = new Promise(function (resolve, reject) {\n            _this.resolve = resolve;\n            _this.reject = reject;\n        });\n        this.promise.catch(function () { });\n        // If the data returned from the fetch is deeply equal to the data already\n        // in the cache, `handleNext` will not be triggered leaving the promise we\n        // created in a pending state forever. To avoid this situtation, we attempt\n        // to resolve the promise if `handleNext` hasn't been run to ensure the\n        // promise is resolved correctly.\n        returnedPromise\n            .then(function (result) {\n            var _a;\n            if (_this.status === \"loading\") {\n                _this.status = \"idle\";\n                _this.result = result;\n                (_a = _this.resolve) === null || _a === void 0 ? void 0 : _a.call(_this, result);\n            }\n        })\n            .catch(function () { });\n        return returnedPromise;\n    };\n    return InternalQueryReference;\n}());\nexport { InternalQueryReference };\n//# sourceMappingURL=QueryReference.js.map",
+      "start": 1702937441902,
+      "end": 1702937441952,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441952,
+      "end": 1702937441952,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441952,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    }
+  ]
+}

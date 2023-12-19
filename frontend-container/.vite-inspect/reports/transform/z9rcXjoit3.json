@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/hooks/useApolloClient.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { invariant } from \"../../utilities/globals/index.js\";\nimport * as React from \"react\";\nimport { getApolloContext } from \"../context/index.js\";\nexport function useApolloClient(override) {\n    var context = React.useContext(getApolloContext());\n    var client = override || context.client;\n    invariant(!!client, 49);\n    return client;\n}\n//# sourceMappingURL=useApolloClient.js.map",
+      "start": 1702937441085,
+      "end": 1702937441219,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "result": "import { invariant } from \"../../utilities/globals/index.js\";\nimport * as React from \"react\";\nimport { getApolloContext } from \"../context/index.js\";\nexport function useApolloClient(override) {\n    var context = React.useContext(getApolloContext());\n    var client = override || context.client;\n    invariant(!!client, 49);\n    return client;\n}\n//# sourceMappingURL=useApolloClient.js.map",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441219,
+      "end": 1702937441219,
+      "order": "normal"
+    }
+  ]
+}

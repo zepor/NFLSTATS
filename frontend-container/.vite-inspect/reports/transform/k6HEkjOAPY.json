@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/json.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = json\njson.displayName = 'json'\njson.aliases = ['webmanifest']\nfunction json(Prism) {\n  // https://www.json.org/json-en.html\n  Prism.languages.json = {\n    property: {\n      pattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n      lookbehind: true,\n      greedy: true\n    },\n    string: {\n      pattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n      lookbehind: true,\n      greedy: true\n    },\n    comment: {\n      pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n      greedy: true\n    },\n    number: /-?\\b\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?\\b/i,\n    punctuation: /[{}[\\],]/,\n    operator: /:/,\n    boolean: /\\b(?:false|true)\\b/,\n    null: {\n      pattern: /\\bnull\\b/,\n      alias: 'keyword'\n    }\n  }\n  Prism.languages.webmanifest = Prism.languages.json\n}\n",
+      "start": 1702937444930,
+      "end": 1702937444958,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar json_1;\nvar hasRequiredJson;\n\nfunction requireJson () {\n\tif (hasRequiredJson) return json_1;\n\thasRequiredJson = 1;\n\t'use strict'\n\n\tjson_1 = json\n\tjson.displayName = 'json'\n\tjson.aliases = ['webmanifest']\n\tfunction json(Prism) {\n\t  // https://www.json.org/json-en.html\n\t  Prism.languages.json = {\n\t    property: {\n\t      pattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    comment: {\n\t      pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t      greedy: true\n\t    },\n\t    number: /-?\\b\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?\\b/i,\n\t    punctuation: /[{}[\\],]/,\n\t    operator: /:/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    null: {\n\t      pattern: /\\bnull\\b/,\n\t      alias: 'keyword'\n\t    }\n\t  }\n\t  Prism.languages.webmanifest = Prism.languages.json\n\t}\n\treturn json_1;\n}\n\nexport { requireJson as __require };",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,CAAC,aAAa,CAAC;CAC9B,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CACzB,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,wCAAwC;CACvD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,wCAAwC;CACvD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,+BAA+B;CAC9C,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE,oCAAoC;CAChD,IAAI,WAAW,EAAE,UAAU;CAC3B,IAAI,QAAQ,EAAE,GAAG;CACjB,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,IAAI,EAAE;CACV,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,WAAW,GAAG,KAAK,CAAC,SAAS,CAAC,IAAI;CACpD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444958,
+      "end": 1702937444958,
+      "order": "normal"
+    }
+  ]
+}

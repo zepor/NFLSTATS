@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/utilities/assertValidName.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { devAssert } from '../jsutils/devAssert.mjs';\nimport { GraphQLError } from '../error/GraphQLError.mjs';\nimport { assertName } from '../type/assertName.mjs';\n/* c8 ignore start */\n\n/**\n * Upholds the spec rules about naming.\n * @deprecated Please use `assertName` instead. Will be removed in v17\n */\n\nexport function assertValidName(name) {\n  const error = isValidNameError(name);\n\n  if (error) {\n    throw error;\n  }\n\n  return name;\n}\n/**\n * Returns an Error if a name is invalid.\n * @deprecated Please use `assertName` instead. Will be removed in v17\n */\n\nexport function isValidNameError(name) {\n  typeof name === 'string' || devAssert(false, 'Expected name to be a string.');\n\n  if (name.startsWith('__')) {\n    return new GraphQLError(\n      `Name \"${name}\" must not begin with \"__\", which is reserved by GraphQL introspection.`,\n    );\n  }\n\n  try {\n    assertName(name);\n  } catch (error) {\n    return error;\n  }\n}\n/* c8 ignore stop */\n",
+      "start": 1702937443110,
+      "end": 1702937443128,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443128,
+      "end": 1702937443128,
+      "order": "normal"
+    }
+  ]
+}

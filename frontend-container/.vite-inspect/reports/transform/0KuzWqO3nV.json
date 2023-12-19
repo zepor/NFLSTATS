@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/jsutils/toError.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { inspect } from './inspect.mjs';\n/**\n * Sometimes a non-error is thrown, wrap it as an Error instance to ensure a consistent Error interface.\n */\n\nexport function toError(thrownValue) {\n  return thrownValue instanceof Error\n    ? thrownValue\n    : new NonErrorThrown(thrownValue);\n}\n\nclass NonErrorThrown extends Error {\n  constructor(thrownValue) {\n    super('Unexpected error value: ' + inspect(thrownValue));\n    this.name = 'NonErrorThrown';\n    this.thrownValue = thrownValue;\n  }\n}\n",
+      "start": 1702937443989,
+      "end": 1702937444007,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444007,
+      "end": 1702937444007,
+      "order": "normal"
+    }
+  ]
+}

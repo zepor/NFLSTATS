@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/c.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = c\nc.displayName = 'c'\nc.aliases = []\nfunction c(Prism) {\n  Prism.languages.c = Prism.languages.extend('clike', {\n    comment: {\n      pattern:\n        /\\/\\/(?:[^\\r\\n\\\\]|\\\\(?:\\r\\n?|\\n|(?![\\r\\n])))*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n      greedy: true\n    },\n    string: {\n      // https://en.cppreference.com/w/c/language/string_literal\n      pattern: /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"/,\n      greedy: true\n    },\n    'class-name': {\n      pattern:\n        /(\\b(?:enum|struct)\\s+(?:__attribute__\\s*\\(\\([\\s\\S]*?\\)\\)\\s*)?)\\w+|\\b[a-z]\\w*_t\\b/,\n      lookbehind: true\n    },\n    keyword:\n      /\\b(?:_Alignas|_Alignof|_Atomic|_Bool|_Complex|_Generic|_Imaginary|_Noreturn|_Static_assert|_Thread_local|__attribute__|asm|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|typeof|union|unsigned|void|volatile|while)\\b/,\n    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n    number:\n      /(?:\\b0x(?:[\\da-f]+(?:\\.[\\da-f]*)?|\\.[\\da-f]+)(?:p[+-]?\\d+)?|(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:e[+-]?\\d+)?)[ful]{0,4}/i,\n    operator: />>=?|<<=?|->|([-+&|:])\\1|[?:~]|[-+*/%&|^!=<>]=?/\n  })\n  Prism.languages.insertBefore('c', 'string', {\n    char: {\n      // https://en.cppreference.com/w/c/language/character_constant\n      pattern: /'(?:\\\\(?:\\r\\n|[\\s\\S])|[^'\\\\\\r\\n]){0,32}'/,\n      greedy: true\n    }\n  })\n  Prism.languages.insertBefore('c', 'string', {\n    macro: {\n      // allow for multiline macro definitions\n      // spaces after the # character compile fine with gcc\n      pattern:\n        /(^[\\t ]*)#\\s*[a-z](?:[^\\r\\n\\\\/]|\\/(?!\\*)|\\/\\*(?:[^*]|\\*(?!\\/))*\\*\\/|\\\\(?:\\r\\n|[\\s\\S]))*/im,\n      lookbehind: true,\n      greedy: true,\n      alias: 'property',\n      inside: {\n        string: [\n          {\n            // highlight the path of the include statement as a string\n            pattern: /^(#\\s*include\\s*)<[^>]+>/,\n            lookbehind: true\n          },\n          Prism.languages.c['string']\n        ],\n        char: Prism.languages.c['char'],\n        comment: Prism.languages.c['comment'],\n        'macro-name': [\n          {\n            pattern: /(^#\\s*define\\s+)\\w+\\b(?!\\()/i,\n            lookbehind: true\n          },\n          {\n            pattern: /(^#\\s*define\\s+)\\w+\\b(?=\\()/i,\n            lookbehind: true,\n            alias: 'function'\n          }\n        ],\n        // highlight macro directives as keywords\n        directive: {\n          pattern: /^(#\\s*)[a-z]+/,\n          lookbehind: true,\n          alias: 'keyword'\n        },\n        'directive-hash': /^#/,\n        punctuation: /##|\\\\(?=[\\r\\n])/,\n        expression: {\n          pattern: /\\S[\\s\\S]*/,\n          inside: Prism.languages.c\n        }\n      }\n    }\n  })\n  Prism.languages.insertBefore('c', 'function', {\n    // highlight predefined macros as constants\n    constant:\n      /\\b(?:EOF|NULL|SEEK_CUR|SEEK_END|SEEK_SET|__DATE__|__FILE__|__LINE__|__TIMESTAMP__|__TIME__|__func__|stderr|stdin|stdout)\\b/\n  })\n  delete Prism.languages.c['boolean']\n}\n",
+      "start": 1702937444835,
+      "end": 1702937444856,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444856,
+      "end": 1702937444856,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar c_1;\nvar hasRequiredC;\n\nfunction requireC () {\n\tif (hasRequiredC) return c_1;\n\thasRequiredC = 1;\n\t'use strict'\n\n\tc_1 = c\n\tc.displayName = 'c'\n\tc.aliases = []\n\tfunction c(Prism) {\n\t  Prism.languages.c = Prism.languages.extend('clike', {\n\t    comment: {\n\t      pattern:\n\t        /\\/\\/(?:[^\\r\\n\\\\]|\\\\(?:\\r\\n?|\\n|(?![\\r\\n])))*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      // https://en.cppreference.com/w/c/language/string_literal\n\t      pattern: /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\"\\\\\\r\\n])*\"/,\n\t      greedy: true\n\t    },\n\t    'class-name': {\n\t      pattern:\n\t        /(\\b(?:enum|struct)\\s+(?:__attribute__\\s*\\(\\([\\s\\S]*?\\)\\)\\s*)?)\\w+|\\b[a-z]\\w*_t\\b/,\n\t      lookbehind: true\n\t    },\n\t    keyword:\n\t      /\\b(?:_Alignas|_Alignof|_Atomic|_Bool|_Complex|_Generic|_Imaginary|_Noreturn|_Static_assert|_Thread_local|__attribute__|asm|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|typeof|union|unsigned|void|volatile|while)\\b/,\n\t    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n\t    number:\n\t      /(?:\\b0x(?:[\\da-f]+(?:\\.[\\da-f]*)?|\\.[\\da-f]+)(?:p[+-]?\\d+)?|(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:e[+-]?\\d+)?)[ful]{0,4}/i,\n\t    operator: />>=?|<<=?|->|([-+&|:])\\1|[?:~]|[-+*/%&|^!=<>]=?/\n\t  })\n\t  Prism.languages.insertBefore('c', 'string', {\n\t    char: {\n\t      // https://en.cppreference.com/w/c/language/character_constant\n\t      pattern: /'(?:\\\\(?:\\r\\n|[\\s\\S])|[^'\\\\\\r\\n]){0,32}'/,\n\t      greedy: true\n\t    }\n\t  })\n\t  Prism.languages.insertBefore('c', 'string', {\n\t    macro: {\n\t      // allow for multiline macro definitions\n\t      // spaces after the # character compile fine with gcc\n\t      pattern:\n\t        /(^[\\t ]*)#\\s*[a-z](?:[^\\r\\n\\\\/]|\\/(?!\\*)|\\/\\*(?:[^*]|\\*(?!\\/))*\\*\\/|\\\\(?:\\r\\n|[\\s\\S]))*/im,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      alias: 'property',\n\t      inside: {\n\t        string: [\n\t          {\n\t            // highlight the path of the include statement as a string\n\t            pattern: /^(#\\s*include\\s*)<[^>]+>/,\n\t            lookbehind: true\n\t          },\n\t          Prism.languages.c['string']\n\t        ],\n\t        char: Prism.languages.c['char'],\n\t        comment: Prism.languages.c['comment'],\n\t        'macro-name': [\n\t          {\n\t            pattern: /(^#\\s*define\\s+)\\w+\\b(?!\\()/i,\n\t            lookbehind: true\n\t          },\n\t          {\n\t            pattern: /(^#\\s*define\\s+)\\w+\\b(?=\\()/i,\n\t            lookbehind: true,\n\t            alias: 'function'\n\t          }\n\t        ],\n\t        // highlight macro directives as keywords\n\t        directive: {\n\t          pattern: /^(#\\s*)[a-z]+/,\n\t          lookbehind: true,\n\t          alias: 'keyword'\n\t        },\n\t        'directive-hash': /^#/,\n\t        punctuation: /##|\\\\(?=[\\r\\n])/,\n\t        expression: {\n\t          pattern: /\\S[\\s\\S]*/,\n\t          inside: Prism.languages.c\n\t        }\n\t      }\n\t    }\n\t  })\n\t  Prism.languages.insertBefore('c', 'function', {\n\t    // highlight predefined macros as constants\n\t    constant:\n\t      /\\b(?:EOF|NULL|SEEK_CUR|SEEK_END|SEEK_SET|__DATE__|__FILE__|__LINE__|__TIMESTAMP__|__TIME__|__func__|stderr|stdin|stdout)\\b/\n\t  })\n\t  delete Prism.languages.c['boolean']\n\t}\n\treturn c_1;\n}\n\nexport { requireC as __require };",
+      "start": 1702937444856,
+      "end": 1702937444857,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,IAAc,GAAG,CAAC;CAClB,CAAC,CAAC,WAAW,GAAG,GAAG;CACnB,CAAC,CAAC,OAAO,GAAG,EAAE;CACd,SAAS,CAAC,CAAC,KAAK,EAAE;CAClB,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CACtD,IAAI,OAAO,EAAE;CACb,MAAM,OAAO;CACb,QAAQ,qEAAqE;CAC7E,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ;CACA,MAAM,OAAO,EAAE,qCAAqC;CACpD,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO;CACb,QAAQ,kFAAkF;CAC1F,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,mVAAmV;CACzV,IAAI,QAAQ,EAAE,uBAAuB;CACrC,IAAI,MAAM;CACV,MAAM,mHAAmH;CACzH,IAAI,QAAQ,EAAE,iDAAiD;CAC/D,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,GAAG,EAAE,QAAQ,EAAE;CAC9C,IAAI,IAAI,EAAE;CACV;CACA,MAAM,OAAO,EAAE,0CAA0C;CACzD,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,GAAG,EAAE,QAAQ,EAAE;CAC9C,IAAI,KAAK,EAAE;CACX;CACA;CACA,MAAM,OAAO;CACb,QAAQ,2FAA2F;CACnG,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,UAAU;CACvB,MAAM,MAAM,EAAE;CACd,QAAQ,MAAM,EAAE;CAChB,UAAU;CACV;CACA,YAAY,OAAO,EAAE,0BAA0B;CAC/C,YAAY,UAAU,EAAE,IAAI;CAC5B,WAAW;CACX,UAAU,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,QAAQ,CAAC;CACrC,SAAS;CACT,QAAQ,IAAI,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,MAAM,CAAC;CACvC,QAAQ,OAAO,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,SAAS,CAAC;CAC7C,QAAQ,YAAY,EAAE;CACtB,UAAU;CACV,YAAY,OAAO,EAAE,8BAA8B;CACnD,YAAY,UAAU,EAAE,IAAI;CAC5B,WAAW;CACX,UAAU;CACV,YAAY,OAAO,EAAE,8BAA8B;CACnD,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,KAAK,EAAE,UAAU;CAC7B,WAAW;CACX,SAAS;CACT;CACA,QAAQ,SAAS,EAAE;CACnB,UAAU,OAAO,EAAE,eAAe;CAClC,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,KAAK,EAAE,SAAS;CAC1B,SAAS;CACT,QAAQ,gBAAgB,EAAE,IAAI;CAC9B,QAAQ,WAAW,EAAE,iBAAiB;CACtC,QAAQ,UAAU,EAAE;CACpB,UAAU,OAAO,EAAE,WAAW;CAC9B,UAAU,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC;CACnC,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,GAAG,EAAE,UAAU,EAAE;CAChD;CACA,IAAI,QAAQ;CACZ,MAAM,4HAA4H;CAClI,GAAG,CAAC;CACJ,EAAE,OAAO,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,SAAS,CAAC;CACrC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444857,
+      "end": 1702937444857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444857,
+      "end": 1702937444857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444857,
+      "end": 1702937444857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444857,
+      "end": 1702937444857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444857,
+      "end": 1702937444857,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Social/index.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Timeline from \"./Timeline\";\r\nimport User from \"./User\";\r\nimport Following from \"./Following\";\r\nimport Activities from \"./Activities\";\r\n\r\nconst Social = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Social Dashboard\" />\r\n    <Container className=\"p-0\">\r\n      <Row>\r\n        <Col lg=\"8\">\r\n          <Timeline />\r\n        </Col>\r\n        <Col lg=\"4\">\r\n          <User />\r\n          <Following />\r\n          <Activities />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Social;\r\n",
+      "start": 1702937436499,
+      "end": 1702937436952,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436952,
+      "end": 1702937436952,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436952,
+      "end": 1702937436952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Container, Row, Col } from \"react-bootstrap\";\nimport Timeline from \"./Timeline\";\nimport User from \"./User\";\nimport Following from \"./Following\";\nimport Activities from \"./Activities\";\nconst Social = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Social Dashboard\" }),\n  /* @__PURE__ */ jsx(Container, { className: \"p-0\", children: /* @__PURE__ */ jsxs(Row, { children: [\n    /* @__PURE__ */ jsx(Col, { lg: \"8\", children: /* @__PURE__ */ jsx(Timeline, {}) }),\n    /* @__PURE__ */ jsxs(Col, { lg: \"4\", children: [\n      /* @__PURE__ */ jsx(User, {}),\n      /* @__PURE__ */ jsx(Following, {}),\n      /* @__PURE__ */ jsx(Activities, {})\n    ] })\n  ] }) })\n] });\nexport default Social;\n",
+      "start": 1702937436952,
+      "end": 1702937436963,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Social/index.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Timeline from \"./Timeline\";\r\nimport User from \"./User\";\r\nimport Following from \"./Following\";\r\nimport Activities from \"./Activities\";\r\n\r\nconst Social = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Social Dashboard\" />\r\n    <Container className=\"p-0\">\r\n      <Row>\r\n        <Col lg=\"8\">\r\n          <Timeline />\r\n        </Col>\r\n        <Col lg=\"4\">\r\n          <User />\r\n          <Following />\r\n          <Activities />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Social;\r\n"
+        ],
+        "mappings": "AAWI,cAMI,YANJ;AAXJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,WAAW,KAAK,WAAW;AAEpC,OAAO,cAAc;AACrB,OAAO,UAAU;AACjB,OAAO,eAAe;AACtB,OAAO,gBAAgB;AAEvB,MAAM,SAAS,MACb,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,oBAAmB;AAAA,EACjC,oBAAC,aAAU,WAAU,OACnB,+BAAC,OACC;AAAA,wBAAC,OAAI,IAAG,KACN,8BAAC,YAAS,GACZ;AAAA,IACA,qBAAC,OAAI,IAAG,KACN;AAAA,0BAAC,QAAK;AAAA,MACN,oBAAC,aAAU;AAAA,MACX,oBAAC,cAAW;AAAA,OACd;AAAA,KACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    }
+  ]
+}

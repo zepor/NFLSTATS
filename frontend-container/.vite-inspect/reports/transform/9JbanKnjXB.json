@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/javastacktrace.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = javastacktrace\njavastacktrace.displayName = 'javastacktrace'\njavastacktrace.aliases = []\nfunction javastacktrace(Prism) {\n  // Specification:\n  // https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Throwable.html#printStackTrace()\n  Prism.languages.javastacktrace = {\n    // java.sql.SQLException: Violation of unique constraint MY_ENTITY_UK_1: duplicate value(s) for column(s) MY_COLUMN in statement [...]\n    // Caused by: java.sql.SQLException: Violation of unique constraint MY_ENTITY_UK_1: duplicate value(s) for column(s) MY_COLUMN in statement [...]\n    // Caused by: com.example.myproject.MyProjectServletException\n    // Caused by: MidLevelException: LowLevelException\n    // Suppressed: Resource$CloseFailException: Resource ID = 0\n    summary: {\n      pattern:\n        /^([\\t ]*)(?:(?:Caused by:|Suppressed:|Exception in thread \"[^\"]*\")[\\t ]+)?[\\w$.]+(?::.*)?$/m,\n      lookbehind: true,\n      inside: {\n        keyword: {\n          pattern:\n            /^([\\t ]*)(?:(?:Caused by|Suppressed)(?=:)|Exception in thread)/m,\n          lookbehind: true\n        },\n        // the current thread if the summary starts with 'Exception in thread'\n        string: {\n          pattern: /^(\\s*)\"[^\"]*\"/,\n          lookbehind: true\n        },\n        exceptions: {\n          pattern: /^(:?\\s*)[\\w$.]+(?=:|$)/,\n          lookbehind: true,\n          inside: {\n            'class-name': /[\\w$]+$/,\n            namespace: /\\b[a-z]\\w*\\b/,\n            punctuation: /\\./\n          }\n        },\n        message: {\n          pattern: /(:\\s*)\\S.*/,\n          lookbehind: true,\n          alias: 'string'\n        },\n        punctuation: /:/\n      }\n    },\n    // at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1166)\n    // at org.hsqldb.jdbc.Util.throwError(Unknown Source) here could be some notes\n    // at java.base/java.lang.Class.forName0(Native Method)\n    // at Util.<init>(Unknown Source)\n    // at com.foo.loader/foo@9.0/com.foo.Main.run(Main.java:101)\n    // at com.foo.loader//com.foo.bar.App.run(App.java:12)\n    // at acme@2.1/org.acme.Lib.test(Lib.java:80)\n    // at MyClass.mash(MyClass.java:9)\n    //\n    // More information:\n    // https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/StackTraceElement.html#toString()\n    //\n    // A valid Java module name is defined as:\n    //   \"A module name consists of one or more Java identifiers (§3.8) separated by \".\" tokens.\"\n    // https://docs.oracle.com/javase/specs/jls/se9/html/jls-6.html#jls-ModuleName\n    //\n    // A Java module version is defined by this class:\n    // https://docs.oracle.com/javase/9/docs/api/java/lang/module/ModuleDescriptor.Version.html\n    // This is the implementation of the `parse` method in JDK13:\n    // https://github.com/matcdac/jdk/blob/2305df71d1b7710266ae0956d73927a225132c0f/src/java.base/share/classes/java/lang/module/ModuleDescriptor.java#L1108\n    // However, to keep this simple, a version will be matched by the pattern /@[\\w$.+-]*/.\n    'stack-frame': {\n      pattern: /^([\\t ]*)at (?:[\\w$./]|@[\\w$.+-]*\\/)+(?:<init>)?\\([^()]*\\)/m,\n      lookbehind: true,\n      inside: {\n        keyword: {\n          pattern: /^(\\s*)at(?= )/,\n          lookbehind: true\n        },\n        source: [\n          // (Main.java:15)\n          // (Main.scala:15)\n          {\n            pattern: /(\\()\\w+\\.\\w+:\\d+(?=\\))/,\n            lookbehind: true,\n            inside: {\n              file: /^\\w+\\.\\w+/,\n              punctuation: /:/,\n              'line-number': {\n                pattern: /\\b\\d+\\b/,\n                alias: 'number'\n              }\n            }\n          }, // (Unknown Source)\n          // (Native Method)\n          // (...something...)\n          {\n            pattern: /(\\()[^()]*(?=\\))/,\n            lookbehind: true,\n            inside: {\n              keyword: /^(?:Native Method|Unknown Source)$/\n            }\n          }\n        ],\n        'class-name': /[\\w$]+(?=\\.(?:<init>|[\\w$]+)\\()/,\n        function: /(?:<init>|[\\w$]+)(?=\\()/,\n        'class-loader': {\n          pattern: /(\\s)[a-z]\\w*(?:\\.[a-z]\\w*)*(?=\\/[\\w@$.]*\\/)/,\n          lookbehind: true,\n          alias: 'namespace',\n          inside: {\n            punctuation: /\\./\n          }\n        },\n        module: {\n          pattern: /([\\s/])[a-z]\\w*(?:\\.[a-z]\\w*)*(?:@[\\w$.+-]*)?(?=\\/)/,\n          lookbehind: true,\n          inside: {\n            version: {\n              pattern: /(@)[\\s\\S]+/,\n              lookbehind: true,\n              alias: 'number'\n            },\n            punctuation: /[@.]/\n          }\n        },\n        namespace: {\n          pattern: /(?:\\b[a-z]\\w*\\.)+/,\n          inside: {\n            punctuation: /\\./\n          }\n        },\n        punctuation: /[()/.]/\n      }\n    },\n    // ... 32 more\n    // ... 32 common frames omitted\n    more: {\n      pattern: /^([\\t ]*)\\.{3} \\d+ [a-z]+(?: [a-z]+)*/m,\n      lookbehind: true,\n      inside: {\n        punctuation: /\\.{3}/,\n        number: /\\d+/,\n        keyword: /\\b[a-z]+(?: [a-z]+)*\\b/\n      }\n    }\n  }\n}\n",
+      "start": 1702937444925,
+      "end": 1702937444944,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444944,
+      "end": 1702937444944,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar javastacktrace_1;\nvar hasRequiredJavastacktrace;\n\nfunction requireJavastacktrace () {\n\tif (hasRequiredJavastacktrace) return javastacktrace_1;\n\thasRequiredJavastacktrace = 1;\n\t'use strict'\n\n\tjavastacktrace_1 = javastacktrace\n\tjavastacktrace.displayName = 'javastacktrace'\n\tjavastacktrace.aliases = []\n\tfunction javastacktrace(Prism) {\n\t  // Specification:\n\t  // https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Throwable.html#printStackTrace()\n\t  Prism.languages.javastacktrace = {\n\t    // java.sql.SQLException: Violation of unique constraint MY_ENTITY_UK_1: duplicate value(s) for column(s) MY_COLUMN in statement [...]\n\t    // Caused by: java.sql.SQLException: Violation of unique constraint MY_ENTITY_UK_1: duplicate value(s) for column(s) MY_COLUMN in statement [...]\n\t    // Caused by: com.example.myproject.MyProjectServletException\n\t    // Caused by: MidLevelException: LowLevelException\n\t    // Suppressed: Resource$CloseFailException: Resource ID = 0\n\t    summary: {\n\t      pattern:\n\t        /^([\\t ]*)(?:(?:Caused by:|Suppressed:|Exception in thread \"[^\"]*\")[\\t ]+)?[\\w$.]+(?::.*)?$/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        keyword: {\n\t          pattern:\n\t            /^([\\t ]*)(?:(?:Caused by|Suppressed)(?=:)|Exception in thread)/m,\n\t          lookbehind: true\n\t        },\n\t        // the current thread if the summary starts with 'Exception in thread'\n\t        string: {\n\t          pattern: /^(\\s*)\"[^\"]*\"/,\n\t          lookbehind: true\n\t        },\n\t        exceptions: {\n\t          pattern: /^(:?\\s*)[\\w$.]+(?=:|$)/,\n\t          lookbehind: true,\n\t          inside: {\n\t            'class-name': /[\\w$]+$/,\n\t            namespace: /\\b[a-z]\\w*\\b/,\n\t            punctuation: /\\./\n\t          }\n\t        },\n\t        message: {\n\t          pattern: /(:\\s*)\\S.*/,\n\t          lookbehind: true,\n\t          alias: 'string'\n\t        },\n\t        punctuation: /:/\n\t      }\n\t    },\n\t    // at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1166)\n\t    // at org.hsqldb.jdbc.Util.throwError(Unknown Source) here could be some notes\n\t    // at java.base/java.lang.Class.forName0(Native Method)\n\t    // at Util.<init>(Unknown Source)\n\t    // at com.foo.loader/foo@9.0/com.foo.Main.run(Main.java:101)\n\t    // at com.foo.loader//com.foo.bar.App.run(App.java:12)\n\t    // at acme@2.1/org.acme.Lib.test(Lib.java:80)\n\t    // at MyClass.mash(MyClass.java:9)\n\t    //\n\t    // More information:\n\t    // https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/StackTraceElement.html#toString()\n\t    //\n\t    // A valid Java module name is defined as:\n\t    //   \"A module name consists of one or more Java identifiers (§3.8) separated by \".\" tokens.\"\n\t    // https://docs.oracle.com/javase/specs/jls/se9/html/jls-6.html#jls-ModuleName\n\t    //\n\t    // A Java module version is defined by this class:\n\t    // https://docs.oracle.com/javase/9/docs/api/java/lang/module/ModuleDescriptor.Version.html\n\t    // This is the implementation of the `parse` method in JDK13:\n\t    // https://github.com/matcdac/jdk/blob/2305df71d1b7710266ae0956d73927a225132c0f/src/java.base/share/classes/java/lang/module/ModuleDescriptor.java#L1108\n\t    // However, to keep this simple, a version will be matched by the pattern /@[\\w$.+-]*/.\n\t    'stack-frame': {\n\t      pattern: /^([\\t ]*)at (?:[\\w$./]|@[\\w$.+-]*\\/)+(?:<init>)?\\([^()]*\\)/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        keyword: {\n\t          pattern: /^(\\s*)at(?= )/,\n\t          lookbehind: true\n\t        },\n\t        source: [\n\t          // (Main.java:15)\n\t          // (Main.scala:15)\n\t          {\n\t            pattern: /(\\()\\w+\\.\\w+:\\d+(?=\\))/,\n\t            lookbehind: true,\n\t            inside: {\n\t              file: /^\\w+\\.\\w+/,\n\t              punctuation: /:/,\n\t              'line-number': {\n\t                pattern: /\\b\\d+\\b/,\n\t                alias: 'number'\n\t              }\n\t            }\n\t          }, // (Unknown Source)\n\t          // (Native Method)\n\t          // (...something...)\n\t          {\n\t            pattern: /(\\()[^()]*(?=\\))/,\n\t            lookbehind: true,\n\t            inside: {\n\t              keyword: /^(?:Native Method|Unknown Source)$/\n\t            }\n\t          }\n\t        ],\n\t        'class-name': /[\\w$]+(?=\\.(?:<init>|[\\w$]+)\\()/,\n\t        function: /(?:<init>|[\\w$]+)(?=\\()/,\n\t        'class-loader': {\n\t          pattern: /(\\s)[a-z]\\w*(?:\\.[a-z]\\w*)*(?=\\/[\\w@$.]*\\/)/,\n\t          lookbehind: true,\n\t          alias: 'namespace',\n\t          inside: {\n\t            punctuation: /\\./\n\t          }\n\t        },\n\t        module: {\n\t          pattern: /([\\s/])[a-z]\\w*(?:\\.[a-z]\\w*)*(?:@[\\w$.+-]*)?(?=\\/)/,\n\t          lookbehind: true,\n\t          inside: {\n\t            version: {\n\t              pattern: /(@)[\\s\\S]+/,\n\t              lookbehind: true,\n\t              alias: 'number'\n\t            },\n\t            punctuation: /[@.]/\n\t          }\n\t        },\n\t        namespace: {\n\t          pattern: /(?:\\b[a-z]\\w*\\.)+/,\n\t          inside: {\n\t            punctuation: /\\./\n\t          }\n\t        },\n\t        punctuation: /[()/.]/\n\t      }\n\t    },\n\t    // ... 32 more\n\t    // ... 32 common frames omitted\n\t    more: {\n\t      pattern: /^([\\t ]*)\\.{3} \\d+ [a-z]+(?: [a-z]+)*/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        punctuation: /\\.{3}/,\n\t        number: /\\d+/,\n\t        keyword: /\\b[a-z]+(?: [a-z]+)*\\b/\n\t      }\n\t    }\n\t  }\n\t}\n\treturn javastacktrace_1;\n}\n\nexport { requireJavastacktrace as __require };",
+      "start": 1702937444944,
+      "end": 1702937444945,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444945,
+      "end": 1702937444945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444945,
+      "end": 1702937444945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444945,
+      "end": 1702937444945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444945,
+      "end": 1702937444945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444945,
+      "end": 1702937444945,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/auth/SignUp.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card } from \"react-bootstrap\";\nimport { Link } from \"react-router-dom\";\n\nimport SignUp from \"../../components/auth/SignUp\";\n\nconst SignUpPage = () => (\n  <React.Fragment>\n    <Helmet title=\"Sign Up\" />\n    <div className=\"text-center mt-4\">\n      <h1 className=\"h2\">Get started</h1>\n      <p className=\"lead\">\n        Start creating the best possible user experience for you customers.\n      </p>\n    </div>\n\n    <Card>\n      <Card.Body>\n        <div className=\"m-sm-3\">\n          <SignUp />\n        </div>\n      </Card.Body>\n    </Card>\n    <div className=\"text-center mb-3\">\n      Already have account? <Link to=\"/auth/sign-in\">Log in</Link>\n    </div>\n  </React.Fragment>\n);\n\nexport default SignUpPage;\n",
+      "start": 1702937436867,
+      "end": 1702937436962,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436962,
+      "end": 1702937436962,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436962,
+      "end": 1702937436962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card } from \"react-bootstrap\";\nimport { Link } from \"react-router-dom\";\nimport SignUp from \"../../components/auth/SignUp\";\nconst SignUpPage = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Sign Up\" }),\n  /* @__PURE__ */ jsxs(\"div\", { className: \"text-center mt-4\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h2\", children: \"Get started\" }),\n    /* @__PURE__ */ jsx(\"p\", { className: \"lead\", children: \"Start creating the best possible user experience for you customers.\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card, { children: /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"m-sm-3\", children: /* @__PURE__ */ jsx(SignUp, {}) }) }) }),\n  /* @__PURE__ */ jsxs(\"div\", { className: \"text-center mb-3\", children: [\n    \"Already have account? \",\n    /* @__PURE__ */ jsx(Link, { to: \"/auth/sign-in\", children: \"Log in\" })\n  ] })\n] });\nexport default SignUpPage;\n",
+      "start": 1702937436962,
+      "end": 1702937436967,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/auth/SignUp.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card } from \"react-bootstrap\";\nimport { Link } from \"react-router-dom\";\n\nimport SignUp from \"../../components/auth/SignUp\";\n\nconst SignUpPage = () => (\n  <React.Fragment>\n    <Helmet title=\"Sign Up\" />\n    <div className=\"text-center mt-4\">\n      <h1 className=\"h2\">Get started</h1>\n      <p className=\"lead\">\n        Start creating the best possible user experience for you customers.\n      </p>\n    </div>\n\n    <Card>\n      <Card.Body>\n        <div className=\"m-sm-3\">\n          <SignUp />\n        </div>\n      </Card.Body>\n    </Card>\n    <div className=\"text-center mb-3\">\n      Already have account? <Link to=\"/auth/sign-in\">Log in</Link>\n    </div>\n  </React.Fragment>\n);\n\nexport default SignUpPage;\n"
+        ],
+        "mappings": "AASI,cACA,YADA;AATJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,YAAY;AACrB,SAAS,YAAY;AAErB,OAAO,YAAY;AAEnB,MAAM,aAAa,MACjB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,WAAU;AAAA,EACxB,qBAAC,SAAI,WAAU,oBACb;AAAA,wBAAC,QAAG,WAAU,MAAK,yBAAW;AAAA,IAC9B,oBAAC,OAAE,WAAU,QAAO,iFAEpB;AAAA,KACF;AAAA,EAEA,oBAAC,QACC,8BAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,UACb,8BAAC,UAAO,GACV,GACF,GACF;AAAA,EACA,qBAAC,SAAI,WAAU,oBAAmB;AAAA;AAAA,IACV,oBAAC,QAAK,IAAG,iBAAgB,oBAAM;AAAA,KACvD;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436967,
+      "end": 1702937436967,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436967,
+      "end": 1702937436968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436968,
+      "end": 1702937436968,
+      "order": "normal"
+    }
+  ]
+}

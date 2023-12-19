@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/apl.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = apl\napl.displayName = 'apl'\napl.aliases = []\nfunction apl(Prism) {\n  Prism.languages.apl = {\n    comment: /(?:⍝|#[! ]).*$/m,\n    string: {\n      pattern: /'(?:[^'\\r\\n]|'')*'/,\n      greedy: true\n    },\n    number:\n      /¯?(?:\\d*\\.?\\b\\d+(?:e[+¯]?\\d+)?|¯|∞)(?:j¯?(?:(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:e[+¯]?\\d+)?|¯|∞))?/i,\n    statement: /:[A-Z][a-z][A-Za-z]*\\b/,\n    'system-function': {\n      pattern: /⎕[A-Z]+/i,\n      alias: 'function'\n    },\n    constant: /[⍬⌾#⎕⍞]/,\n    function: /[-+×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/,\n    'monadic-operator': {\n      pattern: /[\\\\\\/⌿⍀¨⍨⌶&∥]/,\n      alias: 'operator'\n    },\n    'dyadic-operator': {\n      pattern: /[.⍣⍠⍤∘⌸@⌺⍥]/,\n      alias: 'operator'\n    },\n    assignment: {\n      pattern: /←/,\n      alias: 'keyword'\n    },\n    punctuation: /[\\[;\\]()◇⋄]/,\n    dfn: {\n      pattern: /[{}⍺⍵⍶⍹∇⍫:]/,\n      alias: 'builtin'\n    }\n  }\n}\n",
+      "start": 1702937444772,
+      "end": 1702937444830,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar apl_1;\nvar hasRequiredApl;\n\nfunction requireApl () {\n\tif (hasRequiredApl) return apl_1;\n\thasRequiredApl = 1;\n\t'use strict'\n\n\tapl_1 = apl\n\tapl.displayName = 'apl'\n\tapl.aliases = []\n\tfunction apl(Prism) {\n\t  Prism.languages.apl = {\n\t    comment: /(?:⍝|#[! ]).*$/m,\n\t    string: {\n\t      pattern: /'(?:[^'\\r\\n]|'')*'/,\n\t      greedy: true\n\t    },\n\t    number:\n\t      /¯?(?:\\d*\\.?\\b\\d+(?:e[+¯]?\\d+)?|¯|∞)(?:j¯?(?:(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:e[+¯]?\\d+)?|¯|∞))?/i,\n\t    statement: /:[A-Z][a-z][A-Za-z]*\\b/,\n\t    'system-function': {\n\t      pattern: /⎕[A-Z]+/i,\n\t      alias: 'function'\n\t    },\n\t    constant: /[⍬⌾#⎕⍞]/,\n\t    function: /[-+×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/,\n\t    'monadic-operator': {\n\t      pattern: /[\\\\\\/⌿⍀¨⍨⌶&∥]/,\n\t      alias: 'operator'\n\t    },\n\t    'dyadic-operator': {\n\t      pattern: /[.⍣⍠⍤∘⌸@⌺⍥]/,\n\t      alias: 'operator'\n\t    },\n\t    assignment: {\n\t      pattern: /←/,\n\t      alias: 'keyword'\n\t    },\n\t    punctuation: /[\\[;\\]()◇⋄]/,\n\t    dfn: {\n\t      pattern: /[{}⍺⍵⍶⍹∇⍫:]/,\n\t      alias: 'builtin'\n\t    }\n\t  }\n\t}\n\treturn apl_1;\n}\n\nexport { requireApl as __require };",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,OAAO,EAAE,iBAAiB;CAC9B,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM;CACV,MAAM,2FAA2F;CACjG,IAAI,SAAS,EAAE,wBAAwB;CACvC,IAAI,iBAAiB,EAAE;CACvB,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,QAAQ,EAAE,SAAS;CACvB,IAAI,QAAQ,EAAE,iEAAiE;CAC/E,IAAI,kBAAkB,EAAE;CACxB,MAAM,OAAO,EAAE,eAAe;CAC9B,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,iBAAiB,EAAE;CACvB,MAAM,OAAO,EAAE,aAAa;CAC5B,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,UAAU,EAAE;CAChB,MAAM,OAAO,EAAE,GAAG;CAClB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,WAAW,EAAE,aAAa;CAC9B,IAAI,GAAG,EAAE;CACT,MAAM,OAAO,EAAE,aAAa;CAC5B,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444830,
+      "end": 1702937444830,
+      "order": "normal"
+    }
+  ]
+}

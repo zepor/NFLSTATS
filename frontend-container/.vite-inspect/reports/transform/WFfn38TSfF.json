@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_getAllKeys.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var baseGetAllKeys = require('./_baseGetAllKeys'),\n    getSymbols = require('./_getSymbols'),\n    keys = require('./keys');\n\n/**\n * Creates an array of own enumerable property names and symbols of `object`.\n *\n * @private\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names and symbols.\n */\nfunction getAllKeys(object) {\n  return baseGetAllKeys(object, keys, getSymbols);\n}\n\nmodule.exports = getAllKeys;\n",
+      "start": 1702937445174,
+      "end": 1702937445188,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_baseGetAllKeys.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_getSymbols.js?commonjs-proxy\";\nimport require$$2 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/keys.js?commonjs-proxy\";\n\nvar baseGetAllKeys = require$$0,\n    getSymbols = require$$1,\n    keys = require$$2;\n\n/**\n * Creates an array of own enumerable property names and symbols of `object`.\n *\n * @private\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names and symbols.\n */\nfunction getAllKeys(object) {\n  return baseGetAllKeys(object, keys, getSymbols);\n}\n\nvar _getAllKeys = getAllKeys;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_getAllKeys);\nexport { _getAllKeys as __moduleExports };",
+      "start": 1702937445188,
+      "end": 1702937445411,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,IAAI,cAAc,GAAG,UAA4B;AACjD,IAAI,UAAU,GAAG,UAAwB;AACzC,IAAI,IAAI,GAAG,UAAiB,CAAC;AAC7B;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,UAAU,CAAC,MAAM,EAAE;AAC5B,EAAE,OAAO,cAAc,CAAC,MAAM,EAAE,IAAI,EAAE,UAAU,CAAC,CAAC;AAClD,CAAC;AACD;IACA,WAAc,GAAG,UAAU"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445411,
+      "end": 1702937445411,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445411,
+      "end": 1702937445411,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445411,
+      "end": 1702937445411,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445411,
+      "end": 1702937445411,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445411,
+      "end": 1702937445411,
+      "order": "normal"
+    }
+  ]
+}

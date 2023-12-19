@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/toml.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = toml\ntoml.displayName = 'toml'\ntoml.aliases = []\nfunction toml(Prism) {\n  ;(function (Prism) {\n    var key = /(?:[\\w-]+|'[^'\\n\\r]*'|\"(?:\\\\.|[^\\\\\"\\r\\n])*\")/.source\n    /**\n     * @param {string} pattern\n     */\n    function insertKey(pattern) {\n      return pattern.replace(/__/g, function () {\n        return key\n      })\n    }\n    Prism.languages.toml = {\n      comment: {\n        pattern: /#.*/,\n        greedy: true\n      },\n      table: {\n        pattern: RegExp(\n          insertKey(\n            /(^[\\t ]*\\[\\s*(?:\\[\\s*)?)__(?:\\s*\\.\\s*__)*(?=\\s*\\])/.source\n          ),\n          'm'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'class-name'\n      },\n      key: {\n        pattern: RegExp(\n          insertKey(/(^[\\t ]*|[{,]\\s*)__(?:\\s*\\.\\s*__)*(?=\\s*=)/.source),\n          'm'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'property'\n      },\n      string: {\n        pattern:\n          /\"\"\"(?:\\\\[\\s\\S]|[^\\\\])*?\"\"\"|'''[\\s\\S]*?'''|'[^'\\n\\r]*'|\"(?:\\\\.|[^\\\\\"\\r\\n])*\"/,\n        greedy: true\n      },\n      date: [\n        {\n          // Offset Date-Time, Local Date-Time, Local Date\n          pattern:\n            /\\b\\d{4}-\\d{2}-\\d{2}(?:[T\\s]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})?)?\\b/i,\n          alias: 'number'\n        },\n        {\n          // Local Time\n          pattern: /\\b\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?\\b/,\n          alias: 'number'\n        }\n      ],\n      number:\n        /(?:\\b0(?:x[\\da-zA-Z]+(?:_[\\da-zA-Z]+)*|o[0-7]+(?:_[0-7]+)*|b[10]+(?:_[10]+)*))\\b|[-+]?\\b\\d+(?:_\\d+)*(?:\\.\\d+(?:_\\d+)*)?(?:[eE][+-]?\\d+(?:_\\d+)*)?\\b|[-+]?\\b(?:inf|nan)\\b/,\n      boolean: /\\b(?:false|true)\\b/,\n      punctuation: /[.,=[\\]{}]/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937445087,
+      "end": 1702937445112,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar toml_1;\nvar hasRequiredToml;\n\nfunction requireToml () {\n\tif (hasRequiredToml) return toml_1;\n\thasRequiredToml = 1;\n\t'use strict'\n\n\ttoml_1 = toml\n\ttoml.displayName = 'toml'\n\ttoml.aliases = []\n\tfunction toml(Prism) {\n\t  ;(function (Prism) {\n\t    var key = /(?:[\\w-]+|'[^'\\n\\r]*'|\"(?:\\\\.|[^\\\\\"\\r\\n])*\")/.source\n\t    /**\n\t     * @param {string} pattern\n\t     */\n\t    function insertKey(pattern) {\n\t      return pattern.replace(/__/g, function () {\n\t        return key\n\t      })\n\t    }\n\t    Prism.languages.toml = {\n\t      comment: {\n\t        pattern: /#.*/,\n\t        greedy: true\n\t      },\n\t      table: {\n\t        pattern: RegExp(\n\t          insertKey(\n\t            /(^[\\t ]*\\[\\s*(?:\\[\\s*)?)__(?:\\s*\\.\\s*__)*(?=\\s*\\])/.source\n\t          ),\n\t          'm'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'class-name'\n\t      },\n\t      key: {\n\t        pattern: RegExp(\n\t          insertKey(/(^[\\t ]*|[{,]\\s*)__(?:\\s*\\.\\s*__)*(?=\\s*=)/.source),\n\t          'm'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'property'\n\t      },\n\t      string: {\n\t        pattern:\n\t          /\"\"\"(?:\\\\[\\s\\S]|[^\\\\])*?\"\"\"|'''[\\s\\S]*?'''|'[^'\\n\\r]*'|\"(?:\\\\.|[^\\\\\"\\r\\n])*\"/,\n\t        greedy: true\n\t      },\n\t      date: [\n\t        {\n\t          // Offset Date-Time, Local Date-Time, Local Date\n\t          pattern:\n\t            /\\b\\d{4}-\\d{2}-\\d{2}(?:[T\\s]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})?)?\\b/i,\n\t          alias: 'number'\n\t        },\n\t        {\n\t          // Local Time\n\t          pattern: /\\b\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?\\b/,\n\t          alias: 'number'\n\t        }\n\t      ],\n\t      number:\n\t        /(?:\\b0(?:x[\\da-zA-Z]+(?:_[\\da-zA-Z]+)*|o[0-7]+(?:_[0-7]+)*|b[10]+(?:_[10]+)*))\\b|[-+]?\\b\\d+(?:_\\d+)*(?:\\.\\d+(?:_\\d+)*)?(?:[eE][+-]?\\d+(?:_\\d+)*)?\\b|[-+]?\\b(?:inf|nan)\\b/,\n\t      boolean: /\\b(?:false|true)\\b/,\n\t      punctuation: /[.,=[\\]{}]/\n\t    }\n\t  })(Prism)\n\t}\n\treturn toml_1;\n}\n\nexport { requireToml as __require };",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,GAAG,GAAG,8CAA8C,CAAC,MAAM;CACnE;CACA;CACA;CACA,IAAI,SAAS,SAAS,CAAC,OAAO,EAAE;CAChC,MAAM,OAAO,OAAO,CAAC,OAAO,CAAC,KAAK,EAAE,YAAY;CAChD,QAAQ,OAAO,GAAG;CAClB,OAAO,CAAC;CACR,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,KAAK;CACtB,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,KAAK,EAAE;CACb,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,SAAS;CACnB,YAAY,oDAAoD,CAAC,MAAM;CACvE,WAAW;CACX,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,YAAY;CAC3B,OAAO;CACP,MAAM,GAAG,EAAE;CACX,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,SAAS,CAAC,4CAA4C,CAAC,MAAM,CAAC;CACxE,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO;CACf,UAAU,6EAA6E;CACvF,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,IAAI,EAAE;CACZ,QAAQ;CACR;CACA,UAAU,OAAO;CACjB,YAAY,mFAAmF;CAC/F,UAAU,KAAK,EAAE,QAAQ;CACzB,SAAS;CACT,QAAQ;CACR;CACA,UAAU,OAAO,EAAE,iCAAiC;CACpD,UAAU,KAAK,EAAE,QAAQ;CACzB,SAAS;CACT,OAAO;CACP,MAAM,MAAM;CACZ,QAAQ,0KAA0K;CAClL,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,WAAW,EAAE,YAAY;CAC/B,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445113,
+      "end": 1702937445113,
+      "order": "normal"
+    }
+  ]
+}

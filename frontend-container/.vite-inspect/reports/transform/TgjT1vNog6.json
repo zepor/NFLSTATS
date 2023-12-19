@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/ListGroup.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport warning from 'warning';\nimport { useUncontrolled } from 'uncontrollable';\nimport BaseNav from '@restart/ui/Nav';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport ListGroupItem from './ListGroupItem';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst ListGroup = /*#__PURE__*/React.forwardRef((props, ref) => {\n  const {\n    className,\n    bsPrefix: initialBsPrefix,\n    variant,\n    horizontal,\n    numbered,\n    // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n    as = 'div',\n    ...controlledProps\n  } = useUncontrolled(props, {\n    activeKey: 'onSelect'\n  });\n  const bsPrefix = useBootstrapPrefix(initialBsPrefix, 'list-group');\n  let horizontalVariant;\n  if (horizontal) {\n    horizontalVariant = horizontal === true ? 'horizontal' : `horizontal-${horizontal}`;\n  }\n  process.env.NODE_ENV !== \"production\" ? warning(!(horizontal && variant === 'flush'), '`variant=\"flush\"` and `horizontal` should not be used together.') : void 0;\n  return /*#__PURE__*/_jsx(BaseNav, {\n    ref: ref,\n    ...controlledProps,\n    as: as,\n    className: classNames(className, bsPrefix, variant && `${bsPrefix}-${variant}`, horizontalVariant && `${bsPrefix}-${horizontalVariant}`, numbered && `${bsPrefix}-numbered`)\n  });\n});\nListGroup.displayName = 'ListGroup';\nexport default Object.assign(ListGroup, {\n  Item: ListGroupItem\n});",
+      "start": 1702937441482,
+      "end": 1702937441500,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441500,
+      "end": 1702937441500,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441500,
+      "end": 1702937441500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441500,
+      "end": 1702937441500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441500,
+      "end": 1702937441500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441500,
+      "end": 1702937441500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use client\";\nimport classNames from \"classnames\";\nimport * as React from \"react\";\nimport warning from \"warning\";\nimport { useUncontrolled } from \"uncontrollable\";\nimport BaseNav from \"@restart/ui/Nav\";\nimport { useBootstrapPrefix } from \"./ThemeProvider\";\nimport ListGroupItem from \"./ListGroupItem\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst ListGroup = /* @__PURE__ */ React.forwardRef((props, ref) => {\n  const {\n    className,\n    bsPrefix: initialBsPrefix,\n    variant,\n    horizontal,\n    numbered,\n    // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n    as = \"div\",\n    ...controlledProps\n  } = useUncontrolled(props, {\n    activeKey: \"onSelect\"\n  });\n  const bsPrefix = useBootstrapPrefix(initialBsPrefix, \"list-group\");\n  let horizontalVariant;\n  if (horizontal) {\n    horizontalVariant = horizontal === true ? \"horizontal\" : `horizontal-${horizontal}`;\n  }\n  false ? warning(!(horizontal && variant === \"flush\"), '`variant=\"flush\"` and `horizontal` should not be used together.') : void 0;\n  return /* @__PURE__ */ _jsx(BaseNav, {\n    ref,\n    ...controlledProps,\n    as,\n    className: classNames(className, bsPrefix, variant && `${bsPrefix}-${variant}`, horizontalVariant && `${bsPrefix}-${horizontalVariant}`, numbered && `${bsPrefix}-numbered`)\n  });\n});\nListGroup.displayName = \"ListGroup\";\nexport default Object.assign(ListGroup, {\n  Item: ListGroupItem\n});\n",
+      "start": 1702937441500,
+      "end": 1702937441514,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441514,
+      "end": 1702937441514,
+      "order": "normal"
+    }
+  ]
+}

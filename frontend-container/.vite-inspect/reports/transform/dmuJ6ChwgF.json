@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-perfect-scrollbar/lib/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _scrollbar = require('./scrollbar');\n\nvar _scrollbar2 = _interopRequireDefault(_scrollbar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _scrollbar2.default;\nmodule.exports = exports['default'];",
+      "start": 1702937442100,
+      "end": 1702937442117,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442117,
+      "end": 1702937442117,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442117,
+      "end": 1702937442117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442117,
+      "end": 1702937442117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442117,
+      "end": 1702937442117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442117,
+      "end": 1702937442117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __module as libModule } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react-perfect-scrollbar/lib/index.js?commonjs-module\";\nvar lib = libModule.exports;\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react-perfect-scrollbar/lib/scrollbar.js?commonjs-proxy\";\n\n(function (module, exports) {\n\t'use strict';\n\n\tObject.defineProperty(exports, \"__esModule\", {\n\t  value: true\n\t});\n\n\tvar _scrollbar = require$$0;\n\n\tvar _scrollbar2 = _interopRequireDefault(_scrollbar);\n\n\tfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n\texports.default = _scrollbar2.default;\n\tmodule.exports = exports['default']; \n} (libModule, libModule.exports));\n\nvar libExports = libModule.exports;\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(libExports);\nexport { libExports as __moduleExports };",
+      "start": 1702937442118,
+      "end": 1702937444055,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;CAAA,YAAY,CAAC;AACb;CACA,MAAM,CAAC,cAAc,UAAU,YAAY,EAAE;CAC7C,EAAE,KAAK,EAAE,IAAI;CACb,CAAC,CAAC,CAAC;AACH;CACA,IAAI,UAAU,GAAG,UAAsB,CAAC;AACxC;CACA,IAAI,WAAW,GAAG,sBAAsB,CAAC,UAAU,CAAC,CAAC;AACrD;CACA,SAAS,sBAAsB,CAAC,GAAG,EAAE,EAAE,OAAO,GAAG,IAAI,GAAG,CAAC,UAAU,GAAG,GAAG,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,CAAC,EAAE;AAC/F;CACA,kBAAkB,WAAW,CAAC,OAAO,CAAC;CACtC,iBAAiB,OAAO,CAAC,SAAS,CAAC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444056,
+      "end": 1702937444056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444056,
+      "end": 1702937444056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444056,
+      "end": 1702937444056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444056,
+      "end": 1702937444056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444056,
+      "end": 1702937444056,
+      "order": "normal"
+    }
+  ]
+}

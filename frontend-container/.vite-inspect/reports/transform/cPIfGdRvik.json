@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/gedcom.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = gedcom\ngedcom.displayName = 'gedcom'\ngedcom.aliases = []\nfunction gedcom(Prism) {\n  Prism.languages.gedcom = {\n    'line-value': {\n      // Preceded by level, optional pointer, and tag\n      pattern:\n        /(^[\\t ]*\\d+ +(?:@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@ +)?\\w+ ).+/m,\n      lookbehind: true,\n      inside: {\n        pointer: {\n          pattern: /^@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@$/,\n          alias: 'variable'\n        }\n      }\n    },\n    tag: {\n      // Preceded by level and optional pointer\n      pattern:\n        /(^[\\t ]*\\d+ +(?:@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@ +)?)\\w+/m,\n      lookbehind: true,\n      alias: 'string'\n    },\n    level: {\n      pattern: /(^[\\t ]*)\\d+/m,\n      lookbehind: true,\n      alias: 'number'\n    },\n    pointer: {\n      pattern: /@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@/,\n      alias: 'variable'\n    }\n  }\n}\n",
+      "start": 1702937444894,
+      "end": 1702937444913,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar gedcom_1;\nvar hasRequiredGedcom;\n\nfunction requireGedcom () {\n\tif (hasRequiredGedcom) return gedcom_1;\n\thasRequiredGedcom = 1;\n\t'use strict'\n\n\tgedcom_1 = gedcom\n\tgedcom.displayName = 'gedcom'\n\tgedcom.aliases = []\n\tfunction gedcom(Prism) {\n\t  Prism.languages.gedcom = {\n\t    'line-value': {\n\t      // Preceded by level, optional pointer, and tag\n\t      pattern:\n\t        /(^[\\t ]*\\d+ +(?:@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@ +)?\\w+ ).+/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        pointer: {\n\t          pattern: /^@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@$/,\n\t          alias: 'variable'\n\t        }\n\t      }\n\t    },\n\t    tag: {\n\t      // Preceded by level and optional pointer\n\t      pattern:\n\t        /(^[\\t ]*\\d+ +(?:@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@ +)?)\\w+/m,\n\t      lookbehind: true,\n\t      alias: 'string'\n\t    },\n\t    level: {\n\t      pattern: /(^[\\t ]*)\\d+/m,\n\t      lookbehind: true,\n\t      alias: 'number'\n\t    },\n\t    pointer: {\n\t      pattern: /@\\w[\\w!\"$%&'()*+,\\-./:;<=>?[\\\\\\]^`{|}~\\x80-\\xfe #]*@/,\n\t      alias: 'variable'\n\t    }\n\t  }\n\t}\n\treturn gedcom_1;\n}\n\nexport { requireGedcom as __require };",
+      "start": 1702937444913,
+      "end": 1702937444914,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,YAAY,EAAE;CAClB;CACA,MAAM,OAAO;CACb,QAAQ,kFAAkF;CAC1F,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE;CACjB,UAAU,OAAO,EAAE,wDAAwD;CAC3E,UAAU,KAAK,EAAE,UAAU;CAC3B,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,GAAG,EAAE;CACT;CACA,MAAM,OAAO;CACb,QAAQ,+EAA+E;CACvF,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,eAAe;CAC9B,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,sDAAsD;CACrE,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444914,
+      "end": 1702937444914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444914,
+      "end": 1702937444914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444914,
+      "end": 1702937444914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444914,
+      "end": 1702937444914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444914,
+      "end": 1702937444914,
+      "order": "normal"
+    }
+  ]
+}

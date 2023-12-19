@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/delphi.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Delphi\nWebsite: https://www.embarcadero.com/products/delphi\n*/\n\n/** @type LanguageFn */\nfunction delphi(hljs) {\n  const KEYWORDS =\n    'exports register file shl array record property for mod while set ally label uses raise not ' +\n    'stored class safecall var interface or private static exit index inherited to else stdcall ' +\n    'override shr asm far resourcestring finalization packed virtual out and protected library do ' +\n    'xorwrite goto near function end div overload object unit begin string on inline repeat until ' +\n    'destructor write message program with read initialization except default nil if case cdecl in ' +\n    'downto threadvar of try pascal const external constructor type public then implementation ' +\n    'finally published procedure absolute reintroduce operator as is abstract alias assembler ' +\n    'bitpacked break continue cppdecl cvar enumerator experimental platform deprecated ' +\n    'unimplemented dynamic export far16 forward generic helper implements interrupt iochecks ' +\n    'local name nodefault noreturn nostackframe oldfpccall otherwise saveregisters softfloat ' +\n    'specialize strict unaligned varargs ';\n  const COMMENT_MODES = [\n    hljs.C_LINE_COMMENT_MODE,\n    hljs.COMMENT(/\\{/, /\\}/, {\n      relevance: 0\n    }),\n    hljs.COMMENT(/\\(\\*/, /\\*\\)/, {\n      relevance: 10\n    })\n  ];\n  const DIRECTIVE = {\n    className: 'meta',\n    variants: [\n      {\n        begin: /\\{\\$/,\n        end: /\\}/\n      },\n      {\n        begin: /\\(\\*\\$/,\n        end: /\\*\\)/\n      }\n    ]\n  };\n  const STRING = {\n    className: 'string',\n    begin: /'/,\n    end: /'/,\n    contains: [{\n      begin: /''/\n    }]\n  };\n  const NUMBER = {\n    className: 'number',\n    relevance: 0,\n    // Source: https://www.freepascal.org/docs-html/ref/refse6.html\n    variants: [\n      {\n        // Hexadecimal notation, e.g., $7F.\n        begin: '\\\\$[0-9A-Fa-f]+'\n      },\n      {\n        // Octal notation, e.g., &42.\n        begin: '&[0-7]+'\n      },\n      {\n        // Binary notation, e.g., %1010.\n        begin: '%[01]+'\n      }\n    ]\n  };\n  const CHAR_STRING = {\n    className: 'string',\n    begin: /(#\\d+)+/\n  };\n  const CLASS = {\n    begin: hljs.IDENT_RE + '\\\\s*=\\\\s*class\\\\s*\\\\(',\n    returnBegin: true,\n    contains: [hljs.TITLE_MODE]\n  };\n  const FUNCTION = {\n    className: 'function',\n    beginKeywords: 'function constructor destructor procedure',\n    end: /[:;]/,\n    keywords: 'function constructor|10 destructor|10 procedure|10',\n    contains: [\n      hljs.TITLE_MODE,\n      {\n        className: 'params',\n        begin: /\\(/,\n        end: /\\)/,\n        keywords: KEYWORDS,\n        contains: [\n          STRING,\n          CHAR_STRING,\n          DIRECTIVE\n        ].concat(COMMENT_MODES)\n      },\n      DIRECTIVE\n    ].concat(COMMENT_MODES)\n  };\n  return {\n    name: 'Delphi',\n    aliases: [\n      'dpr',\n      'dfm',\n      'pas',\n      'pascal',\n      'freepascal',\n      'lazarus',\n      'lpr',\n      'lfm'\n    ],\n    case_insensitive: true,\n    keywords: KEYWORDS,\n    illegal: /\"|\\$[G-Zg-z]|\\/\\*|<\\/|\\|/,\n    contains: [\n      STRING,\n      CHAR_STRING,\n      hljs.NUMBER_MODE,\n      NUMBER,\n      CLASS,\n      FUNCTION,\n      DIRECTIVE\n    ].concat(COMMENT_MODES)\n  };\n}\n\nmodule.exports = delphi;\n",
+      "start": 1702937444285,
+      "end": 1702937444322,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444322,
+      "end": 1702937444322,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Delphi\nWebsite: https://www.embarcadero.com/products/delphi\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar delphi_1;\nvar hasRequiredDelphi;\n\nfunction requireDelphi () {\n\tif (hasRequiredDelphi) return delphi_1;\n\thasRequiredDelphi = 1;\n\t/** @type LanguageFn */\n\tfunction delphi(hljs) {\n\t  const KEYWORDS =\n\t    'exports register file shl array record property for mod while set ally label uses raise not ' +\n\t    'stored class safecall var interface or private static exit index inherited to else stdcall ' +\n\t    'override shr asm far resourcestring finalization packed virtual out and protected library do ' +\n\t    'xorwrite goto near function end div overload object unit begin string on inline repeat until ' +\n\t    'destructor write message program with read initialization except default nil if case cdecl in ' +\n\t    'downto threadvar of try pascal const external constructor type public then implementation ' +\n\t    'finally published procedure absolute reintroduce operator as is abstract alias assembler ' +\n\t    'bitpacked break continue cppdecl cvar enumerator experimental platform deprecated ' +\n\t    'unimplemented dynamic export far16 forward generic helper implements interrupt iochecks ' +\n\t    'local name nodefault noreturn nostackframe oldfpccall otherwise saveregisters softfloat ' +\n\t    'specialize strict unaligned varargs ';\n\t  const COMMENT_MODES = [\n\t    hljs.C_LINE_COMMENT_MODE,\n\t    hljs.COMMENT(/\\{/, /\\}/, {\n\t      relevance: 0\n\t    }),\n\t    hljs.COMMENT(/\\(\\*/, /\\*\\)/, {\n\t      relevance: 10\n\t    })\n\t  ];\n\t  const DIRECTIVE = {\n\t    className: 'meta',\n\t    variants: [\n\t      {\n\t        begin: /\\{\\$/,\n\t        end: /\\}/\n\t      },\n\t      {\n\t        begin: /\\(\\*\\$/,\n\t        end: /\\*\\)/\n\t      }\n\t    ]\n\t  };\n\t  const STRING = {\n\t    className: 'string',\n\t    begin: /'/,\n\t    end: /'/,\n\t    contains: [{\n\t      begin: /''/\n\t    }]\n\t  };\n\t  const NUMBER = {\n\t    className: 'number',\n\t    relevance: 0,\n\t    // Source: https://www.freepascal.org/docs-html/ref/refse6.html\n\t    variants: [\n\t      {\n\t        // Hexadecimal notation, e.g., $7F.\n\t        begin: '\\\\$[0-9A-Fa-f]+'\n\t      },\n\t      {\n\t        // Octal notation, e.g., &42.\n\t        begin: '&[0-7]+'\n\t      },\n\t      {\n\t        // Binary notation, e.g., %1010.\n\t        begin: '%[01]+'\n\t      }\n\t    ]\n\t  };\n\t  const CHAR_STRING = {\n\t    className: 'string',\n\t    begin: /(#\\d+)+/\n\t  };\n\t  const CLASS = {\n\t    begin: hljs.IDENT_RE + '\\\\s*=\\\\s*class\\\\s*\\\\(',\n\t    returnBegin: true,\n\t    contains: [hljs.TITLE_MODE]\n\t  };\n\t  const FUNCTION = {\n\t    className: 'function',\n\t    beginKeywords: 'function constructor destructor procedure',\n\t    end: /[:;]/,\n\t    keywords: 'function constructor|10 destructor|10 procedure|10',\n\t    contains: [\n\t      hljs.TITLE_MODE,\n\t      {\n\t        className: 'params',\n\t        begin: /\\(/,\n\t        end: /\\)/,\n\t        keywords: KEYWORDS,\n\t        contains: [\n\t          STRING,\n\t          CHAR_STRING,\n\t          DIRECTIVE\n\t        ].concat(COMMENT_MODES)\n\t      },\n\t      DIRECTIVE\n\t    ].concat(COMMENT_MODES)\n\t  };\n\t  return {\n\t    name: 'Delphi',\n\t    aliases: [\n\t      'dpr',\n\t      'dfm',\n\t      'pas',\n\t      'pascal',\n\t      'freepascal',\n\t      'lazarus',\n\t      'lpr',\n\t      'lfm'\n\t    ],\n\t    case_insensitive: true,\n\t    keywords: KEYWORDS,\n\t    illegal: /\"|\\$[G-Zg-z]|\\/\\*|<\\/|\\|/,\n\t    contains: [\n\t      STRING,\n\t      CHAR_STRING,\n\t      hljs.NUMBER_MODE,\n\t      NUMBER,\n\t      CLASS,\n\t      FUNCTION,\n\t      DIRECTIVE\n\t    ].concat(COMMENT_MODES)\n\t  };\n\t}\n\n\tdelphi_1 = delphi;\n\treturn delphi_1;\n}\n\nexport { requireDelphi as __require };",
+      "start": 1702937444322,
+      "end": 1702937444323,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    }
+  ]
+}

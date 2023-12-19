@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/schema.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = Schema\n\nvar proto = Schema.prototype\n\nproto.space = null\nproto.normal = {}\nproto.property = {}\n\nfunction Schema(property, normal, space) {\n  this.property = property\n  this.normal = normal\n\n  if (space) {\n    this.space = space\n  }\n}\n",
+      "start": 1702937445376,
+      "end": 1702937445389,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445389,
+      "end": 1702937445389,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445389,
+      "end": 1702937445389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445389,
+      "end": 1702937445389,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n'use strict'\n\nvar schema = Schema\n\nvar proto = Schema.prototype\n\nproto.space = null\nproto.normal = {}\nproto.property = {}\n\nfunction Schema(property, normal, space) {\n  this.property = property\n  this.normal = normal\n\n  if (space) {\n    this.space = space\n  }\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(schema);\nexport { schema as __moduleExports };",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY;AACZ;IACA,MAAc,GAAG,MAAM;AACvB;AACA,IAAI,KAAK,GAAG,MAAM,CAAC,SAAS;AAC5B;AACA,KAAK,CAAC,KAAK,GAAG,IAAI;AAClB,KAAK,CAAC,MAAM,GAAG,EAAE;AACjB,KAAK,CAAC,QAAQ,GAAG,EAAE;AACnB;AACA,SAAS,MAAM,CAAC,QAAQ,EAAE,MAAM,EAAE,KAAK,EAAE;AACzC,EAAE,IAAI,CAAC,QAAQ,GAAG,QAAQ;AAC1B,EAAE,IAAI,CAAC,MAAM,GAAG,MAAM;AACtB;AACA,EAAE,IAAI,KAAK,EAAE;AACb,IAAI,IAAI,CAAC,KAAK,GAAG,KAAK;AACtB,GAAG;AACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    }
+  ]
+}

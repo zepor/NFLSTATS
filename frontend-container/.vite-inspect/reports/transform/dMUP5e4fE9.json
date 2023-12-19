@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/lua.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = lua\nlua.displayName = 'lua'\nlua.aliases = []\nfunction lua(Prism) {\n  Prism.languages.lua = {\n    comment: /^#!.+|--(?:\\[(=*)\\[[\\s\\S]*?\\]\\1\\]|.*)/m,\n    // \\z may be used to skip the following space\n    string: {\n      pattern:\n        /([\"'])(?:(?!\\1)[^\\\\\\r\\n]|\\\\z(?:\\r\\n|\\s)|\\\\(?:\\r\\n|[^z]))*\\1|\\[(=*)\\[[\\s\\S]*?\\]\\2\\]/,\n      greedy: true\n    },\n    number:\n      /\\b0x[a-f\\d]+(?:\\.[a-f\\d]*)?(?:p[+-]?\\d+)?\\b|\\b\\d+(?:\\.\\B|(?:\\.\\d*)?(?:e[+-]?\\d+)?\\b)|\\B\\.\\d+(?:e[+-]?\\d+)?\\b/i,\n    keyword:\n      /\\b(?:and|break|do|else|elseif|end|false|for|function|goto|if|in|local|nil|not|or|repeat|return|then|true|until|while)\\b/,\n    function: /(?!\\d)\\w+(?=\\s*(?:[({]))/,\n    operator: [\n      /[-+*%^&|#]|\\/\\/?|<[<=]?|>[>=]?|[=~]=?/,\n      {\n        // Match \"..\" but don't break \"...\"\n        pattern: /(^|[^.])\\.\\.(?!\\.)/,\n        lookbehind: true\n      }\n    ],\n    punctuation: /[\\[\\](){},;]|\\.+|:+/\n  }\n}\n",
+      "start": 1702937444959,
+      "end": 1702937444977,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar lua_1;\nvar hasRequiredLua;\n\nfunction requireLua () {\n\tif (hasRequiredLua) return lua_1;\n\thasRequiredLua = 1;\n\t'use strict'\n\n\tlua_1 = lua\n\tlua.displayName = 'lua'\n\tlua.aliases = []\n\tfunction lua(Prism) {\n\t  Prism.languages.lua = {\n\t    comment: /^#!.+|--(?:\\[(=*)\\[[\\s\\S]*?\\]\\1\\]|.*)/m,\n\t    // \\z may be used to skip the following space\n\t    string: {\n\t      pattern:\n\t        /([\"'])(?:(?!\\1)[^\\\\\\r\\n]|\\\\z(?:\\r\\n|\\s)|\\\\(?:\\r\\n|[^z]))*\\1|\\[(=*)\\[[\\s\\S]*?\\]\\2\\]/,\n\t      greedy: true\n\t    },\n\t    number:\n\t      /\\b0x[a-f\\d]+(?:\\.[a-f\\d]*)?(?:p[+-]?\\d+)?\\b|\\b\\d+(?:\\.\\B|(?:\\.\\d*)?(?:e[+-]?\\d+)?\\b)|\\B\\.\\d+(?:e[+-]?\\d+)?\\b/i,\n\t    keyword:\n\t      /\\b(?:and|break|do|else|elseif|end|false|for|function|goto|if|in|local|nil|not|or|repeat|return|then|true|until|while)\\b/,\n\t    function: /(?!\\d)\\w+(?=\\s*(?:[({]))/,\n\t    operator: [\n\t      /[-+*%^&|#]|\\/\\/?|<[<=]?|>[>=]?|[=~]=?/,\n\t      {\n\t        // Match \"..\" but don't break \"...\"\n\t        pattern: /(^|[^.])\\.\\.(?!\\.)/,\n\t        lookbehind: true\n\t      }\n\t    ],\n\t    punctuation: /[\\[\\](){},;]|\\.+|:+/\n\t  }\n\t}\n\treturn lua_1;\n}\n\nexport { requireLua as __require };",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,OAAO,EAAE,wCAAwC;CACrD;CACA,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,oFAAoF;CAC5F,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM;CACV,MAAM,+GAA+G;CACrH,IAAI,OAAO;CACX,MAAM,yHAAyH;CAC/H,IAAI,QAAQ,EAAE,0BAA0B;CACxC,IAAI,QAAQ,EAAE;CACd,MAAM,uCAAuC;CAC7C,MAAM;CACN;CACA,QAAQ,OAAO,EAAE,oBAAoB;CACrC,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,IAAI,WAAW,EAAE,qBAAqB;CACtC,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    }
+  ]
+}

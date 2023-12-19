@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/isObjectLike.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Checks if `value` is object-like. A value is object-like if it's not `null`\n * and has a `typeof` result of \"object\".\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is object-like, else `false`.\n * @example\n *\n * _.isObjectLike({});\n * // => true\n *\n * _.isObjectLike([1, 2, 3]);\n * // => true\n *\n * _.isObjectLike(_.noop);\n * // => false\n *\n * _.isObjectLike(null);\n * // => false\n */\nfunction isObjectLike(value) {\n  return value != null && typeof value == 'object';\n}\n\nexport default isObjectLike;\n",
+      "start": 1702937443720,
+      "end": 1702937443854,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443854,
+      "end": 1702937443854,
+      "order": "normal"
+    }
+  ]
+}

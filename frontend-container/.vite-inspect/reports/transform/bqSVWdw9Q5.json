@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/contexts/ThemeProvider.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { THEME } from \"../constants\";\r\nimport useSettingsState from \"../hooks/useSettingsState\";\r\nimport ThemeContext from \"./ThemeContext\";\r\n\r\nfunction ThemeProvider({ children }) {\r\n  const [theme, setTheme] = useSettingsState(\"theme\", THEME.DEFAULT);\r\n\r\n  return (\r\n    <ThemeContext.Provider value={{ theme, setTheme }}>\r\n      {children}\r\n    </ThemeContext.Provider>\r\n  );\r\n}\r\n\r\nexport default ThemeProvider;\r\n",
+      "start": 1702937435960,
+      "end": 1702937436068,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436068,
+      "end": 1702937436068,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436068,
+      "end": 1702937436068,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { THEME } from \"../constants\";\nimport useSettingsState from \"../hooks/useSettingsState\";\nimport ThemeContext from \"./ThemeContext\";\nfunction ThemeProvider({ children }) {\n  const [theme, setTheme] = useSettingsState(\"theme\", THEME.DEFAULT);\n  return /* @__PURE__ */ jsx(ThemeContext.Provider, { value: { theme, setTheme }, children });\n}\nexport default ThemeProvider;\n",
+      "start": 1702937436068,
+      "end": 1702937436193,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/contexts/ThemeProvider.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { THEME } from \"../constants\";\r\nimport useSettingsState from \"../hooks/useSettingsState\";\r\nimport ThemeContext from \"./ThemeContext\";\r\n\r\nfunction ThemeProvider({ children }) {\r\n  const [theme, setTheme] = useSettingsState(\"theme\", THEME.DEFAULT);\r\n\r\n  return (\r\n    <ThemeContext.Provider value={{ theme, setTheme }}>\r\n      {children}\r\n    </ThemeContext.Provider>\r\n  );\r\n}\r\n\r\nexport default ThemeProvider;\r\n"
+        ],
+        "mappings": "AASI;AATJ,OAAO,WAAW;AAClB,SAAS,aAAa;AACtB,OAAO,sBAAsB;AAC7B,OAAO,kBAAkB;AAEzB,SAAS,cAAc,EAAE,SAAS,GAAG;AACnC,QAAM,CAAC,OAAO,QAAQ,IAAI,iBAAiB,SAAS,MAAM,OAAO;AAEjE,SACE,oBAAC,aAAa,UAAb,EAAsB,OAAO,EAAE,OAAO,SAAS,GAC7C,UACH;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436194,
+      "end": 1702937436194,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Candlestick.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst CandlestickChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [\r\n    {\r\n      data: [\r\n        {\r\n          x: new Date(2016, 1, 1),\r\n          y: [51.98, 56.29, 51.59, 53.85],\r\n        },\r\n        {\r\n          x: new Date(2016, 2, 1),\r\n          y: [53.66, 54.99, 51.35, 52.95],\r\n        },\r\n        {\r\n          x: new Date(2016, 3, 1),\r\n          y: [52.96, 53.78, 51.54, 52.48],\r\n        },\r\n        {\r\n          x: new Date(2016, 4, 1),\r\n          y: [52.54, 52.79, 47.88, 49.24],\r\n        },\r\n        {\r\n          x: new Date(2016, 5, 1),\r\n          y: [49.1, 52.86, 47.7, 52.78],\r\n        },\r\n        {\r\n          x: new Date(2016, 6, 1),\r\n          y: [52.83, 53.48, 50.32, 52.29],\r\n        },\r\n        {\r\n          x: new Date(2016, 7, 1),\r\n          y: [52.2, 54.48, 51.64, 52.58],\r\n        },\r\n        {\r\n          x: new Date(2016, 8, 1),\r\n          y: [52.76, 57.35, 52.15, 57.03],\r\n        },\r\n        {\r\n          x: new Date(2016, 9, 1),\r\n          y: [57.04, 58.15, 48.88, 56.19],\r\n        },\r\n        {\r\n          x: new Date(2016, 10, 1),\r\n          y: [56.09, 58.85, 55.48, 58.79],\r\n        },\r\n        {\r\n          x: new Date(2016, 11, 1),\r\n          y: [58.78, 59.65, 58.23, 59.05],\r\n        },\r\n        {\r\n          x: new Date(2017, 0, 1),\r\n          y: [59.37, 61.11, 59.35, 60.34],\r\n        },\r\n        {\r\n          x: new Date(2017, 1, 1),\r\n          y: [60.4, 60.52, 56.71, 56.93],\r\n        },\r\n        {\r\n          x: new Date(2017, 2, 1),\r\n          y: [57.02, 59.71, 56.04, 56.82],\r\n        },\r\n        {\r\n          x: new Date(2017, 3, 1),\r\n          y: [56.97, 59.62, 54.77, 59.3],\r\n        },\r\n        {\r\n          x: new Date(2017, 4, 1),\r\n          y: [59.11, 62.29, 59.1, 59.85],\r\n        },\r\n        {\r\n          x: new Date(2017, 5, 1),\r\n          y: [59.97, 60.11, 55.66, 58.42],\r\n        },\r\n        {\r\n          x: new Date(2017, 6, 1),\r\n          y: [58.34, 60.93, 56.75, 57.42],\r\n        },\r\n        {\r\n          x: new Date(2017, 7, 1),\r\n          y: [57.76, 58.08, 51.18, 54.71],\r\n        },\r\n        {\r\n          x: new Date(2017, 8, 1),\r\n          y: [54.8, 61.42, 53.18, 57.35],\r\n        },\r\n        {\r\n          x: new Date(2017, 9, 1),\r\n          y: [57.56, 63.09, 57.0, 62.99],\r\n        },\r\n        {\r\n          x: new Date(2017, 10, 1),\r\n          y: [62.89, 63.42, 59.72, 61.76],\r\n        },\r\n        {\r\n          x: new Date(2017, 11, 1),\r\n          y: [61.71, 64.15, 61.29, 63.04],\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    stroke: {\r\n      width: 1,\r\n    },\r\n    xaxis: {\r\n      type: \"datetime\",\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Candlestick Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A candlestick chart is a style of financial chart used to describe\r\n          price movements.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart\r\n            options={options}\r\n            series={data}\r\n            type=\"candlestick\"\r\n            height=\"350\"\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default CandlestickChart;\r\n",
+      "start": 1702937441812,
+      "end": 1702937441857,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport Chart from \"react-apexcharts\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst CandlestickChart = () => {\n  const palette = usePalette();\n  const data = [\n    {\n      data: [\n        {\n          x: new Date(2016, 1, 1),\n          y: [51.98, 56.29, 51.59, 53.85]\n        },\n        {\n          x: new Date(2016, 2, 1),\n          y: [53.66, 54.99, 51.35, 52.95]\n        },\n        {\n          x: new Date(2016, 3, 1),\n          y: [52.96, 53.78, 51.54, 52.48]\n        },\n        {\n          x: new Date(2016, 4, 1),\n          y: [52.54, 52.79, 47.88, 49.24]\n        },\n        {\n          x: new Date(2016, 5, 1),\n          y: [49.1, 52.86, 47.7, 52.78]\n        },\n        {\n          x: new Date(2016, 6, 1),\n          y: [52.83, 53.48, 50.32, 52.29]\n        },\n        {\n          x: new Date(2016, 7, 1),\n          y: [52.2, 54.48, 51.64, 52.58]\n        },\n        {\n          x: new Date(2016, 8, 1),\n          y: [52.76, 57.35, 52.15, 57.03]\n        },\n        {\n          x: new Date(2016, 9, 1),\n          y: [57.04, 58.15, 48.88, 56.19]\n        },\n        {\n          x: new Date(2016, 10, 1),\n          y: [56.09, 58.85, 55.48, 58.79]\n        },\n        {\n          x: new Date(2016, 11, 1),\n          y: [58.78, 59.65, 58.23, 59.05]\n        },\n        {\n          x: new Date(2017, 0, 1),\n          y: [59.37, 61.11, 59.35, 60.34]\n        },\n        {\n          x: new Date(2017, 1, 1),\n          y: [60.4, 60.52, 56.71, 56.93]\n        },\n        {\n          x: new Date(2017, 2, 1),\n          y: [57.02, 59.71, 56.04, 56.82]\n        },\n        {\n          x: new Date(2017, 3, 1),\n          y: [56.97, 59.62, 54.77, 59.3]\n        },\n        {\n          x: new Date(2017, 4, 1),\n          y: [59.11, 62.29, 59.1, 59.85]\n        },\n        {\n          x: new Date(2017, 5, 1),\n          y: [59.97, 60.11, 55.66, 58.42]\n        },\n        {\n          x: new Date(2017, 6, 1),\n          y: [58.34, 60.93, 56.75, 57.42]\n        },\n        {\n          x: new Date(2017, 7, 1),\n          y: [57.76, 58.08, 51.18, 54.71]\n        },\n        {\n          x: new Date(2017, 8, 1),\n          y: [54.8, 61.42, 53.18, 57.35]\n        },\n        {\n          x: new Date(2017, 9, 1),\n          y: [57.56, 63.09, 57, 62.99]\n        },\n        {\n          x: new Date(2017, 10, 1),\n          y: [62.89, 63.42, 59.72, 61.76]\n        },\n        {\n          x: new Date(2017, 11, 1),\n          y: [61.71, 64.15, 61.29, 63.04]\n        }\n      ]\n    }\n  ];\n  const options = {\n    stroke: {\n      width: 1\n    },\n    xaxis: {\n      type: \"datetime\"\n    },\n    colors: [\n      palette.primary,\n      palette.success,\n      palette.warning,\n      palette.danger,\n      palette.info\n    ]\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Candlestick Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"A candlestick chart is a style of financial chart used to describe price movements.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(\n      Chart,\n      {\n        options,\n        series: data,\n        type: \"candlestick\",\n        height: \"350\"\n      }\n    ) }) })\n  ] });\n};\nexport default CandlestickChart;\n",
+      "start": 1702937441857,
+      "end": 1702937441860,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Candlestick.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst CandlestickChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [\r\n    {\r\n      data: [\r\n        {\r\n          x: new Date(2016, 1, 1),\r\n          y: [51.98, 56.29, 51.59, 53.85],\r\n        },\r\n        {\r\n          x: new Date(2016, 2, 1),\r\n          y: [53.66, 54.99, 51.35, 52.95],\r\n        },\r\n        {\r\n          x: new Date(2016, 3, 1),\r\n          y: [52.96, 53.78, 51.54, 52.48],\r\n        },\r\n        {\r\n          x: new Date(2016, 4, 1),\r\n          y: [52.54, 52.79, 47.88, 49.24],\r\n        },\r\n        {\r\n          x: new Date(2016, 5, 1),\r\n          y: [49.1, 52.86, 47.7, 52.78],\r\n        },\r\n        {\r\n          x: new Date(2016, 6, 1),\r\n          y: [52.83, 53.48, 50.32, 52.29],\r\n        },\r\n        {\r\n          x: new Date(2016, 7, 1),\r\n          y: [52.2, 54.48, 51.64, 52.58],\r\n        },\r\n        {\r\n          x: new Date(2016, 8, 1),\r\n          y: [52.76, 57.35, 52.15, 57.03],\r\n        },\r\n        {\r\n          x: new Date(2016, 9, 1),\r\n          y: [57.04, 58.15, 48.88, 56.19],\r\n        },\r\n        {\r\n          x: new Date(2016, 10, 1),\r\n          y: [56.09, 58.85, 55.48, 58.79],\r\n        },\r\n        {\r\n          x: new Date(2016, 11, 1),\r\n          y: [58.78, 59.65, 58.23, 59.05],\r\n        },\r\n        {\r\n          x: new Date(2017, 0, 1),\r\n          y: [59.37, 61.11, 59.35, 60.34],\r\n        },\r\n        {\r\n          x: new Date(2017, 1, 1),\r\n          y: [60.4, 60.52, 56.71, 56.93],\r\n        },\r\n        {\r\n          x: new Date(2017, 2, 1),\r\n          y: [57.02, 59.71, 56.04, 56.82],\r\n        },\r\n        {\r\n          x: new Date(2017, 3, 1),\r\n          y: [56.97, 59.62, 54.77, 59.3],\r\n        },\r\n        {\r\n          x: new Date(2017, 4, 1),\r\n          y: [59.11, 62.29, 59.1, 59.85],\r\n        },\r\n        {\r\n          x: new Date(2017, 5, 1),\r\n          y: [59.97, 60.11, 55.66, 58.42],\r\n        },\r\n        {\r\n          x: new Date(2017, 6, 1),\r\n          y: [58.34, 60.93, 56.75, 57.42],\r\n        },\r\n        {\r\n          x: new Date(2017, 7, 1),\r\n          y: [57.76, 58.08, 51.18, 54.71],\r\n        },\r\n        {\r\n          x: new Date(2017, 8, 1),\r\n          y: [54.8, 61.42, 53.18, 57.35],\r\n        },\r\n        {\r\n          x: new Date(2017, 9, 1),\r\n          y: [57.56, 63.09, 57.0, 62.99],\r\n        },\r\n        {\r\n          x: new Date(2017, 10, 1),\r\n          y: [62.89, 63.42, 59.72, 61.76],\r\n        },\r\n        {\r\n          x: new Date(2017, 11, 1),\r\n          y: [61.71, 64.15, 61.29, 63.04],\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    stroke: {\r\n      width: 1,\r\n    },\r\n    xaxis: {\r\n      type: \"datetime\",\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Candlestick Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A candlestick chart is a style of financial chart used to describe\r\n          price movements.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart\r\n            options={options}\r\n            series={data}\r\n            type=\"candlestick\"\r\n            height=\"350\"\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default CandlestickChart;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    }
+  ]
+}

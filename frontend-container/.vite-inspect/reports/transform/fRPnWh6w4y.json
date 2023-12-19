@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_toSource.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** Used for built-in method references. */\nvar funcProto = Function.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/**\n * Converts `func` to its source code.\n *\n * @private\n * @param {Function} func The function to convert.\n * @returns {string} Returns the source code.\n */\nfunction toSource(func) {\n  if (func != null) {\n    try {\n      return funcToString.call(func);\n    } catch (e) {}\n    try {\n      return (func + '');\n    } catch (e) {}\n  }\n  return '';\n}\n\nmodule.exports = toSource;\n",
+      "start": 1702937445173,
+      "end": 1702937445187,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445187,
+      "end": 1702937445187,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/** Used for built-in method references. */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar funcProto = Function.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/**\n * Converts `func` to its source code.\n *\n * @private\n * @param {Function} func The function to convert.\n * @returns {string} Returns the source code.\n */\nfunction toSource(func) {\n  if (func != null) {\n    try {\n      return funcToString.call(func);\n    } catch (e) {}\n    try {\n      return (func + '');\n    } catch (e) {}\n  }\n  return '';\n}\n\nvar _toSource = toSource;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_toSource);\nexport { _toSource as __moduleExports };",
+      "start": 1702937445187,
+      "end": 1702937445188,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AACA,IAAI,SAAS,GAAG,QAAQ,CAAC,SAAS,CAAC;AACnC;AACA;AACA,IAAI,YAAY,GAAG,SAAS,CAAC,QAAQ,CAAC;AACtC;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,QAAQ,CAAC,IAAI,EAAE;AACxB,EAAE,IAAI,IAAI,IAAI,IAAI,EAAE;AACpB,IAAI,IAAI;AACR,MAAM,OAAO,YAAY,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;AACrC,KAAK,CAAC,OAAO,CAAC,EAAE,EAAE;AAClB,IAAI,IAAI;AACR,MAAM,QAAQ,IAAI,GAAG,EAAE,EAAE;AACzB,KAAK,CAAC,OAAO,CAAC,EAAE,EAAE;AAClB,GAAG;AACH,EAAE,OAAO,EAAE,CAAC;AACZ,CAAC;AACD;IACA,SAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445188,
+      "end": 1702937445188,
+      "order": "normal"
+    }
+  ]
+}

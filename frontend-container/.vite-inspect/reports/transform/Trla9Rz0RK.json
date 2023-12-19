@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/oz.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = oz\noz.displayName = 'oz'\noz.aliases = []\nfunction oz(Prism) {\n  Prism.languages.oz = {\n    comment: {\n      pattern: /\\/\\*[\\s\\S]*?\\*\\/|%.*/,\n      greedy: true\n    },\n    string: {\n      pattern: /\"(?:[^\"\\\\]|\\\\[\\s\\S])*\"/,\n      greedy: true\n    },\n    atom: {\n      pattern: /'(?:[^'\\\\]|\\\\[\\s\\S])*'/,\n      greedy: true,\n      alias: 'builtin'\n    },\n    keyword:\n      /\\$|\\[\\]|\\b(?:_|at|attr|case|catch|choice|class|cond|declare|define|dis|else(?:case|if)?|end|export|fail|false|feat|finally|from|fun|functor|if|import|in|local|lock|meth|nil|not|of|or|prepare|proc|prop|raise|require|self|skip|then|thread|true|try|unit)\\b/,\n    function: [\n      /\\b[a-z][A-Za-z\\d]*(?=\\()/,\n      {\n        pattern: /(\\{)[A-Z][A-Za-z\\d]*\\b/,\n        lookbehind: true\n      }\n    ],\n    number:\n      /\\b(?:0[bx][\\da-f]+|\\d+(?:\\.\\d*)?(?:e~?\\d+)?)\\b|&(?:[^\\\\]|\\\\(?:\\d{3}|.))/i,\n    variable: /`(?:[^`\\\\]|\\\\.)+`/,\n    'attr-name': /\\b\\w+(?=[ \\t]*:(?![:=]))/,\n    operator:\n      /:(?:=|::?)|<[-:=]?|=(?:=|<?:?)|>=?:?|\\\\=:?|!!?|[|#+\\-*\\/,~^@]|\\b(?:andthen|div|mod|orelse)\\b/,\n    punctuation: /[\\[\\](){}.:;?]/\n  }\n}\n",
+      "start": 1702937444992,
+      "end": 1702937445020,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar oz_1;\nvar hasRequiredOz;\n\nfunction requireOz () {\n\tif (hasRequiredOz) return oz_1;\n\thasRequiredOz = 1;\n\t'use strict'\n\n\toz_1 = oz\n\toz.displayName = 'oz'\n\toz.aliases = []\n\tfunction oz(Prism) {\n\t  Prism.languages.oz = {\n\t    comment: {\n\t      pattern: /\\/\\*[\\s\\S]*?\\*\\/|%.*/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /\"(?:[^\"\\\\]|\\\\[\\s\\S])*\"/,\n\t      greedy: true\n\t    },\n\t    atom: {\n\t      pattern: /'(?:[^'\\\\]|\\\\[\\s\\S])*'/,\n\t      greedy: true,\n\t      alias: 'builtin'\n\t    },\n\t    keyword:\n\t      /\\$|\\[\\]|\\b(?:_|at|attr|case|catch|choice|class|cond|declare|define|dis|else(?:case|if)?|end|export|fail|false|feat|finally|from|fun|functor|if|import|in|local|lock|meth|nil|not|of|or|prepare|proc|prop|raise|require|self|skip|then|thread|true|try|unit)\\b/,\n\t    function: [\n\t      /\\b[a-z][A-Za-z\\d]*(?=\\()/,\n\t      {\n\t        pattern: /(\\{)[A-Z][A-Za-z\\d]*\\b/,\n\t        lookbehind: true\n\t      }\n\t    ],\n\t    number:\n\t      /\\b(?:0[bx][\\da-f]+|\\d+(?:\\.\\d*)?(?:e~?\\d+)?)\\b|&(?:[^\\\\]|\\\\(?:\\d{3}|.))/i,\n\t    variable: /`(?:[^`\\\\]|\\\\.)+`/,\n\t    'attr-name': /\\b\\w+(?=[ \\t]*:(?![:=]))/,\n\t    operator:\n\t      /:(?:=|::?)|<[-:=]?|=(?:=|<?:?)|>=?:?|\\\\=:?|!!?|[|#+\\-*\\/,~^@]|\\b(?:andthen|div|mod|orelse)\\b/,\n\t    punctuation: /[\\[\\](){}.:;?]/\n\t  }\n\t}\n\treturn oz_1;\n}\n\nexport { requireOz as __require };",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,KAAc,GAAG,EAAE;CACnB,EAAE,CAAC,WAAW,GAAG,IAAI;CACrB,EAAE,CAAC,OAAO,GAAG,EAAE;CACf,SAAS,EAAE,CAAC,KAAK,EAAE;CACnB,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG;CACvB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,sBAAsB;CACrC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,wBAAwB;CACvC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,IAAI,EAAE;CACV,MAAM,OAAO,EAAE,wBAAwB;CACvC,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,+PAA+P;CACrQ,IAAI,QAAQ,EAAE;CACd,MAAM,0BAA0B;CAChC,MAAM;CACN,QAAQ,OAAO,EAAE,wBAAwB;CACzC,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,IAAI,MAAM;CACV,MAAM,0EAA0E;CAChF,IAAI,QAAQ,EAAE,mBAAmB;CACjC,IAAI,WAAW,EAAE,0BAA0B;CAC3C,IAAI,QAAQ;CACZ,MAAM,8FAA8F;CACpG,IAAI,WAAW,EAAE,gBAAgB;CACjC,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445020,
+      "end": 1702937445020,
+      "order": "normal"
+    }
+  ]
+}

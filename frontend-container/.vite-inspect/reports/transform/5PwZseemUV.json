@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/awk.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Awk\nAuthor: Matthew Daly <matthewbdaly@gmail.com>\nWebsite: https://www.gnu.org/software/gawk/manual/gawk.html\nDescription: language definition for Awk scripts\n*/\n\n/** @type LanguageFn */\nfunction awk(hljs) {\n  const VARIABLE = {\n    className: 'variable',\n    variants: [\n      {\n        begin: /\\$[\\w\\d#@][\\w\\d_]*/\n      },\n      {\n        begin: /\\$\\{(.*?)\\}/\n      }\n    ]\n  };\n  const KEYWORDS = 'BEGIN END if else while do for in break continue delete next nextfile function func exit|10';\n  const STRING = {\n    className: 'string',\n    contains: [hljs.BACKSLASH_ESCAPE],\n    variants: [\n      {\n        begin: /(u|b)?r?'''/,\n        end: /'''/,\n        relevance: 10\n      },\n      {\n        begin: /(u|b)?r?\"\"\"/,\n        end: /\"\"\"/,\n        relevance: 10\n      },\n      {\n        begin: /(u|r|ur)'/,\n        end: /'/,\n        relevance: 10\n      },\n      {\n        begin: /(u|r|ur)\"/,\n        end: /\"/,\n        relevance: 10\n      },\n      {\n        begin: /(b|br)'/,\n        end: /'/\n      },\n      {\n        begin: /(b|br)\"/,\n        end: /\"/\n      },\n      hljs.APOS_STRING_MODE,\n      hljs.QUOTE_STRING_MODE\n    ]\n  };\n  return {\n    name: 'Awk',\n    keywords: {\n      keyword: KEYWORDS\n    },\n    contains: [\n      VARIABLE,\n      STRING,\n      hljs.REGEXP_MODE,\n      hljs.HASH_COMMENT_MODE,\n      hljs.NUMBER_MODE\n    ]\n  };\n}\n\nmodule.exports = awk;\n",
+      "start": 1702937444232,
+      "end": 1702937444276,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444276,
+      "end": 1702937444276,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Awk\nAuthor: Matthew Daly <matthewbdaly@gmail.com>\nWebsite: https://www.gnu.org/software/gawk/manual/gawk.html\nDescription: language definition for Awk scripts\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar awk_1;\nvar hasRequiredAwk;\n\nfunction requireAwk () {\n\tif (hasRequiredAwk) return awk_1;\n\thasRequiredAwk = 1;\n\t/** @type LanguageFn */\n\tfunction awk(hljs) {\n\t  const VARIABLE = {\n\t    className: 'variable',\n\t    variants: [\n\t      {\n\t        begin: /\\$[\\w\\d#@][\\w\\d_]*/\n\t      },\n\t      {\n\t        begin: /\\$\\{(.*?)\\}/\n\t      }\n\t    ]\n\t  };\n\t  const KEYWORDS = 'BEGIN END if else while do for in break continue delete next nextfile function func exit|10';\n\t  const STRING = {\n\t    className: 'string',\n\t    contains: [hljs.BACKSLASH_ESCAPE],\n\t    variants: [\n\t      {\n\t        begin: /(u|b)?r?'''/,\n\t        end: /'''/,\n\t        relevance: 10\n\t      },\n\t      {\n\t        begin: /(u|b)?r?\"\"\"/,\n\t        end: /\"\"\"/,\n\t        relevance: 10\n\t      },\n\t      {\n\t        begin: /(u|r|ur)'/,\n\t        end: /'/,\n\t        relevance: 10\n\t      },\n\t      {\n\t        begin: /(u|r|ur)\"/,\n\t        end: /\"/,\n\t        relevance: 10\n\t      },\n\t      {\n\t        begin: /(b|br)'/,\n\t        end: /'/\n\t      },\n\t      {\n\t        begin: /(b|br)\"/,\n\t        end: /\"/\n\t      },\n\t      hljs.APOS_STRING_MODE,\n\t      hljs.QUOTE_STRING_MODE\n\t    ]\n\t  };\n\t  return {\n\t    name: 'Awk',\n\t    keywords: {\n\t      keyword: KEYWORDS\n\t    },\n\t    contains: [\n\t      VARIABLE,\n\t      STRING,\n\t      hljs.REGEXP_MODE,\n\t      hljs.HASH_COMMENT_MODE,\n\t      hljs.NUMBER_MODE\n\t    ]\n\t  };\n\t}\n\n\tawk_1 = awk;\n\treturn awk_1;\n}\n\nexport { requireAwk as __require };",
+      "start": 1702937444276,
+      "end": 1702937444277,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA;CACA,SAAS,GAAG,CAAC,IAAI,EAAE;CACnB,EAAE,MAAM,QAAQ,GAAG;CACnB,IAAI,SAAS,EAAE,UAAU;CACzB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,KAAK,EAAE,oBAAoB;CACnC,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,aAAa;CAC5B,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,MAAM,QAAQ,GAAG,6FAA6F,CAAC;CACjH,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,QAAQ,EAAE,CAAC,IAAI,CAAC,gBAAgB,CAAC;CACrC,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,KAAK,EAAE,aAAa;CAC5B,QAAQ,GAAG,EAAE,KAAK;CAClB,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,aAAa;CAC5B,QAAQ,GAAG,EAAE,KAAK;CAClB,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,WAAW;CAC1B,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,WAAW;CAC1B,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,SAAS;CACxB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,SAAS;CACxB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM,IAAI,CAAC,gBAAgB;CAC3B,MAAM,IAAI,CAAC,iBAAiB;CAC5B,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,KAAK;CACf,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,QAAQ;CACvB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,QAAQ;CACd,MAAM,MAAM;CACZ,MAAM,IAAI,CAAC,WAAW;CACtB,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,IAAI,CAAC,WAAW;CACtB,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,MAAc,GAAG,GAAG"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    }
+  ]
+}

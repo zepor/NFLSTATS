@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/toString.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import baseToString from './_baseToString.js';\n\n/**\n * Converts `value` to a string. An empty string is returned for `null`\n * and `undefined` values. The sign of `-0` is preserved.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to convert.\n * @returns {string} Returns the converted string.\n * @example\n *\n * _.toString(null);\n * // => ''\n *\n * _.toString(-0);\n * // => '-0'\n *\n * _.toString([1, 2, 3]);\n * // => '1,2,3'\n */\nfunction toString(value) {\n  return value == null ? '' : baseToString(value);\n}\n\nexport default toString;\n",
+      "start": 1702937443728,
+      "end": 1702937443872,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    }
+  ]
+}

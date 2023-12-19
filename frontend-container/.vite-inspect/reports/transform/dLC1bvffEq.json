@@ -1,0 +1,128 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_freeGlobal.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** Detect free variable `global` from Node.js. */\nvar freeGlobal = typeof global == 'object' && global && global.Object === Object && global;\n\nmodule.exports = freeGlobal;\n",
+      "start": 1702937445326,
+      "end": 1702937445336,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/** Detect free variable `global` from Node.js. */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar freeGlobal = typeof commonjsHelpers.commonjsGlobal == 'object' && commonjsHelpers.commonjsGlobal && commonjsHelpers.commonjsGlobal.Object === Object && commonjsHelpers.commonjsGlobal;\n\nvar _freeGlobal = freeGlobal;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_freeGlobal);\nexport { _freeGlobal as __moduleExports };",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [
+          "global"
+        ],
+        "mappings": ";;;AACA,IAAI,UAAU,GAAG,OAAOA,8BAAM,IAAI,QAAQ,IAAIA,8BAAM,IAAIA,8BAAM,CAAC,MAAM,KAAK,MAAM,IAAIA,8BAAM,CAAC;AAC3F;IACA,WAAc,GAAG,UAAU"
+      }
+    },
+    {
+      "name": "inject",
+      "result": "/** Detect free variable `global` from Node.js. */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar freeGlobal = typeof commonjsHelpers.commonjsGlobal == 'object' && commonjsHelpers.commonjsGlobal && commonjsHelpers.commonjsGlobal.Object === Object && commonjsHelpers.commonjsGlobal;\n\nvar _freeGlobal = freeGlobal;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_freeGlobal);\nexport { _freeGlobal as __moduleExports };",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3L;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445336,
+      "end": 1702937445336,
+      "order": "normal"
+    }
+  ]
+}

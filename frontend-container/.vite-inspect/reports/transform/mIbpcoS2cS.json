@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/ui/Grid.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst GridText = ({ children }) => (\r\n  <Card className=\"bg-light py-2 py-md-3 text-center border\">\r\n    <Card.Body>{children}</Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Grid = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Grid\" />\r\n\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Grid</h1>\r\n\r\n      <Card>\r\n        <Card.Header>\r\n          <Card.Title>Grid system</Card.Title>\r\n          <h6 className=\"card-subtitle text-muted\">\r\n            Powerful mobile-first flexbox grid\r\n          </h6>\r\n        </Card.Header>\r\n        <Card.Body>\r\n          <Row>\r\n            <Col md=\"12\">\r\n              <GridText>.col-md-12</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"8\">\r\n              <GridText>.col-md-8</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n          </Row>\r\n        </Card.Body>\r\n      </Card>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Grid;\r\n",
+      "start": 1702937436959,
+      "end": 1702937440807,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440807,
+      "end": 1702937440807,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440807,
+      "end": 1702937440807,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\nconst GridText = ({ children }) => /* @__PURE__ */ jsx(Card, { className: \"bg-light py-2 py-md-3 text-center border\", children: /* @__PURE__ */ jsx(Card.Body, { children }) });\nconst Grid = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Grid\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Grid\" }),\n    /* @__PURE__ */ jsxs(Card, { children: [\n      /* @__PURE__ */ jsxs(Card.Header, { children: [\n        /* @__PURE__ */ jsx(Card.Title, { children: \"Grid system\" }),\n        /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Powerful mobile-first flexbox grid\" })\n      ] }),\n      /* @__PURE__ */ jsxs(Card.Body, { children: [\n        /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsx(Col, { md: \"12\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-12\" }) }) }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"6\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-6\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"6\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-6\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"4\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-4\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"4\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-4\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"4\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-4\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"2\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-2\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"1\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-1\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"8\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-8\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"4\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-4\" }) })\n        ] }),\n        /* @__PURE__ */ jsxs(Row, { children: [\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"6\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-6\" }) }),\n          /* @__PURE__ */ jsx(Col, { md: \"3\", children: /* @__PURE__ */ jsx(GridText, { children: \".col-md-3\" }) })\n        ] })\n      ] })\n    ] })\n  ] })\n] });\nexport default Grid;\n",
+      "start": 1702937440807,
+      "end": 1702937440823,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/ui/Grid.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst GridText = ({ children }) => (\r\n  <Card className=\"bg-light py-2 py-md-3 text-center border\">\r\n    <Card.Body>{children}</Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Grid = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Grid\" />\r\n\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Grid</h1>\r\n\r\n      <Card>\r\n        <Card.Header>\r\n          <Card.Title>Grid system</Card.Title>\r\n          <h6 className=\"card-subtitle text-muted\">\r\n            Powerful mobile-first flexbox grid\r\n          </h6>\r\n        </Card.Header>\r\n        <Card.Body>\r\n          <Row>\r\n            <Col md=\"12\">\r\n              <GridText>.col-md-12</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n            <Col md=\"2\">\r\n              <GridText>.col-md-2</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n            <Col md=\"1\">\r\n              <GridText>.col-md-1</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"8\">\r\n              <GridText>.col-md-8</GridText>\r\n            </Col>\r\n            <Col md=\"4\">\r\n              <GridText>.col-md-4</GridText>\r\n            </Col>\r\n          </Row>\r\n          <Row>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n            <Col md=\"6\">\r\n              <GridText>.col-md-6</GridText>\r\n            </Col>\r\n            <Col md=\"3\">\r\n              <GridText>.col-md-3</GridText>\r\n            </Col>\r\n          </Row>\r\n        </Card.Body>\r\n      </Card>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Grid;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    }
+  ]
+}

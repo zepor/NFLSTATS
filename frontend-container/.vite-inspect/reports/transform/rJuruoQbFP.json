@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/hooks/internal/__use.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { wrapPromiseWithState } from \"../../../utilities/index.js\";\nimport * as React from \"react\";\n// Prevent webpack from complaining about our feature detection of the\n// use property of the React namespace, which is expected not\n// to exist when using current stable versions, and that's fine.\nvar useKey = \"use\";\nvar realHook = React[useKey];\n// This is named with two underscores to allow this hook to evade typical rules of\n// hooks (i.e. it can be used conditionally)\nexport var __use = realHook ||\n    function __use(promise) {\n        var statefulPromise = wrapPromiseWithState(promise);\n        switch (statefulPromise.status) {\n            case \"pending\":\n                throw statefulPromise;\n            case \"rejected\":\n                throw statefulPromise.reason;\n            case \"fulfilled\":\n                return statefulPromise.value;\n        }\n    };\n//# sourceMappingURL=__use.js.map",
+      "start": 1702937443008,
+      "end": 1702937443045,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    }
+  ]
+}

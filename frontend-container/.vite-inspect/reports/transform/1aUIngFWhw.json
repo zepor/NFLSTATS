@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@restart/hooks/esm/useWillUnmount.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import useUpdatedRef from './useUpdatedRef';\nimport { useEffect } from 'react';\n\n/**\n * Attach a callback that fires when a component unmounts\n *\n * @param fn Handler to run when the component unmounts\n * @category effects\n */\nexport default function useWillUnmount(fn) {\n  const onUnmount = useUpdatedRef(fn);\n  useEffect(() => () => onUnmount.current(), []);\n}",
+      "start": 1702937442078,
+      "end": 1702937442096,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442096,
+      "end": 1702937442096,
+      "order": "normal"
+    }
+  ]
+}

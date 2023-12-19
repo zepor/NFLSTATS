@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/sidebar/SidebarFooter.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nconst SidebarFooter = () => {\r\n  return (\r\n    <div className=\"sidebar-cta\">\r\n      <div className=\"sidebar-cta-content\">\r\n        <strong className=\"d-inline-block mb-2\">Monthly Sales Report</strong>\r\n        <div className=\"mb-3 text-sm\">\r\n          Your monthly sales report is ready for download!\r\n        </div>\r\n\r\n        <div className=\"d-grid\">\r\n          <a\r\n            href=\"https://themes.getbootstrap.com/product/appstack-react-admin-dashboard-template/\"\r\n            className=\"btn btn-primary\"\r\n            target=\"_blank\"\r\n            rel=\"noreferrer\"\r\n          >\r\n            Download\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SidebarFooter;\r\n",
+      "start": 1702937442101,
+      "end": 1702937442118,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442118,
+      "end": 1702937442118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nconst SidebarFooter = () => {\n  return /* @__PURE__ */ jsx(\"div\", { className: \"sidebar-cta\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"sidebar-cta-content\", children: [\n    /* @__PURE__ */ jsx(\"strong\", { className: \"d-inline-block mb-2\", children: \"Monthly Sales Report\" }),\n    /* @__PURE__ */ jsx(\"div\", { className: \"mb-3 text-sm\", children: \"Your monthly sales report is ready for download!\" }),\n    /* @__PURE__ */ jsx(\"div\", { className: \"d-grid\", children: /* @__PURE__ */ jsx(\n      \"a\",\n      {\n        href: \"https://themes.getbootstrap.com/product/appstack-react-admin-dashboard-template/\",\n        className: \"btn btn-primary\",\n        target: \"_blank\",\n        rel: \"noreferrer\",\n        children: \"Download\"\n      }\n    ) })\n  ] }) });\n};\nexport default SidebarFooter;\n",
+      "start": 1702937442118,
+      "end": 1702937442122,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/sidebar/SidebarFooter.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nconst SidebarFooter = () => {\r\n  return (\r\n    <div className=\"sidebar-cta\">\r\n      <div className=\"sidebar-cta-content\">\r\n        <strong className=\"d-inline-block mb-2\">Monthly Sales Report</strong>\r\n        <div className=\"mb-3 text-sm\">\r\n          Your monthly sales report is ready for download!\r\n        </div>\r\n\r\n        <div className=\"d-grid\">\r\n          <a\r\n            href=\"https://themes.getbootstrap.com/product/appstack-react-admin-dashboard-template/\"\r\n            className=\"btn btn-primary\"\r\n            target=\"_blank\"\r\n            rel=\"noreferrer\"\r\n          >\r\n            Download\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SidebarFooter;\r\n"
+        ],
+        "mappings": "AAKM,SACE,KADF;AALN,OAAO,WAAW;AAElB,MAAM,gBAAgB,MAAM;AAC1B,SACE,oBAAC,SAAI,WAAU,eACb,+BAAC,SAAI,WAAU,uBACb;AAAA,wBAAC,YAAO,WAAU,uBAAsB,kCAAoB;AAAA,IAC5D,oBAAC,SAAI,WAAU,gBAAe,8DAE9B;AAAA,IAEA,oBAAC,SAAI,WAAU,UACb;AAAA,MAAC;AAAA;AAAA,QACC,MAAK;AAAA,QACL,WAAU;AAAA,QACV,QAAO;AAAA,QACP,KAAI;AAAA,QACL;AAAA;AAAA,IAED,GACF;AAAA,KACF,GACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442123,
+      "end": 1702937442123,
+      "order": "normal"
+    }
+  ]
+}

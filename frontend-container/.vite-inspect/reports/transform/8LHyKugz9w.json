@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/objectivec.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Objective-C\nAuthor: Valerii Hiora <valerii.hiora@gmail.com>\nContributors: Angel G. Olloqui <angelgarcia.mail@gmail.com>, Matt Diephouse <matt@diephouse.com>, Andrew Farmer <ahfarmer@gmail.com>, Minh Nguyễn <mxn@1ec5.org>\nWebsite: https://developer.apple.com/documentation/objectivec\nCategory: common\n*/\n\nfunction objectivec(hljs) {\n  const API_CLASS = {\n    className: 'built_in',\n    begin: '\\\\b(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)\\\\w+'\n  };\n  const IDENTIFIER_RE = /[a-zA-Z@][a-zA-Z0-9_]*/;\n  const OBJC_KEYWORDS = {\n    $pattern: IDENTIFIER_RE,\n    keyword:\n      'int float while char export sizeof typedef const struct for union ' +\n      'unsigned long volatile static bool mutable if do return goto void ' +\n      'enum else break extern asm case short default double register explicit ' +\n      'signed typename this switch continue wchar_t inline readonly assign ' +\n      'readwrite self @synchronized id typeof ' +\n      'nonatomic super unichar IBOutlet IBAction strong weak copy ' +\n      'in out inout bycopy byref oneway __strong __weak __block __autoreleasing ' +\n      '@private @protected @public @try @property @end @throw @catch @finally ' +\n      '@autoreleasepool @synthesize @dynamic @selector @optional @required ' +\n      '@encode @package @import @defs @compatibility_alias ' +\n      '__bridge __bridge_transfer __bridge_retained __bridge_retain ' +\n      '__covariant __contravariant __kindof ' +\n      '_Nonnull _Nullable _Null_unspecified ' +\n      '__FUNCTION__ __PRETTY_FUNCTION__ __attribute__ ' +\n      'getter setter retain unsafe_unretained ' +\n      'nonnull nullable null_unspecified null_resettable class instancetype ' +\n      'NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE NS_REQUIRES_SUPER ' +\n      'NS_RETURNS_INNER_POINTER NS_INLINE NS_AVAILABLE NS_DEPRECATED ' +\n      'NS_ENUM NS_OPTIONS NS_SWIFT_UNAVAILABLE ' +\n      'NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END ' +\n      'NS_REFINED_FOR_SWIFT NS_SWIFT_NAME NS_SWIFT_NOTHROW ' +\n      'NS_DURING NS_HANDLER NS_ENDHANDLER NS_VALUERETURN NS_VOIDRETURN',\n    literal:\n      'false true FALSE TRUE nil YES NO NULL',\n    built_in:\n      'BOOL dispatch_once_t dispatch_queue_t dispatch_sync dispatch_async dispatch_once'\n  };\n  const CLASS_KEYWORDS = {\n    $pattern: IDENTIFIER_RE,\n    keyword: '@interface @class @protocol @implementation'\n  };\n  return {\n    name: 'Objective-C',\n    aliases: [\n      'mm',\n      'objc',\n      'obj-c',\n      'obj-c++',\n      'objective-c++'\n    ],\n    keywords: OBJC_KEYWORDS,\n    illegal: '</',\n    contains: [\n      API_CLASS,\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      hljs.C_NUMBER_MODE,\n      hljs.QUOTE_STRING_MODE,\n      hljs.APOS_STRING_MODE,\n      {\n        className: 'string',\n        variants: [\n          {\n            begin: '@\"',\n            end: '\"',\n            illegal: '\\\\n',\n            contains: [ hljs.BACKSLASH_ESCAPE ]\n          }\n        ]\n      },\n      {\n        className: 'meta',\n        begin: /#\\s*[a-z]+\\b/,\n        end: /$/,\n        keywords: {\n          'meta-keyword':\n            'if else elif endif define undef warning error line ' +\n            'pragma ifdef ifndef include'\n        },\n        contains: [\n          {\n            begin: /\\\\\\n/,\n            relevance: 0\n          },\n          hljs.inherit(hljs.QUOTE_STRING_MODE, {\n            className: 'meta-string'\n          }),\n          {\n            className: 'meta-string',\n            begin: /<.*?>/,\n            end: /$/,\n            illegal: '\\\\n'\n          },\n          hljs.C_LINE_COMMENT_MODE,\n          hljs.C_BLOCK_COMMENT_MODE\n        ]\n      },\n      {\n        className: 'class',\n        begin: '(' + CLASS_KEYWORDS.keyword.split(' ').join('|') + ')\\\\b',\n        end: /(\\{|$)/,\n        excludeEnd: true,\n        keywords: CLASS_KEYWORDS,\n        contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n      },\n      {\n        begin: '\\\\.' + hljs.UNDERSCORE_IDENT_RE,\n        relevance: 0\n      }\n    ]\n  };\n}\n\nmodule.exports = objectivec;\n",
+      "start": 1702937444440,
+      "end": 1702937444539,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444539,
+      "end": 1702937444539,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Objective-C\nAuthor: Valerii Hiora <valerii.hiora@gmail.com>\nContributors: Angel G. Olloqui <angelgarcia.mail@gmail.com>, Matt Diephouse <matt@diephouse.com>, Andrew Farmer <ahfarmer@gmail.com>, Minh Nguyễn <mxn@1ec5.org>\nWebsite: https://developer.apple.com/documentation/objectivec\nCategory: common\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar objectivec_1;\nvar hasRequiredObjectivec;\n\nfunction requireObjectivec () {\n\tif (hasRequiredObjectivec) return objectivec_1;\n\thasRequiredObjectivec = 1;\n\tfunction objectivec(hljs) {\n\t  const API_CLASS = {\n\t    className: 'built_in',\n\t    begin: '\\\\b(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)\\\\w+'\n\t  };\n\t  const IDENTIFIER_RE = /[a-zA-Z@][a-zA-Z0-9_]*/;\n\t  const OBJC_KEYWORDS = {\n\t    $pattern: IDENTIFIER_RE,\n\t    keyword:\n\t      'int float while char export sizeof typedef const struct for union ' +\n\t      'unsigned long volatile static bool mutable if do return goto void ' +\n\t      'enum else break extern asm case short default double register explicit ' +\n\t      'signed typename this switch continue wchar_t inline readonly assign ' +\n\t      'readwrite self @synchronized id typeof ' +\n\t      'nonatomic super unichar IBOutlet IBAction strong weak copy ' +\n\t      'in out inout bycopy byref oneway __strong __weak __block __autoreleasing ' +\n\t      '@private @protected @public @try @property @end @throw @catch @finally ' +\n\t      '@autoreleasepool @synthesize @dynamic @selector @optional @required ' +\n\t      '@encode @package @import @defs @compatibility_alias ' +\n\t      '__bridge __bridge_transfer __bridge_retained __bridge_retain ' +\n\t      '__covariant __contravariant __kindof ' +\n\t      '_Nonnull _Nullable _Null_unspecified ' +\n\t      '__FUNCTION__ __PRETTY_FUNCTION__ __attribute__ ' +\n\t      'getter setter retain unsafe_unretained ' +\n\t      'nonnull nullable null_unspecified null_resettable class instancetype ' +\n\t      'NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE NS_REQUIRES_SUPER ' +\n\t      'NS_RETURNS_INNER_POINTER NS_INLINE NS_AVAILABLE NS_DEPRECATED ' +\n\t      'NS_ENUM NS_OPTIONS NS_SWIFT_UNAVAILABLE ' +\n\t      'NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END ' +\n\t      'NS_REFINED_FOR_SWIFT NS_SWIFT_NAME NS_SWIFT_NOTHROW ' +\n\t      'NS_DURING NS_HANDLER NS_ENDHANDLER NS_VALUERETURN NS_VOIDRETURN',\n\t    literal:\n\t      'false true FALSE TRUE nil YES NO NULL',\n\t    built_in:\n\t      'BOOL dispatch_once_t dispatch_queue_t dispatch_sync dispatch_async dispatch_once'\n\t  };\n\t  const CLASS_KEYWORDS = {\n\t    $pattern: IDENTIFIER_RE,\n\t    keyword: '@interface @class @protocol @implementation'\n\t  };\n\t  return {\n\t    name: 'Objective-C',\n\t    aliases: [\n\t      'mm',\n\t      'objc',\n\t      'obj-c',\n\t      'obj-c++',\n\t      'objective-c++'\n\t    ],\n\t    keywords: OBJC_KEYWORDS,\n\t    illegal: '</',\n\t    contains: [\n\t      API_CLASS,\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      hljs.C_NUMBER_MODE,\n\t      hljs.QUOTE_STRING_MODE,\n\t      hljs.APOS_STRING_MODE,\n\t      {\n\t        className: 'string',\n\t        variants: [\n\t          {\n\t            begin: '@\"',\n\t            end: '\"',\n\t            illegal: '\\\\n',\n\t            contains: [ hljs.BACKSLASH_ESCAPE ]\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'meta',\n\t        begin: /#\\s*[a-z]+\\b/,\n\t        end: /$/,\n\t        keywords: {\n\t          'meta-keyword':\n\t            'if else elif endif define undef warning error line ' +\n\t            'pragma ifdef ifndef include'\n\t        },\n\t        contains: [\n\t          {\n\t            begin: /\\\\\\n/,\n\t            relevance: 0\n\t          },\n\t          hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t            className: 'meta-string'\n\t          }),\n\t          {\n\t            className: 'meta-string',\n\t            begin: /<.*?>/,\n\t            end: /$/,\n\t            illegal: '\\\\n'\n\t          },\n\t          hljs.C_LINE_COMMENT_MODE,\n\t          hljs.C_BLOCK_COMMENT_MODE\n\t        ]\n\t      },\n\t      {\n\t        className: 'class',\n\t        begin: '(' + CLASS_KEYWORDS.keyword.split(' ').join('|') + ')\\\\b',\n\t        end: /(\\{|$)/,\n\t        excludeEnd: true,\n\t        keywords: CLASS_KEYWORDS,\n\t        contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n\t      },\n\t      {\n\t        begin: '\\\\.' + hljs.UNDERSCORE_IDENT_RE,\n\t        relevance: 0\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tobjectivec_1 = objectivec;\n\treturn objectivec_1;\n}\n\nexport { requireObjectivec as __require };",
+      "start": 1702937444539,
+      "end": 1702937444540,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444540,
+      "end": 1702937444540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444540,
+      "end": 1702937444540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444540,
+      "end": 1702937444540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444540,
+      "end": 1702937444540,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444540,
+      "end": 1702937444540,
+      "order": "normal"
+    }
+  ]
+}

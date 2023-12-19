@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Line.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Line } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst LineChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\",\r\n      \"Apr\",\r\n      \"May\",\r\n      \"Jun\",\r\n      \"Jul\",\r\n      \"Aug\",\r\n      \"Sep\",\r\n      \"Oct\",\r\n      \"Nov\",\r\n      \"Dec\",\r\n    ],\r\n    datasets: [\r\n      {\r\n        label: \"Sales ($)\",\r\n        fill: true,\r\n        backgroundColor: \"transparent\",\r\n        borderColor: palette.primary,\r\n        data: [\r\n          2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917,\r\n          3327,\r\n        ],\r\n      },\r\n      {\r\n        label: \"Orders\",\r\n        fill: true,\r\n        backgroundColor: \"transparent\",\r\n        borderColor: palette[\"primary-dark\"],\r\n        borderDash: [4, 4],\r\n        data: [\r\n          958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827,\r\n        ],\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n      filler: {\r\n        propagate: false,\r\n      },\r\n    },\r\n    scales: {\r\n      x: {\r\n        reverse: true,\r\n        grid: {\r\n          color: \"rgba(0,0,0,0.05)\",\r\n        },\r\n      },\r\n      y: {\r\n        ticks: {\r\n          stepSize: 500,\r\n        },\r\n        display: true,\r\n        borderDash: [5, 5],\r\n        grid: {\r\n          color: \"rgba(0,0,0,0)\",\r\n          fontColor: \"#fff\",\r\n        },\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Line Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A line chart is a way of plotting data points on a line.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Line data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default LineChart;\r\n",
+      "start": 1702937441732,
+      "end": 1702937441850,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441850,
+      "end": 1702937441850,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441850,
+      "end": 1702937441850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Line } from \"react-chartjs-2\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst LineChart = () => {\n  const palette = usePalette();\n  const data = {\n    labels: [\n      \"Jan\",\n      \"Feb\",\n      \"Mar\",\n      \"Apr\",\n      \"May\",\n      \"Jun\",\n      \"Jul\",\n      \"Aug\",\n      \"Sep\",\n      \"Oct\",\n      \"Nov\",\n      \"Dec\"\n    ],\n    datasets: [\n      {\n        label: \"Sales ($)\",\n        fill: true,\n        backgroundColor: \"transparent\",\n        borderColor: palette.primary,\n        data: [\n          2115,\n          1562,\n          1584,\n          1892,\n          1487,\n          2223,\n          2966,\n          2448,\n          2905,\n          3838,\n          2917,\n          3327\n        ]\n      },\n      {\n        label: \"Orders\",\n        fill: true,\n        backgroundColor: \"transparent\",\n        borderColor: palette[\"primary-dark\"],\n        borderDash: [4, 4],\n        data: [\n          958,\n          724,\n          629,\n          883,\n          915,\n          1214,\n          1476,\n          1212,\n          1554,\n          2128,\n          1466,\n          1827\n        ]\n      }\n    ]\n  };\n  const options = {\n    maintainAspectRatio: false,\n    plugins: {\n      legend: {\n        display: false\n      },\n      filler: {\n        propagate: false\n      }\n    },\n    scales: {\n      x: {\n        reverse: true,\n        grid: {\n          color: \"rgba(0,0,0,0.05)\"\n        }\n      },\n      y: {\n        ticks: {\n          stepSize: 500\n        },\n        display: true,\n        borderDash: [5, 5],\n        grid: {\n          color: \"rgba(0,0,0,0)\",\n          fontColor: \"#fff\"\n        }\n      }\n    }\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Line Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"A line chart is a way of plotting data points on a line.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(Line, { data, options }) }) })\n  ] });\n};\nexport default LineChart;\n",
+      "start": 1702937441850,
+      "end": 1702937441855,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Line.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Line } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst LineChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\r\n      \"Jan\",\r\n      \"Feb\",\r\n      \"Mar\",\r\n      \"Apr\",\r\n      \"May\",\r\n      \"Jun\",\r\n      \"Jul\",\r\n      \"Aug\",\r\n      \"Sep\",\r\n      \"Oct\",\r\n      \"Nov\",\r\n      \"Dec\",\r\n    ],\r\n    datasets: [\r\n      {\r\n        label: \"Sales ($)\",\r\n        fill: true,\r\n        backgroundColor: \"transparent\",\r\n        borderColor: palette.primary,\r\n        data: [\r\n          2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917,\r\n          3327,\r\n        ],\r\n      },\r\n      {\r\n        label: \"Orders\",\r\n        fill: true,\r\n        backgroundColor: \"transparent\",\r\n        borderColor: palette[\"primary-dark\"],\r\n        borderDash: [4, 4],\r\n        data: [\r\n          958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827,\r\n        ],\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n      filler: {\r\n        propagate: false,\r\n      },\r\n    },\r\n    scales: {\r\n      x: {\r\n        reverse: true,\r\n        grid: {\r\n          color: \"rgba(0,0,0,0.05)\",\r\n        },\r\n      },\r\n      y: {\r\n        ticks: {\r\n          stepSize: 500,\r\n        },\r\n        display: true,\r\n        borderDash: [5, 5],\r\n        grid: {\r\n          color: \"rgba(0,0,0,0)\",\r\n          fontColor: \"#fff\",\r\n        },\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Line Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A line chart is a way of plotting data points on a line.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Line data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default LineChart;\r\n"
+        ],
+        "mappings": "AAkFM,SACE,KADF;AAlFN,OAAO,WAAW;AAClB,SAAS,YAAY;AAErB,SAAS,YAAY;AAErB,OAAO,gBAAgB;AAEvB,MAAM,YAAY,MAAM;AACtB,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO;AAAA,IACX,QAAQ;AAAA,MACN;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,IACF;AAAA,IACA,UAAU;AAAA,MACR;AAAA,QACE,OAAO;AAAA,QACP,MAAM;AAAA,QACN,iBAAiB;AAAA,QACjB,aAAa,QAAQ;AAAA,QACrB,MAAM;AAAA,UACJ;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAC5D;AAAA,QACF;AAAA,MACF;AAAA,MACA;AAAA,QACE,OAAO;AAAA,QACP,MAAM;AAAA,QACN,iBAAiB;AAAA,QACjB,aAAa,QAAQ,cAAc;AAAA,QACnC,YAAY,CAAC,GAAG,CAAC;AAAA,QACjB,MAAM;AAAA,UACJ;AAAA,UAAK;AAAA,UAAK;AAAA,UAAK;AAAA,UAAK;AAAA,UAAK;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,UAAM;AAAA,QAC/D;AAAA,MACF;AAAA,IACF;AAAA,EACF;AAEA,QAAM,UAAU;AAAA,IACd,qBAAqB;AAAA,IACrB,SAAS;AAAA,MACP,QAAQ;AAAA,QACN,SAAS;AAAA,MACX;AAAA,MACA,QAAQ;AAAA,QACN,WAAW;AAAA,MACb;AAAA,IACF;AAAA,IACA,QAAQ;AAAA,MACN,GAAG;AAAA,QACD,SAAS;AAAA,QACT,MAAM;AAAA,UACJ,OAAO;AAAA,QACT;AAAA,MACF;AAAA,MACA,GAAG;AAAA,QACD,OAAO;AAAA,UACL,UAAU;AAAA,QACZ;AAAA,QACA,SAAS;AAAA,QACT,YAAY,CAAC,GAAG,CAAC;AAAA,QACjB,MAAM;AAAA,UACJ,OAAO;AAAA,UACP,WAAW;AAAA,QACb;AAAA,MACF;AAAA,IACF;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,wBAAU;AAAA,MACtB,oBAAC,QAAG,WAAU,4BAA2B,sEAEzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,SACb,8BAAC,QAAK,MAAY,SAAkB,GACtC,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    }
+  ]
+}

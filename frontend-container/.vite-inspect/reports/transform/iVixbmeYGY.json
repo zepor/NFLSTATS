@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/contexts/CognitoContext.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createContext } from \"react\";\r\n\r\nconst AuthContext = createContext(null);\r\n\r\nexport default AuthContext;\r\n",
+      "start": 1702937440870,
+      "end": 1702937440896,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440896,
+      "end": 1702937440896,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440896,
+      "end": 1702937440896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { createContext } from \"react\";\nconst AuthContext = createContext(null);\nexport default AuthContext;\n",
+      "start": 1702937440896,
+      "end": 1702937440951,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/contexts/CognitoContext.jsx"
+        ],
+        "sourcesContent": [
+          "import { createContext } from \"react\";\r\n\r\nconst AuthContext = createContext(null);\r\n\r\nexport default AuthContext;\r\n"
+        ],
+        "mappings": "AAAA,SAAS,qBAAqB;AAE9B,MAAM,cAAc,cAAc,IAAI;AAEtC,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_stackSet.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var ListCache = require('./_ListCache'),\n    Map = require('./_Map'),\n    MapCache = require('./_MapCache');\n\n/** Used as the size to enable large array optimizations. */\nvar LARGE_ARRAY_SIZE = 200;\n\n/**\n * Sets the stack `key` to `value`.\n *\n * @private\n * @name set\n * @memberOf Stack\n * @param {string} key The key of the value to set.\n * @param {*} value The value to set.\n * @returns {Object} Returns the stack cache instance.\n */\nfunction stackSet(key, value) {\n  var data = this.__data__;\n  if (data instanceof ListCache) {\n    var pairs = data.__data__;\n    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {\n      pairs.push([key, value]);\n      this.size = ++data.size;\n      return this;\n    }\n    data = this.__data__ = new MapCache(pairs);\n  }\n  data.set(key, value);\n  this.size = data.size;\n  return this;\n}\n\nmodule.exports = stackSet;\n",
+      "start": 1702937445166,
+      "end": 1702937445175,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445175,
+      "end": 1702937445175,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_ListCache.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_Map.js?commonjs-proxy\";\nimport require$$2 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_MapCache.js?commonjs-proxy\";\n\nvar ListCache = require$$0,\n    Map = require$$1,\n    MapCache = require$$2;\n\n/** Used as the size to enable large array optimizations. */\nvar LARGE_ARRAY_SIZE = 200;\n\n/**\n * Sets the stack `key` to `value`.\n *\n * @private\n * @name set\n * @memberOf Stack\n * @param {string} key The key of the value to set.\n * @param {*} value The value to set.\n * @returns {Object} Returns the stack cache instance.\n */\nfunction stackSet(key, value) {\n  var data = this.__data__;\n  if (data instanceof ListCache) {\n    var pairs = data.__data__;\n    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {\n      pairs.push([key, value]);\n      this.size = ++data.size;\n      return this;\n    }\n    data = this.__data__ = new MapCache(pairs);\n  }\n  data.set(key, value);\n  this.size = data.size;\n  return this;\n}\n\nvar _stackSet = stackSet;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_stackSet);\nexport { _stackSet as __moduleExports };",
+      "start": 1702937445175,
+      "end": 1702937445434,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,IAAI,SAAS,GAAG,UAAuB;AACvC,IAAI,GAAG,GAAG,UAAiB;AAC3B,IAAI,QAAQ,GAAG,UAAsB,CAAC;AACtC;AACA;AACA,IAAI,gBAAgB,GAAG,GAAG,CAAC;AAC3B;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,QAAQ,CAAC,GAAG,EAAE,KAAK,EAAE;AAC9B,EAAE,IAAI,IAAI,GAAG,IAAI,CAAC,QAAQ,CAAC;AAC3B,EAAE,IAAI,IAAI,YAAY,SAAS,EAAE;AACjC,IAAI,IAAI,KAAK,GAAG,IAAI,CAAC,QAAQ,CAAC;AAC9B,IAAI,IAAI,CAAC,GAAG,KAAK,KAAK,CAAC,MAAM,GAAG,gBAAgB,GAAG,CAAC,CAAC,EAAE;AACvD,MAAM,KAAK,CAAC,IAAI,CAAC,CAAC,GAAG,EAAE,KAAK,CAAC,CAAC,CAAC;AAC/B,MAAM,IAAI,CAAC,IAAI,GAAG,EAAE,IAAI,CAAC,IAAI,CAAC;AAC9B,MAAM,OAAO,IAAI,CAAC;AAClB,KAAK;AACL,IAAI,IAAI,GAAG,IAAI,CAAC,QAAQ,GAAG,IAAI,QAAQ,CAAC,KAAK,CAAC,CAAC;AAC/C,GAAG;AACH,EAAE,IAAI,CAAC,GAAG,CAAC,GAAG,EAAE,KAAK,CAAC,CAAC;AACvB,EAAE,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC,IAAI,CAAC;AACxB,EAAE,OAAO,IAAI,CAAC;AACd,CAAC;AACD;IACA,SAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445434,
+      "end": 1702937445434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445434,
+      "end": 1702937445434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445434,
+      "end": 1702937445434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445434,
+      "end": 1702937445434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445434,
+      "end": 1702937445434,
+      "order": "normal"
+    }
+  ]
+}

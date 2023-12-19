@@ -134,6 +134,7 @@ nifi/
 node_modules
 Secrets/
 frontend-container/public/static/images/users/Docker Desktop #Installer.exe
+jabascript/
 templates/
 "New Folder"/
 # Byte-compiled / optimized / DLL files
@@ -331,3 +332,10 @@ graphql-server/
 #amplify-do-not-edit-end
 *buildConfig.json
 spark-2.3.1-bin-hadoop2.7/
+.sourcery.yaml
+.pre-commit-config.yaml
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

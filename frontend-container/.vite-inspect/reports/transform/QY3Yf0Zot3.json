@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/icons/FontAwesome/iconsRegular.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import {\r\n  faAddressBook,\r\n  faAddressCard,\r\n  faAngry,\r\n  faArrowAltCircleDown,\r\n  faArrowAltCircleLeft,\r\n  faArrowAltCircleRight,\r\n  faArrowAltCircleUp,\r\n  faBell,\r\n  faBellSlash,\r\n  faBookmark,\r\n  faBuilding,\r\n  faCalendar,\r\n} from \"@fortawesome/free-regular-svg-icons\";\r\n\r\nconst icons = [\r\n  {\r\n    icon: faAddressBook,\r\n    name: \"faAddressBook\",\r\n  },\r\n  {\r\n    icon: faAddressCard,\r\n    name: \"faAddressCard\",\r\n  },\r\n  {\r\n    icon: faAngry,\r\n    name: \"faAngry\",\r\n  },\r\n  {\r\n    icon: faArrowAltCircleDown,\r\n    name: \"faArrowAltCircleDown\",\r\n  },\r\n  {\r\n    icon: faArrowAltCircleLeft,\r\n    name: \"faArrowAltCircleLeft\",\r\n  },\r\n  {\r\n    icon: faArrowAltCircleRight,\r\n    name: \"faArrowAltCircleRight\",\r\n  },\r\n  {\r\n    icon: faArrowAltCircleUp,\r\n    name: \"faArrowAltCircleUp\",\r\n  },\r\n  {\r\n    icon: faBell,\r\n    name: \"faBell\",\r\n  },\r\n  {\r\n    icon: faBellSlash,\r\n    name: \"faBellSlash\",\r\n  },\r\n  {\r\n    icon: faBookmark,\r\n    name: \"faBookmark\",\r\n  },\r\n  {\r\n    icon: faBuilding,\r\n    name: \"faBuilding\",\r\n  },\r\n  {\r\n    icon: faCalendar,\r\n    name: \"faCalendar\",\r\n  },\r\n];\r\n\r\nexport default icons;\r\n",
+      "start": 1702937441648,
+      "end": 1702937441799,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441799,
+      "end": 1702937441799,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/stylis/src/Serializer.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import {IMPORT, LAYER, COMMENT, RULESET, DECLARATION, KEYFRAMES} from './Enum.js'\nimport {strlen, sizeof} from './Utility.js'\n\n/**\n * @param {object[]} children\n * @param {function} callback\n * @return {string}\n */\nexport function serialize (children, callback) {\n\tvar output = ''\n\tvar length = sizeof(children)\n\n\tfor (var i = 0; i < length; i++)\n\t\toutput += callback(children[i], i, children, callback) || ''\n\n\treturn output\n}\n\n/**\n * @param {object} element\n * @param {number} index\n * @param {object[]} children\n * @param {function} callback\n * @return {string}\n */\nexport function stringify (element, index, children, callback) {\n\tswitch (element.type) {\n\t\tcase LAYER: if (element.children.length) break\n\t\tcase IMPORT: case DECLARATION: return element.return = element.return || element.value\n\t\tcase COMMENT: return ''\n\t\tcase KEYFRAMES: return element.return = element.value + '{' + serialize(element.children, callback) + '}'\n\t\tcase RULESET: element.value = element.props.join(',')\n\t}\n\n\treturn strlen(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''\n}\n",
+      "start": 1702937444012,
+      "end": 1702937444052,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444052,
+      "end": 1702937444052,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444053,
+      "end": 1702937444053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444053,
+      "end": 1702937444053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444053,
+      "end": 1702937444053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444053,
+      "end": 1702937444053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444053,
+      "end": 1702937444053,
+      "order": "normal"
+    }
+  ]
+}

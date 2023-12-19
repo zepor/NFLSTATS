@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/UniqueInputFieldNamesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { invariant } from '../../jsutils/invariant.mjs';\nimport { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * Unique input field names\n *\n * A GraphQL input object value is only valid if all supplied fields are\n * uniquely named.\n *\n * See https://spec.graphql.org/draft/#sec-Input-Object-Field-Uniqueness\n */\nexport function UniqueInputFieldNamesRule(context) {\n  const knownNameStack = [];\n  let knownNames = Object.create(null);\n  return {\n    ObjectValue: {\n      enter() {\n        knownNameStack.push(knownNames);\n        knownNames = Object.create(null);\n      },\n\n      leave() {\n        const prevKnownNames = knownNameStack.pop();\n        prevKnownNames || invariant(false);\n        knownNames = prevKnownNames;\n      },\n    },\n\n    ObjectField(node) {\n      const fieldName = node.name.value;\n\n      if (knownNames[fieldName]) {\n        context.reportError(\n          new GraphQLError(\n            `There can be only one input field named \"${fieldName}\".`,\n            {\n              nodes: [knownNames[fieldName], node.name],\n            },\n          ),\n        );\n      } else {\n        knownNames[fieldName] = node.name;\n      }\n    },\n  };\n}\n",
+      "start": 1702937443089,
+      "end": 1702937443103,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443103,
+      "end": 1702937443103,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443103,
+      "end": 1702937443103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    }
+  ]
+}

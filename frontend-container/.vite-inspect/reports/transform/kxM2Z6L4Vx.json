@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/tables/ColumnSorting.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, useSortBy } from \"react-table\";\r\n\r\nimport { Card, Container, Table } from \"react-bootstrap\";\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport {\r\n  faSort,\r\n  faSortUp,\r\n  faSortDown,\r\n} from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst ColumnSortingTable = ({ columns, data }) => {\r\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =\r\n    useTable(\r\n      {\r\n        columns,\r\n        data,\r\n      },\r\n      useSortBy\r\n    );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Column Sorting</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Column sorting by react-table\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  // Add the sorting props to control sorting. For this example\r\n                  // we can add them into the header props\r\n                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>\r\n                    {column.render(\"Header\")}\r\n                    {/* Add a sort direction indicator */}\r\n                    <span>\r\n                      {column.isSorted ? (\r\n                        column.isSortedDesc ? (\r\n                          <FontAwesomeIcon icon={faSortUp} className=\"ms-2\" />\r\n                        ) : (\r\n                          <FontAwesomeIcon icon={faSortDown} className=\"ms-2\" />\r\n                        )\r\n                      ) : (\r\n                        <FontAwesomeIcon icon={faSort} className=\"ms-2\" />\r\n                      )}\r\n                    </span>\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {rows.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst ColumnSorting = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Column Sorting\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Column Sorting</h1>\r\n\r\n      <ColumnSortingTable\r\n        columns={tableColumns}\r\n        data={tableData.slice(0, 15)}\r\n      />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default ColumnSorting;\r\n",
+      "start": 1702937440805,
+      "end": 1702937440868,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440868,
+      "end": 1702937440868,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440868,
+      "end": 1702937440868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { useTable, useSortBy } from \"react-table\";\nimport { Card, Container, Table } from \"react-bootstrap\";\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\nimport {\n  faSort,\n  faSortUp,\n  faSortDown\n} from \"@fortawesome/free-solid-svg-icons\";\nimport { tableData, tableColumns } from \"./data.js\";\nconst ColumnSortingTable = ({ columns, data }) => {\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(\n    {\n      columns,\n      data\n    },\n    useSortBy\n  );\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Column Sorting\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Column sorting by react-table\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsxs(Table, { striped: true, bordered: true, ...getTableProps(), children: [\n      /* @__PURE__ */ jsx(\"thead\", { children: headerGroups.map((headerGroup) => /* @__PURE__ */ jsx(\"tr\", { ...headerGroup.getHeaderGroupProps(), children: headerGroup.headers.map((column) => (\n        // Add the sorting props to control sorting. For this example\n        // we can add them into the header props\n        /* @__PURE__ */ jsxs(\"th\", { ...column.getHeaderProps(column.getSortByToggleProps()), children: [\n          column.render(\"Header\"),\n          /* @__PURE__ */ jsx(\"span\", { children: column.isSorted ? column.isSortedDesc ? /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSortUp, className: \"ms-2\" }) : /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSortDown, className: \"ms-2\" }) : /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSort, className: \"ms-2\" }) })\n        ] })\n      )) })) }),\n      /* @__PURE__ */ jsx(\"tbody\", { ...getTableBodyProps(), children: rows.map((row, i) => {\n        prepareRow(row);\n        return /* @__PURE__ */ jsx(\"tr\", { ...row.getRowProps(), children: row.cells.map((cell) => {\n          return /* @__PURE__ */ jsx(\"td\", { ...cell.getCellProps(), children: cell.render(\"Cell\") });\n        }) });\n      }) })\n    ] }) })\n  ] });\n};\nconst ColumnSorting = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Column Sorting\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Column Sorting\" }),\n    /* @__PURE__ */ jsx(\n      ColumnSortingTable,\n      {\n        columns: tableColumns,\n        data: tableData.slice(0, 15)\n      }\n    )\n  ] })\n] });\nexport default ColumnSorting;\n",
+      "start": 1702937440868,
+      "end": 1702937440873,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/tables/ColumnSorting.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, useSortBy } from \"react-table\";\r\n\r\nimport { Card, Container, Table } from \"react-bootstrap\";\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport {\r\n  faSort,\r\n  faSortUp,\r\n  faSortDown,\r\n} from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst ColumnSortingTable = ({ columns, data }) => {\r\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =\r\n    useTable(\r\n      {\r\n        columns,\r\n        data,\r\n      },\r\n      useSortBy\r\n    );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Column Sorting</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Column sorting by react-table\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  // Add the sorting props to control sorting. For this example\r\n                  // we can add them into the header props\r\n                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>\r\n                    {column.render(\"Header\")}\r\n                    {/* Add a sort direction indicator */}\r\n                    <span>\r\n                      {column.isSorted ? (\r\n                        column.isSortedDesc ? (\r\n                          <FontAwesomeIcon icon={faSortUp} className=\"ms-2\" />\r\n                        ) : (\r\n                          <FontAwesomeIcon icon={faSortDown} className=\"ms-2\" />\r\n                        )\r\n                      ) : (\r\n                        <FontAwesomeIcon icon={faSort} className=\"ms-2\" />\r\n                      )}\r\n                    </span>\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {rows.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst ColumnSorting = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Column Sorting\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Column Sorting</h1>\r\n\r\n      <ColumnSortingTable\r\n        columns={tableColumns}\r\n        data={tableData.slice(0, 15)}\r\n      />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default ColumnSorting;\r\n"
+        ],
+        "mappings": "AA0BM,SACE,KADF;AA1BN,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,UAAU,iBAAiB;AAEpC,SAAS,MAAM,WAAW,aAAa;AACvC,SAAS,uBAAuB;AAChC;AAAA,EACE;AAAA,EACA;AAAA,EACA;AAAA,OACK;AAEP,SAAS,WAAW,oBAAoB;AAExC,MAAM,qBAAqB,CAAC,EAAE,SAAS,KAAK,MAAM;AAChD,QAAM,EAAE,eAAe,mBAAmB,cAAc,MAAM,WAAW,IACvE;AAAA,IACE;AAAA,MACE;AAAA,MACA;AAAA,IACF;AAAA,IACA;AAAA,EACF;AAEF,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,4BAAc;AAAA,MAC1B,oBAAC,QAAG,WAAU,4BAA2B,2CAEzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,+BAAC,SAAM,SAAO,MAAC,UAAQ,MAAE,GAAG,cAAc,GACxC;AAAA,0BAAC,WACE,uBAAa,IAAI,CAAC,gBACjB,oBAAC,QAAI,GAAG,YAAY,oBAAoB,GACrC,sBAAY,QAAQ,IAAI,CAAC;AAAA;AAAA;AAAA,QAGxB,qBAAC,QAAI,GAAG,OAAO,eAAe,OAAO,qBAAqB,CAAC,GACxD;AAAA,iBAAO,OAAO,QAAQ;AAAA,UAEvB,oBAAC,UACE,iBAAO,WACN,OAAO,eACL,oBAAC,mBAAgB,MAAM,UAAU,WAAU,QAAO,IAElD,oBAAC,mBAAgB,MAAM,YAAY,WAAU,QAAO,IAGtD,oBAAC,mBAAgB,MAAM,QAAQ,WAAU,QAAO,GAEpD;AAAA,WACF;AAAA,OACD,GACH,CACD,GACH;AAAA,MACA,oBAAC,WAAO,GAAG,kBAAkB,GAC1B,eAAK,IAAI,CAAC,KAAK,MAAM;AACpB,mBAAW,GAAG;AACd,eACE,oBAAC,QAAI,GAAG,IAAI,YAAY,GACrB,cAAI,MAAM,IAAI,CAAC,SAAS;AACvB,iBACE,oBAAC,QAAI,GAAG,KAAK,aAAa,GAAI,eAAK,OAAO,MAAM,GAAE;AAAA,QAEtD,CAAC,GACH;AAAA,MAEJ,CAAC,GACH;AAAA,OACF,GACF;AAAA,KACF;AAEJ;AAEA,MAAM,gBAAgB,MACpB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,kBAAiB;AAAA,EAC/B,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,QAAG,WAAU,WAAU,4BAAc;AAAA,IAEtC;AAAA,MAAC;AAAA;AAAA,QACC,SAAS;AAAA,QACT,MAAM,UAAU,MAAM,GAAG,EAAE;AAAA;AAAA,IAC7B;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440873,
+      "end": 1702937440873,
+      "order": "normal"
+    }
+  ]
+}

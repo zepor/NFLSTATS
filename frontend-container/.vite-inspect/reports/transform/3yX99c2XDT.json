@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/makefile.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = makefile\nmakefile.displayName = 'makefile'\nmakefile.aliases = []\nfunction makefile(Prism) {\n  Prism.languages.makefile = {\n    comment: {\n      pattern: /(^|[^\\\\])#(?:\\\\(?:\\r\\n|[\\s\\S])|[^\\\\\\r\\n])*/,\n      lookbehind: true\n    },\n    string: {\n      pattern: /([\"'])(?:\\\\(?:\\r\\n|[\\s\\S])|(?!\\1)[^\\\\\\r\\n])*\\1/,\n      greedy: true\n    },\n    'builtin-target': {\n      pattern: /\\.[A-Z][^:#=\\s]+(?=\\s*:(?!=))/,\n      alias: 'builtin'\n    },\n    target: {\n      pattern: /^(?:[^:=\\s]|[ \\t]+(?![\\s:]))+(?=\\s*:(?!=))/m,\n      alias: 'symbol',\n      inside: {\n        variable: /\\$+(?:(?!\\$)[^(){}:#=\\s]+|(?=[({]))/\n      }\n    },\n    variable: /\\$+(?:(?!\\$)[^(){}:#=\\s]+|\\([@*%<^+?][DF]\\)|(?=[({]))/,\n    // Directives\n    keyword:\n      /-include\\b|\\b(?:define|else|endef|endif|export|ifn?def|ifn?eq|include|override|private|sinclude|undefine|unexport|vpath)\\b/,\n    function: {\n      pattern:\n        /(\\()(?:abspath|addsuffix|and|basename|call|dir|error|eval|file|filter(?:-out)?|findstring|firstword|flavor|foreach|guile|if|info|join|lastword|load|notdir|or|origin|patsubst|realpath|shell|sort|strip|subst|suffix|value|warning|wildcard|word(?:list|s)?)(?=[ \\t])/,\n      lookbehind: true\n    },\n    operator: /(?:::|[?:+!])?=|[|@]/,\n    punctuation: /[:;(){}]/\n  }\n}\n",
+      "start": 1702937444961,
+      "end": 1702937444978,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444978,
+      "end": 1702937444978,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar makefile_1;\nvar hasRequiredMakefile;\n\nfunction requireMakefile () {\n\tif (hasRequiredMakefile) return makefile_1;\n\thasRequiredMakefile = 1;\n\t'use strict'\n\n\tmakefile_1 = makefile\n\tmakefile.displayName = 'makefile'\n\tmakefile.aliases = []\n\tfunction makefile(Prism) {\n\t  Prism.languages.makefile = {\n\t    comment: {\n\t      pattern: /(^|[^\\\\])#(?:\\\\(?:\\r\\n|[\\s\\S])|[^\\\\\\r\\n])*/,\n\t      lookbehind: true\n\t    },\n\t    string: {\n\t      pattern: /([\"'])(?:\\\\(?:\\r\\n|[\\s\\S])|(?!\\1)[^\\\\\\r\\n])*\\1/,\n\t      greedy: true\n\t    },\n\t    'builtin-target': {\n\t      pattern: /\\.[A-Z][^:#=\\s]+(?=\\s*:(?!=))/,\n\t      alias: 'builtin'\n\t    },\n\t    target: {\n\t      pattern: /^(?:[^:=\\s]|[ \\t]+(?![\\s:]))+(?=\\s*:(?!=))/m,\n\t      alias: 'symbol',\n\t      inside: {\n\t        variable: /\\$+(?:(?!\\$)[^(){}:#=\\s]+|(?=[({]))/\n\t      }\n\t    },\n\t    variable: /\\$+(?:(?!\\$)[^(){}:#=\\s]+|\\([@*%<^+?][DF]\\)|(?=[({]))/,\n\t    // Directives\n\t    keyword:\n\t      /-include\\b|\\b(?:define|else|endef|endif|export|ifn?def|ifn?eq|include|override|private|sinclude|undefine|unexport|vpath)\\b/,\n\t    function: {\n\t      pattern:\n\t        /(\\()(?:abspath|addsuffix|and|basename|call|dir|error|eval|file|filter(?:-out)?|findstring|firstword|flavor|foreach|guile|if|info|join|lastword|load|notdir|or|origin|patsubst|realpath|shell|sort|strip|subst|suffix|value|warning|wildcard|word(?:list|s)?)(?=[ \\t])/,\n\t      lookbehind: true\n\t    },\n\t    operator: /(?:::|[?:+!])?=|[|@]/,\n\t    punctuation: /[:;(){}]/\n\t  }\n\t}\n\treturn makefile_1;\n}\n\nexport { requireMakefile as __require };",
+      "start": 1702937444978,
+      "end": 1702937444979,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,WAAc,GAAG,QAAQ;CACzB,QAAQ,CAAC,WAAW,GAAG,UAAU;CACjC,QAAQ,CAAC,OAAO,GAAG,EAAE;CACrB,SAAS,QAAQ,CAAC,KAAK,EAAE;CACzB,EAAE,KAAK,CAAC,SAAS,CAAC,QAAQ,GAAG;CAC7B,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,4CAA4C;CAC3D,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,gDAAgD;CAC/D,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,gBAAgB,EAAE;CACtB,MAAM,OAAO,EAAE,+BAA+B;CAC9C,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,6CAA6C;CAC5D,MAAM,KAAK,EAAE,QAAQ;CACrB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,qCAAqC;CACvD,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE,uDAAuD;CACrE;CACA,IAAI,OAAO;CACX,MAAM,4HAA4H;CAClI,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,uQAAuQ;CAC/Q,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,sBAAsB;CACpC,IAAI,WAAW,EAAE,UAAU;CAC3B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444979,
+      "end": 1702937444979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444979,
+      "end": 1702937444979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444979,
+      "end": 1702937444979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444979,
+      "end": 1702937444979,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444979,
+      "end": 1702937444979,
+      "order": "normal"
+    }
+  ]
+}

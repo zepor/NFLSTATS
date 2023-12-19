@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/link/http/parseAndCheckHttpResponse.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign, __awaiter, __generator } from \"tslib\";\nimport { responseIterator } from \"./responseIterator.js\";\nimport { throwServerError } from \"../utils/index.js\";\nimport { PROTOCOL_ERRORS_SYMBOL } from \"../../errors/index.js\";\nimport { isApolloPayloadResult } from \"../../utilities/common/incrementalResult.js\";\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\nexport function readMultipartBody(response, nextValue) {\n    var _a;\n    return __awaiter(this, void 0, void 0, function () {\n        var decoder, contentType, delimiter, boundaryVal, boundary, buffer, iterator, running, _b, value, done, chunk, searchFrom, bi, message, i, headers, contentType_1, body, result, next;\n        var _c, _d;\n        return __generator(this, function (_e) {\n            switch (_e.label) {\n                case 0:\n                    if (TextDecoder === undefined) {\n                        throw new Error(\"TextDecoder must be defined in the environment: please import a polyfill.\");\n                    }\n                    decoder = new TextDecoder(\"utf-8\");\n                    contentType = (_a = response.headers) === null || _a === void 0 ? void 0 : _a.get(\"content-type\");\n                    delimiter = \"boundary=\";\n                    boundaryVal = (contentType === null || contentType === void 0 ? void 0 : contentType.includes(delimiter)) ?\n                        contentType === null || contentType === void 0 ? void 0 : contentType.substring((contentType === null || contentType === void 0 ? void 0 : contentType.indexOf(delimiter)) + delimiter.length).replace(/['\"]/g, \"\").replace(/\\;(.*)/gm, \"\").trim()\n                        : \"-\";\n                    boundary = \"\\r\\n--\".concat(boundaryVal);\n                    buffer = \"\";\n                    iterator = responseIterator(response);\n                    running = true;\n                    _e.label = 1;\n                case 1:\n                    if (!running) return [3 /*break*/, 3];\n                    return [4 /*yield*/, iterator.next()];\n                case 2:\n                    _b = _e.sent(), value = _b.value, done = _b.done;\n                    chunk = typeof value === \"string\" ? value : decoder.decode(value);\n                    searchFrom = buffer.length - boundary.length + 1;\n                    running = !done;\n                    buffer += chunk;\n                    bi = buffer.indexOf(boundary, searchFrom);\n                    while (bi > -1) {\n                        message = void 0;\n                        _c = [\n                            buffer.slice(0, bi),\n                            buffer.slice(bi + boundary.length),\n                        ], message = _c[0], buffer = _c[1];\n                        i = message.indexOf(\"\\r\\n\\r\\n\");\n                        headers = parseHeaders(message.slice(0, i));\n                        contentType_1 = headers[\"content-type\"];\n                        if (contentType_1 &&\n                            contentType_1.toLowerCase().indexOf(\"application/json\") === -1) {\n                            throw new Error(\"Unsupported patch content type: application/json is required.\");\n                        }\n                        body = message.slice(i);\n                        if (body) {\n                            result = parseJsonBody(response, body);\n                            if (Object.keys(result).length > 1 ||\n                                \"data\" in result ||\n                                \"incremental\" in result ||\n                                \"errors\" in result ||\n                                \"payload\" in result) {\n                                if (isApolloPayloadResult(result)) {\n                                    next = {};\n                                    if (\"payload\" in result) {\n                                        next = __assign({}, result.payload);\n                                    }\n                                    if (\"errors\" in result) {\n                                        next = __assign(__assign({}, next), { extensions: __assign(__assign({}, (\"extensions\" in next ? next.extensions : null)), (_d = {}, _d[PROTOCOL_ERRORS_SYMBOL] = result.errors, _d)) });\n                                    }\n                                    nextValue(next);\n                                }\n                                else {\n                                    // for the last chunk with only `hasNext: false`\n                                    // we don't need to call observer.next as there is no data/errors\n                                    nextValue(result);\n                                }\n                            }\n                            else if (\n                            // If the chunk contains only a \"hasNext: false\", we can call\n                            // observer.complete() immediately.\n                            Object.keys(result).length === 1 &&\n                                \"hasNext\" in result &&\n                                !result.hasNext) {\n                                return [2 /*return*/];\n                            }\n                        }\n                        bi = buffer.indexOf(boundary);\n                    }\n                    return [3 /*break*/, 1];\n                case 3: return [2 /*return*/];\n            }\n        });\n    });\n}\nexport function parseHeaders(headerText) {\n    var headersInit = {};\n    headerText.split(\"\\n\").forEach(function (line) {\n        var i = line.indexOf(\":\");\n        if (i > -1) {\n            // normalize headers to lowercase\n            var name_1 = line.slice(0, i).trim().toLowerCase();\n            var value = line.slice(i + 1).trim();\n            headersInit[name_1] = value;\n        }\n    });\n    return headersInit;\n}\nexport function parseJsonBody(response, bodyText) {\n    if (response.status >= 300) {\n        // Network error\n        var getResult = function () {\n            try {\n                return JSON.parse(bodyText);\n            }\n            catch (err) {\n                return bodyText;\n            }\n        };\n        throwServerError(response, getResult(), \"Response not successful: Received status code \".concat(response.status));\n    }\n    try {\n        return JSON.parse(bodyText);\n    }\n    catch (err) {\n        var parseError = err;\n        parseError.name = \"ServerParseError\";\n        parseError.response = response;\n        parseError.statusCode = response.status;\n        parseError.bodyText = bodyText;\n        throw parseError;\n    }\n}\nexport function handleError(err, observer) {\n    // if it is a network error, BUT there is graphql result info fire\n    // the next observer before calling error this gives apollo-client\n    // (and react-apollo) the `graphqlErrors` and `networkErrors` to\n    // pass to UI this should only happen if we *also* have data as\n    // part of the response key per the spec\n    if (err.result && err.result.errors && err.result.data) {\n        // if we don't call next, the UI can only show networkError\n        // because AC didn't get any graphqlErrors this is graphql\n        // execution result info (i.e errors and possibly data) this is\n        // because there is no formal spec how errors should translate to\n        // http status codes. So an auth error (401) could have both data\n        // from a public field, errors from a private field, and a status\n        // of 401\n        // {\n        //  user { // this will have errors\n        //    firstName\n        //  }\n        //  products { // this is public so will have data\n        //    cost\n        //  }\n        // }\n        //\n        // the result of above *could* look like this:\n        // {\n        //   data: { products: [{ cost: \"$10\" }] },\n        //   errors: [{\n        //      message: 'your session has timed out',\n        //      path: []\n        //   }]\n        // }\n        // status code of above would be a 401\n        // in the UI you want to show data where you can, errors as data where you can\n        // and use correct http status codes\n        observer.next(err.result);\n    }\n    observer.error(err);\n}\nexport function parseAndCheckHttpResponse(operations) {\n    return function (response) {\n        return response\n            .text()\n            .then(function (bodyText) { return parseJsonBody(response, bodyText); })\n            .then(function (result) {\n            if (response.status >= 300) {\n                // Network error\n                throwServerError(response, result, \"Response not successful: Received status code \".concat(response.status));\n            }\n            if (!Array.isArray(result) &&\n                !hasOwnProperty.call(result, \"data\") &&\n                !hasOwnProperty.call(result, \"errors\")) {\n                // Data error\n                throwServerError(response, result, \"Server response was missing for query '\".concat(Array.isArray(operations) ?\n                    operations.map(function (op) { return op.operationName; })\n                    : operations.operationName, \"'.\"));\n            }\n            return result;\n        });\n    };\n}\n//# sourceMappingURL=parseAndCheckHttpResponse.js.map",
+      "start": 1702937440925,
+      "end": 1702937440980,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440980,
+      "end": 1702937440980,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440980,
+      "end": 1702937440981,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440981,
+      "end": 1702937440981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440981,
+      "end": 1702937440981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440981,
+      "end": 1702937440981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440981,
+      "end": 1702937440981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440981,
+      "end": 1702937440981,
+      "order": "normal"
+    }
+  ]
+}

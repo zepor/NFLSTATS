@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/gdscript.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = gdscript\ngdscript.displayName = 'gdscript'\ngdscript.aliases = []\nfunction gdscript(Prism) {\n  Prism.languages.gdscript = {\n    comment: /#.*/,\n    string: {\n      pattern:\n        /@?(?:(\"|')(?:(?!\\1)[^\\n\\\\]|\\\\[\\s\\S])*\\1(?!\"|')|\"\"\"(?:[^\\\\]|\\\\[\\s\\S])*?\"\"\")/,\n      greedy: true\n    },\n    'class-name': {\n      // class_name Foo, extends Bar, class InnerClass\n      // export(int) var baz, export(int, 0) var i\n      // as Node\n      // const FOO: int = 9, var bar: bool = true\n      // func add(reference: Item, amount: int) -> Item:\n      pattern:\n        /(^(?:class|class_name|extends)[ \\t]+|^export\\([ \\t]*|\\bas[ \\t]+|(?:\\b(?:const|var)[ \\t]|[,(])[ \\t]*\\w+[ \\t]*:[ \\t]*|->[ \\t]*)[a-zA-Z_]\\w*/m,\n      lookbehind: true\n    },\n    keyword:\n      /\\b(?:and|as|assert|break|breakpoint|class|class_name|const|continue|elif|else|enum|export|extends|for|func|if|in|is|master|mastersync|match|not|null|onready|or|pass|preload|puppet|puppetsync|remote|remotesync|return|self|setget|signal|static|tool|var|while|yield)\\b/,\n    function: /\\b[a-z_]\\w*(?=[ \\t]*\\()/i,\n    variable: /\\$\\w+/,\n    number: [\n      /\\b0b[01_]+\\b|\\b0x[\\da-fA-F_]+\\b|(?:\\b\\d[\\d_]*(?:\\.[\\d_]*)?|\\B\\.[\\d_]+)(?:e[+-]?[\\d_]+)?\\b/,\n      /\\b(?:INF|NAN|PI|TAU)\\b/\n    ],\n    constant: /\\b[A-Z][A-Z_\\d]*\\b/,\n    boolean: /\\b(?:false|true)\\b/,\n    operator: /->|:=|&&|\\|\\||<<|>>|[-+*/%&|!<>=]=?|[~^]/,\n    punctuation: /[.:,;()[\\]{}]/\n  }\n}\n",
+      "start": 1702937444894,
+      "end": 1702937444913,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar gdscript_1;\nvar hasRequiredGdscript;\n\nfunction requireGdscript () {\n\tif (hasRequiredGdscript) return gdscript_1;\n\thasRequiredGdscript = 1;\n\t'use strict'\n\n\tgdscript_1 = gdscript\n\tgdscript.displayName = 'gdscript'\n\tgdscript.aliases = []\n\tfunction gdscript(Prism) {\n\t  Prism.languages.gdscript = {\n\t    comment: /#.*/,\n\t    string: {\n\t      pattern:\n\t        /@?(?:(\"|')(?:(?!\\1)[^\\n\\\\]|\\\\[\\s\\S])*\\1(?!\"|')|\"\"\"(?:[^\\\\]|\\\\[\\s\\S])*?\"\"\")/,\n\t      greedy: true\n\t    },\n\t    'class-name': {\n\t      // class_name Foo, extends Bar, class InnerClass\n\t      // export(int) var baz, export(int, 0) var i\n\t      // as Node\n\t      // const FOO: int = 9, var bar: bool = true\n\t      // func add(reference: Item, amount: int) -> Item:\n\t      pattern:\n\t        /(^(?:class|class_name|extends)[ \\t]+|^export\\([ \\t]*|\\bas[ \\t]+|(?:\\b(?:const|var)[ \\t]|[,(])[ \\t]*\\w+[ \\t]*:[ \\t]*|->[ \\t]*)[a-zA-Z_]\\w*/m,\n\t      lookbehind: true\n\t    },\n\t    keyword:\n\t      /\\b(?:and|as|assert|break|breakpoint|class|class_name|const|continue|elif|else|enum|export|extends|for|func|if|in|is|master|mastersync|match|not|null|onready|or|pass|preload|puppet|puppetsync|remote|remotesync|return|self|setget|signal|static|tool|var|while|yield)\\b/,\n\t    function: /\\b[a-z_]\\w*(?=[ \\t]*\\()/i,\n\t    variable: /\\$\\w+/,\n\t    number: [\n\t      /\\b0b[01_]+\\b|\\b0x[\\da-fA-F_]+\\b|(?:\\b\\d[\\d_]*(?:\\.[\\d_]*)?|\\B\\.[\\d_]+)(?:e[+-]?[\\d_]+)?\\b/,\n\t      /\\b(?:INF|NAN|PI|TAU)\\b/\n\t    ],\n\t    constant: /\\b[A-Z][A-Z_\\d]*\\b/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    operator: /->|:=|&&|\\|\\||<<|>>|[-+*/%&|!<>=]=?|[~^]/,\n\t    punctuation: /[.:,;()[\\]{}]/\n\t  }\n\t}\n\treturn gdscript_1;\n}\n\nexport { requireGdscript as __require };",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,WAAc,GAAG,QAAQ;CACzB,QAAQ,CAAC,WAAW,GAAG,UAAU;CACjC,QAAQ,CAAC,OAAO,GAAG,EAAE;CACrB,SAAS,QAAQ,CAAC,KAAK,EAAE;CACzB,EAAE,KAAK,CAAC,SAAS,CAAC,QAAQ,GAAG;CAC7B,IAAI,OAAO,EAAE,KAAK;CAClB,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,4EAA4E;CACpF,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB;CACA;CACA;CACA;CACA;CACA,MAAM,OAAO;CACb,QAAQ,4IAA4I;CACpJ,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,2QAA2Q;CACjR,IAAI,QAAQ,EAAE,0BAA0B;CACxC,IAAI,QAAQ,EAAE,OAAO;CACrB,IAAI,MAAM,EAAE;CACZ,MAAM,2FAA2F;CACjG,MAAM,wBAAwB;CAC9B,KAAK;CACL,IAAI,QAAQ,EAAE,oBAAoB;CAClC,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,QAAQ,EAAE,0CAA0C;CACxD,IAAI,WAAW,EAAE,eAAe;CAChC,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444913,
+      "end": 1702937444913,
+      "order": "normal"
+    }
+  ]
+}

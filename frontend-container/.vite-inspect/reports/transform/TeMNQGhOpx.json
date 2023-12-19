@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/csv.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = csv\ncsv.displayName = 'csv'\ncsv.aliases = []\nfunction csv(Prism) {\n  // https://tools.ietf.org/html/rfc4180\n  Prism.languages.csv = {\n    value: /[^\\r\\n,\"]+|\"(?:[^\"]|\"\")*\"(?!\")/,\n    punctuation: /,/\n  }\n}\n",
+      "start": 1702937444852,
+      "end": 1702937444878,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444878,
+      "end": 1702937444878,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar csv_1;\nvar hasRequiredCsv;\n\nfunction requireCsv () {\n\tif (hasRequiredCsv) return csv_1;\n\thasRequiredCsv = 1;\n\t'use strict'\n\n\tcsv_1 = csv\n\tcsv.displayName = 'csv'\n\tcsv.aliases = []\n\tfunction csv(Prism) {\n\t  // https://tools.ietf.org/html/rfc4180\n\t  Prism.languages.csv = {\n\t    value: /[^\\r\\n,\"]+|\"(?:[^\"]|\"\")*\"(?!\")/,\n\t    punctuation: /,/\n\t  }\n\t}\n\treturn csv_1;\n}\n\nexport { requireCsv as __require };",
+      "start": 1702937444878,
+      "end": 1702937444879,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,KAAK,EAAE,gCAAgC;CAC3C,IAAI,WAAW,EAAE,GAAG;CACpB,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444879,
+      "end": 1702937444879,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444879,
+      "end": 1702937444879,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444879,
+      "end": 1702937444879,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444879,
+      "end": 1702937444879,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444879,
+      "end": 1702937444879,
+      "order": "normal"
+    }
+  ]
+}

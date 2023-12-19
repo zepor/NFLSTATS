@@ -1,0 +1,112 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/character-entities-legacy/index.json",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "{\n  \"AElig\": \"Æ\",\n  \"AMP\": \"&\",\n  \"Aacute\": \"Á\",\n  \"Acirc\": \"Â\",\n  \"Agrave\": \"À\",\n  \"Aring\": \"Å\",\n  \"Atilde\": \"Ã\",\n  \"Auml\": \"Ä\",\n  \"COPY\": \"©\",\n  \"Ccedil\": \"Ç\",\n  \"ETH\": \"Ð\",\n  \"Eacute\": \"É\",\n  \"Ecirc\": \"Ê\",\n  \"Egrave\": \"È\",\n  \"Euml\": \"Ë\",\n  \"GT\": \">\",\n  \"Iacute\": \"Í\",\n  \"Icirc\": \"Î\",\n  \"Igrave\": \"Ì\",\n  \"Iuml\": \"Ï\",\n  \"LT\": \"<\",\n  \"Ntilde\": \"Ñ\",\n  \"Oacute\": \"Ó\",\n  \"Ocirc\": \"Ô\",\n  \"Ograve\": \"Ò\",\n  \"Oslash\": \"Ø\",\n  \"Otilde\": \"Õ\",\n  \"Ouml\": \"Ö\",\n  \"QUOT\": \"\\\"\",\n  \"REG\": \"®\",\n  \"THORN\": \"Þ\",\n  \"Uacute\": \"Ú\",\n  \"Ucirc\": \"Û\",\n  \"Ugrave\": \"Ù\",\n  \"Uuml\": \"Ü\",\n  \"Yacute\": \"Ý\",\n  \"aacute\": \"á\",\n  \"acirc\": \"â\",\n  \"acute\": \"´\",\n  \"aelig\": \"æ\",\n  \"agrave\": \"à\",\n  \"amp\": \"&\",\n  \"aring\": \"å\",\n  \"atilde\": \"ã\",\n  \"auml\": \"ä\",\n  \"brvbar\": \"¦\",\n  \"ccedil\": \"ç\",\n  \"cedil\": \"¸\",\n  \"cent\": \"¢\",\n  \"copy\": \"©\",\n  \"curren\": \"¤\",\n  \"deg\": \"°\",\n  \"divide\": \"÷\",\n  \"eacute\": \"é\",\n  \"ecirc\": \"ê\",\n  \"egrave\": \"è\",\n  \"eth\": \"ð\",\n  \"euml\": \"ë\",\n  \"frac12\": \"½\",\n  \"frac14\": \"¼\",\n  \"frac34\": \"¾\",\n  \"gt\": \">\",\n  \"iacute\": \"í\",\n  \"icirc\": \"î\",\n  \"iexcl\": \"¡\",\n  \"igrave\": \"ì\",\n  \"iquest\": \"¿\",\n  \"iuml\": \"ï\",\n  \"laquo\": \"«\",\n  \"lt\": \"<\",\n  \"macr\": \"¯\",\n  \"micro\": \"µ\",\n  \"middot\": \"·\",\n  \"nbsp\": \" \",\n  \"not\": \"¬\",\n  \"ntilde\": \"ñ\",\n  \"oacute\": \"ó\",\n  \"ocirc\": \"ô\",\n  \"ograve\": \"ò\",\n  \"ordf\": \"ª\",\n  \"ordm\": \"º\",\n  \"oslash\": \"ø\",\n  \"otilde\": \"õ\",\n  \"ouml\": \"ö\",\n  \"para\": \"¶\",\n  \"plusmn\": \"±\",\n  \"pound\": \"£\",\n  \"quot\": \"\\\"\",\n  \"raquo\": \"»\",\n  \"reg\": \"®\",\n  \"sect\": \"§\",\n  \"shy\": \"­\",\n  \"sup1\": \"¹\",\n  \"sup2\": \"²\",\n  \"sup3\": \"³\",\n  \"szlig\": \"ß\",\n  \"thorn\": \"þ\",\n  \"times\": \"×\",\n  \"uacute\": \"ú\",\n  \"ucirc\": \"û\",\n  \"ugrave\": \"ù\",\n  \"uml\": \"¨\",\n  \"uuml\": \"ü\",\n  \"yacute\": \"ý\",\n  \"yen\": \"¥\",\n  \"yuml\": \"ÿ\"\n}\n",
+      "start": 1702937445212,
+      "end": 1702937445297,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "result": "export const AElig = \"Æ\";\nexport const AMP = \"&\";\nexport const Aacute = \"Á\";\nexport const Acirc = \"Â\";\nexport const Agrave = \"À\";\nexport const Aring = \"Å\";\nexport const Atilde = \"Ã\";\nexport const Auml = \"Ä\";\nexport const COPY = \"©\";\nexport const Ccedil = \"Ç\";\nexport const ETH = \"Ð\";\nexport const Eacute = \"É\";\nexport const Ecirc = \"Ê\";\nexport const Egrave = \"È\";\nexport const Euml = \"Ë\";\nexport const GT = \">\";\nexport const Iacute = \"Í\";\nexport const Icirc = \"Î\";\nexport const Igrave = \"Ì\";\nexport const Iuml = \"Ï\";\nexport const LT = \"<\";\nexport const Ntilde = \"Ñ\";\nexport const Oacute = \"Ó\";\nexport const Ocirc = \"Ô\";\nexport const Ograve = \"Ò\";\nexport const Oslash = \"Ø\";\nexport const Otilde = \"Õ\";\nexport const Ouml = \"Ö\";\nexport const QUOT = \"\\\"\";\nexport const REG = \"®\";\nexport const THORN = \"Þ\";\nexport const Uacute = \"Ú\";\nexport const Ucirc = \"Û\";\nexport const Ugrave = \"Ù\";\nexport const Uuml = \"Ü\";\nexport const Yacute = \"Ý\";\nexport const aacute = \"á\";\nexport const acirc = \"â\";\nexport const acute = \"´\";\nexport const aelig = \"æ\";\nexport const agrave = \"à\";\nexport const amp = \"&\";\nexport const aring = \"å\";\nexport const atilde = \"ã\";\nexport const auml = \"ä\";\nexport const brvbar = \"¦\";\nexport const ccedil = \"ç\";\nexport const cedil = \"¸\";\nexport const cent = \"¢\";\nexport const copy = \"©\";\nexport const curren = \"¤\";\nexport const deg = \"°\";\nexport const divide = \"÷\";\nexport const eacute = \"é\";\nexport const ecirc = \"ê\";\nexport const egrave = \"è\";\nexport const eth = \"ð\";\nexport const euml = \"ë\";\nexport const frac12 = \"½\";\nexport const frac14 = \"¼\";\nexport const frac34 = \"¾\";\nexport const gt = \">\";\nexport const iacute = \"í\";\nexport const icirc = \"î\";\nexport const iexcl = \"¡\";\nexport const igrave = \"ì\";\nexport const iquest = \"¿\";\nexport const iuml = \"ï\";\nexport const laquo = \"«\";\nexport const lt = \"<\";\nexport const macr = \"¯\";\nexport const micro = \"µ\";\nexport const middot = \"·\";\nexport const nbsp = \" \";\nexport const not = \"¬\";\nexport const ntilde = \"ñ\";\nexport const oacute = \"ó\";\nexport const ocirc = \"ô\";\nexport const ograve = \"ò\";\nexport const ordf = \"ª\";\nexport const ordm = \"º\";\nexport const oslash = \"ø\";\nexport const otilde = \"õ\";\nexport const ouml = \"ö\";\nexport const para = \"¶\";\nexport const plusmn = \"±\";\nexport const pound = \"£\";\nexport const quot = \"\\\"\";\nexport const raquo = \"»\";\nexport const reg = \"®\";\nexport const sect = \"§\";\nexport const shy = \"­\";\nexport const sup1 = \"¹\";\nexport const sup2 = \"²\";\nexport const sup3 = \"³\";\nexport const szlig = \"ß\";\nexport const thorn = \"þ\";\nexport const times = \"×\";\nexport const uacute = \"ú\";\nexport const ucirc = \"û\";\nexport const ugrave = \"ù\";\nexport const uml = \"¨\";\nexport const uuml = \"ü\";\nexport const yacute = \"ý\";\nexport const yen = \"¥\";\nexport const yuml = \"ÿ\";\nexport default {\n\tAElig: AElig,\n\tAMP: AMP,\n\tAacute: Aacute,\n\tAcirc: Acirc,\n\tAgrave: Agrave,\n\tAring: Aring,\n\tAtilde: Atilde,\n\tAuml: Auml,\n\tCOPY: COPY,\n\tCcedil: Ccedil,\n\tETH: ETH,\n\tEacute: Eacute,\n\tEcirc: Ecirc,\n\tEgrave: Egrave,\n\tEuml: Euml,\n\tGT: GT,\n\tIacute: Iacute,\n\tIcirc: Icirc,\n\tIgrave: Igrave,\n\tIuml: Iuml,\n\tLT: LT,\n\tNtilde: Ntilde,\n\tOacute: Oacute,\n\tOcirc: Ocirc,\n\tOgrave: Ograve,\n\tOslash: Oslash,\n\tOtilde: Otilde,\n\tOuml: Ouml,\n\tQUOT: QUOT,\n\tREG: REG,\n\tTHORN: THORN,\n\tUacute: Uacute,\n\tUcirc: Ucirc,\n\tUgrave: Ugrave,\n\tUuml: Uuml,\n\tYacute: Yacute,\n\taacute: aacute,\n\tacirc: acirc,\n\tacute: acute,\n\taelig: aelig,\n\tagrave: agrave,\n\tamp: amp,\n\taring: aring,\n\tatilde: atilde,\n\tauml: auml,\n\tbrvbar: brvbar,\n\tccedil: ccedil,\n\tcedil: cedil,\n\tcent: cent,\n\tcopy: copy,\n\tcurren: curren,\n\tdeg: deg,\n\tdivide: divide,\n\teacute: eacute,\n\tecirc: ecirc,\n\tegrave: egrave,\n\teth: eth,\n\teuml: euml,\n\tfrac12: frac12,\n\tfrac14: frac14,\n\tfrac34: frac34,\n\tgt: gt,\n\tiacute: iacute,\n\ticirc: icirc,\n\tiexcl: iexcl,\n\tigrave: igrave,\n\tiquest: iquest,\n\tiuml: iuml,\n\tlaquo: laquo,\n\tlt: lt,\n\tmacr: macr,\n\tmicro: micro,\n\tmiddot: middot,\n\tnbsp: nbsp,\n\tnot: not,\n\tntilde: ntilde,\n\toacute: oacute,\n\tocirc: ocirc,\n\tograve: ograve,\n\tordf: ordf,\n\tordm: ordm,\n\toslash: oslash,\n\totilde: otilde,\n\touml: ouml,\n\tpara: para,\n\tplusmn: plusmn,\n\tpound: pound,\n\tquot: quot,\n\traquo: raquo,\n\treg: reg,\n\tsect: sect,\n\tshy: shy,\n\tsup1: sup1,\n\tsup2: sup2,\n\tsup3: sup3,\n\tszlig: szlig,\n\tthorn: thorn,\n\ttimes: times,\n\tuacute: uacute,\n\tucirc: ucirc,\n\tugrave: ugrave,\n\tuml: uml,\n\tuuml: uuml,\n\tyacute: yacute,\n\tyen: yen,\n\tyuml: yuml\n};\n",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445298,
+      "end": 1702937445298,
+      "order": "normal"
+    }
+  ]
+}

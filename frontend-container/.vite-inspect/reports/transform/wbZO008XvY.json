@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/wiki.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = wiki\nwiki.displayName = 'wiki'\nwiki.aliases = []\nfunction wiki(Prism) {\n  Prism.languages.wiki = Prism.languages.extend('markup', {\n    'block-comment': {\n      pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n      lookbehind: true,\n      alias: 'comment'\n    },\n    heading: {\n      pattern: /^(=+)[^=\\r\\n].*?\\1/m,\n      inside: {\n        punctuation: /^=+|=+$/,\n        important: /.+/\n      }\n    },\n    emphasis: {\n      // TODO Multi-line\n      pattern: /('{2,5}).+?\\1/,\n      inside: {\n        'bold-italic': {\n          pattern: /(''''').+?(?=\\1)/,\n          lookbehind: true,\n          alias: ['bold', 'italic']\n        },\n        bold: {\n          pattern: /(''')[^'](?:.*?[^'])?(?=\\1)/,\n          lookbehind: true\n        },\n        italic: {\n          pattern: /('')[^'](?:.*?[^'])?(?=\\1)/,\n          lookbehind: true\n        },\n        punctuation: /^''+|''+$/\n      }\n    },\n    hr: {\n      pattern: /^-{4,}/m,\n      alias: 'punctuation'\n    },\n    url: [\n      /ISBN +(?:97[89][ -]?)?(?:\\d[ -]?){9}[\\dx]\\b|(?:PMID|RFC) +\\d+/i,\n      /\\[\\[.+?\\]\\]|\\[.+?\\]/\n    ],\n    variable: [\n      /__[A-Z]+__/, // FIXME Nested structures should be handled\n      // {{formatnum:{{#expr:{{{3}}}}}}}\n      /\\{{3}.+?\\}{3}/,\n      /\\{\\{.+?\\}\\}/\n    ],\n    symbol: [/^#redirect/im, /~{3,5}/],\n    // Handle table attrs:\n    // {|\n    // ! style=\"text-align:left;\"| Item\n    // |}\n    'table-tag': {\n      pattern: /((?:^|[|!])[|!])[^|\\r\\n]+\\|(?!\\|)/m,\n      lookbehind: true,\n      inside: {\n        'table-bar': {\n          pattern: /\\|$/,\n          alias: 'punctuation'\n        },\n        rest: Prism.languages.markup['tag'].inside\n      }\n    },\n    punctuation: /^(?:\\{\\||\\|\\}|\\|-|[*#:;!|])|\\|\\||!!/m\n  })\n  Prism.languages.insertBefore('wiki', 'tag', {\n    // Prevent highlighting inside <nowiki>, <source> and <pre> tags\n    nowiki: {\n      pattern: /<(nowiki|pre|source)\\b[^>]*>[\\s\\S]*?<\\/\\1>/i,\n      inside: {\n        tag: {\n          pattern: /<(?:nowiki|pre|source)\\b[^>]*>|<\\/(?:nowiki|pre|source)>/i,\n          inside: Prism.languages.markup['tag'].inside\n        }\n      }\n    }\n  })\n}\n",
+      "start": 1702937445119,
+      "end": 1702937445142,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar wiki_1;\nvar hasRequiredWiki;\n\nfunction requireWiki () {\n\tif (hasRequiredWiki) return wiki_1;\n\thasRequiredWiki = 1;\n\t'use strict'\n\n\twiki_1 = wiki\n\twiki.displayName = 'wiki'\n\twiki.aliases = []\n\tfunction wiki(Prism) {\n\t  Prism.languages.wiki = Prism.languages.extend('markup', {\n\t    'block-comment': {\n\t      pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n\t      lookbehind: true,\n\t      alias: 'comment'\n\t    },\n\t    heading: {\n\t      pattern: /^(=+)[^=\\r\\n].*?\\1/m,\n\t      inside: {\n\t        punctuation: /^=+|=+$/,\n\t        important: /.+/\n\t      }\n\t    },\n\t    emphasis: {\n\t      // TODO Multi-line\n\t      pattern: /('{2,5}).+?\\1/,\n\t      inside: {\n\t        'bold-italic': {\n\t          pattern: /(''''').+?(?=\\1)/,\n\t          lookbehind: true,\n\t          alias: ['bold', 'italic']\n\t        },\n\t        bold: {\n\t          pattern: /(''')[^'](?:.*?[^'])?(?=\\1)/,\n\t          lookbehind: true\n\t        },\n\t        italic: {\n\t          pattern: /('')[^'](?:.*?[^'])?(?=\\1)/,\n\t          lookbehind: true\n\t        },\n\t        punctuation: /^''+|''+$/\n\t      }\n\t    },\n\t    hr: {\n\t      pattern: /^-{4,}/m,\n\t      alias: 'punctuation'\n\t    },\n\t    url: [\n\t      /ISBN +(?:97[89][ -]?)?(?:\\d[ -]?){9}[\\dx]\\b|(?:PMID|RFC) +\\d+/i,\n\t      /\\[\\[.+?\\]\\]|\\[.+?\\]/\n\t    ],\n\t    variable: [\n\t      /__[A-Z]+__/, // FIXME Nested structures should be handled\n\t      // {{formatnum:{{#expr:{{{3}}}}}}}\n\t      /\\{{3}.+?\\}{3}/,\n\t      /\\{\\{.+?\\}\\}/\n\t    ],\n\t    symbol: [/^#redirect/im, /~{3,5}/],\n\t    // Handle table attrs:\n\t    // {|\n\t    // ! style=\"text-align:left;\"| Item\n\t    // |}\n\t    'table-tag': {\n\t      pattern: /((?:^|[|!])[|!])[^|\\r\\n]+\\|(?!\\|)/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        'table-bar': {\n\t          pattern: /\\|$/,\n\t          alias: 'punctuation'\n\t        },\n\t        rest: Prism.languages.markup['tag'].inside\n\t      }\n\t    },\n\t    punctuation: /^(?:\\{\\||\\|\\}|\\|-|[*#:;!|])|\\|\\||!!/m\n\t  })\n\t  Prism.languages.insertBefore('wiki', 'tag', {\n\t    // Prevent highlighting inside <nowiki>, <source> and <pre> tags\n\t    nowiki: {\n\t      pattern: /<(nowiki|pre|source)\\b[^>]*>[\\s\\S]*?<\\/\\1>/i,\n\t      inside: {\n\t        tag: {\n\t          pattern: /<(?:nowiki|pre|source)\\b[^>]*>|<\\/(?:nowiki|pre|source)>/i,\n\t          inside: Prism.languages.markup['tag'].inside\n\t        }\n\t      }\n\t    }\n\t  })\n\t}\n\treturn wiki_1;\n}\n\nexport { requireWiki as __require };",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,QAAQ,EAAE;CAC1D,IAAI,eAAe,EAAE;CACrB,MAAM,OAAO,EAAE,2BAA2B;CAC1C,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,SAAS;CAC9B,QAAQ,SAAS,EAAE,IAAI;CACvB,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE;CACd;CACA,MAAM,OAAO,EAAE,eAAe;CAC9B,MAAM,MAAM,EAAE;CACd,QAAQ,aAAa,EAAE;CACvB,UAAU,OAAO,EAAE,kBAAkB;CACrC,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,KAAK,EAAE,CAAC,MAAM,EAAE,QAAQ,CAAC;CACnC,SAAS;CACT,QAAQ,IAAI,EAAE;CACd,UAAU,OAAO,EAAE,6BAA6B;CAChD,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ,MAAM,EAAE;CAChB,UAAU,OAAO,EAAE,4BAA4B;CAC/C,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ,WAAW,EAAE,WAAW;CAChC,OAAO;CACP,KAAK;CACL,IAAI,EAAE,EAAE;CACR,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,KAAK,EAAE,aAAa;CAC1B,KAAK;CACL,IAAI,GAAG,EAAE;CACT,MAAM,gEAAgE;CACtE,MAAM,qBAAqB;CAC3B,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,YAAY;CAClB;CACA,MAAM,eAAe;CACrB,MAAM,aAAa;CACnB,KAAK;CACL,IAAI,MAAM,EAAE,CAAC,cAAc,EAAE,QAAQ,CAAC;CACtC;CACA;CACA;CACA;CACA,IAAI,WAAW,EAAE;CACjB,MAAM,OAAO,EAAE,oCAAoC;CACnD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE;CACrB,UAAU,OAAO,EAAE,KAAK;CACxB,UAAU,KAAK,EAAE,aAAa;CAC9B,SAAS;CACT,QAAQ,IAAI,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC,MAAM;CAClD,OAAO;CACP,KAAK;CACL,IAAI,WAAW,EAAE,sCAAsC;CACvD,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,KAAK,EAAE;CAC9C;CACA,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,6CAA6C;CAC5D,MAAM,MAAM,EAAE;CACd,QAAQ,GAAG,EAAE;CACb,UAAU,OAAO,EAAE,2DAA2D;CAC9E,UAAU,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC,MAAM;CACtD,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445142,
+      "end": 1702937445142,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445143,
+      "end": 1702937445143,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445143,
+      "end": 1702937445143,
+      "order": "normal"
+    }
+  ]
+}

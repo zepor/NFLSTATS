@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/BootstrapModalManager.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import addClass from 'dom-helpers/addClass';\nimport css from 'dom-helpers/css';\nimport qsa from 'dom-helpers/querySelectorAll';\nimport removeClass from 'dom-helpers/removeClass';\nimport ModalManager from '@restart/ui/ModalManager';\nconst Selector = {\n  FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',\n  STICKY_CONTENT: '.sticky-top',\n  NAVBAR_TOGGLER: '.navbar-toggler'\n};\nclass BootstrapModalManager extends ModalManager {\n  adjustAndStore(prop, element, adjust) {\n    const actual = element.style[prop];\n    // TODO: DOMStringMap and CSSStyleDeclaration aren't strictly compatible\n    // @ts-ignore\n    element.dataset[prop] = actual;\n    css(element, {\n      [prop]: `${parseFloat(css(element, prop)) + adjust}px`\n    });\n  }\n  restore(prop, element) {\n    const value = element.dataset[prop];\n    if (value !== undefined) {\n      delete element.dataset[prop];\n      css(element, {\n        [prop]: value\n      });\n    }\n  }\n  setContainerStyle(containerState) {\n    super.setContainerStyle(containerState);\n    const container = this.getElement();\n    addClass(container, 'modal-open');\n    if (!containerState.scrollBarWidth) return;\n    const paddingProp = this.isRTL ? 'paddingLeft' : 'paddingRight';\n    const marginProp = this.isRTL ? 'marginLeft' : 'marginRight';\n    qsa(container, Selector.FIXED_CONTENT).forEach(el => this.adjustAndStore(paddingProp, el, containerState.scrollBarWidth));\n    qsa(container, Selector.STICKY_CONTENT).forEach(el => this.adjustAndStore(marginProp, el, -containerState.scrollBarWidth));\n    qsa(container, Selector.NAVBAR_TOGGLER).forEach(el => this.adjustAndStore(marginProp, el, containerState.scrollBarWidth));\n  }\n  removeContainerStyle(containerState) {\n    super.removeContainerStyle(containerState);\n    const container = this.getElement();\n    removeClass(container, 'modal-open');\n    const paddingProp = this.isRTL ? 'paddingLeft' : 'paddingRight';\n    const marginProp = this.isRTL ? 'marginLeft' : 'marginRight';\n    qsa(container, Selector.FIXED_CONTENT).forEach(el => this.restore(paddingProp, el));\n    qsa(container, Selector.STICKY_CONTENT).forEach(el => this.restore(marginProp, el));\n    qsa(container, Selector.NAVBAR_TOGGLER).forEach(el => this.restore(marginProp, el));\n  }\n}\nlet sharedManager;\nexport function getSharedManager(options) {\n  if (!sharedManager) sharedManager = new BootstrapModalManager(options);\n  return sharedManager;\n}\nexport default BootstrapModalManager;",
+      "start": 1702937442086,
+      "end": 1702937442098,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442098,
+      "end": 1702937442098,
+      "order": "normal"
+    }
+  ]
+}

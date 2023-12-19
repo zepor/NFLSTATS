@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/icons/FontAwesome/index.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Button, Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faArrowRight } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport iconsSolid from \"./iconsSolid\";\r\nimport iconsRegular from \"./iconsRegular\";\r\nimport iconsBrands from \"./iconsBrands\";\r\n\r\nconst Icon = ({ icon }) => (\r\n  <Col md=\"6\" lg=\"3\">\r\n    <div className=\"mb-2\">\r\n      <FontAwesomeIcon\r\n        className=\"align-middle me-2\"\r\n        icon={icon.icon}\r\n        fixedWidth\r\n      />\r\n      <span className=\"align-middle\">{icon.name}</span>\r\n    </div>\r\n  </Col>\r\n);\r\n\r\nconst FontAwesomeIcons = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Font Awesome\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Font Awesome</h1>\r\n\r\n      <Card>\r\n        <Card.Header>\r\n          <Card.Title>Font Awesome Icons</Card.Title>\r\n          <h6 className=\"card-subtitle text-muted\">\r\n            The web’s most popular icon set and toolkit\r\n          </h6>\r\n        </Card.Header>\r\n        <Card.Body>\r\n          <div className=\"mb-3\">\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Solid icons</h6>\r\n            <Row>\r\n              {iconsSolid.map((icon, iconKey) => (\r\n                <Icon icon={icon} key={iconKey} />\r\n              ))}\r\n            </Row>\r\n          </div>\r\n          <hr />\r\n          <div className=\"mb-3\">\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Regular icons</h6>\r\n            <Row>{iconsRegular.map((icon, iconKey) => (<Icon icon={icon} key={iconKey} />))}</Row>\r\n          </div>\r\n          <hr />\r\n          <div>\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Brand icons</h6>\r\n            <Row className=\"mb-3\">{iconsBrands.map((icon, iconKey) => (<Icon\r\n              icon={icon} key={iconKey} />))}</Row>\r\n            <Button\r\n              target=\"_blank\"\r\n              rel=\"nofollow noreferrer\"\r\n              href=\"https://fontawesome.com/\"\r\n            >\r\n              Browse all available icons\r\n              <FontAwesomeIcon className=\"ms-2\" icon={faArrowRight} />\r\n            </Button>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default FontAwesomeIcons;\r\n",
+      "start": 1702937436961,
+      "end": 1702937440808,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440808,
+      "end": 1702937440808,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440808,
+      "end": 1702937440808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Button, Card, Col, Container, Row } from \"react-bootstrap\";\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\nimport { faArrowRight } from \"@fortawesome/free-solid-svg-icons\";\nimport iconsSolid from \"./iconsSolid\";\nimport iconsRegular from \"./iconsRegular\";\nimport iconsBrands from \"./iconsBrands\";\nconst Icon = ({ icon }) => /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"mb-2\", children: [\n  /* @__PURE__ */ jsx(\n    FontAwesomeIcon,\n    {\n      className: \"align-middle me-2\",\n      icon: icon.icon,\n      fixedWidth: true\n    }\n  ),\n  /* @__PURE__ */ jsx(\"span\", { className: \"align-middle\", children: icon.name })\n] }) });\nconst FontAwesomeIcons = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Font Awesome\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Font Awesome\" }),\n    /* @__PURE__ */ jsxs(Card, { children: [\n      /* @__PURE__ */ jsxs(Card.Header, { children: [\n        /* @__PURE__ */ jsx(Card.Title, { children: \"Font Awesome Icons\" }),\n        /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"The web’s most popular icon set and toolkit\" })\n      ] }),\n      /* @__PURE__ */ jsxs(Card.Body, { children: [\n        /* @__PURE__ */ jsxs(\"div\", { className: \"mb-3\", children: [\n          /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle mb-2 text-muted\", children: \"Solid icons\" }),\n          /* @__PURE__ */ jsx(Row, { children: iconsSolid.map((icon, iconKey) => /* @__PURE__ */ jsx(Icon, { icon }, iconKey)) })\n        ] }),\n        /* @__PURE__ */ jsx(\"hr\", {}),\n        /* @__PURE__ */ jsxs(\"div\", { className: \"mb-3\", children: [\n          /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle mb-2 text-muted\", children: \"Regular icons\" }),\n          /* @__PURE__ */ jsx(Row, { children: iconsRegular.map((icon, iconKey) => /* @__PURE__ */ jsx(Icon, { icon }, iconKey)) })\n        ] }),\n        /* @__PURE__ */ jsx(\"hr\", {}),\n        /* @__PURE__ */ jsxs(\"div\", { children: [\n          /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle mb-2 text-muted\", children: \"Brand icons\" }),\n          /* @__PURE__ */ jsx(Row, { className: \"mb-3\", children: iconsBrands.map((icon, iconKey) => /* @__PURE__ */ jsx(\n            Icon,\n            {\n              icon\n            },\n            iconKey\n          )) }),\n          /* @__PURE__ */ jsxs(\n            Button,\n            {\n              target: \"_blank\",\n              rel: \"nofollow noreferrer\",\n              href: \"https://fontawesome.com/\",\n              children: [\n                \"Browse all available icons\",\n                /* @__PURE__ */ jsx(FontAwesomeIcon, { className: \"ms-2\", icon: faArrowRight })\n              ]\n            }\n          )\n        ] })\n      ] })\n    ] })\n  ] })\n] });\nexport default FontAwesomeIcons;\n",
+      "start": 1702937440808,
+      "end": 1702937440823,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/icons/FontAwesome/index.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Button, Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faArrowRight } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport iconsSolid from \"./iconsSolid\";\r\nimport iconsRegular from \"./iconsRegular\";\r\nimport iconsBrands from \"./iconsBrands\";\r\n\r\nconst Icon = ({ icon }) => (\r\n  <Col md=\"6\" lg=\"3\">\r\n    <div className=\"mb-2\">\r\n      <FontAwesomeIcon\r\n        className=\"align-middle me-2\"\r\n        icon={icon.icon}\r\n        fixedWidth\r\n      />\r\n      <span className=\"align-middle\">{icon.name}</span>\r\n    </div>\r\n  </Col>\r\n);\r\n\r\nconst FontAwesomeIcons = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Font Awesome\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Font Awesome</h1>\r\n\r\n      <Card>\r\n        <Card.Header>\r\n          <Card.Title>Font Awesome Icons</Card.Title>\r\n          <h6 className=\"card-subtitle text-muted\">\r\n            The web’s most popular icon set and toolkit\r\n          </h6>\r\n        </Card.Header>\r\n        <Card.Body>\r\n          <div className=\"mb-3\">\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Solid icons</h6>\r\n            <Row>\r\n              {iconsSolid.map((icon, iconKey) => (\r\n                <Icon icon={icon} key={iconKey} />\r\n              ))}\r\n            </Row>\r\n          </div>\r\n          <hr />\r\n          <div className=\"mb-3\">\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Regular icons</h6>\r\n            <Row>{iconsRegular.map((icon, iconKey) => (<Icon icon={icon} key={iconKey} />))}</Row>\r\n          </div>\r\n          <hr />\r\n          <div>\r\n            <h6 className=\"card-subtitle mb-2 text-muted\">Brand icons</h6>\r\n            <Row className=\"mb-3\">{iconsBrands.map((icon, iconKey) => (<Icon\r\n              icon={icon} key={iconKey} />))}</Row>\r\n            <Button\r\n              target=\"_blank\"\r\n              rel=\"nofollow noreferrer\"\r\n              href=\"https://fontawesome.com/\"\r\n            >\r\n              Browse all available icons\r\n              <FontAwesomeIcon className=\"ms-2\" icon={faArrowRight} />\r\n            </Button>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default FontAwesomeIcons;\r\n"
+        ],
+        "mappings": "AAaI,SACE,KADF;AAbJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,QAAQ,MAAM,KAAK,WAAW,WAAW;AAElD,SAAS,uBAAuB;AAChC,SAAS,oBAAoB;AAE7B,OAAO,gBAAgB;AACvB,OAAO,kBAAkB;AACzB,OAAO,iBAAiB;AAExB,MAAM,OAAO,CAAC,EAAE,KAAK,MACnB,oBAAC,OAAI,IAAG,KAAI,IAAG,KACb,+BAAC,SAAI,WAAU,QACb;AAAA;AAAA,IAAC;AAAA;AAAA,MACC,WAAU;AAAA,MACV,MAAM,KAAK;AAAA,MACX,YAAU;AAAA;AAAA,EACZ;AAAA,EACA,oBAAC,UAAK,WAAU,gBAAgB,eAAK,MAAK;AAAA,GAC5C,GACF;AAGF,MAAM,mBAAmB,MACvB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,gBAAe;AAAA,EAC7B,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,QAAG,WAAU,WAAU,0BAAY;AAAA,IAEpC,qBAAC,QACC;AAAA,2BAAC,KAAK,QAAL,EACC;AAAA,4BAAC,KAAK,OAAL,EAAW,gCAAkB;AAAA,QAC9B,oBAAC,QAAG,WAAU,4BAA2B,yDAEzC;AAAA,SACF;AAAA,MACA,qBAAC,KAAK,MAAL,EACC;AAAA,6BAAC,SAAI,WAAU,QACb;AAAA,8BAAC,QAAG,WAAU,iCAAgC,yBAAW;AAAA,UACzD,oBAAC,OACE,qBAAW,IAAI,CAAC,MAAM,YACrB,oBAAC,QAAK,QAAiB,OAAS,CACjC,GACH;AAAA,WACF;AAAA,QACA,oBAAC,QAAG;AAAA,QACJ,qBAAC,SAAI,WAAU,QACb;AAAA,8BAAC,QAAG,WAAU,iCAAgC,2BAAa;AAAA,UAC3D,oBAAC,OAAK,uBAAa,IAAI,CAAC,MAAM,YAAa,oBAAC,QAAK,QAAiB,OAAS,CAAG,GAAE;AAAA,WAClF;AAAA,QACA,oBAAC,QAAG;AAAA,QACJ,qBAAC,SACC;AAAA,8BAAC,QAAG,WAAU,iCAAgC,yBAAW;AAAA,UACzD,oBAAC,OAAI,WAAU,QAAQ,sBAAY,IAAI,CAAC,MAAM,YAAa;AAAA,YAAC;AAAA;AAAA,cAC1D;AAAA;AAAA,YAAiB;AAAA,UAAS,CAAG,GAAE;AAAA,UACjC;AAAA,YAAC;AAAA;AAAA,cACC,QAAO;AAAA,cACP,KAAI;AAAA,cACJ,MAAK;AAAA,cACN;AAAA;AAAA,gBAEC,oBAAC,mBAAgB,WAAU,QAAO,MAAM,cAAc;AAAA;AAAA;AAAA,UACxD;AAAA,WACF;AAAA,SACF;AAAA,OACF;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440823,
+      "end": 1702937440823,
+      "order": "normal"
+    }
+  ]
+}

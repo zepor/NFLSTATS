@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_baseTimes.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * The base implementation of `_.times` without support for iteratee shorthands\n * or max array length checks.\n *\n * @private\n * @param {number} n The number of times to invoke `iteratee`.\n * @param {Function} iteratee The function invoked per iteration.\n * @returns {Array} Returns the array of results.\n */\nfunction baseTimes(n, iteratee) {\n  var index = -1,\n      result = Array(n);\n\n  while (++index < n) {\n    result[index] = iteratee(index);\n  }\n  return result;\n}\n\nexport default baseTimes;\n",
+      "start": 1702937445188,
+      "end": 1702937445288,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445288,
+      "end": 1702937445288,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/livescript.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = livescript\nlivescript.displayName = 'livescript'\nlivescript.aliases = []\nfunction livescript(Prism) {\n  Prism.languages.livescript = {\n    comment: [\n      {\n        pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n        lookbehind: true\n      },\n      {\n        pattern: /(^|[^\\\\])#.*/,\n        lookbehind: true\n      }\n    ],\n    'interpolated-string': {\n      /* Look-behind and look-ahead prevents wrong behavior of the greedy pattern\n       * forcing it to match \"\"\"-quoted string when it would otherwise match \"-quoted first. */\n      pattern: /(^|[^\"])(\"\"\"|\")(?:\\\\[\\s\\S]|(?!\\2)[^\\\\])*\\2(?!\")/,\n      lookbehind: true,\n      greedy: true,\n      inside: {\n        variable: {\n          pattern: /(^|[^\\\\])#[a-z_](?:-?[a-z]|[\\d_])*/m,\n          lookbehind: true\n        },\n        interpolation: {\n          pattern: /(^|[^\\\\])#\\{[^}]+\\}/m,\n          lookbehind: true,\n          inside: {\n            'interpolation-punctuation': {\n              pattern: /^#\\{|\\}$/,\n              alias: 'variable'\n            } // See rest below\n          }\n        },\n        string: /[\\s\\S]+/\n      }\n    },\n    string: [\n      {\n        pattern: /('''|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1/,\n        greedy: true\n      },\n      {\n        pattern: /<\\[[\\s\\S]*?\\]>/,\n        greedy: true\n      },\n      /\\\\[^\\s,;\\])}]+/\n    ],\n    regex: [\n      {\n        pattern: /\\/\\/(?:\\[[^\\r\\n\\]]*\\]|\\\\.|(?!\\/\\/)[^\\\\\\[])+\\/\\/[gimyu]{0,5}/,\n        greedy: true,\n        inside: {\n          comment: {\n            pattern: /(^|[^\\\\])#.*/,\n            lookbehind: true\n          }\n        }\n      },\n      {\n        pattern: /\\/(?:\\[[^\\r\\n\\]]*\\]|\\\\.|[^/\\\\\\r\\n\\[])+\\/[gimyu]{0,5}/,\n        greedy: true\n      }\n    ],\n    keyword: {\n      pattern:\n        /(^|(?!-).)\\b(?:break|case|catch|class|const|continue|default|do|else|extends|fallthrough|finally|for(?: ever)?|function|if|implements|it|let|loop|new|null|otherwise|own|return|super|switch|that|then|this|throw|try|unless|until|var|void|when|while|yield)(?!-)\\b/m,\n      lookbehind: true\n    },\n    'keyword-operator': {\n      pattern:\n        /(^|[^-])\\b(?:(?:delete|require|typeof)!|(?:and|by|delete|export|from|import(?: all)?|in|instanceof|is(?: not|nt)?|not|of|or|til|to|typeof|with|xor)(?!-)\\b)/m,\n      lookbehind: true,\n      alias: 'operator'\n    },\n    boolean: {\n      pattern: /(^|[^-])\\b(?:false|no|off|on|true|yes)(?!-)\\b/m,\n      lookbehind: true\n    },\n    argument: {\n      // Don't match .&. nor &&\n      pattern: /(^|(?!\\.&\\.)[^&])&(?!&)\\d*/m,\n      lookbehind: true,\n      alias: 'variable'\n    },\n    number: /\\b(?:\\d+~[\\da-z]+|\\d[\\d_]*(?:\\.\\d[\\d_]*)?(?:[a-z]\\w*)?)/i,\n    identifier: /[a-z_](?:-?[a-z]|[\\d_])*/i,\n    operator: [\n      // Spaced .\n      {\n        pattern: /( )\\.(?= )/,\n        lookbehind: true\n      }, // Full list, in order:\n      // .= .~ .. ...\n      // .&. .^. .<<. .>>. .>>>.\n      // := :: ::=\n      // &&\n      // || |>\n      // < << <<< <<<<\n      // <- <-- <-! <--!\n      // <~ <~~ <~! <~~!\n      // <| <= <?\n      // > >> >= >?\n      // - -- -> -->\n      // + ++\n      // @ @@\n      // % %%\n      // * **\n      // ! != !~=\n      // !~> !~~>\n      // !-> !-->\n      // ~ ~> ~~> ~=\n      // = ==\n      // ^ ^^\n      // / ?\n      /\\.(?:[=~]|\\.\\.?)|\\.(?:[&|^]|<<|>>>?)\\.|:(?:=|:=?)|&&|\\|[|>]|<(?:<<?<?|--?!?|~~?!?|[|=?])?|>[>=?]?|-(?:->?|>)?|\\+\\+?|@@?|%%?|\\*\\*?|!(?:~?=|--?>|~?~>)?|~(?:~?>|=)?|==?|\\^\\^?|[\\/?]/\n    ],\n    punctuation: /[(){}\\[\\]|.,:;`]/\n  }\n  Prism.languages.livescript['interpolated-string'].inside[\n    'interpolation'\n  ].inside.rest = Prism.languages.livescript\n}\n",
+      "start": 1702937444949,
+      "end": 1702937444975,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444975,
+      "end": 1702937444975,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar livescript_1;\nvar hasRequiredLivescript;\n\nfunction requireLivescript () {\n\tif (hasRequiredLivescript) return livescript_1;\n\thasRequiredLivescript = 1;\n\t'use strict'\n\n\tlivescript_1 = livescript\n\tlivescript.displayName = 'livescript'\n\tlivescript.aliases = []\n\tfunction livescript(Prism) {\n\t  Prism.languages.livescript = {\n\t    comment: [\n\t      {\n\t        pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n\t        lookbehind: true\n\t      },\n\t      {\n\t        pattern: /(^|[^\\\\])#.*/,\n\t        lookbehind: true\n\t      }\n\t    ],\n\t    'interpolated-string': {\n\t      /* Look-behind and look-ahead prevents wrong behavior of the greedy pattern\n\t       * forcing it to match \"\"\"-quoted string when it would otherwise match \"-quoted first. */\n\t      pattern: /(^|[^\"])(\"\"\"|\")(?:\\\\[\\s\\S]|(?!\\2)[^\\\\])*\\2(?!\")/,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      inside: {\n\t        variable: {\n\t          pattern: /(^|[^\\\\])#[a-z_](?:-?[a-z]|[\\d_])*/m,\n\t          lookbehind: true\n\t        },\n\t        interpolation: {\n\t          pattern: /(^|[^\\\\])#\\{[^}]+\\}/m,\n\t          lookbehind: true,\n\t          inside: {\n\t            'interpolation-punctuation': {\n\t              pattern: /^#\\{|\\}$/,\n\t              alias: 'variable'\n\t            } // See rest below\n\t          }\n\t        },\n\t        string: /[\\s\\S]+/\n\t      }\n\t    },\n\t    string: [\n\t      {\n\t        pattern: /('''|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1/,\n\t        greedy: true\n\t      },\n\t      {\n\t        pattern: /<\\[[\\s\\S]*?\\]>/,\n\t        greedy: true\n\t      },\n\t      /\\\\[^\\s,;\\])}]+/\n\t    ],\n\t    regex: [\n\t      {\n\t        pattern: /\\/\\/(?:\\[[^\\r\\n\\]]*\\]|\\\\.|(?!\\/\\/)[^\\\\\\[])+\\/\\/[gimyu]{0,5}/,\n\t        greedy: true,\n\t        inside: {\n\t          comment: {\n\t            pattern: /(^|[^\\\\])#.*/,\n\t            lookbehind: true\n\t          }\n\t        }\n\t      },\n\t      {\n\t        pattern: /\\/(?:\\[[^\\r\\n\\]]*\\]|\\\\.|[^/\\\\\\r\\n\\[])+\\/[gimyu]{0,5}/,\n\t        greedy: true\n\t      }\n\t    ],\n\t    keyword: {\n\t      pattern:\n\t        /(^|(?!-).)\\b(?:break|case|catch|class|const|continue|default|do|else|extends|fallthrough|finally|for(?: ever)?|function|if|implements|it|let|loop|new|null|otherwise|own|return|super|switch|that|then|this|throw|try|unless|until|var|void|when|while|yield)(?!-)\\b/m,\n\t      lookbehind: true\n\t    },\n\t    'keyword-operator': {\n\t      pattern:\n\t        /(^|[^-])\\b(?:(?:delete|require|typeof)!|(?:and|by|delete|export|from|import(?: all)?|in|instanceof|is(?: not|nt)?|not|of|or|til|to|typeof|with|xor)(?!-)\\b)/m,\n\t      lookbehind: true,\n\t      alias: 'operator'\n\t    },\n\t    boolean: {\n\t      pattern: /(^|[^-])\\b(?:false|no|off|on|true|yes)(?!-)\\b/m,\n\t      lookbehind: true\n\t    },\n\t    argument: {\n\t      // Don't match .&. nor &&\n\t      pattern: /(^|(?!\\.&\\.)[^&])&(?!&)\\d*/m,\n\t      lookbehind: true,\n\t      alias: 'variable'\n\t    },\n\t    number: /\\b(?:\\d+~[\\da-z]+|\\d[\\d_]*(?:\\.\\d[\\d_]*)?(?:[a-z]\\w*)?)/i,\n\t    identifier: /[a-z_](?:-?[a-z]|[\\d_])*/i,\n\t    operator: [\n\t      // Spaced .\n\t      {\n\t        pattern: /( )\\.(?= )/,\n\t        lookbehind: true\n\t      }, // Full list, in order:\n\t      // .= .~ .. ...\n\t      // .&. .^. .<<. .>>. .>>>.\n\t      // := :: ::=\n\t      // &&\n\t      // || |>\n\t      // < << <<< <<<<\n\t      // <- <-- <-! <--!\n\t      // <~ <~~ <~! <~~!\n\t      // <| <= <?\n\t      // > >> >= >?\n\t      // - -- -> -->\n\t      // + ++\n\t      // @ @@\n\t      // % %%\n\t      // * **\n\t      // ! != !~=\n\t      // !~> !~~>\n\t      // !-> !-->\n\t      // ~ ~> ~~> ~=\n\t      // = ==\n\t      // ^ ^^\n\t      // / ?\n\t      /\\.(?:[=~]|\\.\\.?)|\\.(?:[&|^]|<<|>>>?)\\.|:(?:=|:=?)|&&|\\|[|>]|<(?:<<?<?|--?!?|~~?!?|[|=?])?|>[>=?]?|-(?:->?|>)?|\\+\\+?|@@?|%%?|\\*\\*?|!(?:~?=|--?>|~?~>)?|~(?:~?>|=)?|==?|\\^\\^?|[\\/?]/\n\t    ],\n\t    punctuation: /[(){}\\[\\]|.,:;`]/\n\t  }\n\t  Prism.languages.livescript['interpolated-string'].inside[\n\t    'interpolation'\n\t  ].inside.rest = Prism.languages.livescript\n\t}\n\treturn livescript_1;\n}\n\nexport { requireLivescript as __require };",
+      "start": 1702937444975,
+      "end": 1702937444976,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444976,
+      "end": 1702937444976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444976,
+      "end": 1702937444976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444976,
+      "end": 1702937444976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444976,
+      "end": 1702937444976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444976,
+      "end": 1702937444976,
+      "order": "normal"
+    }
+  ]
+}

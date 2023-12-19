@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/cal.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: C/AL\nAuthor: Kenneth Fuglsang Christensen <kfuglsang@gmail.com>\nDescription: Provides highlighting of Microsoft Dynamics NAV C/AL code files\nWebsite: https://docs.microsoft.com/en-us/dynamics-nav/programming-in-c-al\n*/\n\n/** @type LanguageFn */\nfunction cal(hljs) {\n  const KEYWORDS =\n    'div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to ' +\n    'until while with var';\n  const LITERALS = 'false true';\n  const COMMENT_MODES = [\n    hljs.C_LINE_COMMENT_MODE,\n    hljs.COMMENT(\n      /\\{/,\n      /\\}/,\n      {\n        relevance: 0\n      }\n    ),\n    hljs.COMMENT(\n      /\\(\\*/,\n      /\\*\\)/,\n      {\n        relevance: 10\n      }\n    )\n  ];\n  const STRING = {\n    className: 'string',\n    begin: /'/,\n    end: /'/,\n    contains: [{\n      begin: /''/\n    }]\n  };\n  const CHAR_STRING = {\n    className: 'string',\n    begin: /(#\\d+)+/\n  };\n  const DATE = {\n    className: 'number',\n    begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(DT|D|T)',\n    relevance: 0\n  };\n  const DBL_QUOTED_VARIABLE = {\n    className: 'string', // not a string technically but makes sense to be highlighted in the same style\n    begin: '\"',\n    end: '\"'\n  };\n\n  const PROCEDURE = {\n    className: 'function',\n    beginKeywords: 'procedure',\n    end: /[:;]/,\n    keywords: 'procedure|10',\n    contains: [\n      hljs.TITLE_MODE,\n      {\n        className: 'params',\n        begin: /\\(/,\n        end: /\\)/,\n        keywords: KEYWORDS,\n        contains: [\n          STRING,\n          CHAR_STRING\n        ]\n      }\n    ].concat(COMMENT_MODES)\n  };\n\n  const OBJECT = {\n    className: 'class',\n    begin: 'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\\\d+) ([^\\\\r\\\\n]+)',\n    returnBegin: true,\n    contains: [\n      hljs.TITLE_MODE,\n      PROCEDURE\n    ]\n  };\n\n  return {\n    name: 'C/AL',\n    case_insensitive: true,\n    keywords: {\n      keyword: KEYWORDS,\n      literal: LITERALS\n    },\n    illegal: /\\/\\*/,\n    contains: [\n      STRING,\n      CHAR_STRING,\n      DATE,\n      DBL_QUOTED_VARIABLE,\n      hljs.NUMBER_MODE,\n      OBJECT,\n      PROCEDURE\n    ]\n  };\n}\n\nmodule.exports = cal;\n",
+      "start": 1702937444253,
+      "end": 1702937444287,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: C/AL\nAuthor: Kenneth Fuglsang Christensen <kfuglsang@gmail.com>\nDescription: Provides highlighting of Microsoft Dynamics NAV C/AL code files\nWebsite: https://docs.microsoft.com/en-us/dynamics-nav/programming-in-c-al\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar cal_1;\nvar hasRequiredCal;\n\nfunction requireCal () {\n\tif (hasRequiredCal) return cal_1;\n\thasRequiredCal = 1;\n\t/** @type LanguageFn */\n\tfunction cal(hljs) {\n\t  const KEYWORDS =\n\t    'div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to ' +\n\t    'until while with var';\n\t  const LITERALS = 'false true';\n\t  const COMMENT_MODES = [\n\t    hljs.C_LINE_COMMENT_MODE,\n\t    hljs.COMMENT(\n\t      /\\{/,\n\t      /\\}/,\n\t      {\n\t        relevance: 0\n\t      }\n\t    ),\n\t    hljs.COMMENT(\n\t      /\\(\\*/,\n\t      /\\*\\)/,\n\t      {\n\t        relevance: 10\n\t      }\n\t    )\n\t  ];\n\t  const STRING = {\n\t    className: 'string',\n\t    begin: /'/,\n\t    end: /'/,\n\t    contains: [{\n\t      begin: /''/\n\t    }]\n\t  };\n\t  const CHAR_STRING = {\n\t    className: 'string',\n\t    begin: /(#\\d+)+/\n\t  };\n\t  const DATE = {\n\t    className: 'number',\n\t    begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(DT|D|T)',\n\t    relevance: 0\n\t  };\n\t  const DBL_QUOTED_VARIABLE = {\n\t    className: 'string', // not a string technically but makes sense to be highlighted in the same style\n\t    begin: '\"',\n\t    end: '\"'\n\t  };\n\n\t  const PROCEDURE = {\n\t    className: 'function',\n\t    beginKeywords: 'procedure',\n\t    end: /[:;]/,\n\t    keywords: 'procedure|10',\n\t    contains: [\n\t      hljs.TITLE_MODE,\n\t      {\n\t        className: 'params',\n\t        begin: /\\(/,\n\t        end: /\\)/,\n\t        keywords: KEYWORDS,\n\t        contains: [\n\t          STRING,\n\t          CHAR_STRING\n\t        ]\n\t      }\n\t    ].concat(COMMENT_MODES)\n\t  };\n\n\t  const OBJECT = {\n\t    className: 'class',\n\t    begin: 'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\\\d+) ([^\\\\r\\\\n]+)',\n\t    returnBegin: true,\n\t    contains: [\n\t      hljs.TITLE_MODE,\n\t      PROCEDURE\n\t    ]\n\t  };\n\n\t  return {\n\t    name: 'C/AL',\n\t    case_insensitive: true,\n\t    keywords: {\n\t      keyword: KEYWORDS,\n\t      literal: LITERALS\n\t    },\n\t    illegal: /\\/\\*/,\n\t    contains: [\n\t      STRING,\n\t      CHAR_STRING,\n\t      DATE,\n\t      DBL_QUOTED_VARIABLE,\n\t      hljs.NUMBER_MODE,\n\t      OBJECT,\n\t      PROCEDURE\n\t    ]\n\t  };\n\t}\n\n\tcal_1 = cal;\n\treturn cal_1;\n}\n\nexport { requireCal as __require };",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA;CACA,SAAS,GAAG,CAAC,IAAI,EAAE;CACnB,EAAE,MAAM,QAAQ;CAChB,IAAI,oGAAoG;CACxG,IAAI,sBAAsB,CAAC;CAC3B,EAAE,MAAM,QAAQ,GAAG,YAAY,CAAC;CAChC,EAAE,MAAM,aAAa,GAAG;CACxB,IAAI,IAAI,CAAC,mBAAmB;CAC5B,IAAI,IAAI,CAAC,OAAO;CAChB,MAAM,IAAI;CACV,MAAM,IAAI;CACV,MAAM;CACN,QAAQ,SAAS,EAAE,CAAC;CACpB,OAAO;CACP,KAAK;CACL,IAAI,IAAI,CAAC,OAAO;CAChB,MAAM,MAAM;CACZ,MAAM,MAAM;CACZ,MAAM;CACN,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,GAAG;CACd,IAAI,GAAG,EAAE,GAAG;CACZ,IAAI,QAAQ,EAAE,CAAC;CACf,MAAM,KAAK,EAAE,IAAI;CACjB,KAAK,CAAC;CACN,GAAG,CAAC;CACJ,EAAE,MAAM,WAAW,GAAG;CACtB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,SAAS;CACpB,GAAG,CAAC;CACJ,EAAE,MAAM,IAAI,GAAG;CACf,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,2BAA2B;CACtC,IAAI,SAAS,EAAE,CAAC;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,mBAAmB,GAAG;CAC9B,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,GAAG;CACd,IAAI,GAAG,EAAE,GAAG;CACZ,GAAG,CAAC;AACJ;CACA,EAAE,MAAM,SAAS,GAAG;CACpB,IAAI,SAAS,EAAE,UAAU;CACzB,IAAI,aAAa,EAAE,WAAW;CAC9B,IAAI,GAAG,EAAE,MAAM;CACf,IAAI,QAAQ,EAAE,cAAc;CAC5B,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,UAAU;CACrB,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,KAAK,EAAE,IAAI;CACnB,QAAQ,GAAG,EAAE,IAAI;CACjB,QAAQ,QAAQ,EAAE,QAAQ;CAC1B,QAAQ,QAAQ,EAAE;CAClB,UAAU,MAAM;CAChB,UAAU,WAAW;CACrB,SAAS;CACT,OAAO;CACP,KAAK,CAAC,MAAM,CAAC,aAAa,CAAC;CAC3B,GAAG,CAAC;AACJ;CACA,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,SAAS,EAAE,OAAO;CACtB,IAAI,KAAK,EAAE,+FAA+F;CAC1G,IAAI,WAAW,EAAE,IAAI;CACrB,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,UAAU;CACrB,MAAM,SAAS;CACf,KAAK;CACL,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,MAAM;CAChB,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,QAAQ;CACvB,MAAM,OAAO,EAAE,QAAQ;CACvB,KAAK;CACL,IAAI,OAAO,EAAE,MAAM;CACnB,IAAI,QAAQ,EAAE;CACd,MAAM,MAAM;CACZ,MAAM,WAAW;CACjB,MAAM,IAAI;CACV,MAAM,mBAAmB;CACzB,MAAM,IAAI,CAAC,WAAW;CACtB,MAAM,MAAM;CACZ,MAAM,SAAS;CACf,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,MAAc,GAAG,GAAG"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444288,
+      "end": 1702937444288,
+      "order": "normal"
+    }
+  ]
+}

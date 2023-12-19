@@ -1,0 +1,122 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/tables/RowSelection.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, useRowSelect } from \"react-table\";\r\n\r\nimport { Card, Container, Table } from \"react-bootstrap\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst IndeterminateCheckbox = React.forwardRef(\r\n  ({ indeterminate, ...rest }, ref) => {\r\n    const defaultRef = React.useRef();\r\n    const resolvedRef = ref || defaultRef;\r\n\r\n    React.useEffect(() => {\r\n      resolvedRef.current.indeterminate = indeterminate;\r\n    }, [resolvedRef, indeterminate]);\r\n\r\n    return (\r\n      <>\r\n        <input type=\"checkbox\" ref={resolvedRef} {...rest} />\r\n      </>\r\n    );\r\n  }\r\n);\r\n\r\nconst RowSelectionTable = ({ columns, data }) => {\r\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =\r\n    useTable(\r\n      {\r\n        columns,\r\n        data,\r\n      },\r\n      useRowSelect,\r\n      (hooks) => {\r\n        hooks.visibleColumns.push((columns) => [\r\n          // Let's make a column for selection\r\n          {\r\n            id: \"selection\",\r\n            // The header can use the table's getToggleAllRowsSelectedProps method\r\n            // to render a checkbox\r\n            Header: ({ getToggleAllRowsSelectedProps }) => (\r\n              <div>\r\n                <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />\r\n              </div>\r\n            ),\r\n            // The cell can use the individual row's getToggleRowSelectedProps method\r\n            // to the render a checkbox\r\n            Cell: ({ row }) => (\r\n              <div>\r\n                <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />\r\n              </div>\r\n            ),\r\n          },\r\n          ...columns,\r\n        ]);\r\n      }\r\n    );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Row Selection</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Row selection by react-table\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  <th {...column.getHeaderProps()}>\r\n                    {column.render(\"Header\")}\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {rows.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst RowSelection = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Row Selection\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Row Selection</h1>\r\n\r\n      <RowSelectionTable columns={tableColumns} data={tableData.slice(0, 10)} />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default RowSelection;\r\n",
+      "start": 1702937440807,
+      "end": 1702937440869,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440869,
+      "end": 1702937440869,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440869,
+      "end": 1702937440869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { Fragment, jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { useTable, useRowSelect } from \"react-table\";\nimport { Card, Container, Table } from \"react-bootstrap\";\nimport { tableData, tableColumns } from \"./data.js\";\nconst IndeterminateCheckbox = React.forwardRef(\n  ({ indeterminate, ...rest }, ref) => {\n    const defaultRef = React.useRef();\n    const resolvedRef = ref || defaultRef;\n    React.useEffect(() => {\n      resolvedRef.current.indeterminate = indeterminate;\n    }, [resolvedRef, indeterminate]);\n    return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(\"input\", { type: \"checkbox\", ref: resolvedRef, ...rest }) });\n  }\n);\nconst RowSelectionTable = ({ columns, data }) => {\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(\n    {\n      columns,\n      data\n    },\n    useRowSelect,\n    (hooks) => {\n      hooks.visibleColumns.push((columns2) => [\n        // Let's make a column for selection\n        {\n          id: \"selection\",\n          // The header can use the table's getToggleAllRowsSelectedProps method\n          // to render a checkbox\n          Header: ({ getToggleAllRowsSelectedProps }) => /* @__PURE__ */ jsx(\"div\", { children: /* @__PURE__ */ jsx(IndeterminateCheckbox, { ...getToggleAllRowsSelectedProps() }) }),\n          // The cell can use the individual row's getToggleRowSelectedProps method\n          // to the render a checkbox\n          Cell: ({ row }) => /* @__PURE__ */ jsx(\"div\", { children: /* @__PURE__ */ jsx(IndeterminateCheckbox, { ...row.getToggleRowSelectedProps() }) })\n        },\n        ...columns2\n      ]);\n    }\n  );\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Row Selection\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Row selection by react-table\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsxs(Table, { striped: true, bordered: true, ...getTableProps(), children: [\n      /* @__PURE__ */ jsx(\"thead\", { children: headerGroups.map((headerGroup) => /* @__PURE__ */ jsx(\"tr\", { ...headerGroup.getHeaderGroupProps(), children: headerGroup.headers.map((column) => /* @__PURE__ */ jsx(\"th\", { ...column.getHeaderProps(), children: column.render(\"Header\") })) })) }),\n      /* @__PURE__ */ jsx(\"tbody\", { ...getTableBodyProps(), children: rows.map((row, i) => {\n        prepareRow(row);\n        return /* @__PURE__ */ jsx(\"tr\", { ...row.getRowProps(), children: row.cells.map((cell) => {\n          return /* @__PURE__ */ jsx(\"td\", { ...cell.getCellProps(), children: cell.render(\"Cell\") });\n        }) });\n      }) })\n    ] }) })\n  ] });\n};\nconst RowSelection = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Row Selection\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Row Selection\" }),\n    /* @__PURE__ */ jsx(RowSelectionTable, { columns: tableColumns, data: tableData.slice(0, 10) })\n  ] })\n] });\nexport default RowSelection;\n",
+      "start": 1702937440869,
+      "end": 1702937440874,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/tables/RowSelection.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, useRowSelect } from \"react-table\";\r\n\r\nimport { Card, Container, Table } from \"react-bootstrap\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst IndeterminateCheckbox = React.forwardRef(\r\n  ({ indeterminate, ...rest }, ref) => {\r\n    const defaultRef = React.useRef();\r\n    const resolvedRef = ref || defaultRef;\r\n\r\n    React.useEffect(() => {\r\n      resolvedRef.current.indeterminate = indeterminate;\r\n    }, [resolvedRef, indeterminate]);\r\n\r\n    return (\r\n      <>\r\n        <input type=\"checkbox\" ref={resolvedRef} {...rest} />\r\n      </>\r\n    );\r\n  }\r\n);\r\n\r\nconst RowSelectionTable = ({ columns, data }) => {\r\n  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =\r\n    useTable(\r\n      {\r\n        columns,\r\n        data,\r\n      },\r\n      useRowSelect,\r\n      (hooks) => {\r\n        hooks.visibleColumns.push((columns) => [\r\n          // Let's make a column for selection\r\n          {\r\n            id: \"selection\",\r\n            // The header can use the table's getToggleAllRowsSelectedProps method\r\n            // to render a checkbox\r\n            Header: ({ getToggleAllRowsSelectedProps }) => (\r\n              <div>\r\n                <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />\r\n              </div>\r\n            ),\r\n            // The cell can use the individual row's getToggleRowSelectedProps method\r\n            // to the render a checkbox\r\n            Cell: ({ row }) => (\r\n              <div>\r\n                <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />\r\n              </div>\r\n            ),\r\n          },\r\n          ...columns,\r\n        ]);\r\n      }\r\n    );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Row Selection</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Row selection by react-table\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  <th {...column.getHeaderProps()}>\r\n                    {column.render(\"Header\")}\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {rows.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst RowSelection = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Row Selection\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Row Selection</h1>\r\n\r\n      <RowSelectionTable columns={tableColumns} data={tableData.slice(0, 10)} />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default RowSelection;\r\n"
+        ],
+        "mappings": "AAkBM,mBACE,KAyCF,YA1CA;AAlBN,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,UAAU,oBAAoB;AAEvC,SAAS,MAAM,WAAW,aAAa;AAEvC,SAAS,WAAW,oBAAoB;AAExC,MAAM,wBAAwB,MAAM;AAAA,EAClC,CAAC,EAAE,eAAe,GAAG,KAAK,GAAG,QAAQ;AACnC,UAAM,aAAa,MAAM,OAAO;AAChC,UAAM,cAAc,OAAO;AAE3B,UAAM,UAAU,MAAM;AACpB,kBAAY,QAAQ,gBAAgB;AAAA,IACtC,GAAG,CAAC,aAAa,aAAa,CAAC;AAE/B,WACE,gCACE,8BAAC,WAAM,MAAK,YAAW,KAAK,aAAc,GAAG,MAAM,GACrD;AAAA,EAEJ;AACF;AAEA,MAAM,oBAAoB,CAAC,EAAE,SAAS,KAAK,MAAM;AAC/C,QAAM,EAAE,eAAe,mBAAmB,cAAc,MAAM,WAAW,IACvE;AAAA,IACE;AAAA,MACE;AAAA,MACA;AAAA,IACF;AAAA,IACA;AAAA,IACA,CAAC,UAAU;AACT,YAAM,eAAe,KAAK,CAACA,aAAY;AAAA;AAAA,QAErC;AAAA,UACE,IAAI;AAAA;AAAA;AAAA,UAGJ,QAAQ,CAAC,EAAE,8BAA8B,MACvC,oBAAC,SACC,8BAAC,yBAAuB,GAAG,8BAA8B,GAAG,GAC9D;AAAA;AAAA;AAAA,UAIF,MAAM,CAAC,EAAE,IAAI,MACX,oBAAC,SACC,8BAAC,yBAAuB,GAAG,IAAI,0BAA0B,GAAG,GAC9D;AAAA,QAEJ;AAAA,QACA,GAAGA;AAAA,MACL,CAAC;AAAA,IACH;AAAA,EACF;AAEF,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,2BAAa;AAAA,MACzB,oBAAC,QAAG,WAAU,4BAA2B,0CAEzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,+BAAC,SAAM,SAAO,MAAC,UAAQ,MAAE,GAAG,cAAc,GACxC;AAAA,0BAAC,WACE,uBAAa,IAAI,CAAC,gBACjB,oBAAC,QAAI,GAAG,YAAY,oBAAoB,GACrC,sBAAY,QAAQ,IAAI,CAAC,WACxB,oBAAC,QAAI,GAAG,OAAO,eAAe,GAC3B,iBAAO,OAAO,QAAQ,GACzB,CACD,GACH,CACD,GACH;AAAA,MACA,oBAAC,WAAO,GAAG,kBAAkB,GAC1B,eAAK,IAAI,CAAC,KAAK,MAAM;AACpB,mBAAW,GAAG;AACd,eACE,oBAAC,QAAI,GAAG,IAAI,YAAY,GACrB,cAAI,MAAM,IAAI,CAAC,SAAS;AACvB,iBACE,oBAAC,QAAI,GAAG,KAAK,aAAa,GAAI,eAAK,OAAO,MAAM,GAAE;AAAA,QAEtD,CAAC,GACH;AAAA,MAEJ,CAAC,GACH;AAAA,OACF,GACF;AAAA,KACF;AAEJ;AAEA,MAAM,eAAe,MACnB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,iBAAgB;AAAA,EAC9B,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,QAAG,WAAU,WAAU,2BAAa;AAAA,IAErC,oBAAC,qBAAkB,SAAS,cAAc,MAAM,UAAU,MAAM,GAAG,EAAE,GAAG;AAAA,KAC1E;AAAA,GACF;AAGF,eAAe;",
+        "names": [
+          "columns"
+        ]
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440874,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/erlang.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Erlang\nDescription: Erlang is a general-purpose functional language, with strict evaluation, single assignment, and dynamic typing.\nAuthor: Nikolay Zakharov <nikolay.desh@gmail.com>, Dmitry Kovega <arhibot@gmail.com>\nWebsite: https://www.erlang.org\nCategory: functional\n*/\n\n/** @type LanguageFn */\nfunction erlang(hljs) {\n  const BASIC_ATOM_RE = '[a-z\\'][a-zA-Z0-9_\\']*';\n  const FUNCTION_NAME_RE = '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';\n  const ERLANG_RESERVED = {\n    keyword:\n      'after and andalso|10 band begin bnot bor bsl bzr bxor case catch cond div end fun if ' +\n      'let not of orelse|10 query receive rem try when xor',\n    literal:\n      'false true'\n  };\n\n  const COMMENT = hljs.COMMENT('%', '$');\n  const NUMBER = {\n    className: 'number',\n    begin: '\\\\b(\\\\d+(_\\\\d+)*#[a-fA-F0-9]+(_[a-fA-F0-9]+)*|\\\\d+(_\\\\d+)*(\\\\.\\\\d+(_\\\\d+)*)?([eE][-+]?\\\\d+)?)',\n    relevance: 0\n  };\n  const NAMED_FUN = {\n    begin: 'fun\\\\s+' + BASIC_ATOM_RE + '/\\\\d+'\n  };\n  const FUNCTION_CALL = {\n    begin: FUNCTION_NAME_RE + '\\\\(',\n    end: '\\\\)',\n    returnBegin: true,\n    relevance: 0,\n    contains: [\n      {\n        begin: FUNCTION_NAME_RE,\n        relevance: 0\n      },\n      {\n        begin: '\\\\(',\n        end: '\\\\)',\n        endsWithParent: true,\n        returnEnd: true,\n        relevance: 0\n        // \"contains\" defined later\n      }\n    ]\n  };\n  const TUPLE = {\n    begin: /\\{/,\n    end: /\\}/,\n    relevance: 0\n    // \"contains\" defined later\n  };\n  const VAR1 = {\n    begin: '\\\\b_([A-Z][A-Za-z0-9_]*)?',\n    relevance: 0\n  };\n  const VAR2 = {\n    begin: '[A-Z][a-zA-Z0-9_]*',\n    relevance: 0\n  };\n  const RECORD_ACCESS = {\n    begin: '#' + hljs.UNDERSCORE_IDENT_RE,\n    relevance: 0,\n    returnBegin: true,\n    contains: [\n      {\n        begin: '#' + hljs.UNDERSCORE_IDENT_RE,\n        relevance: 0\n      },\n      {\n        begin: /\\{/,\n        end: /\\}/,\n        relevance: 0\n        // \"contains\" defined later\n      }\n    ]\n  };\n\n  const BLOCK_STATEMENTS = {\n    beginKeywords: 'fun receive if try case',\n    end: 'end',\n    keywords: ERLANG_RESERVED\n  };\n  BLOCK_STATEMENTS.contains = [\n    COMMENT,\n    NAMED_FUN,\n    hljs.inherit(hljs.APOS_STRING_MODE, {\n      className: ''\n    }),\n    BLOCK_STATEMENTS,\n    FUNCTION_CALL,\n    hljs.QUOTE_STRING_MODE,\n    NUMBER,\n    TUPLE,\n    VAR1,\n    VAR2,\n    RECORD_ACCESS\n  ];\n\n  const BASIC_MODES = [\n    COMMENT,\n    NAMED_FUN,\n    BLOCK_STATEMENTS,\n    FUNCTION_CALL,\n    hljs.QUOTE_STRING_MODE,\n    NUMBER,\n    TUPLE,\n    VAR1,\n    VAR2,\n    RECORD_ACCESS\n  ];\n  FUNCTION_CALL.contains[1].contains = BASIC_MODES;\n  TUPLE.contains = BASIC_MODES;\n  RECORD_ACCESS.contains[1].contains = BASIC_MODES;\n\n  const DIRECTIVES = [\n    \"-module\",\n    \"-record\",\n    \"-undef\",\n    \"-export\",\n    \"-ifdef\",\n    \"-ifndef\",\n    \"-author\",\n    \"-copyright\",\n    \"-doc\",\n    \"-vsn\",\n    \"-import\",\n    \"-include\",\n    \"-include_lib\",\n    \"-compile\",\n    \"-define\",\n    \"-else\",\n    \"-endif\",\n    \"-file\",\n    \"-behaviour\",\n    \"-behavior\",\n    \"-spec\"\n  ];\n\n  const PARAMS = {\n    className: 'params',\n    begin: '\\\\(',\n    end: '\\\\)',\n    contains: BASIC_MODES\n  };\n  return {\n    name: 'Erlang',\n    aliases: ['erl'],\n    keywords: ERLANG_RESERVED,\n    illegal: '(</|\\\\*=|\\\\+=|-=|/\\\\*|\\\\*/|\\\\(\\\\*|\\\\*\\\\))',\n    contains: [\n      {\n        className: 'function',\n        begin: '^' + BASIC_ATOM_RE + '\\\\s*\\\\(',\n        end: '->',\n        returnBegin: true,\n        illegal: '\\\\(|#|//|/\\\\*|\\\\\\\\|:|;',\n        contains: [\n          PARAMS,\n          hljs.inherit(hljs.TITLE_MODE, {\n            begin: BASIC_ATOM_RE\n          })\n        ],\n        starts: {\n          end: ';|\\\\.',\n          keywords: ERLANG_RESERVED,\n          contains: BASIC_MODES\n        }\n      },\n      COMMENT,\n      {\n        begin: '^-',\n        end: '\\\\.',\n        relevance: 0,\n        excludeEnd: true,\n        returnBegin: true,\n        keywords: {\n          $pattern: '-' + hljs.IDENT_RE,\n          keyword: DIRECTIVES.map(x => `${x}|1.5`).join(\" \")\n        },\n        contains: [PARAMS]\n      },\n      NUMBER,\n      hljs.QUOTE_STRING_MODE,\n      RECORD_ACCESS,\n      VAR1,\n      VAR2,\n      TUPLE,\n      {\n        begin: /\\.$/\n      } // relevance booster\n    ]\n  };\n}\n\nmodule.exports = erlang;\n",
+      "start": 1702937444316,
+      "end": 1702937444340,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444340,
+      "end": 1702937444340,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Erlang\nDescription: Erlang is a general-purpose functional language, with strict evaluation, single assignment, and dynamic typing.\nAuthor: Nikolay Zakharov <nikolay.desh@gmail.com>, Dmitry Kovega <arhibot@gmail.com>\nWebsite: https://www.erlang.org\nCategory: functional\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar erlang_1;\nvar hasRequiredErlang;\n\nfunction requireErlang () {\n\tif (hasRequiredErlang) return erlang_1;\n\thasRequiredErlang = 1;\n\t/** @type LanguageFn */\n\tfunction erlang(hljs) {\n\t  const BASIC_ATOM_RE = '[a-z\\'][a-zA-Z0-9_\\']*';\n\t  const FUNCTION_NAME_RE = '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';\n\t  const ERLANG_RESERVED = {\n\t    keyword:\n\t      'after and andalso|10 band begin bnot bor bsl bzr bxor case catch cond div end fun if ' +\n\t      'let not of orelse|10 query receive rem try when xor',\n\t    literal:\n\t      'false true'\n\t  };\n\n\t  const COMMENT = hljs.COMMENT('%', '$');\n\t  const NUMBER = {\n\t    className: 'number',\n\t    begin: '\\\\b(\\\\d+(_\\\\d+)*#[a-fA-F0-9]+(_[a-fA-F0-9]+)*|\\\\d+(_\\\\d+)*(\\\\.\\\\d+(_\\\\d+)*)?([eE][-+]?\\\\d+)?)',\n\t    relevance: 0\n\t  };\n\t  const NAMED_FUN = {\n\t    begin: 'fun\\\\s+' + BASIC_ATOM_RE + '/\\\\d+'\n\t  };\n\t  const FUNCTION_CALL = {\n\t    begin: FUNCTION_NAME_RE + '\\\\(',\n\t    end: '\\\\)',\n\t    returnBegin: true,\n\t    relevance: 0,\n\t    contains: [\n\t      {\n\t        begin: FUNCTION_NAME_RE,\n\t        relevance: 0\n\t      },\n\t      {\n\t        begin: '\\\\(',\n\t        end: '\\\\)',\n\t        endsWithParent: true,\n\t        returnEnd: true,\n\t        relevance: 0\n\t        // \"contains\" defined later\n\t      }\n\t    ]\n\t  };\n\t  const TUPLE = {\n\t    begin: /\\{/,\n\t    end: /\\}/,\n\t    relevance: 0\n\t    // \"contains\" defined later\n\t  };\n\t  const VAR1 = {\n\t    begin: '\\\\b_([A-Z][A-Za-z0-9_]*)?',\n\t    relevance: 0\n\t  };\n\t  const VAR2 = {\n\t    begin: '[A-Z][a-zA-Z0-9_]*',\n\t    relevance: 0\n\t  };\n\t  const RECORD_ACCESS = {\n\t    begin: '#' + hljs.UNDERSCORE_IDENT_RE,\n\t    relevance: 0,\n\t    returnBegin: true,\n\t    contains: [\n\t      {\n\t        begin: '#' + hljs.UNDERSCORE_IDENT_RE,\n\t        relevance: 0\n\t      },\n\t      {\n\t        begin: /\\{/,\n\t        end: /\\}/,\n\t        relevance: 0\n\t        // \"contains\" defined later\n\t      }\n\t    ]\n\t  };\n\n\t  const BLOCK_STATEMENTS = {\n\t    beginKeywords: 'fun receive if try case',\n\t    end: 'end',\n\t    keywords: ERLANG_RESERVED\n\t  };\n\t  BLOCK_STATEMENTS.contains = [\n\t    COMMENT,\n\t    NAMED_FUN,\n\t    hljs.inherit(hljs.APOS_STRING_MODE, {\n\t      className: ''\n\t    }),\n\t    BLOCK_STATEMENTS,\n\t    FUNCTION_CALL,\n\t    hljs.QUOTE_STRING_MODE,\n\t    NUMBER,\n\t    TUPLE,\n\t    VAR1,\n\t    VAR2,\n\t    RECORD_ACCESS\n\t  ];\n\n\t  const BASIC_MODES = [\n\t    COMMENT,\n\t    NAMED_FUN,\n\t    BLOCK_STATEMENTS,\n\t    FUNCTION_CALL,\n\t    hljs.QUOTE_STRING_MODE,\n\t    NUMBER,\n\t    TUPLE,\n\t    VAR1,\n\t    VAR2,\n\t    RECORD_ACCESS\n\t  ];\n\t  FUNCTION_CALL.contains[1].contains = BASIC_MODES;\n\t  TUPLE.contains = BASIC_MODES;\n\t  RECORD_ACCESS.contains[1].contains = BASIC_MODES;\n\n\t  const DIRECTIVES = [\n\t    \"-module\",\n\t    \"-record\",\n\t    \"-undef\",\n\t    \"-export\",\n\t    \"-ifdef\",\n\t    \"-ifndef\",\n\t    \"-author\",\n\t    \"-copyright\",\n\t    \"-doc\",\n\t    \"-vsn\",\n\t    \"-import\",\n\t    \"-include\",\n\t    \"-include_lib\",\n\t    \"-compile\",\n\t    \"-define\",\n\t    \"-else\",\n\t    \"-endif\",\n\t    \"-file\",\n\t    \"-behaviour\",\n\t    \"-behavior\",\n\t    \"-spec\"\n\t  ];\n\n\t  const PARAMS = {\n\t    className: 'params',\n\t    begin: '\\\\(',\n\t    end: '\\\\)',\n\t    contains: BASIC_MODES\n\t  };\n\t  return {\n\t    name: 'Erlang',\n\t    aliases: ['erl'],\n\t    keywords: ERLANG_RESERVED,\n\t    illegal: '(</|\\\\*=|\\\\+=|-=|/\\\\*|\\\\*/|\\\\(\\\\*|\\\\*\\\\))',\n\t    contains: [\n\t      {\n\t        className: 'function',\n\t        begin: '^' + BASIC_ATOM_RE + '\\\\s*\\\\(',\n\t        end: '->',\n\t        returnBegin: true,\n\t        illegal: '\\\\(|#|//|/\\\\*|\\\\\\\\|:|;',\n\t        contains: [\n\t          PARAMS,\n\t          hljs.inherit(hljs.TITLE_MODE, {\n\t            begin: BASIC_ATOM_RE\n\t          })\n\t        ],\n\t        starts: {\n\t          end: ';|\\\\.',\n\t          keywords: ERLANG_RESERVED,\n\t          contains: BASIC_MODES\n\t        }\n\t      },\n\t      COMMENT,\n\t      {\n\t        begin: '^-',\n\t        end: '\\\\.',\n\t        relevance: 0,\n\t        excludeEnd: true,\n\t        returnBegin: true,\n\t        keywords: {\n\t          $pattern: '-' + hljs.IDENT_RE,\n\t          keyword: DIRECTIVES.map(x => `${x}|1.5`).join(\" \")\n\t        },\n\t        contains: [PARAMS]\n\t      },\n\t      NUMBER,\n\t      hljs.QUOTE_STRING_MODE,\n\t      RECORD_ACCESS,\n\t      VAR1,\n\t      VAR2,\n\t      TUPLE,\n\t      {\n\t        begin: /\\.$/\n\t      } // relevance booster\n\t    ]\n\t  };\n\t}\n\n\terlang_1 = erlang;\n\treturn erlang_1;\n}\n\nexport { requireErlang as __require };",
+      "start": 1702937444340,
+      "end": 1702937444341,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444341,
+      "end": 1702937444341,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444341,
+      "end": 1702937444341,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444341,
+      "end": 1702937444341,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444341,
+      "end": 1702937444341,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444341,
+      "end": 1702937444341,
+      "order": "normal"
+    }
+  ]
+}

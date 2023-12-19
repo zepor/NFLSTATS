@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/assets/img/brands/faFacebook.svg",
+  "transforms": [
+    {
+      "name": "vite:asset",
+      "result": "export default \"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjEwMCUiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik00NDkuNDQ2LDBjMzQuNTI1LDAgNjIuNTU0LDI4LjAzIDYyLjU1NCw2Mi41NTRsMCwzODYuODkyYzAsMzQuNTI0IC0yOC4wMyw2Mi41NTQgLTYyLjU1NCw2Mi41NTRsLTEwNi40NjgsMGwwLC0xOTIuOTE1bDY2LjYsMGwxMi42NzIsLTgyLjYyMWwtNzkuMjcyLDBsMCwtNTMuNjE3YzAsLTIyLjYwMyAxMS4wNzMsLTQ0LjYzNiA0Ni41OCwtNDQuNjM2bDM2LjA0MiwwbDAsLTcwLjM0YzAsMCAtMzIuNzEsLTUuNTgyIC02My45ODIsLTUuNTgyYy02NS4yODgsMCAtMTA3Ljk2LDM5LjU2OSAtMTA3Ljk2LDExMS4yMDRsMCw2Mi45NzFsLTcyLjU3MywwbDAsODIuNjIxbDcyLjU3MywwbDAsMTkyLjkxNWwtMTkxLjEwNCwwYy0zNC41MjQsMCAtNjIuNTU0LC0yOC4wMyAtNjIuNTU0LC02Mi41NTRsMCwtMzg2Ljg5MmMwLC0zNC41MjQgMjguMDI5LC02Mi41NTQgNjIuNTU0LC02Mi41NTRsMzg2Ljg5MiwwWiIgc3R5bGU9ImZpbGw6IzE3NzdmMjsiLz48L3N2Zz4=\"",
+      "start": 1702937441580,
+      "end": 1702937441607,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441607,
+      "end": 1702937441607,
+      "order": "normal"
+    }
+  ]
+}

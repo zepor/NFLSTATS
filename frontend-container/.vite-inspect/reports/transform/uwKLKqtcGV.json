@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/ui/EmbedVideo.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Embed21By9 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 21:9</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">21:9 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-21x9\">\r\n        <iframe\r\n          title=\"Responsive embed video 21:9\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed16By9 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 16:9</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">16:9 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-16x9\">\r\n        <iframe\r\n          title=\"Responsive embed video 16:9\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed1By1 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 1:1</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">1:1 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-1x1\">\r\n        <iframe\r\n          title=\"Responsive embed video 1:1\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed4By3 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 4:3</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">4:3 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-4x3\">\r\n        <iframe\r\n          title=\"Responsive embed video 4:3\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst EmbedVideo = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Embed Video\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Embed Video</h1>\r\n\r\n      <Row>\r\n        <Col lg=\"6\">\r\n          <Embed21By9 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed16By9 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed1By1 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed4By3 />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default EmbedVideo;\r\n",
+      "start": 1702937436953,
+      "end": 1702937440806,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440806,
+      "end": 1702937440806,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440806,
+      "end": 1702937440806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\nconst Embed21By9 = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(Card.Title, { children: \"Responsive embed video 21:9\" }),\n    /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"21:9 aspect ratio\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card.Body, { className: \"pt-0\", children: /* @__PURE__ */ jsx(\"div\", { className: \"ratio ratio-21x9\", children: /* @__PURE__ */ jsx(\n    \"iframe\",\n    {\n      title: \"Responsive embed video 21:9\",\n      src: \"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\n    }\n  ) }) })\n] });\nconst Embed16By9 = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(Card.Title, { children: \"Responsive embed video 16:9\" }),\n    /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"16:9 aspect ratio\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card.Body, { className: \"pt-0\", children: /* @__PURE__ */ jsx(\"div\", { className: \"ratio ratio-16x9\", children: /* @__PURE__ */ jsx(\n    \"iframe\",\n    {\n      title: \"Responsive embed video 16:9\",\n      src: \"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\n    }\n  ) }) })\n] });\nconst Embed1By1 = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(Card.Title, { children: \"Responsive embed video 1:1\" }),\n    /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"1:1 aspect ratio\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card.Body, { className: \"pt-0\", children: /* @__PURE__ */ jsx(\"div\", { className: \"ratio ratio-1x1\", children: /* @__PURE__ */ jsx(\n    \"iframe\",\n    {\n      title: \"Responsive embed video 1:1\",\n      src: \"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\n    }\n  ) }) })\n] });\nconst Embed4By3 = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(Card.Title, { children: \"Responsive embed video 4:3\" }),\n    /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"4:3 aspect ratio\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card.Body, { className: \"pt-0\", children: /* @__PURE__ */ jsx(\"div\", { className: \"ratio ratio-4x3\", children: /* @__PURE__ */ jsx(\n    \"iframe\",\n    {\n      title: \"Responsive embed video 4:3\",\n      src: \"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\n    }\n  ) }) })\n] });\nconst EmbedVideo = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Embed Video\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Embed Video\" }),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", children: /* @__PURE__ */ jsx(Embed21By9, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", children: /* @__PURE__ */ jsx(Embed16By9, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", children: /* @__PURE__ */ jsx(Embed1By1, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", children: /* @__PURE__ */ jsx(Embed4By3, {}) })\n    ] })\n  ] })\n] });\nexport default EmbedVideo;\n",
+      "start": 1702937440806,
+      "end": 1702937440809,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/ui/EmbedVideo.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Embed21By9 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 21:9</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">21:9 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-21x9\">\r\n        <iframe\r\n          title=\"Responsive embed video 21:9\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed16By9 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 16:9</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">16:9 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-16x9\">\r\n        <iframe\r\n          title=\"Responsive embed video 16:9\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed1By1 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 1:1</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">1:1 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-1x1\">\r\n        <iframe\r\n          title=\"Responsive embed video 1:1\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst Embed4By3 = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title>Responsive embed video 4:3</Card.Title>\r\n      <h6 className=\"card-subtitle text-muted\">4:3 aspect ratio</h6>\r\n    </Card.Header>\r\n    <Card.Body className=\"pt-0\">\r\n      <div className=\"ratio ratio-4x3\">\r\n        <iframe\r\n          title=\"Responsive embed video 4:3\"\r\n          src=\"https://www.youtube.com/embed/hi4pzKvuEQM?autohide=0&showinfo=0&controls=0\"\r\n        ></iframe>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst EmbedVideo = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Embed Video\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Embed Video</h1>\r\n\r\n      <Row>\r\n        <Col lg=\"6\">\r\n          <Embed21By9 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed16By9 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed1By1 />\r\n        </Col>\r\n        <Col lg=\"6\">\r\n          <Embed4By3 />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default EmbedVideo;\r\n"
+        ],
+        "mappings": "AAMI,SACE,KADF;AANJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,MAAM,KAAK,WAAW,WAAW;AAE1C,MAAM,aAAa,MACjB,qBAAC,QACC;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,KAAK,OAAL,EAAW,yCAA2B;AAAA,IACvC,oBAAC,QAAG,WAAU,4BAA2B,+BAAiB;AAAA,KAC5D;AAAA,EACA,oBAAC,KAAK,MAAL,EAAU,WAAU,QACnB,8BAAC,SAAI,WAAU,oBACb;AAAA,IAAC;AAAA;AAAA,MACC,OAAM;AAAA,MACN,KAAI;AAAA;AAAA,EACL,GACH,GACF;AAAA,GACF;AAGF,MAAM,aAAa,MACjB,qBAAC,QACC;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,KAAK,OAAL,EAAW,yCAA2B;AAAA,IACvC,oBAAC,QAAG,WAAU,4BAA2B,+BAAiB;AAAA,KAC5D;AAAA,EACA,oBAAC,KAAK,MAAL,EAAU,WAAU,QACnB,8BAAC,SAAI,WAAU,oBACb;AAAA,IAAC;AAAA;AAAA,MACC,OAAM;AAAA,MACN,KAAI;AAAA;AAAA,EACL,GACH,GACF;AAAA,GACF;AAGF,MAAM,YAAY,MAChB,qBAAC,QACC;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,KAAK,OAAL,EAAW,wCAA0B;AAAA,IACtC,oBAAC,QAAG,WAAU,4BAA2B,8BAAgB;AAAA,KAC3D;AAAA,EACA,oBAAC,KAAK,MAAL,EAAU,WAAU,QACnB,8BAAC,SAAI,WAAU,mBACb;AAAA,IAAC;AAAA;AAAA,MACC,OAAM;AAAA,MACN,KAAI;AAAA;AAAA,EACL,GACH,GACF;AAAA,GACF;AAGF,MAAM,YAAY,MAChB,qBAAC,QACC;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,KAAK,OAAL,EAAW,wCAA0B;AAAA,IACtC,oBAAC,QAAG,WAAU,4BAA2B,8BAAgB;AAAA,KAC3D;AAAA,EACA,oBAAC,KAAK,MAAL,EAAU,WAAU,QACnB,8BAAC,SAAI,WAAU,mBACb;AAAA,IAAC;AAAA;AAAA,MACC,OAAM;AAAA,MACN,KAAI;AAAA;AAAA,EACL,GACH,GACF;AAAA,GACF;AAGF,MAAM,aAAa,MACjB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,eAAc;AAAA,EAC5B,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,QAAG,WAAU,WAAU,yBAAW;AAAA,IAEnC,qBAAC,OACC;AAAA,0BAAC,OAAI,IAAG,KACN,8BAAC,cAAW,GACd;AAAA,MACA,oBAAC,OAAI,IAAG,KACN,8BAAC,cAAW,GACd;AAAA,MACA,oBAAC,OAAI,IAAG,KACN,8BAAC,aAAU,GACb;AAAA,MACA,oBAAC,OAAI,IAAG,KACN,8BAAC,aAAU,GACb;AAAA,OACF;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/parse-entities/decode-entity.browser.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\n/* eslint-env browser */\n\nvar el\n\nvar semicolon = 59 //  ';'\n\nmodule.exports = decodeEntity\n\nfunction decodeEntity(characters) {\n  var entity = '&' + characters + ';'\n  var char\n\n  el = el || document.createElement('i')\n  el.innerHTML = entity\n  char = el.textContent\n\n  // Some entities do not require the closing semicolon (`&not` - for instance),\n  // which leads to situations where parsing the assumed entity of &notit; will\n  // result in the string `¬it;`.  When we encounter a trailing semicolon after\n  // parsing and the entity to decode was not a semicolon (`&semi;`), we can\n  // assume that the matching was incomplete\n  if (char.charCodeAt(char.length - 1) === semicolon && characters !== 'semi') {\n    return false\n  }\n\n  // If the decoded string is equal to the input, the entity was not valid\n  return char === entity ? false : char\n}\n",
+      "start": 1702937445214,
+      "end": 1702937445300,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n'use strict'\n\n/* eslint-env browser */\n\nvar el\n\nvar semicolon = 59 //  ';'\n\nvar decodeEntity_browser = decodeEntity\n\nfunction decodeEntity(characters) {\n  var entity = '&' + characters + ';'\n  var char\n\n  el = el || document.createElement('i')\n  el.innerHTML = entity\n  char = el.textContent\n\n  // Some entities do not require the closing semicolon (`&not` - for instance),\n  // which leads to situations where parsing the assumed entity of &notit; will\n  // result in the string `¬it;`.  When we encounter a trailing semicolon after\n  // parsing and the entity to decode was not a semicolon (`&semi;`), we can\n  // assume that the matching was incomplete\n  if (char.charCodeAt(char.length - 1) === semicolon && characters !== 'semi') {\n    return false\n  }\n\n  // If the decoded string is equal to the input, the entity was not valid\n  return char === entity ? false : char\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(decodeEntity_browser);\nexport { decodeEntity_browser as __moduleExports };",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY;AACZ;AACA;AACA;AACA,IAAI,EAAE;AACN;AACA,IAAI,SAAS,GAAG,EAAE;AAClB;IACA,oBAAc,GAAG,YAAY;AAC7B;AACA,SAAS,YAAY,CAAC,UAAU,EAAE;AAClC,EAAE,IAAI,MAAM,GAAG,GAAG,GAAG,UAAU,GAAG,GAAG;AACrC,EAAE,IAAI,IAAI;AACV;AACA,EAAE,EAAE,GAAG,EAAE,IAAI,QAAQ,CAAC,aAAa,CAAC,GAAG,CAAC;AACxC,EAAE,EAAE,CAAC,SAAS,GAAG,MAAM;AACvB,EAAE,IAAI,GAAG,EAAE,CAAC,WAAW;AACvB;AACA;AACA;AACA;AACA;AACA;AACA,EAAE,IAAI,IAAI,CAAC,UAAU,CAAC,IAAI,CAAC,MAAM,GAAG,CAAC,CAAC,KAAK,SAAS,IAAI,UAAU,KAAK,MAAM,EAAE;AAC/E,IAAI,OAAO,KAAK;AAChB,GAAG;AACH;AACA;AACA,EAAE,OAAO,IAAI,KAAK,MAAM,GAAG,KAAK,GAAG,IAAI;AACvC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/parser3.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Parser3\nRequires: xml.js\nAuthor: Oleg Volchkov <oleg@volchkov.net>\nWebsite: https://www.parser.ru/en/\nCategory: template\n*/\n\nfunction parser3(hljs) {\n  const CURLY_SUBCOMMENT = hljs.COMMENT(\n    /\\{/,\n    /\\}/,\n    {\n      contains: [ 'self' ]\n    }\n  );\n  return {\n    name: 'Parser3',\n    subLanguage: 'xml',\n    relevance: 0,\n    contains: [\n      hljs.COMMENT('^#', '$'),\n      hljs.COMMENT(\n        /\\^rem\\{/,\n        /\\}/,\n        {\n          relevance: 10,\n          contains: [ CURLY_SUBCOMMENT ]\n        }\n      ),\n      {\n        className: 'meta',\n        begin: '^@(?:BASE|USE|CLASS|OPTIONS)$',\n        relevance: 10\n      },\n      {\n        className: 'title',\n        begin: '@[\\\\w\\\\-]+\\\\[[\\\\w^;\\\\-]*\\\\](?:\\\\[[\\\\w^;\\\\-]*\\\\])?(?:.*)$'\n      },\n      {\n        className: 'variable',\n        begin: /\\$\\{?[\\w\\-.:]+\\}?/\n      },\n      {\n        className: 'keyword',\n        begin: /\\^[\\w\\-.:]+/\n      },\n      {\n        className: 'number',\n        begin: '\\\\^#[0-9a-fA-F]+'\n      },\n      hljs.C_NUMBER_MODE\n    ]\n  };\n}\n\nmodule.exports = parser3;\n",
+      "start": 1702937444501,
+      "end": 1702937444543,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Parser3\nRequires: xml.js\nAuthor: Oleg Volchkov <oleg@volchkov.net>\nWebsite: https://www.parser.ru/en/\nCategory: template\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar parser3_1;\nvar hasRequiredParser3;\n\nfunction requireParser3 () {\n\tif (hasRequiredParser3) return parser3_1;\n\thasRequiredParser3 = 1;\n\tfunction parser3(hljs) {\n\t  const CURLY_SUBCOMMENT = hljs.COMMENT(\n\t    /\\{/,\n\t    /\\}/,\n\t    {\n\t      contains: [ 'self' ]\n\t    }\n\t  );\n\t  return {\n\t    name: 'Parser3',\n\t    subLanguage: 'xml',\n\t    relevance: 0,\n\t    contains: [\n\t      hljs.COMMENT('^#', '$'),\n\t      hljs.COMMENT(\n\t        /\\^rem\\{/,\n\t        /\\}/,\n\t        {\n\t          relevance: 10,\n\t          contains: [ CURLY_SUBCOMMENT ]\n\t        }\n\t      ),\n\t      {\n\t        className: 'meta',\n\t        begin: '^@(?:BASE|USE|CLASS|OPTIONS)$',\n\t        relevance: 10\n\t      },\n\t      {\n\t        className: 'title',\n\t        begin: '@[\\\\w\\\\-]+\\\\[[\\\\w^;\\\\-]*\\\\](?:\\\\[[\\\\w^;\\\\-]*\\\\])?(?:.*)$'\n\t      },\n\t      {\n\t        className: 'variable',\n\t        begin: /\\$\\{?[\\w\\-.:]+\\}?/\n\t      },\n\t      {\n\t        className: 'keyword',\n\t        begin: /\\^[\\w\\-.:]+/\n\t      },\n\t      {\n\t        className: 'number',\n\t        begin: '\\\\^#[0-9a-fA-F]+'\n\t      },\n\t      hljs.C_NUMBER_MODE\n\t    ]\n\t  };\n\t}\n\n\tparser3_1 = parser3;\n\treturn parser3_1;\n}\n\nexport { requireParser3 as __require };",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,OAAO,CAAC,IAAI,EAAE;CACvB,EAAE,MAAM,gBAAgB,GAAG,IAAI,CAAC,OAAO;CACvC,IAAI,IAAI;CACR,IAAI,IAAI;CACR,IAAI;CACJ,MAAM,QAAQ,EAAE,EAAE,MAAM,EAAE;CAC1B,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,SAAS;CACnB,IAAI,WAAW,EAAE,KAAK;CACtB,IAAI,SAAS,EAAE,CAAC;CAChB,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,OAAO,CAAC,IAAI,EAAE,GAAG,CAAC;CAC7B,MAAM,IAAI,CAAC,OAAO;CAClB,QAAQ,SAAS;CACjB,QAAQ,IAAI;CACZ,QAAQ;CACR,UAAU,SAAS,EAAE,EAAE;CACvB,UAAU,QAAQ,EAAE,EAAE,gBAAgB,EAAE;CACxC,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,KAAK,EAAE,+BAA+B;CAC9C,QAAQ,SAAS,EAAE,EAAE;CACrB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,OAAO;CAC1B,QAAQ,KAAK,EAAE,0DAA0D;CACzE,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,mBAAmB;CAClC,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,SAAS;CAC5B,QAAQ,KAAK,EAAE,aAAa;CAC5B,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,KAAK,EAAE,kBAAkB;CACjC,OAAO;CACP,MAAM,IAAI,CAAC,aAAa;CACxB,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,UAAc,GAAG,OAAO"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444543,
+      "end": 1702937444543,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/cache/core/types/common.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __extends } from \"tslib\";\nvar MissingFieldError = /** @class */ (function (_super) {\n    __extends(MissingFieldError, _super);\n    function MissingFieldError(message, path, query, variables) {\n        var _a;\n        // 'Error' breaks prototype chain here\n        var _this = _super.call(this, message) || this;\n        _this.message = message;\n        _this.path = path;\n        _this.query = query;\n        _this.variables = variables;\n        if (Array.isArray(_this.path)) {\n            _this.missing = _this.message;\n            for (var i = _this.path.length - 1; i >= 0; --i) {\n                _this.missing = (_a = {}, _a[_this.path[i]] = _this.missing, _a);\n            }\n        }\n        else {\n            _this.missing = _this.path;\n        }\n        // We're not using `Object.setPrototypeOf` here as it isn't fully supported\n        // on Android (see issue #3236).\n        _this.__proto__ = MissingFieldError.prototype;\n        return _this;\n    }\n    return MissingFieldError;\n}(Error));\nexport { MissingFieldError };\n//# sourceMappingURL=common.js.map",
+      "start": 1702937440872,
+      "end": 1702937440936,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@fullcalendar/timegrid/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createPlugin } from '@fullcalendar/core/index.js';\nimport { DayTimeColsView } from './internal.js';\nimport '@fullcalendar/core/internal.js';\nimport '@fullcalendar/core/preact.js';\nimport '@fullcalendar/daygrid/internal.js';\n\nconst OPTION_REFINERS = {\n    allDaySlot: Boolean,\n};\n\nvar index = createPlugin({\n    name: '@fullcalendar/timegrid',\n    initialView: 'timeGridWeek',\n    optionRefiners: OPTION_REFINERS,\n    views: {\n        timeGrid: {\n            component: DayTimeColsView,\n            usesMinMaxTime: true,\n            allDaySlot: true,\n            slotDuration: '00:30:00',\n            slotEventOverlap: true, // a bad name. confused with overlap/constraint system\n        },\n        timeGridDay: {\n            type: 'timeGrid',\n            duration: { days: 1 },\n        },\n        timeGridWeek: {\n            type: 'timeGrid',\n            duration: { weeks: 1 },\n        },\n    },\n});\n\nexport { index as default };\n",
+      "start": 1702937441851,
+      "end": 1702937441883,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    }
+  ]
+}

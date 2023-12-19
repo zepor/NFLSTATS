@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/utilities/graphql/print.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { print as origPrint } from \"graphql\";\nimport { canUseWeakMap } from \"../common/canUse.js\";\nvar printCache = canUseWeakMap ? new WeakMap() : undefined;\nexport var print = function (ast) {\n    var result;\n    result = printCache === null || printCache === void 0 ? void 0 : printCache.get(ast);\n    if (!result) {\n        result = origPrint(ast);\n        printCache === null || printCache === void 0 ? void 0 : printCache.set(ast, result);\n    }\n    return result;\n};\n//# sourceMappingURL=print.js.map",
+      "start": 1702937441013,
+      "end": 1702937441038,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441038,
+      "end": 1702937441038,
+      "order": "normal"
+    }
+  ]
+}

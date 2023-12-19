@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/UniqueVariableNamesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { groupBy } from '../../jsutils/groupBy.mjs';\nimport { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * Unique variable names\n *\n * A GraphQL operation is only valid if all its variables are uniquely named.\n */\nexport function UniqueVariableNamesRule(context) {\n  return {\n    OperationDefinition(operationNode) {\n      var _operationNode$variab;\n\n      // See: https://github.com/graphql/graphql-js/issues/2203\n\n      /* c8 ignore next */\n      const variableDefinitions =\n        (_operationNode$variab = operationNode.variableDefinitions) !== null &&\n        _operationNode$variab !== void 0\n          ? _operationNode$variab\n          : [];\n      const seenVariableDefinitions = groupBy(\n        variableDefinitions,\n        (node) => node.variable.name.value,\n      );\n\n      for (const [variableName, variableNodes] of seenVariableDefinitions) {\n        if (variableNodes.length > 1) {\n          context.reportError(\n            new GraphQLError(\n              `There can be only one variable named \"$${variableName}\".`,\n              {\n                nodes: variableNodes.map((node) => node.variable.name),\n              },\n            ),\n          );\n        }\n      }\n    },\n  };\n}\n",
+      "start": 1702937443089,
+      "end": 1702937443104,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443104,
+      "end": 1702937443104,
+      "order": "normal"
+    }
+  ]
+}

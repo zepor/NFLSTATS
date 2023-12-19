@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/protected/ProtectedPage.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React, { useState } from \"react\";\r\nimport { Alert } from \"react-bootstrap\";\r\n\r\nimport Default from \"../dashboards/Default\";\r\n\r\nfunction ProtectedPage() {\r\n  const [show, setShow] = useState(true);\r\n\r\n  return (\r\n    <React.Fragment>\r\n      {!!show && (\r\n        <Alert\r\n          className=\"mb-3\"\r\n          variant=\"primary\"\r\n          dismissible\r\n          onClose={() => setShow(false)}\r\n        >\r\n          <div className=\"alert-message\">\r\n            This page is only visible by authenticated users.\r\n          </div>\r\n        </Alert>\r\n      )}\r\n\r\n      <Default />\r\n    </React.Fragment>\r\n  );\r\n}\r\n\r\nexport default ProtectedPage;\r\n",
+      "start": 1702937440869,
+      "end": 1702937440895,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React, { useState } from \"react\";\nimport { Alert } from \"react-bootstrap\";\nimport Default from \"../dashboards/Default\";\nfunction ProtectedPage() {\n  const [show, setShow] = useState(true);\n  return /* @__PURE__ */ jsxs(React.Fragment, { children: [\n    !!show && /* @__PURE__ */ jsx(\n      Alert,\n      {\n        className: \"mb-3\",\n        variant: \"primary\",\n        dismissible: true,\n        onClose: () => setShow(false),\n        children: /* @__PURE__ */ jsx(\"div\", { className: \"alert-message\", children: \"This page is only visible by authenticated users.\" })\n      }\n    ),\n    /* @__PURE__ */ jsx(Default, {})\n  ] });\n}\nexport default ProtectedPage;\n",
+      "start": 1702937440895,
+      "end": 1702937440951,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/protected/ProtectedPage.jsx"
+        ],
+        "sourcesContent": [
+          "import React, { useState } from \"react\";\r\nimport { Alert } from \"react-bootstrap\";\r\n\r\nimport Default from \"../dashboards/Default\";\r\n\r\nfunction ProtectedPage() {\r\n  const [show, setShow] = useState(true);\r\n\r\n  return (\r\n    <React.Fragment>\r\n      {!!show && (\r\n        <Alert\r\n          className=\"mb-3\"\r\n          variant=\"primary\"\r\n          dismissible\r\n          onClose={() => setShow(false)}\r\n        >\r\n          <div className=\"alert-message\">\r\n            This page is only visible by authenticated users.\r\n          </div>\r\n        </Alert>\r\n      )}\r\n\r\n      <Default />\r\n    </React.Fragment>\r\n  );\r\n}\r\n\r\nexport default ProtectedPage;\r\n"
+        ],
+        "mappings": "AASI,SAQM,KARN;AATJ,OAAO,SAAS,gBAAgB;AAChC,SAAS,aAAa;AAEtB,OAAO,aAAa;AAEpB,SAAS,gBAAgB;AACvB,QAAM,CAAC,MAAM,OAAO,IAAI,SAAS,IAAI;AAErC,SACE,qBAAC,MAAM,UAAN,EACE;AAAA,KAAC,CAAC,QACD;AAAA,MAAC;AAAA;AAAA,QACC,WAAU;AAAA,QACV,SAAQ;AAAA,QACR,aAAW;AAAA,QACX,SAAS,MAAM,QAAQ,KAAK;AAAA,QAE5B,8BAAC,SAAI,WAAU,iBAAgB,+DAE/B;AAAA;AAAA,IACF;AAAA,IAGF,oBAAC,WAAQ;AAAA,KACX;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    }
+  ]
+}

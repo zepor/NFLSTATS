@@ -1,11 +1,11 @@
 import { defineConfig, splitVendorChunkPlugin } from "vite";
-import react from "@vitejs/plugin-react";
+import Inspect from "vite-plugin-inspect";
 import svgrPlugin from "vite-plugin-svgr";
+import react from "@vitejs/plugin-react";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import json from "@rollup/plugin-json";
 import { resolve } from "path";
-import checker from "vite-plugin-checker";
+import { checker } from "vite-plugin-checker";
 
 export default defineConfig({
   server: {
@@ -14,27 +14,34 @@ export default defineConfig({
     },
   },
   plugins: [
-    react(),
-    svgrPlugin(),
+    react({ jsxRuntime: "@emotion/react" }),
+    svgrPlugin({
+      exportType: "component",
+      svgrOptions: {
+        icon: true,
+      },
+    }),
+    Inspect({
+      build: true,
+      outputDir: ".vite-inspect",
+    }),
     ViteEjsPlugin(),
     nodePolyfills({
       protocolImports: true,
     }),
-    json(),
-    checker(),
     splitVendorChunkPlugin(),
+    checker(),
   ],
   resolve: {
     alias: {
       "./runtimeConfig": "./runtimeConfig.browser",
       "realm-web": resolve(__dirname, "./node_modules/realm-web"),
-      "@contexts": resolve(__dirname, "src/contexts"),
     },
   },
   build: {
     outDir: "dist",
     cssCodeSplit: true,
-    chunkSizeWarningLimit: 3000,
+    chunkSizeWarningLimit: 300,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/sidebar/Sidebar.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport PerfectScrollbar from \"react-perfect-scrollbar\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\nimport SidebarFooter from \"./SidebarFooter\";\r\nimport SidebarNav from \"./SidebarNav\";\r\n\r\nimport logo from \"../../assets/img/logo.svg\";\r\n\r\nconst Sidebar = ({ items, showFooter = true }) => {\r\n  const { isOpen } = useSidebar();\r\n\r\n  return (\r\n    <nav className={`sidebar ${isOpen ? \"\" : \"collapsed\"}`}>\r\n      <div className=\"sidebar-content\">\r\n        <PerfectScrollbar>\r\n          <a className=\"sidebar-brand\" href=\"/\">\r\n            <img src={logo} alt=\"Logo\" />{\" \"}\r\n            <span className=\"align-middle me-3\">AppStack</span>\r\n          </a>\r\n          <SidebarNav items={items} />\r\n          {!!showFooter && <SidebarFooter />}\r\n        </PerfectScrollbar>\r\n      </div>\r\n    </nav>\r\n  );\r\n};\r\n\r\nexport default Sidebar;\r\n",
+      "start": 1702937441543,
+      "end": 1702937441561,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport PerfectScrollbar from \"react-perfect-scrollbar\";\nimport useSidebar from \"../../hooks/useSidebar\";\nimport SidebarFooter from \"./SidebarFooter\";\nimport SidebarNav from \"./SidebarNav\";\nimport logo from \"../../assets/img/logo.svg\";\nconst Sidebar = ({ items, showFooter = true }) => {\n  const { isOpen } = useSidebar();\n  return /* @__PURE__ */ jsx(\"nav\", { className: `sidebar ${isOpen ? \"\" : \"collapsed\"}`, children: /* @__PURE__ */ jsx(\"div\", { className: \"sidebar-content\", children: /* @__PURE__ */ jsxs(PerfectScrollbar, { children: [\n    /* @__PURE__ */ jsxs(\"a\", { className: \"sidebar-brand\", href: \"/\", children: [\n      /* @__PURE__ */ jsx(\"img\", { src: logo, alt: \"Logo\" }),\n      \" \",\n      /* @__PURE__ */ jsx(\"span\", { className: \"align-middle me-3\", children: \"AppStack\" })\n    ] }),\n    /* @__PURE__ */ jsx(SidebarNav, { items }),\n    !!showFooter && /* @__PURE__ */ jsx(SidebarFooter, {})\n  ] }) }) });\n};\nexport default Sidebar;\n",
+      "start": 1702937441561,
+      "end": 1702937441569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/sidebar/Sidebar.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport PerfectScrollbar from \"react-perfect-scrollbar\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\nimport SidebarFooter from \"./SidebarFooter\";\r\nimport SidebarNav from \"./SidebarNav\";\r\n\r\nimport logo from \"../../assets/img/logo.svg\";\r\n\r\nconst Sidebar = ({ items, showFooter = true }) => {\r\n  const { isOpen } = useSidebar();\r\n\r\n  return (\r\n    <nav className={`sidebar ${isOpen ? \"\" : \"collapsed\"}`}>\r\n      <div className=\"sidebar-content\">\r\n        <PerfectScrollbar>\r\n          <a className=\"sidebar-brand\" href=\"/\">\r\n            <img src={logo} alt=\"Logo\" />{\" \"}\r\n            <span className=\"align-middle me-3\">AppStack</span>\r\n          </a>\r\n          <SidebarNav items={items} />\r\n          {!!showFooter && <SidebarFooter />}\r\n        </PerfectScrollbar>\r\n      </div>\r\n    </nav>\r\n  );\r\n};\r\n\r\nexport default Sidebar;\r\n"
+        ],
+        "mappings": "AAgBU,SACE,KADF;AAhBV,OAAO,WAAW;AAClB,OAAO,sBAAsB;AAE7B,OAAO,gBAAgB;AACvB,OAAO,mBAAmB;AAC1B,OAAO,gBAAgB;AAEvB,OAAO,UAAU;AAEjB,MAAM,UAAU,CAAC,EAAE,OAAO,aAAa,KAAK,MAAM;AAChD,QAAM,EAAE,OAAO,IAAI,WAAW;AAE9B,SACE,oBAAC,SAAI,WAAW,WAAW,SAAS,KAAK,WAAW,IAClD,8BAAC,SAAI,WAAU,mBACb,+BAAC,oBACC;AAAA,yBAAC,OAAE,WAAU,iBAAgB,MAAK,KAChC;AAAA,0BAAC,SAAI,KAAK,MAAM,KAAI,QAAO;AAAA,MAAG;AAAA,MAC9B,oBAAC,UAAK,WAAU,qBAAoB,sBAAQ;AAAA,OAC9C;AAAA,IACA,oBAAC,cAAW,OAAc;AAAA,IACzB,CAAC,CAAC,cAAc,oBAAC,iBAAc;AAAA,KAClC,GACF,GACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441569,
+      "end": 1702937441570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441570,
+      "end": 1702937441570,
+      "order": "normal"
+    }
+  ]
+}

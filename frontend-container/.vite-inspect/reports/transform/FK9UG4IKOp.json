@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/go-module.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = goModule\ngoModule.displayName = 'goModule'\ngoModule.aliases = []\nfunction goModule(Prism) {\n  // https://go.dev/ref/mod#go-mod-file-module\n  Prism.languages['go-mod'] = Prism.languages['go-module'] = {\n    comment: {\n      pattern: /\\/\\/.*/,\n      greedy: true\n    },\n    version: {\n      pattern: /(^|[\\s()[\\],])v\\d+\\.\\d+\\.\\d+(?:[+-][-+.\\w]*)?(?![^\\s()[\\],])/,\n      lookbehind: true,\n      alias: 'number'\n    },\n    'go-version': {\n      pattern: /((?:^|\\s)go\\s+)\\d+(?:\\.\\d+){1,2}/,\n      lookbehind: true,\n      alias: 'number'\n    },\n    keyword: {\n      pattern: /^([ \\t]*)(?:exclude|go|module|replace|require|retract)\\b/m,\n      lookbehind: true\n    },\n    operator: /=>/,\n    punctuation: /[()[\\],]/\n  }\n}\n",
+      "start": 1702937444898,
+      "end": 1702937444919,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar goModule_1;\nvar hasRequiredGoModule;\n\nfunction requireGoModule () {\n\tif (hasRequiredGoModule) return goModule_1;\n\thasRequiredGoModule = 1;\n\t'use strict'\n\n\tgoModule_1 = goModule\n\tgoModule.displayName = 'goModule'\n\tgoModule.aliases = []\n\tfunction goModule(Prism) {\n\t  // https://go.dev/ref/mod#go-mod-file-module\n\t  Prism.languages['go-mod'] = Prism.languages['go-module'] = {\n\t    comment: {\n\t      pattern: /\\/\\/.*/,\n\t      greedy: true\n\t    },\n\t    version: {\n\t      pattern: /(^|[\\s()[\\],])v\\d+\\.\\d+\\.\\d+(?:[+-][-+.\\w]*)?(?![^\\s()[\\],])/,\n\t      lookbehind: true,\n\t      alias: 'number'\n\t    },\n\t    'go-version': {\n\t      pattern: /((?:^|\\s)go\\s+)\\d+(?:\\.\\d+){1,2}/,\n\t      lookbehind: true,\n\t      alias: 'number'\n\t    },\n\t    keyword: {\n\t      pattern: /^([ \\t]*)(?:exclude|go|module|replace|require|retract)\\b/m,\n\t      lookbehind: true\n\t    },\n\t    operator: /=>/,\n\t    punctuation: /[()[\\],]/\n\t  }\n\t}\n\treturn goModule_1;\n}\n\nexport { requireGoModule as __require };",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,WAAc,GAAG,QAAQ;CACzB,QAAQ,CAAC,WAAW,GAAG,UAAU;CACjC,QAAQ,CAAC,OAAO,GAAG,EAAE;CACrB,SAAS,QAAQ,CAAC,KAAK,EAAE;CACzB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,QAAQ,CAAC,GAAG,KAAK,CAAC,SAAS,CAAC,WAAW,CAAC,GAAG;CAC7D,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,QAAQ;CACvB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,8DAA8D;CAC7E,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO,EAAE,kCAAkC;CACjD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,2DAA2D;CAC1E,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,IAAI;CAClB,IAAI,WAAW,EAAE,UAAU;CAC3B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/crossvent/src/eventmap.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar eventmap = [];\nvar eventname = '';\nvar ron = /^on/;\n\nfor (eventname in global) {\n  if (ron.test(eventname)) {\n    eventmap.push(eventname.slice(2));\n  }\n}\n\nmodule.exports = eventmap;\n",
+      "start": 1702937444007,
+      "end": 1702937444037,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n'use strict';\n\nvar eventmap = [];\nvar eventname = '';\nvar ron = /^on/;\n\nfor (eventname in commonjsHelpers.commonjsGlobal) {\n  if (ron.test(eventname)) {\n    eventmap.push(eventname.slice(2));\n  }\n}\n\nvar eventmap_1 = eventmap;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(eventmap_1);\nexport { eventmap_1 as __moduleExports };",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [
+          "global"
+        ],
+        "mappings": ";;AAAA,YAAY,CAAC;AACb;AACA,IAAI,QAAQ,GAAG,EAAE,CAAC;AAClB,IAAI,SAAS,GAAG,EAAE,CAAC;AACnB,IAAI,GAAG,GAAG,KAAK,CAAC;AAChB;AACA,KAAK,SAAS,IAAIA,8BAAM,EAAE;AAC1B,EAAE,IAAI,GAAG,CAAC,IAAI,CAAC,SAAS,CAAC,EAAE;AAC3B,IAAI,QAAQ,CAAC,IAAI,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,GAAG;AACH,CAAC;AACD;IACA,UAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    }
+  ]
+}

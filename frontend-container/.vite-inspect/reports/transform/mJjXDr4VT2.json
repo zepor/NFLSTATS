@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/auth/Page404.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Link } from \"react-router-dom\";\r\nimport { Helmet } from \"react-helmet-async\";\r\n\r\nimport { Button } from \"react-bootstrap\";\r\n\r\nconst Page404 = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"404 Error\" />\r\n    <div className=\"text-center\">\r\n      <h1 className=\"display-1 fw-bold\">404</h1>\r\n      <p className=\"h2\">Page not found.</p>\r\n      <p className=\"lead fw-normal mt-3 mb-4\">The page you are looking for might have been removed.</p>\r\n      <Link to=\"/dashboard/default\"><Button variant=\"primary\" size=\"lg\">Return to website</Button></Link>\r\n    </div>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Page404;\r\n",
+      "start": 1702937436720,
+      "end": 1702937436961,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436961,
+      "end": 1702937436961,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436961,
+      "end": 1702937436961,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Link } from \"react-router-dom\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Button } from \"react-bootstrap\";\nconst Page404 = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"404 Error\" }),\n  /* @__PURE__ */ jsxs(\"div\", { className: \"text-center\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"display-1 fw-bold\", children: \"404\" }),\n    /* @__PURE__ */ jsx(\"p\", { className: \"h2\", children: \"Page not found.\" }),\n    /* @__PURE__ */ jsx(\"p\", { className: \"lead fw-normal mt-3 mb-4\", children: \"The page you are looking for might have been removed.\" }),\n    /* @__PURE__ */ jsx(Link, { to: \"/dashboard/default\", children: /* @__PURE__ */ jsx(Button, { variant: \"primary\", size: \"lg\", children: \"Return to website\" }) })\n  ] })\n] });\nexport default Page404;\n",
+      "start": 1702937436961,
+      "end": 1702937436966,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/auth/Page404.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Link } from \"react-router-dom\";\r\nimport { Helmet } from \"react-helmet-async\";\r\n\r\nimport { Button } from \"react-bootstrap\";\r\n\r\nconst Page404 = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"404 Error\" />\r\n    <div className=\"text-center\">\r\n      <h1 className=\"display-1 fw-bold\">404</h1>\r\n      <p className=\"h2\">Page not found.</p>\r\n      <p className=\"lead fw-normal mt-3 mb-4\">The page you are looking for might have been removed.</p>\r\n      <Link to=\"/dashboard/default\"><Button variant=\"primary\" size=\"lg\">Return to website</Button></Link>\r\n    </div>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Page404;\r\n"
+        ],
+        "mappings": "AAQI,cACA,YADA;AARJ,OAAO,WAAW;AAClB,SAAS,YAAY;AACrB,SAAS,cAAc;AAEvB,SAAS,cAAc;AAEvB,MAAM,UAAU,MACd,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,aAAY;AAAA,EAC1B,qBAAC,SAAI,WAAU,eACb;AAAA,wBAAC,QAAG,WAAU,qBAAoB,iBAAG;AAAA,IACrC,oBAAC,OAAE,WAAU,MAAK,6BAAe;AAAA,IACjC,oBAAC,OAAE,WAAU,4BAA2B,mEAAqD;AAAA,IAC7F,oBAAC,QAAK,IAAG,sBAAqB,8BAAC,UAAO,SAAQ,WAAU,MAAK,MAAK,+BAAiB,GAAS;AAAA,KAC9F;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436966,
+      "end": 1702937436966,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_getNative.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var baseIsNative = require('./_baseIsNative'),\n    getValue = require('./_getValue');\n\n/**\n * Gets the native function at `key` of `object`.\n *\n * @private\n * @param {Object} object The object to query.\n * @param {string} key The key of the method to get.\n * @returns {*} Returns the function if it's native, else `undefined`.\n */\nfunction getNative(object, key) {\n  var value = getValue(object, key);\n  return baseIsNative(value) ? value : undefined;\n}\n\nmodule.exports = getNative;\n",
+      "start": 1702937445300,
+      "end": 1702937445330,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_baseIsNative.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_getValue.js?commonjs-proxy\";\n\nvar baseIsNative = require$$0,\n    getValue = require$$1;\n\n/**\n * Gets the native function at `key` of `object`.\n *\n * @private\n * @param {Object} object The object to query.\n * @param {string} key The key of the method to get.\n * @returns {*} Returns the function if it's native, else `undefined`.\n */\nfunction getNative(object, key) {\n  var value = getValue(object, key);\n  return baseIsNative(value) ? value : undefined;\n}\n\nvar _getNative = getNative;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_getNative);\nexport { _getNative as __moduleExports };",
+      "start": 1702937445330,
+      "end": 1702937445405,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;AAAA,IAAI,YAAY,GAAG,UAA0B;AAC7C,IAAI,QAAQ,GAAG,UAAsB,CAAC;AACtC;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,SAAS,CAAC,MAAM,EAAE,GAAG,EAAE;AAChC,EAAE,IAAI,KAAK,GAAG,QAAQ,CAAC,MAAM,EAAE,GAAG,CAAC,CAAC;AACpC,EAAE,OAAO,YAAY,CAAC,KAAK,CAAC,GAAG,KAAK,GAAG,SAAS,CAAC;AACjD,CAAC;AACD;IACA,UAAc,GAAG,SAAS"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    }
+  ]
+}

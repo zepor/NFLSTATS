@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/crossvent/src/crossvent.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar customEvent = require('custom-event');\nvar eventmap = require('./eventmap');\nvar doc = global.document;\nvar addEvent = addEventEasy;\nvar removeEvent = removeEventEasy;\nvar hardCache = [];\n\nif (!global.addEventListener) {\n  addEvent = addEventHard;\n  removeEvent = removeEventHard;\n}\n\nmodule.exports = {\n  add: addEvent,\n  remove: removeEvent,\n  fabricate: fabricateEvent\n};\n\nfunction addEventEasy (el, type, fn, capturing) {\n  return el.addEventListener(type, fn, capturing);\n}\n\nfunction addEventHard (el, type, fn) {\n  return el.attachEvent('on' + type, wrap(el, type, fn));\n}\n\nfunction removeEventEasy (el, type, fn, capturing) {\n  return el.removeEventListener(type, fn, capturing);\n}\n\nfunction removeEventHard (el, type, fn) {\n  var listener = unwrap(el, type, fn);\n  if (listener) {\n    return el.detachEvent('on' + type, listener);\n  }\n}\n\nfunction fabricateEvent (el, type, model) {\n  var e = eventmap.indexOf(type) === -1 ? makeCustomEvent() : makeClassicEvent();\n  if (el.dispatchEvent) {\n    el.dispatchEvent(e);\n  } else {\n    el.fireEvent('on' + type, e);\n  }\n  function makeClassicEvent () {\n    var e;\n    if (doc.createEvent) {\n      e = doc.createEvent('Event');\n      e.initEvent(type, true, true);\n    } else if (doc.createEventObject) {\n      e = doc.createEventObject();\n    }\n    return e;\n  }\n  function makeCustomEvent () {\n    return new customEvent(type, { detail: model });\n  }\n}\n\nfunction wrapperFactory (el, type, fn) {\n  return function wrapper (originalEvent) {\n    var e = originalEvent || global.event;\n    e.target = e.target || e.srcElement;\n    e.preventDefault = e.preventDefault || function preventDefault () { e.returnValue = false; };\n    e.stopPropagation = e.stopPropagation || function stopPropagation () { e.cancelBubble = true; };\n    e.which = e.which || e.keyCode;\n    fn.call(el, e);\n  };\n}\n\nfunction wrap (el, type, fn) {\n  var wrapper = unwrap(el, type, fn) || wrapperFactory(el, type, fn);\n  hardCache.push({\n    wrapper: wrapper,\n    element: el,\n    type: type,\n    fn: fn\n  });\n  return wrapper;\n}\n\nfunction unwrap (el, type, fn) {\n  var i = find(el, type, fn);\n  if (i) {\n    var wrapper = hardCache[i].wrapper;\n    hardCache.splice(i, 1); // free up a tad of memory\n    return wrapper;\n  }\n}\n\nfunction find (el, type, fn) {\n  var i, item;\n  for (i = 0; i < hardCache.length; i++) {\n    item = hardCache[i];\n    if (item.element === el && item.type === type && item.fn === fn) {\n      return i;\n    }\n  }\n}\n",
+      "start": 1702937443154,
+      "end": 1702937443703,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443703,
+      "end": 1702937443703,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/custom-event/index.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/crossvent/src/eventmap.js?commonjs-proxy\";\n\n'use strict';\n\nvar customEvent = require$$0;\nvar eventmap = require$$1;\nvar doc = commonjsHelpers.commonjsGlobal.document;\nvar addEvent = addEventEasy;\nvar removeEvent = removeEventEasy;\nvar hardCache = [];\n\nif (!commonjsHelpers.commonjsGlobal.addEventListener) {\n  addEvent = addEventHard;\n  removeEvent = removeEventHard;\n}\n\nvar crossvent = {\n  add: addEvent,\n  remove: removeEvent,\n  fabricate: fabricateEvent\n};\n\nfunction addEventEasy (el, type, fn, capturing) {\n  return el.addEventListener(type, fn, capturing);\n}\n\nfunction addEventHard (el, type, fn) {\n  return el.attachEvent('on' + type, wrap(el, type, fn));\n}\n\nfunction removeEventEasy (el, type, fn, capturing) {\n  return el.removeEventListener(type, fn, capturing);\n}\n\nfunction removeEventHard (el, type, fn) {\n  var listener = unwrap(el, type, fn);\n  if (listener) {\n    return el.detachEvent('on' + type, listener);\n  }\n}\n\nfunction fabricateEvent (el, type, model) {\n  var e = eventmap.indexOf(type) === -1 ? makeCustomEvent() : makeClassicEvent();\n  if (el.dispatchEvent) {\n    el.dispatchEvent(e);\n  } else {\n    el.fireEvent('on' + type, e);\n  }\n  function makeClassicEvent () {\n    var e;\n    if (doc.createEvent) {\n      e = doc.createEvent('Event');\n      e.initEvent(type, true, true);\n    } else if (doc.createEventObject) {\n      e = doc.createEventObject();\n    }\n    return e;\n  }\n  function makeCustomEvent () {\n    return new customEvent(type, { detail: model });\n  }\n}\n\nfunction wrapperFactory (el, type, fn) {\n  return function wrapper (originalEvent) {\n    var e = originalEvent || commonjsHelpers.commonjsGlobal.event;\n    e.target = e.target || e.srcElement;\n    e.preventDefault = e.preventDefault || function preventDefault () { e.returnValue = false; };\n    e.stopPropagation = e.stopPropagation || function stopPropagation () { e.cancelBubble = true; };\n    e.which = e.which || e.keyCode;\n    fn.call(el, e);\n  };\n}\n\nfunction wrap (el, type, fn) {\n  var wrapper = unwrap(el, type, fn) || wrapperFactory(el, type, fn);\n  hardCache.push({\n    wrapper: wrapper,\n    element: el,\n    type: type,\n    fn: fn\n  });\n  return wrapper;\n}\n\nfunction unwrap (el, type, fn) {\n  var i = find(el, type, fn);\n  if (i) {\n    var wrapper = hardCache[i].wrapper;\n    hardCache.splice(i, 1); // free up a tad of memory\n    return wrapper;\n  }\n}\n\nfunction find (el, type, fn) {\n  var i, item;\n  for (i = 0; i < hardCache.length; i++) {\n    item = hardCache[i];\n    if (item.element === el && item.type === type && item.fn === fn) {\n      return i;\n    }\n  }\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(crossvent);\nexport { crossvent as __moduleExports };",
+      "start": 1702937443703,
+      "end": 1702937444040,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [
+          "global"
+        ],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444040,
+      "end": 1702937444040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444040,
+      "end": 1702937444040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444040,
+      "end": 1702937444040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444040,
+      "end": 1702937444040,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444040,
+      "end": 1702937444040,
+      "order": "normal"
+    }
+  ]
+}

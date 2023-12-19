@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/apolloClient.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// src/apolloClient.js\nimport { ApolloClient, HttpLink, InMemoryCache } from \"@apollo/client\";\nimport * as Realm from \"realm-web\";\n\nconst graphqlUri = `https://realm.mongodb.com/api/client/v2.0/app/devicesync-lsank/graphql`;\nconst app = new Realm.App({ id: \"devicesync-lsank\" }); // Replace with your Realm app ID\n\nasync function getValidAccessToken() {\n  if (!app.currentUser) {\n    await app.logIn(Realm.Credentials.anonymous());\n  } else {\n    await app.currentUser.refreshAccessToken();\n  }\n  return app.currentUser.accessToken;\n}\n\nconst client = new ApolloClient({\n  link: new HttpLink({\n    uri: graphqlUri,\n    fetch: async (uri, options) => {\n      const accessToken = await getValidAccessToken();\n      options.headers.Authorization = `Bearer ${accessToken}`;\n      return fetch(uri, options);\n    },\n  }),\n  cache: new InMemoryCache(),\n});\n\nexport default client;\n",
+      "start": 1702937435939,
+      "end": 1702937435942,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937435942,
+      "end": 1702937435942,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937435942,
+      "end": 1702937435942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { ApolloClient, HttpLink, InMemoryCache } from \"@apollo/client\";\nimport * as Realm from \"realm-web\";\nconst graphqlUri = `https://realm.mongodb.com/api/client/v2.0/app/devicesync-lsank/graphql`;\nconst app = new Realm.App({ id: \"devicesync-lsank\" });\nasync function getValidAccessToken() {\n  if (!app.currentUser) {\n    await app.logIn(Realm.Credentials.anonymous());\n  } else {\n    await app.currentUser.refreshAccessToken();\n  }\n  return app.currentUser.accessToken;\n}\nconst client = new ApolloClient({\n  link: new HttpLink({\n    uri: graphqlUri,\n    fetch: async (uri, options) => {\n      const accessToken = await getValidAccessToken();\n      options.headers.Authorization = `Bearer ${accessToken}`;\n      return fetch(uri, options);\n    }\n  }),\n  cache: new InMemoryCache()\n});\nexport default client;\n",
+      "start": 1702937435942,
+      "end": 1702937435948,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/apolloClient.jsx"
+        ],
+        "sourcesContent": [
+          "// src/apolloClient.js\nimport { ApolloClient, HttpLink, InMemoryCache } from \"@apollo/client\";\nimport * as Realm from \"realm-web\";\n\nconst graphqlUri = `https://realm.mongodb.com/api/client/v2.0/app/devicesync-lsank/graphql`;\nconst app = new Realm.App({ id: \"devicesync-lsank\" }); // Replace with your Realm app ID\n\nasync function getValidAccessToken() {\n  if (!app.currentUser) {\n    await app.logIn(Realm.Credentials.anonymous());\n  } else {\n    await app.currentUser.refreshAccessToken();\n  }\n  return app.currentUser.accessToken;\n}\n\nconst client = new ApolloClient({\n  link: new HttpLink({\n    uri: graphqlUri,\n    fetch: async (uri, options) => {\n      const accessToken = await getValidAccessToken();\n      options.headers.Authorization = `Bearer ${accessToken}`;\n      return fetch(uri, options);\n    },\n  }),\n  cache: new InMemoryCache(),\n});\n\nexport default client;\n"
+        ],
+        "mappings": "AACA,SAAS,cAAc,UAAU,qBAAqB;AACtD,YAAY,WAAW;AAEvB,MAAM,aAAa;AACnB,MAAM,MAAM,IAAI,MAAM,IAAI,EAAE,IAAI,mBAAmB,CAAC;AAEpD,eAAe,sBAAsB;AACnC,MAAI,CAAC,IAAI,aAAa;AACpB,UAAM,IAAI,MAAM,MAAM,YAAY,UAAU,CAAC;AAAA,EAC/C,OAAO;AACL,UAAM,IAAI,YAAY,mBAAmB;AAAA,EAC3C;AACA,SAAO,IAAI,YAAY;AACzB;AAEA,MAAM,SAAS,IAAI,aAAa;AAAA,EAC9B,MAAM,IAAI,SAAS;AAAA,IACjB,KAAK;AAAA,IACL,OAAO,OAAO,KAAK,YAAY;AAC7B,YAAM,cAAc,MAAM,oBAAoB;AAC9C,cAAQ,QAAQ,gBAAgB,UAAU,WAAW;AACrD,aAAO,MAAM,KAAK,OAAO;AAAA,IAC3B;AAAA,EACF,CAAC;AAAA,EACD,OAAO,IAAI,cAAc;AAC3B,CAAC;AAED,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937435948,
+      "end": 1702937435948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937435948,
+      "end": 1702937435948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937435948,
+      "end": 1702937435948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937435948,
+      "end": 1702937435949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937435949,
+      "end": 1702937435953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937435953,
+      "end": 1702937435953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937435953,
+      "end": 1702937435953,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937435953,
+      "end": 1702937435953,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937435953,
+      "end": 1702937435953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937435953,
+      "end": 1702937435954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937435954,
+      "end": 1702937435954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937435954,
+      "end": 1702937435954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937435954,
+      "end": 1702937435954,
+      "order": "normal"
+    }
+  ]
+}

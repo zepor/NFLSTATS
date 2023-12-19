@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/firestore-security-rules.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = firestoreSecurityRules\nfirestoreSecurityRules.displayName = 'firestoreSecurityRules'\nfirestoreSecurityRules.aliases = []\nfunction firestoreSecurityRules(Prism) {\n  Prism.languages['firestore-security-rules'] = Prism.languages.extend(\n    'clike',\n    {\n      comment: /\\/\\/.*/,\n      keyword:\n        /\\b(?:allow|function|if|match|null|return|rules_version|service)\\b/,\n      operator: /&&|\\|\\||[<>!=]=?|[-+*/%]|\\b(?:in|is)\\b/\n    }\n  )\n  delete Prism.languages['firestore-security-rules']['class-name']\n  Prism.languages.insertBefore('firestore-security-rules', 'keyword', {\n    path: {\n      pattern:\n        /(^|[\\s(),])(?:\\/(?:[\\w\\xA0-\\uFFFF]+|\\{[\\w\\xA0-\\uFFFF]+(?:=\\*\\*)?\\}|\\$\\([\\w\\xA0-\\uFFFF.]+\\)))+/,\n      lookbehind: true,\n      greedy: true,\n      inside: {\n        variable: {\n          pattern: /\\{[\\w\\xA0-\\uFFFF]+(?:=\\*\\*)?\\}|\\$\\([\\w\\xA0-\\uFFFF.]+\\)/,\n          inside: {\n            operator: /=/,\n            keyword: /\\*\\*/,\n            punctuation: /[.$(){}]/\n          }\n        },\n        punctuation: /\\//\n      }\n    },\n    method: {\n      // to make the pattern shorter, the actual method names are omitted\n      pattern: /(\\ballow\\s+)[a-z]+(?:\\s*,\\s*[a-z]+)*(?=\\s*[:;])/,\n      lookbehind: true,\n      alias: 'builtin',\n      inside: {\n        punctuation: /,/\n      }\n    }\n  })\n}\n",
+      "start": 1702937444889,
+      "end": 1702937444903,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar firestoreSecurityRules_1;\nvar hasRequiredFirestoreSecurityRules;\n\nfunction requireFirestoreSecurityRules () {\n\tif (hasRequiredFirestoreSecurityRules) return firestoreSecurityRules_1;\n\thasRequiredFirestoreSecurityRules = 1;\n\t'use strict'\n\n\tfirestoreSecurityRules_1 = firestoreSecurityRules\n\tfirestoreSecurityRules.displayName = 'firestoreSecurityRules'\n\tfirestoreSecurityRules.aliases = []\n\tfunction firestoreSecurityRules(Prism) {\n\t  Prism.languages['firestore-security-rules'] = Prism.languages.extend(\n\t    'clike',\n\t    {\n\t      comment: /\\/\\/.*/,\n\t      keyword:\n\t        /\\b(?:allow|function|if|match|null|return|rules_version|service)\\b/,\n\t      operator: /&&|\\|\\||[<>!=]=?|[-+*/%]|\\b(?:in|is)\\b/\n\t    }\n\t  )\n\t  delete Prism.languages['firestore-security-rules']['class-name']\n\t  Prism.languages.insertBefore('firestore-security-rules', 'keyword', {\n\t    path: {\n\t      pattern:\n\t        /(^|[\\s(),])(?:\\/(?:[\\w\\xA0-\\uFFFF]+|\\{[\\w\\xA0-\\uFFFF]+(?:=\\*\\*)?\\}|\\$\\([\\w\\xA0-\\uFFFF.]+\\)))+/,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      inside: {\n\t        variable: {\n\t          pattern: /\\{[\\w\\xA0-\\uFFFF]+(?:=\\*\\*)?\\}|\\$\\([\\w\\xA0-\\uFFFF.]+\\)/,\n\t          inside: {\n\t            operator: /=/,\n\t            keyword: /\\*\\*/,\n\t            punctuation: /[.$(){}]/\n\t          }\n\t        },\n\t        punctuation: /\\//\n\t      }\n\t    },\n\t    method: {\n\t      // to make the pattern shorter, the actual method names are omitted\n\t      pattern: /(\\ballow\\s+)[a-z]+(?:\\s*,\\s*[a-z]+)*(?=\\s*[:;])/,\n\t      lookbehind: true,\n\t      alias: 'builtin',\n\t      inside: {\n\t        punctuation: /,/\n\t      }\n\t    }\n\t  })\n\t}\n\treturn firestoreSecurityRules_1;\n}\n\nexport { requireFirestoreSecurityRules as __require };",
+      "start": 1702937444903,
+      "end": 1702937444903,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,yBAAc,GAAG,sBAAsB;CACvC,sBAAsB,CAAC,WAAW,GAAG,wBAAwB;CAC7D,sBAAsB,CAAC,OAAO,GAAG,EAAE;CACnC,SAAS,sBAAsB,CAAC,KAAK,EAAE;CACvC,EAAE,KAAK,CAAC,SAAS,CAAC,0BAA0B,CAAC,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACtE,IAAI,OAAO;CACX,IAAI;CACJ,MAAM,OAAO,EAAE,QAAQ;CACvB,MAAM,OAAO;CACb,QAAQ,mEAAmE;CAC3E,MAAM,QAAQ,EAAE,wCAAwC;CACxD,KAAK;CACL,GAAG;CACH,EAAE,OAAO,KAAK,CAAC,SAAS,CAAC,0BAA0B,CAAC,CAAC,YAAY,CAAC;CAClE,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,0BAA0B,EAAE,SAAS,EAAE;CACtE,IAAI,IAAI,EAAE;CACV,MAAM,OAAO;CACb,QAAQ,+FAA+F;CACvG,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE;CAClB,UAAU,OAAO,EAAE,wDAAwD;CAC3E,UAAU,MAAM,EAAE;CAClB,YAAY,QAAQ,EAAE,GAAG;CACzB,YAAY,OAAO,EAAE,MAAM;CAC3B,YAAY,WAAW,EAAE,UAAU;CACnC,WAAW;CACX,SAAS;CACT,QAAQ,WAAW,EAAE,IAAI;CACzB,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE;CACZ;CACA,MAAM,OAAO,EAAE,iDAAiD;CAChE,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,SAAS;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,WAAW,EAAE,GAAG;CACxB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    }
+  ]
+}

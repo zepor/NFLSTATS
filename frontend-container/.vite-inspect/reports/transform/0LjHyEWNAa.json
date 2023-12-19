@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/contra/debounce.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar ticky = require('ticky');\n\nmodule.exports = function debounce (fn, args, ctx) {\n  if (!fn) { return; }\n  ticky(function run () {\n    fn.apply(ctx || null, args || []);\n  });\n};\n",
+      "start": 1702937444007,
+      "end": 1702937444035,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444035,
+      "end": 1702937444035,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444035,
+      "end": 1702937444035,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/ticky/ticky-browser.js?commonjs-proxy\";\n\n'use strict';\n\nvar ticky = require$$0;\n\nvar debounce = function debounce (fn, args, ctx) {\n  if (!fn) { return; }\n  ticky(function run () {\n    fn.apply(ctx || null, args || []);\n  });\n};\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(debounce);\nexport { debounce as __moduleExports };",
+      "start": 1702937444036,
+      "end": 1702937444204,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY,CAAC;AACb;AACA,IAAI,KAAK,GAAG,UAAgB,CAAC;AAC7B;IACA,QAAc,GAAG,SAAS,QAAQ,EAAE,EAAE,EAAE,IAAI,EAAE,GAAG,EAAE;AACnD,EAAE,IAAI,CAAC,EAAE,EAAE,EAAE,OAAO,EAAE;AACtB,EAAE,KAAK,CAAC,SAAS,GAAG,IAAI;AACxB,IAAI,EAAE,CAAC,KAAK,CAAC,GAAG,IAAI,IAAI,EAAE,IAAI,IAAI,EAAE,CAAC,CAAC;AACtC,GAAG,CAAC,CAAC;AACL,CAAC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444204,
+      "end": 1702937444204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444204,
+      "end": 1702937444204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444204,
+      "end": 1702937444204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444204,
+      "end": 1702937444204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444204,
+      "end": 1702937444204,
+      "order": "normal"
+    }
+  ]
+}

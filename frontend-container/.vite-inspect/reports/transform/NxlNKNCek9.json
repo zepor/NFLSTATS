@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-transition-group/esm/utils/PropTypes.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import PropTypes from 'prop-types';\nexport var timeoutsShape = process.env.NODE_ENV !== 'production' ? PropTypes.oneOfType([PropTypes.number, PropTypes.shape({\n  enter: PropTypes.number,\n  exit: PropTypes.number,\n  appear: PropTypes.number\n}).isRequired]) : null;\nexport var classNamesShape = process.env.NODE_ENV !== 'production' ? PropTypes.oneOfType([PropTypes.string, PropTypes.shape({\n  enter: PropTypes.string,\n  exit: PropTypes.string,\n  active: PropTypes.string\n}), PropTypes.shape({\n  enter: PropTypes.string,\n  enterDone: PropTypes.string,\n  enterActive: PropTypes.string,\n  exit: PropTypes.string,\n  exitDone: PropTypes.string,\n  exitActive: PropTypes.string\n})]) : null;",
+      "start": 1702937443128,
+      "end": 1702937443146,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443146,
+      "end": 1702937443146,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443146,
+      "end": 1702937443146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443146,
+      "end": 1702937443146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443146,
+      "end": 1702937443146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443146,
+      "end": 1702937443146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import PropTypes from \"prop-types\";\nexport var timeoutsShape = false ? PropTypes.oneOfType([PropTypes.number, PropTypes.shape({\n  enter: PropTypes.number,\n  exit: PropTypes.number,\n  appear: PropTypes.number\n}).isRequired]) : null;\nexport var classNamesShape = false ? PropTypes.oneOfType([PropTypes.string, PropTypes.shape({\n  enter: PropTypes.string,\n  exit: PropTypes.string,\n  active: PropTypes.string\n}), PropTypes.shape({\n  enter: PropTypes.string,\n  enterDone: PropTypes.string,\n  enterActive: PropTypes.string,\n  exit: PropTypes.string,\n  exitDone: PropTypes.string,\n  exitActive: PropTypes.string\n})]) : null;\n",
+      "start": 1702937443146,
+      "end": 1702937443156,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443156,
+      "end": 1702937443156,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/Loader.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Container, Row, Spinner } from \"react-bootstrap\";\r\n\r\nconst Loader = () => (\r\n  <Container fluid className=\"vh-50 d-flex\">\r\n    <Row className=\"justify-content-center align-self-center w-100 text-center\">\r\n      <Spinner animation=\"border\" variant=\"primary\" />\r\n    </Row>\r\n  </Container>\r\n);\r\n\r\nexport default Loader;\r\n",
+      "start": 1702937435960,
+      "end": 1702937436067,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436067,
+      "end": 1702937436067,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436067,
+      "end": 1702937436067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Container, Row, Spinner } from \"react-bootstrap\";\nconst Loader = () => /* @__PURE__ */ jsx(Container, { fluid: true, className: \"vh-50 d-flex\", children: /* @__PURE__ */ jsx(Row, { className: \"justify-content-center align-self-center w-100 text-center\", children: /* @__PURE__ */ jsx(Spinner, { animation: \"border\", variant: \"primary\" }) }) });\nexport default Loader;\n",
+      "start": 1702937436067,
+      "end": 1702937436193,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/Loader.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Container, Row, Spinner } from \"react-bootstrap\";\r\n\r\nconst Loader = () => (\r\n  <Container fluid className=\"vh-50 d-flex\">\r\n    <Row className=\"justify-content-center align-self-center w-100 text-center\">\r\n      <Spinner animation=\"border\" variant=\"primary\" />\r\n    </Row>\r\n  </Container>\r\n);\r\n\r\nexport default Loader;\r\n"
+        ],
+        "mappings": "AAMM;AANN,OAAO,WAAW;AAClB,SAAS,WAAW,KAAK,eAAe;AAExC,MAAM,SAAS,MACb,oBAAC,aAAU,OAAK,MAAC,WAAU,gBACzB,8BAAC,OAAI,WAAU,8DACb,8BAAC,WAAQ,WAAU,UAAS,SAAQ,WAAU,GAChD,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436193,
+      "end": 1702937436193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436194,
+      "end": 1702937436194,
+      "order": "normal"
+    }
+  ]
+}

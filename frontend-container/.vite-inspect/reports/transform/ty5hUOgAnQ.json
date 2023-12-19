@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/q.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Q\nDescription: Q is a vector-based functional paradigm programming language built into the kdb+ database.\n             (K/Q/Kdb+ from Kx Systems)\nAuthor: Sergey Vidyuk <svidyuk@gmail.com>\nWebsite: https://kx.com/connect-with-us/developers/\n*/\n\nfunction q(hljs) {\n  const KEYWORDS = {\n    $pattern: /(`?)[A-Za-z0-9_]+\\b/,\n    keyword:\n      'do while select delete by update from',\n    literal:\n      '0b 1b',\n    built_in:\n      'neg not null string reciprocal floor ceiling signum mod xbar xlog and or each scan over prior mmu lsq inv md5 ltime gtime count first var dev med cov cor all any rand sums prds mins maxs fills deltas ratios avgs differ prev next rank reverse iasc idesc asc desc msum mcount mavg mdev xrank mmin mmax xprev rotate distinct group where flip type key til get value attr cut set upsert raze union inter except cross sv vs sublist enlist read0 read1 hopen hclose hdel hsym hcount peach system ltrim rtrim trim lower upper ssr view tables views cols xcols keys xkey xcol xasc xdesc fkeys meta lj aj aj0 ij pj asof uj ww wj wj1 fby xgroup ungroup ej save load rsave rload show csv parse eval min max avg wavg wsum sin cos tan sum',\n    type:\n      '`float `double int `timestamp `timespan `datetime `time `boolean `symbol `char `byte `short `long `real `month `date `minute `second `guid'\n  };\n\n  return {\n    name: 'Q',\n    aliases: [\n      'k',\n      'kdb'\n    ],\n    keywords: KEYWORDS,\n    contains: [\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.QUOTE_STRING_MODE,\n      hljs.C_NUMBER_MODE\n    ]\n  };\n}\n\nmodule.exports = q;\n",
+      "start": 1702937444541,
+      "end": 1702937444572,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Q\nDescription: Q is a vector-based functional paradigm programming language built into the kdb+ database.\n             (K/Q/Kdb+ from Kx Systems)\nAuthor: Sergey Vidyuk <svidyuk@gmail.com>\nWebsite: https://kx.com/connect-with-us/developers/\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar q_1;\nvar hasRequiredQ;\n\nfunction requireQ () {\n\tif (hasRequiredQ) return q_1;\n\thasRequiredQ = 1;\n\tfunction q(hljs) {\n\t  const KEYWORDS = {\n\t    $pattern: /(`?)[A-Za-z0-9_]+\\b/,\n\t    keyword:\n\t      'do while select delete by update from',\n\t    literal:\n\t      '0b 1b',\n\t    built_in:\n\t      'neg not null string reciprocal floor ceiling signum mod xbar xlog and or each scan over prior mmu lsq inv md5 ltime gtime count first var dev med cov cor all any rand sums prds mins maxs fills deltas ratios avgs differ prev next rank reverse iasc idesc asc desc msum mcount mavg mdev xrank mmin mmax xprev rotate distinct group where flip type key til get value attr cut set upsert raze union inter except cross sv vs sublist enlist read0 read1 hopen hclose hdel hsym hcount peach system ltrim rtrim trim lower upper ssr view tables views cols xcols keys xkey xcol xasc xdesc fkeys meta lj aj aj0 ij pj asof uj ww wj wj1 fby xgroup ungroup ej save load rsave rload show csv parse eval min max avg wavg wsum sin cos tan sum',\n\t    type:\n\t      '`float `double int `timestamp `timespan `datetime `time `boolean `symbol `char `byte `short `long `real `month `date `minute `second `guid'\n\t  };\n\n\t  return {\n\t    name: 'Q',\n\t    aliases: [\n\t      'k',\n\t      'kdb'\n\t    ],\n\t    keywords: KEYWORDS,\n\t    contains: [\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.QUOTE_STRING_MODE,\n\t      hljs.C_NUMBER_MODE\n\t    ]\n\t  };\n\t}\n\n\tq_1 = q;\n\treturn q_1;\n}\n\nexport { requireQ as __require };",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,CAAC,CAAC,IAAI,EAAE;CACjB,EAAE,MAAM,QAAQ,GAAG;CACnB,IAAI,QAAQ,EAAE,qBAAqB;CACnC,IAAI,OAAO;CACX,MAAM,uCAAuC;CAC7C,IAAI,OAAO;CACX,MAAM,OAAO;CACb,IAAI,QAAQ;CACZ,MAAM,otBAAotB;CAC1tB,IAAI,IAAI;CACR,MAAM,4IAA4I;CAClJ,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,GAAG;CACb,IAAI,OAAO,EAAE;CACb,MAAM,GAAG;CACT,MAAM,KAAK;CACX,KAAK;CACL,IAAI,QAAQ,EAAE,QAAQ;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,mBAAmB;CAC9B,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,IAAI,CAAC,aAAa;CACxB,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,IAAc,GAAG,CAAC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444572,
+      "end": 1702937444572,
+      "order": "normal"
+    }
+  ]
+}

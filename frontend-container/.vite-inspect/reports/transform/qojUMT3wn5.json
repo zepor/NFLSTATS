@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/error/syntaxError.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from './GraphQLError.mjs';\n/**\n * Produces a GraphQLError representing a syntax error, containing useful\n * descriptive information about the syntax error's position in the source.\n */\n\nexport function syntaxError(source, position, description) {\n  return new GraphQLError(`Syntax Error: ${description}`, {\n    source,\n    positions: [position],\n  });\n}\n",
+      "start": 1702937443096,
+      "end": 1702937443110,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443110,
+      "end": 1702937443110,
+      "order": "normal"
+    }
+  ]
+}

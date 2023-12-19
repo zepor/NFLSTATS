@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/SaaS/Statistics.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Col, Card, Badge, Row } from \"react-bootstrap\";\r\n\r\nimport { Activity, ShoppingBag, ShoppingCart } from \"react-feather\";\r\n\r\nimport illustration from \"../../../assets/img/illustrations/social.png\";\r\n\r\nconst Statistics = () => (\r\n  <Row>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Income</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <ShoppingBag className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">$37.500</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n              6.25%\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Orders</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <ShoppingCart className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">3.282</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-danger me-2\">\r\n              -4.65%{\" \"}\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Activity</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <Activity className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">19.312</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n              8.35%\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"illustration flex-fill\">\r\n        <Card.Body className=\"p-0 d-flex flex-fill\">\r\n          <Row className=\"g-0 w-100\">\r\n            <Col xs=\"6\">\r\n              <div className=\"illustration-text p-3 m-1\">\r\n                <h4 className=\"illustration-text\">Welcome Back, Chris!</h4>\r\n                <p className=\"mb-0\">AppStack Dashboard</p>\r\n              </div>\r\n            </Col>\r\n            <Col xs=\"6\" className=\"align-self-end text-end\">\r\n              <img\r\n                src={illustration}\r\n                alt=\"Social\"\r\n                className=\"img-fluid illustration-img\"\r\n              />\r\n            </Col>\r\n          </Row>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n  </Row>\r\n);\r\n\r\nexport default Statistics;\r\n",
+      "start": 1702937441563,
+      "end": 1702937441581,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441581,
+      "end": 1702937441581,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441581,
+      "end": 1702937441581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Col, Card, Badge, Row } from \"react-bootstrap\";\nimport { Activity, ShoppingBag, ShoppingCart } from \"react-feather\";\nimport illustration from \"../../../assets/img/illustrations/social.png\";\nconst Statistics = () => /* @__PURE__ */ jsxs(Row, { children: [\n  /* @__PURE__ */ jsx(Col, { md: \"6\", className: \"col-xxl-3 d-flex\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Income\" }) }),\n      /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(ShoppingBag, { className: \"align-middle\" }) }) })\n    ] }),\n    /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-3\", children: \"$37.500\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n      /* @__PURE__ */ jsx(Badge, { bg: \"\", className: \"badge-soft-success me-2\", children: \"6.25%\" }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n    ] })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", className: \"col-xxl-3 d-flex\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Orders\" }) }),\n      /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(ShoppingCart, { className: \"align-middle\" }) }) })\n    ] }),\n    /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-3\", children: \"3.282\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n      /* @__PURE__ */ jsxs(Badge, { bg: \"\", className: \"badge-soft-danger me-2\", children: [\n        \"-4.65%\",\n        \" \"\n      ] }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n    ] })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", className: \"col-xxl-3 d-flex\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Activity\" }) }),\n      /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(Activity, { className: \"align-middle\" }) }) })\n    ] }),\n    /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-3\", children: \"19.312\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n      /* @__PURE__ */ jsx(Badge, { bg: \"\", className: \"badge-soft-success me-2\", children: \"8.35%\" }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n    ] })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", className: \"col-xxl-3 d-flex\", children: /* @__PURE__ */ jsx(Card, { className: \"illustration flex-fill\", children: /* @__PURE__ */ jsx(Card.Body, { className: \"p-0 d-flex flex-fill\", children: /* @__PURE__ */ jsxs(Row, { className: \"g-0 w-100\", children: [\n    /* @__PURE__ */ jsx(Col, { xs: \"6\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"illustration-text p-3 m-1\", children: [\n      /* @__PURE__ */ jsx(\"h4\", { className: \"illustration-text\", children: \"Welcome Back, Chris!\" }),\n      /* @__PURE__ */ jsx(\"p\", { className: \"mb-0\", children: \"AppStack Dashboard\" })\n    ] }) }),\n    /* @__PURE__ */ jsx(Col, { xs: \"6\", className: \"align-self-end text-end\", children: /* @__PURE__ */ jsx(\n      \"img\",\n      {\n        src: illustration,\n        alt: \"Social\",\n        className: \"img-fluid illustration-img\"\n      }\n    ) })\n  ] }) }) }) })\n] });\nexport default Statistics;\n",
+      "start": 1702937441581,
+      "end": 1702937441584,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/SaaS/Statistics.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Col, Card, Badge, Row } from \"react-bootstrap\";\r\n\r\nimport { Activity, ShoppingBag, ShoppingCart } from \"react-feather\";\r\n\r\nimport illustration from \"../../../assets/img/illustrations/social.png\";\r\n\r\nconst Statistics = () => (\r\n  <Row>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Income</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <ShoppingBag className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">$37.500</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n              6.25%\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Orders</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <ShoppingCart className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">3.282</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-danger me-2\">\r\n              -4.65%{\" \"}\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body>\r\n          <Row>\r\n            <Col className=\"mt-0\">\r\n              <h5 className=\"card-title\">Activity</h5>\r\n            </Col>\r\n\r\n            <Col xs=\"auto\">\r\n              <div className=\"stat stat-sm\">\r\n                <Activity className=\"align-middle\" />\r\n              </div>\r\n            </Col>\r\n          </Row>\r\n          <span className=\"h1 d-inline-block mt-1 mb-3\">19.312</span>\r\n          <div className=\"mb-0\">\r\n            <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n              8.35%\r\n            </Badge>\r\n            <span className=\"text-muted\">Since last week</span>\r\n          </div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" className=\"col-xxl-3 d-flex\">\r\n      <Card className=\"illustration flex-fill\">\r\n        <Card.Body className=\"p-0 d-flex flex-fill\">\r\n          <Row className=\"g-0 w-100\">\r\n            <Col xs=\"6\">\r\n              <div className=\"illustration-text p-3 m-1\">\r\n                <h4 className=\"illustration-text\">Welcome Back, Chris!</h4>\r\n                <p className=\"mb-0\">AppStack Dashboard</p>\r\n              </div>\r\n            </Col>\r\n            <Col xs=\"6\" className=\"align-self-end text-end\">\r\n              <img\r\n                src={illustration}\r\n                alt=\"Social\"\r\n                className=\"img-fluid illustration-img\"\r\n              />\r\n            </Col>\r\n          </Row>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n  </Row>\r\n);\r\n\r\nexport default Statistics;\r\n"
+        ],
+        "mappings": "AAYU,SAEI,KAFJ;AAZV,OAAO,WAAW;AAClB,SAAS,KAAK,MAAM,OAAO,WAAW;AAEtC,SAAS,UAAU,aAAa,oBAAoB;AAEpD,OAAO,kBAAkB;AAEzB,MAAM,aAAa,MACjB,qBAAC,OACC;AAAA,sBAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EACC;AAAA,yBAAC,OACC;AAAA,0BAAC,OAAI,WAAU,QACb,8BAAC,QAAG,WAAU,cAAa,oBAAM,GACnC;AAAA,MAEA,oBAAC,OAAI,IAAG,QACN,8BAAC,SAAI,WAAU,gBACb,8BAAC,eAAY,WAAU,gBAAe,GACxC,GACF;AAAA,OACF;AAAA,IACA,oBAAC,UAAK,WAAU,+BAA8B,qBAAO;AAAA,IACrD,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,SAAM,IAAG,IAAG,WAAU,2BAA0B,mBAEjD;AAAA,MACA,oBAAC,UAAK,WAAU,cAAa,6BAAe;AAAA,OAC9C;AAAA,KACF,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EACC;AAAA,yBAAC,OACC;AAAA,0BAAC,OAAI,WAAU,QACb,8BAAC,QAAG,WAAU,cAAa,oBAAM,GACnC;AAAA,MAEA,oBAAC,OAAI,IAAG,QACN,8BAAC,SAAI,WAAU,gBACb,8BAAC,gBAAa,WAAU,gBAAe,GACzC,GACF;AAAA,OACF;AAAA,IACA,oBAAC,UAAK,WAAU,+BAA8B,mBAAK;AAAA,IACnD,qBAAC,SAAI,WAAU,QACb;AAAA,2BAAC,SAAM,IAAG,IAAG,WAAU,0BAAyB;AAAA;AAAA,QACvC;AAAA,SACT;AAAA,MACA,oBAAC,UAAK,WAAU,cAAa,6BAAe;AAAA,OAC9C;AAAA,KACF,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EACC;AAAA,yBAAC,OACC;AAAA,0BAAC,OAAI,WAAU,QACb,8BAAC,QAAG,WAAU,cAAa,sBAAQ,GACrC;AAAA,MAEA,oBAAC,OAAI,IAAG,QACN,8BAAC,SAAI,WAAU,gBACb,8BAAC,YAAS,WAAU,gBAAe,GACrC,GACF;AAAA,OACF;AAAA,IACA,oBAAC,UAAK,WAAU,+BAA8B,oBAAM;AAAA,IACpD,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,SAAM,IAAG,IAAG,WAAU,2BAA0B,mBAEjD;AAAA,MACA,oBAAC,UAAK,WAAU,cAAa,6BAAe;AAAA,OAC9C;AAAA,KACF,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,QAAK,WAAU,0BACd,8BAAC,KAAK,MAAL,EAAU,WAAU,wBACnB,+BAAC,OAAI,WAAU,aACb;AAAA,wBAAC,OAAI,IAAG,KACN,+BAAC,SAAI,WAAU,6BACb;AAAA,0BAAC,QAAG,WAAU,qBAAoB,kCAAoB;AAAA,MACtD,oBAAC,OAAE,WAAU,QAAO,gCAAkB;AAAA,OACxC,GACF;AAAA,IACA,oBAAC,OAAI,IAAG,KAAI,WAAU,2BACpB;AAAA,MAAC;AAAA;AAAA,QACC,KAAK;AAAA,QACL,KAAI;AAAA,QACJ,WAAU;AAAA;AAAA,IACZ,GACF;AAAA,KACF,GACF,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441584,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    }
+  ]
+}

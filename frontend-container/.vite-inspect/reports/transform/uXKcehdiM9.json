@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/antlr4.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = antlr4\nantlr4.displayName = 'antlr4'\nantlr4.aliases = ['g4']\nfunction antlr4(Prism) {\n  Prism.languages.antlr4 = {\n    comment: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n    string: {\n      pattern: /'(?:\\\\.|[^\\\\'\\r\\n])*'/,\n      greedy: true\n    },\n    'character-class': {\n      pattern: /\\[(?:\\\\.|[^\\\\\\]\\r\\n])*\\]/,\n      greedy: true,\n      alias: 'regex',\n      inside: {\n        range: {\n          pattern: /([^[]|(?:^|[^\\\\])(?:\\\\\\\\)*\\\\\\[)-(?!\\])/,\n          lookbehind: true,\n          alias: 'punctuation'\n        },\n        escape:\n          /\\\\(?:u(?:[a-fA-F\\d]{4}|\\{[a-fA-F\\d]+\\})|[pP]\\{[=\\w-]+\\}|[^\\r\\nupP])/,\n        punctuation: /[\\[\\]]/\n      }\n    },\n    action: {\n      pattern: /\\{(?:[^{}]|\\{(?:[^{}]|\\{(?:[^{}]|\\{[^{}]*\\})*\\})*\\})*\\}/,\n      greedy: true,\n      inside: {\n        content: {\n          // this might be C, C++, Python, Java, C#, or any other language ANTLR4 compiles to\n          pattern: /(\\{)[\\s\\S]+(?=\\})/,\n          lookbehind: true\n        },\n        punctuation: /[{}]/\n      }\n    },\n    command: {\n      pattern:\n        /(->\\s*(?!\\s))(?:\\s*(?:,\\s*)?\\b[a-z]\\w*(?:\\s*\\([^()\\r\\n]*\\))?)+(?=\\s*;)/i,\n      lookbehind: true,\n      inside: {\n        function: /\\b\\w+(?=\\s*(?:[,(]|$))/,\n        punctuation: /[,()]/\n      }\n    },\n    annotation: {\n      pattern: /@\\w+(?:::\\w+)*/,\n      alias: 'keyword'\n    },\n    label: {\n      pattern: /#[ \\t]*\\w+/,\n      alias: 'punctuation'\n    },\n    keyword:\n      /\\b(?:catch|channels|finally|fragment|grammar|import|lexer|locals|mode|options|parser|returns|throws|tokens)\\b/,\n    definition: [\n      {\n        pattern: /\\b[a-z]\\w*(?=\\s*:)/,\n        alias: ['rule', 'class-name']\n      },\n      {\n        pattern: /\\b[A-Z]\\w*(?=\\s*:)/,\n        alias: ['token', 'constant']\n      }\n    ],\n    constant: /\\b[A-Z][A-Z_]*\\b/,\n    operator: /\\.\\.|->|[|~]|[*+?]\\??/,\n    punctuation: /[;:()=]/\n  }\n  Prism.languages.g4 = Prism.languages.antlr4\n}\n",
+      "start": 1702937444718,
+      "end": 1702937444826,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar antlr4_1;\nvar hasRequiredAntlr4;\n\nfunction requireAntlr4 () {\n\tif (hasRequiredAntlr4) return antlr4_1;\n\thasRequiredAntlr4 = 1;\n\t'use strict'\n\n\tantlr4_1 = antlr4\n\tantlr4.displayName = 'antlr4'\n\tantlr4.aliases = ['g4']\n\tfunction antlr4(Prism) {\n\t  Prism.languages.antlr4 = {\n\t    comment: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t    string: {\n\t      pattern: /'(?:\\\\.|[^\\\\'\\r\\n])*'/,\n\t      greedy: true\n\t    },\n\t    'character-class': {\n\t      pattern: /\\[(?:\\\\.|[^\\\\\\]\\r\\n])*\\]/,\n\t      greedy: true,\n\t      alias: 'regex',\n\t      inside: {\n\t        range: {\n\t          pattern: /([^[]|(?:^|[^\\\\])(?:\\\\\\\\)*\\\\\\[)-(?!\\])/,\n\t          lookbehind: true,\n\t          alias: 'punctuation'\n\t        },\n\t        escape:\n\t          /\\\\(?:u(?:[a-fA-F\\d]{4}|\\{[a-fA-F\\d]+\\})|[pP]\\{[=\\w-]+\\}|[^\\r\\nupP])/,\n\t        punctuation: /[\\[\\]]/\n\t      }\n\t    },\n\t    action: {\n\t      pattern: /\\{(?:[^{}]|\\{(?:[^{}]|\\{(?:[^{}]|\\{[^{}]*\\})*\\})*\\})*\\}/,\n\t      greedy: true,\n\t      inside: {\n\t        content: {\n\t          // this might be C, C++, Python, Java, C#, or any other language ANTLR4 compiles to\n\t          pattern: /(\\{)[\\s\\S]+(?=\\})/,\n\t          lookbehind: true\n\t        },\n\t        punctuation: /[{}]/\n\t      }\n\t    },\n\t    command: {\n\t      pattern:\n\t        /(->\\s*(?!\\s))(?:\\s*(?:,\\s*)?\\b[a-z]\\w*(?:\\s*\\([^()\\r\\n]*\\))?)+(?=\\s*;)/i,\n\t      lookbehind: true,\n\t      inside: {\n\t        function: /\\b\\w+(?=\\s*(?:[,(]|$))/,\n\t        punctuation: /[,()]/\n\t      }\n\t    },\n\t    annotation: {\n\t      pattern: /@\\w+(?:::\\w+)*/,\n\t      alias: 'keyword'\n\t    },\n\t    label: {\n\t      pattern: /#[ \\t]*\\w+/,\n\t      alias: 'punctuation'\n\t    },\n\t    keyword:\n\t      /\\b(?:catch|channels|finally|fragment|grammar|import|lexer|locals|mode|options|parser|returns|throws|tokens)\\b/,\n\t    definition: [\n\t      {\n\t        pattern: /\\b[a-z]\\w*(?=\\s*:)/,\n\t        alias: ['rule', 'class-name']\n\t      },\n\t      {\n\t        pattern: /\\b[A-Z]\\w*(?=\\s*:)/,\n\t        alias: ['token', 'constant']\n\t      }\n\t    ],\n\t    constant: /\\b[A-Z][A-Z_]*\\b/,\n\t    operator: /\\.\\.|->|[|~]|[*+?]\\??/,\n\t    punctuation: /[;:()=]/\n\t  }\n\t  Prism.languages.g4 = Prism.languages.antlr4\n\t}\n\treturn antlr4_1;\n}\n\nexport { requireAntlr4 as __require };",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,CAAC,IAAI,CAAC;CACvB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,OAAO,EAAE,+BAA+B;CAC5C,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,uBAAuB;CACtC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,iBAAiB,EAAE;CACvB,MAAM,OAAO,EAAE,0BAA0B;CACzC,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,OAAO;CACpB,MAAM,MAAM,EAAE;CACd,QAAQ,KAAK,EAAE;CACf,UAAU,OAAO,EAAE,wCAAwC;CAC3D,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,KAAK,EAAE,aAAa;CAC9B,SAAS;CACT,QAAQ,MAAM;CACd,UAAU,qEAAqE;CAC/E,QAAQ,WAAW,EAAE,QAAQ;CAC7B,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,yDAAyD;CACxE,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE;CACjB;CACA,UAAU,OAAO,EAAE,mBAAmB;CACtC,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ,WAAW,EAAE,MAAM;CAC3B,OAAO;CACP,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO;CACb,QAAQ,yEAAyE;CACjF,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,wBAAwB;CAC1C,QAAQ,WAAW,EAAE,OAAO;CAC5B,OAAO;CACP,KAAK;CACL,IAAI,UAAU,EAAE;CAChB,MAAM,OAAO,EAAE,gBAAgB;CAC/B,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,YAAY;CAC3B,MAAM,KAAK,EAAE,aAAa;CAC1B,KAAK;CACL,IAAI,OAAO;CACX,MAAM,+GAA+G;CACrH,IAAI,UAAU,EAAE;CAChB,MAAM;CACN,QAAQ,OAAO,EAAE,oBAAoB;CACrC,QAAQ,KAAK,EAAE,CAAC,MAAM,EAAE,YAAY,CAAC;CACrC,OAAO;CACP,MAAM;CACN,QAAQ,OAAO,EAAE,oBAAoB;CACrC,QAAQ,KAAK,EAAE,CAAC,OAAO,EAAE,UAAU,CAAC;CACpC,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE,kBAAkB;CAChC,IAAI,QAAQ,EAAE,uBAAuB;CACrC,IAAI,WAAW,EAAE,SAAS;CAC1B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CAC7C"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444826,
+      "end": 1702937444826,
+      "order": "normal"
+    }
+  ]
+}

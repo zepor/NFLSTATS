@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_stringToPath.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import memoizeCapped from './_memoizeCapped.js';\n\n/** Used to match property names within property paths. */\nvar rePropName = /[^.[\\]]+|\\[(?:(-?\\d+(?:\\.\\d+)?)|([\"'])((?:(?!\\2)[^\\\\]|\\\\.)*?)\\2)\\]|(?=(?:\\.|\\[\\])(?:\\.|\\[\\]|$))/g;\n\n/** Used to match backslashes in property paths. */\nvar reEscapeChar = /\\\\(\\\\)?/g;\n\n/**\n * Converts `string` to a property path array.\n *\n * @private\n * @param {string} string The string to convert.\n * @returns {Array} Returns the property path array.\n */\nvar stringToPath = memoizeCapped(function(string) {\n  var result = [];\n  if (string.charCodeAt(0) === 46 /* . */) {\n    result.push('');\n  }\n  string.replace(rePropName, function(match, number, quote, subString) {\n    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));\n  });\n  return result;\n});\n\nexport default stringToPath;\n",
+      "start": 1702937443727,
+      "end": 1702937443872,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443872,
+      "end": 1702937443872,
+      "order": "normal"
+    }
+  ]
+}

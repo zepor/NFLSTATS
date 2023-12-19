@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/Ratio.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nfunction toPercent(num) {\n  if (num <= 0) return '100%';\n  if (num < 1) return `${num * 100}%`;\n  return `${num}%`;\n}\nconst Ratio = /*#__PURE__*/React.forwardRef(({\n  bsPrefix,\n  className,\n  children,\n  aspectRatio = '1x1',\n  style,\n  ...props\n}, ref) => {\n  bsPrefix = useBootstrapPrefix(bsPrefix, 'ratio');\n  const isCustomRatio = typeof aspectRatio === 'number';\n  return /*#__PURE__*/_jsx(\"div\", {\n    ref: ref,\n    ...props,\n    style: {\n      ...style,\n      ...(isCustomRatio && {\n        '--bs-aspect-ratio': toPercent(aspectRatio)\n      })\n    },\n    className: classNames(bsPrefix, className, !isCustomRatio && `${bsPrefix}-${aspectRatio}`),\n    children: React.Children.only(children)\n  });\n});\nexport default Ratio;",
+      "start": 1702937441515,
+      "end": 1702937441537,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441537,
+      "end": 1702937441537,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441537,
+      "end": 1702937441538,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441538,
+      "end": 1702937441538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441538,
+      "end": 1702937441538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441538,
+      "end": 1702937441538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441538,
+      "end": 1702937441538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441538,
+      "end": 1702937441538,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_Hash.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var hashClear = require('./_hashClear'),\n    hashDelete = require('./_hashDelete'),\n    hashGet = require('./_hashGet'),\n    hashHas = require('./_hashHas'),\n    hashSet = require('./_hashSet');\n\n/**\n * Creates a hash object.\n *\n * @private\n * @constructor\n * @param {Array} [entries] The key-value pairs to cache.\n */\nfunction Hash(entries) {\n  var index = -1,\n      length = entries == null ? 0 : entries.length;\n\n  this.clear();\n  while (++index < length) {\n    var entry = entries[index];\n    this.set(entry[0], entry[1]);\n  }\n}\n\n// Add methods to `Hash`.\nHash.prototype.clear = hashClear;\nHash.prototype['delete'] = hashDelete;\nHash.prototype.get = hashGet;\nHash.prototype.has = hashHas;\nHash.prototype.set = hashSet;\n\nmodule.exports = Hash;\n",
+      "start": 1702937445367,
+      "end": 1702937445379,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445379,
+      "end": 1702937445379,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_hashClear.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_hashDelete.js?commonjs-proxy\";\nimport require$$2 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_hashGet.js?commonjs-proxy\";\nimport require$$3 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_hashHas.js?commonjs-proxy\";\nimport require$$4 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_hashSet.js?commonjs-proxy\";\n\nvar hashClear = require$$0,\n    hashDelete = require$$1,\n    hashGet = require$$2,\n    hashHas = require$$3,\n    hashSet = require$$4;\n\n/**\n * Creates a hash object.\n *\n * @private\n * @constructor\n * @param {Array} [entries] The key-value pairs to cache.\n */\nfunction Hash(entries) {\n  var index = -1,\n      length = entries == null ? 0 : entries.length;\n\n  this.clear();\n  while (++index < length) {\n    var entry = entries[index];\n    this.set(entry[0], entry[1]);\n  }\n}\n\n// Add methods to `Hash`.\nHash.prototype.clear = hashClear;\nHash.prototype['delete'] = hashDelete;\nHash.prototype.get = hashGet;\nHash.prototype.has = hashHas;\nHash.prototype.set = hashSet;\n\nvar _Hash = Hash;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_Hash);\nexport { _Hash as __moduleExports };",
+      "start": 1702937445379,
+      "end": 1702937445414,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;AAAA,IAAI,SAAS,GAAG,UAAuB;AACvC,IAAI,UAAU,GAAG,UAAwB;AACzC,IAAI,OAAO,GAAG,UAAqB;AACnC,IAAI,OAAO,GAAG,UAAqB;AACnC,IAAI,OAAO,GAAG,UAAqB,CAAC;AACpC;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,IAAI,CAAC,OAAO,EAAE;AACvB,EAAE,IAAI,KAAK,GAAG,CAAC,CAAC;AAChB,MAAM,MAAM,GAAG,OAAO,IAAI,IAAI,GAAG,CAAC,GAAG,OAAO,CAAC,MAAM,CAAC;AACpD;AACA,EAAE,IAAI,CAAC,KAAK,EAAE,CAAC;AACf,EAAE,OAAO,EAAE,KAAK,GAAG,MAAM,EAAE;AAC3B,IAAI,IAAI,KAAK,GAAG,OAAO,CAAC,KAAK,CAAC,CAAC;AAC/B,IAAI,IAAI,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,GAAG;AACH,CAAC;AACD;AACA;AACA,IAAI,CAAC,SAAS,CAAC,KAAK,GAAG,SAAS,CAAC;AACjC,IAAI,CAAC,SAAS,CAAC,QAAQ,CAAC,GAAG,UAAU,CAAC;AACtC,IAAI,CAAC,SAAS,CAAC,GAAG,GAAG,OAAO,CAAC;AAC7B,IAAI,CAAC,SAAS,CAAC,GAAG,GAAG,OAAO,CAAC;AAC7B,IAAI,CAAC,SAAS,CAAC,GAAG,GAAG,OAAO,CAAC;AAC7B;IACA,KAAc,GAAG,IAAI"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445414,
+      "end": 1702937445414,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445414,
+      "end": 1702937445414,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445414,
+      "end": 1702937445414,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445414,
+      "end": 1702937445414,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445414,
+      "end": 1702937445414,
+      "order": "normal"
+    }
+  ]
+}

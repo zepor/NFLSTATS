@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar reactIs = require('react-is');\n\n/**\n * Copyright 2015, Yahoo! Inc.\n * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.\n */\nvar REACT_STATICS = {\n  childContextTypes: true,\n  contextType: true,\n  contextTypes: true,\n  defaultProps: true,\n  displayName: true,\n  getDefaultProps: true,\n  getDerivedStateFromError: true,\n  getDerivedStateFromProps: true,\n  mixins: true,\n  propTypes: true,\n  type: true\n};\nvar KNOWN_STATICS = {\n  name: true,\n  length: true,\n  prototype: true,\n  caller: true,\n  callee: true,\n  arguments: true,\n  arity: true\n};\nvar FORWARD_REF_STATICS = {\n  '$$typeof': true,\n  render: true,\n  defaultProps: true,\n  displayName: true,\n  propTypes: true\n};\nvar MEMO_STATICS = {\n  '$$typeof': true,\n  compare: true,\n  defaultProps: true,\n  displayName: true,\n  propTypes: true,\n  type: true\n};\nvar TYPE_STATICS = {};\nTYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;\nTYPE_STATICS[reactIs.Memo] = MEMO_STATICS;\n\nfunction getStatics(component) {\n  // React v16.11 and below\n  if (reactIs.isMemo(component)) {\n    return MEMO_STATICS;\n  } // React v16.12 and above\n\n\n  return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;\n}\n\nvar defineProperty = Object.defineProperty;\nvar getOwnPropertyNames = Object.getOwnPropertyNames;\nvar getOwnPropertySymbols = Object.getOwnPropertySymbols;\nvar getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;\nvar getPrototypeOf = Object.getPrototypeOf;\nvar objectPrototype = Object.prototype;\nfunction hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {\n  if (typeof sourceComponent !== 'string') {\n    // don't hoist over string (html) components\n    if (objectPrototype) {\n      var inheritedComponent = getPrototypeOf(sourceComponent);\n\n      if (inheritedComponent && inheritedComponent !== objectPrototype) {\n        hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);\n      }\n    }\n\n    var keys = getOwnPropertyNames(sourceComponent);\n\n    if (getOwnPropertySymbols) {\n      keys = keys.concat(getOwnPropertySymbols(sourceComponent));\n    }\n\n    var targetStatics = getStatics(targetComponent);\n    var sourceStatics = getStatics(sourceComponent);\n\n    for (var i = 0; i < keys.length; ++i) {\n      var key = keys[i];\n\n      if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {\n        var descriptor = getOwnPropertyDescriptor(sourceComponent, key);\n\n        try {\n          // Avoid failures from read-only properties\n          defineProperty(targetComponent, key, descriptor);\n        } catch (e) {}\n      }\n    }\n  }\n\n  return targetComponent;\n}\n\nmodule.exports = hoistNonReactStatics;\n",
+      "start": 1702937441295,
+      "end": 1702937441417,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441417,
+      "end": 1702937441417,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react-is/index.js?commonjs-proxy\";\n\n'use strict';\n\nvar reactIs = require$$0;\n\n/**\n * Copyright 2015, Yahoo! Inc.\n * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.\n */\nvar REACT_STATICS = {\n  childContextTypes: true,\n  contextType: true,\n  contextTypes: true,\n  defaultProps: true,\n  displayName: true,\n  getDefaultProps: true,\n  getDerivedStateFromError: true,\n  getDerivedStateFromProps: true,\n  mixins: true,\n  propTypes: true,\n  type: true\n};\nvar KNOWN_STATICS = {\n  name: true,\n  length: true,\n  prototype: true,\n  caller: true,\n  callee: true,\n  arguments: true,\n  arity: true\n};\nvar FORWARD_REF_STATICS = {\n  '$$typeof': true,\n  render: true,\n  defaultProps: true,\n  displayName: true,\n  propTypes: true\n};\nvar MEMO_STATICS = {\n  '$$typeof': true,\n  compare: true,\n  defaultProps: true,\n  displayName: true,\n  propTypes: true,\n  type: true\n};\nvar TYPE_STATICS = {};\nTYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;\nTYPE_STATICS[reactIs.Memo] = MEMO_STATICS;\n\nfunction getStatics(component) {\n  // React v16.11 and below\n  if (reactIs.isMemo(component)) {\n    return MEMO_STATICS;\n  } // React v16.12 and above\n\n\n  return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;\n}\n\nvar defineProperty = Object.defineProperty;\nvar getOwnPropertyNames = Object.getOwnPropertyNames;\nvar getOwnPropertySymbols = Object.getOwnPropertySymbols;\nvar getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;\nvar getPrototypeOf = Object.getPrototypeOf;\nvar objectPrototype = Object.prototype;\nfunction hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {\n  if (typeof sourceComponent !== 'string') {\n    // don't hoist over string (html) components\n    if (objectPrototype) {\n      var inheritedComponent = getPrototypeOf(sourceComponent);\n\n      if (inheritedComponent && inheritedComponent !== objectPrototype) {\n        hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);\n      }\n    }\n\n    var keys = getOwnPropertyNames(sourceComponent);\n\n    if (getOwnPropertySymbols) {\n      keys = keys.concat(getOwnPropertySymbols(sourceComponent));\n    }\n\n    var targetStatics = getStatics(targetComponent);\n    var sourceStatics = getStatics(sourceComponent);\n\n    for (var i = 0; i < keys.length; ++i) {\n      var key = keys[i];\n\n      if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {\n        var descriptor = getOwnPropertyDescriptor(sourceComponent, key);\n\n        try {\n          // Avoid failures from read-only properties\n          defineProperty(targetComponent, key, descriptor);\n        } catch (e) {}\n      }\n    }\n  }\n\n  return targetComponent;\n}\n\nvar hoistNonReactStatics_cjs = hoistNonReactStatics;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(hoistNonReactStatics_cjs);\nexport { hoistNonReactStatics_cjs as __moduleExports };",
+      "start": 1702937441417,
+      "end": 1702937442071,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    }
+  ]
+}

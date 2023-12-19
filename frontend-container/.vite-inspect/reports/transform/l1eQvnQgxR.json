@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/docs/Changelog.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Badge, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Changelog = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Changelog\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Changelog</h1>\r\n          <hr className=\"my-4\" />\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v3.1.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 8 June, 2023</h5>\r\n          <ul>\r\n            <li>Added: Social buttons to auth pages</li>\r\n            <li>Improved: Various visual changes</li>\r\n            <li>Updated: Vite 4.3.9</li>\r\n            <li>Updated: Bootstrap 5.3.0</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v3.0.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 10 March, 2023</h5>\r\n          <ul>\r\n            <li>Improved: Faster code compilation</li>\r\n            <li>Improved: Faster development server</li>\r\n            <li>Improved: Output bundle size</li>\r\n            <li>Added: Page loaders</li>\r\n            <li>Migrated: Create React App to Vite</li>\r\n            <li>Migrated: Jvectormap to Jsvectormap</li>\r\n            <li>Fixed: Firebase auth issues</li>\r\n            <li>Fixed: Chat layout issues</li>\r\n            <li>Updated: Bootstrap 5.2.3</li>\r\n            <li>Updated: React 18.2.0</li>\r\n            <li>Updated: Chart.js 4.2.1</li>\r\n            <li>Updated: FullCalendar 6.1.4</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.2.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 30 April, 2022</h5>\r\n          <ul>\r\n            <li>Added: TypeScript version</li>\r\n            <li>Fixed: Firebase auth issues</li>\r\n            <li>Updated: Bootstrap 5.1.3</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.1.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 7 October, 2021</h5>\r\n          <ul>\r\n            <li>Added: Table pagination (advanced-tables/pagination)</li>\r\n            <li>\r\n              Added: Table column sorting (advanced-tables/column-sorting)\r\n            </li>\r\n            <li>\r\n              Added: Table column filters (advanced-tables/column-filtering)\r\n            </li>\r\n            <li>Added: Table row expanding (advanced-tables/row-expanding)</li>\r\n            <li>Added: Table row selection (advanced-tables/row-selection)</li>\r\n            <li>Removed: react-bootstrap-table-2</li>\r\n            <li>Migrated: Node Sass to Dart Sass</li>\r\n            <li>Updated: Quill 2.0.0-beta.4</li>\r\n            <li>Updated: Bootstrap 5.1.2</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.0.1</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 3 October, 2021</h5>\r\n          <ul>\r\n            <li>Fix: CSS output files</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.0.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 27 September, 2021</h5>\r\n          <ul>\r\n            <li>Added: Dark mode support</li>\r\n            <li>Added: Theme builder</li>\r\n            <li>Added: Compact sidebar variant</li>\r\n            <li>Added: Right sidebar variant</li>\r\n            <li>Added: Formik examples (form-plugins/formik)</li>\r\n            <li>Added: Offcanvas examples (ui/offcanvas)</li>\r\n            <li>Added: Firebase authentication</li>\r\n            <li>Added: Cognito authentication</li>\r\n            <li>Added: Auth0 authentication</li>\r\n            <li>Added: JWT authentication</li>\r\n            <li>Added: Prettier</li>\r\n            <li>Added: ESLint</li>\r\n            <li>Added: Web Vitals</li>\r\n            <li>Added: Internationalization (i18next)</li>\r\n            <li>Added: React Helmet Async</li>\r\n            <li>Added: Redux Toolkit</li>\r\n            <li>Added: Notyf notifications</li>\r\n            <li>Added: Yup validation</li>\r\n            <li>Added: Multiple documentation pages</li>\r\n            <li>Migrated: All components to React Hooks</li>\r\n            <li>Removed: Redux Toastr</li>\r\n            <li>Removed: Smart Wizard</li>\r\n            <li>Updated: Bootstrap 5.1.1</li>\r\n            <li>Updated: React v17</li>\r\n            <li>Updated: React Router DOM v6</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Changelog;\r\n",
+      "start": 1702937440869,
+      "end": 1702937440895,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Badge, Col, Container, Row } from \"react-bootstrap\";\nconst Changelog = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Changelog\" }),\n  /* @__PURE__ */ jsx(Container, { fluid: true, className: \"p-0\", children: /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsxs(Col, { lg: 10, xl: 8, className: \"col-xxl-7 mx-auto\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { children: \"Changelog\" }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-4\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v3.1.0\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 8 June, 2023\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Social buttons to auth pages\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Improved: Various visual changes\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Vite 4.3.9\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Bootstrap 5.3.0\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v3.0.0\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 10 March, 2023\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Improved: Faster code compilation\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Improved: Faster development server\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Improved: Output bundle size\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Page loaders\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Migrated: Create React App to Vite\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Migrated: Jvectormap to Jsvectormap\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Fixed: Firebase auth issues\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Fixed: Chat layout issues\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Bootstrap 5.2.3\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: React 18.2.0\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Chart.js 4.2.1\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: FullCalendar 6.1.4\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v2.2.0\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 30 April, 2022\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: TypeScript version\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Fixed: Firebase auth issues\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Bootstrap 5.1.3\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v2.1.0\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 7 October, 2021\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Table pagination (advanced-tables/pagination)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Table column sorting (advanced-tables/column-sorting)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Table column filters (advanced-tables/column-filtering)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Table row expanding (advanced-tables/row-expanding)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Table row selection (advanced-tables/row-selection)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Removed: react-bootstrap-table-2\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Migrated: Node Sass to Dart Sass\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Quill 2.0.0-beta.4\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Bootstrap 5.1.2\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v2.0.1\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 3 October, 2021\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Fix: CSS output files\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"d-inline-block me-1\", children: /* @__PURE__ */ jsx(Badge, { bg: \"primary\", children: \"v2.0.0\" }) }),\n    /* @__PURE__ */ jsx(\"h5\", { className: \"d-inline-block\", children: \"– 27 September, 2021\" }),\n    /* @__PURE__ */ jsxs(\"ul\", { children: [\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Dark mode support\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Theme builder\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Compact sidebar variant\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Right sidebar variant\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Formik examples (form-plugins/formik)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Offcanvas examples (ui/offcanvas)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Firebase authentication\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Cognito authentication\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Auth0 authentication\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: JWT authentication\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Prettier\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: ESLint\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Web Vitals\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Internationalization (i18next)\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: React Helmet Async\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Redux Toolkit\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Notyf notifications\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Yup validation\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Added: Multiple documentation pages\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Migrated: All components to React Hooks\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Removed: Redux Toastr\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Removed: Smart Wizard\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Bootstrap 5.1.1\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: React v17\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: React Router DOM v6\" }),\n      /* @__PURE__ */ jsx(\"li\", { children: \"Updated: Dependencies to latest versions\" })\n    ] })\n  ] }) }) })\n] });\nexport default Changelog;\n",
+      "start": 1702937440895,
+      "end": 1702937440951,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/docs/Changelog.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Badge, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Changelog = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Changelog\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Changelog</h1>\r\n          <hr className=\"my-4\" />\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v3.1.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 8 June, 2023</h5>\r\n          <ul>\r\n            <li>Added: Social buttons to auth pages</li>\r\n            <li>Improved: Various visual changes</li>\r\n            <li>Updated: Vite 4.3.9</li>\r\n            <li>Updated: Bootstrap 5.3.0</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v3.0.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 10 March, 2023</h5>\r\n          <ul>\r\n            <li>Improved: Faster code compilation</li>\r\n            <li>Improved: Faster development server</li>\r\n            <li>Improved: Output bundle size</li>\r\n            <li>Added: Page loaders</li>\r\n            <li>Migrated: Create React App to Vite</li>\r\n            <li>Migrated: Jvectormap to Jsvectormap</li>\r\n            <li>Fixed: Firebase auth issues</li>\r\n            <li>Fixed: Chat layout issues</li>\r\n            <li>Updated: Bootstrap 5.2.3</li>\r\n            <li>Updated: React 18.2.0</li>\r\n            <li>Updated: Chart.js 4.2.1</li>\r\n            <li>Updated: FullCalendar 6.1.4</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.2.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 30 April, 2022</h5>\r\n          <ul>\r\n            <li>Added: TypeScript version</li>\r\n            <li>Fixed: Firebase auth issues</li>\r\n            <li>Updated: Bootstrap 5.1.3</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.1.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 7 October, 2021</h5>\r\n          <ul>\r\n            <li>Added: Table pagination (advanced-tables/pagination)</li>\r\n            <li>\r\n              Added: Table column sorting (advanced-tables/column-sorting)\r\n            </li>\r\n            <li>\r\n              Added: Table column filters (advanced-tables/column-filtering)\r\n            </li>\r\n            <li>Added: Table row expanding (advanced-tables/row-expanding)</li>\r\n            <li>Added: Table row selection (advanced-tables/row-selection)</li>\r\n            <li>Removed: react-bootstrap-table-2</li>\r\n            <li>Migrated: Node Sass to Dart Sass</li>\r\n            <li>Updated: Quill 2.0.0-beta.4</li>\r\n            <li>Updated: Bootstrap 5.1.2</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.0.1</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 3 October, 2021</h5>\r\n          <ul>\r\n            <li>Fix: CSS output files</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n\r\n          <h4 className=\"d-inline-block me-1\">\r\n            <Badge bg=\"primary\">v2.0.0</Badge>\r\n          </h4>\r\n          <h5 className=\"d-inline-block\">– 27 September, 2021</h5>\r\n          <ul>\r\n            <li>Added: Dark mode support</li>\r\n            <li>Added: Theme builder</li>\r\n            <li>Added: Compact sidebar variant</li>\r\n            <li>Added: Right sidebar variant</li>\r\n            <li>Added: Formik examples (form-plugins/formik)</li>\r\n            <li>Added: Offcanvas examples (ui/offcanvas)</li>\r\n            <li>Added: Firebase authentication</li>\r\n            <li>Added: Cognito authentication</li>\r\n            <li>Added: Auth0 authentication</li>\r\n            <li>Added: JWT authentication</li>\r\n            <li>Added: Prettier</li>\r\n            <li>Added: ESLint</li>\r\n            <li>Added: Web Vitals</li>\r\n            <li>Added: Internationalization (i18next)</li>\r\n            <li>Added: React Helmet Async</li>\r\n            <li>Added: Redux Toolkit</li>\r\n            <li>Added: Notyf notifications</li>\r\n            <li>Added: Yup validation</li>\r\n            <li>Added: Multiple documentation pages</li>\r\n            <li>Migrated: All components to React Hooks</li>\r\n            <li>Removed: Redux Toastr</li>\r\n            <li>Removed: Smart Wizard</li>\r\n            <li>Updated: Bootstrap 5.1.1</li>\r\n            <li>Updated: React v17</li>\r\n            <li>Updated: React Router DOM v6</li>\r\n            <li>Updated: Dependencies to latest versions</li>\r\n          </ul>\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Changelog;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440951,
+      "end": 1702937440951,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440952,
+      "end": 1702937440952,
+      "order": "normal"
+    }
+  ]
+}

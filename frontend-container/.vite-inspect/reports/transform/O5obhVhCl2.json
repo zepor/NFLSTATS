@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/dts.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Device Tree\nDescription: *.dts files used in the Linux kernel\nAuthor: Martin Braun <martin.braun@ettus.com>, Moritz Fischer <moritz.fischer@ettus.com>\nWebsite: https://elinux.org/Device_Tree_Reference\nCategory: config\n*/\n\n/** @type LanguageFn */\nfunction dts(hljs) {\n  const STRINGS = {\n    className: 'string',\n    variants: [\n      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n        begin: '((u8?|U)|L)?\"'\n      }),\n      {\n        begin: '(u8?|U)?R\"',\n        end: '\"',\n        contains: [hljs.BACKSLASH_ESCAPE]\n      },\n      {\n        begin: '\\'\\\\\\\\?.',\n        end: '\\'',\n        illegal: '.'\n      }\n    ]\n  };\n\n  const NUMBERS = {\n    className: 'number',\n    variants: [\n      {\n        begin: '\\\\b(\\\\d+(\\\\.\\\\d*)?|\\\\.\\\\d+)(u|U|l|L|ul|UL|f|F)'\n      },\n      {\n        begin: hljs.C_NUMBER_RE\n      }\n    ],\n    relevance: 0\n  };\n\n  const PREPROCESSOR = {\n    className: 'meta',\n    begin: '#',\n    end: '$',\n    keywords: {\n      'meta-keyword': 'if else elif endif define undef ifdef ifndef'\n    },\n    contains: [\n      {\n        begin: /\\\\\\n/,\n        relevance: 0\n      },\n      {\n        beginKeywords: 'include',\n        end: '$',\n        keywords: {\n          'meta-keyword': 'include'\n        },\n        contains: [\n          hljs.inherit(STRINGS, {\n            className: 'meta-string'\n          }),\n          {\n            className: 'meta-string',\n            begin: '<',\n            end: '>',\n            illegal: '\\\\n'\n          }\n        ]\n      },\n      STRINGS,\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE\n    ]\n  };\n\n  const DTS_REFERENCE = {\n    className: 'variable',\n    begin: /&[a-z\\d_]*\\b/\n  };\n\n  const DTS_KEYWORD = {\n    className: 'meta-keyword',\n    begin: '/[a-z][a-z\\\\d-]*/'\n  };\n\n  const DTS_LABEL = {\n    className: 'symbol',\n    begin: '^\\\\s*[a-zA-Z_][a-zA-Z\\\\d_]*:'\n  };\n\n  const DTS_CELL_PROPERTY = {\n    className: 'params',\n    begin: '<',\n    end: '>',\n    contains: [\n      NUMBERS,\n      DTS_REFERENCE\n    ]\n  };\n\n  const DTS_NODE = {\n    className: 'class',\n    begin: /[a-zA-Z_][a-zA-Z\\d_@]*\\s\\{/,\n    end: /[{;=]/,\n    returnBegin: true,\n    excludeEnd: true\n  };\n\n  const DTS_ROOT_NODE = {\n    className: 'class',\n    begin: '/\\\\s*\\\\{',\n    end: /\\};/,\n    relevance: 10,\n    contains: [\n      DTS_REFERENCE,\n      DTS_KEYWORD,\n      DTS_LABEL,\n      DTS_NODE,\n      DTS_CELL_PROPERTY,\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      NUMBERS,\n      STRINGS\n    ]\n  };\n\n  return {\n    name: 'Device Tree',\n    keywords: \"\",\n    contains: [\n      DTS_ROOT_NODE,\n      DTS_REFERENCE,\n      DTS_KEYWORD,\n      DTS_LABEL,\n      DTS_NODE,\n      DTS_CELL_PROPERTY,\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      NUMBERS,\n      STRINGS,\n      PREPROCESSOR,\n      {\n        begin: hljs.IDENT_RE + '::',\n        keywords: \"\"\n      }\n    ]\n  };\n}\n\nmodule.exports = dts;\n",
+      "start": 1702937444297,
+      "end": 1702937444328,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Device Tree\nDescription: *.dts files used in the Linux kernel\nAuthor: Martin Braun <martin.braun@ettus.com>, Moritz Fischer <moritz.fischer@ettus.com>\nWebsite: https://elinux.org/Device_Tree_Reference\nCategory: config\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar dts_1;\nvar hasRequiredDts;\n\nfunction requireDts () {\n\tif (hasRequiredDts) return dts_1;\n\thasRequiredDts = 1;\n\t/** @type LanguageFn */\n\tfunction dts(hljs) {\n\t  const STRINGS = {\n\t    className: 'string',\n\t    variants: [\n\t      hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t        begin: '((u8?|U)|L)?\"'\n\t      }),\n\t      {\n\t        begin: '(u8?|U)?R\"',\n\t        end: '\"',\n\t        contains: [hljs.BACKSLASH_ESCAPE]\n\t      },\n\t      {\n\t        begin: '\\'\\\\\\\\?.',\n\t        end: '\\'',\n\t        illegal: '.'\n\t      }\n\t    ]\n\t  };\n\n\t  const NUMBERS = {\n\t    className: 'number',\n\t    variants: [\n\t      {\n\t        begin: '\\\\b(\\\\d+(\\\\.\\\\d*)?|\\\\.\\\\d+)(u|U|l|L|ul|UL|f|F)'\n\t      },\n\t      {\n\t        begin: hljs.C_NUMBER_RE\n\t      }\n\t    ],\n\t    relevance: 0\n\t  };\n\n\t  const PREPROCESSOR = {\n\t    className: 'meta',\n\t    begin: '#',\n\t    end: '$',\n\t    keywords: {\n\t      'meta-keyword': 'if else elif endif define undef ifdef ifndef'\n\t    },\n\t    contains: [\n\t      {\n\t        begin: /\\\\\\n/,\n\t        relevance: 0\n\t      },\n\t      {\n\t        beginKeywords: 'include',\n\t        end: '$',\n\t        keywords: {\n\t          'meta-keyword': 'include'\n\t        },\n\t        contains: [\n\t          hljs.inherit(STRINGS, {\n\t            className: 'meta-string'\n\t          }),\n\t          {\n\t            className: 'meta-string',\n\t            begin: '<',\n\t            end: '>',\n\t            illegal: '\\\\n'\n\t          }\n\t        ]\n\t      },\n\t      STRINGS,\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE\n\t    ]\n\t  };\n\n\t  const DTS_REFERENCE = {\n\t    className: 'variable',\n\t    begin: /&[a-z\\d_]*\\b/\n\t  };\n\n\t  const DTS_KEYWORD = {\n\t    className: 'meta-keyword',\n\t    begin: '/[a-z][a-z\\\\d-]*/'\n\t  };\n\n\t  const DTS_LABEL = {\n\t    className: 'symbol',\n\t    begin: '^\\\\s*[a-zA-Z_][a-zA-Z\\\\d_]*:'\n\t  };\n\n\t  const DTS_CELL_PROPERTY = {\n\t    className: 'params',\n\t    begin: '<',\n\t    end: '>',\n\t    contains: [\n\t      NUMBERS,\n\t      DTS_REFERENCE\n\t    ]\n\t  };\n\n\t  const DTS_NODE = {\n\t    className: 'class',\n\t    begin: /[a-zA-Z_][a-zA-Z\\d_@]*\\s\\{/,\n\t    end: /[{;=]/,\n\t    returnBegin: true,\n\t    excludeEnd: true\n\t  };\n\n\t  const DTS_ROOT_NODE = {\n\t    className: 'class',\n\t    begin: '/\\\\s*\\\\{',\n\t    end: /\\};/,\n\t    relevance: 10,\n\t    contains: [\n\t      DTS_REFERENCE,\n\t      DTS_KEYWORD,\n\t      DTS_LABEL,\n\t      DTS_NODE,\n\t      DTS_CELL_PROPERTY,\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      NUMBERS,\n\t      STRINGS\n\t    ]\n\t  };\n\n\t  return {\n\t    name: 'Device Tree',\n\t    keywords: \"\",\n\t    contains: [\n\t      DTS_ROOT_NODE,\n\t      DTS_REFERENCE,\n\t      DTS_KEYWORD,\n\t      DTS_LABEL,\n\t      DTS_NODE,\n\t      DTS_CELL_PROPERTY,\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      NUMBERS,\n\t      STRINGS,\n\t      PREPROCESSOR,\n\t      {\n\t        begin: hljs.IDENT_RE + '::',\n\t        keywords: \"\"\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tdts_1 = dts;\n\treturn dts_1;\n}\n\nexport { requireDts as __require };",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444328,
+      "end": 1702937444328,
+      "order": "normal"
+    }
+  ]
+}

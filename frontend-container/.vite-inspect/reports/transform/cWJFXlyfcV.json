@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/excel-formula.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = excelFormula\nexcelFormula.displayName = 'excelFormula'\nexcelFormula.aliases = []\nfunction excelFormula(Prism) {\n  Prism.languages['excel-formula'] = {\n    comment: {\n      pattern: /(\\bN\\(\\s*)\"(?:[^\"]|\"\")*\"(?=\\s*\\))/i,\n      lookbehind: true,\n      greedy: true\n    },\n    string: {\n      pattern: /\"(?:[^\"]|\"\")*\"(?!\")/,\n      greedy: true\n    },\n    reference: {\n      // https://www.ablebits.com/office-addins-blog/2015/12/08/excel-reference-another-sheet-workbook/\n      // Sales!B2\n      // 'Winter sales'!B2\n      // [Sales.xlsx]Jan!B2:B5\n      // D:\\Reports\\[Sales.xlsx]Jan!B2:B5\n      // '[Sales.xlsx]Jan sales'!B2:B5\n      // 'D:\\Reports\\[Sales.xlsx]Jan sales'!B2:B5\n      pattern:\n        /(?:'[^']*'|(?:[^\\s()[\\]{}<>*?\"';,$&]*\\[[^^\\s()[\\]{}<>*?\"']+\\])?\\w+)!/,\n      greedy: true,\n      alias: 'string',\n      inside: {\n        operator: /!$/,\n        punctuation: /'/,\n        sheet: {\n          pattern: /[^[\\]]+$/,\n          alias: 'function'\n        },\n        file: {\n          pattern: /\\[[^[\\]]+\\]$/,\n          inside: {\n            punctuation: /[[\\]]/\n          }\n        },\n        path: /[\\s\\S]+/\n      }\n    },\n    'function-name': {\n      pattern: /\\b[A-Z]\\w*(?=\\()/i,\n      alias: 'keyword'\n    },\n    range: {\n      pattern:\n        /\\$?\\b(?:[A-Z]+\\$?\\d+:\\$?[A-Z]+\\$?\\d+|[A-Z]+:\\$?[A-Z]+|\\d+:\\$?\\d+)\\b/i,\n      alias: 'property',\n      inside: {\n        operator: /:/,\n        cell: /\\$?[A-Z]+\\$?\\d+/i,\n        column: /\\$?[A-Z]+/i,\n        row: /\\$?\\d+/\n      }\n    },\n    cell: {\n      // Excel is case insensitive, so the string \"foo1\" could be either a variable or a cell.\n      // To combat this, we match cells case insensitive, if the contain at least one \"$\", and case sensitive otherwise.\n      pattern: /\\b[A-Z]+\\d+\\b|\\$[A-Za-z]+\\$?\\d+\\b|\\b[A-Za-z]+\\$\\d+\\b/,\n      alias: 'property'\n    },\n    number: /(?:\\b\\d+(?:\\.\\d+)?|\\B\\.\\d+)(?:e[+-]?\\d+)?\\b/i,\n    boolean: /\\b(?:FALSE|TRUE)\\b/i,\n    operator: /[-+*/^%=&,]|<[=>]?|>=?/,\n    punctuation: /[[\\]();{}|]/\n  }\n  Prism.languages['xlsx'] = Prism.languages['xls'] =\n    Prism.languages['excel-formula']\n}\n",
+      "start": 1702937444886,
+      "end": 1702937444900,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar excelFormula_1;\nvar hasRequiredExcelFormula;\n\nfunction requireExcelFormula () {\n\tif (hasRequiredExcelFormula) return excelFormula_1;\n\thasRequiredExcelFormula = 1;\n\t'use strict'\n\n\texcelFormula_1 = excelFormula\n\texcelFormula.displayName = 'excelFormula'\n\texcelFormula.aliases = []\n\tfunction excelFormula(Prism) {\n\t  Prism.languages['excel-formula'] = {\n\t    comment: {\n\t      pattern: /(\\bN\\(\\s*)\"(?:[^\"]|\"\")*\"(?=\\s*\\))/i,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /\"(?:[^\"]|\"\")*\"(?!\")/,\n\t      greedy: true\n\t    },\n\t    reference: {\n\t      // https://www.ablebits.com/office-addins-blog/2015/12/08/excel-reference-another-sheet-workbook/\n\t      // Sales!B2\n\t      // 'Winter sales'!B2\n\t      // [Sales.xlsx]Jan!B2:B5\n\t      // D:\\Reports\\[Sales.xlsx]Jan!B2:B5\n\t      // '[Sales.xlsx]Jan sales'!B2:B5\n\t      // 'D:\\Reports\\[Sales.xlsx]Jan sales'!B2:B5\n\t      pattern:\n\t        /(?:'[^']*'|(?:[^\\s()[\\]{}<>*?\"';,$&]*\\[[^^\\s()[\\]{}<>*?\"']+\\])?\\w+)!/,\n\t      greedy: true,\n\t      alias: 'string',\n\t      inside: {\n\t        operator: /!$/,\n\t        punctuation: /'/,\n\t        sheet: {\n\t          pattern: /[^[\\]]+$/,\n\t          alias: 'function'\n\t        },\n\t        file: {\n\t          pattern: /\\[[^[\\]]+\\]$/,\n\t          inside: {\n\t            punctuation: /[[\\]]/\n\t          }\n\t        },\n\t        path: /[\\s\\S]+/\n\t      }\n\t    },\n\t    'function-name': {\n\t      pattern: /\\b[A-Z]\\w*(?=\\()/i,\n\t      alias: 'keyword'\n\t    },\n\t    range: {\n\t      pattern:\n\t        /\\$?\\b(?:[A-Z]+\\$?\\d+:\\$?[A-Z]+\\$?\\d+|[A-Z]+:\\$?[A-Z]+|\\d+:\\$?\\d+)\\b/i,\n\t      alias: 'property',\n\t      inside: {\n\t        operator: /:/,\n\t        cell: /\\$?[A-Z]+\\$?\\d+/i,\n\t        column: /\\$?[A-Z]+/i,\n\t        row: /\\$?\\d+/\n\t      }\n\t    },\n\t    cell: {\n\t      // Excel is case insensitive, so the string \"foo1\" could be either a variable or a cell.\n\t      // To combat this, we match cells case insensitive, if the contain at least one \"$\", and case sensitive otherwise.\n\t      pattern: /\\b[A-Z]+\\d+\\b|\\$[A-Za-z]+\\$?\\d+\\b|\\b[A-Za-z]+\\$\\d+\\b/,\n\t      alias: 'property'\n\t    },\n\t    number: /(?:\\b\\d+(?:\\.\\d+)?|\\B\\.\\d+)(?:e[+-]?\\d+)?\\b/i,\n\t    boolean: /\\b(?:FALSE|TRUE)\\b/i,\n\t    operator: /[-+*/^%=&,]|<[=>]?|>=?/,\n\t    punctuation: /[[\\]();{}|]/\n\t  }\n\t  Prism.languages['xlsx'] = Prism.languages['xls'] =\n\t    Prism.languages['excel-formula']\n\t}\n\treturn excelFormula_1;\n}\n\nexport { requireExcelFormula as __require };",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,eAAc,GAAG,YAAY;CAC7B,YAAY,CAAC,WAAW,GAAG,cAAc;CACzC,YAAY,CAAC,OAAO,GAAG,EAAE;CACzB,SAAS,YAAY,CAAC,KAAK,EAAE;CAC7B,EAAE,KAAK,CAAC,SAAS,CAAC,eAAe,CAAC,GAAG;CACrC,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,oCAAoC;CACnD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,SAAS,EAAE;CACf;CACA;CACA;CACA;CACA;CACA;CACA;CACA,MAAM,OAAO;CACb,QAAQ,sEAAsE;CAC9E,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,QAAQ;CACrB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,IAAI;CACtB,QAAQ,WAAW,EAAE,GAAG;CACxB,QAAQ,KAAK,EAAE;CACf,UAAU,OAAO,EAAE,UAAU;CAC7B,UAAU,KAAK,EAAE,UAAU;CAC3B,SAAS;CACT,QAAQ,IAAI,EAAE;CACd,UAAU,OAAO,EAAE,cAAc;CACjC,UAAU,MAAM,EAAE;CAClB,YAAY,WAAW,EAAE,OAAO;CAChC,WAAW;CACX,SAAS;CACT,QAAQ,IAAI,EAAE,SAAS;CACvB,OAAO;CACP,KAAK;CACL,IAAI,eAAe,EAAE;CACrB,MAAM,OAAO,EAAE,mBAAmB;CAClC,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO;CACb,QAAQ,sEAAsE;CAC9E,MAAM,KAAK,EAAE,UAAU;CACvB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,GAAG;CACrB,QAAQ,IAAI,EAAE,kBAAkB;CAChC,QAAQ,MAAM,EAAE,YAAY;CAC5B,QAAQ,GAAG,EAAE,QAAQ;CACrB,OAAO;CACP,KAAK;CACL,IAAI,IAAI,EAAE;CACV;CACA;CACA,MAAM,OAAO,EAAE,sDAAsD;CACrE,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,MAAM,EAAE,8CAA8C;CAC1D,IAAI,OAAO,EAAE,qBAAqB;CAClC,IAAI,QAAQ,EAAE,wBAAwB;CACtC,IAAI,WAAW,EAAE,aAAa;CAC9B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,GAAG,KAAK,CAAC,SAAS,CAAC,KAAK,CAAC;CAClD,IAAI,KAAK,CAAC,SAAS,CAAC,eAAe,CAAC;CACpC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444900,
+      "end": 1702937444900,
+      "order": "normal"
+    }
+  ]
+}

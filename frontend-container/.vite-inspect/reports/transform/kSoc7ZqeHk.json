@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/Statistics.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Badge, Col, Card, Row } from \"react-bootstrap\";\r\nimport { ArrowUpRight, Clock, Users } from \"react-feather\";\r\n\r\nimport illustration from \"../../../assets/img/illustrations/searching.png\";\r\n\r\nconst Statistics = () => {\r\n  const { t } = useTranslation();\r\n\r\n  return (\r\n    <div className=\"w-100\">\r\n      <Row>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"illustration flex-fill\">\r\n            <Card.Body className=\"p-0 d-flex flex-fill\">\r\n              <Row className=\"row g-0 w-100\">\r\n                <Col xs=\"6\">\r\n                  <div className=\"illustration-text p-3 m-1\">\r\n                    <h4 className=\"illustration-text\">\r\n                      {t(\"Welcome back\")}, Chris!\r\n                    </h4>\r\n                    <p className=\"mb-0\">AppStack Dashboard</p>\r\n                  </div>\r\n                </Col>\r\n                <Col xs=\"6\" className=\"align-self-end text-end\">\r\n                  <img\r\n                    src={illustration}\r\n                    alt=\"Searching\"\r\n                    className=\"img-fluid illustration-img\"\r\n                  />\r\n                </Col>\r\n              </Row>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Bounce</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <ArrowUpRight className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">2.364</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n                  +3.65%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Real-Time</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <Clock className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">1.856</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n                  +2.25%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Visitors</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <Users className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">17.212</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-danger me-2\">\r\n                  -1.25%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n      </Row>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Statistics;\r\n",
+      "start": 1702937441553,
+      "end": 1702937441571,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441571,
+      "end": 1702937441571,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441571,
+      "end": 1702937441571,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { Badge, Col, Card, Row } from \"react-bootstrap\";\nimport { ArrowUpRight, Clock, Users } from \"react-feather\";\nimport illustration from \"../../../assets/img/illustrations/searching.png\";\nconst Statistics = () => {\n  const { t } = useTranslation();\n  return /* @__PURE__ */ jsx(\"div\", { className: \"w-100\", children: /* @__PURE__ */ jsxs(Row, { children: [\n    /* @__PURE__ */ jsx(Col, { sm: \"6\", lg: \"12\", className: \"d-flex col-xxl-6\", children: /* @__PURE__ */ jsx(Card, { className: \"illustration flex-fill\", children: /* @__PURE__ */ jsx(Card.Body, { className: \"p-0 d-flex flex-fill\", children: /* @__PURE__ */ jsxs(Row, { className: \"row g-0 w-100\", children: [\n      /* @__PURE__ */ jsx(Col, { xs: \"6\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"illustration-text p-3 m-1\", children: [\n        /* @__PURE__ */ jsxs(\"h4\", { className: \"illustration-text\", children: [\n          t(\"Welcome back\"),\n          \", Chris!\"\n        ] }),\n        /* @__PURE__ */ jsx(\"p\", { className: \"mb-0\", children: \"AppStack Dashboard\" })\n      ] }) }),\n      /* @__PURE__ */ jsx(Col, { xs: \"6\", className: \"align-self-end text-end\", children: /* @__PURE__ */ jsx(\n        \"img\",\n        {\n          src: illustration,\n          alt: \"Searching\",\n          className: \"img-fluid illustration-img\"\n        }\n      ) })\n    ] }) }) }) }),\n    /* @__PURE__ */ jsx(Col, { sm: \"6\", lg: \"12\", className: \"d-flex col-xxl-6\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n      /* @__PURE__ */ jsxs(Row, { children: [\n        /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Bounce\" }) }),\n        /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(ArrowUpRight, { className: \"align-middle text-success\" }) }) })\n      ] }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-4\", children: \"2.364\" }),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n        /* @__PURE__ */ jsx(Badge, { bg: \"\", className: \"badge-soft-success me-2\", children: \"+3.65%\" }),\n        /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n      ] })\n    ] }) }) }),\n    /* @__PURE__ */ jsx(Col, { sm: \"6\", lg: \"12\", className: \"d-flex col-xxl-6\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n      /* @__PURE__ */ jsxs(Row, { children: [\n        /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Real-Time\" }) }),\n        /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(Clock, { className: \"align-middle text-success\" }) }) })\n      ] }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-4\", children: \"1.856\" }),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n        /* @__PURE__ */ jsx(Badge, { bg: \"\", className: \"badge-soft-success me-2\", children: \"+2.25%\" }),\n        /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n      ] })\n    ] }) }) }),\n    /* @__PURE__ */ jsx(Col, { sm: \"6\", lg: \"12\", className: \"d-flex col-xxl-6\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { children: [\n      /* @__PURE__ */ jsxs(Row, { children: [\n        /* @__PURE__ */ jsx(Col, { className: \"mt-0\", children: /* @__PURE__ */ jsx(\"h5\", { className: \"card-title\", children: \"Visitors\" }) }),\n        /* @__PURE__ */ jsx(Col, { xs: \"auto\", children: /* @__PURE__ */ jsx(\"div\", { className: \"stat stat-sm\", children: /* @__PURE__ */ jsx(Users, { className: \"align-middle text-success\" }) }) })\n      ] }),\n      /* @__PURE__ */ jsx(\"span\", { className: \"h1 d-inline-block mt-1 mb-4\", children: \"17.212\" }),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"mb-0\", children: [\n        /* @__PURE__ */ jsx(Badge, { bg: \"\", className: \"badge-soft-danger me-2\", children: \"-1.25%\" }),\n        /* @__PURE__ */ jsx(\"span\", { className: \"text-muted\", children: \"Since last week\" })\n      ] })\n    ] }) }) })\n  ] }) });\n};\nexport default Statistics;\n",
+      "start": 1702937441571,
+      "end": 1702937441578,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/Statistics.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Badge, Col, Card, Row } from \"react-bootstrap\";\r\nimport { ArrowUpRight, Clock, Users } from \"react-feather\";\r\n\r\nimport illustration from \"../../../assets/img/illustrations/searching.png\";\r\n\r\nconst Statistics = () => {\r\n  const { t } = useTranslation();\r\n\r\n  return (\r\n    <div className=\"w-100\">\r\n      <Row>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"illustration flex-fill\">\r\n            <Card.Body className=\"p-0 d-flex flex-fill\">\r\n              <Row className=\"row g-0 w-100\">\r\n                <Col xs=\"6\">\r\n                  <div className=\"illustration-text p-3 m-1\">\r\n                    <h4 className=\"illustration-text\">\r\n                      {t(\"Welcome back\")}, Chris!\r\n                    </h4>\r\n                    <p className=\"mb-0\">AppStack Dashboard</p>\r\n                  </div>\r\n                </Col>\r\n                <Col xs=\"6\" className=\"align-self-end text-end\">\r\n                  <img\r\n                    src={illustration}\r\n                    alt=\"Searching\"\r\n                    className=\"img-fluid illustration-img\"\r\n                  />\r\n                </Col>\r\n              </Row>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Bounce</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <ArrowUpRight className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">2.364</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n                  +3.65%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Real-Time</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <Clock className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">1.856</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-success me-2\">\r\n                  +2.25%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n        <Col sm=\"6\" lg=\"12\" className=\"d-flex col-xxl-6\">\r\n          <Card className=\"flex-fill\">\r\n            <Card.Body>\r\n              <Row>\r\n                <Col className=\"mt-0\">\r\n                  <h5 className=\"card-title\">Visitors</h5>\r\n                </Col>\r\n\r\n                <Col xs=\"auto\">\r\n                  <div className=\"stat stat-sm\">\r\n                    <Users className=\"align-middle text-success\" />\r\n                  </div>\r\n                </Col>\r\n              </Row>\r\n              <span className=\"h1 d-inline-block mt-1 mb-4\">17.212</span>\r\n              <div className=\"mb-0\">\r\n                <Badge bg=\"\" className=\"badge-soft-danger me-2\">\r\n                  -1.25%\r\n                </Badge>\r\n                <span className=\"text-muted\">Since last week</span>\r\n              </div>\r\n            </Card.Body>\r\n          </Card>\r\n        </Col>\r\n      </Row>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Statistics;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    }
+  ]
+}

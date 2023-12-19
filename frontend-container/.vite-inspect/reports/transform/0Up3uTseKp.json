@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/crmsh.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: crmsh\nAuthor: Kristoffer Gronlund <kgronlund@suse.com>\nWebsite: http://crmsh.github.io\nDescription: Syntax Highlighting for the crmsh DSL\nCategory: config\n*/\n\n/** @type LanguageFn */\nfunction crmsh(hljs) {\n  const RESOURCES = 'primitive rsc_template';\n  const COMMANDS = 'group clone ms master location colocation order fencing_topology ' +\n      'rsc_ticket acl_target acl_group user role ' +\n      'tag xml';\n  const PROPERTY_SETS = 'property rsc_defaults op_defaults';\n  const KEYWORDS = 'params meta operations op rule attributes utilization';\n  const OPERATORS = 'read write deny defined not_defined in_range date spec in ' +\n      'ref reference attribute type xpath version and or lt gt tag ' +\n      'lte gte eq ne \\\\';\n  const TYPES = 'number string';\n  const LITERALS = 'Master Started Slave Stopped start promote demote stop monitor true false';\n\n  return {\n    name: 'crmsh',\n    aliases: [\n      'crm',\n      'pcmk'\n    ],\n    case_insensitive: true,\n    keywords: {\n      keyword: KEYWORDS + ' ' + OPERATORS + ' ' + TYPES,\n      literal: LITERALS\n    },\n    contains: [\n      hljs.HASH_COMMENT_MODE,\n      {\n        beginKeywords: 'node',\n        starts: {\n          end: '\\\\s*([\\\\w_-]+:)?',\n          starts: {\n            className: 'title',\n            end: '\\\\s*[\\\\$\\\\w_][\\\\w_-]*'\n          }\n        }\n      },\n      {\n        beginKeywords: RESOURCES,\n        starts: {\n          className: 'title',\n          end: '\\\\s*[\\\\$\\\\w_][\\\\w_-]*',\n          starts: {\n            end: '\\\\s*@?[\\\\w_][\\\\w_\\\\.:-]*'\n          }\n        }\n      },\n      {\n        begin: '\\\\b(' + COMMANDS.split(' ').join('|') + ')\\\\s+',\n        keywords: COMMANDS,\n        starts: {\n          className: 'title',\n          end: '[\\\\$\\\\w_][\\\\w_-]*'\n        }\n      },\n      {\n        beginKeywords: PROPERTY_SETS,\n        starts: {\n          className: 'title',\n          end: '\\\\s*([\\\\w_-]+:)?'\n        }\n      },\n      hljs.QUOTE_STRING_MODE,\n      {\n        className: 'meta',\n        begin: '(ocf|systemd|service|lsb):[\\\\w_:-]+',\n        relevance: 0\n      },\n      {\n        className: 'number',\n        begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(ms|s|h|m)?',\n        relevance: 0\n      },\n      {\n        className: 'literal',\n        begin: '[-]?(infinity|inf)',\n        relevance: 0\n      },\n      {\n        className: 'attr',\n        begin: /([A-Za-z$_#][\\w_-]+)=/,\n        relevance: 0\n      },\n      {\n        className: 'tag',\n        begin: '</?',\n        end: '/?>',\n        relevance: 0\n      }\n    ]\n  };\n}\n\nmodule.exports = crmsh;\n",
+      "start": 1702937444274,
+      "end": 1702937444306,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: crmsh\nAuthor: Kristoffer Gronlund <kgronlund@suse.com>\nWebsite: http://crmsh.github.io\nDescription: Syntax Highlighting for the crmsh DSL\nCategory: config\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar crmsh_1;\nvar hasRequiredCrmsh;\n\nfunction requireCrmsh () {\n\tif (hasRequiredCrmsh) return crmsh_1;\n\thasRequiredCrmsh = 1;\n\t/** @type LanguageFn */\n\tfunction crmsh(hljs) {\n\t  const RESOURCES = 'primitive rsc_template';\n\t  const COMMANDS = 'group clone ms master location colocation order fencing_topology ' +\n\t      'rsc_ticket acl_target acl_group user role ' +\n\t      'tag xml';\n\t  const PROPERTY_SETS = 'property rsc_defaults op_defaults';\n\t  const KEYWORDS = 'params meta operations op rule attributes utilization';\n\t  const OPERATORS = 'read write deny defined not_defined in_range date spec in ' +\n\t      'ref reference attribute type xpath version and or lt gt tag ' +\n\t      'lte gte eq ne \\\\';\n\t  const TYPES = 'number string';\n\t  const LITERALS = 'Master Started Slave Stopped start promote demote stop monitor true false';\n\n\t  return {\n\t    name: 'crmsh',\n\t    aliases: [\n\t      'crm',\n\t      'pcmk'\n\t    ],\n\t    case_insensitive: true,\n\t    keywords: {\n\t      keyword: KEYWORDS + ' ' + OPERATORS + ' ' + TYPES,\n\t      literal: LITERALS\n\t    },\n\t    contains: [\n\t      hljs.HASH_COMMENT_MODE,\n\t      {\n\t        beginKeywords: 'node',\n\t        starts: {\n\t          end: '\\\\s*([\\\\w_-]+:)?',\n\t          starts: {\n\t            className: 'title',\n\t            end: '\\\\s*[\\\\$\\\\w_][\\\\w_-]*'\n\t          }\n\t        }\n\t      },\n\t      {\n\t        beginKeywords: RESOURCES,\n\t        starts: {\n\t          className: 'title',\n\t          end: '\\\\s*[\\\\$\\\\w_][\\\\w_-]*',\n\t          starts: {\n\t            end: '\\\\s*@?[\\\\w_][\\\\w_\\\\.:-]*'\n\t          }\n\t        }\n\t      },\n\t      {\n\t        begin: '\\\\b(' + COMMANDS.split(' ').join('|') + ')\\\\s+',\n\t        keywords: COMMANDS,\n\t        starts: {\n\t          className: 'title',\n\t          end: '[\\\\$\\\\w_][\\\\w_-]*'\n\t        }\n\t      },\n\t      {\n\t        beginKeywords: PROPERTY_SETS,\n\t        starts: {\n\t          className: 'title',\n\t          end: '\\\\s*([\\\\w_-]+:)?'\n\t        }\n\t      },\n\t      hljs.QUOTE_STRING_MODE,\n\t      {\n\t        className: 'meta',\n\t        begin: '(ocf|systemd|service|lsb):[\\\\w_:-]+',\n\t        relevance: 0\n\t      },\n\t      {\n\t        className: 'number',\n\t        begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(ms|s|h|m)?',\n\t        relevance: 0\n\t      },\n\t      {\n\t        className: 'literal',\n\t        begin: '[-]?(infinity|inf)',\n\t        relevance: 0\n\t      },\n\t      {\n\t        className: 'attr',\n\t        begin: /([A-Za-z$_#][\\w_-]+)=/,\n\t        relevance: 0\n\t      },\n\t      {\n\t        className: 'tag',\n\t        begin: '</?',\n\t        end: '/?>',\n\t        relevance: 0\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tcrmsh_1 = crmsh;\n\treturn crmsh_1;\n}\n\nexport { requireCrmsh as __require };",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444307,
+      "end": 1702937444307,
+      "order": "normal"
+    }
+  ]
+}

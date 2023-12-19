@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_assignValue.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import baseAssignValue from './_baseAssignValue.js';\nimport eq from './eq.js';\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * Assigns `value` to `key` of `object` if the existing value is not equivalent\n * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)\n * for equality comparisons.\n *\n * @private\n * @param {Object} object The object to modify.\n * @param {string} key The key of the property to assign.\n * @param {*} value The value to assign.\n */\nfunction assignValue(object, key, value) {\n  var objValue = object[key];\n  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||\n      (value === undefined && !(key in object))) {\n    baseAssignValue(object, key, value);\n  }\n}\n\nexport default assignValue;\n",
+      "start": 1702937444030,
+      "end": 1702937444063,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444063,
+      "end": 1702937444063,
+      "order": "normal"
+    }
+  ]
+}

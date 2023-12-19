@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/dhall.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = dhall\ndhall.displayName = 'dhall'\ndhall.aliases = []\nfunction dhall(Prism) {\n  // ABNF grammar:\n  // https://github.com/dhall-lang/dhall-lang/blob/master/standard/dhall.abnf\n  Prism.languages.dhall = {\n    // Multi-line comments can be nested. E.g. {- foo {- bar -} -}\n    // The multi-line pattern is essentially this:\n    //   \\{-(?:[^-{]|-(?!\\})|\\{(?!-)|<SELF>)*-\\}\n    comment:\n      /--.*|\\{-(?:[^-{]|-(?!\\})|\\{(?!-)|\\{-(?:[^-{]|-(?!\\})|\\{(?!-))*-\\})*-\\}/,\n    string: {\n      pattern: /\"(?:[^\"\\\\]|\\\\.)*\"|''(?:[^']|'(?!')|'''|''\\$\\{)*''(?!'|\\$)/,\n      greedy: true,\n      inside: {\n        interpolation: {\n          pattern: /\\$\\{[^{}]*\\}/,\n          inside: {\n            expression: {\n              pattern: /(^\\$\\{)[\\s\\S]+(?=\\}$)/,\n              lookbehind: true,\n              alias: 'language-dhall',\n              inside: null // see blow\n            },\n            punctuation: /\\$\\{|\\}/\n          }\n        }\n      }\n    },\n    label: {\n      pattern: /`[^`]*`/,\n      greedy: true\n    },\n    url: {\n      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L596\n      pattern:\n        /\\bhttps?:\\/\\/[\\w.:%!$&'*+;=@~-]+(?:\\/[\\w.:%!$&'*+;=@~-]*)*(?:\\?[/?\\w.:%!$&'*+;=@~-]*)?/,\n      greedy: true\n    },\n    env: {\n      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L661\n      pattern: /\\benv:(?:(?!\\d)\\w+|\"(?:[^\"\\\\=]|\\\\.)*\")/,\n      greedy: true,\n      inside: {\n        function: /^env/,\n        operator: /^:/,\n        variable: /[\\s\\S]+/\n      }\n    },\n    hash: {\n      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L725\n      pattern: /\\bsha256:[\\da-fA-F]{64}\\b/,\n      inside: {\n        function: /sha256/,\n        operator: /:/,\n        number: /[\\da-fA-F]{64}/\n      }\n    },\n    // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L359\n    keyword:\n      /\\b(?:as|assert|else|forall|if|in|let|merge|missing|then|toMap|using|with)\\b|\\u2200/,\n    builtin: /\\b(?:None|Some)\\b/,\n    boolean: /\\b(?:False|True)\\b/,\n    number:\n      /\\bNaN\\b|-?\\bInfinity\\b|[+-]?\\b(?:0x[\\da-fA-F]+|\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?)\\b/,\n    operator:\n      /\\/\\\\|\\/\\/\\\\\\\\|&&|\\|\\||===|[!=]=|\\/\\/|->|\\+\\+|::|[+*#@=:?<>|\\\\\\u2227\\u2a53\\u2261\\u2afd\\u03bb\\u2192]/,\n    punctuation: /\\.\\.|[{}\\[\\](),./]/,\n    // we'll just assume that every capital word left is a type name\n    'class-name': /\\b[A-Z]\\w*\\b/\n  }\n  Prism.languages.dhall.string.inside.interpolation.inside.expression.inside =\n    Prism.languages.dhall\n}\n",
+      "start": 1702937444858,
+      "end": 1702937444890,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar dhall_1;\nvar hasRequiredDhall;\n\nfunction requireDhall () {\n\tif (hasRequiredDhall) return dhall_1;\n\thasRequiredDhall = 1;\n\t'use strict'\n\n\tdhall_1 = dhall\n\tdhall.displayName = 'dhall'\n\tdhall.aliases = []\n\tfunction dhall(Prism) {\n\t  // ABNF grammar:\n\t  // https://github.com/dhall-lang/dhall-lang/blob/master/standard/dhall.abnf\n\t  Prism.languages.dhall = {\n\t    // Multi-line comments can be nested. E.g. {- foo {- bar -} -}\n\t    // The multi-line pattern is essentially this:\n\t    //   \\{-(?:[^-{]|-(?!\\})|\\{(?!-)|<SELF>)*-\\}\n\t    comment:\n\t      /--.*|\\{-(?:[^-{]|-(?!\\})|\\{(?!-)|\\{-(?:[^-{]|-(?!\\})|\\{(?!-))*-\\})*-\\}/,\n\t    string: {\n\t      pattern: /\"(?:[^\"\\\\]|\\\\.)*\"|''(?:[^']|'(?!')|'''|''\\$\\{)*''(?!'|\\$)/,\n\t      greedy: true,\n\t      inside: {\n\t        interpolation: {\n\t          pattern: /\\$\\{[^{}]*\\}/,\n\t          inside: {\n\t            expression: {\n\t              pattern: /(^\\$\\{)[\\s\\S]+(?=\\}$)/,\n\t              lookbehind: true,\n\t              alias: 'language-dhall',\n\t              inside: null // see blow\n\t            },\n\t            punctuation: /\\$\\{|\\}/\n\t          }\n\t        }\n\t      }\n\t    },\n\t    label: {\n\t      pattern: /`[^`]*`/,\n\t      greedy: true\n\t    },\n\t    url: {\n\t      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L596\n\t      pattern:\n\t        /\\bhttps?:\\/\\/[\\w.:%!$&'*+;=@~-]+(?:\\/[\\w.:%!$&'*+;=@~-]*)*(?:\\?[/?\\w.:%!$&'*+;=@~-]*)?/,\n\t      greedy: true\n\t    },\n\t    env: {\n\t      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L661\n\t      pattern: /\\benv:(?:(?!\\d)\\w+|\"(?:[^\"\\\\=]|\\\\.)*\")/,\n\t      greedy: true,\n\t      inside: {\n\t        function: /^env/,\n\t        operator: /^:/,\n\t        variable: /[\\s\\S]+/\n\t      }\n\t    },\n\t    hash: {\n\t      // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L725\n\t      pattern: /\\bsha256:[\\da-fA-F]{64}\\b/,\n\t      inside: {\n\t        function: /sha256/,\n\t        operator: /:/,\n\t        number: /[\\da-fA-F]{64}/\n\t      }\n\t    },\n\t    // https://github.com/dhall-lang/dhall-lang/blob/5fde8ef1bead6fb4e999d3c1ffe7044cd019d63a/standard/dhall.abnf#L359\n\t    keyword:\n\t      /\\b(?:as|assert|else|forall|if|in|let|merge|missing|then|toMap|using|with)\\b|\\u2200/,\n\t    builtin: /\\b(?:None|Some)\\b/,\n\t    boolean: /\\b(?:False|True)\\b/,\n\t    number:\n\t      /\\bNaN\\b|-?\\bInfinity\\b|[+-]?\\b(?:0x[\\da-fA-F]+|\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?)\\b/,\n\t    operator:\n\t      /\\/\\\\|\\/\\/\\\\\\\\|&&|\\|\\||===|[!=]=|\\/\\/|->|\\+\\+|::|[+*#@=:?<>|\\\\\\u2227\\u2a53\\u2261\\u2afd\\u03bb\\u2192]/,\n\t    punctuation: /\\.\\.|[{}\\[\\](),./]/,\n\t    // we'll just assume that every capital word left is a type name\n\t    'class-name': /\\b[A-Z]\\w*\\b/\n\t  }\n\t  Prism.languages.dhall.string.inside.interpolation.inside.expression.inside =\n\t    Prism.languages.dhall\n\t}\n\treturn dhall_1;\n}\n\nexport { requireDhall as __require };",
+      "start": 1702937444890,
+      "end": 1702937444891,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,QAAc,GAAG,KAAK;CACtB,KAAK,CAAC,WAAW,GAAG,OAAO;CAC3B,KAAK,CAAC,OAAO,GAAG,EAAE;CAClB,SAAS,KAAK,CAAC,KAAK,EAAE;CACtB;CACA;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,KAAK,GAAG;CAC1B;CACA;CACA;CACA,IAAI,OAAO;CACX,MAAM,wEAAwE;CAC9E,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,2DAA2D;CAC1E,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,aAAa,EAAE;CACvB,UAAU,OAAO,EAAE,cAAc;CACjC,UAAU,MAAM,EAAE;CAClB,YAAY,UAAU,EAAE;CACxB,cAAc,OAAO,EAAE,uBAAuB;CAC9C,cAAc,UAAU,EAAE,IAAI;CAC9B,cAAc,KAAK,EAAE,gBAAgB;CACrC,cAAc,MAAM,EAAE,IAAI;CAC1B,aAAa;CACb,YAAY,WAAW,EAAE,SAAS;CAClC,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,GAAG,EAAE;CACT;CACA,MAAM,OAAO;CACb,QAAQ,wFAAwF;CAChG,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,GAAG,EAAE;CACT;CACA,MAAM,OAAO,EAAE,wCAAwC;CACvD,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,MAAM;CACxB,QAAQ,QAAQ,EAAE,IAAI;CACtB,QAAQ,QAAQ,EAAE,SAAS;CAC3B,OAAO;CACP,KAAK;CACL,IAAI,IAAI,EAAE;CACV;CACA,MAAM,OAAO,EAAE,2BAA2B;CAC1C,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,QAAQ;CAC1B,QAAQ,QAAQ,EAAE,GAAG;CACrB,QAAQ,MAAM,EAAE,gBAAgB;CAChC,OAAO;CACP,KAAK;CACL;CACA,IAAI,OAAO;CACX,MAAM,oFAAoF;CAC1F,IAAI,OAAO,EAAE,mBAAmB;CAChC,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,MAAM;CACV,MAAM,+EAA+E;CACrF,IAAI,QAAQ;CACZ,MAAM,oGAAoG;CAC1G,IAAI,WAAW,EAAE,oBAAoB;CACrC;CACA,IAAI,YAAY,EAAE,cAAc;CAChC,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,KAAK,CAAC,MAAM,CAAC,MAAM,CAAC,aAAa,CAAC,MAAM,CAAC,UAAU,CAAC,MAAM;CAC5E,IAAI,KAAK,CAAC,SAAS,CAAC,KAAK;CACzB"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444891,
+      "end": 1702937444891,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444891,
+      "end": 1702937444891,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444891,
+      "end": 1702937444891,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444891,
+      "end": 1702937444891,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444891,
+      "end": 1702937444891,
+      "order": "normal"
+    }
+  ]
+}

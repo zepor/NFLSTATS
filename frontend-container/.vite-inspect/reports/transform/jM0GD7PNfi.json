@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/django.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Django\nDescription: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.\nRequires: xml.js\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nContributors: Ilya Baryshev <baryshev@gmail.com>\nWebsite: https://www.djangoproject.com\nCategory: template\n*/\n\n/** @type LanguageFn */\nfunction django(hljs) {\n  const FILTER = {\n    begin: /\\|[A-Za-z]+:?/,\n    keywords: {\n      name:\n        'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags ' +\n        'filesizeformat escape linebreaks length_is ljust rjust cut urlize fix_ampersands ' +\n        'title floatformat capfirst pprint divisibleby add make_list unordered_list urlencode ' +\n        'timeuntil urlizetrunc wordcount stringformat linenumbers slice date dictsort ' +\n        'dictsortreversed default_if_none pluralize lower join center default ' +\n        'truncatewords_html upper length phone2numeric wordwrap time addslashes slugify first ' +\n        'escapejs force_escape iriencode last safe safeseq truncatechars localize unlocalize ' +\n        'localtime utc timezone'\n    },\n    contains: [\n      hljs.QUOTE_STRING_MODE,\n      hljs.APOS_STRING_MODE\n    ]\n  };\n\n  return {\n    name: 'Django',\n    aliases: ['jinja'],\n    case_insensitive: true,\n    subLanguage: 'xml',\n    contains: [\n      hljs.COMMENT(/\\{%\\s*comment\\s*%\\}/, /\\{%\\s*endcomment\\s*%\\}/),\n      hljs.COMMENT(/\\{#/, /#\\}/),\n      {\n        className: 'template-tag',\n        begin: /\\{%/,\n        end: /%\\}/,\n        contains: [{\n          className: 'name',\n          begin: /\\w+/,\n          keywords: {\n            name:\n                'comment endcomment load templatetag ifchanged endifchanged if endif firstof for ' +\n                'endfor ifnotequal endifnotequal widthratio extends include spaceless ' +\n                'endspaceless regroup ifequal endifequal ssi now with cycle url filter ' +\n                'endfilter debug block endblock else autoescape endautoescape csrf_token empty elif ' +\n                'endwith static trans blocktrans endblocktrans get_static_prefix get_media_prefix ' +\n                'plural get_current_language language get_available_languages ' +\n                'get_current_language_bidi get_language_info get_language_info_list localize ' +\n                'endlocalize localtime endlocaltime timezone endtimezone get_current_timezone ' +\n                'verbatim'\n          },\n          starts: {\n            endsWithParent: true,\n            keywords: 'in by as',\n            contains: [FILTER],\n            relevance: 0\n          }\n        }]\n      },\n      {\n        className: 'template-variable',\n        begin: /\\{\\{/,\n        end: /\\}\\}/,\n        contains: [FILTER]\n      }\n    ]\n  };\n}\n\nmodule.exports = django;\n",
+      "start": 1702937444289,
+      "end": 1702937444323,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Django\nDescription: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.\nRequires: xml.js\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nContributors: Ilya Baryshev <baryshev@gmail.com>\nWebsite: https://www.djangoproject.com\nCategory: template\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar django_1;\nvar hasRequiredDjango;\n\nfunction requireDjango () {\n\tif (hasRequiredDjango) return django_1;\n\thasRequiredDjango = 1;\n\t/** @type LanguageFn */\n\tfunction django(hljs) {\n\t  const FILTER = {\n\t    begin: /\\|[A-Za-z]+:?/,\n\t    keywords: {\n\t      name:\n\t        'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags ' +\n\t        'filesizeformat escape linebreaks length_is ljust rjust cut urlize fix_ampersands ' +\n\t        'title floatformat capfirst pprint divisibleby add make_list unordered_list urlencode ' +\n\t        'timeuntil urlizetrunc wordcount stringformat linenumbers slice date dictsort ' +\n\t        'dictsortreversed default_if_none pluralize lower join center default ' +\n\t        'truncatewords_html upper length phone2numeric wordwrap time addslashes slugify first ' +\n\t        'escapejs force_escape iriencode last safe safeseq truncatechars localize unlocalize ' +\n\t        'localtime utc timezone'\n\t    },\n\t    contains: [\n\t      hljs.QUOTE_STRING_MODE,\n\t      hljs.APOS_STRING_MODE\n\t    ]\n\t  };\n\n\t  return {\n\t    name: 'Django',\n\t    aliases: ['jinja'],\n\t    case_insensitive: true,\n\t    subLanguage: 'xml',\n\t    contains: [\n\t      hljs.COMMENT(/\\{%\\s*comment\\s*%\\}/, /\\{%\\s*endcomment\\s*%\\}/),\n\t      hljs.COMMENT(/\\{#/, /#\\}/),\n\t      {\n\t        className: 'template-tag',\n\t        begin: /\\{%/,\n\t        end: /%\\}/,\n\t        contains: [{\n\t          className: 'name',\n\t          begin: /\\w+/,\n\t          keywords: {\n\t            name:\n\t                'comment endcomment load templatetag ifchanged endifchanged if endif firstof for ' +\n\t                'endfor ifnotequal endifnotequal widthratio extends include spaceless ' +\n\t                'endspaceless regroup ifequal endifequal ssi now with cycle url filter ' +\n\t                'endfilter debug block endblock else autoescape endautoescape csrf_token empty elif ' +\n\t                'endwith static trans blocktrans endblocktrans get_static_prefix get_media_prefix ' +\n\t                'plural get_current_language language get_available_languages ' +\n\t                'get_current_language_bidi get_language_info get_language_info_list localize ' +\n\t                'endlocalize localtime endlocaltime timezone endtimezone get_current_timezone ' +\n\t                'verbatim'\n\t          },\n\t          starts: {\n\t            endsWithParent: true,\n\t            keywords: 'in by as',\n\t            contains: [FILTER],\n\t            relevance: 0\n\t          }\n\t        }]\n\t      },\n\t      {\n\t        className: 'template-variable',\n\t        begin: /\\{\\{/,\n\t        end: /\\}\\}/,\n\t        contains: [FILTER]\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tdjango_1 = django;\n\treturn django_1;\n}\n\nexport { requireDjango as __require };",
+      "start": 1702937444323,
+      "end": 1702937444324,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;;CAUA;CACA,SAAS,MAAM,CAAC,IAAI,EAAE;CACtB,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,KAAK,EAAE,eAAe;CAC1B,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI;CACV,QAAQ,mFAAmF;CAC3F,QAAQ,mFAAmF;CAC3F,QAAQ,uFAAuF;CAC/F,QAAQ,+EAA+E;CACvF,QAAQ,uEAAuE;CAC/E,QAAQ,uFAAuF;CAC/F,QAAQ,sFAAsF;CAC9F,QAAQ,wBAAwB;CAChC,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,IAAI,CAAC,gBAAgB;CAC3B,KAAK;CACL,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,QAAQ;CAClB,IAAI,OAAO,EAAE,CAAC,OAAO,CAAC;CACtB,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,WAAW,EAAE,KAAK;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,OAAO,CAAC,qBAAqB,EAAE,wBAAwB,CAAC;CACnE,MAAM,IAAI,CAAC,OAAO,CAAC,KAAK,EAAE,KAAK,CAAC;CAChC,MAAM;CACN,QAAQ,SAAS,EAAE,cAAc;CACjC,QAAQ,KAAK,EAAE,KAAK;CACpB,QAAQ,GAAG,EAAE,KAAK;CAClB,QAAQ,QAAQ,EAAE,CAAC;CACnB,UAAU,SAAS,EAAE,MAAM;CAC3B,UAAU,KAAK,EAAE,KAAK;CACtB,UAAU,QAAQ,EAAE;CACpB,YAAY,IAAI;CAChB,gBAAgB,kFAAkF;CAClG,gBAAgB,uEAAuE;CACvF,gBAAgB,wEAAwE;CACxF,gBAAgB,qFAAqF;CACrG,gBAAgB,mFAAmF;CACnG,gBAAgB,+DAA+D;CAC/E,gBAAgB,8EAA8E;CAC9F,gBAAgB,+EAA+E;CAC/F,gBAAgB,UAAU;CAC1B,WAAW;CACX,UAAU,MAAM,EAAE;CAClB,YAAY,cAAc,EAAE,IAAI;CAChC,YAAY,QAAQ,EAAE,UAAU;CAChC,YAAY,QAAQ,EAAE,CAAC,MAAM,CAAC;CAC9B,YAAY,SAAS,EAAE,CAAC;CACxB,WAAW;CACX,SAAS,CAAC;CACV,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,mBAAmB;CACtC,QAAQ,KAAK,EAAE,MAAM;CACrB,QAAQ,GAAG,EAAE,MAAM;CACnB,QAAQ,QAAQ,EAAE,CAAC,MAAM,CAAC;CAC1B,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,SAAc,GAAG,MAAM"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444324,
+      "end": 1702937444324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444324,
+      "end": 1702937444324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444324,
+      "end": 1702937444324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444324,
+      "end": 1702937444324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444324,
+      "end": 1702937444324,
+      "order": "normal"
+    }
+  ]
+}

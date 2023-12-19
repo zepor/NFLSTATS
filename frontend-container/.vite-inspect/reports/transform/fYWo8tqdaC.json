@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/amazon-cognito-identity-js/es/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*!\n * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n * SPDX-License-Identifier: Apache-2.0\n */\n\nexport { default as AuthenticationDetails } from './AuthenticationDetails';\nexport { default as AuthenticationHelper } from './AuthenticationHelper';\nexport { default as CognitoAccessToken } from './CognitoAccessToken';\nexport { default as CognitoIdToken } from './CognitoIdToken';\nexport { default as CognitoRefreshToken } from './CognitoRefreshToken';\nexport { default as CognitoUser } from './CognitoUser';\nexport { default as CognitoUserAttribute } from './CognitoUserAttribute';\nexport { default as CognitoUserPool } from './CognitoUserPool';\nexport { default as CognitoUserSession } from './CognitoUserSession';\nexport { default as CookieStorage } from './CookieStorage';\nexport { default as DateHelper } from './DateHelper';\nexport { appendToCognitoUserAgent } from './UserAgent';\nexport { default as WordArray } from './utils/WordArray';",
+      "start": 1702937440869,
+      "end": 1702937440895,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440895,
+      "end": 1702937440895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440895,
+      "end": 1702937440896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440896,
+      "end": 1702937440896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440896,
+      "end": 1702937440896,
+      "order": "normal"
+    }
+  ]
+}

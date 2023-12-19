@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/WorldMap.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React, { useEffect, useState } from \"react\";\r\nimport jsVectorMap from \"jsvectormap\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nfunction WorldMap() {\r\n  const palette = usePalette();\r\n  const [debounced, setDebounced] = useState(false);\r\n\r\n  // Workaround, so vector maps work properly in dark mode\r\n  useEffect(() => {\r\n    setTimeout(() => {\r\n      setDebounced(true);\r\n    }, 100);\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    if (debounced) {\r\n      new jsVectorMap({\r\n        selector: \"#analytics_world\",\r\n        map: \"world\",\r\n        zoomOnScroll: false,\r\n        regionStyle: {\r\n          initial: {\r\n            fill: palette[\"gray-200\"],\r\n          },\r\n        },\r\n        markerStyle: {\r\n          initial: {\r\n            r: 9,\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.white,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n          hover: {\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.primary,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n        },\r\n        backgroundColor: \"transparent\",\r\n        markers: [\r\n          {\r\n            coords: [31.230391, 121.473701],\r\n            name: \"Shanghai\",\r\n          },\r\n          {\r\n            coords: [39.904202, 116.407394],\r\n            name: \"Beijing\",\r\n          },\r\n          {\r\n            coords: [28.70406, 77.102493],\r\n            name: \"Delhi\",\r\n          },\r\n          {\r\n            coords: [6.524379, 3.379206],\r\n            name: \"Lagos\",\r\n          },\r\n          {\r\n            coords: [39.343357, 117.361649],\r\n            name: \"Tianjin\",\r\n          },\r\n          {\r\n            coords: [24.860735, 67.001137],\r\n            name: \"Karachi\",\r\n          },\r\n          {\r\n            coords: [41.00824, 28.978359],\r\n            name: \"Istanbul\",\r\n          },\r\n          {\r\n            coords: [35.689487, 139.691711],\r\n            name: \"Tokyo\",\r\n          },\r\n          {\r\n            coords: [23.12911, 113.264381],\r\n            name: \"Guangzhou\",\r\n          },\r\n          {\r\n            coords: [19.075983, 72.877655],\r\n            name: \"Mumbai\",\r\n          },\r\n          {\r\n            coords: [40.7127837, -74.0059413],\r\n            name: \"New York\",\r\n          },\r\n          {\r\n            coords: [34.052235, -118.243683],\r\n            name: \"Los Angeles\",\r\n          },\r\n          {\r\n            coords: [41.878113, -87.629799],\r\n            name: \"Chicago\",\r\n          },\r\n          {\r\n            coords: [29.760427, -95.369804],\r\n            name: \"Houston\",\r\n          },\r\n          {\r\n            coords: [33.448376, -112.074036],\r\n            name: \"Phoenix\",\r\n          },\r\n          {\r\n            coords: [51.507351, -0.127758],\r\n            name: \"London\",\r\n          },\r\n          {\r\n            coords: [48.856613, 2.352222],\r\n            name: \"Paris\",\r\n          },\r\n          {\r\n            coords: [55.755825, 37.617298],\r\n            name: \"Moscow\",\r\n          },\r\n          {\r\n            coords: [40.416775, -3.70379],\r\n            name: \"Madrid\",\r\n          },\r\n        ],\r\n      });\r\n    }\r\n  }, [debounced, palette]);\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Real-Time</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body className=\"p-2\">\r\n        <div className=\"map-container\" style={{ height: 279 }}>\r\n          <div id=\"analytics_world\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n}\r\n\r\nexport default WorldMap;\r\n",
+      "start": 1702937441554,
+      "end": 1702937441571,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441571,
+      "end": 1702937441571,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441571,
+      "end": 1702937441571,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React, { useEffect, useState } from \"react\";\nimport jsVectorMap from \"jsvectormap\";\nimport { Card, Dropdown } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nimport usePalette from \"../../../hooks/usePalette\";\nfunction WorldMap() {\n  const palette = usePalette();\n  const [debounced, setDebounced] = useState(false);\n  useEffect(() => {\n    setTimeout(() => {\n      setDebounced(true);\n    }, 100);\n  }, []);\n  useEffect(() => {\n    if (debounced) {\n      new jsVectorMap({\n        selector: \"#analytics_world\",\n        map: \"world\",\n        zoomOnScroll: false,\n        regionStyle: {\n          initial: {\n            fill: palette[\"gray-200\"]\n          }\n        },\n        markerStyle: {\n          initial: {\n            r: 9,\n            fill: palette.primary,\n            \"fill-opacity\": 0.9,\n            stroke: palette.white,\n            \"stroke-width\": 7,\n            \"stroke-opacity\": 0.4\n          },\n          hover: {\n            fill: palette.primary,\n            \"fill-opacity\": 0.9,\n            stroke: palette.primary,\n            \"stroke-width\": 7,\n            \"stroke-opacity\": 0.4\n          }\n        },\n        backgroundColor: \"transparent\",\n        markers: [\n          {\n            coords: [31.230391, 121.473701],\n            name: \"Shanghai\"\n          },\n          {\n            coords: [39.904202, 116.407394],\n            name: \"Beijing\"\n          },\n          {\n            coords: [28.70406, 77.102493],\n            name: \"Delhi\"\n          },\n          {\n            coords: [6.524379, 3.379206],\n            name: \"Lagos\"\n          },\n          {\n            coords: [39.343357, 117.361649],\n            name: \"Tianjin\"\n          },\n          {\n            coords: [24.860735, 67.001137],\n            name: \"Karachi\"\n          },\n          {\n            coords: [41.00824, 28.978359],\n            name: \"Istanbul\"\n          },\n          {\n            coords: [35.689487, 139.691711],\n            name: \"Tokyo\"\n          },\n          {\n            coords: [23.12911, 113.264381],\n            name: \"Guangzhou\"\n          },\n          {\n            coords: [19.075983, 72.877655],\n            name: \"Mumbai\"\n          },\n          {\n            coords: [40.7127837, -74.0059413],\n            name: \"New York\"\n          },\n          {\n            coords: [34.052235, -118.243683],\n            name: \"Los Angeles\"\n          },\n          {\n            coords: [41.878113, -87.629799],\n            name: \"Chicago\"\n          },\n          {\n            coords: [29.760427, -95.369804],\n            name: \"Houston\"\n          },\n          {\n            coords: [33.448376, -112.074036],\n            name: \"Phoenix\"\n          },\n          {\n            coords: [51.507351, -0.127758],\n            name: \"London\"\n          },\n          {\n            coords: [48.856613, 2.352222],\n            name: \"Paris\"\n          },\n          {\n            coords: [55.755825, 37.617298],\n            name: \"Moscow\"\n          },\n          {\n            coords: [40.416775, -3.70379],\n            name: \"Madrid\"\n          }\n        ]\n      });\n    }\n  }, [debounced, palette]);\n  return /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n        /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n        /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n        ] })\n      ] }) }),\n      /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Real-Time\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { className: \"p-2\", children: /* @__PURE__ */ jsx(\"div\", { className: \"map-container\", style: { height: 279 }, children: /* @__PURE__ */ jsx(\"div\", { id: \"analytics_world\" }) }) })\n  ] });\n}\nexport default WorldMap;\n",
+      "start": 1702937441571,
+      "end": 1702937441578,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/WorldMap.jsx"
+        ],
+        "sourcesContent": [
+          "import React, { useEffect, useState } from \"react\";\r\nimport jsVectorMap from \"jsvectormap\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nfunction WorldMap() {\r\n  const palette = usePalette();\r\n  const [debounced, setDebounced] = useState(false);\r\n\r\n  // Workaround, so vector maps work properly in dark mode\r\n  useEffect(() => {\r\n    setTimeout(() => {\r\n      setDebounced(true);\r\n    }, 100);\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    if (debounced) {\r\n      new jsVectorMap({\r\n        selector: \"#analytics_world\",\r\n        map: \"world\",\r\n        zoomOnScroll: false,\r\n        regionStyle: {\r\n          initial: {\r\n            fill: palette[\"gray-200\"],\r\n          },\r\n        },\r\n        markerStyle: {\r\n          initial: {\r\n            r: 9,\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.white,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n          hover: {\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.primary,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n        },\r\n        backgroundColor: \"transparent\",\r\n        markers: [\r\n          {\r\n            coords: [31.230391, 121.473701],\r\n            name: \"Shanghai\",\r\n          },\r\n          {\r\n            coords: [39.904202, 116.407394],\r\n            name: \"Beijing\",\r\n          },\r\n          {\r\n            coords: [28.70406, 77.102493],\r\n            name: \"Delhi\",\r\n          },\r\n          {\r\n            coords: [6.524379, 3.379206],\r\n            name: \"Lagos\",\r\n          },\r\n          {\r\n            coords: [39.343357, 117.361649],\r\n            name: \"Tianjin\",\r\n          },\r\n          {\r\n            coords: [24.860735, 67.001137],\r\n            name: \"Karachi\",\r\n          },\r\n          {\r\n            coords: [41.00824, 28.978359],\r\n            name: \"Istanbul\",\r\n          },\r\n          {\r\n            coords: [35.689487, 139.691711],\r\n            name: \"Tokyo\",\r\n          },\r\n          {\r\n            coords: [23.12911, 113.264381],\r\n            name: \"Guangzhou\",\r\n          },\r\n          {\r\n            coords: [19.075983, 72.877655],\r\n            name: \"Mumbai\",\r\n          },\r\n          {\r\n            coords: [40.7127837, -74.0059413],\r\n            name: \"New York\",\r\n          },\r\n          {\r\n            coords: [34.052235, -118.243683],\r\n            name: \"Los Angeles\",\r\n          },\r\n          {\r\n            coords: [41.878113, -87.629799],\r\n            name: \"Chicago\",\r\n          },\r\n          {\r\n            coords: [29.760427, -95.369804],\r\n            name: \"Houston\",\r\n          },\r\n          {\r\n            coords: [33.448376, -112.074036],\r\n            name: \"Phoenix\",\r\n          },\r\n          {\r\n            coords: [51.507351, -0.127758],\r\n            name: \"London\",\r\n          },\r\n          {\r\n            coords: [48.856613, 2.352222],\r\n            name: \"Paris\",\r\n          },\r\n          {\r\n            coords: [55.755825, 37.617298],\r\n            name: \"Moscow\",\r\n          },\r\n          {\r\n            coords: [40.416775, -3.70379],\r\n            name: \"Madrid\",\r\n          },\r\n        ],\r\n      });\r\n    }\r\n  }, [debounced, palette]);\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Real-Time</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body className=\"p-2\">\r\n        <div className=\"map-container\" style={{ height: 279 }}>\r\n          <div id=\"analytics_world\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n}\r\n\r\nexport default WorldMap;\r\n"
+        ],
+        "mappings": "AAuIc,cAEF,YAFE;AAvId,OAAO,SAAS,WAAW,gBAAgB;AAC3C,OAAO,iBAAiB;AACxB,SAAS,MAAM,gBAAgB;AAC/B,SAAS,sBAAsB;AAE/B,OAAO,gBAAgB;AAEvB,SAAS,WAAW;AAClB,QAAM,UAAU,WAAW;AAC3B,QAAM,CAAC,WAAW,YAAY,IAAI,SAAS,KAAK;AAGhD,YAAU,MAAM;AACd,eAAW,MAAM;AACf,mBAAa,IAAI;AAAA,IACnB,GAAG,GAAG;AAAA,EACR,GAAG,CAAC,CAAC;AAEL,YAAU,MAAM;AACd,QAAI,WAAW;AACb,UAAI,YAAY;AAAA,QACd,UAAU;AAAA,QACV,KAAK;AAAA,QACL,cAAc;AAAA,QACd,aAAa;AAAA,UACX,SAAS;AAAA,YACP,MAAM,QAAQ,UAAU;AAAA,UAC1B;AAAA,QACF;AAAA,QACA,aAAa;AAAA,UACX,SAAS;AAAA,YACP,GAAG;AAAA,YACH,MAAM,QAAQ;AAAA,YACd,gBAAgB;AAAA,YAChB,QAAQ,QAAQ;AAAA,YAChB,gBAAgB;AAAA,YAChB,kBAAkB;AAAA,UACpB;AAAA,UACA,OAAO;AAAA,YACL,MAAM,QAAQ;AAAA,YACd,gBAAgB;AAAA,YAChB,QAAQ,QAAQ;AAAA,YAChB,gBAAgB;AAAA,YAChB,kBAAkB;AAAA,UACpB;AAAA,QACF;AAAA,QACA,iBAAiB;AAAA,QACjB,SAAS;AAAA,UACP;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,UAAU,SAAS;AAAA,YAC5B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,UAAU,QAAQ;AAAA,YAC3B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,SAAS;AAAA,YAC7B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,UAAU,SAAS;AAAA,YAC5B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,UAAU,UAAU;AAAA,YAC7B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,SAAS;AAAA,YAC7B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,YAAY,WAAW;AAAA,YAChC,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,WAAW;AAAA,YAC/B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,UAAU;AAAA,YAC9B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,WAAW;AAAA,YAC/B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,SAAS;AAAA,YAC7B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,QAAQ;AAAA,YAC5B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,SAAS;AAAA,YAC7B,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,WAAW,QAAQ;AAAA,YAC5B,MAAM;AAAA,UACR;AAAA,QACF;AAAA,MACF,CAAC;AAAA,IACH;AAAA,EACF,GAAG,CAAC,WAAW,OAAO,CAAC;AAEvB,SACE,qBAAC,QAAK,WAAU,mBACd;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,4BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,QACA,qBAAC,SAAS,MAAT,EACC;AAAA,8BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,UACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,UAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,WACpC;AAAA,SACF,GACF;AAAA,MACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,uBAAS;AAAA,OACxC;AAAA,IACA,oBAAC,KAAK,MAAL,EAAU,WAAU,OACnB,8BAAC,SAAI,WAAU,iBAAgB,OAAO,EAAE,QAAQ,IAAI,GAClD,8BAAC,SAAI,IAAG,mBAAkB,GAC5B,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441578,
+      "end": 1702937441578,
+      "order": "normal"
+    }
+  ]
+}

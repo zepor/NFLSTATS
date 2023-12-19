@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Doughnut.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Doughnut } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst DoughnutChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\r\n    datasets: [\r\n      {\r\n        data: [260, 125, 54, 146],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.success,\r\n          palette.warning,\r\n          \"#E8EAED\",\r\n        ],\r\n        borderColor: \"transparent\",\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    cutoutPercentage: 65,\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Doughnut Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Doughnut charts are excellent at showing the relational proportions\r\n          between data.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart chart-sm\">\r\n          <Doughnut data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default DoughnutChart;\r\n",
+      "start": 1702937441794,
+      "end": 1702937441851,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441851,
+      "end": 1702937441851,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441851,
+      "end": 1702937441851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Doughnut } from \"react-chartjs-2\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst DoughnutChart = () => {\n  const palette = usePalette();\n  const data = {\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\n    datasets: [\n      {\n        data: [260, 125, 54, 146],\n        backgroundColor: [\n          palette.primary,\n          palette.success,\n          palette.warning,\n          \"#E8EAED\"\n        ],\n        borderColor: \"transparent\"\n      }\n    ]\n  };\n  const options = {\n    maintainAspectRatio: false,\n    cutoutPercentage: 65,\n    plugins: {\n      legend: {\n        display: false\n      }\n    }\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Doughnut Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Doughnut charts are excellent at showing the relational proportions between data.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart chart-sm\", children: /* @__PURE__ */ jsx(Doughnut, { data, options }) }) })\n  ] });\n};\nexport default DoughnutChart;\n",
+      "start": 1702937441851,
+      "end": 1702937441855,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/Chartjs/Doughnut.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Doughnut } from \"react-chartjs-2\";\r\n\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst DoughnutChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\r\n    datasets: [\r\n      {\r\n        data: [260, 125, 54, 146],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.success,\r\n          palette.warning,\r\n          \"#E8EAED\",\r\n        ],\r\n        borderColor: \"transparent\",\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    cutoutPercentage: 65,\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Doughnut Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Doughnut charts are excellent at showing the relational proportions\r\n          between data.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart chart-sm\">\r\n          <Doughnut data={data} options={options} />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default DoughnutChart;\r\n"
+        ],
+        "mappings": "AAsCM,SACE,KADF;AAtCN,OAAO,WAAW;AAClB,SAAS,gBAAgB;AAEzB,SAAS,YAAY;AAErB,OAAO,gBAAgB;AAEvB,MAAM,gBAAgB,MAAM;AAC1B,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO;AAAA,IACX,QAAQ,CAAC,UAAU,kBAAkB,UAAU,OAAO;AAAA,IACtD,UAAU;AAAA,MACR;AAAA,QACE,MAAM,CAAC,KAAK,KAAK,IAAI,GAAG;AAAA,QACxB,iBAAiB;AAAA,UACf,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR;AAAA,QACF;AAAA,QACA,aAAa;AAAA,MACf;AAAA,IACF;AAAA,EACF;AAEA,QAAM,UAAU;AAAA,IACd,qBAAqB;AAAA,IACrB,kBAAkB;AAAA,IAClB,SAAS;AAAA,MACP,QAAQ;AAAA,QACN,SAAS;AAAA,MACX;AAAA,IACF;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,4BAAc;AAAA,MAC1B,oBAAC,QAAG,WAAU,4BAA2B,+FAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,kBACb,8BAAC,YAAS,MAAY,SAAkB,GAC1C,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441856,
+      "end": 1702937441856,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/dot.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = dot\ndot.displayName = 'dot'\ndot.aliases = ['gv']\nfunction dot(Prism) {\n  // https://www.graphviz.org/doc/info/lang.html\n  ;(function (Prism) {\n    var ID =\n      '(?:' +\n      [\n        // an identifier\n        /[a-zA-Z_\\x80-\\uFFFF][\\w\\x80-\\uFFFF]*/.source, // a number\n        /-?(?:\\.\\d+|\\d+(?:\\.\\d*)?)/.source, // a double-quoted string\n        /\"[^\"\\\\]*(?:\\\\[\\s\\S][^\"\\\\]*)*\"/.source, // HTML-like string\n        /<(?:[^<>]|(?!<!--)<(?:[^<>\"']|\"[^\"]*\"|'[^']*')+>|<!--(?:[^-]|-(?!->))*-->)*>/\n          .source\n      ].join('|') +\n      ')'\n    var IDInside = {\n      markup: {\n        pattern: /(^<)[\\s\\S]+(?=>$)/,\n        lookbehind: true,\n        alias: ['language-markup', 'language-html', 'language-xml'],\n        inside: Prism.languages.markup\n      }\n    }\n    /**\n     * @param {string} source\n     * @param {string} flags\n     * @returns {RegExp}\n     */\n    function withID(source, flags) {\n      return RegExp(\n        source.replace(/<ID>/g, function () {\n          return ID\n        }),\n        flags\n      )\n    }\n    Prism.languages.dot = {\n      comment: {\n        pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\/|^#.*/m,\n        greedy: true\n      },\n      'graph-name': {\n        pattern: withID(\n          /(\\b(?:digraph|graph|subgraph)[ \\t\\r\\n]+)<ID>/.source,\n          'i'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'class-name',\n        inside: IDInside\n      },\n      'attr-value': {\n        pattern: withID(/(=[ \\t\\r\\n]*)<ID>/.source),\n        lookbehind: true,\n        greedy: true,\n        inside: IDInside\n      },\n      'attr-name': {\n        pattern: withID(/([\\[;, \\t\\r\\n])<ID>(?=[ \\t\\r\\n]*=)/.source),\n        lookbehind: true,\n        greedy: true,\n        inside: IDInside\n      },\n      keyword: /\\b(?:digraph|edge|graph|node|strict|subgraph)\\b/i,\n      'compass-point': {\n        pattern: /(:[ \\t\\r\\n]*)(?:[ewc_]|[ns][ew]?)(?![\\w\\x80-\\uFFFF])/,\n        lookbehind: true,\n        alias: 'builtin'\n      },\n      node: {\n        pattern: withID(/(^|[^-.\\w\\x80-\\uFFFF\\\\])<ID>/.source),\n        lookbehind: true,\n        greedy: true,\n        inside: IDInside\n      },\n      operator: /[=:]|-[->]/,\n      punctuation: /[\\[\\]{};,]/\n    }\n    Prism.languages.gv = Prism.languages.dot\n  })(Prism)\n}\n",
+      "start": 1702937444865,
+      "end": 1702937444893,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444893,
+      "end": 1702937444893,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar dot_1;\nvar hasRequiredDot;\n\nfunction requireDot () {\n\tif (hasRequiredDot) return dot_1;\n\thasRequiredDot = 1;\n\t'use strict'\n\n\tdot_1 = dot\n\tdot.displayName = 'dot'\n\tdot.aliases = ['gv']\n\tfunction dot(Prism) {\n\t  // https://www.graphviz.org/doc/info/lang.html\n\t  ;(function (Prism) {\n\t    var ID =\n\t      '(?:' +\n\t      [\n\t        // an identifier\n\t        /[a-zA-Z_\\x80-\\uFFFF][\\w\\x80-\\uFFFF]*/.source, // a number\n\t        /-?(?:\\.\\d+|\\d+(?:\\.\\d*)?)/.source, // a double-quoted string\n\t        /\"[^\"\\\\]*(?:\\\\[\\s\\S][^\"\\\\]*)*\"/.source, // HTML-like string\n\t        /<(?:[^<>]|(?!<!--)<(?:[^<>\"']|\"[^\"]*\"|'[^']*')+>|<!--(?:[^-]|-(?!->))*-->)*>/\n\t          .source\n\t      ].join('|') +\n\t      ')'\n\t    var IDInside = {\n\t      markup: {\n\t        pattern: /(^<)[\\s\\S]+(?=>$)/,\n\t        lookbehind: true,\n\t        alias: ['language-markup', 'language-html', 'language-xml'],\n\t        inside: Prism.languages.markup\n\t      }\n\t    }\n\t    /**\n\t     * @param {string} source\n\t     * @param {string} flags\n\t     * @returns {RegExp}\n\t     */\n\t    function withID(source, flags) {\n\t      return RegExp(\n\t        source.replace(/<ID>/g, function () {\n\t          return ID\n\t        }),\n\t        flags\n\t      )\n\t    }\n\t    Prism.languages.dot = {\n\t      comment: {\n\t        pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\/|^#.*/m,\n\t        greedy: true\n\t      },\n\t      'graph-name': {\n\t        pattern: withID(\n\t          /(\\b(?:digraph|graph|subgraph)[ \\t\\r\\n]+)<ID>/.source,\n\t          'i'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'class-name',\n\t        inside: IDInside\n\t      },\n\t      'attr-value': {\n\t        pattern: withID(/(=[ \\t\\r\\n]*)<ID>/.source),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: IDInside\n\t      },\n\t      'attr-name': {\n\t        pattern: withID(/([\\[;, \\t\\r\\n])<ID>(?=[ \\t\\r\\n]*=)/.source),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: IDInside\n\t      },\n\t      keyword: /\\b(?:digraph|edge|graph|node|strict|subgraph)\\b/i,\n\t      'compass-point': {\n\t        pattern: /(:[ \\t\\r\\n]*)(?:[ewc_]|[ns][ew]?)(?![\\w\\x80-\\uFFFF])/,\n\t        lookbehind: true,\n\t        alias: 'builtin'\n\t      },\n\t      node: {\n\t        pattern: withID(/(^|[^-.\\w\\x80-\\uFFFF\\\\])<ID>/.source),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: IDInside\n\t      },\n\t      operator: /[=:]|-[->]/,\n\t      punctuation: /[\\[\\]{};,]/\n\t    }\n\t    Prism.languages.gv = Prism.languages.dot\n\t  })(Prism)\n\t}\n\treturn dot_1;\n}\n\nexport { requireDot as __require };",
+      "start": 1702937444893,
+      "end": 1702937444894,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,CAAC,IAAI,CAAC;CACpB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB;CACA,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,EAAE;CACV,MAAM,KAAK;CACX,MAAM;CACN;CACA,QAAQ,sCAAsC,CAAC,MAAM;CACrD,QAAQ,2BAA2B,CAAC,MAAM;CAC1C,QAAQ,+BAA+B,CAAC,MAAM;CAC9C,QAAQ,8EAA8E;CACtF,WAAW,MAAM;CACjB,OAAO,CAAC,IAAI,CAAC,GAAG,CAAC;CACjB,MAAM,GAAG;CACT,IAAI,IAAI,QAAQ,GAAG;CACnB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,mBAAmB;CACpC,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,CAAC,iBAAiB,EAAE,eAAe,EAAE,cAAc,CAAC;CACnE,QAAQ,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM;CACtC,OAAO;CACP,KAAK;CACL;CACA;CACA;CACA;CACA;CACA,IAAI,SAAS,MAAM,CAAC,MAAM,EAAE,KAAK,EAAE;CACnC,MAAM,OAAO,MAAM;CACnB,QAAQ,MAAM,CAAC,OAAO,CAAC,OAAO,EAAE,YAAY;CAC5C,UAAU,OAAO,EAAE;CACnB,SAAS,CAAC;CACV,QAAQ,KAAK;CACb,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CAC1B,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,+BAA+B;CAChD,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,YAAY,EAAE;CACpB,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,8CAA8C,CAAC,MAAM;CAC/D,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,YAAY;CAC3B,QAAQ,MAAM,EAAE,QAAQ;CACxB,OAAO;CACP,MAAM,YAAY,EAAE;CACpB,QAAQ,OAAO,EAAE,MAAM,CAAC,mBAAmB,CAAC,MAAM,CAAC;CACnD,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE,QAAQ;CACxB,OAAO;CACP,MAAM,WAAW,EAAE;CACnB,QAAQ,OAAO,EAAE,MAAM,CAAC,oCAAoC,CAAC,MAAM,CAAC;CACpE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE,QAAQ;CACxB,OAAO;CACP,MAAM,OAAO,EAAE,kDAAkD;CACjE,MAAM,eAAe,EAAE;CACvB,QAAQ,OAAO,EAAE,sDAAsD;CACvE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,SAAS;CACxB,OAAO;CACP,MAAM,IAAI,EAAE;CACZ,QAAQ,OAAO,EAAE,MAAM,CAAC,8BAA8B,CAAC,MAAM,CAAC;CAC9D,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE,QAAQ;CACxB,OAAO;CACP,MAAM,QAAQ,EAAE,YAAY;CAC5B,MAAM,WAAW,EAAE,YAAY;CAC/B,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG,KAAK,CAAC,SAAS,CAAC,GAAG;CAC5C,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    }
+  ]
+}

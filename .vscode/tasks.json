@@ -1,29 +1,17 @@
 {
   "version": "2.0.0",
   "tasks": [
-    {
-      "type": "bridge-to-kubernetes.service",
-      "label": "Bridge to Kubernetes: Frontend",
-      "service": "frontend-service",
-      "ports": [3000],
+      {
+      "label": "bridge-to-kubernetes.resource",
+      "type": "bridge-to-kubernetes.resource",
+      "resource": "fe",
+      "resourceType": "service",
+      "ports": [3001],
       "targetCluster": "DevCluster",
-      "useKubernetesServiceEnvironmentVariables": true
-    },
-    {
-      "type": "bridge-to-kubernetes.service",
-      "label": "Bridge to Kubernetes: Backend",
-      "service": "backend-service",
-      "ports": [5000],
-      "targetCluster": "DevCluster",
-      "useKubernetesServiceEnvironmentVariables": true
-    },
-    {
-      "type": "bridge-to-kubernetes.service",
-      "label": "Bridge to Kubernetes: Redis",
-      "service": "redis-service",
-      "ports": [6379],
-      "targetCluster": "DevCluster",
-      "useKubernetesServiceEnvironmentVariables": true
+      "targetNamespace": "azdevspace",
+      "useKubernetesServiceEnvironmentVariables": true,
+      "isolateAs": "zepor-842d",
+      "targetContainer": "fe"
     },
     {
       "label": "Start Web",
@@ -96,18 +84,7 @@
       "dependsOn": ["Start API", "Start Web"],
       "problemMatcher": []
     },
-    {
-      "label": "bridge-to-kubernetes.resource",
-      "type": "bridge-to-kubernetes.resource",
-      "resource": "backend-service",
-      "resourceType": "service",
-      "ports": [5000],
-      "targetCluster": "DevCluster",
-      "targetNamespace": "azdevspace",
-      "useKubernetesServiceEnvironmentVariables": false
-    }
   ],
-
   "inputs": [
     {
       "id": "dotEnvFilePath",

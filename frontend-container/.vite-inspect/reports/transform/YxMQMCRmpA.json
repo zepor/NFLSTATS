@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Pie.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PieChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [44, 55, 13, 33];\r\n\r\n  const options = {\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Pie Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Pie charts are an instrumental visualization tool useful in expressing\r\n          data and information in terms of percentages, ratio.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"donut\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PieChart;\r\n",
+      "start": 1702937441808,
+      "end": 1702937441857,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport Chart from \"react-apexcharts\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst PieChart = () => {\n  const palette = usePalette();\n  const data = [44, 55, 13, 33];\n  const options = {\n    dataLabels: {\n      enabled: false\n    },\n    colors: [\n      palette.primary,\n      palette.success,\n      palette.warning,\n      palette.danger,\n      palette.info\n    ]\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Pie Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Pie charts are an instrumental visualization tool useful in expressing data and information in terms of percentages, ratio.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(Chart, { options, series: data, type: \"donut\", height: \"350\" }) }) })\n  ] });\n};\nexport default PieChart;\n",
+      "start": 1702937441857,
+      "end": 1702937441860,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Pie.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PieChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [44, 55, 13, 33];\r\n\r\n  const options = {\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Pie Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Pie charts are an instrumental visualization tool useful in expressing\r\n          data and information in terms of percentages, ratio.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"donut\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PieChart;\r\n"
+        ],
+        "mappings": "AA0BM,SACE,KADF;AA1BN,OAAO,WAAW;AAClB,OAAO,WAAW;AAClB,SAAS,YAAY;AAErB,OAAO,gBAAgB;AAEvB,MAAM,WAAW,MAAM;AACrB,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO,CAAC,IAAI,IAAI,IAAI,EAAE;AAE5B,QAAM,UAAU;AAAA,IACd,YAAY;AAAA,MACV,SAAS;AAAA,IACX;AAAA,IACA,QAAQ;AAAA,MACN,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,IACV;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,uBAAS;AAAA,MACrB,oBAAC,QAAG,WAAU,4BAA2B,yIAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,SACb,8BAAC,SAAM,SAAkB,QAAQ,MAAM,MAAK,SAAQ,QAAO,OAAM,GACnE,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    }
+  ]
+}

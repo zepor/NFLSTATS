@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/utilities/common/mergeDeep.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign, __spreadArray } from \"tslib\";\nimport { isNonNullObject } from \"./objects.js\";\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\nexport function mergeDeep() {\n    var sources = [];\n    for (var _i = 0; _i < arguments.length; _i++) {\n        sources[_i] = arguments[_i];\n    }\n    return mergeDeepArray(sources);\n}\n// In almost any situation where you could succeed in getting the\n// TypeScript compiler to infer a tuple type for the sources array, you\n// could just use mergeDeep instead of mergeDeepArray, so instead of\n// trying to convert T[] to an intersection type we just infer the array\n// element type, which works perfectly when the sources array has a\n// consistent element type.\nexport function mergeDeepArray(sources) {\n    var target = sources[0] || {};\n    var count = sources.length;\n    if (count > 1) {\n        var merger = new DeepMerger();\n        for (var i = 1; i < count; ++i) {\n            target = merger.merge(target, sources[i]);\n        }\n    }\n    return target;\n}\nvar defaultReconciler = function (target, source, property) {\n    return this.merge(target[property], source[property]);\n};\nvar DeepMerger = /** @class */ (function () {\n    function DeepMerger(reconciler) {\n        if (reconciler === void 0) { reconciler = defaultReconciler; }\n        this.reconciler = reconciler;\n        this.isObject = isNonNullObject;\n        this.pastCopies = new Set();\n    }\n    DeepMerger.prototype.merge = function (target, source) {\n        var _this = this;\n        var context = [];\n        for (var _i = 2; _i < arguments.length; _i++) {\n            context[_i - 2] = arguments[_i];\n        }\n        if (isNonNullObject(source) && isNonNullObject(target)) {\n            Object.keys(source).forEach(function (sourceKey) {\n                if (hasOwnProperty.call(target, sourceKey)) {\n                    var targetValue = target[sourceKey];\n                    if (source[sourceKey] !== targetValue) {\n                        var result = _this.reconciler.apply(_this, __spreadArray([target,\n                            source,\n                            sourceKey], context, false));\n                        // A well-implemented reconciler may return targetValue to indicate\n                        // the merge changed nothing about the structure of the target.\n                        if (result !== targetValue) {\n                            target = _this.shallowCopyForMerge(target);\n                            target[sourceKey] = result;\n                        }\n                    }\n                }\n                else {\n                    // If there is no collision, the target can safely share memory with\n                    // the source, and the recursion can terminate here.\n                    target = _this.shallowCopyForMerge(target);\n                    target[sourceKey] = source[sourceKey];\n                }\n            });\n            return target;\n        }\n        // If source (or target) is not an object, let source replace target.\n        return source;\n    };\n    DeepMerger.prototype.shallowCopyForMerge = function (value) {\n        if (isNonNullObject(value)) {\n            if (!this.pastCopies.has(value)) {\n                if (Array.isArray(value)) {\n                    value = value.slice(0);\n                }\n                else {\n                    value = __assign({ __proto__: Object.getPrototypeOf(value) }, value);\n                }\n                this.pastCopies.add(value);\n            }\n        }\n        return value;\n    };\n    return DeepMerger;\n}());\nexport { DeepMerger };\n//# sourceMappingURL=mergeDeep.js.map",
+      "start": 1702937441027,
+      "end": 1702937441084,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441085,
+      "end": 1702937441085,
+      "order": "normal"
+    }
+  ]
+}

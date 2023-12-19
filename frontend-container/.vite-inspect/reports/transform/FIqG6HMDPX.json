@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/clojure.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = clojure\nclojure.displayName = 'clojure'\nclojure.aliases = []\nfunction clojure(Prism) {\n  // Copied from https://github.com/jeluard/prism-clojure\n  Prism.languages.clojure = {\n    comment: {\n      pattern: /;.*/,\n      greedy: true\n    },\n    string: {\n      pattern: /\"(?:[^\"\\\\]|\\\\.)*\"/,\n      greedy: true\n    },\n    char: /\\\\\\w+/,\n    symbol: {\n      pattern: /(^|[\\s()\\[\\]{},])::?[\\w*+!?'<>=/.-]+/,\n      lookbehind: true\n    },\n    keyword: {\n      pattern:\n        /(\\()(?:-|->|->>|\\.|\\.\\.|\\*|\\/|\\+|<|<=|=|==|>|>=|accessor|agent|agent-errors|aget|alength|all-ns|alter|and|append-child|apply|array-map|aset|aset-boolean|aset-byte|aset-char|aset-double|aset-float|aset-int|aset-long|aset-short|assert|assoc|await|await-for|bean|binding|bit-and|bit-not|bit-or|bit-shift-left|bit-shift-right|bit-xor|boolean|branch\\?|butlast|byte|cast|char|children|class|clear-agent-errors|comment|commute|comp|comparator|complement|concat|cond|conj|cons|constantly|construct-proxy|contains\\?|count|create-ns|create-struct|cycle|dec|declare|def|def-|definline|definterface|defmacro|defmethod|defmulti|defn|defn-|defonce|defproject|defprotocol|defrecord|defstruct|deftype|deref|difference|disj|dissoc|distinct|do|doall|doc|dorun|doseq|dosync|dotimes|doto|double|down|drop|drop-while|edit|end\\?|ensure|eval|every\\?|false\\?|ffirst|file-seq|filter|find|find-doc|find-ns|find-var|first|float|flush|fn|fnseq|for|frest|gensym|get|get-proxy-class|hash-map|hash-set|identical\\?|identity|if|if-let|if-not|import|in-ns|inc|index|insert-child|insert-left|insert-right|inspect-table|inspect-tree|instance\\?|int|interleave|intersection|into|into-array|iterate|join|key|keys|keyword|keyword\\?|last|lazy-cat|lazy-cons|left|lefts|let|line-seq|list|list\\*|load|load-file|locking|long|loop|macroexpand|macroexpand-1|make-array|make-node|map|map-invert|map\\?|mapcat|max|max-key|memfn|merge|merge-with|meta|min|min-key|monitor-enter|name|namespace|neg\\?|new|newline|next|nil\\?|node|not|not-any\\?|not-every\\?|not=|ns|ns-imports|ns-interns|ns-map|ns-name|ns-publics|ns-refers|ns-resolve|ns-unmap|nth|nthrest|or|parse|partial|path|peek|pop|pos\\?|pr|pr-str|print|print-str|println|println-str|prn|prn-str|project|proxy|proxy-mappings|quot|quote|rand|rand-int|range|re-find|re-groups|re-matcher|re-matches|re-pattern|re-seq|read|read-line|recur|reduce|ref|ref-set|refer|rem|remove|remove-method|remove-ns|rename|rename-keys|repeat|replace|replicate|resolve|rest|resultset-seq|reverse|rfirst|right|rights|root|rrest|rseq|second|select|select-keys|send|send-off|seq|seq-zip|seq\\?|set|set!|short|slurp|some|sort|sort-by|sorted-map|sorted-map-by|sorted-set|special-symbol\\?|split-at|split-with|str|string\\?|struct|struct-map|subs|subvec|symbol|symbol\\?|sync|take|take-nth|take-while|test|throw|time|to-array|to-array-2d|tree-seq|true\\?|try|union|up|update-proxy|val|vals|var|var-get|var-set|var\\?|vector|vector-zip|vector\\?|when|when-first|when-let|when-not|with-local-vars|with-meta|with-open|with-out-str|xml-seq|xml-zip|zero\\?|zipmap|zipper)(?=[\\s)]|$)/,\n      lookbehind: true\n    },\n    boolean: /\\b(?:false|nil|true)\\b/,\n    number: {\n      pattern:\n        /(^|[^\\w$@])(?:\\d+(?:[/.]\\d+)?(?:e[+-]?\\d+)?|0x[a-f0-9]+|[1-9]\\d?r[a-z0-9]+)[lmn]?(?![\\w$@])/i,\n      lookbehind: true\n    },\n    function: {\n      pattern: /((?:^|[^'])\\()[\\w*+!?'<>=/.-]+(?=[\\s)]|$)/,\n      lookbehind: true\n    },\n    operator: /[#@^`~]/,\n    punctuation: /[{}\\[\\](),]/\n  }\n}\n",
+      "start": 1702937444842,
+      "end": 1702937444859,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar clojure_1;\nvar hasRequiredClojure;\n\nfunction requireClojure () {\n\tif (hasRequiredClojure) return clojure_1;\n\thasRequiredClojure = 1;\n\t'use strict'\n\n\tclojure_1 = clojure\n\tclojure.displayName = 'clojure'\n\tclojure.aliases = []\n\tfunction clojure(Prism) {\n\t  // Copied from https://github.com/jeluard/prism-clojure\n\t  Prism.languages.clojure = {\n\t    comment: {\n\t      pattern: /;.*/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /\"(?:[^\"\\\\]|\\\\.)*\"/,\n\t      greedy: true\n\t    },\n\t    char: /\\\\\\w+/,\n\t    symbol: {\n\t      pattern: /(^|[\\s()\\[\\]{},])::?[\\w*+!?'<>=/.-]+/,\n\t      lookbehind: true\n\t    },\n\t    keyword: {\n\t      pattern:\n\t        /(\\()(?:-|->|->>|\\.|\\.\\.|\\*|\\/|\\+|<|<=|=|==|>|>=|accessor|agent|agent-errors|aget|alength|all-ns|alter|and|append-child|apply|array-map|aset|aset-boolean|aset-byte|aset-char|aset-double|aset-float|aset-int|aset-long|aset-short|assert|assoc|await|await-for|bean|binding|bit-and|bit-not|bit-or|bit-shift-left|bit-shift-right|bit-xor|boolean|branch\\?|butlast|byte|cast|char|children|class|clear-agent-errors|comment|commute|comp|comparator|complement|concat|cond|conj|cons|constantly|construct-proxy|contains\\?|count|create-ns|create-struct|cycle|dec|declare|def|def-|definline|definterface|defmacro|defmethod|defmulti|defn|defn-|defonce|defproject|defprotocol|defrecord|defstruct|deftype|deref|difference|disj|dissoc|distinct|do|doall|doc|dorun|doseq|dosync|dotimes|doto|double|down|drop|drop-while|edit|end\\?|ensure|eval|every\\?|false\\?|ffirst|file-seq|filter|find|find-doc|find-ns|find-var|first|float|flush|fn|fnseq|for|frest|gensym|get|get-proxy-class|hash-map|hash-set|identical\\?|identity|if|if-let|if-not|import|in-ns|inc|index|insert-child|insert-left|insert-right|inspect-table|inspect-tree|instance\\?|int|interleave|intersection|into|into-array|iterate|join|key|keys|keyword|keyword\\?|last|lazy-cat|lazy-cons|left|lefts|let|line-seq|list|list\\*|load|load-file|locking|long|loop|macroexpand|macroexpand-1|make-array|make-node|map|map-invert|map\\?|mapcat|max|max-key|memfn|merge|merge-with|meta|min|min-key|monitor-enter|name|namespace|neg\\?|new|newline|next|nil\\?|node|not|not-any\\?|not-every\\?|not=|ns|ns-imports|ns-interns|ns-map|ns-name|ns-publics|ns-refers|ns-resolve|ns-unmap|nth|nthrest|or|parse|partial|path|peek|pop|pos\\?|pr|pr-str|print|print-str|println|println-str|prn|prn-str|project|proxy|proxy-mappings|quot|quote|rand|rand-int|range|re-find|re-groups|re-matcher|re-matches|re-pattern|re-seq|read|read-line|recur|reduce|ref|ref-set|refer|rem|remove|remove-method|remove-ns|rename|rename-keys|repeat|replace|replicate|resolve|rest|resultset-seq|reverse|rfirst|right|rights|root|rrest|rseq|second|select|select-keys|send|send-off|seq|seq-zip|seq\\?|set|set!|short|slurp|some|sort|sort-by|sorted-map|sorted-map-by|sorted-set|special-symbol\\?|split-at|split-with|str|string\\?|struct|struct-map|subs|subvec|symbol|symbol\\?|sync|take|take-nth|take-while|test|throw|time|to-array|to-array-2d|tree-seq|true\\?|try|union|up|update-proxy|val|vals|var|var-get|var-set|var\\?|vector|vector-zip|vector\\?|when|when-first|when-let|when-not|with-local-vars|with-meta|with-open|with-out-str|xml-seq|xml-zip|zero\\?|zipmap|zipper)(?=[\\s)]|$)/,\n\t      lookbehind: true\n\t    },\n\t    boolean: /\\b(?:false|nil|true)\\b/,\n\t    number: {\n\t      pattern:\n\t        /(^|[^\\w$@])(?:\\d+(?:[/.]\\d+)?(?:e[+-]?\\d+)?|0x[a-f0-9]+|[1-9]\\d?r[a-z0-9]+)[lmn]?(?![\\w$@])/i,\n\t      lookbehind: true\n\t    },\n\t    function: {\n\t      pattern: /((?:^|[^'])\\()[\\w*+!?'<>=/.-]+(?=[\\s)]|$)/,\n\t      lookbehind: true\n\t    },\n\t    operator: /[#@^`~]/,\n\t    punctuation: /[{}\\[\\](),]/\n\t  }\n\t}\n\treturn clojure_1;\n}\n\nexport { requireClojure as __require };",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,UAAc,GAAG,OAAO;CACxB,OAAO,CAAC,WAAW,GAAG,SAAS;CAC/B,OAAO,CAAC,OAAO,GAAG,EAAE;CACpB,SAAS,OAAO,CAAC,KAAK,EAAE;CACxB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG;CAC5B,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,mBAAmB;CAClC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,IAAI,EAAE,OAAO;CACjB,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,sCAAsC;CACrD,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO;CACb,QAAQ,6+EAA6+E;CACr/E,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,OAAO,EAAE,wBAAwB;CACrC,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,8FAA8F;CACtG,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,2CAA2C;CAC1D,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,SAAS;CACvB,IAAI,WAAW,EAAE,aAAa;CAC9B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444859,
+      "end": 1702937444859,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/NoUnusedVariablesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * No unused variables\n *\n * A GraphQL operation is only valid if all variables defined by an operation\n * are used, either directly or within a spread fragment.\n *\n * See https://spec.graphql.org/draft/#sec-All-Variables-Used\n */\nexport function NoUnusedVariablesRule(context) {\n  let variableDefs = [];\n  return {\n    OperationDefinition: {\n      enter() {\n        variableDefs = [];\n      },\n\n      leave(operation) {\n        const variableNameUsed = Object.create(null);\n        const usages = context.getRecursiveVariableUsages(operation);\n\n        for (const { node } of usages) {\n          variableNameUsed[node.name.value] = true;\n        }\n\n        for (const variableDef of variableDefs) {\n          const variableName = variableDef.variable.name.value;\n\n          if (variableNameUsed[variableName] !== true) {\n            context.reportError(\n              new GraphQLError(\n                operation.name\n                  ? `Variable \"$${variableName}\" is never used in operation \"${operation.name.value}\".`\n                  : `Variable \"$${variableName}\" is never used.`,\n                {\n                  nodes: variableDef,\n                },\n              ),\n            );\n          }\n        }\n      },\n    },\n\n    VariableDefinition(def) {\n      variableDefs.push(def);\n    },\n  };\n}\n",
+      "start": 1702937443075,
+      "end": 1702937443095,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443095,
+      "end": 1702937443095,
+      "order": "normal"
+    }
+  ]
+}

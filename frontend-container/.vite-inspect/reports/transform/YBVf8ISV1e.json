@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_isPrototype.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/**\n * Checks if `value` is likely a prototype object.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.\n */\nfunction isPrototype(value) {\n  var Ctor = value && value.constructor,\n      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;\n\n  return value === proto;\n}\n\nmodule.exports = isPrototype;\n",
+      "start": 1702937445374,
+      "end": 1702937445387,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445387,
+      "end": 1702937445387,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/** Used for built-in method references. */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar objectProto = Object.prototype;\n\n/**\n * Checks if `value` is likely a prototype object.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.\n */\nfunction isPrototype(value) {\n  var Ctor = value && value.constructor,\n      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;\n\n  return value === proto;\n}\n\nvar _isPrototype = isPrototype;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_isPrototype);\nexport { _isPrototype as __moduleExports };",
+      "start": 1702937445387,
+      "end": 1702937445388,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AACA,IAAI,WAAW,GAAG,MAAM,CAAC,SAAS,CAAC;AACnC;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,WAAW,CAAC,KAAK,EAAE;AAC5B,EAAE,IAAI,IAAI,GAAG,KAAK,IAAI,KAAK,CAAC,WAAW;AACvC,MAAM,KAAK,GAAG,CAAC,OAAO,IAAI,IAAI,UAAU,IAAI,IAAI,CAAC,SAAS,KAAK,WAAW,CAAC;AAC3E;AACA,EAAE,OAAO,KAAK,KAAK,KAAK,CAAC;AACzB,CAAC;AACD;IACA,YAAc,GAAG,WAAW"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445388,
+      "end": 1702937445388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445388,
+      "end": 1702937445388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445388,
+      "end": 1702937445388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445388,
+      "end": 1702937445388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445388,
+      "end": 1702937445388,
+      "order": "normal"
+    }
+  ]
+}

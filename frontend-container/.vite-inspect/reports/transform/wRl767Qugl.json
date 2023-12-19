@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/hooks/useFragment.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign, __rest } from \"tslib\";\nimport * as React from \"react\";\nimport { equal } from \"@wry/equality\";\nimport { mergeDeepArray } from \"../../utilities/index.js\";\nimport { useApolloClient } from \"./useApolloClient.js\";\nimport { useSyncExternalStore } from \"./useSyncExternalStore.js\";\nexport function useFragment(options) {\n    var cache = useApolloClient().cache;\n    var fragment = options.fragment, fragmentName = options.fragmentName, from = options.from, _a = options.optimistic, optimistic = _a === void 0 ? true : _a, rest = __rest(options, [\"fragment\", \"fragmentName\", \"from\", \"optimistic\"]);\n    var diffOptions = __assign(__assign({}, rest), { returnPartialData: true, id: typeof from === \"string\" ? from : cache.identify(from), query: cache[\"getFragmentDoc\"](fragment, fragmentName), optimistic: optimistic });\n    var resultRef = React.useRef();\n    var latestDiff = cache.diff(diffOptions);\n    // Used for both getSnapshot and getServerSnapshot\n    var getSnapshot = function () {\n        var latestDiffToResult = diffToResult(latestDiff);\n        return (resultRef.current &&\n            equal(resultRef.current.data, latestDiffToResult.data)) ?\n            resultRef.current\n            : (resultRef.current = latestDiffToResult);\n    };\n    return useSyncExternalStore(function (forceUpdate) {\n        var lastTimeout = 0;\n        var unsubcribe = cache.watch(__assign(__assign({}, diffOptions), { immediate: true, callback: function (diff) {\n                if (!equal(diff, latestDiff)) {\n                    resultRef.current = diffToResult((latestDiff = diff));\n                    lastTimeout = setTimeout(forceUpdate);\n                }\n            } }));\n        return function () {\n            unsubcribe();\n            clearTimeout(lastTimeout);\n        };\n    }, getSnapshot, getSnapshot);\n}\nfunction diffToResult(diff) {\n    var result = {\n        data: diff.result,\n        complete: !!diff.complete,\n    };\n    if (diff.missing) {\n        result.missing = mergeDeepArray(diff.missing.map(function (error) { return error.missing; }));\n    }\n    return result;\n}\n//# sourceMappingURL=useFragment.js.map",
+      "start": 1702937441087,
+      "end": 1702937441235,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    }
+  ]
+}

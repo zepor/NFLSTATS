@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/PlaceholderButton.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import * as React from 'react';\nimport Button from './Button';\nimport usePlaceholder from './usePlaceholder';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst PlaceholderButton = /*#__PURE__*/React.forwardRef((props, ref) => {\n  const placeholderProps = usePlaceholder(props);\n  return /*#__PURE__*/_jsx(Button, {\n    ...placeholderProps,\n    ref: ref,\n    disabled: true,\n    tabIndex: -1\n  });\n});\nPlaceholderButton.displayName = 'PlaceholderButton';\nexport default PlaceholderButton;",
+      "start": 1702937441503,
+      "end": 1702937441525,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441525,
+      "end": 1702937441525,
+      "order": "normal"
+    }
+  ]
+}

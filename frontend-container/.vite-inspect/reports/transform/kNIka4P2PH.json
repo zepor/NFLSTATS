@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/fix.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: FIX\nAuthor: Brent Bradbury <brent@brentium.com>\n*/\n\n/** @type LanguageFn */\nfunction fix(hljs) {\n  return {\n    name: 'FIX',\n    contains: [{\n      begin: /[^\\u2401\\u0001]+/,\n      end: /[\\u2401\\u0001]/,\n      excludeEnd: true,\n      returnBegin: true,\n      returnEnd: false,\n      contains: [\n        {\n          begin: /([^\\u2401\\u0001=]+)/,\n          end: /=([^\\u2401\\u0001=]+)/,\n          returnEnd: true,\n          returnBegin: false,\n          className: 'attr'\n        },\n        {\n          begin: /=/,\n          end: /([\\u2401\\u0001])/,\n          excludeEnd: true,\n          excludeBegin: true,\n          className: 'string'\n        }\n      ]\n    }],\n    case_insensitive: true\n  };\n}\n\nmodule.exports = fix;\n",
+      "start": 1702937444319,
+      "end": 1702937444343,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: FIX\nAuthor: Brent Bradbury <brent@brentium.com>\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar fix_1;\nvar hasRequiredFix;\n\nfunction requireFix () {\n\tif (hasRequiredFix) return fix_1;\n\thasRequiredFix = 1;\n\t/** @type LanguageFn */\n\tfunction fix(hljs) {\n\t  return {\n\t    name: 'FIX',\n\t    contains: [{\n\t      begin: /[^\\u2401\\u0001]+/,\n\t      end: /[\\u2401\\u0001]/,\n\t      excludeEnd: true,\n\t      returnBegin: true,\n\t      returnEnd: false,\n\t      contains: [\n\t        {\n\t          begin: /([^\\u2401\\u0001=]+)/,\n\t          end: /=([^\\u2401\\u0001=]+)/,\n\t          returnEnd: true,\n\t          returnBegin: false,\n\t          className: 'attr'\n\t        },\n\t        {\n\t          begin: /=/,\n\t          end: /([\\u2401\\u0001])/,\n\t          excludeEnd: true,\n\t          excludeBegin: true,\n\t          className: 'string'\n\t        }\n\t      ]\n\t    }],\n\t    case_insensitive: true\n\t  };\n\t}\n\n\tfix_1 = fix;\n\treturn fix_1;\n}\n\nexport { requireFix as __require };",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;CAKA;CACA,SAAS,GAAG,CAAC,IAAI,EAAE;CACnB,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,KAAK;CACf,IAAI,QAAQ,EAAE,CAAC;CACf,MAAM,KAAK,EAAE,kBAAkB;CAC/B,MAAM,GAAG,EAAE,gBAAgB;CAC3B,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,WAAW,EAAE,IAAI;CACvB,MAAM,SAAS,EAAE,KAAK;CACtB,MAAM,QAAQ,EAAE;CAChB,QAAQ;CACR,UAAU,KAAK,EAAE,qBAAqB;CACtC,UAAU,GAAG,EAAE,sBAAsB;CACrC,UAAU,SAAS,EAAE,IAAI;CACzB,UAAU,WAAW,EAAE,KAAK;CAC5B,UAAU,SAAS,EAAE,MAAM;CAC3B,SAAS;CACT,QAAQ;CACR,UAAU,KAAK,EAAE,GAAG;CACpB,UAAU,GAAG,EAAE,kBAAkB;CACjC,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,YAAY,EAAE,IAAI;CAC5B,UAAU,SAAS,EAAE,QAAQ;CAC7B,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,IAAI,gBAAgB,EAAE,IAAI;CAC1B,GAAG,CAAC;CACJ,CAAC;AACD;AACA,MAAc,GAAG,GAAG"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444343,
+      "end": 1702937444343,
+      "order": "normal"
+    }
+  ]
+}

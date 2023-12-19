@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/FormLabel.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useContext } from 'react';\nimport warning from 'warning';\nimport Col from './Col';\nimport FormContext from './FormContext';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst FormLabel = /*#__PURE__*/React.forwardRef(({\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = 'label',\n  bsPrefix,\n  column = false,\n  visuallyHidden = false,\n  className,\n  htmlFor,\n  ...props\n}, ref) => {\n  const {\n    controlId\n  } = useContext(FormContext);\n  bsPrefix = useBootstrapPrefix(bsPrefix, 'form-label');\n  let columnClass = 'col-form-label';\n  if (typeof column === 'string') columnClass = `${columnClass} ${columnClass}-${column}`;\n  const classes = classNames(className, bsPrefix, visuallyHidden && 'visually-hidden', column && columnClass);\n  process.env.NODE_ENV !== \"production\" ? warning(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.') : void 0;\n  htmlFor = htmlFor || controlId;\n  if (column) return /*#__PURE__*/_jsx(Col, {\n    ref: ref,\n    as: \"label\",\n    className: classes,\n    htmlFor: htmlFor,\n    ...props\n  });\n  return (\n    /*#__PURE__*/\n    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control\n    _jsx(Component, {\n      ref: ref,\n      className: classes,\n      htmlFor: htmlFor,\n      ...props\n    })\n  );\n});\nFormLabel.displayName = 'FormLabel';\nexport default FormLabel;",
+      "start": 1702937441473,
+      "end": 1702937441486,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441486,
+      "end": 1702937441486,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441486,
+      "end": 1702937441486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441486,
+      "end": 1702937441486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441486,
+      "end": 1702937441486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441486,
+      "end": 1702937441486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use client\";\nimport classNames from \"classnames\";\nimport * as React from \"react\";\nimport { useContext } from \"react\";\nimport warning from \"warning\";\nimport Col from \"./Col\";\nimport FormContext from \"./FormContext\";\nimport { useBootstrapPrefix } from \"./ThemeProvider\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst FormLabel = /* @__PURE__ */ React.forwardRef(({\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = \"label\",\n  bsPrefix,\n  column = false,\n  visuallyHidden = false,\n  className,\n  htmlFor,\n  ...props\n}, ref) => {\n  const {\n    controlId\n  } = useContext(FormContext);\n  bsPrefix = useBootstrapPrefix(bsPrefix, \"form-label\");\n  let columnClass = \"col-form-label\";\n  if (typeof column === \"string\")\n    columnClass = `${columnClass} ${columnClass}-${column}`;\n  const classes = classNames(className, bsPrefix, visuallyHidden && \"visually-hidden\", column && columnClass);\n  false ? warning(controlId == null || !htmlFor, \"`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.\") : void 0;\n  htmlFor = htmlFor || controlId;\n  if (column)\n    return /* @__PURE__ */ _jsx(Col, {\n      ref,\n      as: \"label\",\n      className: classes,\n      htmlFor,\n      ...props\n    });\n  return (\n    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control\n    /* @__PURE__ */ _jsx(Component, {\n      ref,\n      className: classes,\n      htmlFor,\n      ...props\n    })\n  );\n});\nFormLabel.displayName = \"FormLabel\";\nexport default FormLabel;\n",
+      "start": 1702937441486,
+      "end": 1702937441495,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    }
+  ]
+}

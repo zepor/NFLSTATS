@@ -28,7 +28,7 @@ const QuickStart = () => (
     <p className="text-lg">
       Enable Cognito's <code>AuthProvider</code> in <code>/src/App.js</code>.
     </p>
-    <Code>{`import { AuthProvider } from "./contexts/CognitoContext";
+    <Code>{`import { AuthProvider } from "./contexts/CognitoProvider";
         
 function App() {
   return (

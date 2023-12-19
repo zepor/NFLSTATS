@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/puppet.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = puppet\npuppet.displayName = 'puppet'\npuppet.aliases = []\nfunction puppet(Prism) {\n  ;(function (Prism) {\n    Prism.languages.puppet = {\n      heredoc: [\n        // Matches the content of a quoted heredoc string (subject to interpolation)\n        {\n          pattern:\n            /(@\\(\"([^\"\\r\\n\\/):]+)\"(?:\\/[nrts$uL]*)?\\).*(?:\\r?\\n|\\r))(?:.*(?:\\r?\\n|\\r(?!\\n)))*?[ \\t]*(?:\\|[ \\t]*)?(?:-[ \\t]*)?\\2/,\n          lookbehind: true,\n          alias: 'string',\n          inside: {\n            // Matches the end tag\n            punctuation: /(?=\\S).*\\S(?= *$)/ // See interpolation below\n          }\n        }, // Matches the content of an unquoted heredoc string (no interpolation)\n        {\n          pattern:\n            /(@\\(([^\"\\r\\n\\/):]+)(?:\\/[nrts$uL]*)?\\).*(?:\\r?\\n|\\r))(?:.*(?:\\r?\\n|\\r(?!\\n)))*?[ \\t]*(?:\\|[ \\t]*)?(?:-[ \\t]*)?\\2/,\n          lookbehind: true,\n          greedy: true,\n          alias: 'string',\n          inside: {\n            // Matches the end tag\n            punctuation: /(?=\\S).*\\S(?= *$)/\n          }\n        }, // Matches the start tag of heredoc strings\n        {\n          pattern: /@\\(\"?(?:[^\"\\r\\n\\/):]+)\"?(?:\\/[nrts$uL]*)?\\)/,\n          alias: 'string',\n          inside: {\n            punctuation: {\n              pattern: /(\\().+?(?=\\))/,\n              lookbehind: true\n            }\n          }\n        }\n      ],\n      'multiline-comment': {\n        pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n        lookbehind: true,\n        greedy: true,\n        alias: 'comment'\n      },\n      regex: {\n        // Must be prefixed with the keyword \"node\" or a non-word char\n        pattern:\n          /((?:\\bnode\\s+|[~=\\(\\[\\{,]\\s*|[=+]>\\s*|^\\s*))\\/(?:[^\\/\\\\]|\\\\[\\s\\S])+\\/(?:[imx]+\\b|\\B)/,\n        lookbehind: true,\n        greedy: true,\n        inside: {\n          // Extended regexes must have the x flag. They can contain single-line comments.\n          'extended-regex': {\n            pattern: /^\\/(?:[^\\/\\\\]|\\\\[\\s\\S])+\\/[im]*x[im]*$/,\n            inside: {\n              comment: /#.*/\n            }\n          }\n        }\n      },\n      comment: {\n        pattern: /(^|[^\\\\])#.*/,\n        lookbehind: true,\n        greedy: true\n      },\n      string: {\n        // Allow for one nested level of double quotes inside interpolation\n        pattern:\n          /([\"'])(?:\\$\\{(?:[^'\"}]|([\"'])(?:(?!\\2)[^\\\\]|\\\\[\\s\\S])*\\2)+\\}|\\$(?!\\{)|(?!\\1)[^\\\\$]|\\\\[\\s\\S])*\\1/,\n        greedy: true,\n        inside: {\n          'double-quoted': {\n            pattern: /^\"[\\s\\S]*\"$/,\n            inside: {\n              // See interpolation below\n            }\n          }\n        }\n      },\n      variable: {\n        pattern: /\\$(?:::)?\\w+(?:::\\w+)*/,\n        inside: {\n          punctuation: /::/\n        }\n      },\n      'attr-name': /(?:\\b\\w+|\\*)(?=\\s*=>)/,\n      function: [\n        {\n          pattern: /(\\.)(?!\\d)\\w+/,\n          lookbehind: true\n        },\n        /\\b(?:contain|debug|err|fail|include|info|notice|realize|require|tag|warning)\\b|\\b(?!\\d)\\w+(?=\\()/\n      ],\n      number: /\\b(?:0x[a-f\\d]+|\\d+(?:\\.\\d+)?(?:e-?\\d+)?)\\b/i,\n      boolean: /\\b(?:false|true)\\b/,\n      // Includes words reserved for future use\n      keyword:\n        /\\b(?:application|attr|case|class|consumes|default|define|else|elsif|function|if|import|inherits|node|private|produces|type|undef|unless)\\b/,\n      datatype: {\n        pattern:\n          /\\b(?:Any|Array|Boolean|Callable|Catalogentry|Class|Collection|Data|Default|Enum|Float|Hash|Integer|NotUndef|Numeric|Optional|Pattern|Regexp|Resource|Runtime|Scalar|String|Struct|Tuple|Type|Undef|Variant)\\b/,\n        alias: 'symbol'\n      },\n      operator:\n        /=[=~>]?|![=~]?|<(?:<\\|?|[=~|-])?|>[>=]?|->?|~>|\\|>?>?|[*\\/%+?]|\\b(?:and|in|or)\\b/,\n      punctuation: /[\\[\\]{}().,;]|:+/\n    }\n    var interpolation = [\n      {\n        // Allow for one nested level of braces inside interpolation\n        pattern:\n          /(^|[^\\\\])\\$\\{(?:[^'\"{}]|\\{[^}]*\\}|([\"'])(?:(?!\\2)[^\\\\]|\\\\[\\s\\S])*\\2)+\\}/,\n        lookbehind: true,\n        inside: {\n          'short-variable': {\n            // Negative look-ahead prevent wrong highlighting of functions\n            pattern: /(^\\$\\{)(?!\\w+\\()(?:::)?\\w+(?:::\\w+)*/,\n            lookbehind: true,\n            alias: 'variable',\n            inside: {\n              punctuation: /::/\n            }\n          },\n          delimiter: {\n            pattern: /^\\$/,\n            alias: 'variable'\n          },\n          rest: Prism.languages.puppet\n        }\n      },\n      {\n        pattern: /(^|[^\\\\])\\$(?:::)?\\w+(?:::\\w+)*/,\n        lookbehind: true,\n        alias: 'variable',\n        inside: {\n          punctuation: /::/\n        }\n      }\n    ]\n    Prism.languages.puppet['heredoc'][0].inside.interpolation = interpolation\n    Prism.languages.puppet['string'].inside[\n      'double-quoted'\n    ].inside.interpolation = interpolation\n  })(Prism)\n}\n",
+      "start": 1702937445021,
+      "end": 1702937445045,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445045,
+      "end": 1702937445045,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar puppet_1;\nvar hasRequiredPuppet;\n\nfunction requirePuppet () {\n\tif (hasRequiredPuppet) return puppet_1;\n\thasRequiredPuppet = 1;\n\t'use strict'\n\n\tpuppet_1 = puppet\n\tpuppet.displayName = 'puppet'\n\tpuppet.aliases = []\n\tfunction puppet(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.puppet = {\n\t      heredoc: [\n\t        // Matches the content of a quoted heredoc string (subject to interpolation)\n\t        {\n\t          pattern:\n\t            /(@\\(\"([^\"\\r\\n\\/):]+)\"(?:\\/[nrts$uL]*)?\\).*(?:\\r?\\n|\\r))(?:.*(?:\\r?\\n|\\r(?!\\n)))*?[ \\t]*(?:\\|[ \\t]*)?(?:-[ \\t]*)?\\2/,\n\t          lookbehind: true,\n\t          alias: 'string',\n\t          inside: {\n\t            // Matches the end tag\n\t            punctuation: /(?=\\S).*\\S(?= *$)/ // See interpolation below\n\t          }\n\t        }, // Matches the content of an unquoted heredoc string (no interpolation)\n\t        {\n\t          pattern:\n\t            /(@\\(([^\"\\r\\n\\/):]+)(?:\\/[nrts$uL]*)?\\).*(?:\\r?\\n|\\r))(?:.*(?:\\r?\\n|\\r(?!\\n)))*?[ \\t]*(?:\\|[ \\t]*)?(?:-[ \\t]*)?\\2/,\n\t          lookbehind: true,\n\t          greedy: true,\n\t          alias: 'string',\n\t          inside: {\n\t            // Matches the end tag\n\t            punctuation: /(?=\\S).*\\S(?= *$)/\n\t          }\n\t        }, // Matches the start tag of heredoc strings\n\t        {\n\t          pattern: /@\\(\"?(?:[^\"\\r\\n\\/):]+)\"?(?:\\/[nrts$uL]*)?\\)/,\n\t          alias: 'string',\n\t          inside: {\n\t            punctuation: {\n\t              pattern: /(\\().+?(?=\\))/,\n\t              lookbehind: true\n\t            }\n\t          }\n\t        }\n\t      ],\n\t      'multiline-comment': {\n\t        pattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?\\*\\//,\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'comment'\n\t      },\n\t      regex: {\n\t        // Must be prefixed with the keyword \"node\" or a non-word char\n\t        pattern:\n\t          /((?:\\bnode\\s+|[~=\\(\\[\\{,]\\s*|[=+]>\\s*|^\\s*))\\/(?:[^\\/\\\\]|\\\\[\\s\\S])+\\/(?:[imx]+\\b|\\B)/,\n\t        lookbehind: true,\n\t        greedy: true,\n\t        inside: {\n\t          // Extended regexes must have the x flag. They can contain single-line comments.\n\t          'extended-regex': {\n\t            pattern: /^\\/(?:[^\\/\\\\]|\\\\[\\s\\S])+\\/[im]*x[im]*$/,\n\t            inside: {\n\t              comment: /#.*/\n\t            }\n\t          }\n\t        }\n\t      },\n\t      comment: {\n\t        pattern: /(^|[^\\\\])#.*/,\n\t        lookbehind: true,\n\t        greedy: true\n\t      },\n\t      string: {\n\t        // Allow for one nested level of double quotes inside interpolation\n\t        pattern:\n\t          /([\"'])(?:\\$\\{(?:[^'\"}]|([\"'])(?:(?!\\2)[^\\\\]|\\\\[\\s\\S])*\\2)+\\}|\\$(?!\\{)|(?!\\1)[^\\\\$]|\\\\[\\s\\S])*\\1/,\n\t        greedy: true,\n\t        inside: {\n\t          'double-quoted': {\n\t            pattern: /^\"[\\s\\S]*\"$/,\n\t            inside: {\n\t              // See interpolation below\n\t            }\n\t          }\n\t        }\n\t      },\n\t      variable: {\n\t        pattern: /\\$(?:::)?\\w+(?:::\\w+)*/,\n\t        inside: {\n\t          punctuation: /::/\n\t        }\n\t      },\n\t      'attr-name': /(?:\\b\\w+|\\*)(?=\\s*=>)/,\n\t      function: [\n\t        {\n\t          pattern: /(\\.)(?!\\d)\\w+/,\n\t          lookbehind: true\n\t        },\n\t        /\\b(?:contain|debug|err|fail|include|info|notice|realize|require|tag|warning)\\b|\\b(?!\\d)\\w+(?=\\()/\n\t      ],\n\t      number: /\\b(?:0x[a-f\\d]+|\\d+(?:\\.\\d+)?(?:e-?\\d+)?)\\b/i,\n\t      boolean: /\\b(?:false|true)\\b/,\n\t      // Includes words reserved for future use\n\t      keyword:\n\t        /\\b(?:application|attr|case|class|consumes|default|define|else|elsif|function|if|import|inherits|node|private|produces|type|undef|unless)\\b/,\n\t      datatype: {\n\t        pattern:\n\t          /\\b(?:Any|Array|Boolean|Callable|Catalogentry|Class|Collection|Data|Default|Enum|Float|Hash|Integer|NotUndef|Numeric|Optional|Pattern|Regexp|Resource|Runtime|Scalar|String|Struct|Tuple|Type|Undef|Variant)\\b/,\n\t        alias: 'symbol'\n\t      },\n\t      operator:\n\t        /=[=~>]?|![=~]?|<(?:<\\|?|[=~|-])?|>[>=]?|->?|~>|\\|>?>?|[*\\/%+?]|\\b(?:and|in|or)\\b/,\n\t      punctuation: /[\\[\\]{}().,;]|:+/\n\t    }\n\t    var interpolation = [\n\t      {\n\t        // Allow for one nested level of braces inside interpolation\n\t        pattern:\n\t          /(^|[^\\\\])\\$\\{(?:[^'\"{}]|\\{[^}]*\\}|([\"'])(?:(?!\\2)[^\\\\]|\\\\[\\s\\S])*\\2)+\\}/,\n\t        lookbehind: true,\n\t        inside: {\n\t          'short-variable': {\n\t            // Negative look-ahead prevent wrong highlighting of functions\n\t            pattern: /(^\\$\\{)(?!\\w+\\()(?:::)?\\w+(?:::\\w+)*/,\n\t            lookbehind: true,\n\t            alias: 'variable',\n\t            inside: {\n\t              punctuation: /::/\n\t            }\n\t          },\n\t          delimiter: {\n\t            pattern: /^\\$/,\n\t            alias: 'variable'\n\t          },\n\t          rest: Prism.languages.puppet\n\t        }\n\t      },\n\t      {\n\t        pattern: /(^|[^\\\\])\\$(?:::)?\\w+(?:::\\w+)*/,\n\t        lookbehind: true,\n\t        alias: 'variable',\n\t        inside: {\n\t          punctuation: /::/\n\t        }\n\t      }\n\t    ]\n\t    Prism.languages.puppet['heredoc'][0].inside.interpolation = interpolation\n\t    Prism.languages.puppet['string'].inside[\n\t      'double-quoted'\n\t    ].inside.interpolation = interpolation\n\t  })(Prism)\n\t}\n\treturn puppet_1;\n}\n\nexport { requirePuppet as __require };",
+      "start": 1702937445045,
+      "end": 1702937445046,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445046,
+      "end": 1702937445046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445046,
+      "end": 1702937445046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445046,
+      "end": 1702937445046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445046,
+      "end": 1702937445046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445046,
+      "end": 1702937445046,
+      "order": "normal"
+    }
+  ]
+}

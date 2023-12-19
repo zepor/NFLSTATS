@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/Breadcrumb.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport BreadcrumbItem from './BreadcrumbItem';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst Breadcrumb = /*#__PURE__*/React.forwardRef(({\n  bsPrefix,\n  className,\n  listProps = {},\n  children,\n  label = 'breadcrumb',\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = 'nav',\n  ...props\n}, ref) => {\n  const prefix = useBootstrapPrefix(bsPrefix, 'breadcrumb');\n  return /*#__PURE__*/_jsx(Component, {\n    \"aria-label\": label,\n    className: className,\n    ref: ref,\n    ...props,\n    children: /*#__PURE__*/_jsx(\"ol\", {\n      ...listProps,\n      className: classNames(prefix, listProps == null ? void 0 : listProps.className),\n      children: children\n    })\n  });\n});\nBreadcrumb.displayName = 'Breadcrumb';\nexport default Object.assign(Breadcrumb, {\n  Item: BreadcrumbItem\n});",
+      "start": 1702937441298,
+      "end": 1702937441421,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441421,
+      "end": 1702937441421,
+      "order": "normal"
+    }
+  ]
+}

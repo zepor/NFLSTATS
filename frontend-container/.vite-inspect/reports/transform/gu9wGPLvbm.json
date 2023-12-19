@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/types.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nvar powers = 0\n\nexports.boolean = increment()\nexports.booleanish = increment()\nexports.overloadedBoolean = increment()\nexports.number = increment()\nexports.spaceSeparated = increment()\nexports.commaSeparated = increment()\nexports.commaOrSpaceSeparated = increment()\n\nfunction increment() {\n  return Math.pow(2, ++powers)\n}\n",
+      "start": 1702937445380,
+      "end": 1702937445395,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as types } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/types.js?commonjs-exports\";\n\n'use strict'\n\nvar powers = 0\n\nvar boolean = types.boolean = increment()\nvar booleanish = types.booleanish = increment()\nvar overloadedBoolean = types.overloadedBoolean = increment()\nvar number = types.number = increment()\nvar spaceSeparated = types.spaceSeparated = increment()\nvar commaSeparated = types.commaSeparated = increment()\nvar commaOrSpaceSeparated = types.commaOrSpaceSeparated = increment()\n\nfunction increment() {\n  return Math.pow(2, ++powers)\n}\n\nexport { types as __moduleExports, boolean, booleanish, overloadedBoolean, number, spaceSeparated, commaSeparated, commaOrSpaceSeparated, types as default };",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY;AACZ;AACA,IAAI,MAAM,GAAG,CAAC;AACd;AACA,2BAAe,GAAG,SAAS,EAAE;AAC7B,iCAAkB,GAAG,SAAS,EAAE;AAChC,+CAAyB,GAAG,SAAS,EAAE;AACvC,yBAAc,GAAG,SAAS,EAAE;AAC5B,yCAAsB,GAAG,SAAS,EAAE;AACpC,yCAAsB,GAAG,SAAS,EAAE;AACpC,uDAA6B,GAAG,SAAS,EAAE;AAC3C;AACA,SAAS,SAAS,GAAG;AACrB,EAAE,OAAO,IAAI,CAAC,GAAG,CAAC,CAAC,EAAE,EAAE,MAAM,CAAC;AAC9B"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445395,
+      "end": 1702937445395,
+      "order": "normal"
+    }
+  ]
+}

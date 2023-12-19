@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/link/http/createSignalIfSupported.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @deprecated\n * This is not used internally any more and will be removed in\n * the next major version of Apollo Client.\n */\nexport var createSignalIfSupported = function () {\n    if (typeof AbortController === \"undefined\")\n        return { controller: false, signal: false };\n    var controller = new AbortController();\n    var signal = controller.signal;\n    return { controller: controller, signal: signal };\n};\n//# sourceMappingURL=createSignalIfSupported.js.map",
+      "start": 1702937440936,
+      "end": 1702937441015,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    }
+  ]
+}

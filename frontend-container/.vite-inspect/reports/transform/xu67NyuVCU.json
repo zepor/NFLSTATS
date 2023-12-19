@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/shell-session.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorBash = require('./bash.js')\nmodule.exports = shellSession\nshellSession.displayName = 'shellSession'\nshellSession.aliases = []\nfunction shellSession(Prism) {\n  Prism.register(refractorBash)\n  ;(function (Prism) {\n    // CAREFUL!\n    // The following patterns are concatenated, so the group referenced by a back reference is non-obvious!\n    var strings = [\n      // normal string\n      /\"(?:\\\\[\\s\\S]|\\$\\([^)]+\\)|\\$(?!\\()|`[^`]+`|[^\"\\\\`$])*\"/.source,\n      /'[^']*'/.source,\n      /\\$'(?:[^'\\\\]|\\\\[\\s\\S])*'/.source, // here doc\n      // 2 capturing groups\n      /<<-?\\s*([\"']?)(\\w+)\\1\\s[\\s\\S]*?[\\r\\n]\\2/.source\n    ].join('|')\n    Prism.languages['shell-session'] = {\n      command: {\n        pattern: RegExp(\n          // user info\n          /^/.source +\n            '(?:' + // <user> \":\" ( <path> )?\n            (/[^\\s@:$#%*!/\\\\]+@[^\\r\\n@:$#%*!/\\\\]+(?::[^\\0-\\x1F$#%*?\"<>:;|]+)?/\n              .source +\n              '|' + // <path>\n              // Since the path pattern is quite general, we will require it to start with a special character to\n              // prevent false positives.\n              /[/~.][^\\0-\\x1F$#%*?\"<>@:;|]*/.source) +\n            ')?' + // shell symbol\n            /[$#%](?=\\s)/.source + // bash command\n            /(?:[^\\\\\\r\\n \\t'\"<$]|[ \\t](?:(?!#)|#.*$)|\\\\(?:[^\\r]|\\r\\n?)|\\$(?!')|<(?!<)|<<str>>)+/.source.replace(\n              /<<str>>/g,\n              function () {\n                return strings\n              }\n            ),\n          'm'\n        ),\n        greedy: true,\n        inside: {\n          info: {\n            // foo@bar:~/files$ exit\n            // foo@bar$ exit\n            // ~/files$ exit\n            pattern: /^[^#$%]+/,\n            alias: 'punctuation',\n            inside: {\n              user: /^[^\\s@:$#%*!/\\\\]+@[^\\r\\n@:$#%*!/\\\\]+/,\n              punctuation: /:/,\n              path: /[\\s\\S]+/\n            }\n          },\n          bash: {\n            pattern: /(^[$#%]\\s*)\\S[\\s\\S]*/,\n            lookbehind: true,\n            alias: 'language-bash',\n            inside: Prism.languages.bash\n          },\n          'shell-symbol': {\n            pattern: /^[$#%]/,\n            alias: 'important'\n          }\n        }\n      },\n      output: /.(?:.*(?:[\\r\\n]|.$))*/\n    }\n    Prism.languages['sh-session'] = Prism.languages['shellsession'] =\n      Prism.languages['shell-session']\n  })(Prism)\n}\n",
+      "start": 1702937445056,
+      "end": 1702937445085,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/bash.js?commonjs-wrapped\";\n\nvar shellSession_1;\nvar hasRequiredShellSession;\n\nfunction requireShellSession () {\n\tif (hasRequiredShellSession) return shellSession_1;\n\thasRequiredShellSession = 1;\n\t'use strict'\n\tvar refractorBash = require$$0()\n\tshellSession_1 = shellSession\n\tshellSession.displayName = 'shellSession'\n\tshellSession.aliases = []\n\tfunction shellSession(Prism) {\n\t  Prism.register(refractorBash)\n\t  ;(function (Prism) {\n\t    // CAREFUL!\n\t    // The following patterns are concatenated, so the group referenced by a back reference is non-obvious!\n\t    var strings = [\n\t      // normal string\n\t      /\"(?:\\\\[\\s\\S]|\\$\\([^)]+\\)|\\$(?!\\()|`[^`]+`|[^\"\\\\`$])*\"/.source,\n\t      /'[^']*'/.source,\n\t      /\\$'(?:[^'\\\\]|\\\\[\\s\\S])*'/.source, // here doc\n\t      // 2 capturing groups\n\t      /<<-?\\s*([\"']?)(\\w+)\\1\\s[\\s\\S]*?[\\r\\n]\\2/.source\n\t    ].join('|')\n\t    Prism.languages['shell-session'] = {\n\t      command: {\n\t        pattern: RegExp(\n\t          // user info\n\t          /^/.source +\n\t            '(?:' + // <user> \":\" ( <path> )?\n\t            (/[^\\s@:$#%*!/\\\\]+@[^\\r\\n@:$#%*!/\\\\]+(?::[^\\0-\\x1F$#%*?\"<>:;|]+)?/\n\t              .source +\n\t              '|' + // <path>\n\t              // Since the path pattern is quite general, we will require it to start with a special character to\n\t              // prevent false positives.\n\t              /[/~.][^\\0-\\x1F$#%*?\"<>@:;|]*/.source) +\n\t            ')?' + // shell symbol\n\t            /[$#%](?=\\s)/.source + // bash command\n\t            /(?:[^\\\\\\r\\n \\t'\"<$]|[ \\t](?:(?!#)|#.*$)|\\\\(?:[^\\r]|\\r\\n?)|\\$(?!')|<(?!<)|<<str>>)+/.source.replace(\n\t              /<<str>>/g,\n\t              function () {\n\t                return strings\n\t              }\n\t            ),\n\t          'm'\n\t        ),\n\t        greedy: true,\n\t        inside: {\n\t          info: {\n\t            // foo@bar:~/files$ exit\n\t            // foo@bar$ exit\n\t            // ~/files$ exit\n\t            pattern: /^[^#$%]+/,\n\t            alias: 'punctuation',\n\t            inside: {\n\t              user: /^[^\\s@:$#%*!/\\\\]+@[^\\r\\n@:$#%*!/\\\\]+/,\n\t              punctuation: /:/,\n\t              path: /[\\s\\S]+/\n\t            }\n\t          },\n\t          bash: {\n\t            pattern: /(^[$#%]\\s*)\\S[\\s\\S]*/,\n\t            lookbehind: true,\n\t            alias: 'language-bash',\n\t            inside: Prism.languages.bash\n\t          },\n\t          'shell-symbol': {\n\t            pattern: /^[$#%]/,\n\t            alias: 'important'\n\t          }\n\t        }\n\t      },\n\t      output: /.(?:.*(?:[\\r\\n]|.$))*/\n\t    }\n\t    Prism.languages['sh-session'] = Prism.languages['shellsession'] =\n\t      Prism.languages['shell-session']\n\t  })(Prism)\n\t}\n\treturn shellSession_1;\n}\n\nexport { requireShellSession as __require };",
+      "start": 1702937445085,
+      "end": 1702937445086,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,aAAa,GAAG,YAAoB;AACxC,eAAc,GAAG,YAAY;CAC7B,YAAY,CAAC,WAAW,GAAG,cAAc;CACzC,YAAY,CAAC,OAAO,GAAG,EAAE;CACzB,SAAS,YAAY,CAAC,KAAK,EAAE;CAC7B,EAAE,KAAK,CAAC,QAAQ,CAAC,aAAa,CAAC;CAC/B,GAAG,CAAC,UAAU,KAAK,EAAE;CACrB;CACA;CACA,IAAI,IAAI,OAAO,GAAG;CAClB;CACA,MAAM,uDAAuD,CAAC,MAAM;CACpE,MAAM,SAAS,CAAC,MAAM;CACtB,MAAM,0BAA0B,CAAC,MAAM;CACvC;CACA,MAAM,yCAAyC,CAAC,MAAM;CACtD,KAAK,CAAC,IAAI,CAAC,GAAG,CAAC;CACf,IAAI,KAAK,CAAC,SAAS,CAAC,eAAe,CAAC,GAAG;CACvC,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,MAAM;CACvB;CACA,UAAU,GAAG,CAAC,MAAM;CACpB,YAAY,KAAK;CACjB,aAAa,iEAAiE;CAC9E,eAAe,MAAM;CACrB,cAAc,GAAG;CACjB;CACA;CACA,cAAc,8BAA8B,CAAC,MAAM,CAAC;CACpD,YAAY,IAAI;CAChB,YAAY,aAAa,CAAC,MAAM;CAChC,YAAY,oFAAoF,CAAC,MAAM,CAAC,OAAO;CAC/G,cAAc,UAAU;CACxB,cAAc,YAAY;CAC1B,gBAAgB,OAAO,OAAO;CAC9B,eAAe;CACf,aAAa;CACb,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,IAAI,EAAE;CAChB;CACA;CACA;CACA,YAAY,OAAO,EAAE,UAAU;CAC/B,YAAY,KAAK,EAAE,aAAa;CAChC,YAAY,MAAM,EAAE;CACpB,cAAc,IAAI,EAAE,sCAAsC;CAC1D,cAAc,WAAW,EAAE,GAAG;CAC9B,cAAc,IAAI,EAAE,SAAS;CAC7B,aAAa;CACb,WAAW;CACX,UAAU,IAAI,EAAE;CAChB,YAAY,OAAO,EAAE,sBAAsB;CAC3C,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,KAAK,EAAE,eAAe;CAClC,YAAY,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI;CACxC,WAAW;CACX,UAAU,cAAc,EAAE;CAC1B,YAAY,OAAO,EAAE,QAAQ;CAC7B,YAAY,KAAK,EAAE,WAAW;CAC9B,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM,MAAM,EAAE,uBAAuB;CACrC,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,GAAG,KAAK,CAAC,SAAS,CAAC,cAAc,CAAC;CACnE,MAAM,KAAK,CAAC,SAAS,CAAC,eAAe,CAAC;CACtC,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445086,
+      "end": 1702937445086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445086,
+      "end": 1702937445086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445086,
+      "end": 1702937445086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445086,
+      "end": 1702937445086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445086,
+      "end": 1702937445086,
+      "order": "normal"
+    }
+  ]
+}

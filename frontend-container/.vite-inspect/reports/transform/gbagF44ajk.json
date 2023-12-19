@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/hcl.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = hcl\nhcl.displayName = 'hcl'\nhcl.aliases = []\nfunction hcl(Prism) {\n  Prism.languages.hcl = {\n    comment: /(?:\\/\\/|#).*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n    heredoc: {\n      pattern: /<<-?(\\w+\\b)[\\s\\S]*?^[ \\t]*\\1/m,\n      greedy: true,\n      alias: 'string'\n    },\n    keyword: [\n      {\n        pattern:\n          /(?:data|resource)\\s+(?:\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")(?=\\s+\"[\\w-]+\"\\s+\\{)/i,\n        inside: {\n          type: {\n            pattern: /(resource|data|\\s+)(?:\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")/i,\n            lookbehind: true,\n            alias: 'variable'\n          }\n        }\n      },\n      {\n        pattern:\n          /(?:backend|module|output|provider|provisioner|variable)\\s+(?:[\\w-]+|\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")\\s+(?=\\{)/i,\n        inside: {\n          type: {\n            pattern:\n              /(backend|module|output|provider|provisioner|variable)\\s+(?:[\\w-]+|\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")\\s+/i,\n            lookbehind: true,\n            alias: 'variable'\n          }\n        }\n      },\n      /[\\w-]+(?=\\s+\\{)/\n    ],\n    property: [/[-\\w\\.]+(?=\\s*=(?!=))/, /\"(?:\\\\[\\s\\S]|[^\\\\\"])+\"(?=\\s*[:=])/],\n    string: {\n      pattern:\n        /\"(?:[^\\\\$\"]|\\\\[\\s\\S]|\\$(?:(?=\")|\\$+(?!\\$)|[^\"${])|\\$\\{(?:[^{}\"]|\"(?:[^\\\\\"]|\\\\[\\s\\S])*\")*\\})*\"/,\n      greedy: true,\n      inside: {\n        interpolation: {\n          pattern: /(^|[^$])\\$\\{(?:[^{}\"]|\"(?:[^\\\\\"]|\\\\[\\s\\S])*\")*\\}/,\n          lookbehind: true,\n          inside: {\n            type: {\n              pattern:\n                /(\\b(?:count|data|local|module|path|self|terraform|var)\\b\\.)[\\w\\*]+/i,\n              lookbehind: true,\n              alias: 'variable'\n            },\n            keyword: /\\b(?:count|data|local|module|path|self|terraform|var)\\b/i,\n            function: /\\w+(?=\\()/,\n            string: {\n              pattern: /\"(?:\\\\[\\s\\S]|[^\\\\\"])*\"/,\n              greedy: true\n            },\n            number: /\\b0x[\\da-f]+\\b|\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n            punctuation: /[!\\$#%&'()*+,.\\/;<=>@\\[\\\\\\]^`{|}~?:]/\n          }\n        }\n      }\n    },\n    number: /\\b0x[\\da-f]+\\b|\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n    boolean: /\\b(?:false|true)\\b/i,\n    punctuation: /[=\\[\\]{}]/\n  }\n}\n",
+      "start": 1702937444905,
+      "end": 1702937444926,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444926,
+      "end": 1702937444926,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar hcl_1;\nvar hasRequiredHcl;\n\nfunction requireHcl () {\n\tif (hasRequiredHcl) return hcl_1;\n\thasRequiredHcl = 1;\n\t'use strict'\n\n\thcl_1 = hcl\n\thcl.displayName = 'hcl'\n\thcl.aliases = []\n\tfunction hcl(Prism) {\n\t  Prism.languages.hcl = {\n\t    comment: /(?:\\/\\/|#).*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t    heredoc: {\n\t      pattern: /<<-?(\\w+\\b)[\\s\\S]*?^[ \\t]*\\1/m,\n\t      greedy: true,\n\t      alias: 'string'\n\t    },\n\t    keyword: [\n\t      {\n\t        pattern:\n\t          /(?:data|resource)\\s+(?:\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")(?=\\s+\"[\\w-]+\"\\s+\\{)/i,\n\t        inside: {\n\t          type: {\n\t            pattern: /(resource|data|\\s+)(?:\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")/i,\n\t            lookbehind: true,\n\t            alias: 'variable'\n\t          }\n\t        }\n\t      },\n\t      {\n\t        pattern:\n\t          /(?:backend|module|output|provider|provisioner|variable)\\s+(?:[\\w-]+|\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")\\s+(?=\\{)/i,\n\t        inside: {\n\t          type: {\n\t            pattern:\n\t              /(backend|module|output|provider|provisioner|variable)\\s+(?:[\\w-]+|\"(?:\\\\[\\s\\S]|[^\\\\\"])*\")\\s+/i,\n\t            lookbehind: true,\n\t            alias: 'variable'\n\t          }\n\t        }\n\t      },\n\t      /[\\w-]+(?=\\s+\\{)/\n\t    ],\n\t    property: [/[-\\w\\.]+(?=\\s*=(?!=))/, /\"(?:\\\\[\\s\\S]|[^\\\\\"])+\"(?=\\s*[:=])/],\n\t    string: {\n\t      pattern:\n\t        /\"(?:[^\\\\$\"]|\\\\[\\s\\S]|\\$(?:(?=\")|\\$+(?!\\$)|[^\"${])|\\$\\{(?:[^{}\"]|\"(?:[^\\\\\"]|\\\\[\\s\\S])*\")*\\})*\"/,\n\t      greedy: true,\n\t      inside: {\n\t        interpolation: {\n\t          pattern: /(^|[^$])\\$\\{(?:[^{}\"]|\"(?:[^\\\\\"]|\\\\[\\s\\S])*\")*\\}/,\n\t          lookbehind: true,\n\t          inside: {\n\t            type: {\n\t              pattern:\n\t                /(\\b(?:count|data|local|module|path|self|terraform|var)\\b\\.)[\\w\\*]+/i,\n\t              lookbehind: true,\n\t              alias: 'variable'\n\t            },\n\t            keyword: /\\b(?:count|data|local|module|path|self|terraform|var)\\b/i,\n\t            function: /\\w+(?=\\()/,\n\t            string: {\n\t              pattern: /\"(?:\\\\[\\s\\S]|[^\\\\\"])*\"/,\n\t              greedy: true\n\t            },\n\t            number: /\\b0x[\\da-f]+\\b|\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n\t            punctuation: /[!\\$#%&'()*+,.\\/;<=>@\\[\\\\\\]^`{|}~?:]/\n\t          }\n\t        }\n\t      }\n\t    },\n\t    number: /\\b0x[\\da-f]+\\b|\\b\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?/i,\n\t    boolean: /\\b(?:false|true)\\b/i,\n\t    punctuation: /[=\\[\\]{}]/\n\t  }\n\t}\n\treturn hcl_1;\n}\n\nexport { requireHcl as __require };",
+      "start": 1702937444926,
+      "end": 1702937444927,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,OAAO,EAAE,qCAAqC;CAClD,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,+BAA+B;CAC9C,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM;CACN,QAAQ,OAAO;CACf,UAAU,qEAAqE;CAC/E,QAAQ,MAAM,EAAE;CAChB,UAAU,IAAI,EAAE;CAChB,YAAY,OAAO,EAAE,gDAAgD;CACrE,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,KAAK,EAAE,UAAU;CAC7B,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,OAAO;CACf,UAAU,uGAAuG;CACjH,QAAQ,MAAM,EAAE;CAChB,UAAU,IAAI,EAAE;CAChB,YAAY,OAAO;CACnB,cAAc,+FAA+F;CAC7G,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,KAAK,EAAE,UAAU;CAC7B,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM,iBAAiB;CACvB,KAAK;CACL,IAAI,QAAQ,EAAE,CAAC,uBAAuB,EAAE,mCAAmC,CAAC;CAC5E,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,+FAA+F;CACvG,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,aAAa,EAAE;CACvB,UAAU,OAAO,EAAE,kDAAkD;CACrE,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,MAAM,EAAE;CAClB,YAAY,IAAI,EAAE;CAClB,cAAc,OAAO;CACrB,gBAAgB,qEAAqE;CACrF,cAAc,UAAU,EAAE,IAAI;CAC9B,cAAc,KAAK,EAAE,UAAU;CAC/B,aAAa;CACb,YAAY,OAAO,EAAE,0DAA0D;CAC/E,YAAY,QAAQ,EAAE,WAAW;CACjC,YAAY,MAAM,EAAE;CACpB,cAAc,OAAO,EAAE,wBAAwB;CAC/C,cAAc,MAAM,EAAE,IAAI;CAC1B,aAAa;CACb,YAAY,MAAM,EAAE,+CAA+C;CACnE,YAAY,WAAW,EAAE,sCAAsC;CAC/D,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,MAAM,EAAE,+CAA+C;CAC3D,IAAI,OAAO,EAAE,qBAAqB;CAClC,IAAI,WAAW,EAAE,WAAW;CAC5B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444927,
+      "end": 1702937444927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444927,
+      "end": 1702937444927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444927,
+      "end": 1702937444927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444927,
+      "end": 1702937444927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444927,
+      "end": 1702937444927,
+      "order": "normal"
+    }
+  ]
+}

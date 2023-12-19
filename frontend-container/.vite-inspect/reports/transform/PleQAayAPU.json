@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/purebasic.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: PureBASIC\nAuthor: Tristano Ajmone <tajmone@gmail.com>\nDescription: Syntax highlighting for PureBASIC (v.5.00-5.60). No inline ASM highlighting. (v.1.2, May 2017)\nCredits: I've taken inspiration from the PureBasic language file for GeSHi, created by Gustavo Julio Fiorenza (GuShH).\nWebsite: https://www.purebasic.com\n*/\n\n// Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;\n\nfunction purebasic(hljs) {\n  const STRINGS = { // PB IDE color: #0080FF (Azure Radiance)\n    className: 'string',\n    begin: '(~)?\"',\n    end: '\"',\n    illegal: '\\\\n'\n  };\n  const CONSTANTS = { // PB IDE color: #924B72 (Cannon Pink)\n    //  \"#\" + a letter or underscore + letters, digits or underscores + (optional) \"$\"\n    className: 'symbol',\n    begin: '#[a-zA-Z_]\\\\w*\\\\$?'\n  };\n\n  return {\n    name: 'PureBASIC',\n    aliases: [\n      'pb',\n      'pbi'\n    ],\n    keywords: // PB IDE color: #006666 (Blue Stone) + Bold\n      // Keywords from all version of PureBASIC 5.00 upward ...\n      'Align And Array As Break CallDebugger Case CompilerCase CompilerDefault ' +\n      'CompilerElse CompilerElseIf CompilerEndIf CompilerEndSelect CompilerError ' +\n      'CompilerIf CompilerSelect CompilerWarning Continue Data DataSection Debug ' +\n      'DebugLevel Declare DeclareC DeclareCDLL DeclareDLL DeclareModule Default ' +\n      'Define Dim DisableASM DisableDebugger DisableExplicit Else ElseIf EnableASM ' +\n      'EnableDebugger EnableExplicit End EndDataSection EndDeclareModule EndEnumeration ' +\n      'EndIf EndImport EndInterface EndMacro EndModule EndProcedure EndSelect ' +\n      'EndStructure EndStructureUnion EndWith Enumeration EnumerationBinary Extends ' +\n      'FakeReturn For ForEach ForEver Global Gosub Goto If Import ImportC ' +\n      'IncludeBinary IncludeFile IncludePath Interface List Macro MacroExpandedCount ' +\n      'Map Module NewList NewMap Next Not Or Procedure ProcedureC ' +\n      'ProcedureCDLL ProcedureDLL ProcedureReturn Protected Prototype PrototypeC ReDim ' +\n      'Read Repeat Restore Return Runtime Select Shared Static Step Structure ' +\n      'StructureUnion Swap Threaded To UndefineMacro Until Until  UnuseModule ' +\n      'UseModule Wend While With XIncludeFile XOr',\n    contains: [\n      // COMMENTS | PB IDE color: #00AAAA (Persian Green)\n      hljs.COMMENT(';', '$', {\n        relevance: 0\n      }),\n\n      { // PROCEDURES DEFINITIONS\n        className: 'function',\n        begin: '\\\\b(Procedure|Declare)(C|CDLL|DLL)?\\\\b',\n        end: '\\\\(',\n        excludeEnd: true,\n        returnBegin: true,\n        contains: [\n          { // PROCEDURE KEYWORDS | PB IDE color: #006666 (Blue Stone) + Bold\n            className: 'keyword',\n            begin: '(Procedure|Declare)(C|CDLL|DLL)?',\n            excludeEnd: true\n          },\n          { // PROCEDURE RETURN TYPE SETTING | PB IDE color: #000000 (Black)\n            className: 'type',\n            begin: '\\\\.\\\\w*'\n            // end: ' ',\n          },\n          hljs.UNDERSCORE_TITLE_MODE // PROCEDURE NAME | PB IDE color: #006666 (Blue Stone)\n        ]\n      },\n      STRINGS,\n      CONSTANTS\n    ]\n  };\n}\n\n/*  ==============================================================================\n                                      CHANGELOG\n    ==============================================================================\n    - v.1.2 (2017-05-12)\n        -- BUG-FIX: Some keywords were accidentally joyned together. Now fixed.\n    - v.1.1 (2017-04-30)\n        -- Updated to PureBASIC 5.60.\n        -- Keywords list now built by extracting them from the PureBASIC SDK's\n           \"SyntaxHilighting.dll\" (from each PureBASIC version). Tokens from each\n           version are added to the list, and renamed or removed tokens are kept\n           for the sake of covering all versions of the language from PureBASIC\n           v5.00 upward. (NOTE: currently, there are no renamed or deprecated\n           tokens in the keywords list). For more info, see:\n           -- http://www.purebasic.fr/english/viewtopic.php?&p=506269\n           -- https://github.com/tajmone/purebasic-archives/tree/master/syntax-highlighting/guidelines\n    - v.1.0 (April 2016)\n        -- First release\n        -- Keywords list taken and adapted from GuShH's (Gustavo Julio Fiorenza)\n           PureBasic language file for GeSHi:\n           -- https://github.com/easybook/geshi/blob/master/geshi/purebasic.php\n*/\n\nmodule.exports = purebasic;\n",
+      "start": 1702937444539,
+      "end": 1702937444568,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444568,
+      "end": 1702937444568,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: PureBASIC\nAuthor: Tristano Ajmone <tajmone@gmail.com>\nDescription: Syntax highlighting for PureBASIC (v.5.00-5.60). No inline ASM highlighting. (v.1.2, May 2017)\nCredits: I've taken inspiration from the PureBasic language file for GeSHi, created by Gustavo Julio Fiorenza (GuShH).\nWebsite: https://www.purebasic.com\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar purebasic_1;\nvar hasRequiredPurebasic;\n\nfunction requirePurebasic () {\n\tif (hasRequiredPurebasic) return purebasic_1;\n\thasRequiredPurebasic = 1;\n\t// Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;\n\n\tfunction purebasic(hljs) {\n\t  const STRINGS = { // PB IDE color: #0080FF (Azure Radiance)\n\t    className: 'string',\n\t    begin: '(~)?\"',\n\t    end: '\"',\n\t    illegal: '\\\\n'\n\t  };\n\t  const CONSTANTS = { // PB IDE color: #924B72 (Cannon Pink)\n\t    //  \"#\" + a letter or underscore + letters, digits or underscores + (optional) \"$\"\n\t    className: 'symbol',\n\t    begin: '#[a-zA-Z_]\\\\w*\\\\$?'\n\t  };\n\n\t  return {\n\t    name: 'PureBASIC',\n\t    aliases: [\n\t      'pb',\n\t      'pbi'\n\t    ],\n\t    keywords: // PB IDE color: #006666 (Blue Stone) + Bold\n\t      // Keywords from all version of PureBASIC 5.00 upward ...\n\t      'Align And Array As Break CallDebugger Case CompilerCase CompilerDefault ' +\n\t      'CompilerElse CompilerElseIf CompilerEndIf CompilerEndSelect CompilerError ' +\n\t      'CompilerIf CompilerSelect CompilerWarning Continue Data DataSection Debug ' +\n\t      'DebugLevel Declare DeclareC DeclareCDLL DeclareDLL DeclareModule Default ' +\n\t      'Define Dim DisableASM DisableDebugger DisableExplicit Else ElseIf EnableASM ' +\n\t      'EnableDebugger EnableExplicit End EndDataSection EndDeclareModule EndEnumeration ' +\n\t      'EndIf EndImport EndInterface EndMacro EndModule EndProcedure EndSelect ' +\n\t      'EndStructure EndStructureUnion EndWith Enumeration EnumerationBinary Extends ' +\n\t      'FakeReturn For ForEach ForEver Global Gosub Goto If Import ImportC ' +\n\t      'IncludeBinary IncludeFile IncludePath Interface List Macro MacroExpandedCount ' +\n\t      'Map Module NewList NewMap Next Not Or Procedure ProcedureC ' +\n\t      'ProcedureCDLL ProcedureDLL ProcedureReturn Protected Prototype PrototypeC ReDim ' +\n\t      'Read Repeat Restore Return Runtime Select Shared Static Step Structure ' +\n\t      'StructureUnion Swap Threaded To UndefineMacro Until Until  UnuseModule ' +\n\t      'UseModule Wend While With XIncludeFile XOr',\n\t    contains: [\n\t      // COMMENTS | PB IDE color: #00AAAA (Persian Green)\n\t      hljs.COMMENT(';', '$', {\n\t        relevance: 0\n\t      }),\n\n\t      { // PROCEDURES DEFINITIONS\n\t        className: 'function',\n\t        begin: '\\\\b(Procedure|Declare)(C|CDLL|DLL)?\\\\b',\n\t        end: '\\\\(',\n\t        excludeEnd: true,\n\t        returnBegin: true,\n\t        contains: [\n\t          { // PROCEDURE KEYWORDS | PB IDE color: #006666 (Blue Stone) + Bold\n\t            className: 'keyword',\n\t            begin: '(Procedure|Declare)(C|CDLL|DLL)?',\n\t            excludeEnd: true\n\t          },\n\t          { // PROCEDURE RETURN TYPE SETTING | PB IDE color: #000000 (Black)\n\t            className: 'type',\n\t            begin: '\\\\.\\\\w*'\n\t            // end: ' ',\n\t          },\n\t          hljs.UNDERSCORE_TITLE_MODE // PROCEDURE NAME | PB IDE color: #006666 (Blue Stone)\n\t        ]\n\t      },\n\t      STRINGS,\n\t      CONSTANTS\n\t    ]\n\t  };\n\t}\n\n\t/*  ==============================================================================\n\t                                      CHANGELOG\n\t    ==============================================================================\n\t    - v.1.2 (2017-05-12)\n\t        -- BUG-FIX: Some keywords were accidentally joyned together. Now fixed.\n\t    - v.1.1 (2017-04-30)\n\t        -- Updated to PureBASIC 5.60.\n\t        -- Keywords list now built by extracting them from the PureBASIC SDK's\n\t           \"SyntaxHilighting.dll\" (from each PureBASIC version). Tokens from each\n\t           version are added to the list, and renamed or removed tokens are kept\n\t           for the sake of covering all versions of the language from PureBASIC\n\t           v5.00 upward. (NOTE: currently, there are no renamed or deprecated\n\t           tokens in the keywords list). For more info, see:\n\t           -- http://www.purebasic.fr/english/viewtopic.php?&p=506269\n\t           -- https://github.com/tajmone/purebasic-archives/tree/master/syntax-highlighting/guidelines\n\t    - v.1.0 (April 2016)\n\t        -- First release\n\t        -- Keywords list taken and adapted from GuShH's (Gustavo Julio Fiorenza)\n\t           PureBasic language file for GeSHi:\n\t           -- https://github.com/easybook/geshi/blob/master/geshi/purebasic.php\n\t*/\n\n\tpurebasic_1 = purebasic;\n\treturn purebasic_1;\n}\n\nexport { requirePurebasic as __require };",
+      "start": 1702937444568,
+      "end": 1702937444569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA;AACA;CACA,SAAS,SAAS,CAAC,IAAI,EAAE;CACzB,EAAE,MAAM,OAAO,GAAG;CAClB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,OAAO;CAClB,IAAI,GAAG,EAAE,GAAG;CACZ,IAAI,OAAO,EAAE,KAAK;CAClB,GAAG,CAAC;CACJ,EAAE,MAAM,SAAS,GAAG;CACpB;CACA,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,oBAAoB;CAC/B,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,WAAW;CACrB,IAAI,OAAO,EAAE;CACb,MAAM,IAAI;CACV,MAAM,KAAK;CACX,KAAK;CACL,IAAI,QAAQ;CACZ;CACA,MAAM,0EAA0E;CAChF,MAAM,4EAA4E;CAClF,MAAM,4EAA4E;CAClF,MAAM,2EAA2E;CACjF,MAAM,8EAA8E;CACpF,MAAM,mFAAmF;CACzF,MAAM,yEAAyE;CAC/E,MAAM,+EAA+E;CACrF,MAAM,qEAAqE;CAC3E,MAAM,gFAAgF;CACtF,MAAM,6DAA6D;CACnE,MAAM,kFAAkF;CACxF,MAAM,yEAAyE;CAC/E,MAAM,yEAAyE;CAC/E,MAAM,4CAA4C;CAClD,IAAI,QAAQ,EAAE;CACd;CACA,MAAM,IAAI,CAAC,OAAO,CAAC,GAAG,EAAE,GAAG,EAAE;CAC7B,QAAQ,SAAS,EAAE,CAAC;CACpB,OAAO,CAAC;AACR;CACA,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,wCAAwC;CACvD,QAAQ,GAAG,EAAE,KAAK;CAClB,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,WAAW,EAAE,IAAI;CACzB,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,SAAS,EAAE,SAAS;CAChC,YAAY,KAAK,EAAE,kCAAkC;CACrD,YAAY,UAAU,EAAE,IAAI;CAC5B,WAAW;CACX,UAAU;CACV,YAAY,SAAS,EAAE,MAAM;CAC7B,YAAY,KAAK,EAAE,SAAS;CAC5B;CACA,WAAW;CACX,UAAU,IAAI,CAAC,qBAAqB;CACpC,SAAS;CACT,OAAO;CACP,MAAM,OAAO;CACb,MAAM,SAAS;CACf,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;CACA;AACA;AACA,YAAc,GAAG,SAAS"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444569,
+      "end": 1702937444569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444569,
+      "end": 1702937444569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444569,
+      "end": 1702937444569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444569,
+      "end": 1702937444569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444569,
+      "end": 1702937444569,
+      "order": "normal"
+    }
+  ]
+}

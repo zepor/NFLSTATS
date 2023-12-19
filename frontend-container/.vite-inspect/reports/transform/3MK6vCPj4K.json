@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Column.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst ColumnChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [\r\n    {\r\n      name: \"Net Profit\",\r\n      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],\r\n    },\r\n    {\r\n      name: \"Revenue\",\r\n      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],\r\n    },\r\n    {\r\n      name: \"Free Cash Flow\",\r\n      data: [35, 41, 36, 26, 45, 48, 52, 53, 41],\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    plotOptions: {\r\n      bar: {\r\n        horizontal: false,\r\n        endingShape: \"rounded\",\r\n        columnWidth: \"55%\",\r\n      },\r\n    },\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    stroke: {\r\n      show: true,\r\n      width: 2,\r\n      colors: [\"transparent\"],\r\n    },\r\n    xaxis: {\r\n      categories: [\r\n        \"Feb\",\r\n        \"Mar\",\r\n        \"Apr\",\r\n        \"May\",\r\n        \"Jun\",\r\n        \"Jul\",\r\n        \"Aug\",\r\n        \"Sep\",\r\n        \"Oct\",\r\n      ],\r\n    },\r\n    yaxis: {\r\n      title: {\r\n        text: \"$ (thousands)\",\r\n      },\r\n    },\r\n    fill: {\r\n      opacity: 1,\r\n    },\r\n    tooltip: {\r\n      y: {\r\n        formatter: function (val) {\r\n          return \"$ \" + val + \" thousands\";\r\n        },\r\n      },\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Column Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A column chart uses vertical bars to display data and is used to\r\n          compare values across categories.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"bar\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default ColumnChart;\r\n",
+      "start": 1702937441799,
+      "end": 1702937441855,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441855,
+      "end": 1702937441855,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport Chart from \"react-apexcharts\";\nimport { Card } from \"react-bootstrap\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst ColumnChart = () => {\n  const palette = usePalette();\n  const data = [\n    {\n      name: \"Net Profit\",\n      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]\n    },\n    {\n      name: \"Revenue\",\n      data: [76, 85, 101, 98, 87, 105, 91, 114, 94]\n    },\n    {\n      name: \"Free Cash Flow\",\n      data: [35, 41, 36, 26, 45, 48, 52, 53, 41]\n    }\n  ];\n  const options = {\n    plotOptions: {\n      bar: {\n        horizontal: false,\n        endingShape: \"rounded\",\n        columnWidth: \"55%\"\n      }\n    },\n    dataLabels: {\n      enabled: false\n    },\n    stroke: {\n      show: true,\n      width: 2,\n      colors: [\"transparent\"]\n    },\n    xaxis: {\n      categories: [\n        \"Feb\",\n        \"Mar\",\n        \"Apr\",\n        \"May\",\n        \"Jun\",\n        \"Jul\",\n        \"Aug\",\n        \"Sep\",\n        \"Oct\"\n      ]\n    },\n    yaxis: {\n      title: {\n        text: \"$ (thousands)\"\n      }\n    },\n    fill: {\n      opacity: 1\n    },\n    tooltip: {\n      y: {\n        formatter: function(val) {\n          return \"$ \" + val + \" thousands\";\n        }\n      }\n    },\n    colors: [\n      palette.primary,\n      palette.success,\n      palette.warning,\n      palette.danger,\n      palette.info\n    ]\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Column Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"A column chart uses vertical bars to display data and is used to compare values across categories.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(Chart, { options, series: data, type: \"bar\", height: \"350\" }) }) })\n  ] });\n};\nexport default ColumnChart;\n",
+      "start": 1702937441855,
+      "end": 1702937441860,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Column.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst ColumnChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = [\r\n    {\r\n      name: \"Net Profit\",\r\n      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],\r\n    },\r\n    {\r\n      name: \"Revenue\",\r\n      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],\r\n    },\r\n    {\r\n      name: \"Free Cash Flow\",\r\n      data: [35, 41, 36, 26, 45, 48, 52, 53, 41],\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    plotOptions: {\r\n      bar: {\r\n        horizontal: false,\r\n        endingShape: \"rounded\",\r\n        columnWidth: \"55%\",\r\n      },\r\n    },\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    stroke: {\r\n      show: true,\r\n      width: 2,\r\n      colors: [\"transparent\"],\r\n    },\r\n    xaxis: {\r\n      categories: [\r\n        \"Feb\",\r\n        \"Mar\",\r\n        \"Apr\",\r\n        \"May\",\r\n        \"Jun\",\r\n        \"Jul\",\r\n        \"Aug\",\r\n        \"Sep\",\r\n        \"Oct\",\r\n      ],\r\n    },\r\n    yaxis: {\r\n      title: {\r\n        text: \"$ (thousands)\",\r\n      },\r\n    },\r\n    fill: {\r\n      opacity: 1,\r\n    },\r\n    tooltip: {\r\n      y: {\r\n        formatter: function (val) {\r\n          return \"$ \" + val + \" thousands\";\r\n        },\r\n      },\r\n    },\r\n    colors: [\r\n      palette.primary,\r\n      palette.success,\r\n      palette.warning,\r\n      palette.danger,\r\n      palette.info,\r\n    ],\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Column Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          A column chart uses vertical bars to display data and is used to\r\n          compare values across categories.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"bar\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default ColumnChart;\r\n"
+        ],
+        "mappings": "AA+EM,SACE,KADF;AA/EN,OAAO,WAAW;AAClB,OAAO,WAAW;AAClB,SAAS,YAAY;AAErB,OAAO,gBAAgB;AAEvB,MAAM,cAAc,MAAM;AACxB,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO;AAAA,IACX;AAAA,MACE,MAAM;AAAA,MACN,MAAM,CAAC,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,EAAE;AAAA,IAC3C;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,CAAC,IAAI,IAAI,KAAK,IAAI,IAAI,KAAK,IAAI,KAAK,EAAE;AAAA,IAC9C;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,CAAC,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,IAAI,EAAE;AAAA,IAC3C;AAAA,EACF;AAEA,QAAM,UAAU;AAAA,IACd,aAAa;AAAA,MACX,KAAK;AAAA,QACH,YAAY;AAAA,QACZ,aAAa;AAAA,QACb,aAAa;AAAA,MACf;AAAA,IACF;AAAA,IACA,YAAY;AAAA,MACV,SAAS;AAAA,IACX;AAAA,IACA,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,OAAO;AAAA,MACP,QAAQ,CAAC,aAAa;AAAA,IACxB;AAAA,IACA,OAAO;AAAA,MACL,YAAY;AAAA,QACV;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,MACF;AAAA,IACF;AAAA,IACA,OAAO;AAAA,MACL,OAAO;AAAA,QACL,MAAM;AAAA,MACR;AAAA,IACF;AAAA,IACA,MAAM;AAAA,MACJ,SAAS;AAAA,IACX;AAAA,IACA,SAAS;AAAA,MACP,GAAG;AAAA,QACD,WAAW,SAAU,KAAK;AACxB,iBAAO,OAAO,MAAM;AAAA,QACtB;AAAA,MACF;AAAA,IACF;AAAA,IACA,QAAQ;AAAA,MACN,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,MACR,QAAQ;AAAA,IACV;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,0BAAY;AAAA,MACxB,oBAAC,QAAG,WAAU,4BAA2B,gHAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,SACb,8BAAC,SAAM,SAAkB,QAAQ,MAAM,MAAK,OAAM,QAAO,OAAM,GACjE,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    }
+  ]
+}

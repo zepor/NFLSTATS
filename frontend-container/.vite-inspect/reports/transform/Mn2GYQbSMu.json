@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/Languages.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Card, Dropdown, Table, ProgressBar } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nconst Languages = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Languages</Card.Title>\r\n    </Card.Header>\r\n    <Table striped className=\"my-0\">\r\n      <thead>\r\n        <tr>\r\n          <th>Language</th>\r\n          <th className=\"text-end\">Users</th>\r\n          <th className=\"d-none d-xl-table-cell w-75\">% Users</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>en-us</td>\r\n          <td className=\"text-end\">735</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={43} label=\"43%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>en-gb</td>\r\n          <td className=\"text-end\">223</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={27} label=\"27%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>fr-fr</td>\r\n          <td className=\"text-end\">181</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={22} label=\"22%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>es-es</td>\r\n          <td className=\"text-end\">132</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={16} label=\"16%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>de-de</td>\r\n          <td className=\"text-end\">118</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={15} label=\"15%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>ru-ru</td>\r\n          <td className=\"text-end\">98</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={13} label=\"13%\" />\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </Table>\r\n  </Card>\r\n);\r\n\r\nexport default Languages;\r\n",
+      "start": 1702937441546,
+      "end": 1702937441564,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441564,
+      "end": 1702937441564,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441564,
+      "end": 1702937441564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Card, Dropdown, Table, ProgressBar } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nconst Languages = () => /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n      /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n      /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n      ] })\n    ] }) }),\n    /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Languages\" })\n  ] }),\n  /* @__PURE__ */ jsxs(Table, { striped: true, className: \"my-0\", children: [\n    /* @__PURE__ */ jsx(\"thead\", { children: /* @__PURE__ */ jsxs(\"tr\", { children: [\n      /* @__PURE__ */ jsx(\"th\", { children: \"Language\" }),\n      /* @__PURE__ */ jsx(\"th\", { className: \"text-end\", children: \"Users\" }),\n      /* @__PURE__ */ jsx(\"th\", { className: \"d-none d-xl-table-cell w-75\", children: \"% Users\" })\n    ] }) }),\n    /* @__PURE__ */ jsxs(\"tbody\", { children: [\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"en-us\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"735\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 43, label: \"43%\" }) })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"en-gb\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"223\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 27, label: \"27%\" }) })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"fr-fr\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"181\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 22, label: \"22%\" }) })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"es-es\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"132\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 16, label: \"16%\" }) })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"de-de\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"118\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 15, label: \"15%\" }) })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"ru-ru\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"98\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: /* @__PURE__ */ jsx(ProgressBar, { variant: \"primary\", now: 13, label: \"13%\" }) })\n      ] })\n    ] })\n  ] })\n] });\nexport default Languages;\n",
+      "start": 1702937441564,
+      "end": 1702937441569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/Languages.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Card, Dropdown, Table, ProgressBar } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nconst Languages = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Languages</Card.Title>\r\n    </Card.Header>\r\n    <Table striped className=\"my-0\">\r\n      <thead>\r\n        <tr>\r\n          <th>Language</th>\r\n          <th className=\"text-end\">Users</th>\r\n          <th className=\"d-none d-xl-table-cell w-75\">% Users</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>en-us</td>\r\n          <td className=\"text-end\">735</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={43} label=\"43%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>en-gb</td>\r\n          <td className=\"text-end\">223</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={27} label=\"27%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>fr-fr</td>\r\n          <td className=\"text-end\">181</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={22} label=\"22%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>es-es</td>\r\n          <td className=\"text-end\">132</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={16} label=\"16%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>de-de</td>\r\n          <td className=\"text-end\">118</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={15} label=\"15%\" />\r\n          </td>\r\n        </tr>\r\n        <tr>\r\n          <td>ru-ru</td>\r\n          <td className=\"text-end\">98</td>\r\n          <td className=\"d-none d-xl-table-cell\">\r\n            <ProgressBar variant=\"primary\" now={13} label=\"13%\" />\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </Table>\r\n  </Card>\r\n);\r\n\r\nexport default Languages;\r\n"
+        ],
+        "mappings": "AAYY,cAEF,YAFE;AAZZ,OAAO,WAAW;AAElB,SAAS,MAAM,UAAU,OAAO,mBAAmB;AAEnD,SAAS,sBAAsB;AAE/B,MAAM,YAAY,MAChB,qBAAC,QAAK,WAAU,mBACd;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,0BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,MACA,qBAAC,SAAS,MAAT,EACC;AAAA,4BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,QACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,QAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,SACpC;AAAA,OACF,GACF;AAAA,IACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,uBAAS;AAAA,KACxC;AAAA,EACA,qBAAC,SAAM,SAAO,MAAC,WAAU,QACvB;AAAA,wBAAC,WACC,+BAAC,QACC;AAAA,0BAAC,QAAG,sBAAQ;AAAA,MACZ,oBAAC,QAAG,WAAU,YAAW,mBAAK;AAAA,MAC9B,oBAAC,QAAG,WAAU,+BAA8B,qBAAO;AAAA,OACrD,GACF;AAAA,IACA,qBAAC,WACC;AAAA,2BAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,iBAAG;AAAA,QAC5B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,MACA,qBAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,iBAAG;AAAA,QAC5B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,MACA,qBAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,iBAAG;AAAA,QAC5B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,MACA,qBAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,iBAAG;AAAA,QAC5B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,MACA,qBAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,iBAAG;AAAA,QAC5B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,MACA,qBAAC,QACC;AAAA,4BAAC,QAAG,mBAAK;AAAA,QACT,oBAAC,QAAG,WAAU,YAAW,gBAAE;AAAA,QAC3B,oBAAC,QAAG,WAAU,0BACZ,8BAAC,eAAY,SAAQ,WAAU,KAAK,IAAI,OAAM,OAAM,GACtD;AAAA,SACF;AAAA,OACF;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441569,
+      "end": 1702937441570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441570,
+      "end": 1702937441570,
+      "order": "normal"
+    }
+  ]
+}

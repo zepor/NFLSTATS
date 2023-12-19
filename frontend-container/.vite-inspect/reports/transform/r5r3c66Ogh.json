@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@restart/ui/esm/DropdownItem.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const _excluded = [\"eventKey\", \"disabled\", \"onClick\", \"active\", \"as\"];\nfunction _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }\nimport * as React from 'react';\nimport { useContext } from 'react';\nimport useEventCallback from '@restart/hooks/useEventCallback';\nimport SelectableContext, { makeEventKey } from './SelectableContext';\nimport NavContext from './NavContext';\nimport Button from './Button';\nimport { dataAttr } from './DataKey';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n/**\n * Create a dropdown item. Returns a set of props for the dropdown item component\n * including an `onClick` handler that prevents selection when the item is disabled\n */\nexport function useDropdownItem({\n  key,\n  href,\n  active,\n  disabled,\n  onClick\n}) {\n  const onSelectCtx = useContext(SelectableContext);\n  const navContext = useContext(NavContext);\n  const {\n    activeKey\n  } = navContext || {};\n  const eventKey = makeEventKey(key, href);\n  const isActive = active == null && key != null ? makeEventKey(activeKey) === eventKey : active;\n  const handleClick = useEventCallback(event => {\n    if (disabled) return;\n    onClick == null ? void 0 : onClick(event);\n    if (onSelectCtx && !event.isPropagationStopped()) {\n      onSelectCtx(eventKey, event);\n    }\n  });\n  return [{\n    onClick: handleClick,\n    'aria-disabled': disabled || undefined,\n    'aria-selected': isActive,\n    [dataAttr('dropdown-item')]: ''\n  }, {\n    isActive\n  }];\n}\nconst DropdownItem = /*#__PURE__*/React.forwardRef((_ref, ref) => {\n  let {\n      eventKey,\n      disabled,\n      onClick,\n      active,\n      as: Component = Button\n    } = _ref,\n    props = _objectWithoutPropertiesLoose(_ref, _excluded);\n  const [dropdownItemProps] = useDropdownItem({\n    key: eventKey,\n    href: props.href,\n    disabled,\n    onClick,\n    active\n  });\n  return /*#__PURE__*/_jsx(Component, Object.assign({}, props, {\n    ref: ref\n  }, dropdownItemProps));\n});\nDropdownItem.displayName = 'DropdownItem';\nexport default DropdownItem;",
+      "start": 1702937442021,
+      "end": 1702937442077,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442077,
+      "end": 1702937442077,
+      "order": "normal"
+    }
+  ]
+}

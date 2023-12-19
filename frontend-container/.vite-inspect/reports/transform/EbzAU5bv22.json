@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/qore.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = qore\nqore.displayName = 'qore'\nqore.aliases = []\nfunction qore(Prism) {\n  Prism.languages.qore = Prism.languages.extend('clike', {\n    comment: {\n      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|(?:\\/\\/|#).*)/,\n      lookbehind: true\n    },\n    // Overridden to allow unescaped multi-line strings\n    string: {\n      pattern: /(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1/,\n      greedy: true\n    },\n    keyword:\n      /\\b(?:abstract|any|assert|binary|bool|boolean|break|byte|case|catch|char|class|code|const|continue|data|default|do|double|else|enum|extends|final|finally|float|for|goto|hash|if|implements|import|inherits|instanceof|int|interface|long|my|native|new|nothing|null|object|our|own|private|reference|rethrow|return|short|soft(?:bool|date|float|int|list|number|string)|static|strictfp|string|sub|super|switch|synchronized|this|throw|throws|transient|try|void|volatile|while)\\b/,\n    boolean: /\\b(?:false|true)\\b/i,\n    function: /\\$?\\b(?!\\d)\\w+(?=\\()/,\n    number:\n      /\\b(?:0b[01]+|0x(?:[\\da-f]*\\.)?[\\da-fp\\-]+|(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:e\\d+)?[df]|(?:\\d+(?:\\.\\d+)?|\\.\\d+))\\b/i,\n    operator: {\n      pattern:\n        /(^|[^.])(?:\\+[+=]?|-[-=]?|[!=](?:==?|~)?|>>?=?|<(?:=>?|<=?)?|&[&=]?|\\|[|=]?|[*\\/%^]=?|[~?])/,\n      lookbehind: true\n    },\n    variable: /\\$(?!\\d)\\w+\\b/\n  })\n}\n",
+      "start": 1702937445031,
+      "end": 1702937445056,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar qore_1;\nvar hasRequiredQore;\n\nfunction requireQore () {\n\tif (hasRequiredQore) return qore_1;\n\thasRequiredQore = 1;\n\t'use strict'\n\n\tqore_1 = qore\n\tqore.displayName = 'qore'\n\tqore.aliases = []\n\tfunction qore(Prism) {\n\t  Prism.languages.qore = Prism.languages.extend('clike', {\n\t    comment: {\n\t      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|(?:\\/\\/|#).*)/,\n\t      lookbehind: true\n\t    },\n\t    // Overridden to allow unescaped multi-line strings\n\t    string: {\n\t      pattern: /(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1/,\n\t      greedy: true\n\t    },\n\t    keyword:\n\t      /\\b(?:abstract|any|assert|binary|bool|boolean|break|byte|case|catch|char|class|code|const|continue|data|default|do|double|else|enum|extends|final|finally|float|for|goto|hash|if|implements|import|inherits|instanceof|int|interface|long|my|native|new|nothing|null|object|our|own|private|reference|rethrow|return|short|soft(?:bool|date|float|int|list|number|string)|static|strictfp|string|sub|super|switch|synchronized|this|throw|throws|transient|try|void|volatile|while)\\b/,\n\t    boolean: /\\b(?:false|true)\\b/i,\n\t    function: /\\$?\\b(?!\\d)\\w+(?=\\()/,\n\t    number:\n\t      /\\b(?:0b[01]+|0x(?:[\\da-f]*\\.)?[\\da-fp\\-]+|(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:e\\d+)?[df]|(?:\\d+(?:\\.\\d+)?|\\.\\d+))\\b/i,\n\t    operator: {\n\t      pattern:\n\t        /(^|[^.])(?:\\+[+=]?|-[-=]?|[!=](?:==?|~)?|>>?=?|<(?:=>?|<=?)?|&[&=]?|\\|[|=]?|[*\\/%^]=?|[~?])/,\n\t      lookbehind: true\n\t    },\n\t    variable: /\\$(?!\\d)\\w+\\b/\n\t  })\n\t}\n\treturn qore_1;\n}\n\nexport { requireQore as __require };",
+      "start": 1702937445056,
+      "end": 1702937445057,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CACzD,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,4CAA4C;CAC3D,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL;CACA,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,kCAAkC;CACjD,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,sdAAsd;CAC5d,IAAI,OAAO,EAAE,qBAAqB;CAClC,IAAI,QAAQ,EAAE,sBAAsB;CACpC,IAAI,MAAM;CACV,MAAM,4GAA4G;CAClH,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,6FAA6F;CACrG,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,eAAe;CAC7B,GAAG,CAAC;CACJ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445057,
+      "end": 1702937445057,
+      "order": "normal"
+    }
+  ]
+}

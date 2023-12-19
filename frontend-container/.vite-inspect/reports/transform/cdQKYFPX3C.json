@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarMinimal.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Navbar } from \"react-bootstrap\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\n\r\nconst NavbarMinimal = () => {\r\n  const { isOpen, setIsOpen } = useSidebar();\r\n\r\n  return (\r\n    <Navbar variant=\"light\" expand className=\"navbar-bg\">\r\n      <span\r\n        className=\"sidebar-toggle d-flex\"\r\n        onClick={() => {\r\n          setIsOpen(!isOpen);\r\n        }}\r\n      >\r\n        <i className=\"hamburger align-self-center\" />\r\n      </span>\r\n    </Navbar>\r\n  );\r\n};\r\n\r\nexport default NavbarMinimal;\r\n",
+      "start": 1702937441545,
+      "end": 1702937441562,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441562,
+      "end": 1702937441562,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441562,
+      "end": 1702937441562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Navbar } from \"react-bootstrap\";\nimport useSidebar from \"../../hooks/useSidebar\";\nconst NavbarMinimal = () => {\n  const { isOpen, setIsOpen } = useSidebar();\n  return /* @__PURE__ */ jsx(Navbar, { variant: \"light\", expand: true, className: \"navbar-bg\", children: /* @__PURE__ */ jsx(\n    \"span\",\n    {\n      className: \"sidebar-toggle d-flex\",\n      onClick: () => {\n        setIsOpen(!isOpen);\n      },\n      children: /* @__PURE__ */ jsx(\"i\", { className: \"hamburger align-self-center\" })\n    }\n  ) });\n};\nexport default NavbarMinimal;\n",
+      "start": 1702937441562,
+      "end": 1702937441569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarMinimal.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Navbar } from \"react-bootstrap\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\n\r\nconst NavbarMinimal = () => {\r\n  const { isOpen, setIsOpen } = useSidebar();\r\n\r\n  return (\r\n    <Navbar variant=\"light\" expand className=\"navbar-bg\">\r\n      <span\r\n        className=\"sidebar-toggle d-flex\"\r\n        onClick={() => {\r\n          setIsOpen(!isOpen);\r\n        }}\r\n      >\r\n        <i className=\"hamburger align-self-center\" />\r\n      </span>\r\n    </Navbar>\r\n  );\r\n};\r\n\r\nexport default NavbarMinimal;\r\n"
+        ],
+        "mappings": "AAiBQ;AAjBR,OAAO,WAAW;AAElB,SAAS,cAAc;AAEvB,OAAO,gBAAgB;AAEvB,MAAM,gBAAgB,MAAM;AAC1B,QAAM,EAAE,QAAQ,UAAU,IAAI,WAAW;AAEzC,SACE,oBAAC,UAAO,SAAQ,SAAQ,QAAM,MAAC,WAAU,aACvC;AAAA,IAAC;AAAA;AAAA,MACC,WAAU;AAAA,MACV,SAAS,MAAM;AACb,kBAAU,CAAC,MAAM;AAAA,MACnB;AAAA,MAEA,8BAAC,OAAE,WAAU,+BAA8B;AAAA;AAAA,EAC7C,GACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441569,
+      "end": 1702937441570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441570,
+      "end": 1702937441570,
+      "order": "normal"
+    }
+  ]
+}

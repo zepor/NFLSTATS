@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * GraphQL.js provides a reference implementation for the GraphQL specification\n * but is also a useful utility for operating on GraphQL files and building\n * sophisticated tools.\n *\n * This primary module exports a general purpose function for fulfilling all\n * steps of the GraphQL specification in a single operation, but also includes\n * utilities for every part of the GraphQL specification:\n *\n *   - Parsing the GraphQL language.\n *   - Building a GraphQL type schema.\n *   - Validating a GraphQL request against a type schema.\n *   - Executing a GraphQL request against a type schema.\n *\n * This also includes utility functions for operating on GraphQL types and\n * GraphQL documents to facilitate building tools.\n *\n * You may also import from each sub-directory directly. For example, the\n * following two import statements are equivalent:\n *\n * ```ts\n * import { parse } from 'graphql';\n * import { parse } from 'graphql/language';\n * ```\n *\n * @packageDocumentation\n */\n// The GraphQL.js version info.\nexport { version, versionInfo } from './version.mjs'; // The primary entry point into fulfilling a GraphQL request.\n\nexport { graphql, graphqlSync } from './graphql.mjs'; // Create and operate on GraphQL type definitions and schema.\n\nexport {\n  resolveObjMapThunk,\n  resolveReadonlyArrayThunk, // Definitions\n  GraphQLSchema,\n  GraphQLDirective,\n  GraphQLScalarType,\n  GraphQLObjectType,\n  GraphQLInterfaceType,\n  GraphQLUnionType,\n  GraphQLEnumType,\n  GraphQLInputObjectType,\n  GraphQLList,\n  GraphQLNonNull, // Standard GraphQL Scalars\n  specifiedScalarTypes,\n  GraphQLInt,\n  GraphQLFloat,\n  GraphQLString,\n  GraphQLBoolean,\n  GraphQLID, // Int boundaries constants\n  GRAPHQL_MAX_INT,\n  GRAPHQL_MIN_INT, // Built-in Directives defined by the Spec\n  specifiedDirectives,\n  GraphQLIncludeDirective,\n  GraphQLSkipDirective,\n  GraphQLDeprecatedDirective,\n  GraphQLSpecifiedByDirective, // \"Enum\" of Type Kinds\n  TypeKind, // Constant Deprecation Reason\n  DEFAULT_DEPRECATION_REASON, // GraphQL Types for introspection.\n  introspectionTypes,\n  __Schema,\n  __Directive,\n  __DirectiveLocation,\n  __Type,\n  __Field,\n  __InputValue,\n  __EnumValue,\n  __TypeKind, // Meta-field definitions.\n  SchemaMetaFieldDef,\n  TypeMetaFieldDef,\n  TypeNameMetaFieldDef, // Predicates\n  isSchema,\n  isDirective,\n  isType,\n  isScalarType,\n  isObjectType,\n  isInterfaceType,\n  isUnionType,\n  isEnumType,\n  isInputObjectType,\n  isListType,\n  isNonNullType,\n  isInputType,\n  isOutputType,\n  isLeafType,\n  isCompositeType,\n  isAbstractType,\n  isWrappingType,\n  isNullableType,\n  isNamedType,\n  isRequiredArgument,\n  isRequiredInputField,\n  isSpecifiedScalarType,\n  isIntrospectionType,\n  isSpecifiedDirective, // Assertions\n  assertSchema,\n  assertDirective,\n  assertType,\n  assertScalarType,\n  assertObjectType,\n  assertInterfaceType,\n  assertUnionType,\n  assertEnumType,\n  assertInputObjectType,\n  assertListType,\n  assertNonNullType,\n  assertInputType,\n  assertOutputType,\n  assertLeafType,\n  assertCompositeType,\n  assertAbstractType,\n  assertWrappingType,\n  assertNullableType,\n  assertNamedType, // Un-modifiers\n  getNullableType,\n  getNamedType, // Validate GraphQL schema.\n  validateSchema,\n  assertValidSchema, // Upholds the spec rules about naming.\n  assertName,\n  assertEnumValueName,\n} from './type/index.mjs';\n// Parse and operate on GraphQL language source files.\nexport {\n  Token,\n  Source,\n  Location,\n  OperationTypeNode,\n  getLocation, // Print source location.\n  printLocation,\n  printSourceLocation, // Lex\n  Lexer,\n  TokenKind, // Parse\n  parse,\n  parseValue,\n  parseConstValue,\n  parseType, // Print\n  print, // Visit\n  visit,\n  visitInParallel,\n  getVisitFn,\n  getEnterLeaveForKind,\n  BREAK,\n  Kind,\n  DirectiveLocation, // Predicates\n  isDefinitionNode,\n  isExecutableDefinitionNode,\n  isSelectionNode,\n  isValueNode,\n  isConstValueNode,\n  isTypeNode,\n  isTypeSystemDefinitionNode,\n  isTypeDefinitionNode,\n  isTypeSystemExtensionNode,\n  isTypeExtensionNode,\n} from './language/index.mjs';\n// Execute GraphQL queries.\nexport {\n  execute,\n  executeSync,\n  defaultFieldResolver,\n  defaultTypeResolver,\n  responsePathAsArray,\n  getArgumentValues,\n  getVariableValues,\n  getDirectiveValues,\n  subscribe,\n  createSourceEventStream,\n} from './execution/index.mjs';\n// Validate GraphQL documents.\nexport {\n  validate,\n  ValidationContext, // All validation rules in the GraphQL Specification.\n  specifiedRules, // Individual validation rules.\n  ExecutableDefinitionsRule,\n  FieldsOnCorrectTypeRule,\n  FragmentsOnCompositeTypesRule,\n  KnownArgumentNamesRule,\n  KnownDirectivesRule,\n  KnownFragmentNamesRule,\n  KnownTypeNamesRule,\n  LoneAnonymousOperationRule,\n  NoFragmentCyclesRule,\n  NoUndefinedVariablesRule,\n  NoUnusedFragmentsRule,\n  NoUnusedVariablesRule,\n  OverlappingFieldsCanBeMergedRule,\n  PossibleFragmentSpreadsRule,\n  ProvidedRequiredArgumentsRule,\n  ScalarLeafsRule,\n  SingleFieldSubscriptionsRule,\n  UniqueArgumentNamesRule,\n  UniqueDirectivesPerLocationRule,\n  UniqueFragmentNamesRule,\n  UniqueInputFieldNamesRule,\n  UniqueOperationNamesRule,\n  UniqueVariableNamesRule,\n  ValuesOfCorrectTypeRule,\n  VariablesAreInputTypesRule,\n  VariablesInAllowedPositionRule, // SDL-specific validation rules\n  LoneSchemaDefinitionRule,\n  UniqueOperationTypesRule,\n  UniqueTypeNamesRule,\n  UniqueEnumValueNamesRule,\n  UniqueFieldDefinitionNamesRule,\n  UniqueArgumentDefinitionNamesRule,\n  UniqueDirectiveNamesRule,\n  PossibleTypeExtensionsRule, // Custom validation rules\n  NoDeprecatedCustomRule,\n  NoSchemaIntrospectionCustomRule,\n} from './validation/index.mjs';\n// Create, format, and print GraphQL errors.\nexport {\n  GraphQLError,\n  syntaxError,\n  locatedError,\n  printError,\n  formatError,\n} from './error/index.mjs';\n// Utilities for operating on GraphQL type schema and parsed sources.\nexport {\n  // Produce the GraphQL query recommended for a full schema introspection.\n  // Accepts optional IntrospectionOptions.\n  getIntrospectionQuery, // Gets the target Operation from a Document.\n  getOperationAST, // Gets the Type for the target Operation AST.\n  getOperationRootType, // Convert a GraphQLSchema to an IntrospectionQuery.\n  introspectionFromSchema, // Build a GraphQLSchema from an introspection result.\n  buildClientSchema, // Build a GraphQLSchema from a parsed GraphQL Schema language AST.\n  buildASTSchema, // Build a GraphQLSchema from a GraphQL schema language document.\n  buildSchema, // Extends an existing GraphQLSchema from a parsed GraphQL Schema language AST.\n  extendSchema, // Sort a GraphQLSchema.\n  lexicographicSortSchema, // Print a GraphQLSchema to GraphQL Schema language.\n  printSchema, // Print a GraphQLType to GraphQL Schema language.\n  printType, // Prints the built-in introspection schema in the Schema Language format.\n  printIntrospectionSchema, // Create a GraphQLType from a GraphQL language AST.\n  typeFromAST, // Create a JavaScript value from a GraphQL language AST with a Type.\n  valueFromAST, // Create a JavaScript value from a GraphQL language AST without a Type.\n  valueFromASTUntyped, // Create a GraphQL language AST from a JavaScript value.\n  astFromValue, // A helper to use within recursive-descent visitors which need to be aware of the GraphQL type system.\n  TypeInfo,\n  visitWithTypeInfo, // Coerces a JavaScript value to a GraphQL type, or produces errors.\n  coerceInputValue, // Concatenates multiple AST together.\n  concatAST, // Separates an AST into an AST per Operation.\n  separateOperations, // Strips characters that are not significant to the validity or execution of a GraphQL document.\n  stripIgnoredCharacters, // Comparators for types\n  isEqualType,\n  isTypeSubTypeOf,\n  doTypesOverlap, // Asserts a string is a valid GraphQL name.\n  assertValidName, // Determine if a string is a valid GraphQL name.\n  isValidNameError, // Compares two GraphQLSchemas and detects breaking changes.\n  BreakingChangeType,\n  DangerousChangeType,\n  findBreakingChanges,\n  findDangerousChanges,\n} from './utilities/index.mjs';\n",
+      "start": 1702937441082,
+      "end": 1702937441213,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441213,
+      "end": 1702937441213,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441213,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441214,
+      "end": 1702937441214,
+      "order": "normal"
+    }
+  ]
+}

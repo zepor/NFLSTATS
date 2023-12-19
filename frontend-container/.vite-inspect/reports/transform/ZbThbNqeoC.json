@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/CloseButton.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import PropTypes from 'prop-types';\nimport * as React from 'react';\nimport classNames from 'classnames';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst propTypes = {\n  /** An accessible label indicating the relevant information about the Close Button. */\n  'aria-label': PropTypes.string,\n  /** A callback fired after the Close Button is clicked. */\n  onClick: PropTypes.func,\n  /**\n   * Render different color variant for the button.\n   *\n   * Omitting this will render the default dark color.\n   */\n  variant: PropTypes.oneOf(['white'])\n};\nconst CloseButton = /*#__PURE__*/React.forwardRef(({\n  className,\n  variant,\n  'aria-label': ariaLabel = 'Close',\n  ...props\n}, ref) => /*#__PURE__*/_jsx(\"button\", {\n  ref: ref,\n  type: \"button\",\n  className: classNames('btn-close', variant && `btn-close-${variant}`, className),\n  \"aria-label\": ariaLabel,\n  ...props\n}));\nCloseButton.displayName = 'CloseButton';\nCloseButton.propTypes = propTypes;\nexport default CloseButton;",
+      "start": 1702937441421,
+      "end": 1702937441471,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441471,
+      "end": 1702937441471,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441471,
+      "end": 1702937441471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441471,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441472,
+      "end": 1702937441472,
+      "order": "normal"
+    }
+  ]
+}

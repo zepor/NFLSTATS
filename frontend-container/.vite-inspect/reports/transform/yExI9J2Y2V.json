@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/ebnf.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Extended Backus-Naur Form\nAuthor: Alex McKibben <alex@nullscope.net>\nWebsite: https://en.wikipedia.org/wiki/Extended_Backus–Naur_form\n*/\n\n/** @type LanguageFn */\nfunction ebnf(hljs) {\n  const commentMode = hljs.COMMENT(/\\(\\*/, /\\*\\)/);\n\n  const nonTerminalMode = {\n    className: \"attribute\",\n    begin: /^[ ]*[a-zA-Z]+([\\s_-]+[a-zA-Z]+)*/\n  };\n\n  const specialSequenceMode = {\n    className: \"meta\",\n    begin: /\\?.*\\?/\n  };\n\n  const ruleBodyMode = {\n    begin: /=/,\n    end: /[.;]/,\n    contains: [\n      commentMode,\n      specialSequenceMode,\n      {\n        // terminals\n        className: 'string',\n        variants: [\n          hljs.APOS_STRING_MODE,\n          hljs.QUOTE_STRING_MODE,\n          {\n            begin: '`',\n            end: '`'\n          }\n        ]\n      }\n    ]\n  };\n\n  return {\n    name: 'Extended Backus-Naur Form',\n    illegal: /\\S/,\n    contains: [\n      commentMode,\n      nonTerminalMode,\n      ruleBodyMode\n    ]\n  };\n}\n\nmodule.exports = ebnf;\n",
+      "start": 1702937444301,
+      "end": 1702937444335,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Extended Backus-Naur Form\nAuthor: Alex McKibben <alex@nullscope.net>\nWebsite: https://en.wikipedia.org/wiki/Extended_Backus–Naur_form\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar ebnf_1;\nvar hasRequiredEbnf;\n\nfunction requireEbnf () {\n\tif (hasRequiredEbnf) return ebnf_1;\n\thasRequiredEbnf = 1;\n\t/** @type LanguageFn */\n\tfunction ebnf(hljs) {\n\t  const commentMode = hljs.COMMENT(/\\(\\*/, /\\*\\)/);\n\n\t  const nonTerminalMode = {\n\t    className: \"attribute\",\n\t    begin: /^[ ]*[a-zA-Z]+([\\s_-]+[a-zA-Z]+)*/\n\t  };\n\n\t  const specialSequenceMode = {\n\t    className: \"meta\",\n\t    begin: /\\?.*\\?/\n\t  };\n\n\t  const ruleBodyMode = {\n\t    begin: /=/,\n\t    end: /[.;]/,\n\t    contains: [\n\t      commentMode,\n\t      specialSequenceMode,\n\t      {\n\t        // terminals\n\t        className: 'string',\n\t        variants: [\n\t          hljs.APOS_STRING_MODE,\n\t          hljs.QUOTE_STRING_MODE,\n\t          {\n\t            begin: '`',\n\t            end: '`'\n\t          }\n\t        ]\n\t      }\n\t    ]\n\t  };\n\n\t  return {\n\t    name: 'Extended Backus-Naur Form',\n\t    illegal: /\\S/,\n\t    contains: [\n\t      commentMode,\n\t      nonTerminalMode,\n\t      ruleBodyMode\n\t    ]\n\t  };\n\t}\n\n\tebnf_1 = ebnf;\n\treturn ebnf_1;\n}\n\nexport { requireEbnf as __require };",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;CAMA;CACA,SAAS,IAAI,CAAC,IAAI,EAAE;CACpB,EAAE,MAAM,WAAW,GAAG,IAAI,CAAC,OAAO,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC;AACnD;CACA,EAAE,MAAM,eAAe,GAAG;CAC1B,IAAI,SAAS,EAAE,WAAW;CAC1B,IAAI,KAAK,EAAE,mCAAmC;CAC9C,GAAG,CAAC;AACJ;CACA,EAAE,MAAM,mBAAmB,GAAG;CAC9B,IAAI,SAAS,EAAE,MAAM;CACrB,IAAI,KAAK,EAAE,QAAQ;CACnB,GAAG,CAAC;AACJ;CACA,EAAE,MAAM,YAAY,GAAG;CACvB,IAAI,KAAK,EAAE,GAAG;CACd,IAAI,GAAG,EAAE,MAAM;CACf,IAAI,QAAQ,EAAE;CACd,MAAM,WAAW;CACjB,MAAM,mBAAmB;CACzB,MAAM;CACN;CACA,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,QAAQ,EAAE;CAClB,UAAU,IAAI,CAAC,gBAAgB;CAC/B,UAAU,IAAI,CAAC,iBAAiB;CAChC,UAAU;CACV,YAAY,KAAK,EAAE,GAAG;CACtB,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,2BAA2B;CACrC,IAAI,OAAO,EAAE,IAAI;CACjB,IAAI,QAAQ,EAAE;CACd,MAAM,WAAW;CACjB,MAAM,eAAe;CACrB,MAAM,YAAY;CAClB,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,OAAc,GAAG,IAAI"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444335,
+      "end": 1702937444335,
+      "order": "normal"
+    }
+  ]
+}

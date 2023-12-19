@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/Tickers.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Col, Card, Row } from \"react-bootstrap\";\r\n\r\nconst Tickers = () => (\r\n  <Row>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-5.28%</div>\r\n          <h4 className=\"mb-2\">HSR/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.001416</strong> $16.61\r\n          </div>\r\n          <div>Volume: 2,692.47 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-success\">2.61%</div>\r\n          <h4 className=\"mb-2\">BNB/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00022004</strong> $2.58\r\n          </div>\r\n          <div>Volume: 842.52 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-7.27%</div>\r\n          <h4 className=\"mb-2\">POWR/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00005806</strong> $0.68\r\n          </div>\r\n          <div>Volume: 393.03 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-4.98%</div>\r\n          <h4 className=\"mb-2\">TRX/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00000229</strong> $0.04\r\n          </div>\r\n          <div>Volume: 6,836.31 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl className=\"d-none d-xxl-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-success\">16.11%</div>\r\n          <h4 className=\"mb-2\">IOTA/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00025800</strong> $3.03\r\n          </div>\r\n          <div>Volume: 14,065.87 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n  </Row>\r\n);\r\n\r\nexport default Tickers;\r\n",
+      "start": 1702937441607,
+      "end": 1702937441648,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441648,
+      "end": 1702937441648,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441648,
+      "end": 1702937441648,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Col, Card, Row } from \"react-bootstrap\";\nconst Tickers = () => /* @__PURE__ */ jsxs(Row, { children: [\n  /* @__PURE__ */ jsx(Col, { md: \"6\", xl: true, children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { className: \"py-4\", children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"float-end text-danger\", children: \"-5.28%\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"mb-2\", children: \"HSR/BTC\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-1\", children: [\n      /* @__PURE__ */ jsx(\"strong\", { children: \"0.001416\" }),\n      \" $16.61\"\n    ] }),\n    /* @__PURE__ */ jsx(\"div\", { children: \"Volume: 2,692.47 BTC\" })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", xl: true, children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { className: \"py-4\", children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"float-end text-success\", children: \"2.61%\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"mb-2\", children: \"BNB/BTC\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-1\", children: [\n      /* @__PURE__ */ jsx(\"strong\", { children: \"0.00022004\" }),\n      \" $2.58\"\n    ] }),\n    /* @__PURE__ */ jsx(\"div\", { children: \"Volume: 842.52 BTC\" })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", xl: true, children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { className: \"py-4\", children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"float-end text-danger\", children: \"-7.27%\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"mb-2\", children: \"POWR/BTC\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-1\", children: [\n      /* @__PURE__ */ jsx(\"strong\", { children: \"0.00005806\" }),\n      \" $0.68\"\n    ] }),\n    /* @__PURE__ */ jsx(\"div\", { children: \"Volume: 393.03 BTC\" })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", xl: true, children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { className: \"py-4\", children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"float-end text-danger\", children: \"-4.98%\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"mb-2\", children: \"TRX/BTC\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-1\", children: [\n      /* @__PURE__ */ jsx(\"strong\", { children: \"0.00000229\" }),\n      \" $0.04\"\n    ] }),\n    /* @__PURE__ */ jsx(\"div\", { children: \"Volume: 6,836.31 BTC\" })\n  ] }) }) }),\n  /* @__PURE__ */ jsx(Col, { md: \"6\", xl: true, className: \"d-none d-xxl-flex\", children: /* @__PURE__ */ jsx(Card, { className: \"flex-fill\", children: /* @__PURE__ */ jsxs(Card.Body, { className: \"py-4\", children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"float-end text-success\", children: \"16.11%\" }),\n    /* @__PURE__ */ jsx(\"h4\", { className: \"mb-2\", children: \"IOTA/BTC\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"mb-1\", children: [\n      /* @__PURE__ */ jsx(\"strong\", { children: \"0.00025800\" }),\n      \" $3.03\"\n    ] }),\n    /* @__PURE__ */ jsx(\"div\", { children: \"Volume: 14,065.87 BTC\" })\n  ] }) }) })\n] });\nexport default Tickers;\n",
+      "start": 1702937441648,
+      "end": 1702937441670,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/Tickers.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Col, Card, Row } from \"react-bootstrap\";\r\n\r\nconst Tickers = () => (\r\n  <Row>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-5.28%</div>\r\n          <h4 className=\"mb-2\">HSR/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.001416</strong> $16.61\r\n          </div>\r\n          <div>Volume: 2,692.47 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-success\">2.61%</div>\r\n          <h4 className=\"mb-2\">BNB/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00022004</strong> $2.58\r\n          </div>\r\n          <div>Volume: 842.52 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-7.27%</div>\r\n          <h4 className=\"mb-2\">POWR/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00005806</strong> $0.68\r\n          </div>\r\n          <div>Volume: 393.03 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl>\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-danger\">-4.98%</div>\r\n          <h4 className=\"mb-2\">TRX/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00000229</strong> $0.04\r\n          </div>\r\n          <div>Volume: 6,836.31 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n    <Col md=\"6\" xl className=\"d-none d-xxl-flex\">\r\n      <Card className=\"flex-fill\">\r\n        <Card.Body className=\"py-4\">\r\n          <div className=\"float-end text-success\">16.11%</div>\r\n          <h4 className=\"mb-2\">IOTA/BTC</h4>\r\n          <div className=\"mb-1\">\r\n            <strong>0.00025800</strong> $3.03\r\n          </div>\r\n          <div>Volume: 14,065.87 BTC</div>\r\n        </Card.Body>\r\n      </Card>\r\n    </Col>\r\n  </Row>\r\n);\r\n\r\nexport default Tickers;\r\n"
+        ],
+        "mappings": "AAQU,cAEA,YAFA;AARV,OAAO,WAAW;AAClB,SAAS,KAAK,MAAM,WAAW;AAE/B,MAAM,UAAU,MACd,qBAAC,OACC;AAAA,sBAAC,OAAI,IAAG,KAAI,IAAE,MACZ,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EAAU,WAAU,QACnB;AAAA,wBAAC,SAAI,WAAU,yBAAwB,oBAAM;AAAA,IAC7C,oBAAC,QAAG,WAAU,QAAO,qBAAO;AAAA,IAC5B,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,YAAO,sBAAQ;AAAA,MAAS;AAAA,OAC3B;AAAA,IACA,oBAAC,SAAI,kCAAoB;AAAA,KAC3B,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,IAAE,MACZ,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EAAU,WAAU,QACnB;AAAA,wBAAC,SAAI,WAAU,0BAAyB,mBAAK;AAAA,IAC7C,oBAAC,QAAG,WAAU,QAAO,qBAAO;AAAA,IAC5B,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,YAAO,wBAAU;AAAA,MAAS;AAAA,OAC7B;AAAA,IACA,oBAAC,SAAI,gCAAkB;AAAA,KACzB,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,IAAE,MACZ,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EAAU,WAAU,QACnB;AAAA,wBAAC,SAAI,WAAU,yBAAwB,oBAAM;AAAA,IAC7C,oBAAC,QAAG,WAAU,QAAO,sBAAQ;AAAA,IAC7B,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,YAAO,wBAAU;AAAA,MAAS;AAAA,OAC7B;AAAA,IACA,oBAAC,SAAI,gCAAkB;AAAA,KACzB,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,IAAE,MACZ,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EAAU,WAAU,QACnB;AAAA,wBAAC,SAAI,WAAU,yBAAwB,oBAAM;AAAA,IAC7C,oBAAC,QAAG,WAAU,QAAO,qBAAO;AAAA,IAC5B,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,YAAO,wBAAU;AAAA,MAAS;AAAA,OAC7B;AAAA,IACA,oBAAC,SAAI,kCAAoB;AAAA,KAC3B,GACF,GACF;AAAA,EACA,oBAAC,OAAI,IAAG,KAAI,IAAE,MAAC,WAAU,qBACvB,8BAAC,QAAK,WAAU,aACd,+BAAC,KAAK,MAAL,EAAU,WAAU,QACnB;AAAA,wBAAC,SAAI,WAAU,0BAAyB,oBAAM;AAAA,IAC9C,oBAAC,QAAG,WAAU,QAAO,sBAAQ;AAAA,IAC7B,qBAAC,SAAI,WAAU,QACb;AAAA,0BAAC,YAAO,wBAAU;AAAA,MAAS;AAAA,OAC7B;AAAA,IACA,oBAAC,SAAI,mCAAqB;AAAA,KAC5B,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/xlink.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nvar create = require('./util/create')\n\nmodule.exports = create({\n  space: 'xlink',\n  transform: xlinkTransform,\n  properties: {\n    xLinkActuate: null,\n    xLinkArcRole: null,\n    xLinkHref: null,\n    xLinkRole: null,\n    xLinkShow: null,\n    xLinkTitle: null,\n    xLinkType: null\n  }\n})\n\nfunction xlinkTransform(_, prop) {\n  return 'xlink:' + prop.slice(5).toLowerCase()\n}\n",
+      "start": 1702937445357,
+      "end": 1702937445373,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445373,
+      "end": 1702937445373,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/create.js?commonjs-proxy\";\n\n'use strict'\n\nvar create = require$$0\n\nvar xlink = create({\n  space: 'xlink',\n  transform: xlinkTransform,\n  properties: {\n    xLinkActuate: null,\n    xLinkArcRole: null,\n    xLinkHref: null,\n    xLinkRole: null,\n    xLinkShow: null,\n    xLinkTitle: null,\n    xLinkType: null\n  }\n})\n\nfunction xlinkTransform(_, prop) {\n  return 'xlink:' + prop.slice(5).toLowerCase()\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(xlink);\nexport { xlink as __moduleExports };",
+      "start": 1702937445373,
+      "end": 1702937445404,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY;AACZ;AACA,IAAI,MAAM,GAAG,UAAwB;AACrC;IACA,KAAc,GAAG,MAAM,CAAC;AACxB,EAAE,KAAK,EAAE,OAAO;AAChB,EAAE,SAAS,EAAE,cAAc;AAC3B,EAAE,UAAU,EAAE;AACd,IAAI,YAAY,EAAE,IAAI;AACtB,IAAI,YAAY,EAAE,IAAI;AACtB,IAAI,SAAS,EAAE,IAAI;AACnB,IAAI,SAAS,EAAE,IAAI;AACnB,IAAI,SAAS,EAAE,IAAI;AACnB,IAAI,UAAU,EAAE,IAAI;AACpB,IAAI,SAAS,EAAE,IAAI;AACnB,GAAG;AACH,CAAC,CAAC;AACF;AACA,SAAS,cAAc,CAAC,CAAC,EAAE,IAAI,EAAE;AACjC,EAAE,OAAO,QAAQ,GAAG,IAAI,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE;AAC/C"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    }
+  ]
+}

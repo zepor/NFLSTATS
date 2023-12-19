@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/dart.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = dart\ndart.displayName = 'dart'\ndart.aliases = []\nfunction dart(Prism) {\n  ;(function (Prism) {\n    var keywords = [\n      /\\b(?:async|sync|yield)\\*/,\n      /\\b(?:abstract|assert|async|await|break|case|catch|class|const|continue|covariant|default|deferred|do|dynamic|else|enum|export|extends|extension|external|factory|final|finally|for|get|hide|if|implements|import|in|interface|library|mixin|new|null|on|operator|part|rethrow|return|set|show|static|super|switch|sync|this|throw|try|typedef|var|void|while|with|yield)\\b/\n    ] // Handles named imports, such as http.Client\n    var packagePrefix = /(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*/\n      .source // based on the dart naming conventions\n    var className = {\n      pattern: RegExp(packagePrefix + /[A-Z](?:[\\d_A-Z]*[a-z]\\w*)?\\b/.source),\n      lookbehind: true,\n      inside: {\n        namespace: {\n          pattern: /^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?/,\n          inside: {\n            punctuation: /\\./\n          }\n        }\n      }\n    }\n    Prism.languages.dart = Prism.languages.extend('clike', {\n      'class-name': [\n        className,\n        {\n          // variables and parameters\n          // this to support class names (or generic parameters) which do not contain a lower case letter (also works for methods)\n          pattern: RegExp(\n            packagePrefix + /[A-Z]\\w*(?=\\s+\\w+\\s*[;,=()])/.source\n          ),\n          lookbehind: true,\n          inside: className.inside\n        }\n      ],\n      keyword: keywords,\n      operator:\n        /\\bis!|\\b(?:as|is)\\b|\\+\\+|--|&&|\\|\\||<<=?|>>=?|~(?:\\/=?)?|[+\\-*\\/%&^|=!<>]=?|\\?/\n    })\n    Prism.languages.insertBefore('dart', 'string', {\n      'string-literal': {\n        pattern:\n          /r?(?:(\"\"\"|''')[\\s\\S]*?\\1|([\"'])(?:\\\\.|(?!\\2)[^\\\\\\r\\n])*\\2(?!\\2))/,\n        greedy: true,\n        inside: {\n          interpolation: {\n            pattern:\n              /((?:^|[^\\\\])(?:\\\\{2})*)\\$(?:\\w+|\\{(?:[^{}]|\\{[^{}]*\\})*\\})/,\n            lookbehind: true,\n            inside: {\n              punctuation: /^\\$\\{?|\\}$/,\n              expression: {\n                pattern: /[\\s\\S]+/,\n                inside: Prism.languages.dart\n              }\n            }\n          },\n          string: /[\\s\\S]+/\n        }\n      },\n      string: undefined\n    })\n    Prism.languages.insertBefore('dart', 'class-name', {\n      metadata: {\n        pattern: /@\\w+/,\n        alias: 'function'\n      }\n    })\n    Prism.languages.insertBefore('dart', 'class-name', {\n      generics: {\n        pattern:\n          /<(?:[\\w\\s,.&?]|<(?:[\\w\\s,.&?]|<(?:[\\w\\s,.&?]|<[\\w\\s,.&?]*>)*>)*>)*>/,\n        inside: {\n          'class-name': className,\n          keyword: keywords,\n          punctuation: /[<>(),.:]/,\n          operator: /[?&|]/\n        }\n      }\n    })\n  })(Prism)\n}\n",
+      "start": 1702937444855,
+      "end": 1702937444888,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar dart_1;\nvar hasRequiredDart;\n\nfunction requireDart () {\n\tif (hasRequiredDart) return dart_1;\n\thasRequiredDart = 1;\n\t'use strict'\n\n\tdart_1 = dart\n\tdart.displayName = 'dart'\n\tdart.aliases = []\n\tfunction dart(Prism) {\n\t  ;(function (Prism) {\n\t    var keywords = [\n\t      /\\b(?:async|sync|yield)\\*/,\n\t      /\\b(?:abstract|assert|async|await|break|case|catch|class|const|continue|covariant|default|deferred|do|dynamic|else|enum|export|extends|extension|external|factory|final|finally|for|get|hide|if|implements|import|in|interface|library|mixin|new|null|on|operator|part|rethrow|return|set|show|static|super|switch|sync|this|throw|try|typedef|var|void|while|with|yield)\\b/\n\t    ] // Handles named imports, such as http.Client\n\t    var packagePrefix = /(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*/\n\t      .source // based on the dart naming conventions\n\t    var className = {\n\t      pattern: RegExp(packagePrefix + /[A-Z](?:[\\d_A-Z]*[a-z]\\w*)?\\b/.source),\n\t      lookbehind: true,\n\t      inside: {\n\t        namespace: {\n\t          pattern: /^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?/,\n\t          inside: {\n\t            punctuation: /\\./\n\t          }\n\t        }\n\t      }\n\t    }\n\t    Prism.languages.dart = Prism.languages.extend('clike', {\n\t      'class-name': [\n\t        className,\n\t        {\n\t          // variables and parameters\n\t          // this to support class names (or generic parameters) which do not contain a lower case letter (also works for methods)\n\t          pattern: RegExp(\n\t            packagePrefix + /[A-Z]\\w*(?=\\s+\\w+\\s*[;,=()])/.source\n\t          ),\n\t          lookbehind: true,\n\t          inside: className.inside\n\t        }\n\t      ],\n\t      keyword: keywords,\n\t      operator:\n\t        /\\bis!|\\b(?:as|is)\\b|\\+\\+|--|&&|\\|\\||<<=?|>>=?|~(?:\\/=?)?|[+\\-*\\/%&^|=!<>]=?|\\?/\n\t    })\n\t    Prism.languages.insertBefore('dart', 'string', {\n\t      'string-literal': {\n\t        pattern:\n\t          /r?(?:(\"\"\"|''')[\\s\\S]*?\\1|([\"'])(?:\\\\.|(?!\\2)[^\\\\\\r\\n])*\\2(?!\\2))/,\n\t        greedy: true,\n\t        inside: {\n\t          interpolation: {\n\t            pattern:\n\t              /((?:^|[^\\\\])(?:\\\\{2})*)\\$(?:\\w+|\\{(?:[^{}]|\\{[^{}]*\\})*\\})/,\n\t            lookbehind: true,\n\t            inside: {\n\t              punctuation: /^\\$\\{?|\\}$/,\n\t              expression: {\n\t                pattern: /[\\s\\S]+/,\n\t                inside: Prism.languages.dart\n\t              }\n\t            }\n\t          },\n\t          string: /[\\s\\S]+/\n\t        }\n\t      },\n\t      string: undefined\n\t    })\n\t    Prism.languages.insertBefore('dart', 'class-name', {\n\t      metadata: {\n\t        pattern: /@\\w+/,\n\t        alias: 'function'\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('dart', 'class-name', {\n\t      generics: {\n\t        pattern:\n\t          /<(?:[\\w\\s,.&?]|<(?:[\\w\\s,.&?]|<(?:[\\w\\s,.&?]|<[\\w\\s,.&?]*>)*>)*>)*>/,\n\t        inside: {\n\t          'class-name': className,\n\t          keyword: keywords,\n\t          punctuation: /[<>(),.:]/,\n\t          operator: /[?&|]/\n\t        }\n\t      }\n\t    })\n\t  })(Prism)\n\t}\n\treturn dart_1;\n}\n\nexport { requireDart as __require };",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,QAAQ,GAAG;CACnB,MAAM,0BAA0B;CAChC,MAAM,4WAA4W;CAClX,KAAK;CACL,IAAI,IAAI,aAAa,GAAG,sDAAsD;CAC9E,OAAO,MAAM;CACb,IAAI,IAAI,SAAS,GAAG;CACpB,MAAM,OAAO,EAAE,MAAM,CAAC,aAAa,GAAG,+BAA+B,CAAC,MAAM,CAAC;CAC7E,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,SAAS,EAAE;CACnB,UAAU,OAAO,EAAE,0CAA0C;CAC7D,UAAU,MAAM,EAAE;CAClB,YAAY,WAAW,EAAE,IAAI;CAC7B,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,OAAO,EAAE;CAC3D,MAAM,YAAY,EAAE;CACpB,QAAQ,SAAS;CACjB,QAAQ;CACR;CACA;CACA,UAAU,OAAO,EAAE,MAAM;CACzB,YAAY,aAAa,GAAG,8BAA8B,CAAC,MAAM;CACjE,WAAW;CACX,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,MAAM,EAAE,SAAS,CAAC,MAAM;CAClC,SAAS;CACT,OAAO;CACP,MAAM,OAAO,EAAE,QAAQ;CACvB,MAAM,QAAQ;CACd,QAAQ,gFAAgF;CACxF,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,QAAQ,EAAE;CACnD,MAAM,gBAAgB,EAAE;CACxB,QAAQ,OAAO;CACf,UAAU,kEAAkE;CAC5E,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,aAAa,EAAE;CACzB,YAAY,OAAO;CACnB,cAAc,4DAA4D;CAC1E,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,MAAM,EAAE;CACpB,cAAc,WAAW,EAAE,YAAY;CACvC,cAAc,UAAU,EAAE;CAC1B,gBAAgB,OAAO,EAAE,SAAS;CAClC,gBAAgB,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI;CAC5C,eAAe;CACf,aAAa;CACb,WAAW;CACX,UAAU,MAAM,EAAE,SAAS;CAC3B,SAAS;CACT,OAAO;CACP,MAAM,MAAM,EAAE,SAAS;CACvB,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,YAAY,EAAE;CACvD,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO,EAAE,MAAM;CACvB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,YAAY,EAAE;CACvD,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO;CACf,UAAU,qEAAqE;CAC/E,QAAQ,MAAM,EAAE;CAChB,UAAU,YAAY,EAAE,SAAS;CACjC,UAAU,OAAO,EAAE,QAAQ;CAC3B,UAAU,WAAW,EAAE,WAAW;CAClC,UAAU,QAAQ,EAAE,OAAO;CAC3B,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444888,
+      "end": 1702937444888,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Social/Following.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Button, Card, Dropdown } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport avatar2 from \"../../../assets/img/avatars/avatar-2.jpg\";\r\nimport avatar4 from \"../../../assets/img/avatars/avatar-4.jpg\";\r\nimport avatar5 from \"../../../assets/img/avatars/avatar-5.jpg\";\r\n\r\nconst Following = () => (\r\n  <Card className=\"flex-fill mb-3\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Following</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar5}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Chris Wood\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Ashley Briggs</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n\r\n      <hr className=\"my-2\" />\r\n\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar2}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Carl Jenkins\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Carl Jenkins</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n\r\n      <hr className=\"my-2\" />\r\n\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar4}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Stacie Hall\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Stacie Hall</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nexport default Following;\r\n",
+      "start": 1702937441607,
+      "end": 1702937441648,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441648,
+      "end": 1702937441648,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441648,
+      "end": 1702937441648,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Button, Card, Dropdown } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nimport avatar2 from \"../../../assets/img/avatars/avatar-2.jpg\";\nimport avatar4 from \"../../../assets/img/avatars/avatar-4.jpg\";\nimport avatar5 from \"../../../assets/img/avatars/avatar-5.jpg\";\nconst Following = () => /* @__PURE__ */ jsxs(Card, { className: \"flex-fill mb-3\", children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n      /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n      /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n      ] })\n    ] }) }),\n    /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Following\" })\n  ] }),\n  /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsxs(\"div\", { className: \"d-flex\", children: [\n      /* @__PURE__ */ jsx(\n        \"img\",\n        {\n          src: avatar5,\n          width: \"56\",\n          height: \"56\",\n          className: \"rounded-circle me-2\",\n          alt: \"Chris Wood\"\n        }\n      ),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"flex-grow-1 ms-3\", children: [\n        /* @__PURE__ */ jsx(\"p\", { className: \"my-1\", children: /* @__PURE__ */ jsx(\"strong\", { children: \"Ashley Briggs\" }) }),\n        /* @__PURE__ */ jsx(Button, { variant: \"outline-primary\", size: \"sm\", children: \"Unfollow\" })\n      ] })\n    ] }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-2\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"d-flex\", children: [\n      /* @__PURE__ */ jsx(\n        \"img\",\n        {\n          src: avatar2,\n          width: \"56\",\n          height: \"56\",\n          className: \"rounded-circle me-2\",\n          alt: \"Carl Jenkins\"\n        }\n      ),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"flex-grow-1 ms-3\", children: [\n        /* @__PURE__ */ jsx(\"p\", { className: \"my-1\", children: /* @__PURE__ */ jsx(\"strong\", { children: \"Carl Jenkins\" }) }),\n        /* @__PURE__ */ jsx(Button, { variant: \"outline-primary\", size: \"sm\", children: \"Unfollow\" })\n      ] })\n    ] }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-2\" }),\n    /* @__PURE__ */ jsxs(\"div\", { className: \"d-flex\", children: [\n      /* @__PURE__ */ jsx(\n        \"img\",\n        {\n          src: avatar4,\n          width: \"56\",\n          height: \"56\",\n          className: \"rounded-circle me-2\",\n          alt: \"Stacie Hall\"\n        }\n      ),\n      /* @__PURE__ */ jsxs(\"div\", { className: \"flex-grow-1 ms-3\", children: [\n        /* @__PURE__ */ jsx(\"p\", { className: \"my-1\", children: /* @__PURE__ */ jsx(\"strong\", { children: \"Stacie Hall\" }) }),\n        /* @__PURE__ */ jsx(Button, { variant: \"outline-primary\", size: \"sm\", children: \"Unfollow\" })\n      ] })\n    ] })\n  ] })\n] });\nexport default Following;\n",
+      "start": 1702937441648,
+      "end": 1702937441670,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Social/Following.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Button, Card, Dropdown } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport avatar2 from \"../../../assets/img/avatars/avatar-2.jpg\";\r\nimport avatar4 from \"../../../assets/img/avatars/avatar-4.jpg\";\r\nimport avatar5 from \"../../../assets/img/avatars/avatar-5.jpg\";\r\n\r\nconst Following = () => (\r\n  <Card className=\"flex-fill mb-3\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Following</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar5}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Chris Wood\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Ashley Briggs</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n\r\n      <hr className=\"my-2\" />\r\n\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar2}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Carl Jenkins\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Carl Jenkins</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n\r\n      <hr className=\"my-2\" />\r\n\r\n      <div className=\"d-flex\">\r\n        <img\r\n          src={avatar4}\r\n          width=\"56\"\r\n          height=\"56\"\r\n          className=\"rounded-circle me-2\"\r\n          alt=\"Stacie Hall\"\r\n        />\r\n        <div className=\"flex-grow-1 ms-3\">\r\n          <p className=\"my-1\">\r\n            <strong>Stacie Hall</strong>\r\n          </p>\r\n          <Button variant=\"outline-primary\" size=\"sm\">\r\n            Unfollow\r\n          </Button>\r\n        </div>\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nexport default Following;\r\n"
+        ],
+        "mappings": "AAeY,cAEF,YAFE;AAfZ,OAAO,WAAW;AAClB,SAAS,QAAQ,MAAM,gBAAgB;AAEvC,SAAS,sBAAsB;AAE/B,OAAO,aAAa;AACpB,OAAO,aAAa;AACpB,OAAO,aAAa;AAEpB,MAAM,YAAY,MAChB,qBAAC,QAAK,WAAU,kBACd;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,0BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,MACA,qBAAC,SAAS,MAAT,EACC;AAAA,4BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,QACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,QAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,SACpC;AAAA,OACF,GACF;AAAA,IACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,uBAAS;AAAA,KACxC;AAAA,EACA,qBAAC,KAAK,MAAL,EACC;AAAA,yBAAC,SAAI,WAAU,UACb;AAAA;AAAA,QAAC;AAAA;AAAA,UACC,KAAK;AAAA,UACL,OAAM;AAAA,UACN,QAAO;AAAA,UACP,WAAU;AAAA,UACV,KAAI;AAAA;AAAA,MACN;AAAA,MACA,qBAAC,SAAI,WAAU,oBACb;AAAA,4BAAC,OAAE,WAAU,QACX,8BAAC,YAAO,2BAAa,GACvB;AAAA,QACA,oBAAC,UAAO,SAAQ,mBAAkB,MAAK,MAAK,sBAE5C;AAAA,SACF;AAAA,OACF;AAAA,IAEA,oBAAC,QAAG,WAAU,QAAO;AAAA,IAErB,qBAAC,SAAI,WAAU,UACb;AAAA;AAAA,QAAC;AAAA;AAAA,UACC,KAAK;AAAA,UACL,OAAM;AAAA,UACN,QAAO;AAAA,UACP,WAAU;AAAA,UACV,KAAI;AAAA;AAAA,MACN;AAAA,MACA,qBAAC,SAAI,WAAU,oBACb;AAAA,4BAAC,OAAE,WAAU,QACX,8BAAC,YAAO,0BAAY,GACtB;AAAA,QACA,oBAAC,UAAO,SAAQ,mBAAkB,MAAK,MAAK,sBAE5C;AAAA,SACF;AAAA,OACF;AAAA,IAEA,oBAAC,QAAG,WAAU,QAAO;AAAA,IAErB,qBAAC,SAAI,WAAU,UACb;AAAA;AAAA,QAAC;AAAA;AAAA,UACC,KAAK;AAAA,UACL,OAAM;AAAA,UACN,QAAO;AAAA,UACP,WAAU;AAAA,UACV,KAAI;AAAA;AAAA,MACN;AAAA,MACA,qBAAC,SAAI,WAAU,oBACb;AAAA,4BAAC,OAAE,WAAU,QACX,8BAAC,YAAO,yBAAW,GACrB;AAAA,QACA,oBAAC,UAAO,SAAQ,mBAAkB,MAAK,MAAK,sBAE5C;AAAA,SACF;AAAA,OACF;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441670,
+      "end": 1702937441670,
+      "order": "normal"
+    }
+  ]
+}

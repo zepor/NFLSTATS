@@ -2,21 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: Attach to Azure with Kubernetes",
-      "type": "python",
+      "type": "node",
       "request": "attach",
-      "pathMappings": [
-        {
-          "localRoot": "${workspaceFolder}",
-          "remoteRoot": "/path/to/your/app/on/azure"
-        }
-      ],
-      "port": 5678,
-      "host": "loveoffootballfd-hwaahgfwdgbggnbk.z01.azurefd.net",
+      "name": "Docker: Attach to Node with Kubernetes",
+      "remoteRoot": "/usr/src/app",
       "preLaunchTask": "bridge-to-kubernetes.resource",
       "env": {
         "GRPC_DNS_RESOLVER": "native"
       }
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Docker: Attach to Node",
+      "remoteRoot": "/usr/src/app"
     },
     {
       "name": "Attach to Chrome",

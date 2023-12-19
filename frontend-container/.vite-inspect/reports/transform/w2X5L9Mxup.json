@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/KnownTypeNamesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { didYouMean } from '../../jsutils/didYouMean.mjs';\nimport { suggestionList } from '../../jsutils/suggestionList.mjs';\nimport { GraphQLError } from '../../error/GraphQLError.mjs';\nimport {\n  isTypeDefinitionNode,\n  isTypeSystemDefinitionNode,\n  isTypeSystemExtensionNode,\n} from '../../language/predicates.mjs';\nimport { introspectionTypes } from '../../type/introspection.mjs';\nimport { specifiedScalarTypes } from '../../type/scalars.mjs';\n\n/**\n * Known type names\n *\n * A GraphQL document is only valid if referenced types (specifically\n * variable definitions and fragment conditions) are defined by the type schema.\n *\n * See https://spec.graphql.org/draft/#sec-Fragment-Spread-Type-Existence\n */\nexport function KnownTypeNamesRule(context) {\n  const schema = context.getSchema();\n  const existingTypesMap = schema ? schema.getTypeMap() : Object.create(null);\n  const definedTypes = Object.create(null);\n\n  for (const def of context.getDocument().definitions) {\n    if (isTypeDefinitionNode(def)) {\n      definedTypes[def.name.value] = true;\n    }\n  }\n\n  const typeNames = [\n    ...Object.keys(existingTypesMap),\n    ...Object.keys(definedTypes),\n  ];\n  return {\n    NamedType(node, _1, parent, _2, ancestors) {\n      const typeName = node.name.value;\n\n      if (!existingTypesMap[typeName] && !definedTypes[typeName]) {\n        var _ancestors$;\n\n        const definitionNode =\n          (_ancestors$ = ancestors[2]) !== null && _ancestors$ !== void 0\n            ? _ancestors$\n            : parent;\n        const isSDL = definitionNode != null && isSDLNode(definitionNode);\n\n        if (isSDL && standardTypeNames.includes(typeName)) {\n          return;\n        }\n\n        const suggestedTypes = suggestionList(\n          typeName,\n          isSDL ? standardTypeNames.concat(typeNames) : typeNames,\n        );\n        context.reportError(\n          new GraphQLError(\n            `Unknown type \"${typeName}\".` + didYouMean(suggestedTypes),\n            {\n              nodes: node,\n            },\n          ),\n        );\n      }\n    },\n  };\n}\nconst standardTypeNames = [...specifiedScalarTypes, ...introspectionTypes].map(\n  (type) => type.name,\n);\n\nfunction isSDLNode(value) {\n  return (\n    'kind' in value &&\n    (isTypeSystemDefinitionNode(value) || isTypeSystemExtensionNode(value))\n  );\n}\n",
+      "start": 1702937443071,
+      "end": 1702937443092,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    }
+  ]
+}

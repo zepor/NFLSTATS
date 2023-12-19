@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/custom-event/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\nvar NativeCustomEvent = global.CustomEvent;\n\nfunction useNative () {\n  try {\n    var p = new NativeCustomEvent('cat', { detail: { foo: 'bar' } });\n    return  'cat' === p.type && 'bar' === p.detail.foo;\n  } catch (e) {\n  }\n  return false;\n}\n\n/**\n * Cross-browser `CustomEvent` constructor.\n *\n * https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent.CustomEvent\n *\n * @public\n */\n\nmodule.exports = useNative() ? NativeCustomEvent :\n\n// IE >= 9\n'function' === typeof document.createEvent ? function CustomEvent (type, params) {\n  var e = document.createEvent('CustomEvent');\n  if (params) {\n    e.initCustomEvent(type, params.bubbles, params.cancelable, params.detail);\n  } else {\n    e.initCustomEvent(type, false, false, void 0);\n  }\n  return e;\n} :\n\n// IE <= 8\nfunction CustomEvent (type, params) {\n  var e = document.createEventObject();\n  e.type = type;\n  if (params) {\n    e.bubbles = Boolean(params.bubbles);\n    e.cancelable = Boolean(params.cancelable);\n    e.detail = params.detail;\n  } else {\n    e.bubbles = false;\n    e.cancelable = false;\n    e.detail = void 0;\n  }\n  return e;\n}\n",
+      "start": 1702937444007,
+      "end": 1702937444036,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444036,
+      "end": 1702937444036,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444036,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar NativeCustomEvent = commonjsHelpers.commonjsGlobal.CustomEvent;\n\nfunction useNative () {\n  try {\n    var p = new NativeCustomEvent('cat', { detail: { foo: 'bar' } });\n    return  'cat' === p.type && 'bar' === p.detail.foo;\n  } catch (e) {\n  }\n  return false;\n}\n\n/**\n * Cross-browser `CustomEvent` constructor.\n *\n * https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent.CustomEvent\n *\n * @public\n */\n\nvar customEvent = useNative() ? NativeCustomEvent :\n\n// IE >= 9\n'function' === typeof document.createEvent ? function CustomEvent (type, params) {\n  var e = document.createEvent('CustomEvent');\n  if (params) {\n    e.initCustomEvent(type, params.bubbles, params.cancelable, params.detail);\n  } else {\n    e.initCustomEvent(type, false, false, void 0);\n  }\n  return e;\n} :\n\n// IE <= 8\nfunction CustomEvent (type, params) {\n  var e = document.createEventObject();\n  e.type = type;\n  if (params) {\n    e.bubbles = Boolean(params.bubbles);\n    e.cancelable = Boolean(params.cancelable);\n    e.detail = params.detail;\n  } else {\n    e.bubbles = false;\n    e.cancelable = false;\n    e.detail = void 0;\n  }\n  return e;\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(customEvent);\nexport { customEvent as __moduleExports };",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [
+          "global"
+        ],
+        "mappings": ";;AACA,IAAI,iBAAiB,GAAGA,8BAAM,CAAC,WAAW,CAAC;AAC3C;AACA,SAAS,SAAS,IAAI;AACtB,EAAE,IAAI;AACN,IAAI,IAAI,CAAC,GAAG,IAAI,iBAAiB,CAAC,KAAK,EAAE,EAAE,MAAM,EAAE,EAAE,GAAG,EAAE,KAAK,EAAE,EAAE,CAAC,CAAC;AACrE,IAAI,QAAQ,KAAK,KAAK,CAAC,CAAC,IAAI,IAAI,KAAK,KAAK,CAAC,CAAC,MAAM,CAAC,GAAG,CAAC;AACvD,GAAG,CAAC,OAAO,CAAC,EAAE;AACd,GAAG;AACH,EAAE,OAAO,KAAK,CAAC;AACf,CAAC;AACD;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;IACA,WAAc,GAAG,SAAS,EAAE,GAAG,iBAAiB;AAChD;AACA;AACA,UAAU,KAAK,OAAO,QAAQ,CAAC,WAAW,GAAG,SAAS,WAAW,EAAE,IAAI,EAAE,MAAM,EAAE;AACjF,EAAE,IAAI,CAAC,GAAG,QAAQ,CAAC,WAAW,CAAC,aAAa,CAAC,CAAC;AAC9C,EAAE,IAAI,MAAM,EAAE;AACd,IAAI,CAAC,CAAC,eAAe,CAAC,IAAI,EAAE,MAAM,CAAC,OAAO,EAAE,MAAM,CAAC,UAAU,EAAE,MAAM,CAAC,MAAM,CAAC,CAAC;AAC9E,GAAG,MAAM;AACT,IAAI,CAAC,CAAC,eAAe,CAAC,IAAI,EAAE,KAAK,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC,CAAC;AAClD,GAAG;AACH,EAAE,OAAO,CAAC,CAAC;AACX,CAAC;AACD;AACA;AACA,SAAS,WAAW,EAAE,IAAI,EAAE,MAAM,EAAE;AACpC,EAAE,IAAI,CAAC,GAAG,QAAQ,CAAC,iBAAiB,EAAE,CAAC;AACvC,EAAE,CAAC,CAAC,IAAI,GAAG,IAAI,CAAC;AAChB,EAAE,IAAI,MAAM,EAAE;AACd,IAAI,CAAC,CAAC,OAAO,GAAG,OAAO,CAAC,MAAM,CAAC,OAAO,CAAC,CAAC;AACxC,IAAI,CAAC,CAAC,UAAU,GAAG,OAAO,CAAC,MAAM,CAAC,UAAU,CAAC,CAAC;AAC9C,IAAI,CAAC,CAAC,MAAM,GAAG,MAAM,CAAC,MAAM,CAAC;AAC7B,GAAG,MAAM;AACT,IAAI,CAAC,CAAC,OAAO,GAAG,KAAK,CAAC;AACtB,IAAI,CAAC,CAAC,UAAU,GAAG,KAAK,CAAC;AACzB,IAAI,CAAC,CAAC,MAAM,GAAG,KAAK,CAAC,CAAC;AACtB,GAAG;AACH,EAAE,OAAO,CAAC,CAAC;AACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444037,
+      "end": 1702937444037,
+      "order": "normal"
+    }
+  ]
+}

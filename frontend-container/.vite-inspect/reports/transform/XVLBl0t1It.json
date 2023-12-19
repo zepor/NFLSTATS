@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/Fade.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import classNames from 'classnames';\nimport * as React from 'react';\nimport { useCallback } from 'react';\nimport { ENTERED, ENTERING } from 'react-transition-group/Transition';\nimport transitionEndListener from './transitionEndListener';\nimport triggerBrowserReflow from './triggerBrowserReflow';\nimport TransitionWrapper from './TransitionWrapper';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst fadeStyles = {\n  [ENTERING]: 'show',\n  [ENTERED]: 'show'\n};\nconst Fade = /*#__PURE__*/React.forwardRef(({\n  className,\n  children,\n  transitionClasses = {},\n  onEnter,\n  ...rest\n}, ref) => {\n  const props = {\n    in: false,\n    timeout: 300,\n    mountOnEnter: false,\n    unmountOnExit: false,\n    appear: false,\n    ...rest\n  };\n  const handleEnter = useCallback((node, isAppearing) => {\n    triggerBrowserReflow(node);\n    onEnter == null ? void 0 : onEnter(node, isAppearing);\n  }, [onEnter]);\n  return /*#__PURE__*/_jsx(TransitionWrapper, {\n    ref: ref,\n    addEndListener: transitionEndListener,\n    ...props,\n    onEnter: handleEnter,\n    childRef: children.ref,\n    children: (status, innerProps) => /*#__PURE__*/React.cloneElement(children, {\n      ...innerProps,\n      className: classNames('fade', className, children.props.className, fadeStyles[status], transitionClasses[status])\n    })\n  });\n});\nFade.displayName = 'Fade';\nexport default Fade;",
+      "start": 1702937441463,
+      "end": 1702937441484,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441484,
+      "end": 1702937441484,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_hashClear.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import nativeCreate from './_nativeCreate.js';\n\n/**\n * Removes all key-value entries from the hash.\n *\n * @private\n * @name clear\n * @memberOf Hash\n */\nfunction hashClear() {\n  this.__data__ = nativeCreate ? nativeCreate(null) : {};\n  this.size = 0;\n}\n\nexport default hashClear;\n",
+      "start": 1702937445377,
+      "end": 1702937445390,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445390,
+      "end": 1702937445390,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445390,
+      "end": 1702937445391,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445391,
+      "end": 1702937445391,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445391,
+      "end": 1702937445391,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445391,
+      "end": 1702937445391,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445391,
+      "end": 1702937445391,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445391,
+      "end": 1702937445391,
+      "order": "normal"
+    }
+  ]
+}

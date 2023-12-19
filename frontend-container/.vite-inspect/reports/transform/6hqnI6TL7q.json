@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/pages/Projects.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\n\r\nimport {Badge,\r\n  Button,\r\n  Card,\r\n  Col,\r\n  Container,\r\n  ListGroup,\r\n  ProgressBar,\r\n  Row} from \"react-bootstrap\";\r\n\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faPlus } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\r\nimport avatar2 from \"../../assets/img/avatars/avatar-2.jpg\";\r\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\r\n\r\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\r\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\r\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\r\n\r\nconst Project = ({ name, state, color, percentage, description, image }) => (\r\n  <Card>{image ? <Card.Img src={image} alt=\"Card image cap\" /> : \"\"}<Card.Header className=\"px-4 pt-4\"><Card.Title className=\"mb-0\">{name}</Card.Title>\r\n      <Badge className=\"my-2\" bg={color}>{state}</Badge>\r\n    </Card.Header>\r\n    <Card.Body className=\"px-4 pt-2\">\r\n      <p>{description}</p>\r\n\r\n      <img src={avatar3}\r\n        width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\" /><img src={avatar2}\r\n        width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\" /><img src={avatar1} width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\"/></Card.Body>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item className=\"px-4 pb-4\">\r\n        <p className=\"mb-2 fw-bold\">\r\n          Progress<span className=\"float-end\">{percentage}%</span>\r\n        </p>\r\n        <ProgressBar className=\"progress-sm\" now={percentage} />\r\n      </ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst Projects = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Projects\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Button variant=\"primary\" className=\"float-end mt-n1\">\r\n        <FontAwesomeIcon icon={faPlus} /> New project\r\n      </Button>\r\n      <h1 className=\"h3 mb-3\">Projects</h1>\r\n\r\n      <Row>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project name=\"Landing page redesign\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"/>\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Company posters\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"75\"\r\n            description=\"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\"/>\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Product page design\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Upgrade CRM software\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"50\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n          />\r\n        </Col>\r\n\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Fix form validation\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"65\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n            image={unsplash1}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"New company logo\"\r\n            state=\"On hold\"\r\n            color=\"danger\"\r\n            percentage=\"20\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\r\n            image={unsplash2}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Upgrade to latest Maps API\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n            image={unsplash3}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Refactor backend templates\"\r\n            state=\"On hold\"\r\n            color=\"danger\"\r\n            percentage=\"0\"\r\n            description=\"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\"\r\n            image={unsplash1}\r\n          />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Projects;\r\n",
+      "start": 1702937436703,
+      "end": 1702937436959,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436959,
+      "end": 1702937436959,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436959,
+      "end": 1702937436959,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport {\n  Badge,\n  Button,\n  Card,\n  Col,\n  Container,\n  ListGroup,\n  ProgressBar,\n  Row\n} from \"react-bootstrap\";\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\nimport { faPlus } from \"@fortawesome/free-solid-svg-icons\";\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\nimport avatar2 from \"../../assets/img/avatars/avatar-2.jpg\";\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\nconst Project = ({ name, state, color, percentage, description, image }) => /* @__PURE__ */ jsxs(Card, { children: [\n  image ? /* @__PURE__ */ jsx(Card.Img, { src: image, alt: \"Card image cap\" }) : \"\",\n  /* @__PURE__ */ jsxs(Card.Header, { className: \"px-4 pt-4\", children: [\n    /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: name }),\n    /* @__PURE__ */ jsx(Badge, { className: \"my-2\", bg: color, children: state })\n  ] }),\n  /* @__PURE__ */ jsxs(Card.Body, { className: \"px-4 pt-2\", children: [\n    /* @__PURE__ */ jsx(\"p\", { children: description }),\n    /* @__PURE__ */ jsx(\n      \"img\",\n      {\n        src: avatar3,\n        width: \"28\",\n        height: \"28\",\n        className: \"rounded-circle me-2\",\n        alt: \"Avatar\"\n      }\n    ),\n    /* @__PURE__ */ jsx(\n      \"img\",\n      {\n        src: avatar2,\n        width: \"28\",\n        height: \"28\",\n        className: \"rounded-circle me-2\",\n        alt: \"Avatar\"\n      }\n    ),\n    /* @__PURE__ */ jsx(\n      \"img\",\n      {\n        src: avatar1,\n        width: \"28\",\n        height: \"28\",\n        className: \"rounded-circle me-2\",\n        alt: \"Avatar\"\n      }\n    )\n  ] }),\n  /* @__PURE__ */ jsx(ListGroup, { variant: \"flush\", children: /* @__PURE__ */ jsxs(ListGroup.Item, { className: \"px-4 pb-4\", children: [\n    /* @__PURE__ */ jsxs(\"p\", { className: \"mb-2 fw-bold\", children: [\n      \"Progress\",\n      /* @__PURE__ */ jsxs(\"span\", { className: \"float-end\", children: [\n        percentage,\n        \"%\"\n      ] })\n    ] }),\n    /* @__PURE__ */ jsx(ProgressBar, { className: \"progress-sm\", now: percentage })\n  ] }) })\n] });\nconst Projects = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Projects\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsxs(Button, { variant: \"primary\", className: \"float-end mt-n1\", children: [\n      /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faPlus }),\n      \" New project\"\n    ] }),\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Projects\" }),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Landing page redesign\",\n          state: \"Finished\",\n          color: \"success\",\n          percentage: \"100\",\n          description: \"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Company posters\",\n          state: \"In progress\",\n          color: \"warning\",\n          percentage: \"75\",\n          description: \"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\"\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Product page design\",\n          state: \"Finished\",\n          color: \"success\",\n          percentage: \"100\",\n          description: \"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Upgrade CRM software\",\n          state: \"In progress\",\n          color: \"warning\",\n          percentage: \"50\",\n          description: \"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Fix form validation\",\n          state: \"In progress\",\n          color: \"warning\",\n          percentage: \"65\",\n          description: \"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\",\n          image: unsplash1\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"New company logo\",\n          state: \"On hold\",\n          color: \"danger\",\n          percentage: \"20\",\n          description: \"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\",\n          image: unsplash2\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Upgrade to latest Maps API\",\n          state: \"Finished\",\n          color: \"success\",\n          percentage: \"100\",\n          description: \"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\",\n          image: unsplash3\n        }\n      ) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"3\", children: /* @__PURE__ */ jsx(\n        Project,\n        {\n          name: \"Refactor backend templates\",\n          state: \"On hold\",\n          color: \"danger\",\n          percentage: \"0\",\n          description: \"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\",\n          image: unsplash1\n        }\n      ) })\n    ] })\n  ] })\n] });\nexport default Projects;\n",
+      "start": 1702937436959,
+      "end": 1702937436965,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/pages/Projects.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\n\r\nimport {Badge,\r\n  Button,\r\n  Card,\r\n  Col,\r\n  Container,\r\n  ListGroup,\r\n  ProgressBar,\r\n  Row} from \"react-bootstrap\";\r\n\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faPlus } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\r\nimport avatar2 from \"../../assets/img/avatars/avatar-2.jpg\";\r\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\r\n\r\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\r\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\r\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\r\n\r\nconst Project = ({ name, state, color, percentage, description, image }) => (\r\n  <Card>{image ? <Card.Img src={image} alt=\"Card image cap\" /> : \"\"}<Card.Header className=\"px-4 pt-4\"><Card.Title className=\"mb-0\">{name}</Card.Title>\r\n      <Badge className=\"my-2\" bg={color}>{state}</Badge>\r\n    </Card.Header>\r\n    <Card.Body className=\"px-4 pt-2\">\r\n      <p>{description}</p>\r\n\r\n      <img src={avatar3}\r\n        width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\" /><img src={avatar2}\r\n        width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\" /><img src={avatar1} width=\"28\"\r\n        height=\"28\"\r\n        className=\"rounded-circle me-2\"\r\n        alt=\"Avatar\"/></Card.Body>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item className=\"px-4 pb-4\">\r\n        <p className=\"mb-2 fw-bold\">\r\n          Progress<span className=\"float-end\">{percentage}%</span>\r\n        </p>\r\n        <ProgressBar className=\"progress-sm\" now={percentage} />\r\n      </ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst Projects = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Projects\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Button variant=\"primary\" className=\"float-end mt-n1\">\r\n        <FontAwesomeIcon icon={faPlus} /> New project\r\n      </Button>\r\n      <h1 className=\"h3 mb-3\">Projects</h1>\r\n\r\n      <Row>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project name=\"Landing page redesign\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"/>\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Company posters\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"75\"\r\n            description=\"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\"/>\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Product page design\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Upgrade CRM software\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"50\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n          />\r\n        </Col>\r\n\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Fix form validation\"\r\n            state=\"In progress\"\r\n            color=\"warning\"\r\n            percentage=\"65\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n            image={unsplash1}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"New company logo\"\r\n            state=\"On hold\"\r\n            color=\"danger\"\r\n            percentage=\"20\"\r\n            description=\"Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.\"\r\n            image={unsplash2}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Upgrade to latest Maps API\"\r\n            state=\"Finished\"\r\n            color=\"success\"\r\n            percentage=\"100\"\r\n            description=\"Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.\"\r\n            image={unsplash3}\r\n          />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"3\">\r\n          <Project\r\n            name=\"Refactor backend templates\"\r\n            state=\"On hold\"\r\n            color=\"danger\"\r\n            percentage=\"0\"\r\n            description=\"Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.\"\r\n            image={unsplash1}\r\n          />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Projects;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436965,
+      "end": 1702937436965,
+      "order": "normal"
+    }
+  ]
+}

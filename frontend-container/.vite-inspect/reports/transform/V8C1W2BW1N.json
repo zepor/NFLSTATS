@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/nand2tetris-hdl.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = nand2tetrisHdl\nnand2tetrisHdl.displayName = 'nand2tetrisHdl'\nnand2tetrisHdl.aliases = []\nfunction nand2tetrisHdl(Prism) {\n  Prism.languages['nand2tetris-hdl'] = {\n    comment: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n    keyword: /\\b(?:BUILTIN|CHIP|CLOCKED|IN|OUT|PARTS)\\b/,\n    boolean: /\\b(?:false|true)\\b/,\n    function: /\\b[A-Za-z][A-Za-z0-9]*(?=\\()/,\n    number: /\\b\\d+\\b/,\n    operator: /=|\\.\\./,\n    punctuation: /[{}[\\];(),:]/\n  }\n}\n",
+      "start": 1702937444975,
+      "end": 1702937445006,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar nand2tetrisHdl_1;\nvar hasRequiredNand2tetrisHdl;\n\nfunction requireNand2tetrisHdl () {\n\tif (hasRequiredNand2tetrisHdl) return nand2tetrisHdl_1;\n\thasRequiredNand2tetrisHdl = 1;\n\t'use strict'\n\n\tnand2tetrisHdl_1 = nand2tetrisHdl\n\tnand2tetrisHdl.displayName = 'nand2tetrisHdl'\n\tnand2tetrisHdl.aliases = []\n\tfunction nand2tetrisHdl(Prism) {\n\t  Prism.languages['nand2tetris-hdl'] = {\n\t    comment: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t    keyword: /\\b(?:BUILTIN|CHIP|CLOCKED|IN|OUT|PARTS)\\b/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    function: /\\b[A-Za-z][A-Za-z0-9]*(?=\\()/,\n\t    number: /\\b\\d+\\b/,\n\t    operator: /=|\\.\\./,\n\t    punctuation: /[{}[\\];(),:]/\n\t  }\n\t}\n\treturn nand2tetrisHdl_1;\n}\n\nexport { requireNand2tetrisHdl as __require };",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,iBAAc,GAAG,cAAc;CAC/B,cAAc,CAAC,WAAW,GAAG,gBAAgB;CAC7C,cAAc,CAAC,OAAO,GAAG,EAAE;CAC3B,SAAS,cAAc,CAAC,KAAK,EAAE;CAC/B,EAAE,KAAK,CAAC,SAAS,CAAC,iBAAiB,CAAC,GAAG;CACvC,IAAI,OAAO,EAAE,+BAA+B;CAC5C,IAAI,OAAO,EAAE,2CAA2C;CACxD,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,QAAQ,EAAE,8BAA8B;CAC5C,IAAI,MAAM,EAAE,SAAS;CACrB,IAAI,QAAQ,EAAE,QAAQ;CACtB,IAAI,WAAW,EAAE,cAAc;CAC/B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445006,
+      "end": 1702937445006,
+      "order": "normal"
+    }
+  ]
+}

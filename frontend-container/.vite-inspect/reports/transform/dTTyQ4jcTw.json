@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/ignore.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = ignore\nignore.displayName = 'ignore'\nignore.aliases = ['gitignore', 'hgignore', 'npmignore']\nfunction ignore(Prism) {\n  ;(function (Prism) {\n    Prism.languages.ignore = {\n      // https://git-scm.com/docs/gitignore\n      comment: /^#.*/m,\n      entry: {\n        pattern: /\\S(?:.*(?:(?:\\\\ )|\\S))?/,\n        alias: 'string',\n        inside: {\n          operator: /^!|\\*\\*?|\\?/,\n          regex: {\n            pattern: /(^|[^\\\\])\\[[^\\[\\]]*\\]/,\n            lookbehind: true\n          },\n          punctuation: /\\//\n        }\n      }\n    }\n    Prism.languages.gitignore = Prism.languages.ignore\n    Prism.languages.hgignore = Prism.languages.ignore\n    Prism.languages.npmignore = Prism.languages.ignore\n  })(Prism)\n}\n",
+      "start": 1702937444919,
+      "end": 1702937444938,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar ignore_1;\nvar hasRequiredIgnore;\n\nfunction requireIgnore () {\n\tif (hasRequiredIgnore) return ignore_1;\n\thasRequiredIgnore = 1;\n\t'use strict'\n\n\tignore_1 = ignore\n\tignore.displayName = 'ignore'\n\tignore.aliases = ['gitignore', 'hgignore', 'npmignore']\n\tfunction ignore(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.ignore = {\n\t      // https://git-scm.com/docs/gitignore\n\t      comment: /^#.*/m,\n\t      entry: {\n\t        pattern: /\\S(?:.*(?:(?:\\\\ )|\\S))?/,\n\t        alias: 'string',\n\t        inside: {\n\t          operator: /^!|\\*\\*?|\\?/,\n\t          regex: {\n\t            pattern: /(^|[^\\\\])\\[[^\\[\\]]*\\]/,\n\t            lookbehind: true\n\t          },\n\t          punctuation: /\\//\n\t        }\n\t      }\n\t    }\n\t    Prism.languages.gitignore = Prism.languages.ignore\n\t    Prism.languages.hgignore = Prism.languages.ignore\n\t    Prism.languages.npmignore = Prism.languages.ignore\n\t  })(Prism)\n\t}\n\treturn ignore_1;\n}\n\nexport { requireIgnore as __require };",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,CAAC,WAAW,EAAE,UAAU,EAAE,WAAW,CAAC;CACvD,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC7B;CACA,MAAM,OAAO,EAAE,OAAO;CACtB,MAAM,KAAK,EAAE;CACb,QAAQ,OAAO,EAAE,yBAAyB;CAC1C,QAAQ,KAAK,EAAE,QAAQ;CACvB,QAAQ,MAAM,EAAE;CAChB,UAAU,QAAQ,EAAE,aAAa;CACjC,UAAU,KAAK,EAAE;CACjB,YAAY,OAAO,EAAE,uBAAuB;CAC5C,YAAY,UAAU,EAAE,IAAI;CAC5B,WAAW;CACX,UAAU,WAAW,EAAE,IAAI;CAC3B,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,SAAS,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACtD,IAAI,KAAK,CAAC,SAAS,CAAC,QAAQ,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACrD,IAAI,KAAK,CAAC,SAAS,CAAC,SAAS,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACtD,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444938,
+      "end": 1702937444938,
+      "order": "normal"
+    }
+  ]
+}

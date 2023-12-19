@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/openscad.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: OpenSCAD\nAuthor: Dan Panzarella <alsoelp@gmail.com>\nDescription: OpenSCAD is a language for the 3D CAD modeling software of the same name.\nWebsite: https://www.openscad.org\nCategory: scientific\n*/\n\nfunction openscad(hljs) {\n  const SPECIAL_VARS = {\n    className: 'keyword',\n    begin: '\\\\$(f[asn]|t|vp[rtd]|children)'\n  };\n  const LITERALS = {\n    className: 'literal',\n    begin: 'false|true|PI|undef'\n  };\n  const NUMBERS = {\n    className: 'number',\n    begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(e-?\\\\d+)?', // adds 1e5, 1e-10\n    relevance: 0\n  };\n  const STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {\n    illegal: null\n  });\n  const PREPRO = {\n    className: 'meta',\n    keywords: {\n      'meta-keyword': 'include use'\n    },\n    begin: 'include|use <',\n    end: '>'\n  };\n  const PARAMS = {\n    className: 'params',\n    begin: '\\\\(',\n    end: '\\\\)',\n    contains: [\n      'self',\n      NUMBERS,\n      STRING,\n      SPECIAL_VARS,\n      LITERALS\n    ]\n  };\n  const MODIFIERS = {\n    begin: '[*!#%]',\n    relevance: 0\n  };\n  const FUNCTIONS = {\n    className: 'function',\n    beginKeywords: 'module function',\n    end: /=|\\{/,\n    contains: [\n      PARAMS,\n      hljs.UNDERSCORE_TITLE_MODE\n    ]\n  };\n\n  return {\n    name: 'OpenSCAD',\n    aliases: [ 'scad' ],\n    keywords: {\n      keyword: 'function module include use for intersection_for if else \\\\%',\n      literal: 'false true PI undef',\n      built_in: 'circle square polygon text sphere cube cylinder polyhedron translate rotate scale resize mirror multmatrix color offset hull minkowski union difference intersection abs sign sin cos tan acos asin atan atan2 floor round ceil ln log pow sqrt exp rands min max concat lookup str chr search version version_num norm cross parent_module echo import import_dxf dxf_linear_extrude linear_extrude rotate_extrude surface projection render children dxf_cross dxf_dim let assign'\n    },\n    contains: [\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      NUMBERS,\n      PREPRO,\n      STRING,\n      SPECIAL_VARS,\n      MODIFIERS,\n      FUNCTIONS\n    ]\n  };\n}\n\nmodule.exports = openscad;\n",
+      "start": 1702937444442,
+      "end": 1702937444541,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444541,
+      "end": 1702937444541,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: OpenSCAD\nAuthor: Dan Panzarella <alsoelp@gmail.com>\nDescription: OpenSCAD is a language for the 3D CAD modeling software of the same name.\nWebsite: https://www.openscad.org\nCategory: scientific\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar openscad_1;\nvar hasRequiredOpenscad;\n\nfunction requireOpenscad () {\n\tif (hasRequiredOpenscad) return openscad_1;\n\thasRequiredOpenscad = 1;\n\tfunction openscad(hljs) {\n\t  const SPECIAL_VARS = {\n\t    className: 'keyword',\n\t    begin: '\\\\$(f[asn]|t|vp[rtd]|children)'\n\t  };\n\t  const LITERALS = {\n\t    className: 'literal',\n\t    begin: 'false|true|PI|undef'\n\t  };\n\t  const NUMBERS = {\n\t    className: 'number',\n\t    begin: '\\\\b\\\\d+(\\\\.\\\\d+)?(e-?\\\\d+)?', // adds 1e5, 1e-10\n\t    relevance: 0\n\t  };\n\t  const STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {\n\t    illegal: null\n\t  });\n\t  const PREPRO = {\n\t    className: 'meta',\n\t    keywords: {\n\t      'meta-keyword': 'include use'\n\t    },\n\t    begin: 'include|use <',\n\t    end: '>'\n\t  };\n\t  const PARAMS = {\n\t    className: 'params',\n\t    begin: '\\\\(',\n\t    end: '\\\\)',\n\t    contains: [\n\t      'self',\n\t      NUMBERS,\n\t      STRING,\n\t      SPECIAL_VARS,\n\t      LITERALS\n\t    ]\n\t  };\n\t  const MODIFIERS = {\n\t    begin: '[*!#%]',\n\t    relevance: 0\n\t  };\n\t  const FUNCTIONS = {\n\t    className: 'function',\n\t    beginKeywords: 'module function',\n\t    end: /=|\\{/,\n\t    contains: [\n\t      PARAMS,\n\t      hljs.UNDERSCORE_TITLE_MODE\n\t    ]\n\t  };\n\n\t  return {\n\t    name: 'OpenSCAD',\n\t    aliases: [ 'scad' ],\n\t    keywords: {\n\t      keyword: 'function module include use for intersection_for if else \\\\%',\n\t      literal: 'false true PI undef',\n\t      built_in: 'circle square polygon text sphere cube cylinder polyhedron translate rotate scale resize mirror multmatrix color offset hull minkowski union difference intersection abs sign sin cos tan acos asin atan atan2 floor round ceil ln log pow sqrt exp rands min max concat lookup str chr search version version_num norm cross parent_module echo import import_dxf dxf_linear_extrude linear_extrude rotate_extrude surface projection render children dxf_cross dxf_dim let assign'\n\t    },\n\t    contains: [\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      NUMBERS,\n\t      PREPRO,\n\t      STRING,\n\t      SPECIAL_VARS,\n\t      MODIFIERS,\n\t      FUNCTIONS\n\t    ]\n\t  };\n\t}\n\n\topenscad_1 = openscad;\n\treturn openscad_1;\n}\n\nexport { requireOpenscad as __require };",
+      "start": 1702937444541,
+      "end": 1702937444542,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,QAAQ,CAAC,IAAI,EAAE;CACxB,EAAE,MAAM,YAAY,GAAG;CACvB,IAAI,SAAS,EAAE,SAAS;CACxB,IAAI,KAAK,EAAE,gCAAgC;CAC3C,GAAG,CAAC;CACJ,EAAE,MAAM,QAAQ,GAAG;CACnB,IAAI,SAAS,EAAE,SAAS;CACxB,IAAI,KAAK,EAAE,qBAAqB;CAChC,GAAG,CAAC;CACJ,EAAE,MAAM,OAAO,GAAG;CAClB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,6BAA6B;CACxC,IAAI,SAAS,EAAE,CAAC;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,MAAM,GAAG,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,iBAAiB,EAAE;CACtD,IAAI,OAAO,EAAE,IAAI;CACjB,GAAG,CAAC,CAAC;CACL,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,SAAS,EAAE,MAAM;CACrB,IAAI,QAAQ,EAAE;CACd,MAAM,cAAc,EAAE,aAAa;CACnC,KAAK;CACL,IAAI,KAAK,EAAE,eAAe;CAC1B,IAAI,GAAG,EAAE,GAAG;CACZ,GAAG,CAAC;CACJ,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,KAAK;CAChB,IAAI,GAAG,EAAE,KAAK;CACd,IAAI,QAAQ,EAAE;CACd,MAAM,MAAM;CACZ,MAAM,OAAO;CACb,MAAM,MAAM;CACZ,MAAM,YAAY;CAClB,MAAM,QAAQ;CACd,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,MAAM,SAAS,GAAG;CACpB,IAAI,KAAK,EAAE,QAAQ;CACnB,IAAI,SAAS,EAAE,CAAC;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,SAAS,GAAG;CACpB,IAAI,SAAS,EAAE,UAAU;CACzB,IAAI,aAAa,EAAE,iBAAiB;CACpC,IAAI,GAAG,EAAE,MAAM;CACf,IAAI,QAAQ,EAAE;CACd,MAAM,MAAM;CACZ,MAAM,IAAI,CAAC,qBAAqB;CAChC,KAAK;CACL,GAAG,CAAC;AACJ;CACA,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,UAAU;CACpB,IAAI,OAAO,EAAE,EAAE,MAAM,EAAE;CACvB,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,8DAA8D;CAC7E,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,QAAQ,EAAE,qdAAqd;CACre,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,mBAAmB;CAC9B,MAAM,IAAI,CAAC,oBAAoB;CAC/B,MAAM,OAAO;CACb,MAAM,MAAM;CACZ,MAAM,MAAM;CACZ,MAAM,YAAY;CAClB,MAAM,SAAS;CACf,MAAM,SAAS;CACf,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,WAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444542,
+      "end": 1702937444542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444542,
+      "end": 1702937444542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444542,
+      "end": 1702937444542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444542,
+      "end": 1702937444542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444542,
+      "end": 1702937444542,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/j.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = j\nj.displayName = 'j'\nj.aliases = []\nfunction j(Prism) {\n  Prism.languages.j = {\n    comment: {\n      pattern: /\\bNB\\..*/,\n      greedy: true\n    },\n    string: {\n      pattern: /'(?:''|[^'\\r\\n])*'/,\n      greedy: true\n    },\n    keyword:\n      /\\b(?:(?:CR|LF|adverb|conjunction|def|define|dyad|monad|noun|verb)\\b|(?:assert|break|case|catch[dt]?|continue|do|else|elseif|end|fcase|for|for_\\w+|goto_\\w+|if|label_\\w+|return|select|throw|try|while|whilst)\\.)/,\n    verb: {\n      // Negative look-ahead prevents bad highlighting\n      // of ^: ;. =. =: !. !:\n      pattern:\n        /(?!\\^:|;\\.|[=!][.:])(?:\\{(?:\\.|::?)?|p(?:\\.\\.?|:)|[=!\\]]|[<>+*\\-%$|,#][.:]?|[?^]\\.?|[;\\[]:?|[~}\"i][.:]|[ACeEIjLor]\\.|(?:[_\\/\\\\qsux]|_?\\d):)/,\n      alias: 'keyword'\n    },\n    number:\n      /\\b_?(?:(?!\\d:)\\d+(?:\\.\\d+)?(?:(?:ad|ar|[ejpx])_?\\d+(?:\\.\\d+)?)*(?:b_?[\\da-z]+(?:\\.[\\da-z]+)?)?|_\\b(?!\\.))/,\n    adverb: {\n      pattern: /[~}]|[\\/\\\\]\\.?|[bfM]\\.|t[.:]/,\n      alias: 'builtin'\n    },\n    operator: /[=a][.:]|_\\./,\n    conjunction: {\n      pattern: /&(?:\\.:?|:)?|[.:@][.:]?|[!D][.:]|[;dHT]\\.|`:?|[\\^LS]:|\"/,\n      alias: 'variable'\n    },\n    punctuation: /[()]/\n  }\n}\n",
+      "start": 1702937444923,
+      "end": 1702937444942,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar j_1;\nvar hasRequiredJ;\n\nfunction requireJ () {\n\tif (hasRequiredJ) return j_1;\n\thasRequiredJ = 1;\n\t'use strict'\n\n\tj_1 = j\n\tj.displayName = 'j'\n\tj.aliases = []\n\tfunction j(Prism) {\n\t  Prism.languages.j = {\n\t    comment: {\n\t      pattern: /\\bNB\\..*/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /'(?:''|[^'\\r\\n])*'/,\n\t      greedy: true\n\t    },\n\t    keyword:\n\t      /\\b(?:(?:CR|LF|adverb|conjunction|def|define|dyad|monad|noun|verb)\\b|(?:assert|break|case|catch[dt]?|continue|do|else|elseif|end|fcase|for|for_\\w+|goto_\\w+|if|label_\\w+|return|select|throw|try|while|whilst)\\.)/,\n\t    verb: {\n\t      // Negative look-ahead prevents bad highlighting\n\t      // of ^: ;. =. =: !. !:\n\t      pattern:\n\t        /(?!\\^:|;\\.|[=!][.:])(?:\\{(?:\\.|::?)?|p(?:\\.\\.?|:)|[=!\\]]|[<>+*\\-%$|,#][.:]?|[?^]\\.?|[;\\[]:?|[~}\"i][.:]|[ACeEIjLor]\\.|(?:[_\\/\\\\qsux]|_?\\d):)/,\n\t      alias: 'keyword'\n\t    },\n\t    number:\n\t      /\\b_?(?:(?!\\d:)\\d+(?:\\.\\d+)?(?:(?:ad|ar|[ejpx])_?\\d+(?:\\.\\d+)?)*(?:b_?[\\da-z]+(?:\\.[\\da-z]+)?)?|_\\b(?!\\.))/,\n\t    adverb: {\n\t      pattern: /[~}]|[\\/\\\\]\\.?|[bfM]\\.|t[.:]/,\n\t      alias: 'builtin'\n\t    },\n\t    operator: /[=a][.:]|_\\./,\n\t    conjunction: {\n\t      pattern: /&(?:\\.:?|:)?|[.:@][.:]?|[!D][.:]|[;dHT]\\.|`:?|[\\^LS]:|\"/,\n\t      alias: 'variable'\n\t    },\n\t    punctuation: /[()]/\n\t  }\n\t}\n\treturn j_1;\n}\n\nexport { requireJ as __require };",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,IAAc,GAAG,CAAC;CAClB,CAAC,CAAC,WAAW,GAAG,GAAG;CACnB,CAAC,CAAC,OAAO,GAAG,EAAE;CACd,SAAS,CAAC,CAAC,KAAK,EAAE;CAClB,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC,GAAG;CACtB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,kNAAkN;CACxN,IAAI,IAAI,EAAE;CACV;CACA;CACA,MAAM,OAAO;CACb,QAAQ,6IAA6I;CACrJ,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,MAAM;CACV,MAAM,2GAA2G;CACjH,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,8BAA8B;CAC7C,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,cAAc;CAC5B,IAAI,WAAW,EAAE;CACjB,MAAM,OAAO,EAAE,yDAAyD;CACxE,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,WAAW,EAAE,MAAM;CACvB,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    }
+  ]
+}

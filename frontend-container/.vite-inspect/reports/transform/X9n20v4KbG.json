@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/UniqueTypeNamesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * Unique type names\n *\n * A GraphQL document is only valid if all defined types have unique names.\n */\nexport function UniqueTypeNamesRule(context) {\n  const knownTypeNames = Object.create(null);\n  const schema = context.getSchema();\n  return {\n    ScalarTypeDefinition: checkTypeName,\n    ObjectTypeDefinition: checkTypeName,\n    InterfaceTypeDefinition: checkTypeName,\n    UnionTypeDefinition: checkTypeName,\n    EnumTypeDefinition: checkTypeName,\n    InputObjectTypeDefinition: checkTypeName,\n  };\n\n  function checkTypeName(node) {\n    const typeName = node.name.value;\n\n    if (schema !== null && schema !== void 0 && schema.getType(typeName)) {\n      context.reportError(\n        new GraphQLError(\n          `Type \"${typeName}\" already exists in the schema. It cannot also be defined in this type definition.`,\n          {\n            nodes: node.name,\n          },\n        ),\n      );\n      return;\n    }\n\n    if (knownTypeNames[typeName]) {\n      context.reportError(\n        new GraphQLError(`There can be only one type named \"${typeName}\".`, {\n          nodes: [knownTypeNames[typeName], node.name],\n        }),\n      );\n    } else {\n      knownTypeNames[typeName] = node.name;\n    }\n\n    return false;\n  }\n}\n",
+      "start": 1702937443092,
+      "end": 1702937443106,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443106,
+      "end": 1702937443106,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443107,
+      "end": 1702937443107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443107,
+      "end": 1702937443107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443107,
+      "end": 1702937443107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443107,
+      "end": 1702937443107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443107,
+      "end": 1702937443107,
+      "order": "normal"
+    }
+  ]
+}

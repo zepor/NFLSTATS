@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/utilities/getIntrospectionQuery.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Produce the GraphQL query recommended for a full schema introspection.\n * Accepts optional IntrospectionOptions.\n */\nexport function getIntrospectionQuery(options) {\n  const optionsWithDefault = {\n    descriptions: true,\n    specifiedByUrl: false,\n    directiveIsRepeatable: false,\n    schemaDescription: false,\n    inputValueDeprecation: false,\n    ...options,\n  };\n  const descriptions = optionsWithDefault.descriptions ? 'description' : '';\n  const specifiedByUrl = optionsWithDefault.specifiedByUrl\n    ? 'specifiedByURL'\n    : '';\n  const directiveIsRepeatable = optionsWithDefault.directiveIsRepeatable\n    ? 'isRepeatable'\n    : '';\n  const schemaDescription = optionsWithDefault.schemaDescription\n    ? descriptions\n    : '';\n\n  function inputDeprecation(str) {\n    return optionsWithDefault.inputValueDeprecation ? str : '';\n  }\n\n  return `\n    query IntrospectionQuery {\n      __schema {\n        ${schemaDescription}\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          ${descriptions}\n          ${directiveIsRepeatable}\n          locations\n          args${inputDeprecation('(includeDeprecated: true)')} {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      ${descriptions}\n      ${specifiedByUrl}\n      fields(includeDeprecated: true) {\n        name\n        ${descriptions}\n        args${inputDeprecation('(includeDeprecated: true)')} {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields${inputDeprecation('(includeDeprecated: true)')} {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        ${descriptions}\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      ${descriptions}\n      type { ...TypeRef }\n      defaultValue\n      ${inputDeprecation('isDeprecated')}\n      ${inputDeprecation('deprecationReason')}\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                    ofType {\n                      kind\n                      name\n                      ofType {\n                        kind\n                        name\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  `;\n}\n",
+      "start": 1702937443103,
+      "end": 1702937443112,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443112,
+      "end": 1702937443112,
+      "order": "normal"
+    }
+  ]
+}

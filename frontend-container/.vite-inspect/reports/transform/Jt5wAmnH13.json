@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-syntax-highlighter/dist/esm/styles/hljs/stackoverflow-light.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default {\n  \"hljs\": {\n    \"display\": \"block\",\n    \"overflowX\": \"auto\",\n    \"padding\": \"0.5em\",\n    \"color\": \"#2f3337\",\n    \"background\": \"#f6f6f6\"\n  },\n  \"hljs-comment\": {\n    \"color\": \"#656e77\"\n  },\n  \"hljs-keyword\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-selector-tag\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-meta-keyword\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-doctag\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-section\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-selector-class\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-meta\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-selector-pseudo\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-attr\": {\n    \"color\": \"#015692\"\n  },\n  \"hljs-attribute\": {\n    \"color\": \"#803378\"\n  },\n  \"hljs-name\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-type\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-number\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-selector-id\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-quote\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-template-tag\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-built_in\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-title\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-literal\": {\n    \"color\": \"#b75501\"\n  },\n  \"hljs-string\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-regexp\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-symbol\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-variable\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-template-variable\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-link\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-selector-attr\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-meta-string\": {\n    \"color\": \"#54790d\"\n  },\n  \"hljs-bullet\": {\n    \"color\": \"#535a60\"\n  },\n  \"hljs-code\": {\n    \"color\": \"#535a60\"\n  },\n  \"hljs-deletion\": {\n    \"color\": \"#c02d2e\"\n  },\n  \"hljs-addition\": {\n    \"color\": \"#2f6f44\"\n  },\n  \"hljs-emphasis\": {\n    \"fontStyle\": \"italic\"\n  },\n  \"hljs-strong\": {\n    \"fontWeight\": \"bold\"\n  }\n};",
+      "start": 1702937443923,
+      "end": 1702937443932,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443932,
+      "end": 1702937443932,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443932,
+      "end": 1702937443933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443933,
+      "end": 1702937443933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443933,
+      "end": 1702937443933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443933,
+      "end": 1702937443933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443933,
+      "end": 1702937443933,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/stylis/src/Utility.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @param {number}\n * @return {number}\n */\nexport var abs = Math.abs\n\n/**\n * @param {number}\n * @return {string}\n */\nexport var from = String.fromCharCode\n\n/**\n * @param {object}\n * @return {object}\n */\nexport var assign = Object.assign\n\n/**\n * @param {string} value\n * @param {number} length\n * @return {number}\n */\nexport function hash (value, length) {\n\treturn charat(value, 0) ^ 45 ? (((((((length << 2) ^ charat(value, 0)) << 2) ^ charat(value, 1)) << 2) ^ charat(value, 2)) << 2) ^ charat(value, 3) : 0\n}\n\n/**\n * @param {string} value\n * @return {string}\n */\nexport function trim (value) {\n\treturn value.trim()\n}\n\n/**\n * @param {string} value\n * @param {RegExp} pattern\n * @return {string?}\n */\nexport function match (value, pattern) {\n\treturn (value = pattern.exec(value)) ? value[0] : value\n}\n\n/**\n * @param {string} value\n * @param {(string|RegExp)} pattern\n * @param {string} replacement\n * @return {string}\n */\nexport function replace (value, pattern, replacement) {\n\treturn value.replace(pattern, replacement)\n}\n\n/**\n * @param {string} value\n * @param {string} search\n * @return {number}\n */\nexport function indexof (value, search) {\n\treturn value.indexOf(search)\n}\n\n/**\n * @param {string} value\n * @param {number} index\n * @return {number}\n */\nexport function charat (value, index) {\n\treturn value.charCodeAt(index) | 0\n}\n\n/**\n * @param {string} value\n * @param {number} begin\n * @param {number} end\n * @return {string}\n */\nexport function substr (value, begin, end) {\n\treturn value.slice(begin, end)\n}\n\n/**\n * @param {string} value\n * @return {number}\n */\nexport function strlen (value) {\n\treturn value.length\n}\n\n/**\n * @param {any[]} value\n * @return {number}\n */\nexport function sizeof (value) {\n\treturn value.length\n}\n\n/**\n * @param {any} value\n * @param {any[]} array\n * @return {any}\n */\nexport function append (value, array) {\n\treturn array.push(value), value\n}\n\n/**\n * @param {string[]} array\n * @param {function} callback\n * @return {string}\n */\nexport function combine (array, callback) {\n\treturn array.map(callback).join('')\n}\n",
+      "start": 1702937444011,
+      "end": 1702937444050,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444050,
+      "end": 1702937444050,
+      "order": "normal"
+    }
+  ]
+}

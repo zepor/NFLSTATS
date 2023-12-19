@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/aria.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nvar types = require('./util/types')\nvar create = require('./util/create')\n\nvar booleanish = types.booleanish\nvar number = types.number\nvar spaceSeparated = types.spaceSeparated\n\nmodule.exports = create({\n  transform: ariaTransform,\n  properties: {\n    ariaActiveDescendant: null,\n    ariaAtomic: booleanish,\n    ariaAutoComplete: null,\n    ariaBusy: booleanish,\n    ariaChecked: booleanish,\n    ariaColCount: number,\n    ariaColIndex: number,\n    ariaColSpan: number,\n    ariaControls: spaceSeparated,\n    ariaCurrent: null,\n    ariaDescribedBy: spaceSeparated,\n    ariaDetails: null,\n    ariaDisabled: booleanish,\n    ariaDropEffect: spaceSeparated,\n    ariaErrorMessage: null,\n    ariaExpanded: booleanish,\n    ariaFlowTo: spaceSeparated,\n    ariaGrabbed: booleanish,\n    ariaHasPopup: null,\n    ariaHidden: booleanish,\n    ariaInvalid: null,\n    ariaKeyShortcuts: null,\n    ariaLabel: null,\n    ariaLabelledBy: spaceSeparated,\n    ariaLevel: number,\n    ariaLive: null,\n    ariaModal: booleanish,\n    ariaMultiLine: booleanish,\n    ariaMultiSelectable: booleanish,\n    ariaOrientation: null,\n    ariaOwns: spaceSeparated,\n    ariaPlaceholder: null,\n    ariaPosInSet: number,\n    ariaPressed: booleanish,\n    ariaReadOnly: booleanish,\n    ariaRelevant: null,\n    ariaRequired: booleanish,\n    ariaRoleDescription: spaceSeparated,\n    ariaRowCount: number,\n    ariaRowIndex: number,\n    ariaRowSpan: number,\n    ariaSelected: booleanish,\n    ariaSetSize: number,\n    ariaSort: null,\n    ariaValueMax: number,\n    ariaValueMin: number,\n    ariaValueNow: number,\n    ariaValueText: null,\n    role: null\n  }\n})\n\nfunction ariaTransform(_, prop) {\n  return prop === 'role' ? prop : 'aria-' + prop.slice(4).toLowerCase()\n}\n",
+      "start": 1702937445363,
+      "end": 1702937445375,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445375,
+      "end": 1702937445375,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/types.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/property-information/lib/util/create.js?commonjs-proxy\";\n\n'use strict'\n\nvar types = require$$0\nvar create = require$$1\n\nvar booleanish = types.booleanish\nvar number = types.number\nvar spaceSeparated = types.spaceSeparated\n\nvar aria = create({\n  transform: ariaTransform,\n  properties: {\n    ariaActiveDescendant: null,\n    ariaAtomic: booleanish,\n    ariaAutoComplete: null,\n    ariaBusy: booleanish,\n    ariaChecked: booleanish,\n    ariaColCount: number,\n    ariaColIndex: number,\n    ariaColSpan: number,\n    ariaControls: spaceSeparated,\n    ariaCurrent: null,\n    ariaDescribedBy: spaceSeparated,\n    ariaDetails: null,\n    ariaDisabled: booleanish,\n    ariaDropEffect: spaceSeparated,\n    ariaErrorMessage: null,\n    ariaExpanded: booleanish,\n    ariaFlowTo: spaceSeparated,\n    ariaGrabbed: booleanish,\n    ariaHasPopup: null,\n    ariaHidden: booleanish,\n    ariaInvalid: null,\n    ariaKeyShortcuts: null,\n    ariaLabel: null,\n    ariaLabelledBy: spaceSeparated,\n    ariaLevel: number,\n    ariaLive: null,\n    ariaModal: booleanish,\n    ariaMultiLine: booleanish,\n    ariaMultiSelectable: booleanish,\n    ariaOrientation: null,\n    ariaOwns: spaceSeparated,\n    ariaPlaceholder: null,\n    ariaPosInSet: number,\n    ariaPressed: booleanish,\n    ariaReadOnly: booleanish,\n    ariaRelevant: null,\n    ariaRequired: booleanish,\n    ariaRoleDescription: spaceSeparated,\n    ariaRowCount: number,\n    ariaRowIndex: number,\n    ariaRowSpan: number,\n    ariaSelected: booleanish,\n    ariaSetSize: number,\n    ariaSort: null,\n    ariaValueMax: number,\n    ariaValueMin: number,\n    ariaValueNow: number,\n    ariaValueText: null,\n    role: null\n  }\n})\n\nfunction ariaTransform(_, prop) {\n  return prop === 'role' ? prop : 'aria-' + prop.slice(4).toLowerCase()\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(aria);\nexport { aria as __moduleExports };",
+      "start": 1702937445375,
+      "end": 1702937445404,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;AAAA,YAAY;AACZ;AACA,IAAI,KAAK,GAAG,UAAuB;AACnC,IAAI,MAAM,GAAG,UAAwB;AACrC;AACA,IAAI,UAAU,GAAG,KAAK,CAAC,UAAU;AACjC,IAAI,MAAM,GAAG,KAAK,CAAC,MAAM;AACzB,IAAI,cAAc,GAAG,KAAK,CAAC,cAAc;AACzC;IACA,IAAc,GAAG,MAAM,CAAC;AACxB,EAAE,SAAS,EAAE,aAAa;AAC1B,EAAE,UAAU,EAAE;AACd,IAAI,oBAAoB,EAAE,IAAI;AAC9B,IAAI,UAAU,EAAE,UAAU;AAC1B,IAAI,gBAAgB,EAAE,IAAI;AAC1B,IAAI,QAAQ,EAAE,UAAU;AACxB,IAAI,WAAW,EAAE,UAAU;AAC3B,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,WAAW,EAAE,MAAM;AACvB,IAAI,YAAY,EAAE,cAAc;AAChC,IAAI,WAAW,EAAE,IAAI;AACrB,IAAI,eAAe,EAAE,cAAc;AACnC,IAAI,WAAW,EAAE,IAAI;AACrB,IAAI,YAAY,EAAE,UAAU;AAC5B,IAAI,cAAc,EAAE,cAAc;AAClC,IAAI,gBAAgB,EAAE,IAAI;AAC1B,IAAI,YAAY,EAAE,UAAU;AAC5B,IAAI,UAAU,EAAE,cAAc;AAC9B,IAAI,WAAW,EAAE,UAAU;AAC3B,IAAI,YAAY,EAAE,IAAI;AACtB,IAAI,UAAU,EAAE,UAAU;AAC1B,IAAI,WAAW,EAAE,IAAI;AACrB,IAAI,gBAAgB,EAAE,IAAI;AAC1B,IAAI,SAAS,EAAE,IAAI;AACnB,IAAI,cAAc,EAAE,cAAc;AAClC,IAAI,SAAS,EAAE,MAAM;AACrB,IAAI,QAAQ,EAAE,IAAI;AAClB,IAAI,SAAS,EAAE,UAAU;AACzB,IAAI,aAAa,EAAE,UAAU;AAC7B,IAAI,mBAAmB,EAAE,UAAU;AACnC,IAAI,eAAe,EAAE,IAAI;AACzB,IAAI,QAAQ,EAAE,cAAc;AAC5B,IAAI,eAAe,EAAE,IAAI;AACzB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,WAAW,EAAE,UAAU;AAC3B,IAAI,YAAY,EAAE,UAAU;AAC5B,IAAI,YAAY,EAAE,IAAI;AACtB,IAAI,YAAY,EAAE,UAAU;AAC5B,IAAI,mBAAmB,EAAE,cAAc;AACvC,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,WAAW,EAAE,MAAM;AACvB,IAAI,YAAY,EAAE,UAAU;AAC5B,IAAI,WAAW,EAAE,MAAM;AACvB,IAAI,QAAQ,EAAE,IAAI;AAClB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,YAAY,EAAE,MAAM;AACxB,IAAI,aAAa,EAAE,IAAI;AACvB,IAAI,IAAI,EAAE,IAAI;AACd,GAAG;AACH,CAAC,CAAC;AACF;AACA,SAAS,aAAa,CAAC,CAAC,EAAE,IAAI,EAAE;AAChC,EAAE,OAAO,IAAI,KAAK,MAAM,GAAG,IAAI,GAAG,OAAO,GAAG,IAAI,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE;AACvE"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    }
+  ]
+}

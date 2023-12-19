@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/abnf.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = abnf\nabnf.displayName = 'abnf'\nabnf.aliases = []\nfunction abnf(Prism) {\n  ;(function (Prism) {\n    var coreRules =\n      '(?:ALPHA|BIT|CHAR|CR|CRLF|CTL|DIGIT|DQUOTE|HEXDIG|HTAB|LF|LWSP|OCTET|SP|VCHAR|WSP)'\n    Prism.languages.abnf = {\n      comment: /;.*/,\n      string: {\n        pattern: /(?:%[is])?\"[^\"\\n\\r]*\"/,\n        greedy: true,\n        inside: {\n          punctuation: /^%[is]/\n        }\n      },\n      range: {\n        pattern: /%(?:b[01]+-[01]+|d\\d+-\\d+|x[A-F\\d]+-[A-F\\d]+)/i,\n        alias: 'number'\n      },\n      terminal: {\n        pattern:\n          /%(?:b[01]+(?:\\.[01]+)*|d\\d+(?:\\.\\d+)*|x[A-F\\d]+(?:\\.[A-F\\d]+)*)/i,\n        alias: 'number'\n      },\n      repetition: {\n        pattern: /(^|[^\\w-])(?:\\d*\\*\\d*|\\d+)/,\n        lookbehind: true,\n        alias: 'operator'\n      },\n      definition: {\n        pattern: /(^[ \\t]*)(?:[a-z][\\w-]*|<[^<>\\r\\n]*>)(?=\\s*=)/m,\n        lookbehind: true,\n        alias: 'keyword',\n        inside: {\n          punctuation: /<|>/\n        }\n      },\n      'core-rule': {\n        pattern: RegExp(\n          '(?:(^|[^<\\\\w-])' + coreRules + '|<' + coreRules + '>)(?![\\\\w-])',\n          'i'\n        ),\n        lookbehind: true,\n        alias: ['rule', 'constant'],\n        inside: {\n          punctuation: /<|>/\n        }\n      },\n      rule: {\n        pattern: /(^|[^<\\w-])[a-z][\\w-]*|<[^<>\\r\\n]*>/i,\n        lookbehind: true,\n        inside: {\n          punctuation: /<|>/\n        }\n      },\n      operator: /=\\/?|\\//,\n      punctuation: /[()\\[\\]]/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937444690,
+      "end": 1702937444819,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar abnf_1;\nvar hasRequiredAbnf;\n\nfunction requireAbnf () {\n\tif (hasRequiredAbnf) return abnf_1;\n\thasRequiredAbnf = 1;\n\t'use strict'\n\n\tabnf_1 = abnf\n\tabnf.displayName = 'abnf'\n\tabnf.aliases = []\n\tfunction abnf(Prism) {\n\t  ;(function (Prism) {\n\t    var coreRules =\n\t      '(?:ALPHA|BIT|CHAR|CR|CRLF|CTL|DIGIT|DQUOTE|HEXDIG|HTAB|LF|LWSP|OCTET|SP|VCHAR|WSP)'\n\t    Prism.languages.abnf = {\n\t      comment: /;.*/,\n\t      string: {\n\t        pattern: /(?:%[is])?\"[^\"\\n\\r]*\"/,\n\t        greedy: true,\n\t        inside: {\n\t          punctuation: /^%[is]/\n\t        }\n\t      },\n\t      range: {\n\t        pattern: /%(?:b[01]+-[01]+|d\\d+-\\d+|x[A-F\\d]+-[A-F\\d]+)/i,\n\t        alias: 'number'\n\t      },\n\t      terminal: {\n\t        pattern:\n\t          /%(?:b[01]+(?:\\.[01]+)*|d\\d+(?:\\.\\d+)*|x[A-F\\d]+(?:\\.[A-F\\d]+)*)/i,\n\t        alias: 'number'\n\t      },\n\t      repetition: {\n\t        pattern: /(^|[^\\w-])(?:\\d*\\*\\d*|\\d+)/,\n\t        lookbehind: true,\n\t        alias: 'operator'\n\t      },\n\t      definition: {\n\t        pattern: /(^[ \\t]*)(?:[a-z][\\w-]*|<[^<>\\r\\n]*>)(?=\\s*=)/m,\n\t        lookbehind: true,\n\t        alias: 'keyword',\n\t        inside: {\n\t          punctuation: /<|>/\n\t        }\n\t      },\n\t      'core-rule': {\n\t        pattern: RegExp(\n\t          '(?:(^|[^<\\\\w-])' + coreRules + '|<' + coreRules + '>)(?![\\\\w-])',\n\t          'i'\n\t        ),\n\t        lookbehind: true,\n\t        alias: ['rule', 'constant'],\n\t        inside: {\n\t          punctuation: /<|>/\n\t        }\n\t      },\n\t      rule: {\n\t        pattern: /(^|[^<\\w-])[a-z][\\w-]*|<[^<>\\r\\n]*>/i,\n\t        lookbehind: true,\n\t        inside: {\n\t          punctuation: /<|>/\n\t        }\n\t      },\n\t      operator: /=\\/?|\\//,\n\t      punctuation: /[()\\[\\]]/\n\t    }\n\t  })(Prism)\n\t}\n\treturn abnf_1;\n}\n\nexport { requireAbnf as __require };",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,SAAS;CACjB,MAAM,oFAAoF;CAC1F,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,uBAAuB;CACxC,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,QAAQ;CAC/B,SAAS;CACT,OAAO;CACP,MAAM,KAAK,EAAE;CACb,QAAQ,OAAO,EAAE,gDAAgD;CACjE,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO;CACf,UAAU,kEAAkE;CAC5E,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,MAAM,UAAU,EAAE;CAClB,QAAQ,OAAO,EAAE,4BAA4B;CAC7C,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,UAAU,EAAE;CAClB,QAAQ,OAAO,EAAE,gDAAgD;CACjE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,SAAS;CACxB,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,KAAK;CAC5B,SAAS;CACT,OAAO;CACP,MAAM,WAAW,EAAE;CACnB,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,iBAAiB,GAAG,SAAS,GAAG,IAAI,GAAG,SAAS,GAAG,cAAc;CAC3E,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,CAAC,MAAM,EAAE,UAAU,CAAC;CACnC,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,KAAK;CAC5B,SAAS;CACT,OAAO;CACP,MAAM,IAAI,EAAE;CACZ,QAAQ,OAAO,EAAE,sCAAsC;CACvD,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,KAAK;CAC5B,SAAS;CACT,OAAO;CACP,MAAM,QAAQ,EAAE,SAAS;CACzB,MAAM,WAAW,EAAE,UAAU;CAC7B,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444819,
+      "end": 1702937444819,
+      "order": "normal"
+    }
+  ]
+}

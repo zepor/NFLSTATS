@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_Symbol.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var root = require('./_root');\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\nmodule.exports = Symbol;\n",
+      "start": 1702937445167,
+      "end": 1702937445178,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445178,
+      "end": 1702937445178,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_root.js?commonjs-proxy\";\n\nvar root = require$$0;\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\nvar _Symbol = Symbol;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_Symbol);\nexport { _Symbol as __moduleExports };",
+      "start": 1702937445178,
+      "end": 1702937445337,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,IAAI,IAAI,GAAG,UAAkB,CAAC;AAC9B;AACA;AACA,IAAI,MAAM,GAAG,IAAI,CAAC,MAAM,CAAC;AACzB;IACA,OAAc,GAAG,MAAM"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445338,
+      "end": 1702937445338,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445338,
+      "end": 1702937445338,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445338,
+      "end": 1702937445338,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445338,
+      "end": 1702937445338,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445338,
+      "end": 1702937445338,
+      "order": "normal"
+    }
+  ]
+}

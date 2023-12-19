@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/ejs.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorMarkupTemplating = require('./markup-templating.js')\nmodule.exports = ejs\nejs.displayName = 'ejs'\nejs.aliases = ['eta']\nfunction ejs(Prism) {\n  Prism.register(refractorMarkupTemplating)\n  ;(function (Prism) {\n    Prism.languages.ejs = {\n      delimiter: {\n        pattern: /^<%[-_=]?|[-_]?%>$/,\n        alias: 'punctuation'\n      },\n      comment: /^#[\\s\\S]*/,\n      'language-javascript': {\n        pattern: /[\\s\\S]+/,\n        inside: Prism.languages.javascript\n      }\n    }\n    Prism.hooks.add('before-tokenize', function (env) {\n      var ejsPattern = /<%(?!%)[\\s\\S]+?%>/g\n      Prism.languages['markup-templating'].buildPlaceholders(\n        env,\n        'ejs',\n        ejsPattern\n      )\n    })\n    Prism.hooks.add('after-tokenize', function (env) {\n      Prism.languages['markup-templating'].tokenizePlaceholders(env, 'ejs')\n    })\n    Prism.languages.eta = Prism.languages.ejs\n  })(Prism)\n}\n",
+      "start": 1702937444871,
+      "end": 1702937444896,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444896,
+      "end": 1702937444896,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/markup-templating.js?commonjs-wrapped\";\n\nvar ejs_1;\nvar hasRequiredEjs;\n\nfunction requireEjs () {\n\tif (hasRequiredEjs) return ejs_1;\n\thasRequiredEjs = 1;\n\t'use strict'\n\tvar refractorMarkupTemplating = require$$0()\n\tejs_1 = ejs\n\tejs.displayName = 'ejs'\n\tejs.aliases = ['eta']\n\tfunction ejs(Prism) {\n\t  Prism.register(refractorMarkupTemplating)\n\t  ;(function (Prism) {\n\t    Prism.languages.ejs = {\n\t      delimiter: {\n\t        pattern: /^<%[-_=]?|[-_]?%>$/,\n\t        alias: 'punctuation'\n\t      },\n\t      comment: /^#[\\s\\S]*/,\n\t      'language-javascript': {\n\t        pattern: /[\\s\\S]+/,\n\t        inside: Prism.languages.javascript\n\t      }\n\t    }\n\t    Prism.hooks.add('before-tokenize', function (env) {\n\t      var ejsPattern = /<%(?!%)[\\s\\S]+?%>/g\n\t      Prism.languages['markup-templating'].buildPlaceholders(\n\t        env,\n\t        'ejs',\n\t        ejsPattern\n\t      )\n\t    })\n\t    Prism.hooks.add('after-tokenize', function (env) {\n\t      Prism.languages['markup-templating'].tokenizePlaceholders(env, 'ejs')\n\t    })\n\t    Prism.languages.eta = Prism.languages.ejs\n\t  })(Prism)\n\t}\n\treturn ejs_1;\n}\n\nexport { requireEjs as __require };",
+      "start": 1702937444896,
+      "end": 1702937444994,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,yBAAyB,GAAG,YAAiC;AACjE,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,CAAC,KAAK,CAAC;CACrB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,KAAK,CAAC,QAAQ,CAAC,yBAAyB,CAAC;CAC3C,GAAG,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CAC1B,MAAM,SAAS,EAAE;CACjB,QAAQ,OAAO,EAAE,oBAAoB;CACrC,QAAQ,KAAK,EAAE,aAAa;CAC5B,OAAO;CACP,MAAM,OAAO,EAAE,WAAW;CAC1B,MAAM,qBAAqB,EAAE;CAC7B,QAAQ,OAAO,EAAE,SAAS;CAC1B,QAAQ,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU;CAC1C,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,iBAAiB,EAAE,UAAU,GAAG,EAAE;CACtD,MAAM,IAAI,UAAU,GAAG,oBAAoB;CAC3C,MAAM,KAAK,CAAC,SAAS,CAAC,mBAAmB,CAAC,CAAC,iBAAiB;CAC5D,QAAQ,GAAG;CACX,QAAQ,KAAK;CACb,QAAQ,UAAU;CAClB,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,gBAAgB,EAAE,UAAU,GAAG,EAAE;CACrD,MAAM,KAAK,CAAC,SAAS,CAAC,mBAAmB,CAAC,CAAC,oBAAoB,CAAC,GAAG,EAAE,KAAK,CAAC;CAC3E,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,GAAG;CAC7C,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    }
+  ]
+}

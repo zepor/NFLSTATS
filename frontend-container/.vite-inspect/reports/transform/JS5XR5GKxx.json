@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_nativeCreate.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var getNative = require('./_getNative');\n\n/* Built-in method references that are verified to be native. */\nvar nativeCreate = getNative(Object, 'create');\n\nmodule.exports = nativeCreate;\n",
+      "start": 1702937445396,
+      "end": 1702937445405,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445405,
+      "end": 1702937445405,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_getNative.js?commonjs-proxy\";\n\nvar getNative = require$$0;\n\n/* Built-in method references that are verified to be native. */\nvar nativeCreate = getNative(Object, 'create');\n\nvar _nativeCreate = nativeCreate;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_nativeCreate);\nexport { _nativeCreate as __moduleExports };",
+      "start": 1702937445405,
+      "end": 1702937445407,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,IAAI,SAAS,GAAG,UAAuB,CAAC;AACxC;AACA;AACA,IAAI,YAAY,GAAG,SAAS,CAAC,MAAM,EAAE,QAAQ,CAAC,CAAC;AAC/C;IACA,aAAc,GAAG,YAAY"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445407,
+      "end": 1702937445407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445407,
+      "end": 1702937445407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445407,
+      "end": 1702937445407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445407,
+      "end": 1702937445407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445407,
+      "end": 1702937445407,
+      "order": "normal"
+    }
+  ]
+}

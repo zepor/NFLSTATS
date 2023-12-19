@@ -1,0 +1,123 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/tables/Pagination.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, usePagination } from \"react-table\";\r\n\r\nimport {\r\n  Card,\r\n  Container,\r\n  Table,\r\n  Pagination,\r\n  Row,\r\n  Col,\r\n  Form,\r\n} from \"react-bootstrap\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst PaginationTable = ({ columns, data }) => {\r\n  const {\r\n    getTableProps,\r\n    getTableBodyProps,\r\n    headerGroups,\r\n    prepareRow,\r\n    page,\r\n    canPreviousPage,\r\n    canNextPage,\r\n    pageOptions,\r\n    pageCount,\r\n    gotoPage,\r\n    nextPage,\r\n    previousPage,\r\n    setPageSize,\r\n    state: { pageIndex, pageSize },\r\n  } = useTable(\r\n    {\r\n      columns,\r\n      data,\r\n      initialState: { pageIndex: 0 },\r\n    },\r\n    usePagination\r\n  );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Pagination</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">Pagination by react-table</h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  <th {...column.getHeaderProps()}>\r\n                    {column.render(\"Header\")}\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {page.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n\r\n        <Row>\r\n          <Col md=\"6\">\r\n            <span className=\"mx-2\">\r\n              Page{\" \"}\r\n              <strong>\r\n                {pageIndex + 1} of {pageOptions.length}\r\n              </strong>\r\n            </span>\r\n            <span className=\"ms-3 me-2\">Show:</span>\r\n            <Form.Select\r\n              className=\"d-inline-block w-auto\"\r\n              value={pageSize}\r\n              onChange={(e) => {\r\n                setPageSize(Number(e.target.value));\r\n              }}\r\n            >\r\n              {[10, 20, 30, 40, 50].map((pageSize) => (\r\n                <option key={pageSize} value={pageSize}>\r\n                  {pageSize}\r\n                </option>\r\n              ))}\r\n            </Form.Select>\r\n\r\n            <span className=\"ms-3 me-2\">Go to page:</span>\r\n            <Form.Control\r\n              className=\"d-inline-block\"\r\n              type=\"number\"\r\n              defaultValue={pageIndex + 1}\r\n              onChange={(e) => {\r\n                const page = e.target.value ? Number(e.target.value) - 1 : 0;\r\n                gotoPage(page);\r\n              }}\r\n              style={{ width: \"75px\" }}\r\n            />\r\n          </Col>\r\n          <Col md=\"6\">\r\n            <Pagination className=\"float-end\">\r\n              <Pagination.First\r\n                onClick={() => gotoPage(0)}\r\n                disabled={!canPreviousPage}\r\n              />\r\n              <Pagination.Prev\r\n                onClick={() => previousPage()}\r\n                disabled={!canPreviousPage}\r\n              />\r\n              <Pagination.Next\r\n                onClick={() => nextPage()}\r\n                disabled={!canNextPage}\r\n              />\r\n              <Pagination.Last\r\n                onClick={() => gotoPage(pageCount - 1)}\r\n                disabled={!canNextPage}\r\n              />\r\n            </Pagination>\r\n          </Col>\r\n        </Row>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst PaginationPage = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Pagination\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Pagination</h1>\r\n\r\n      <PaginationTable columns={tableColumns} data={tableData} />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default PaginationPage;\r\n",
+      "start": 1702937436986,
+      "end": 1702937440820,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440820,
+      "end": 1702937440820,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440820,
+      "end": 1702937440820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { useTable, usePagination } from \"react-table\";\nimport {\n  Card,\n  Container,\n  Table,\n  Pagination,\n  Row,\n  Col,\n  Form\n} from \"react-bootstrap\";\nimport { tableData, tableColumns } from \"./data.js\";\nconst PaginationTable = ({ columns, data }) => {\n  const {\n    getTableProps,\n    getTableBodyProps,\n    headerGroups,\n    prepareRow,\n    page,\n    canPreviousPage,\n    canNextPage,\n    pageOptions,\n    pageCount,\n    gotoPage,\n    nextPage,\n    previousPage,\n    setPageSize,\n    state: { pageIndex, pageSize }\n  } = useTable(\n    {\n      columns,\n      data,\n      initialState: { pageIndex: 0 }\n    },\n    usePagination\n  );\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Pagination\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Pagination by react-table\" })\n    ] }),\n    /* @__PURE__ */ jsxs(Card.Body, { children: [\n      /* @__PURE__ */ jsxs(Table, { striped: true, bordered: true, ...getTableProps(), children: [\n        /* @__PURE__ */ jsx(\"thead\", { children: headerGroups.map((headerGroup) => /* @__PURE__ */ jsx(\"tr\", { ...headerGroup.getHeaderGroupProps(), children: headerGroup.headers.map((column) => /* @__PURE__ */ jsx(\"th\", { ...column.getHeaderProps(), children: column.render(\"Header\") })) })) }),\n        /* @__PURE__ */ jsx(\"tbody\", { ...getTableBodyProps(), children: page.map((row, i) => {\n          prepareRow(row);\n          return /* @__PURE__ */ jsx(\"tr\", { ...row.getRowProps(), children: row.cells.map((cell) => {\n            return /* @__PURE__ */ jsx(\"td\", { ...cell.getCellProps(), children: cell.render(\"Cell\") });\n          }) });\n        }) })\n      ] }),\n      /* @__PURE__ */ jsxs(Row, { children: [\n        /* @__PURE__ */ jsxs(Col, { md: \"6\", children: [\n          /* @__PURE__ */ jsxs(\"span\", { className: \"mx-2\", children: [\n            \"Page\",\n            \" \",\n            /* @__PURE__ */ jsxs(\"strong\", { children: [\n              pageIndex + 1,\n              \" of \",\n              pageOptions.length\n            ] })\n          ] }),\n          /* @__PURE__ */ jsx(\"span\", { className: \"ms-3 me-2\", children: \"Show:\" }),\n          /* @__PURE__ */ jsx(\n            Form.Select,\n            {\n              className: \"d-inline-block w-auto\",\n              value: pageSize,\n              onChange: (e) => {\n                setPageSize(Number(e.target.value));\n              },\n              children: [10, 20, 30, 40, 50].map((pageSize2) => /* @__PURE__ */ jsx(\"option\", { value: pageSize2, children: pageSize2 }, pageSize2))\n            }\n          ),\n          /* @__PURE__ */ jsx(\"span\", { className: \"ms-3 me-2\", children: \"Go to page:\" }),\n          /* @__PURE__ */ jsx(\n            Form.Control,\n            {\n              className: \"d-inline-block\",\n              type: \"number\",\n              defaultValue: pageIndex + 1,\n              onChange: (e) => {\n                const page2 = e.target.value ? Number(e.target.value) - 1 : 0;\n                gotoPage(page2);\n              },\n              style: { width: \"75px\" }\n            }\n          )\n        ] }),\n        /* @__PURE__ */ jsx(Col, { md: \"6\", children: /* @__PURE__ */ jsxs(Pagination, { className: \"float-end\", children: [\n          /* @__PURE__ */ jsx(\n            Pagination.First,\n            {\n              onClick: () => gotoPage(0),\n              disabled: !canPreviousPage\n            }\n          ),\n          /* @__PURE__ */ jsx(\n            Pagination.Prev,\n            {\n              onClick: () => previousPage(),\n              disabled: !canPreviousPage\n            }\n          ),\n          /* @__PURE__ */ jsx(\n            Pagination.Next,\n            {\n              onClick: () => nextPage(),\n              disabled: !canNextPage\n            }\n          ),\n          /* @__PURE__ */ jsx(\n            Pagination.Last,\n            {\n              onClick: () => gotoPage(pageCount - 1),\n              disabled: !canNextPage\n            }\n          )\n        ] }) })\n      ] })\n    ] })\n  ] });\n};\nconst PaginationPage = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Pagination\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Pagination\" }),\n    /* @__PURE__ */ jsx(PaginationTable, { columns: tableColumns, data: tableData })\n  ] })\n] });\nexport default PaginationPage;\n",
+      "start": 1702937440820,
+      "end": 1702937440826,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/tables/Pagination.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { useTable, usePagination } from \"react-table\";\r\n\r\nimport {\r\n  Card,\r\n  Container,\r\n  Table,\r\n  Pagination,\r\n  Row,\r\n  Col,\r\n  Form,\r\n} from \"react-bootstrap\";\r\n\r\nimport { tableData, tableColumns } from \"./data.js\";\r\n\r\nconst PaginationTable = ({ columns, data }) => {\r\n  const {\r\n    getTableProps,\r\n    getTableBodyProps,\r\n    headerGroups,\r\n    prepareRow,\r\n    page,\r\n    canPreviousPage,\r\n    canNextPage,\r\n    pageOptions,\r\n    pageCount,\r\n    gotoPage,\r\n    nextPage,\r\n    previousPage,\r\n    setPageSize,\r\n    state: { pageIndex, pageSize },\r\n  } = useTable(\r\n    {\r\n      columns,\r\n      data,\r\n      initialState: { pageIndex: 0 },\r\n    },\r\n    usePagination\r\n  );\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Pagination</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">Pagination by react-table</h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <Table striped bordered {...getTableProps()}>\r\n          <thead>\r\n            {headerGroups.map((headerGroup) => (\r\n              <tr {...headerGroup.getHeaderGroupProps()}>\r\n                {headerGroup.headers.map((column) => (\r\n                  <th {...column.getHeaderProps()}>\r\n                    {column.render(\"Header\")}\r\n                  </th>\r\n                ))}\r\n              </tr>\r\n            ))}\r\n          </thead>\r\n          <tbody {...getTableBodyProps()}>\r\n            {page.map((row, i) => {\r\n              prepareRow(row);\r\n              return (\r\n                <tr {...row.getRowProps()}>\r\n                  {row.cells.map((cell) => {\r\n                    return (\r\n                      <td {...cell.getCellProps()}>{cell.render(\"Cell\")}</td>\r\n                    );\r\n                  })}\r\n                </tr>\r\n              );\r\n            })}\r\n          </tbody>\r\n        </Table>\r\n\r\n        <Row>\r\n          <Col md=\"6\">\r\n            <span className=\"mx-2\">\r\n              Page{\" \"}\r\n              <strong>\r\n                {pageIndex + 1} of {pageOptions.length}\r\n              </strong>\r\n            </span>\r\n            <span className=\"ms-3 me-2\">Show:</span>\r\n            <Form.Select\r\n              className=\"d-inline-block w-auto\"\r\n              value={pageSize}\r\n              onChange={(e) => {\r\n                setPageSize(Number(e.target.value));\r\n              }}\r\n            >\r\n              {[10, 20, 30, 40, 50].map((pageSize) => (\r\n                <option key={pageSize} value={pageSize}>\r\n                  {pageSize}\r\n                </option>\r\n              ))}\r\n            </Form.Select>\r\n\r\n            <span className=\"ms-3 me-2\">Go to page:</span>\r\n            <Form.Control\r\n              className=\"d-inline-block\"\r\n              type=\"number\"\r\n              defaultValue={pageIndex + 1}\r\n              onChange={(e) => {\r\n                const page = e.target.value ? Number(e.target.value) - 1 : 0;\r\n                gotoPage(page);\r\n              }}\r\n              style={{ width: \"75px\" }}\r\n            />\r\n          </Col>\r\n          <Col md=\"6\">\r\n            <Pagination className=\"float-end\">\r\n              <Pagination.First\r\n                onClick={() => gotoPage(0)}\r\n                disabled={!canPreviousPage}\r\n              />\r\n              <Pagination.Prev\r\n                onClick={() => previousPage()}\r\n                disabled={!canPreviousPage}\r\n              />\r\n              <Pagination.Next\r\n                onClick={() => nextPage()}\r\n                disabled={!canNextPage}\r\n              />\r\n              <Pagination.Last\r\n                onClick={() => gotoPage(pageCount - 1)}\r\n                disabled={!canNextPage}\r\n              />\r\n            </Pagination>\r\n          </Col>\r\n        </Row>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nconst PaginationPage = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Pagination\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Pagination</h1>\r\n\r\n      <PaginationTable columns={tableColumns} data={tableData} />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default PaginationPage;\r\n"
+        ],
+        "mappings": "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",
+        "names": [
+          "pageSize",
+          "page"
+        ]
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440826,
+      "end": 1702937440826,
+      "order": "normal"
+    }
+  ]
+}

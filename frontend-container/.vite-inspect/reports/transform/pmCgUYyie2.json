@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/stan.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = stan\nstan.displayName = 'stan'\nstan.aliases = []\nfunction stan(Prism) {\n  ;(function (Prism) {\n    // https://mc-stan.org/docs/2_28/reference-manual/bnf-grammars.html\n    var higherOrderFunctions =\n      /\\b(?:algebra_solver|algebra_solver_newton|integrate_1d|integrate_ode|integrate_ode_bdf|integrate_ode_rk45|map_rect|ode_(?:adams|bdf|ckrk|rk45)(?:_tol)?|ode_adjoint_tol_ctl|reduce_sum|reduce_sum_static)\\b/\n    Prism.languages.stan = {\n      comment: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\/|#(?!include).*/,\n      string: {\n        // String literals can contain spaces and any printable ASCII characters except for \" and \\\n        // https://mc-stan.org/docs/2_24/reference-manual/print-statements-section.html#string-literals\n        pattern: /\"[\\x20\\x21\\x23-\\x5B\\x5D-\\x7E]*\"/,\n        greedy: true\n      },\n      directive: {\n        pattern: /^([ \\t]*)#include\\b.*/m,\n        lookbehind: true,\n        alias: 'property'\n      },\n      'function-arg': {\n        pattern: RegExp(\n          '(' +\n            higherOrderFunctions.source +\n            /\\s*\\(\\s*/.source +\n            ')' +\n            /[a-zA-Z]\\w*/.source\n        ),\n        lookbehind: true,\n        alias: 'function'\n      },\n      constraint: {\n        pattern: /(\\b(?:int|matrix|real|row_vector|vector)\\s*)<[^<>]*>/,\n        lookbehind: true,\n        inside: {\n          expression: {\n            pattern: /(=\\s*)\\S(?:\\S|\\s+(?!\\s))*?(?=\\s*(?:>$|,\\s*\\w+\\s*=))/,\n            lookbehind: true,\n            inside: null // see below\n          },\n          property: /\\b[a-z]\\w*(?=\\s*=)/i,\n          operator: /=/,\n          punctuation: /^<|>$|,/\n        }\n      },\n      keyword: [\n        {\n          pattern:\n            /\\bdata(?=\\s*\\{)|\\b(?:functions|generated|model|parameters|quantities|transformed)\\b/,\n          alias: 'program-block'\n        },\n        /\\b(?:array|break|cholesky_factor_corr|cholesky_factor_cov|complex|continue|corr_matrix|cov_matrix|data|else|for|if|in|increment_log_prob|int|matrix|ordered|positive_ordered|print|real|reject|return|row_vector|simplex|target|unit_vector|vector|void|while)\\b/, // these are functions that are known to take another function as their first argument.\n        higherOrderFunctions\n      ],\n      function: /\\b[a-z]\\w*(?=\\s*\\()/i,\n      number:\n        /(?:\\b\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\B\\.\\d+(?:_\\d+)*)(?:E[+-]?\\d+(?:_\\d+)*)?i?(?!\\w)/i,\n      boolean: /\\b(?:false|true)\\b/,\n      operator: /<-|\\.[*/]=?|\\|\\|?|&&|[!=<>+\\-*/]=?|['^%~?:]/,\n      punctuation: /[()\\[\\]{},;]/\n    }\n    Prism.languages.stan.constraint.inside.expression.inside =\n      Prism.languages.stan\n  })(Prism)\n}\n",
+      "start": 1702937445070,
+      "end": 1702937445103,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar stan_1;\nvar hasRequiredStan;\n\nfunction requireStan () {\n\tif (hasRequiredStan) return stan_1;\n\thasRequiredStan = 1;\n\t'use strict'\n\n\tstan_1 = stan\n\tstan.displayName = 'stan'\n\tstan.aliases = []\n\tfunction stan(Prism) {\n\t  ;(function (Prism) {\n\t    // https://mc-stan.org/docs/2_28/reference-manual/bnf-grammars.html\n\t    var higherOrderFunctions =\n\t      /\\b(?:algebra_solver|algebra_solver_newton|integrate_1d|integrate_ode|integrate_ode_bdf|integrate_ode_rk45|map_rect|ode_(?:adams|bdf|ckrk|rk45)(?:_tol)?|ode_adjoint_tol_ctl|reduce_sum|reduce_sum_static)\\b/\n\t    Prism.languages.stan = {\n\t      comment: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\/|#(?!include).*/,\n\t      string: {\n\t        // String literals can contain spaces and any printable ASCII characters except for \" and \\\n\t        // https://mc-stan.org/docs/2_24/reference-manual/print-statements-section.html#string-literals\n\t        pattern: /\"[\\x20\\x21\\x23-\\x5B\\x5D-\\x7E]*\"/,\n\t        greedy: true\n\t      },\n\t      directive: {\n\t        pattern: /^([ \\t]*)#include\\b.*/m,\n\t        lookbehind: true,\n\t        alias: 'property'\n\t      },\n\t      'function-arg': {\n\t        pattern: RegExp(\n\t          '(' +\n\t            higherOrderFunctions.source +\n\t            /\\s*\\(\\s*/.source +\n\t            ')' +\n\t            /[a-zA-Z]\\w*/.source\n\t        ),\n\t        lookbehind: true,\n\t        alias: 'function'\n\t      },\n\t      constraint: {\n\t        pattern: /(\\b(?:int|matrix|real|row_vector|vector)\\s*)<[^<>]*>/,\n\t        lookbehind: true,\n\t        inside: {\n\t          expression: {\n\t            pattern: /(=\\s*)\\S(?:\\S|\\s+(?!\\s))*?(?=\\s*(?:>$|,\\s*\\w+\\s*=))/,\n\t            lookbehind: true,\n\t            inside: null // see below\n\t          },\n\t          property: /\\b[a-z]\\w*(?=\\s*=)/i,\n\t          operator: /=/,\n\t          punctuation: /^<|>$|,/\n\t        }\n\t      },\n\t      keyword: [\n\t        {\n\t          pattern:\n\t            /\\bdata(?=\\s*\\{)|\\b(?:functions|generated|model|parameters|quantities|transformed)\\b/,\n\t          alias: 'program-block'\n\t        },\n\t        /\\b(?:array|break|cholesky_factor_corr|cholesky_factor_cov|complex|continue|corr_matrix|cov_matrix|data|else|for|if|in|increment_log_prob|int|matrix|ordered|positive_ordered|print|real|reject|return|row_vector|simplex|target|unit_vector|vector|void|while)\\b/, // these are functions that are known to take another function as their first argument.\n\t        higherOrderFunctions\n\t      ],\n\t      function: /\\b[a-z]\\w*(?=\\s*\\()/i,\n\t      number:\n\t        /(?:\\b\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\B\\.\\d+(?:_\\d+)*)(?:E[+-]?\\d+(?:_\\d+)*)?i?(?!\\w)/i,\n\t      boolean: /\\b(?:false|true)\\b/,\n\t      operator: /<-|\\.[*/]=?|\\|\\|?|&&|[!=<>+\\-*/]=?|['^%~?:]/,\n\t      punctuation: /[()\\[\\]{},;]/\n\t    }\n\t    Prism.languages.stan.constraint.inside.expression.inside =\n\t      Prism.languages.stan\n\t  })(Prism)\n\t}\n\treturn stan_1;\n}\n\nexport { requireStan as __require };",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB;CACA,IAAI,IAAI,oBAAoB;CAC5B,MAAM,6MAA6M;CACnN,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,OAAO,EAAE,wCAAwC;CACvD,MAAM,MAAM,EAAE;CACd;CACA;CACA,QAAQ,OAAO,EAAE,iCAAiC;CAClD,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,SAAS,EAAE;CACjB,QAAQ,OAAO,EAAE,wBAAwB;CACzC,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,cAAc,EAAE;CACtB,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,GAAG;CACb,YAAY,oBAAoB,CAAC,MAAM;CACvC,YAAY,UAAU,CAAC,MAAM;CAC7B,YAAY,GAAG;CACf,YAAY,aAAa,CAAC,MAAM;CAChC,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,UAAU,EAAE;CAClB,QAAQ,OAAO,EAAE,sDAAsD;CACvE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE;CAChB,UAAU,UAAU,EAAE;CACtB,YAAY,OAAO,EAAE,qDAAqD;CAC1E,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,MAAM,EAAE,IAAI;CACxB,WAAW;CACX,UAAU,QAAQ,EAAE,qBAAqB;CACzC,UAAU,QAAQ,EAAE,GAAG;CACvB,UAAU,WAAW,EAAE,SAAS;CAChC,SAAS;CACT,OAAO;CACP,MAAM,OAAO,EAAE;CACf,QAAQ;CACR,UAAU,OAAO;CACjB,YAAY,qFAAqF;CACjG,UAAU,KAAK,EAAE,eAAe;CAChC,SAAS;CACT,QAAQ,kQAAkQ;CAC1Q,QAAQ,oBAAoB;CAC5B,OAAO;CACP,MAAM,QAAQ,EAAE,sBAAsB;CACtC,MAAM,MAAM;CACZ,QAAQ,6FAA6F;CACrG,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,QAAQ,EAAE,6CAA6C;CAC7D,MAAM,WAAW,EAAE,cAAc;CACjC,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,UAAU,CAAC,MAAM,CAAC,UAAU,CAAC,MAAM;CAC5D,MAAM,KAAK,CAAC,SAAS,CAAC,IAAI;CAC1B,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445103,
+      "end": 1702937445103,
+      "order": "normal"
+    }
+  ]
+}

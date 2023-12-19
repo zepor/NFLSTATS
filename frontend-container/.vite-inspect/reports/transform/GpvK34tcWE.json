@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_baseKeys.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var isPrototype = require('./_isPrototype'),\n    nativeKeys = require('./_nativeKeys');\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.\n *\n * @private\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names.\n */\nfunction baseKeys(object) {\n  if (!isPrototype(object)) {\n    return nativeKeys(object);\n  }\n  var result = [];\n  for (var key in Object(object)) {\n    if (hasOwnProperty.call(object, key) && key != 'constructor') {\n      result.push(key);\n    }\n  }\n  return result;\n}\n\nmodule.exports = baseKeys;\n",
+      "start": 1702937445355,
+      "end": 1702937445371,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445371,
+      "end": 1702937445371,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_isPrototype.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_nativeKeys.js?commonjs-proxy\";\n\nvar isPrototype = require$$0,\n    nativeKeys = require$$1;\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.\n *\n * @private\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names.\n */\nfunction baseKeys(object) {\n  if (!isPrototype(object)) {\n    return nativeKeys(object);\n  }\n  var result = [];\n  for (var key in Object(object)) {\n    if (hasOwnProperty.call(object, key) && key != 'constructor') {\n      result.push(key);\n    }\n  }\n  return result;\n}\n\nvar _baseKeys = baseKeys;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_baseKeys);\nexport { _baseKeys as __moduleExports };",
+      "start": 1702937445371,
+      "end": 1702937445404,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;AAAA,IAAI,WAAW,GAAG,UAAyB;AAC3C,IAAI,UAAU,GAAG,UAAwB,CAAC;AAC1C;AACA;AACA,IAAI,WAAW,GAAG,MAAM,CAAC,SAAS,CAAC;AACnC;AACA;AACA,IAAI,cAAc,GAAG,WAAW,CAAC,cAAc,CAAC;AAChD;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,QAAQ,CAAC,MAAM,EAAE;AAC1B,EAAE,IAAI,CAAC,WAAW,CAAC,MAAM,CAAC,EAAE;AAC5B,IAAI,OAAO,UAAU,CAAC,MAAM,CAAC,CAAC;AAC9B,GAAG;AACH,EAAE,IAAI,MAAM,GAAG,EAAE,CAAC;AAClB,EAAE,KAAK,IAAI,GAAG,IAAI,MAAM,CAAC,MAAM,CAAC,EAAE;AAClC,IAAI,IAAI,cAAc,CAAC,IAAI,CAAC,MAAM,EAAE,GAAG,CAAC,IAAI,GAAG,IAAI,aAAa,EAAE;AAClE,MAAM,MAAM,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC;AACvB,KAAK;AACL,GAAG;AACH,EAAE,OAAO,MAAM,CAAC;AAChB,CAAC;AACD;IACA,SAAc,GAAG,QAAQ"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445404,
+      "end": 1702937445404,
+      "order": "normal"
+    }
+  ]
+}

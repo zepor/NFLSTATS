@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_baseUnary.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * The base implementation of `_.unary` without support for storing metadata.\n *\n * @private\n * @param {Function} func The function to cap arguments for.\n * @returns {Function} Returns the new capped function.\n */\nfunction baseUnary(func) {\n  return function(value) {\n    return func(value);\n  };\n}\n\nmodule.exports = baseUnary;\n",
+      "start": 1702937445176,
+      "end": 1702937445190,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * The base implementation of `_.unary` without support for storing metadata.\n *\n * @private\n * @param {Function} func The function to cap arguments for.\n * @returns {Function} Returns the new capped function.\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nfunction baseUnary(func) {\n  return function(value) {\n    return func(value);\n  };\n}\n\nvar _baseUnary = baseUnary;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_baseUnary);\nexport { _baseUnary as __moduleExports };",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;AAOA,SAAS,SAAS,CAAC,IAAI,EAAE;AACzB,EAAE,OAAO,SAAS,KAAK,EAAE;AACzB,IAAI,OAAO,IAAI,CAAC,KAAK,CAAC,CAAC;AACvB,GAAG,CAAC;AACJ,CAAC;AACD;IACA,UAAc,GAAG,SAAS"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445190,
+      "end": 1702937445190,
+      "order": "normal"
+    }
+  ]
+}

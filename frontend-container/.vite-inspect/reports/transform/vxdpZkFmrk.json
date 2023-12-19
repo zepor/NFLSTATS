@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_mapCacheClear.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var Hash = require('./_Hash'),\n    ListCache = require('./_ListCache'),\n    Map = require('./_Map');\n\n/**\n * Removes all key-value entries from the map.\n *\n * @private\n * @name clear\n * @memberOf MapCache\n */\nfunction mapCacheClear() {\n  this.size = 0;\n  this.__data__ = {\n    'hash': new Hash,\n    'map': new (Map || ListCache),\n    'string': new Hash\n  };\n}\n\nmodule.exports = mapCacheClear;\n",
+      "start": 1702937445339,
+      "end": 1702937445356,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445357,
+      "end": 1702937445357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445357,
+      "end": 1702937445357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445357,
+      "end": 1702937445357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445357,
+      "end": 1702937445357,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445357,
+      "end": 1702937445357,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_Hash.js?commonjs-proxy\";\nimport require$$1 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_ListCache.js?commonjs-proxy\";\nimport require$$2 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_Map.js?commonjs-proxy\";\n\nvar Hash = require$$0,\n    ListCache = require$$1,\n    Map = require$$2;\n\n/**\n * Removes all key-value entries from the map.\n *\n * @private\n * @name clear\n * @memberOf MapCache\n */\nfunction mapCacheClear() {\n  this.size = 0;\n  this.__data__ = {\n    'hash': new Hash,\n    'map': new (Map || ListCache),\n    'string': new Hash\n  };\n}\n\nvar _mapCacheClear = mapCacheClear;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_mapCacheClear);\nexport { _mapCacheClear as __moduleExports };",
+      "start": 1702937445357,
+      "end": 1702937445415,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,IAAI,IAAI,GAAG,UAAkB;AAC7B,IAAI,SAAS,GAAG,UAAuB;AACvC,IAAI,GAAG,GAAG,UAAiB,CAAC;AAC5B;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,aAAa,GAAG;AACzB,EAAE,IAAI,CAAC,IAAI,GAAG,CAAC,CAAC;AAChB,EAAE,IAAI,CAAC,QAAQ,GAAG;AAClB,IAAI,MAAM,EAAE,IAAI,IAAI;AACpB,IAAI,KAAK,EAAE,KAAK,GAAG,IAAI,SAAS,CAAC;AACjC,IAAI,QAAQ,EAAE,IAAI,IAAI;AACtB,GAAG,CAAC;AACJ,CAAC;AACD;IACA,cAAc,GAAG,aAAa"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445415,
+      "end": 1702937445415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445415,
+      "end": 1702937445415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445415,
+      "end": 1702937445415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445415,
+      "end": 1702937445415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445415,
+      "end": 1702937445415,
+      "order": "normal"
+    }
+  ]
+}

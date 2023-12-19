@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/inform7.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = inform7\ninform7.displayName = 'inform7'\ninform7.aliases = []\nfunction inform7(Prism) {\n  Prism.languages.inform7 = {\n    string: {\n      pattern: /\"[^\"]*\"/,\n      inside: {\n        substitution: {\n          pattern: /\\[[^\\[\\]]+\\]/,\n          inside: {\n            delimiter: {\n              pattern: /\\[|\\]/,\n              alias: 'punctuation'\n            } // See rest below\n          }\n        }\n      }\n    },\n    comment: {\n      pattern: /\\[[^\\[\\]]+\\]/,\n      greedy: true\n    },\n    title: {\n      pattern: /^[ \\t]*(?:book|chapter|part(?! of)|section|table|volume)\\b.+/im,\n      alias: 'important'\n    },\n    number: {\n      pattern:\n        /(^|[^-])(?:\\b\\d+(?:\\.\\d+)?(?:\\^\\d+)?(?:(?!\\d)\\w+)?|\\b(?:eight|eleven|five|four|nine|one|seven|six|ten|three|twelve|two))\\b(?!-)/i,\n      lookbehind: true\n    },\n    verb: {\n      pattern:\n        /(^|[^-])\\b(?:answering|applying to|are|asking|attacking|be(?:ing)?|burning|buying|called|carries|carry(?! out)|carrying|climbing|closing|conceal(?:ing|s)?|consulting|contain(?:ing|s)?|cutting|drinking|dropping|eating|enclos(?:es?|ing)|entering|examining|exiting|getting|giving|going|ha(?:s|ve|ving)|hold(?:ing|s)?|impl(?:ies|y)|incorporat(?:es?|ing)|inserting|is|jumping|kissing|listening|locking|looking|mean(?:ing|s)?|opening|provid(?:es?|ing)|pulling|pushing|putting|relat(?:es?|ing)|removing|searching|see(?:ing|s)?|setting|showing|singing|sleeping|smelling|squeezing|support(?:ing|s)?|swearing|switching|taking|tasting|telling|thinking|throwing|touching|turning|tying|unlock(?:ing|s)?|var(?:ies|y|ying)|waiting|waking|waving|wear(?:ing|s)?)\\b(?!-)/i,\n      lookbehind: true,\n      alias: 'operator'\n    },\n    keyword: {\n      pattern:\n        /(^|[^-])\\b(?:after|before|carry out|check|continue the action|definition(?= *:)|do nothing|else|end (?:if|the story|unless)|every turn|if|include|instead(?: of)?|let|move|no|now|otherwise|repeat|report|resume the story|rule for|running through|say(?:ing)?|stop the action|test|try(?:ing)?|understand|unless|use|when|while|yes)\\b(?!-)/i,\n      lookbehind: true\n    },\n    property: {\n      pattern:\n        /(^|[^-])\\b(?:adjacent(?! to)|carried|closed|concealed|contained|dark|described|edible|empty|enclosed|enterable|even|female|fixed in place|full|handled|held|improper-named|incorporated|inedible|invisible|lighted|lit|lock(?:able|ed)|male|marked for listing|mentioned|negative|neuter|non-(?:empty|full|recurring)|odd|opaque|open(?:able)?|plural-named|portable|positive|privately-named|proper-named|provided|publically-named|pushable between rooms|recurring|related|rubbing|scenery|seen|singular-named|supported|swinging|switch(?:able|ed(?: off| on)?)|touch(?:able|ed)|transparent|unconcealed|undescribed|unlit|unlocked|unmarked for listing|unmentioned|unopenable|untouchable|unvisited|variable|visible|visited|wearable|worn)\\b(?!-)/i,\n      lookbehind: true,\n      alias: 'symbol'\n    },\n    position: {\n      pattern:\n        /(^|[^-])\\b(?:above|adjacent to|back side of|below|between|down|east|everywhere|front side|here|in|inside(?: from)?|north(?:east|west)?|nowhere|on(?: top of)?|other side|outside(?: from)?|parts? of|regionally in|south(?:east|west)?|through|up|west|within)\\b(?!-)/i,\n      lookbehind: true,\n      alias: 'keyword'\n    },\n    type: {\n      pattern:\n        /(^|[^-])\\b(?:actions?|activit(?:ies|y)|actors?|animals?|backdrops?|containers?|devices?|directions?|doors?|holders?|kinds?|lists?|m[ae]n|nobody|nothing|nouns?|numbers?|objects?|people|persons?|player(?:'s holdall)?|regions?|relations?|rooms?|rule(?:book)?s?|scenes?|someone|something|supporters?|tables?|texts?|things?|time|vehicles?|wom[ae]n)\\b(?!-)/i,\n      lookbehind: true,\n      alias: 'variable'\n    },\n    punctuation: /[.,:;(){}]/\n  }\n  Prism.languages.inform7['string'].inside['substitution'].inside.rest =\n    Prism.languages.inform7 // We don't want the remaining text in the substitution to be highlighted as the string.\n  Prism.languages.inform7['string'].inside['substitution'].inside.rest.text = {\n    pattern: /\\S(?:\\s*\\S)*/,\n    alias: 'comment'\n  }\n}\n",
+      "start": 1702937444919,
+      "end": 1702937444939,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar inform7_1;\nvar hasRequiredInform7;\n\nfunction requireInform7 () {\n\tif (hasRequiredInform7) return inform7_1;\n\thasRequiredInform7 = 1;\n\t'use strict'\n\n\tinform7_1 = inform7\n\tinform7.displayName = 'inform7'\n\tinform7.aliases = []\n\tfunction inform7(Prism) {\n\t  Prism.languages.inform7 = {\n\t    string: {\n\t      pattern: /\"[^\"]*\"/,\n\t      inside: {\n\t        substitution: {\n\t          pattern: /\\[[^\\[\\]]+\\]/,\n\t          inside: {\n\t            delimiter: {\n\t              pattern: /\\[|\\]/,\n\t              alias: 'punctuation'\n\t            } // See rest below\n\t          }\n\t        }\n\t      }\n\t    },\n\t    comment: {\n\t      pattern: /\\[[^\\[\\]]+\\]/,\n\t      greedy: true\n\t    },\n\t    title: {\n\t      pattern: /^[ \\t]*(?:book|chapter|part(?! of)|section|table|volume)\\b.+/im,\n\t      alias: 'important'\n\t    },\n\t    number: {\n\t      pattern:\n\t        /(^|[^-])(?:\\b\\d+(?:\\.\\d+)?(?:\\^\\d+)?(?:(?!\\d)\\w+)?|\\b(?:eight|eleven|five|four|nine|one|seven|six|ten|three|twelve|two))\\b(?!-)/i,\n\t      lookbehind: true\n\t    },\n\t    verb: {\n\t      pattern:\n\t        /(^|[^-])\\b(?:answering|applying to|are|asking|attacking|be(?:ing)?|burning|buying|called|carries|carry(?! out)|carrying|climbing|closing|conceal(?:ing|s)?|consulting|contain(?:ing|s)?|cutting|drinking|dropping|eating|enclos(?:es?|ing)|entering|examining|exiting|getting|giving|going|ha(?:s|ve|ving)|hold(?:ing|s)?|impl(?:ies|y)|incorporat(?:es?|ing)|inserting|is|jumping|kissing|listening|locking|looking|mean(?:ing|s)?|opening|provid(?:es?|ing)|pulling|pushing|putting|relat(?:es?|ing)|removing|searching|see(?:ing|s)?|setting|showing|singing|sleeping|smelling|squeezing|support(?:ing|s)?|swearing|switching|taking|tasting|telling|thinking|throwing|touching|turning|tying|unlock(?:ing|s)?|var(?:ies|y|ying)|waiting|waking|waving|wear(?:ing|s)?)\\b(?!-)/i,\n\t      lookbehind: true,\n\t      alias: 'operator'\n\t    },\n\t    keyword: {\n\t      pattern:\n\t        /(^|[^-])\\b(?:after|before|carry out|check|continue the action|definition(?= *:)|do nothing|else|end (?:if|the story|unless)|every turn|if|include|instead(?: of)?|let|move|no|now|otherwise|repeat|report|resume the story|rule for|running through|say(?:ing)?|stop the action|test|try(?:ing)?|understand|unless|use|when|while|yes)\\b(?!-)/i,\n\t      lookbehind: true\n\t    },\n\t    property: {\n\t      pattern:\n\t        /(^|[^-])\\b(?:adjacent(?! to)|carried|closed|concealed|contained|dark|described|edible|empty|enclosed|enterable|even|female|fixed in place|full|handled|held|improper-named|incorporated|inedible|invisible|lighted|lit|lock(?:able|ed)|male|marked for listing|mentioned|negative|neuter|non-(?:empty|full|recurring)|odd|opaque|open(?:able)?|plural-named|portable|positive|privately-named|proper-named|provided|publically-named|pushable between rooms|recurring|related|rubbing|scenery|seen|singular-named|supported|swinging|switch(?:able|ed(?: off| on)?)|touch(?:able|ed)|transparent|unconcealed|undescribed|unlit|unlocked|unmarked for listing|unmentioned|unopenable|untouchable|unvisited|variable|visible|visited|wearable|worn)\\b(?!-)/i,\n\t      lookbehind: true,\n\t      alias: 'symbol'\n\t    },\n\t    position: {\n\t      pattern:\n\t        /(^|[^-])\\b(?:above|adjacent to|back side of|below|between|down|east|everywhere|front side|here|in|inside(?: from)?|north(?:east|west)?|nowhere|on(?: top of)?|other side|outside(?: from)?|parts? of|regionally in|south(?:east|west)?|through|up|west|within)\\b(?!-)/i,\n\t      lookbehind: true,\n\t      alias: 'keyword'\n\t    },\n\t    type: {\n\t      pattern:\n\t        /(^|[^-])\\b(?:actions?|activit(?:ies|y)|actors?|animals?|backdrops?|containers?|devices?|directions?|doors?|holders?|kinds?|lists?|m[ae]n|nobody|nothing|nouns?|numbers?|objects?|people|persons?|player(?:'s holdall)?|regions?|relations?|rooms?|rule(?:book)?s?|scenes?|someone|something|supporters?|tables?|texts?|things?|time|vehicles?|wom[ae]n)\\b(?!-)/i,\n\t      lookbehind: true,\n\t      alias: 'variable'\n\t    },\n\t    punctuation: /[.,:;(){}]/\n\t  }\n\t  Prism.languages.inform7['string'].inside['substitution'].inside.rest =\n\t    Prism.languages.inform7 // We don't want the remaining text in the substitution to be highlighted as the string.\n\t  Prism.languages.inform7['string'].inside['substitution'].inside.rest.text = {\n\t    pattern: /\\S(?:\\s*\\S)*/,\n\t    alias: 'comment'\n\t  }\n\t}\n\treturn inform7_1;\n}\n\nexport { requireInform7 as __require };",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,UAAc,GAAG,OAAO;CACxB,OAAO,CAAC,WAAW,GAAG,SAAS;CAC/B,OAAO,CAAC,OAAO,GAAG,EAAE;CACpB,SAAS,OAAO,CAAC,KAAK,EAAE;CACxB,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG;CAC5B,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,MAAM,EAAE;CACd,QAAQ,YAAY,EAAE;CACtB,UAAU,OAAO,EAAE,cAAc;CACjC,UAAU,MAAM,EAAE;CAClB,YAAY,SAAS,EAAE;CACvB,cAAc,OAAO,EAAE,OAAO;CAC9B,cAAc,KAAK,EAAE,aAAa;CAClC,aAAa;CACb,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,cAAc;CAC7B,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,gEAAgE;CAC/E,MAAM,KAAK,EAAE,WAAW;CACxB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,kIAAkI;CAC1I,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,IAAI,EAAE;CACV,MAAM,OAAO;CACb,QAAQ,mvBAAmvB;CAC3vB,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO;CACb,QAAQ,gVAAgV;CACxV,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,2tBAA2tB;CACnuB,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,wQAAwQ;CAChR,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,IAAI,EAAE;CACV,MAAM,OAAO;CACb,QAAQ,iWAAiW;CACzW,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,WAAW,EAAE,YAAY;CAC7B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,MAAM,CAAC,cAAc,CAAC,CAAC,MAAM,CAAC,IAAI;CACtE,IAAI,KAAK,CAAC,SAAS,CAAC,OAAO;CAC3B,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,MAAM,CAAC,cAAc,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,IAAI,GAAG;CAC9E,IAAI,OAAO,EAAE,cAAc;CAC3B,IAAI,KAAK,EAAE,SAAS;CACpB,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444939,
+      "end": 1702937444939,
+      "order": "normal"
+    }
+  ]
+}

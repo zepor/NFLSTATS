@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/parser.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = parser\nparser.displayName = 'parser'\nparser.aliases = []\nfunction parser(Prism) {\n  ;(function (Prism) {\n    var parser = (Prism.languages.parser = Prism.languages.extend('markup', {\n      keyword: {\n        pattern:\n          /(^|[^^])(?:\\^(?:case|eval|for|if|switch|throw)\\b|@(?:BASE|CLASS|GET(?:_DEFAULT)?|OPTIONS|SET_DEFAULT|USE)\\b)/,\n        lookbehind: true\n      },\n      variable: {\n        pattern: /(^|[^^])\\B\\$(?:\\w+|(?=[.{]))(?:(?:\\.|::?)\\w+)*(?:\\.|::?)?/,\n        lookbehind: true,\n        inside: {\n          punctuation: /\\.|:+/\n        }\n      },\n      function: {\n        pattern: /(^|[^^])\\B[@^]\\w+(?:(?:\\.|::?)\\w+)*(?:\\.|::?)?/,\n        lookbehind: true,\n        inside: {\n          keyword: {\n            pattern: /(^@)(?:GET_|SET_)/,\n            lookbehind: true\n          },\n          punctuation: /\\.|:+/\n        }\n      },\n      escape: {\n        pattern: /\\^(?:[$^;@()\\[\\]{}\"':]|#[a-f\\d]*)/i,\n        alias: 'builtin'\n      },\n      punctuation: /[\\[\\](){};]/\n    }))\n    parser = Prism.languages.insertBefore('parser', 'keyword', {\n      'parser-comment': {\n        pattern: /(\\s)#.*/,\n        lookbehind: true,\n        alias: 'comment'\n      },\n      expression: {\n        // Allow for 3 levels of depth\n        pattern: /(^|[^^])\\((?:[^()]|\\((?:[^()]|\\((?:[^()])*\\))*\\))*\\)/,\n        greedy: true,\n        lookbehind: true,\n        inside: {\n          string: {\n            pattern: /(^|[^^])([\"'])(?:(?!\\2)[^^]|\\^[\\s\\S])*\\2/,\n            lookbehind: true\n          },\n          keyword: parser.keyword,\n          variable: parser.variable,\n          function: parser.function,\n          boolean: /\\b(?:false|true)\\b/,\n          number: /\\b(?:0x[a-f\\d]+|\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?)\\b/i,\n          escape: parser.escape,\n          operator:\n            /[~+*\\/\\\\%]|!(?:\\|\\|?|=)?|&&?|\\|\\|?|==|<[<=]?|>[>=]?|-[fd]?|\\b(?:def|eq|ge|gt|in|is|le|lt|ne)\\b/,\n          punctuation: parser.punctuation\n        }\n      }\n    })\n    Prism.languages.insertBefore(\n      'inside',\n      'punctuation',\n      {\n        expression: parser.expression,\n        keyword: parser.keyword,\n        variable: parser.variable,\n        function: parser.function,\n        escape: parser.escape,\n        'parser-punctuation': {\n          pattern: parser.punctuation,\n          alias: 'punctuation'\n        }\n      },\n      parser['tag'].inside['attr-value']\n    )\n  })(Prism)\n}\n",
+      "start": 1702937444993,
+      "end": 1702937445022,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar parser_1;\nvar hasRequiredParser;\n\nfunction requireParser () {\n\tif (hasRequiredParser) return parser_1;\n\thasRequiredParser = 1;\n\t'use strict'\n\n\tparser_1 = parser\n\tparser.displayName = 'parser'\n\tparser.aliases = []\n\tfunction parser(Prism) {\n\t  ;(function (Prism) {\n\t    var parser = (Prism.languages.parser = Prism.languages.extend('markup', {\n\t      keyword: {\n\t        pattern:\n\t          /(^|[^^])(?:\\^(?:case|eval|for|if|switch|throw)\\b|@(?:BASE|CLASS|GET(?:_DEFAULT)?|OPTIONS|SET_DEFAULT|USE)\\b)/,\n\t        lookbehind: true\n\t      },\n\t      variable: {\n\t        pattern: /(^|[^^])\\B\\$(?:\\w+|(?=[.{]))(?:(?:\\.|::?)\\w+)*(?:\\.|::?)?/,\n\t        lookbehind: true,\n\t        inside: {\n\t          punctuation: /\\.|:+/\n\t        }\n\t      },\n\t      function: {\n\t        pattern: /(^|[^^])\\B[@^]\\w+(?:(?:\\.|::?)\\w+)*(?:\\.|::?)?/,\n\t        lookbehind: true,\n\t        inside: {\n\t          keyword: {\n\t            pattern: /(^@)(?:GET_|SET_)/,\n\t            lookbehind: true\n\t          },\n\t          punctuation: /\\.|:+/\n\t        }\n\t      },\n\t      escape: {\n\t        pattern: /\\^(?:[$^;@()\\[\\]{}\"':]|#[a-f\\d]*)/i,\n\t        alias: 'builtin'\n\t      },\n\t      punctuation: /[\\[\\](){};]/\n\t    }))\n\t    parser = Prism.languages.insertBefore('parser', 'keyword', {\n\t      'parser-comment': {\n\t        pattern: /(\\s)#.*/,\n\t        lookbehind: true,\n\t        alias: 'comment'\n\t      },\n\t      expression: {\n\t        // Allow for 3 levels of depth\n\t        pattern: /(^|[^^])\\((?:[^()]|\\((?:[^()]|\\((?:[^()])*\\))*\\))*\\)/,\n\t        greedy: true,\n\t        lookbehind: true,\n\t        inside: {\n\t          string: {\n\t            pattern: /(^|[^^])([\"'])(?:(?!\\2)[^^]|\\^[\\s\\S])*\\2/,\n\t            lookbehind: true\n\t          },\n\t          keyword: parser.keyword,\n\t          variable: parser.variable,\n\t          function: parser.function,\n\t          boolean: /\\b(?:false|true)\\b/,\n\t          number: /\\b(?:0x[a-f\\d]+|\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?)\\b/i,\n\t          escape: parser.escape,\n\t          operator:\n\t            /[~+*\\/\\\\%]|!(?:\\|\\|?|=)?|&&?|\\|\\|?|==|<[<=]?|>[>=]?|-[fd]?|\\b(?:def|eq|ge|gt|in|is|le|lt|ne)\\b/,\n\t          punctuation: parser.punctuation\n\t        }\n\t      }\n\t    })\n\t    Prism.languages.insertBefore(\n\t      'inside',\n\t      'punctuation',\n\t      {\n\t        expression: parser.expression,\n\t        keyword: parser.keyword,\n\t        variable: parser.variable,\n\t        function: parser.function,\n\t        escape: parser.escape,\n\t        'parser-punctuation': {\n\t          pattern: parser.punctuation,\n\t          alias: 'punctuation'\n\t        }\n\t      },\n\t      parser['tag'].inside['attr-value']\n\t    )\n\t  })(Prism)\n\t}\n\treturn parser_1;\n}\n\nexport { requireParser as __require };",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445022,
+      "end": 1702937445022,
+      "order": "normal"
+    }
+  ]
+}

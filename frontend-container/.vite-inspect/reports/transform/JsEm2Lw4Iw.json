@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/hast-util-parse-selector/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = parse\n\nvar search = /[#.]/g\n\n// Create a hast element from a simple CSS selector.\nfunction parse(selector, defaultTagName) {\n  var value = selector || ''\n  var name = defaultTagName || 'div'\n  var props = {}\n  var start = 0\n  var subvalue\n  var previous\n  var match\n\n  while (start < value.length) {\n    search.lastIndex = start\n    match = search.exec(value)\n    subvalue = value.slice(start, match ? match.index : value.length)\n\n    if (subvalue) {\n      if (!previous) {\n        name = subvalue\n      } else if (previous === '#') {\n        props.id = subvalue\n      } else if (props.className) {\n        props.className.push(subvalue)\n      } else {\n        props.className = [subvalue]\n      }\n\n      start += subvalue.length\n    }\n\n    if (match) {\n      previous = match[0]\n      start++\n    }\n  }\n\n  return {type: 'element', tagName: name, properties: props, children: []}\n}\n",
+      "start": 1702937445366,
+      "end": 1702937445378,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n'use strict'\n\nvar hastUtilParseSelector = parse\n\nvar search = /[#.]/g\n\n// Create a hast element from a simple CSS selector.\nfunction parse(selector, defaultTagName) {\n  var value = selector || ''\n  var name = defaultTagName || 'div'\n  var props = {}\n  var start = 0\n  var subvalue\n  var previous\n  var match\n\n  while (start < value.length) {\n    search.lastIndex = start\n    match = search.exec(value)\n    subvalue = value.slice(start, match ? match.index : value.length)\n\n    if (subvalue) {\n      if (!previous) {\n        name = subvalue\n      } else if (previous === '#') {\n        props.id = subvalue\n      } else if (props.className) {\n        props.className.push(subvalue)\n      } else {\n        props.className = [subvalue]\n      }\n\n      start += subvalue.length\n    }\n\n    if (match) {\n      previous = match[0]\n      start++\n    }\n  }\n\n  return {type: 'element', tagName: name, properties: props, children: []}\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(hastUtilParseSelector);\nexport { hastUtilParseSelector as __moduleExports };",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY;AACZ;IACA,qBAAc,GAAG,KAAK;AACtB;AACA,IAAI,MAAM,GAAG,OAAO;AACpB;AACA;AACA,SAAS,KAAK,CAAC,QAAQ,EAAE,cAAc,EAAE;AACzC,EAAE,IAAI,KAAK,GAAG,QAAQ,IAAI,EAAE;AAC5B,EAAE,IAAI,IAAI,GAAG,cAAc,IAAI,KAAK;AACpC,EAAE,IAAI,KAAK,GAAG,EAAE;AAChB,EAAE,IAAI,KAAK,GAAG,CAAC;AACf,EAAE,IAAI,QAAQ;AACd,EAAE,IAAI,QAAQ;AACd,EAAE,IAAI,KAAK;AACX;AACA,EAAE,OAAO,KAAK,GAAG,KAAK,CAAC,MAAM,EAAE;AAC/B,IAAI,MAAM,CAAC,SAAS,GAAG,KAAK;AAC5B,IAAI,KAAK,GAAG,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC;AAC9B,IAAI,QAAQ,GAAG,KAAK,CAAC,KAAK,CAAC,KAAK,EAAE,KAAK,GAAG,KAAK,CAAC,KAAK,GAAG,KAAK,CAAC,MAAM,CAAC;AACrE;AACA,IAAI,IAAI,QAAQ,EAAE;AAClB,MAAM,IAAI,CAAC,QAAQ,EAAE;AACrB,QAAQ,IAAI,GAAG,QAAQ;AACvB,OAAO,MAAM,IAAI,QAAQ,KAAK,GAAG,EAAE;AACnC,QAAQ,KAAK,CAAC,EAAE,GAAG,QAAQ;AAC3B,OAAO,MAAM,IAAI,KAAK,CAAC,SAAS,EAAE;AAClC,QAAQ,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,QAAQ,CAAC;AACtC,OAAO,MAAM;AACb,QAAQ,KAAK,CAAC,SAAS,GAAG,CAAC,QAAQ,CAAC;AACpC,OAAO;AACP;AACA,MAAM,KAAK,IAAI,QAAQ,CAAC,MAAM;AAC9B,KAAK;AACL;AACA,IAAI,IAAI,KAAK,EAAE;AACf,MAAM,QAAQ,GAAG,KAAK,CAAC,CAAC,CAAC;AACzB,MAAM,KAAK,EAAE;AACb,KAAK;AACL,GAAG;AACH;AACA,EAAE,OAAO,CAAC,IAAI,EAAE,SAAS,EAAE,OAAO,EAAE,IAAI,EAAE,UAAU,EAAE,KAAK,EAAE,QAAQ,EAAE,EAAE,CAAC;AAC1E"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    }
+  ]
+}

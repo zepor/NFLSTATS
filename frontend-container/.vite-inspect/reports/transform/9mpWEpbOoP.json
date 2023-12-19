@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/diff.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = diff\ndiff.displayName = 'diff'\ndiff.aliases = []\nfunction diff(Prism) {\n  ;(function (Prism) {\n    Prism.languages.diff = {\n      coord: [\n        // Match all kinds of coord lines (prefixed by \"+++\", \"---\" or \"***\").\n        /^(?:\\*{3}|-{3}|\\+{3}).*$/m, // Match \"@@ ... @@\" coord lines in unified diff.\n        /^@@.*@@$/m, // Match coord lines in normal diff (starts with a number).\n        /^\\d.*$/m\n      ] // deleted, inserted, unchanged, diff\n    }\n    /**\n     * A map from the name of a block to its line prefix.\n     *\n     * @type {Object<string, string>}\n     */\n    var PREFIXES = {\n      'deleted-sign': '-',\n      'deleted-arrow': '<',\n      'inserted-sign': '+',\n      'inserted-arrow': '>',\n      unchanged: ' ',\n      diff: '!'\n    } // add a token for each prefix\n    Object.keys(PREFIXES).forEach(function (name) {\n      var prefix = PREFIXES[name]\n      var alias = []\n      if (!/^\\w+$/.test(name)) {\n        // \"deleted-sign\" -> \"deleted\"\n        alias.push(/\\w+/.exec(name)[0])\n      }\n      if (name === 'diff') {\n        alias.push('bold')\n      }\n      Prism.languages.diff[name] = {\n        pattern: RegExp(\n          '^(?:[' + prefix + '].*(?:\\r\\n?|\\n|(?![\\\\s\\\\S])))+',\n          'm'\n        ),\n        alias: alias,\n        inside: {\n          line: {\n            pattern: /(.)(?=[\\s\\S]).*(?:\\r\\n?|\\n)?/,\n            lookbehind: true\n          },\n          prefix: {\n            pattern: /[\\s\\S]/,\n            alias: /\\w+/.exec(name)[0]\n          }\n        }\n      }\n    }) // make prefixes available to Diff plugin\n    Object.defineProperty(Prism.languages.diff, 'PREFIXES', {\n      value: PREFIXES\n    })\n  })(Prism)\n}\n",
+      "start": 1702937444859,
+      "end": 1702937444890,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar diff_1;\nvar hasRequiredDiff;\n\nfunction requireDiff () {\n\tif (hasRequiredDiff) return diff_1;\n\thasRequiredDiff = 1;\n\t'use strict'\n\n\tdiff_1 = diff\n\tdiff.displayName = 'diff'\n\tdiff.aliases = []\n\tfunction diff(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.diff = {\n\t      coord: [\n\t        // Match all kinds of coord lines (prefixed by \"+++\", \"---\" or \"***\").\n\t        /^(?:\\*{3}|-{3}|\\+{3}).*$/m, // Match \"@@ ... @@\" coord lines in unified diff.\n\t        /^@@.*@@$/m, // Match coord lines in normal diff (starts with a number).\n\t        /^\\d.*$/m\n\t      ] // deleted, inserted, unchanged, diff\n\t    }\n\t    /**\n\t     * A map from the name of a block to its line prefix.\n\t     *\n\t     * @type {Object<string, string>}\n\t     */\n\t    var PREFIXES = {\n\t      'deleted-sign': '-',\n\t      'deleted-arrow': '<',\n\t      'inserted-sign': '+',\n\t      'inserted-arrow': '>',\n\t      unchanged: ' ',\n\t      diff: '!'\n\t    } // add a token for each prefix\n\t    Object.keys(PREFIXES).forEach(function (name) {\n\t      var prefix = PREFIXES[name]\n\t      var alias = []\n\t      if (!/^\\w+$/.test(name)) {\n\t        // \"deleted-sign\" -> \"deleted\"\n\t        alias.push(/\\w+/.exec(name)[0])\n\t      }\n\t      if (name === 'diff') {\n\t        alias.push('bold')\n\t      }\n\t      Prism.languages.diff[name] = {\n\t        pattern: RegExp(\n\t          '^(?:[' + prefix + '].*(?:\\r\\n?|\\n|(?![\\\\s\\\\S])))+',\n\t          'm'\n\t        ),\n\t        alias: alias,\n\t        inside: {\n\t          line: {\n\t            pattern: /(.)(?=[\\s\\S]).*(?:\\r\\n?|\\n)?/,\n\t            lookbehind: true\n\t          },\n\t          prefix: {\n\t            pattern: /[\\s\\S]/,\n\t            alias: /\\w+/.exec(name)[0]\n\t          }\n\t        }\n\t      }\n\t    }) // make prefixes available to Diff plugin\n\t    Object.defineProperty(Prism.languages.diff, 'PREFIXES', {\n\t      value: PREFIXES\n\t    })\n\t  })(Prism)\n\t}\n\treturn diff_1;\n}\n\nexport { requireDiff as __require };",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,KAAK,EAAE;CACb;CACA,QAAQ,2BAA2B;CACnC,QAAQ,WAAW;CACnB,QAAQ,SAAS;CACjB,OAAO;CACP,KAAK;CACL;CACA;CACA;CACA;CACA;CACA,IAAI,IAAI,QAAQ,GAAG;CACnB,MAAM,cAAc,EAAE,GAAG;CACzB,MAAM,eAAe,EAAE,GAAG;CAC1B,MAAM,eAAe,EAAE,GAAG;CAC1B,MAAM,gBAAgB,EAAE,GAAG;CAC3B,MAAM,SAAS,EAAE,GAAG;CACpB,MAAM,IAAI,EAAE,GAAG;CACf,KAAK;CACL,IAAI,MAAM,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC,OAAO,CAAC,UAAU,IAAI,EAAE;CAClD,MAAM,IAAI,MAAM,GAAG,QAAQ,CAAC,IAAI,CAAC;CACjC,MAAM,IAAI,KAAK,GAAG,EAAE;CACpB,MAAM,IAAI,CAAC,OAAO,CAAC,IAAI,CAAC,IAAI,CAAC,EAAE;CAC/B;CACA,QAAQ,KAAK,CAAC,IAAI,CAAC,KAAK,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC;CACvC,OAAO;CACP,MAAM,IAAI,IAAI,KAAK,MAAM,EAAE;CAC3B,QAAQ,KAAK,CAAC,IAAI,CAAC,MAAM,CAAC;CAC1B,OAAO;CACP,MAAM,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,IAAI,CAAC,GAAG;CACnC,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,OAAO,GAAG,MAAM,GAAG,gCAAgC;CAC7D,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,KAAK,EAAE,KAAK;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,IAAI,EAAE;CAChB,YAAY,OAAO,EAAE,8BAA8B;CACnD,YAAY,UAAU,EAAE,IAAI;CAC5B,WAAW;CACX,UAAU,MAAM,EAAE;CAClB,YAAY,OAAO,EAAE,QAAQ;CAC7B,YAAY,KAAK,EAAE,KAAK,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC;CACtC,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,IAAI,MAAM,CAAC,cAAc,CAAC,KAAK,CAAC,SAAS,CAAC,IAAI,EAAE,UAAU,EAAE;CAC5D,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444890,
+      "end": 1702937444890,
+      "order": "normal"
+    }
+  ]
+}

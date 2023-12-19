@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/FormControl.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useContext } from 'react';\nimport warning from 'warning';\nimport Feedback from './Feedback';\nimport FormContext from './FormContext';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst FormControl = /*#__PURE__*/React.forwardRef(({\n  bsPrefix,\n  type,\n  size,\n  htmlSize,\n  id,\n  className,\n  isValid = false,\n  isInvalid = false,\n  plaintext,\n  readOnly,\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = 'input',\n  ...props\n}, ref) => {\n  const {\n    controlId\n  } = useContext(FormContext);\n  bsPrefix = useBootstrapPrefix(bsPrefix, 'form-control');\n  process.env.NODE_ENV !== \"production\" ? warning(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') : void 0;\n  return /*#__PURE__*/_jsx(Component, {\n    ...props,\n    type: type,\n    size: htmlSize,\n    ref: ref,\n    readOnly: readOnly,\n    id: id || controlId,\n    className: classNames(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === 'color' && `${bsPrefix}-color`, isValid && 'is-valid', isInvalid && 'is-invalid')\n  });\n});\nFormControl.displayName = 'FormControl';\nexport default Object.assign(FormControl, {\n  Feedback\n});",
+      "start": 1702937441464,
+      "end": 1702937441485,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441485,
+      "end": 1702937441485,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441485,
+      "end": 1702937441485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441485,
+      "end": 1702937441485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441485,
+      "end": 1702937441485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441485,
+      "end": 1702937441485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use client\";\nimport classNames from \"classnames\";\nimport * as React from \"react\";\nimport { useContext } from \"react\";\nimport warning from \"warning\";\nimport Feedback from \"./Feedback\";\nimport FormContext from \"./FormContext\";\nimport { useBootstrapPrefix } from \"./ThemeProvider\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst FormControl = /* @__PURE__ */ React.forwardRef(({\n  bsPrefix,\n  type,\n  size,\n  htmlSize,\n  id,\n  className,\n  isValid = false,\n  isInvalid = false,\n  plaintext,\n  readOnly,\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = \"input\",\n  ...props\n}, ref) => {\n  const {\n    controlId\n  } = useContext(FormContext);\n  bsPrefix = useBootstrapPrefix(bsPrefix, \"form-control\");\n  false ? warning(controlId == null || !id, \"`controlId` is ignored on `<FormControl>` when `id` is specified.\") : void 0;\n  return /* @__PURE__ */ _jsx(Component, {\n    ...props,\n    type,\n    size: htmlSize,\n    ref,\n    readOnly,\n    id: id || controlId,\n    className: classNames(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === \"color\" && `${bsPrefix}-color`, isValid && \"is-valid\", isInvalid && \"is-invalid\")\n  });\n});\nFormControl.displayName = \"FormControl\";\nexport default Object.assign(FormControl, {\n  Feedback\n});\n",
+      "start": 1702937441485,
+      "end": 1702937441495,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441495,
+      "end": 1702937441495,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441496,
+      "end": 1702937441496,
+      "order": "normal"
+    }
+  ]
+}

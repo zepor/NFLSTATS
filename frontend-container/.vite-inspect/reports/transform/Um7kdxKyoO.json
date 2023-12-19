@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/maps/GoogleMaps/Markers.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport GoogleMapReact from \"google-map-react\";\r\n\r\nconst Markers = () => {\r\n  const getMapOptions = (maps) => {\r\n    return {\r\n      fullscreenControl: true,\r\n      mapTypeControl: true,\r\n      mapTypeId: maps.MapTypeId.ROADMAP,\r\n      scaleControl: true,\r\n      scrollwheel: false,\r\n      streetViewControl: true,\r\n    };\r\n  };\r\n\r\n  const renderMarkers = (map, maps) => {\r\n    new maps.Marker({\r\n      position: {\r\n        lat: 40.712784,\r\n        lng: -74.005941,\r\n      },\r\n      map,\r\n      title: \"Hello World!\",\r\n    });\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Markers</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Identify a location on a map.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div style={{ height: 300, width: \"100%\" }}>\r\n          <GoogleMapReact\r\n            options={getMapOptions}\r\n            bootstrapURLKeys={{\r\n              key: \"${{   secrets.GOOGLEMAPAPI }}\",\r\n            }}\r\n            defaultCenter={{\r\n              lat: 40.712784,\r\n              lng: -74.005941,\r\n            }}\r\n            defaultZoom={14}\r\n            onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Markers;\r\n",
+      "start": 1702937441850,
+      "end": 1702937441881,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441881,
+      "end": 1702937441881,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441881,
+      "end": 1702937441881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Card } from \"react-bootstrap\";\nimport GoogleMapReact from \"google-map-react\";\nconst Markers = () => {\n  const getMapOptions = (maps) => {\n    return {\n      fullscreenControl: true,\n      mapTypeControl: true,\n      mapTypeId: maps.MapTypeId.ROADMAP,\n      scaleControl: true,\n      scrollwheel: false,\n      streetViewControl: true\n    };\n  };\n  const renderMarkers = (map, maps) => {\n    new maps.Marker({\n      position: {\n        lat: 40.712784,\n        lng: -74.005941\n      },\n      map,\n      title: \"Hello World!\"\n    });\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Markers\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Identify a location on a map.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { style: { height: 300, width: \"100%\" }, children: /* @__PURE__ */ jsx(\n      GoogleMapReact,\n      {\n        options: getMapOptions,\n        bootstrapURLKeys: {\n          key: \"${{   secrets.GOOGLEMAPAPI }}\"\n        },\n        defaultCenter: {\n          lat: 40.712784,\n          lng: -74.005941\n        },\n        defaultZoom: 14,\n        onGoogleApiLoaded: ({ map, maps }) => renderMarkers(map, maps)\n      }\n    ) }) })\n  ] });\n};\nexport default Markers;\n",
+      "start": 1702937441881,
+      "end": 1702937441886,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/maps/GoogleMaps/Markers.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport GoogleMapReact from \"google-map-react\";\r\n\r\nconst Markers = () => {\r\n  const getMapOptions = (maps) => {\r\n    return {\r\n      fullscreenControl: true,\r\n      mapTypeControl: true,\r\n      mapTypeId: maps.MapTypeId.ROADMAP,\r\n      scaleControl: true,\r\n      scrollwheel: false,\r\n      streetViewControl: true,\r\n    };\r\n  };\r\n\r\n  const renderMarkers = (map, maps) => {\r\n    new maps.Marker({\r\n      position: {\r\n        lat: 40.712784,\r\n        lng: -74.005941,\r\n      },\r\n      map,\r\n      title: \"Hello World!\",\r\n    });\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Markers</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Identify a location on a map.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div style={{ height: 300, width: \"100%\" }}>\r\n          <GoogleMapReact\r\n            options={getMapOptions}\r\n            bootstrapURLKeys={{\r\n              key: \"${{   secrets.GOOGLEMAPAPI }}\",\r\n            }}\r\n            defaultCenter={{\r\n              lat: 40.712784,\r\n              lng: -74.005941,\r\n            }}\r\n            defaultZoom={14}\r\n            onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Markers;\r\n"
+        ],
+        "mappings": "AA8BM,SACE,KADF;AA9BN,OAAO,WAAW;AAClB,SAAS,YAAY;AAErB,OAAO,oBAAoB;AAE3B,MAAM,UAAU,MAAM;AACpB,QAAM,gBAAgB,CAAC,SAAS;AAC9B,WAAO;AAAA,MACL,mBAAmB;AAAA,MACnB,gBAAgB;AAAA,MAChB,WAAW,KAAK,UAAU;AAAA,MAC1B,cAAc;AAAA,MACd,aAAa;AAAA,MACb,mBAAmB;AAAA,IACrB;AAAA,EACF;AAEA,QAAM,gBAAgB,CAAC,KAAK,SAAS;AACnC,QAAI,KAAK,OAAO;AAAA,MACd,UAAU;AAAA,QACR,KAAK;AAAA,QACL,KAAK;AAAA,MACP;AAAA,MACA;AAAA,MACA,OAAO;AAAA,IACT,CAAC;AAAA,EACH;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,qBAAO;AAAA,MACnB,oBAAC,QAAG,WAAU,4BAA2B,2CAEzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,OAAO,EAAE,QAAQ,KAAK,OAAO,OAAO,GACvC;AAAA,MAAC;AAAA;AAAA,QACC,SAAS;AAAA,QACT,kBAAkB;AAAA,UAChB,KAAK;AAAA,QACP;AAAA,QACA,eAAe;AAAA,UACb,KAAK;AAAA,UACL,KAAK;AAAA,QACP;AAAA,QACA,aAAa;AAAA,QACb,mBAAmB,CAAC,EAAE,KAAK,KAAK,MAAM,cAAc,KAAK,IAAI;AAAA;AAAA,IAC/D,GACF,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441887,
+      "end": 1702937441887,
+      "order": "normal"
+    }
+  ]
+}

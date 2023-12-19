@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/hooks/useSettingsState.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useEffect } from \"react\";\r\nimport useLocalStorage from \"./useLocalStorage\";\r\n\r\nfunction useSettingsState(key, initialValue) {\r\n  const [value, setValue] = useLocalStorage(key, initialValue);\r\n\r\n  useEffect(() => {\r\n    document.body.dataset[key] = value;\r\n\r\n    // Replace stylesheet if dark theme gets toggled\r\n    if (key === \"theme\") {\r\n      const theme = value === \"dark\" ? \"dark\" : \"light\";\r\n\r\n      const stylesheet = document.querySelector(\".js-stylesheet\");\r\n      if (stylesheet) {\r\n        if (import.meta.env.PROD) {\r\n          // Use precompiled css files while in production mode\r\n          stylesheet.setAttribute(\"href\", `/assets/${theme}.css`);\r\n        } else {\r\n          // Use sass files while in development mode, so we can watch changes while developing\r\n          stylesheet.setAttribute(\"href\", `/src/assets/scss/${theme}.scss`);\r\n        }\r\n      }\r\n    }\r\n  }, [value, key]);\r\n\r\n  return [value, setValue];\r\n}\r\n\r\nexport default useSettingsState;\r\n",
+      "start": 1702937436271,
+      "end": 1702937436703,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { useEffect } from \"react\";\nimport useLocalStorage from \"./useLocalStorage\";\nfunction useSettingsState(key, initialValue) {\n  const [value, setValue] = useLocalStorage(key, initialValue);\n  useEffect(() => {\n    document.body.dataset[key] = value;\n    if (key === \"theme\") {\n      const theme = value === \"dark\" ? \"dark\" : \"light\";\n      const stylesheet = document.querySelector(\".js-stylesheet\");\n      if (stylesheet) {\n        if (true) {\n          stylesheet.setAttribute(\"href\", `/assets/${theme}.css`);\n        } else {\n          stylesheet.setAttribute(\"href\", `/src/assets/scss/${theme}.scss`);\n        }\n      }\n    }\n  }, [value, key]);\n  return [value, setValue];\n}\nexport default useSettingsState;\n",
+      "start": 1702937436703,
+      "end": 1702937436868,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    }
+  ]
+}

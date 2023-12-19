@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import getWindow from \"./getWindow.js\";\nimport getDocumentElement from \"./getDocumentElement.js\";\nimport getWindowScrollBarX from \"./getWindowScrollBarX.js\";\nimport isLayoutViewport from \"./isLayoutViewport.js\";\nexport default function getViewportRect(element, strategy) {\n  var win = getWindow(element);\n  var html = getDocumentElement(element);\n  var visualViewport = win.visualViewport;\n  var width = html.clientWidth;\n  var height = html.clientHeight;\n  var x = 0;\n  var y = 0;\n\n  if (visualViewport) {\n    width = visualViewport.width;\n    height = visualViewport.height;\n    var layoutViewport = isLayoutViewport();\n\n    if (layoutViewport || !layoutViewport && strategy === 'fixed') {\n      x = visualViewport.offsetLeft;\n      y = visualViewport.offsetTop;\n    }\n  }\n\n  return {\n    width: width,\n    height: height,\n    x: x + getWindowScrollBarX(element),\n    y: y\n  };\n}",
+      "start": 1702937445336,
+      "end": 1702937445356,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445356,
+      "end": 1702937445356,
+      "order": "normal"
+    }
+  ]
+}

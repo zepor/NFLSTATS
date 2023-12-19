@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default function _iterableToArrayLimit(r, l) {\n  var t = null == r ? null : \"undefined\" != typeof Symbol && r[Symbol.iterator] || r[\"@@iterator\"];\n  if (null != t) {\n    var e,\n      n,\n      i,\n      u,\n      a = [],\n      f = !0,\n      o = !1;\n    try {\n      if (i = (t = t.call(r)).next, 0 === l) {\n        if (Object(t) !== t) return;\n        f = !1;\n      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);\n    } catch (r) {\n      o = !0, n = r;\n    } finally {\n      try {\n        if (!f && null != t[\"return\"] && (u = t[\"return\"](), Object(u) !== u)) return;\n      } finally {\n        if (o) throw n;\n      }\n    }\n    return a;\n  }\n}",
+      "start": 1702937443256,
+      "end": 1702937443720,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443720,
+      "end": 1702937443720,
+      "order": "normal"
+    }
+  ]
+}

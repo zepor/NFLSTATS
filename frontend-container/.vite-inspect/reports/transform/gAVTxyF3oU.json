@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/ButtonGroup.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nconst ButtonGroup = /*#__PURE__*/React.forwardRef(({\n  bsPrefix,\n  size,\n  vertical = false,\n  className,\n  role = 'group',\n  // Need to define the default \"as\" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595\n  as: Component = 'div',\n  ...rest\n}, ref) => {\n  const prefix = useBootstrapPrefix(bsPrefix, 'btn-group');\n  let baseClass = prefix;\n  if (vertical) baseClass = `${prefix}-vertical`;\n  return /*#__PURE__*/_jsx(Component, {\n    ...rest,\n    ref: ref,\n    role: role,\n    className: classNames(className, baseClass, size && `${prefix}-${size}`)\n  });\n});\nButtonGroup.displayName = 'ButtonGroup';\nexport default ButtonGroup;",
+      "start": 1702937441415,
+      "end": 1702937441460,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441460,
+      "end": 1702937441460,
+      "order": "normal"
+    }
+  ]
+}

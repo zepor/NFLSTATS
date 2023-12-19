@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/index.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Chart from \"./Chart\";\r\nimport Header from \"./Header\";\r\nimport Markets from \"./Markets\";\r\nimport Orders from \"./Orders\";\r\nimport Tickers from \"./Tickers\";\r\n\r\nconst Crypto = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Crypto Dashboard\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Header />\r\n      <Tickers />\r\n      <Row>\r\n        <Col lg=\"5\" className=\"d-flex col-xxl-4\">\r\n          <Markets />\r\n        </Col>\r\n        <Col lg=\"7\" className=\"d-flex col-xxl-8\">\r\n          <Chart />\r\n        </Col>\r\n      </Row>\r\n      <Orders />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Crypto;\r\n",
+      "start": 1702937436593,
+      "end": 1702937436952,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436952,
+      "end": 1702937436952,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436952,
+      "end": 1702937436952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Container, Row, Col } from \"react-bootstrap\";\nimport Chart from \"./Chart\";\nimport Header from \"./Header\";\nimport Markets from \"./Markets\";\nimport Orders from \"./Orders\";\nimport Tickers from \"./Tickers\";\nconst Crypto = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Crypto Dashboard\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(Header, {}),\n    /* @__PURE__ */ jsx(Tickers, {}),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { lg: \"5\", className: \"d-flex col-xxl-4\", children: /* @__PURE__ */ jsx(Markets, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"7\", className: \"d-flex col-xxl-8\", children: /* @__PURE__ */ jsx(Chart, {}) })\n    ] }),\n    /* @__PURE__ */ jsx(Orders, {})\n  ] })\n] });\nexport default Crypto;\n",
+      "start": 1702937436952,
+      "end": 1702937436963,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/index.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Chart from \"./Chart\";\r\nimport Header from \"./Header\";\r\nimport Markets from \"./Markets\";\r\nimport Orders from \"./Orders\";\r\nimport Tickers from \"./Tickers\";\r\n\r\nconst Crypto = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Crypto Dashboard\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Header />\r\n      <Tickers />\r\n      <Row>\r\n        <Col lg=\"5\" className=\"d-flex col-xxl-4\">\r\n          <Markets />\r\n        </Col>\r\n        <Col lg=\"7\" className=\"d-flex col-xxl-8\">\r\n          <Chart />\r\n        </Col>\r\n      </Row>\r\n      <Orders />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Crypto;\r\n"
+        ],
+        "mappings": "AAYI,cAIE,YAJF;AAZJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,WAAW,KAAK,WAAW;AAEpC,OAAO,WAAW;AAClB,OAAO,YAAY;AACnB,OAAO,aAAa;AACpB,OAAO,YAAY;AACnB,OAAO,aAAa;AAEpB,MAAM,SAAS,MACb,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,oBAAmB;AAAA,EACjC,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,UAAO;AAAA,IACR,oBAAC,WAAQ;AAAA,IACT,qBAAC,OACC;AAAA,0BAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,WAAQ,GACX;AAAA,MACA,oBAAC,OAAI,IAAG,KAAI,WAAU,oBACpB,8BAAC,SAAM,GACT;AAAA,OACF;AAAA,IACA,oBAAC,UAAO;AAAA,KACV;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/diff.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Diff\nDescription: Unified and context diff\nAuthor: Vasily Polovnyov <vast@whiteants.net>\nWebsite: https://www.gnu.org/software/diffutils/\nCategory: common\n*/\n\n/** @type LanguageFn */\nfunction diff(hljs) {\n  return {\n    name: 'Diff',\n    aliases: ['patch'],\n    contains: [\n      {\n        className: 'meta',\n        relevance: 10,\n        variants: [\n          {\n            begin: /^@@ +-\\d+,\\d+ +\\+\\d+,\\d+ +@@/\n          },\n          {\n            begin: /^\\*\\*\\* +\\d+,\\d+ +\\*\\*\\*\\*$/\n          },\n          {\n            begin: /^--- +\\d+,\\d+ +----$/\n          }\n        ]\n      },\n      {\n        className: 'comment',\n        variants: [\n          {\n            begin: /Index: /,\n            end: /$/\n          },\n          {\n            begin: /^index/,\n            end: /$/\n          },\n          {\n            begin: /={3,}/,\n            end: /$/\n          },\n          {\n            begin: /^-{3}/,\n            end: /$/\n          },\n          {\n            begin: /^\\*{3} /,\n            end: /$/\n          },\n          {\n            begin: /^\\+{3}/,\n            end: /$/\n          },\n          {\n            begin: /^\\*{15}$/\n          },\n          {\n            begin: /^diff --git/,\n            end: /$/\n          }\n        ]\n      },\n      {\n        className: 'addition',\n        begin: /^\\+/,\n        end: /$/\n      },\n      {\n        className: 'deletion',\n        begin: /^-/,\n        end: /$/\n      },\n      {\n        className: 'addition',\n        begin: /^!/,\n        end: /$/\n      }\n    ]\n  };\n}\n\nmodule.exports = diff;\n",
+      "start": 1702937444288,
+      "end": 1702937444323,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Diff\nDescription: Unified and context diff\nAuthor: Vasily Polovnyov <vast@whiteants.net>\nWebsite: https://www.gnu.org/software/diffutils/\nCategory: common\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar diff_1;\nvar hasRequiredDiff;\n\nfunction requireDiff () {\n\tif (hasRequiredDiff) return diff_1;\n\thasRequiredDiff = 1;\n\t/** @type LanguageFn */\n\tfunction diff(hljs) {\n\t  return {\n\t    name: 'Diff',\n\t    aliases: ['patch'],\n\t    contains: [\n\t      {\n\t        className: 'meta',\n\t        relevance: 10,\n\t        variants: [\n\t          {\n\t            begin: /^@@ +-\\d+,\\d+ +\\+\\d+,\\d+ +@@/\n\t          },\n\t          {\n\t            begin: /^\\*\\*\\* +\\d+,\\d+ +\\*\\*\\*\\*$/\n\t          },\n\t          {\n\t            begin: /^--- +\\d+,\\d+ +----$/\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'comment',\n\t        variants: [\n\t          {\n\t            begin: /Index: /,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /^index/,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /={3,}/,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /^-{3}/,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /^\\*{3} /,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /^\\+{3}/,\n\t            end: /$/\n\t          },\n\t          {\n\t            begin: /^\\*{15}$/\n\t          },\n\t          {\n\t            begin: /^diff --git/,\n\t            end: /$/\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'addition',\n\t        begin: /^\\+/,\n\t        end: /$/\n\t      },\n\t      {\n\t        className: 'deletion',\n\t        begin: /^-/,\n\t        end: /$/\n\t      },\n\t      {\n\t        className: 'addition',\n\t        begin: /^!/,\n\t        end: /$/\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tdiff_1 = diff;\n\treturn diff_1;\n}\n\nexport { requireDiff as __require };",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA;CACA,SAAS,IAAI,CAAC,IAAI,EAAE;CACpB,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,MAAM;CAChB,IAAI,OAAO,EAAE,CAAC,OAAO,CAAC;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,SAAS,EAAE,EAAE;CACrB,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,KAAK,EAAE,8BAA8B;CACjD,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,6BAA6B;CAChD,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,sBAAsB;CACzC,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,SAAS;CAC5B,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,KAAK,EAAE,SAAS;CAC5B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,QAAQ;CAC3B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,OAAO;CAC1B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,OAAO;CAC1B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,SAAS;CAC5B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,QAAQ;CAC3B,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,UAAU;CAC7B,WAAW;CACX,UAAU;CACV,YAAY,KAAK,EAAE,aAAa;CAChC,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,KAAK;CACpB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,IAAI;CACnB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,KAAK,EAAE,IAAI;CACnB,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,OAAc,GAAG,IAAI"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444323,
+      "end": 1702937444323,
+      "order": "normal"
+    }
+  ]
+}

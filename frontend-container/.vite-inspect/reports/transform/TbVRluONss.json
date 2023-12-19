@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/Projects.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Badge, Card, Dropdown, Table } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nconst Projects = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Latest Projects</Card.Title>\r\n    </Card.Header>\r\n    <Table striped className=\"my-0\">\r\n      <thead>\r\n        <tr>\r\n          <th>Name</th>\r\n          <th className=\"d-none d-xl-table-cell\">Start Date</th>\r\n          <th className=\"d-none d-xl-table-cell\">End Date</th>\r\n          <th>Status</th>\r\n          <th className=\"d-none d-md-table-cell\">Assignee</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>Project Apollo</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Carl Jenkins</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Fireball</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"danger\">Cancelled</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Hades</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Stacie Hall</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Nitro</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"warning\">In progress</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Carl Jenkins</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Phoenix</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Romeo</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Ashley Briggs</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Wombat</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"warning\">In progress</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Zircon</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"danger\">Cancelled</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Stacie Hall</td>\r\n        </tr>\r\n      </tbody>\r\n    </Table>\r\n  </Card>\r\n);\r\n\r\nexport default Projects;\r\n",
+      "start": 1702937441562,
+      "end": 1702937441579,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441579,
+      "end": 1702937441579,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441579,
+      "end": 1702937441579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Badge, Card, Dropdown, Table } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nconst Projects = () => /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n      /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n      /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n      ] })\n    ] }) }),\n    /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Latest Projects\" })\n  ] }),\n  /* @__PURE__ */ jsxs(Table, { striped: true, className: \"my-0\", children: [\n    /* @__PURE__ */ jsx(\"thead\", { children: /* @__PURE__ */ jsxs(\"tr\", { children: [\n      /* @__PURE__ */ jsx(\"th\", { children: \"Name\" }),\n      /* @__PURE__ */ jsx(\"th\", { className: \"d-none d-xl-table-cell\", children: \"Start Date\" }),\n      /* @__PURE__ */ jsx(\"th\", { className: \"d-none d-xl-table-cell\", children: \"End Date\" }),\n      /* @__PURE__ */ jsx(\"th\", { children: \"Status\" }),\n      /* @__PURE__ */ jsx(\"th\", { className: \"d-none d-md-table-cell\", children: \"Assignee\" })\n    ] }) }),\n    /* @__PURE__ */ jsxs(\"tbody\", { children: [\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Apollo\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"success\", children: \"Done\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Carl Jenkins\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Fireball\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"danger\", children: \"Cancelled\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Bertha Martin\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Hades\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"success\", children: \"Done\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Stacie Hall\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Nitro\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"warning\", children: \"In progress\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Carl Jenkins\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Phoenix\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"success\", children: \"Done\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Bertha Martin\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Romeo\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"success\", children: \"Done\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Ashley Briggs\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Wombat\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"warning\", children: \"In progress\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Bertha Martin\" })\n      ] }),\n      /* @__PURE__ */ jsxs(\"tr\", { children: [\n        /* @__PURE__ */ jsx(\"td\", { children: \"Project Zircon\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"01/01/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-xl-table-cell\", children: \"31/06/2021\" }),\n        /* @__PURE__ */ jsx(\"td\", { children: /* @__PURE__ */ jsx(Badge, { bg: \"danger\", children: \"Cancelled\" }) }),\n        /* @__PURE__ */ jsx(\"td\", { className: \"d-none d-md-table-cell\", children: \"Stacie Hall\" })\n      ] })\n    ] })\n  ] })\n] });\nexport default Projects;\n",
+      "start": 1702937441579,
+      "end": 1702937441583,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/Projects.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Badge, Card, Dropdown, Table } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nconst Projects = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Latest Projects</Card.Title>\r\n    </Card.Header>\r\n    <Table striped className=\"my-0\">\r\n      <thead>\r\n        <tr>\r\n          <th>Name</th>\r\n          <th className=\"d-none d-xl-table-cell\">Start Date</th>\r\n          <th className=\"d-none d-xl-table-cell\">End Date</th>\r\n          <th>Status</th>\r\n          <th className=\"d-none d-md-table-cell\">Assignee</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>Project Apollo</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Carl Jenkins</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Fireball</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"danger\">Cancelled</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Hades</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Stacie Hall</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Nitro</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"warning\">In progress</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Carl Jenkins</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Phoenix</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Romeo</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"success\">Done</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Ashley Briggs</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Wombat</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"warning\">In progress</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Bertha Martin</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Project Zircon</td>\r\n          <td className=\"d-none d-xl-table-cell\">01/01/2021</td>\r\n          <td className=\"d-none d-xl-table-cell\">31/06/2021</td>\r\n          <td>\r\n            <Badge bg=\"danger\">Cancelled</Badge>\r\n          </td>\r\n          <td className=\"d-none d-md-table-cell\">Stacie Hall</td>\r\n        </tr>\r\n      </tbody>\r\n    </Table>\r\n  </Card>\r\n);\r\n\r\nexport default Projects;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    }
+  ]
+}

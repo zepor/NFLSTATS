@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/ticky/ticky-browser.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var si = typeof setImmediate === 'function', tick;\nif (si) {\n  tick = function (fn) { setImmediate(fn); };\n} else {\n  tick = function (fn) { setTimeout(fn, 0); };\n}\n\nmodule.exports = tick;",
+      "start": 1702937444182,
+      "end": 1702937444202,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar si = typeof setImmediate === 'function', tick;\nif (si) {\n  tick = function (fn) { setImmediate(fn); };\n} else {\n  tick = function (fn) { setTimeout(fn, 0); };\n}\n\nvar tickyBrowser = tick;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(tickyBrowser);\nexport { tickyBrowser as __moduleExports };",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,IAAI,EAAE,GAAG,OAAO,YAAY,KAAK,UAAU,EAAE,IAAI,CAAC;AAClD,IAAI,EAAE,EAAE;AACR,EAAE,IAAI,GAAG,UAAU,EAAE,EAAE,EAAE,YAAY,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC;AAC7C,CAAC,MAAM;AACP,EAAE,IAAI,GAAG,UAAU,EAAE,EAAE,EAAE,UAAU,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC;AAC9C,CAAC;AACD;IACA,YAAc,GAAG,IAAI"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444202,
+      "end": 1702937444202,
+      "order": "normal"
+    }
+  ]
+}

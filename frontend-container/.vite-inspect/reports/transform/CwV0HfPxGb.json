@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/Calendar.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport DT from \"react-datetime\";\r\n\r\nconst DateTime = DT.default ? DT.default : DT;\r\n\r\nconst Calendar = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Calendar</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body className=\"d-flex\">\r\n      <div className=\"align-self-center w-100\">\r\n        <DateTime\r\n          input={false}\r\n          defaultValue={DateTime.moment()}\r\n          dateFormat=\"L\"\r\n          timeFormat={false}\r\n        />\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nexport default Calendar;\r\n",
+      "start": 1702937441556,
+      "end": 1702937441577,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441577,
+      "end": 1702937441577,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441577,
+      "end": 1702937441577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Card, Dropdown } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nimport DT from \"react-datetime\";\nconst DateTime = DT.default ? DT.default : DT;\nconst Calendar = () => /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n  /* @__PURE__ */ jsxs(Card.Header, { children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n      /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n      /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n        /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n      ] })\n    ] }) }),\n    /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Calendar\" })\n  ] }),\n  /* @__PURE__ */ jsx(Card.Body, { className: \"d-flex\", children: /* @__PURE__ */ jsx(\"div\", { className: \"align-self-center w-100\", children: /* @__PURE__ */ jsx(\n    DateTime,\n    {\n      input: false,\n      defaultValue: DateTime.moment(),\n      dateFormat: \"L\",\n      timeFormat: false\n    }\n  ) }) })\n] });\nexport default Calendar;\n",
+      "start": 1702937441577,
+      "end": 1702937441583,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/Calendar.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport DT from \"react-datetime\";\r\n\r\nconst DateTime = DT.default ? DT.default : DT;\r\n\r\nconst Calendar = () => (\r\n  <Card className=\"flex-fill w-100\">\r\n    <Card.Header>\r\n      <div className=\"card-actions float-end\">\r\n        <Dropdown align=\"end\">\r\n          <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n            <MoreHorizontal />\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n      </div>\r\n      <Card.Title className=\"mb-0\">Calendar</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body className=\"d-flex\">\r\n      <div className=\"align-self-center w-100\">\r\n        <DateTime\r\n          input={false}\r\n          defaultValue={DateTime.moment()}\r\n          dateFormat=\"L\"\r\n          timeFormat={false}\r\n        />\r\n      </div>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nexport default Calendar;\r\n"
+        ],
+        "mappings": "AAeY,cAEF,YAFE;AAfZ,OAAO,WAAW;AAClB,SAAS,MAAM,gBAAgB;AAE/B,SAAS,sBAAsB;AAE/B,OAAO,QAAQ;AAEf,MAAM,WAAW,GAAG,UAAU,GAAG,UAAU;AAE3C,MAAM,WAAW,MACf,qBAAC,QAAK,WAAU,mBACd;AAAA,uBAAC,KAAK,QAAL,EACC;AAAA,wBAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,0BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,MACA,qBAAC,SAAS,MAAT,EACC;AAAA,4BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,QACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,QAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,SACpC;AAAA,OACF,GACF;AAAA,IACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,sBAAQ;AAAA,KACvC;AAAA,EACA,oBAAC,KAAK,MAAL,EAAU,WAAU,UACnB,8BAAC,SAAI,WAAU,2BACb;AAAA,IAAC;AAAA;AAAA,MACC,OAAO;AAAA,MACP,cAAc,SAAS,OAAO;AAAA,MAC9B,YAAW;AAAA,MACX,YAAY;AAAA;AAAA,EACd,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441583,
+      "end": 1702937441583,
+      "order": "normal"
+    }
+  ]
+}

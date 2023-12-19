@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/cache/core/cache.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign, __rest } from \"tslib\";\nimport { wrap } from \"optimism\";\nimport { getFragmentQueryDocument } from \"../../utilities/index.js\";\nvar ApolloCache = /** @class */ (function () {\n    function ApolloCache() {\n        this.assumeImmutableResults = false;\n        // Make sure we compute the same (===) fragment query document every\n        // time we receive the same fragment in readFragment.\n        this.getFragmentDoc = wrap(getFragmentQueryDocument);\n    }\n    // Transactional API\n    // The batch method is intended to replace/subsume both performTransaction\n    // and recordOptimisticTransaction, but performTransaction came first, so we\n    // provide a default batch implementation that's just another way of calling\n    // performTransaction. Subclasses of ApolloCache (such as InMemoryCache) can\n    // override the batch method to do more interesting things with its options.\n    ApolloCache.prototype.batch = function (options) {\n        var _this = this;\n        var optimisticId = typeof options.optimistic === \"string\" ? options.optimistic\n            : options.optimistic === false ? null\n                : void 0;\n        var updateResult;\n        this.performTransaction(function () { return (updateResult = options.update(_this)); }, optimisticId);\n        return updateResult;\n    };\n    ApolloCache.prototype.recordOptimisticTransaction = function (transaction, optimisticId) {\n        this.performTransaction(transaction, optimisticId);\n    };\n    // Optional API\n    // Called once per input document, allowing the cache to make static changes\n    // to the query, such as adding __typename fields.\n    ApolloCache.prototype.transformDocument = function (document) {\n        return document;\n    };\n    // Called before each ApolloLink request, allowing the cache to make dynamic\n    // changes to the query, such as filling in missing fragment definitions.\n    ApolloCache.prototype.transformForLink = function (document) {\n        return document;\n    };\n    ApolloCache.prototype.identify = function (object) {\n        return;\n    };\n    ApolloCache.prototype.gc = function () {\n        return [];\n    };\n    ApolloCache.prototype.modify = function (options) {\n        return false;\n    };\n    // DataProxy API\n    ApolloCache.prototype.readQuery = function (options, optimistic) {\n        if (optimistic === void 0) { optimistic = !!options.optimistic; }\n        return this.read(__assign(__assign({}, options), { rootId: options.id || \"ROOT_QUERY\", optimistic: optimistic }));\n    };\n    ApolloCache.prototype.readFragment = function (options, optimistic) {\n        if (optimistic === void 0) { optimistic = !!options.optimistic; }\n        return this.read(__assign(__assign({}, options), { query: this.getFragmentDoc(options.fragment, options.fragmentName), rootId: options.id, optimistic: optimistic }));\n    };\n    ApolloCache.prototype.writeQuery = function (_a) {\n        var id = _a.id, data = _a.data, options = __rest(_a, [\"id\", \"data\"]);\n        return this.write(Object.assign(options, {\n            dataId: id || \"ROOT_QUERY\",\n            result: data,\n        }));\n    };\n    ApolloCache.prototype.writeFragment = function (_a) {\n        var id = _a.id, data = _a.data, fragment = _a.fragment, fragmentName = _a.fragmentName, options = __rest(_a, [\"id\", \"data\", \"fragment\", \"fragmentName\"]);\n        return this.write(Object.assign(options, {\n            query: this.getFragmentDoc(fragment, fragmentName),\n            dataId: id,\n            result: data,\n        }));\n    };\n    ApolloCache.prototype.updateQuery = function (options, update) {\n        return this.batch({\n            update: function (cache) {\n                var value = cache.readQuery(options);\n                var data = update(value);\n                if (data === void 0 || data === null)\n                    return value;\n                cache.writeQuery(__assign(__assign({}, options), { data: data }));\n                return data;\n            },\n        });\n    };\n    ApolloCache.prototype.updateFragment = function (options, update) {\n        return this.batch({\n            update: function (cache) {\n                var value = cache.readFragment(options);\n                var data = update(value);\n                if (data === void 0 || data === null)\n                    return value;\n                cache.writeFragment(__assign(__assign({}, options), { data: data }));\n                return data;\n            },\n        });\n    };\n    return ApolloCache;\n}());\nexport { ApolloCache };\n//# sourceMappingURL=cache.js.map",
+      "start": 1702937440872,
+      "end": 1702937440935,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440935,
+      "end": 1702937440935,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440935,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440936,
+      "end": 1702937440936,
+      "order": "normal"
+    }
+  ]
+}

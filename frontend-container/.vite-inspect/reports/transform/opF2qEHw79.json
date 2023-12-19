@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/NoFragmentCyclesRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../error/GraphQLError.mjs';\n\n/**\n * No fragment cycles\n *\n * The graph of fragment spreads must not form any cycles including spreading itself.\n * Otherwise an operation could infinitely spread or infinitely execute on cycles in the underlying data.\n *\n * See https://spec.graphql.org/draft/#sec-Fragment-spreads-must-not-form-cycles\n */\nexport function NoFragmentCyclesRule(context) {\n  // Tracks already visited fragments to maintain O(N) and to ensure that cycles\n  // are not redundantly reported.\n  const visitedFrags = Object.create(null); // Array of AST nodes used to produce meaningful errors\n\n  const spreadPath = []; // Position in the spread path\n\n  const spreadPathIndexByName = Object.create(null);\n  return {\n    OperationDefinition: () => false,\n\n    FragmentDefinition(node) {\n      detectCycleRecursive(node);\n      return false;\n    },\n  }; // This does a straight-forward DFS to find cycles.\n  // It does not terminate when a cycle was found but continues to explore\n  // the graph to find all possible cycles.\n\n  function detectCycleRecursive(fragment) {\n    if (visitedFrags[fragment.name.value]) {\n      return;\n    }\n\n    const fragmentName = fragment.name.value;\n    visitedFrags[fragmentName] = true;\n    const spreadNodes = context.getFragmentSpreads(fragment.selectionSet);\n\n    if (spreadNodes.length === 0) {\n      return;\n    }\n\n    spreadPathIndexByName[fragmentName] = spreadPath.length;\n\n    for (const spreadNode of spreadNodes) {\n      const spreadName = spreadNode.name.value;\n      const cycleIndex = spreadPathIndexByName[spreadName];\n      spreadPath.push(spreadNode);\n\n      if (cycleIndex === undefined) {\n        const spreadFragment = context.getFragment(spreadName);\n\n        if (spreadFragment) {\n          detectCycleRecursive(spreadFragment);\n        }\n      } else {\n        const cyclePath = spreadPath.slice(cycleIndex);\n        const viaPath = cyclePath\n          .slice(0, -1)\n          .map((s) => '\"' + s.name.value + '\"')\n          .join(', ');\n        context.reportError(\n          new GraphQLError(\n            `Cannot spread fragment \"${spreadName}\" within itself` +\n              (viaPath !== '' ? ` via ${viaPath}.` : '.'),\n            {\n              nodes: cyclePath,\n            },\n          ),\n        );\n      }\n\n      spreadPath.pop();\n    }\n\n    spreadPathIndexByName[fragmentName] = undefined;\n  }\n}\n",
+      "start": 1702937443071,
+      "end": 1702937443092,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@aws-crypto/util/build/numToUint8.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use strict\";\n// Copyright Amazon.com Inc. or its affiliates. All Rights Reserved.\n// SPDX-License-Identifier: Apache-2.0\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.numToUint8 = void 0;\nfunction numToUint8(num) {\n    return new Uint8Array([\n        (num & 0xff000000) >> 24,\n        (num & 0x00ff0000) >> 16,\n        (num & 0x0000ff00) >> 8,\n        num & 0x000000ff,\n    ]);\n}\nexports.numToUint8 = numToUint8;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibnVtVG9VaW50OC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9udW1Ub1VpbnQ4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxvRUFBb0U7QUFDcEUsc0NBQXNDOzs7QUFFdEMsU0FBZ0IsVUFBVSxDQUFDLEdBQVc7SUFDcEMsT0FBTyxJQUFJLFVBQVUsQ0FBQztRQUNwQixDQUFDLEdBQUcsR0FBRyxVQUFVLENBQUMsSUFBSSxFQUFFO1FBQ3hCLENBQUMsR0FBRyxHQUFHLFVBQVUsQ0FBQyxJQUFJLEVBQUU7UUFDeEIsQ0FBQyxHQUFHLEdBQUcsVUFBVSxDQUFDLElBQUksQ0FBQztRQUN2QixHQUFHLEdBQUcsVUFBVTtLQUNqQixDQUFDLENBQUM7QUFDTCxDQUFDO0FBUEQsZ0NBT0MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgQW1hem9uLmNvbSBJbmMuIG9yIGl0cyBhZmZpbGlhdGVzLiBBbGwgUmlnaHRzIFJlc2VydmVkLlxuLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEFwYWNoZS0yLjBcblxuZXhwb3J0IGZ1bmN0aW9uIG51bVRvVWludDgobnVtOiBudW1iZXIpIHtcbiAgcmV0dXJuIG5ldyBVaW50OEFycmF5KFtcbiAgICAobnVtICYgMHhmZjAwMDAwMCkgPj4gMjQsXG4gICAgKG51bSAmIDB4MDBmZjAwMDApID4+IDE2LFxuICAgIChudW0gJiAweDAwMDBmZjAwKSA+PiA4LFxuICAgIG51bSAmIDB4MDAwMDAwZmYsXG4gIF0pO1xufVxuIl19",
+      "start": 1702937445130,
+      "end": 1702937445154,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as numToUint8_1 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/@aws-crypto/util/build/numToUint8.js?commonjs-exports\";\n\n\"use strict\";\n// Copyright Amazon.com Inc. or its affiliates. All Rights Reserved.\n// SPDX-License-Identifier: Apache-2.0\nObject.defineProperty(numToUint8_1, \"__esModule\", { value: true });\nvar numToUint8_2 = numToUint8_1.numToUint8 = void 0;\nfunction numToUint8(num) {\n    return new Uint8Array([\n        (num & 0xff000000) >> 24,\n        (num & 0x00ff0000) >> 16,\n        (num & 0x0000ff00) >> 8,\n        num & 0x000000ff,\n    ]);\n}\nnumToUint8_2 = numToUint8_1.numToUint8 = numToUint8;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibnVtVG9VaW50OC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9udW1Ub1VpbnQ4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxvRUFBb0U7QUFDcEUsc0NBQXNDOzs7QUFFdEMsU0FBZ0IsVUFBVSxDQUFDLEdBQVc7SUFDcEMsT0FBTyxJQUFJLFVBQVUsQ0FBQztRQUNwQixDQUFDLEdBQUcsR0FBRyxVQUFVLENBQUMsSUFBSSxFQUFFO1FBQ3hCLENBQUMsR0FBRyxHQUFHLFVBQVUsQ0FBQyxJQUFJLEVBQUU7UUFDeEIsQ0FBQyxHQUFHLEdBQUcsVUFBVSxDQUFDLElBQUksQ0FBQztRQUN2QixHQUFHLEdBQUcsVUFBVTtLQUNqQixDQUFDLENBQUM7QUFDTCxDQUFDO0FBUEQsZ0NBT0MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgQW1hem9uLmNvbSBJbmMuIG9yIGl0cyBhZmZpbGlhdGVzLiBBbGwgUmlnaHRzIFJlc2VydmVkLlxuLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEFwYWNoZS0yLjBcblxuZXhwb3J0IGZ1bmN0aW9uIG51bVRvVWludDgobnVtOiBudW1iZXIpIHtcbiAgcmV0dXJuIG5ldyBVaW50OEFycmF5KFtcbiAgICAobnVtICYgMHhmZjAwMDAwMCkgPj4gMjQsXG4gICAgKG51bSAmIDB4MDBmZjAwMDApID4+IDE2LFxuICAgIChudW0gJiAweDAwMDBmZjAwKSA+PiA4LFxuICAgIG51bSAmIDB4MDAwMDAwZmYsXG4gIF0pO1xufVxuIl19\n\nexport { numToUint8_1 as __moduleExports, numToUint8_2 as numToUint8, numToUint8_1 as default };",
+      "start": 1702937445154,
+      "end": 1702937445155,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY,CAAC;AACb;AACA;AACA,MAAM,CAAC,cAAc,CAAC,YAAO,EAAE,YAAY,EAAE,EAAE,KAAK,EAAE,IAAI,EAAE,CAAC,CAAC;AAC9D,0CAAkB,GAAG,KAAK,CAAC,CAAC;AAC5B,SAAS,UAAU,CAAC,GAAG,EAAE;AACzB,IAAI,OAAO,IAAI,UAAU,CAAC;AAC1B,QAAQ,CAAC,GAAG,GAAG,UAAU,KAAK,EAAE;AAChC,QAAQ,CAAC,GAAG,GAAG,UAAU,KAAK,EAAE;AAChC,QAAQ,CAAC,GAAG,GAAG,UAAU,KAAK,CAAC;AAC/B,QAAQ,GAAG,GAAG,UAAU;AACxB,KAAK,CAAC,CAAC;AACP,CAAC;AACD,sCAAkB,GAAG,UAAU,CAAC;AAChC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445155,
+      "end": 1702937445155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445155,
+      "end": 1702937445155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445155,
+      "end": 1702937445155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445155,
+      "end": 1702937445155,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445155,
+      "end": 1702937445155,
+      "order": "normal"
+    }
+  ]
+}

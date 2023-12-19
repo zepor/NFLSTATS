@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/fortran.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = fortran\nfortran.displayName = 'fortran'\nfortran.aliases = []\nfunction fortran(Prism) {\n  Prism.languages.fortran = {\n    'quoted-number': {\n      pattern: /[BOZ](['\"])[A-F0-9]+\\1/i,\n      alias: 'number'\n    },\n    string: {\n      pattern:\n        /(?:\\b\\w+_)?(['\"])(?:\\1\\1|&(?:\\r\\n?|\\n)(?:[ \\t]*!.*(?:\\r\\n?|\\n)|(?![ \\t]*!))|(?!\\1).)*(?:\\1|&)/,\n      inside: {\n        comment: {\n          pattern: /(&(?:\\r\\n?|\\n)\\s*)!.*/,\n          lookbehind: true\n        }\n      }\n    },\n    comment: {\n      pattern: /!.*/,\n      greedy: true\n    },\n    boolean: /\\.(?:FALSE|TRUE)\\.(?:_\\w+)?/i,\n    number: /(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:[ED][+-]?\\d+)?(?:_\\w+)?/i,\n    keyword: [\n      // Types\n      /\\b(?:CHARACTER|COMPLEX|DOUBLE ?PRECISION|INTEGER|LOGICAL|REAL)\\b/i, // END statements\n      /\\b(?:END ?)?(?:BLOCK ?DATA|DO|FILE|FORALL|FUNCTION|IF|INTERFACE|MODULE(?! PROCEDURE)|PROGRAM|SELECT|SUBROUTINE|TYPE|WHERE)\\b/i, // Statements\n      /\\b(?:ALLOCATABLE|ALLOCATE|BACKSPACE|CALL|CASE|CLOSE|COMMON|CONTAINS|CONTINUE|CYCLE|DATA|DEALLOCATE|DIMENSION|DO|END|EQUIVALENCE|EXIT|EXTERNAL|FORMAT|GO ?TO|IMPLICIT(?: NONE)?|INQUIRE|INTENT|INTRINSIC|MODULE PROCEDURE|NAMELIST|NULLIFY|OPEN|OPTIONAL|PARAMETER|POINTER|PRINT|PRIVATE|PUBLIC|READ|RETURN|REWIND|SAVE|SELECT|STOP|TARGET|WHILE|WRITE)\\b/i, // Others\n      /\\b(?:ASSIGNMENT|DEFAULT|ELEMENTAL|ELSE|ELSEIF|ELSEWHERE|ENTRY|IN|INCLUDE|INOUT|KIND|NULL|ONLY|OPERATOR|OUT|PURE|RECURSIVE|RESULT|SEQUENCE|STAT|THEN|USE)\\b/i\n    ],\n    operator: [\n      /\\*\\*|\\/\\/|=>|[=\\/]=|[<>]=?|::|[+\\-*=%]|\\.[A-Z]+\\./i,\n      {\n        // Use lookbehind to prevent confusion with (/ /)\n        pattern: /(^|(?!\\().)\\/(?!\\))/,\n        lookbehind: true\n      }\n    ],\n    punctuation: /\\(\\/|\\/\\)|[(),;:&]/\n  }\n}\n",
+      "start": 1702937444890,
+      "end": 1702937444904,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444904,
+      "end": 1702937444904,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar fortran_1;\nvar hasRequiredFortran;\n\nfunction requireFortran () {\n\tif (hasRequiredFortran) return fortran_1;\n\thasRequiredFortran = 1;\n\t'use strict'\n\n\tfortran_1 = fortran\n\tfortran.displayName = 'fortran'\n\tfortran.aliases = []\n\tfunction fortran(Prism) {\n\t  Prism.languages.fortran = {\n\t    'quoted-number': {\n\t      pattern: /[BOZ](['\"])[A-F0-9]+\\1/i,\n\t      alias: 'number'\n\t    },\n\t    string: {\n\t      pattern:\n\t        /(?:\\b\\w+_)?(['\"])(?:\\1\\1|&(?:\\r\\n?|\\n)(?:[ \\t]*!.*(?:\\r\\n?|\\n)|(?![ \\t]*!))|(?!\\1).)*(?:\\1|&)/,\n\t      inside: {\n\t        comment: {\n\t          pattern: /(&(?:\\r\\n?|\\n)\\s*)!.*/,\n\t          lookbehind: true\n\t        }\n\t      }\n\t    },\n\t    comment: {\n\t      pattern: /!.*/,\n\t      greedy: true\n\t    },\n\t    boolean: /\\.(?:FALSE|TRUE)\\.(?:_\\w+)?/i,\n\t    number: /(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:[ED][+-]?\\d+)?(?:_\\w+)?/i,\n\t    keyword: [\n\t      // Types\n\t      /\\b(?:CHARACTER|COMPLEX|DOUBLE ?PRECISION|INTEGER|LOGICAL|REAL)\\b/i, // END statements\n\t      /\\b(?:END ?)?(?:BLOCK ?DATA|DO|FILE|FORALL|FUNCTION|IF|INTERFACE|MODULE(?! PROCEDURE)|PROGRAM|SELECT|SUBROUTINE|TYPE|WHERE)\\b/i, // Statements\n\t      /\\b(?:ALLOCATABLE|ALLOCATE|BACKSPACE|CALL|CASE|CLOSE|COMMON|CONTAINS|CONTINUE|CYCLE|DATA|DEALLOCATE|DIMENSION|DO|END|EQUIVALENCE|EXIT|EXTERNAL|FORMAT|GO ?TO|IMPLICIT(?: NONE)?|INQUIRE|INTENT|INTRINSIC|MODULE PROCEDURE|NAMELIST|NULLIFY|OPEN|OPTIONAL|PARAMETER|POINTER|PRINT|PRIVATE|PUBLIC|READ|RETURN|REWIND|SAVE|SELECT|STOP|TARGET|WHILE|WRITE)\\b/i, // Others\n\t      /\\b(?:ASSIGNMENT|DEFAULT|ELEMENTAL|ELSE|ELSEIF|ELSEWHERE|ENTRY|IN|INCLUDE|INOUT|KIND|NULL|ONLY|OPERATOR|OUT|PURE|RECURSIVE|RESULT|SEQUENCE|STAT|THEN|USE)\\b/i\n\t    ],\n\t    operator: [\n\t      /\\*\\*|\\/\\/|=>|[=\\/]=|[<>]=?|::|[+\\-*=%]|\\.[A-Z]+\\./i,\n\t      {\n\t        // Use lookbehind to prevent confusion with (/ /)\n\t        pattern: /(^|(?!\\().)\\/(?!\\))/,\n\t        lookbehind: true\n\t      }\n\t    ],\n\t    punctuation: /\\(\\/|\\/\\)|[(),;:&]/\n\t  }\n\t}\n\treturn fortran_1;\n}\n\nexport { requireFortran as __require };",
+      "start": 1702937444904,
+      "end": 1702937444905,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,UAAc,GAAG,OAAO;CACxB,OAAO,CAAC,WAAW,GAAG,SAAS;CAC/B,OAAO,CAAC,OAAO,GAAG,EAAE;CACpB,SAAS,OAAO,CAAC,KAAK,EAAE;CACxB,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG;CAC5B,IAAI,eAAe,EAAE;CACrB,MAAM,OAAO,EAAE,yBAAyB;CACxC,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,+FAA+F;CACvG,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE;CACjB,UAAU,OAAO,EAAE,uBAAuB;CAC1C,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,OAAO,EAAE,8BAA8B;CAC3C,IAAI,MAAM,EAAE,wDAAwD;CACpE,IAAI,OAAO,EAAE;CACb;CACA,MAAM,mEAAmE;CACzE,MAAM,+HAA+H;CACrI,MAAM,2VAA2V;CACjW,MAAM,6JAA6J;CACnK,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,oDAAoD;CAC1D,MAAM;CACN;CACA,QAAQ,OAAO,EAAE,qBAAqB;CACtC,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,IAAI,WAAW,EAAE,oBAAoB;CACrC,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444905,
+      "end": 1702937444905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444905,
+      "end": 1702937444905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444905,
+      "end": 1702937444905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444905,
+      "end": 1702937444905,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444905,
+      "end": 1702937444905,
+      "order": "normal"
+    }
+  ]
+}

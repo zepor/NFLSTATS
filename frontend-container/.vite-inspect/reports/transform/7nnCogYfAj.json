@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/symbol-observable/es/ponyfill.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default function symbolObservablePonyfill(root) {\n\tvar result;\n\tvar Symbol = root.Symbol;\n\n\tif (typeof Symbol === 'function') {\n\t\tif (Symbol.observable) {\n\t\t\tresult = Symbol.observable;\n\t\t} else {\n\n\t\t\tif (typeof Symbol.for === 'function') {\n\t\t\t\t// This just needs to be something that won't trample other user's Symbol.for use\n\t\t\t\t// It also will guide people to the source of their issues, if this is problematic.\n\t\t\t\t// META: It's a resource locator!\n\t\t\t\tresult = Symbol.for('https://github.com/benlesh/symbol-observable');\n\t\t\t} else {\n\t\t\t\t// Symbol.for didn't exist! The best we can do at this point is a totally \n\t\t\t\t// unique symbol. Note that the string argument here is a descriptor, not\n\t\t\t\t// an identifier. This symbol is unique.\n\t\t\t\tresult = Symbol('https://github.com/benlesh/symbol-observable');\n\t\t\t}\n\t\t\ttry {\n\t\t\t\tSymbol.observable = result;\n\t\t\t} catch (err) {\n\t\t\t\t// Do nothing. In some environments, users have frozen `Symbol` for security reasons,\n\t\t\t\t// if it is frozen assigning to it will throw. In this case, we don't care, because\n\t\t\t\t// they will need to use the returned value from the ponyfill.\n\t\t\t}\n\t\t}\n\t} else {\n\t\tresult = '@@observable';\n\t}\n\n\treturn result;\n};\n",
+      "start": 1702937442997,
+      "end": 1702937443044,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443045,
+      "end": 1702937443045,
+      "order": "normal"
+    }
+  ]
+}

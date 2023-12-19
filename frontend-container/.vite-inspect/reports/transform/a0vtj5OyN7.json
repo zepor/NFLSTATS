@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/amazon-cognito-identity-js/es/utils/WordArray.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import cryptoSecureRandomInt from './cryptoSecureRandomInt';\n\n/**\n * Hex encoding strategy.\n * Converts a word array to a hex string.\n * @param {WordArray} wordArray The word array.\n * @return {string} The hex string.\n * @static\n */\nfunction hexStringify(wordArray) {\n  // Shortcuts\n  var words = wordArray.words;\n  var sigBytes = wordArray.sigBytes;\n\n  // Convert\n  var hexChars = [];\n  for (var i = 0; i < sigBytes; i++) {\n    var bite = words[i >>> 2] >>> 24 - i % 4 * 8 & 0xff;\n    hexChars.push((bite >>> 4).toString(16));\n    hexChars.push((bite & 0x0f).toString(16));\n  }\n  return hexChars.join('');\n}\nvar WordArray = /*#__PURE__*/function () {\n  function WordArray(words, sigBytes) {\n    words = this.words = words || [];\n    if (sigBytes != undefined) {\n      this.sigBytes = sigBytes;\n    } else {\n      this.sigBytes = words.length * 4;\n    }\n  }\n  var _proto = WordArray.prototype;\n  _proto.random = function random(nBytes) {\n    var words = [];\n    for (var i = 0; i < nBytes; i += 4) {\n      words.push(cryptoSecureRandomInt());\n    }\n    return new WordArray(words, nBytes);\n  };\n  _proto.toString = function toString() {\n    return hexStringify(this);\n  };\n  return WordArray;\n}();\nexport { WordArray as default };",
+      "start": 1702937441883,
+      "end": 1702937441922,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441922,
+      "end": 1702937441922,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    }
+  ]
+}

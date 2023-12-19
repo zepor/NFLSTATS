@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/docs/Routing.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst Intro = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Introduction</h3>\r\n    <p className=\"text-lg\">\r\n      The package includes an implementation of React Router DOM, using the\r\n      programmatic routing model.\r\n    </p>\r\n  </div>\r\n);\r\n\r\nconst HowToAddRoutes = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to add routes</h3>\r\n    <p className=\"text-lg\">\r\n      Open <code>/src/routes.js</code> and add your new route to the{\" \"}\r\n      <code>routes</code> variable. The example below will result in the{\" \"}\r\n      <code>{`<NewPage />`}</code> element being called on the{\" \"}\r\n      <code>http://localhost:3000/pages/new</code> route.\r\n    </p>\r\n\r\n    <Code>{`import DashboardLayout from \"./layouts/Dashboard\";\r\nimport NewPage from \"./pages/NewPage\";\r\n\r\nconst routes = [\r\n  {\r\n    path: \"pages\",\r\n    element: <DashboardLayout />,\r\n    children: [\r\n      {\r\n        path: \"new\",\r\n        element: <NewPage />,\r\n      },\r\n    ],\r\n  },\r\n];\r\n\r\nexport default routes;`}</Code>\r\n  </div>\r\n);\r\n\r\nconst HowToAddALink = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to add a link</h3>\r\n    <p className=\"text-lg\">Learn how to add a link to a component.</p>\r\n\r\n    <Code>{`import { Link } from \"react-router-dom\";\r\n\r\nfunction ExampleComponent() {\r\n  return (\r\n    <Link to=\"pages/new\">\r\n      New page\r\n    </Link>\r\n  );\r\n}\r\n\r\nexport default ExampleComponent;`}</Code>\r\n  </div>\r\n);\r\n\r\nconst HowToNavigateProgrammatically = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to navigate programmatically</h3>\r\n    <p className=\"text-lg\">\r\n      The example code below includes an example on how to navigate\r\n      programmatically using the <code>useNavigate</code> hook.\r\n    </p>\r\n\r\n    <Code>{`import { useNavigate } from \"react-router-dom\";\r\n\r\nfunction ExampleComponent() {\r\n  const navigate = useNavigate();\r\n\r\n  const handleSubmit = () => {\r\n    navigate(\"/pages/new\");\r\n  };\r\n\r\n  return (\r\n    <form onSubmit={handleSubmit}>\r\n      ...\r\n    </form>\r\n  );\r\n}\r\n\r\nexport default ExampleComponent;\r\n`}</Code>\r\n  </div>\r\n);\r\n\r\nconst Routing = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Routing\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Routing</h1>\r\n          <hr className=\"my-4\" />\r\n          <Intro />\r\n          <HowToAddRoutes />\r\n          <HowToAddALink />\r\n          <HowToNavigateProgrammatically />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Routing;\r\n",
+      "start": 1702937440808,
+      "end": 1702937440871,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440871,
+      "end": 1702937440871,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440871,
+      "end": 1702937440871,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Col, Container, Row } from \"react-bootstrap\";\nimport Code from \"../../components/Code\";\nconst Intro = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"Introduction\" }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"The package includes an implementation of React Router DOM, using the programmatic routing model.\" })\n] });\nconst HowToAddRoutes = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"How to add routes\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg\", children: [\n    \"Open \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"/src/routes.js\" }),\n    \" and add your new route to the\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"routes\" }),\n    \" variable. The example below will result in the\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: `<NewPage />` }),\n    \" element being called on the\",\n    \" \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"http://localhost:3000/pages/new\" }),\n    \" route.\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: `import DashboardLayout from \"./layouts/Dashboard\";\nimport NewPage from \"./pages/NewPage\";\n\nconst routes = [\n  {\n    path: \"pages\",\n    element: <DashboardLayout />,\n    children: [\n      {\n        path: \"new\",\n        element: <NewPage />,\n      },\n    ],\n  },\n];\n\nexport default routes;` })\n] });\nconst HowToAddALink = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"How to add a link\" }),\n  /* @__PURE__ */ jsx(\"p\", { className: \"text-lg\", children: \"Learn how to add a link to a component.\" }),\n  /* @__PURE__ */ jsx(Code, { children: `import { Link } from \"react-router-dom\";\n\nfunction ExampleComponent() {\n  return (\n    <Link to=\"pages/new\">\n      New page\n    </Link>\n  );\n}\n\nexport default ExampleComponent;` })\n] });\nconst HowToNavigateProgrammatically = () => /* @__PURE__ */ jsxs(\"div\", { className: \"mb-5\", children: [\n  /* @__PURE__ */ jsx(\"h3\", { children: \"How to navigate programmatically\" }),\n  /* @__PURE__ */ jsxs(\"p\", { className: \"text-lg\", children: [\n    \"The example code below includes an example on how to navigate programmatically using the \",\n    /* @__PURE__ */ jsx(\"code\", { children: \"useNavigate\" }),\n    \" hook.\"\n  ] }),\n  /* @__PURE__ */ jsx(Code, { children: `import { useNavigate } from \"react-router-dom\";\n\nfunction ExampleComponent() {\n  const navigate = useNavigate();\n\n  const handleSubmit = () => {\n    navigate(\"/pages/new\");\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      ...\n    </form>\n  );\n}\n\nexport default ExampleComponent;\n` })\n] });\nconst Routing = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Routing\" }),\n  /* @__PURE__ */ jsx(Container, { fluid: true, className: \"p-0\", children: /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsxs(Col, { lg: 10, xl: 8, className: \"col-xxl-7 mx-auto\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { children: \"Routing\" }),\n    /* @__PURE__ */ jsx(\"hr\", { className: \"my-4\" }),\n    /* @__PURE__ */ jsx(Intro, {}),\n    /* @__PURE__ */ jsx(HowToAddRoutes, {}),\n    /* @__PURE__ */ jsx(HowToAddALink, {}),\n    /* @__PURE__ */ jsx(HowToNavigateProgrammatically, {})\n  ] }) }) })\n] });\nexport default Routing;\n",
+      "start": 1702937440871,
+      "end": 1702937440874,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/docs/Routing.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Code from \"../../components/Code\";\r\n\r\nconst Intro = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>Introduction</h3>\r\n    <p className=\"text-lg\">\r\n      The package includes an implementation of React Router DOM, using the\r\n      programmatic routing model.\r\n    </p>\r\n  </div>\r\n);\r\n\r\nconst HowToAddRoutes = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to add routes</h3>\r\n    <p className=\"text-lg\">\r\n      Open <code>/src/routes.js</code> and add your new route to the{\" \"}\r\n      <code>routes</code> variable. The example below will result in the{\" \"}\r\n      <code>{`<NewPage />`}</code> element being called on the{\" \"}\r\n      <code>http://localhost:3000/pages/new</code> route.\r\n    </p>\r\n\r\n    <Code>{`import DashboardLayout from \"./layouts/Dashboard\";\r\nimport NewPage from \"./pages/NewPage\";\r\n\r\nconst routes = [\r\n  {\r\n    path: \"pages\",\r\n    element: <DashboardLayout />,\r\n    children: [\r\n      {\r\n        path: \"new\",\r\n        element: <NewPage />,\r\n      },\r\n    ],\r\n  },\r\n];\r\n\r\nexport default routes;`}</Code>\r\n  </div>\r\n);\r\n\r\nconst HowToAddALink = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to add a link</h3>\r\n    <p className=\"text-lg\">Learn how to add a link to a component.</p>\r\n\r\n    <Code>{`import { Link } from \"react-router-dom\";\r\n\r\nfunction ExampleComponent() {\r\n  return (\r\n    <Link to=\"pages/new\">\r\n      New page\r\n    </Link>\r\n  );\r\n}\r\n\r\nexport default ExampleComponent;`}</Code>\r\n  </div>\r\n);\r\n\r\nconst HowToNavigateProgrammatically = () => (\r\n  <div className=\"mb-5\">\r\n    <h3>How to navigate programmatically</h3>\r\n    <p className=\"text-lg\">\r\n      The example code below includes an example on how to navigate\r\n      programmatically using the <code>useNavigate</code> hook.\r\n    </p>\r\n\r\n    <Code>{`import { useNavigate } from \"react-router-dom\";\r\n\r\nfunction ExampleComponent() {\r\n  const navigate = useNavigate();\r\n\r\n  const handleSubmit = () => {\r\n    navigate(\"/pages/new\");\r\n  };\r\n\r\n  return (\r\n    <form onSubmit={handleSubmit}>\r\n      ...\r\n    </form>\r\n  );\r\n}\r\n\r\nexport default ExampleComponent;\r\n`}</Code>\r\n  </div>\r\n);\r\n\r\nconst Routing = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Routing\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Row>\r\n        <Col lg={10} xl={8} className=\"col-xxl-7 mx-auto\">\r\n          <h1>Routing</h1>\r\n          <hr className=\"my-4\" />\r\n          <Intro />\r\n          <HowToAddRoutes />\r\n          <HowToAddALink />\r\n          <HowToNavigateProgrammatically />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Routing;\r\n"
+        ],
+        "mappings": "AAOE,SACE,KADF;AAPF,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,KAAK,WAAW,WAAW;AAEpC,OAAO,UAAU;AAEjB,MAAM,QAAQ,MACZ,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,0BAAY;AAAA,EAChB,oBAAC,OAAE,WAAU,WAAU,+GAGvB;AAAA,GACF;AAGF,MAAM,iBAAiB,MACrB,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,+BAAiB;AAAA,EACrB,qBAAC,OAAE,WAAU,WAAU;AAAA;AAAA,IAChB,oBAAC,UAAK,4BAAc;AAAA,IAAO;AAAA,IAA+B;AAAA,IAC/D,oBAAC,UAAK,oBAAM;AAAA,IAAO;AAAA,IAAgD;AAAA,IACnE,oBAAC,UAAM,yBAAc;AAAA,IAAO;AAAA,IAA6B;AAAA,IACzD,oBAAC,UAAK,6CAA+B;AAAA,IAAO;AAAA,KAC9C;AAAA,EAEA,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,yBAgBa;AAAA,GACtB;AAGF,MAAM,gBAAgB,MACpB,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,+BAAiB;AAAA,EACrB,oBAAC,OAAE,WAAU,WAAU,qDAAuC;AAAA,EAE9D,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mCAUuB;AAAA,GAChC;AAGF,MAAM,gCAAgC,MACpC,qBAAC,SAAI,WAAU,QACb;AAAA,sBAAC,QAAG,8CAAgC;AAAA,EACpC,qBAAC,OAAE,WAAU,WAAU;AAAA;AAAA,IAEM,oBAAC,UAAK,yBAAW;AAAA,IAAO;AAAA,KACrD;AAAA,EAEA,oBAAC,QAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,GAiBT;AAAA,GACA;AAGF,MAAM,UAAU,MACd,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,WAAU;AAAA,EACxB,oBAAC,aAAU,OAAK,MAAC,WAAU,OACzB,8BAAC,OACC,+BAAC,OAAI,IAAI,IAAI,IAAI,GAAG,WAAU,qBAC5B;AAAA,wBAAC,QAAG,qBAAO;AAAA,IACX,oBAAC,QAAG,WAAU,QAAO;AAAA,IACrB,oBAAC,SAAM;AAAA,IACP,oBAAC,kBAAe;AAAA,IAChB,oBAAC,iBAAc;AAAA,IACf,oBAAC,iCAA8B;AAAA,KACjC,GACF,GACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440874,
+      "end": 1702937440874,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440875,
+      "end": 1702937440875,
+      "order": "normal"
+    }
+  ]
+}

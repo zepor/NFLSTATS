@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/index.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Header from \"./Header\";\r\nimport Appointments from \"./Appointments\";\r\nimport BarChart from \"./BarChart\";\r\nimport Calendar from \"./Calendar\";\r\nimport Feed from \"./Feed\";\r\nimport PieChart from \"./PieChart\";\r\nimport Projects from \"./Projects\";\r\nimport Statistics from \"./Statistics\";\r\n\r\nconst Default = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Default Dashboard\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Header />\r\n      <Statistics />\r\n      <Row>\r\n        <Col lg=\"8\" className=\"d-flex\">\r\n          <BarChart />\r\n        </Col>\r\n        <Col lg=\"4\" className=\"d-flex\">\r\n          <Feed />\r\n        </Col>\r\n      </Row>\r\n      <Row>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <Calendar />\r\n        </Col>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <PieChart />\r\n        </Col>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <Appointments />\r\n        </Col>\r\n      </Row>\r\n      <Projects />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Default;\r\n",
+      "start": 1702937436399,
+      "end": 1702937436868,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Container, Row, Col } from \"react-bootstrap\";\nimport Header from \"./Header\";\nimport Appointments from \"./Appointments\";\nimport BarChart from \"./BarChart\";\nimport Calendar from \"./Calendar\";\nimport Feed from \"./Feed\";\nimport PieChart from \"./PieChart\";\nimport Projects from \"./Projects\";\nimport Statistics from \"./Statistics\";\nconst Default = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Default Dashboard\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(Header, {}),\n    /* @__PURE__ */ jsx(Statistics, {}),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { lg: \"8\", className: \"d-flex\", children: /* @__PURE__ */ jsx(BarChart, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"4\", className: \"d-flex\", children: /* @__PURE__ */ jsx(Feed, {}) })\n    ] }),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", xl: \"4\", className: \"d-flex\", children: /* @__PURE__ */ jsx(Calendar, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", xl: \"4\", className: \"d-flex\", children: /* @__PURE__ */ jsx(PieChart, {}) }),\n      /* @__PURE__ */ jsx(Col, { lg: \"6\", xl: \"4\", className: \"d-flex\", children: /* @__PURE__ */ jsx(Appointments, {}) })\n    ] }),\n    /* @__PURE__ */ jsx(Projects, {})\n  ] })\n] });\nexport default Default;\n",
+      "start": 1702937436868,
+      "end": 1702937436948,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Default/index.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Container, Row, Col } from \"react-bootstrap\";\r\n\r\nimport Header from \"./Header\";\r\nimport Appointments from \"./Appointments\";\r\nimport BarChart from \"./BarChart\";\r\nimport Calendar from \"./Calendar\";\r\nimport Feed from \"./Feed\";\r\nimport PieChart from \"./PieChart\";\r\nimport Projects from \"./Projects\";\r\nimport Statistics from \"./Statistics\";\r\n\r\nconst Default = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Default Dashboard\" />\r\n    <Container fluid className=\"p-0\">\r\n      <Header />\r\n      <Statistics />\r\n      <Row>\r\n        <Col lg=\"8\" className=\"d-flex\">\r\n          <BarChart />\r\n        </Col>\r\n        <Col lg=\"4\" className=\"d-flex\">\r\n          <Feed />\r\n        </Col>\r\n      </Row>\r\n      <Row>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <Calendar />\r\n        </Col>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <PieChart />\r\n        </Col>\r\n        <Col lg=\"6\" xl=\"4\" className=\"d-flex\">\r\n          <Appointments />\r\n        </Col>\r\n      </Row>\r\n      <Projects />\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Default;\r\n"
+        ],
+        "mappings": "AAeI,cAIE,YAJF;AAfJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,WAAW,KAAK,WAAW;AAEpC,OAAO,YAAY;AACnB,OAAO,kBAAkB;AACzB,OAAO,cAAc;AACrB,OAAO,cAAc;AACrB,OAAO,UAAU;AACjB,OAAO,cAAc;AACrB,OAAO,cAAc;AACrB,OAAO,gBAAgB;AAEvB,MAAM,UAAU,MACd,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,qBAAoB;AAAA,EAClC,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,UAAO;AAAA,IACR,oBAAC,cAAW;AAAA,IACZ,qBAAC,OACC;AAAA,0BAAC,OAAI,IAAG,KAAI,WAAU,UACpB,8BAAC,YAAS,GACZ;AAAA,MACA,oBAAC,OAAI,IAAG,KAAI,WAAU,UACpB,8BAAC,QAAK,GACR;AAAA,OACF;AAAA,IACA,qBAAC,OACC;AAAA,0BAAC,OAAI,IAAG,KAAI,IAAG,KAAI,WAAU,UAC3B,8BAAC,YAAS,GACZ;AAAA,MACA,oBAAC,OAAI,IAAG,KAAI,IAAG,KAAI,WAAU,UAC3B,8BAAC,YAAS,GACZ;AAAA,MACA,oBAAC,OAAI,IAAG,KAAI,IAAG,KAAI,WAAU,UAC3B,8BAAC,gBAAa,GAChB;AAAA,OACF;AAAA,IACA,oBAAC,YAAS;AAAA,KACZ;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436948,
+      "end": 1702937436948,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436949,
+      "end": 1702937436949,
+      "order": "normal"
+    }
+  ]
+}

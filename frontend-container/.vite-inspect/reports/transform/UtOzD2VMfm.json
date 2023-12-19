@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-i18next/dist/es/useSSR.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useContext } from 'react';\nimport { getI18n, I18nContext } from './context.js';\nexport function useSSR(initialI18nStore, initialLanguage) {\n  let props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};\n  const {\n    i18n: i18nFromProps\n  } = props;\n  const {\n    i18n: i18nFromContext\n  } = useContext(I18nContext) || {};\n  const i18n = i18nFromProps || i18nFromContext || getI18n();\n  if (i18n.options && i18n.options.isClone) return;\n  if (initialI18nStore && !i18n.initializedStoreOnce) {\n    i18n.services.resourceStore.data = initialI18nStore;\n    i18n.options.ns = Object.values(initialI18nStore).reduce((mem, lngResources) => {\n      Object.keys(lngResources).forEach(ns => {\n        if (mem.indexOf(ns) < 0) mem.push(ns);\n      });\n      return mem;\n    }, i18n.options.ns);\n    i18n.initializedStoreOnce = true;\n    i18n.isInitialized = true;\n  }\n  if (initialLanguage && !i18n.initializedLanguageOnce) {\n    i18n.changeLanguage(initialLanguage);\n    i18n.initializedLanguageOnce = true;\n  }\n}",
+      "start": 1702937441237,
+      "end": 1702937441297,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441297,
+      "end": 1702937441297,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441297,
+      "end": 1702937441298,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441298,
+      "end": 1702937441298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441298,
+      "end": 1702937441298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441298,
+      "end": 1702937441298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441298,
+      "end": 1702937441298,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441298,
+      "end": 1702937441298,
+      "order": "normal"
+    }
+  ]
+}

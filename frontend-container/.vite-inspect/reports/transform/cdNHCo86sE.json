@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/qml.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = qml\nqml.displayName = 'qml'\nqml.aliases = []\nfunction qml(Prism) {\n  ;(function (Prism) {\n    var jsString = /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"|'(?:\\\\.|[^\\\\'\\r\\n])*'/.source\n    var jsComment = /\\/\\/.*(?!.)|\\/\\*(?:[^*]|\\*(?!\\/))*\\*\\//.source\n    var jsExpr =\n      /(?:[^\\\\()[\\]{}\"'/]|<string>|\\/(?![*/])|<comment>|\\(<expr>*\\)|\\[<expr>*\\]|\\{<expr>*\\}|\\\\[\\s\\S])/.source\n        .replace(/<string>/g, function () {\n          return jsString\n        })\n        .replace(/<comment>/g, function () {\n          return jsComment\n        }) // the pattern will blow up, so only a few iterations\n    for (var i = 0; i < 2; i++) {\n      jsExpr = jsExpr.replace(/<expr>/g, function () {\n        return jsExpr\n      })\n    }\n    jsExpr = jsExpr.replace(/<expr>/g, '[^\\\\s\\\\S]')\n    Prism.languages.qml = {\n      comment: {\n        pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\//,\n        greedy: true\n      },\n      'javascript-function': {\n        pattern: RegExp(\n          /((?:^|;)[ \\t]*)function\\s+(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*\\s*\\(<js>*\\)\\s*\\{<js>*\\}/.source.replace(\n            /<js>/g,\n            function () {\n              return jsExpr\n            }\n          ),\n          'm'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'language-javascript',\n        inside: Prism.languages.javascript\n      },\n      'class-name': {\n        pattern: /((?:^|[:;])[ \\t]*)(?!\\d)\\w+(?=[ \\t]*\\{|[ \\t]+on\\b)/m,\n        lookbehind: true\n      },\n      property: [\n        {\n          pattern: /((?:^|[;{])[ \\t]*)(?!\\d)\\w+(?:\\.\\w+)*(?=[ \\t]*:)/m,\n          lookbehind: true\n        },\n        {\n          pattern:\n            /((?:^|[;{])[ \\t]*)property[ \\t]+(?!\\d)\\w+(?:\\.\\w+)*[ \\t]+(?!\\d)\\w+(?:\\.\\w+)*(?=[ \\t]*:)/m,\n          lookbehind: true,\n          inside: {\n            keyword: /^property/,\n            property: /\\w+(?:\\.\\w+)*/\n          }\n        }\n      ],\n      'javascript-expression': {\n        pattern: RegExp(\n          /(:[ \\t]*)(?![\\s;}[])(?:(?!$|[;}])<js>)+/.source.replace(\n            /<js>/g,\n            function () {\n              return jsExpr\n            }\n          ),\n          'm'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'language-javascript',\n        inside: Prism.languages.javascript\n      },\n      string: {\n        pattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"/,\n        greedy: true\n      },\n      keyword: /\\b(?:as|import|on)\\b/,\n      punctuation: /[{}[\\]:;,]/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937445031,
+      "end": 1702937445056,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar qml_1;\nvar hasRequiredQml;\n\nfunction requireQml () {\n\tif (hasRequiredQml) return qml_1;\n\thasRequiredQml = 1;\n\t'use strict'\n\n\tqml_1 = qml\n\tqml.displayName = 'qml'\n\tqml.aliases = []\n\tfunction qml(Prism) {\n\t  ;(function (Prism) {\n\t    var jsString = /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"|'(?:\\\\.|[^\\\\'\\r\\n])*'/.source\n\t    var jsComment = /\\/\\/.*(?!.)|\\/\\*(?:[^*]|\\*(?!\\/))*\\*\\//.source\n\t    var jsExpr =\n\t      /(?:[^\\\\()[\\]{}\"'/]|<string>|\\/(?![*/])|<comment>|\\(<expr>*\\)|\\[<expr>*\\]|\\{<expr>*\\}|\\\\[\\s\\S])/.source\n\t        .replace(/<string>/g, function () {\n\t          return jsString\n\t        })\n\t        .replace(/<comment>/g, function () {\n\t          return jsComment\n\t        }) // the pattern will blow up, so only a few iterations\n\t    for (var i = 0; i < 2; i++) {\n\t      jsExpr = jsExpr.replace(/<expr>/g, function () {\n\t        return jsExpr\n\t      })\n\t    }\n\t    jsExpr = jsExpr.replace(/<expr>/g, '[^\\\\s\\\\S]')\n\t    Prism.languages.qml = {\n\t      comment: {\n\t        pattern: /\\/\\/.*|\\/\\*[\\s\\S]*?\\*\\//,\n\t        greedy: true\n\t      },\n\t      'javascript-function': {\n\t        pattern: RegExp(\n\t          /((?:^|;)[ \\t]*)function\\s+(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*\\s*\\(<js>*\\)\\s*\\{<js>*\\}/.source.replace(\n\t            /<js>/g,\n\t            function () {\n\t              return jsExpr\n\t            }\n\t          ),\n\t          'm'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'language-javascript',\n\t        inside: Prism.languages.javascript\n\t      },\n\t      'class-name': {\n\t        pattern: /((?:^|[:;])[ \\t]*)(?!\\d)\\w+(?=[ \\t]*\\{|[ \\t]+on\\b)/m,\n\t        lookbehind: true\n\t      },\n\t      property: [\n\t        {\n\t          pattern: /((?:^|[;{])[ \\t]*)(?!\\d)\\w+(?:\\.\\w+)*(?=[ \\t]*:)/m,\n\t          lookbehind: true\n\t        },\n\t        {\n\t          pattern:\n\t            /((?:^|[;{])[ \\t]*)property[ \\t]+(?!\\d)\\w+(?:\\.\\w+)*[ \\t]+(?!\\d)\\w+(?:\\.\\w+)*(?=[ \\t]*:)/m,\n\t          lookbehind: true,\n\t          inside: {\n\t            keyword: /^property/,\n\t            property: /\\w+(?:\\.\\w+)*/\n\t          }\n\t        }\n\t      ],\n\t      'javascript-expression': {\n\t        pattern: RegExp(\n\t          /(:[ \\t]*)(?![\\s;}[])(?:(?!$|[;}])<js>)+/.source.replace(\n\t            /<js>/g,\n\t            function () {\n\t              return jsExpr\n\t            }\n\t          ),\n\t          'm'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'language-javascript',\n\t        inside: Prism.languages.javascript\n\t      },\n\t      string: {\n\t        pattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"/,\n\t        greedy: true\n\t      },\n\t      keyword: /\\b(?:as|import|on)\\b/,\n\t      punctuation: /[{}[\\]:;,]/\n\t    }\n\t  })(Prism)\n\t}\n\treturn qml_1;\n}\n\nexport { requireQml as __require };",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,QAAQ,GAAG,6CAA6C,CAAC,MAAM;CACvE,IAAI,IAAI,SAAS,GAAG,wCAAwC,CAAC,MAAM;CACnE,IAAI,IAAI,MAAM;CACd,MAAM,gGAAgG,CAAC,MAAM;CAC7G,SAAS,OAAO,CAAC,WAAW,EAAE,YAAY;CAC1C,UAAU,OAAO,QAAQ;CACzB,SAAS,CAAC;CACV,SAAS,OAAO,CAAC,YAAY,EAAE,YAAY;CAC3C,UAAU,OAAO,SAAS;CAC1B,SAAS,CAAC;CACV,IAAI,KAAK,IAAI,CAAC,GAAG,CAAC,EAAE,CAAC,GAAG,CAAC,EAAE,CAAC,EAAE,EAAE;CAChC,MAAM,MAAM,GAAG,MAAM,CAAC,OAAO,CAAC,SAAS,EAAE,YAAY;CACrD,QAAQ,OAAO,MAAM;CACrB,OAAO,CAAC;CACR,KAAK;CACL,IAAI,MAAM,GAAG,MAAM,CAAC,OAAO,CAAC,SAAS,EAAE,WAAW,CAAC;CACnD,IAAI,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CAC1B,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,yBAAyB;CAC1C,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,qBAAqB,EAAE;CAC7B,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,0GAA0G,CAAC,MAAM,CAAC,OAAO;CACnI,YAAY,OAAO;CACnB,YAAY,YAAY;CACxB,cAAc,OAAO,MAAM;CAC3B,aAAa;CACb,WAAW;CACX,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,qBAAqB;CACpC,QAAQ,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU;CAC1C,OAAO;CACP,MAAM,YAAY,EAAE;CACpB,QAAQ,OAAO,EAAE,qDAAqD;CACtE,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,QAAQ,EAAE;CAChB,QAAQ;CACR,UAAU,OAAO,EAAE,mDAAmD;CACtE,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ;CACR,UAAU,OAAO;CACjB,YAAY,0FAA0F;CACtG,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,MAAM,EAAE;CAClB,YAAY,OAAO,EAAE,WAAW;CAChC,YAAY,QAAQ,EAAE,eAAe;CACrC,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM,uBAAuB,EAAE;CAC/B,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,yCAAyC,CAAC,MAAM,CAAC,OAAO;CAClE,YAAY,OAAO;CACnB,YAAY,YAAY;CACxB,cAAc,OAAO,MAAM;CAC3B,aAAa;CACb,WAAW;CACX,UAAU,GAAG;CACb,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,qBAAqB;CACpC,QAAQ,MAAM,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU;CAC1C,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,uBAAuB;CACxC,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,OAAO,EAAE,sBAAsB;CACrC,MAAM,WAAW,EAAE,YAAY;CAC/B,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445056,
+      "end": 1702937445056,
+      "order": "normal"
+    }
+  ]
+}

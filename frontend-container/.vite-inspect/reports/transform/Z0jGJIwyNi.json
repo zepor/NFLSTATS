@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/jsutils/inspect.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const MAX_ARRAY_LENGTH = 10;\nconst MAX_RECURSIVE_DEPTH = 2;\n/**\n * Used to print values in error messages.\n */\n\nexport function inspect(value) {\n  return formatValue(value, []);\n}\n\nfunction formatValue(value, seenValues) {\n  switch (typeof value) {\n    case 'string':\n      return JSON.stringify(value);\n\n    case 'function':\n      return value.name ? `[function ${value.name}]` : '[function]';\n\n    case 'object':\n      return formatObjectValue(value, seenValues);\n\n    default:\n      return String(value);\n  }\n}\n\nfunction formatObjectValue(value, previouslySeenValues) {\n  if (value === null) {\n    return 'null';\n  }\n\n  if (previouslySeenValues.includes(value)) {\n    return '[Circular]';\n  }\n\n  const seenValues = [...previouslySeenValues, value];\n\n  if (isJSONable(value)) {\n    const jsonValue = value.toJSON(); // check for infinite recursion\n\n    if (jsonValue !== value) {\n      return typeof jsonValue === 'string'\n        ? jsonValue\n        : formatValue(jsonValue, seenValues);\n    }\n  } else if (Array.isArray(value)) {\n    return formatArray(value, seenValues);\n  }\n\n  return formatObject(value, seenValues);\n}\n\nfunction isJSONable(value) {\n  return typeof value.toJSON === 'function';\n}\n\nfunction formatObject(object, seenValues) {\n  const entries = Object.entries(object);\n\n  if (entries.length === 0) {\n    return '{}';\n  }\n\n  if (seenValues.length > MAX_RECURSIVE_DEPTH) {\n    return '[' + getObjectTag(object) + ']';\n  }\n\n  const properties = entries.map(\n    ([key, value]) => key + ': ' + formatValue(value, seenValues),\n  );\n  return '{ ' + properties.join(', ') + ' }';\n}\n\nfunction formatArray(array, seenValues) {\n  if (array.length === 0) {\n    return '[]';\n  }\n\n  if (seenValues.length > MAX_RECURSIVE_DEPTH) {\n    return '[Array]';\n  }\n\n  const len = Math.min(MAX_ARRAY_LENGTH, array.length);\n  const remaining = array.length - len;\n  const items = [];\n\n  for (let i = 0; i < len; ++i) {\n    items.push(formatValue(array[i], seenValues));\n  }\n\n  if (remaining === 1) {\n    items.push('... 1 more item');\n  } else if (remaining > 1) {\n    items.push(`... ${remaining} more items`);\n  }\n\n  return '[' + items.join(', ') + ']';\n}\n\nfunction getObjectTag(object) {\n  const tag = Object.prototype.toString\n    .call(object)\n    .replace(/^\\[object /, '')\n    .replace(/]$/, '');\n\n  if (tag === 'Object' && typeof object.constructor === 'function') {\n    const name = object.constructor.name;\n\n    if (typeof name === 'string' && name !== '') {\n      return name;\n    }\n  }\n\n  return tag;\n}\n",
+      "start": 1702937443963,
+      "end": 1702937443987,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443987,
+      "end": 1702937443987,
+      "order": "normal"
+    }
+  ]
+}

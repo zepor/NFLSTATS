@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/roboconf.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = roboconf\nroboconf.displayName = 'roboconf'\nroboconf.aliases = []\nfunction roboconf(Prism) {\n  Prism.languages.roboconf = {\n    comment: /#.*/,\n    keyword: {\n      pattern:\n        /(^|\\s)(?:(?:external|import)\\b|(?:facet|instance of)(?=[ \\t]+[\\w-]+[ \\t]*\\{))/,\n      lookbehind: true\n    },\n    component: {\n      pattern: /[\\w-]+(?=[ \\t]*\\{)/,\n      alias: 'variable'\n    },\n    property: /[\\w.-]+(?=[ \\t]*:)/,\n    value: {\n      pattern: /(=[ \\t]*(?![ \\t]))[^,;]+/,\n      lookbehind: true,\n      alias: 'attr-value'\n    },\n    optional: {\n      pattern: /\\(optional\\)/,\n      alias: 'builtin'\n    },\n    wildcard: {\n      pattern: /(\\.)\\*/,\n      lookbehind: true,\n      alias: 'operator'\n    },\n    punctuation: /[{},.;:=]/\n  }\n}\n",
+      "start": 1702937445042,
+      "end": 1702937445067,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar roboconf_1;\nvar hasRequiredRoboconf;\n\nfunction requireRoboconf () {\n\tif (hasRequiredRoboconf) return roboconf_1;\n\thasRequiredRoboconf = 1;\n\t'use strict'\n\n\troboconf_1 = roboconf\n\troboconf.displayName = 'roboconf'\n\troboconf.aliases = []\n\tfunction roboconf(Prism) {\n\t  Prism.languages.roboconf = {\n\t    comment: /#.*/,\n\t    keyword: {\n\t      pattern:\n\t        /(^|\\s)(?:(?:external|import)\\b|(?:facet|instance of)(?=[ \\t]+[\\w-]+[ \\t]*\\{))/,\n\t      lookbehind: true\n\t    },\n\t    component: {\n\t      pattern: /[\\w-]+(?=[ \\t]*\\{)/,\n\t      alias: 'variable'\n\t    },\n\t    property: /[\\w.-]+(?=[ \\t]*:)/,\n\t    value: {\n\t      pattern: /(=[ \\t]*(?![ \\t]))[^,;]+/,\n\t      lookbehind: true,\n\t      alias: 'attr-value'\n\t    },\n\t    optional: {\n\t      pattern: /\\(optional\\)/,\n\t      alias: 'builtin'\n\t    },\n\t    wildcard: {\n\t      pattern: /(\\.)\\*/,\n\t      lookbehind: true,\n\t      alias: 'operator'\n\t    },\n\t    punctuation: /[{},.;:=]/\n\t  }\n\t}\n\treturn roboconf_1;\n}\n\nexport { requireRoboconf as __require };",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,WAAc,GAAG,QAAQ;CACzB,QAAQ,CAAC,WAAW,GAAG,UAAU;CACjC,QAAQ,CAAC,OAAO,GAAG,EAAE;CACrB,SAAS,QAAQ,CAAC,KAAK,EAAE;CACzB,EAAE,KAAK,CAAC,SAAS,CAAC,QAAQ,GAAG;CAC7B,IAAI,OAAO,EAAE,KAAK;CAClB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO;CACb,QAAQ,+EAA+E;CACvF,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,SAAS,EAAE;CACf,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,QAAQ,EAAE,oBAAoB;CAClC,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,0BAA0B;CACzC,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,YAAY;CACzB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,cAAc;CAC7B,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,QAAQ;CACvB,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,WAAW,EAAE,WAAW;CAC5B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445067,
+      "end": 1702937445067,
+      "order": "normal"
+    }
+  ]
+}

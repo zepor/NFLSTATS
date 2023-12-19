@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarLanguages.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Dropdown } from \"react-bootstrap\";\r\n\r\nimport usFlag from \"../../assets/img/flags/us.png\";\r\nimport frFlag from \"../../assets/img/flags/fr.png\";\r\nimport deFlag from \"../../assets/img/flags/de.png\";\r\nimport nlFlag from \"../../assets/img/flags/nl.png\";\r\n\r\nconst languageOptions = {\r\n  en: {\r\n    icon: usFlag,\r\n    name: \"English\",\r\n  },\r\n  fr: {\r\n    icon: frFlag,\r\n    name: \"French\",\r\n  },\r\n  de: {\r\n    icon: deFlag,\r\n    name: \"German\",\r\n  },\r\n  nl: {\r\n    icon: nlFlag,\r\n    name: \"Dutch\",\r\n  },\r\n};\r\n\r\nconst NavbarLanguages = () => {\r\n  const { i18n } = useTranslation();\r\n\r\n  const selectedLanguage = languageOptions[i18n.language];\r\n\r\n  return (\r\n    <Dropdown className=\"me-2 nav-item\" align=\"end\">\r\n      <Dropdown.Toggle as=\"a\" className=\"nav-link nav-flag\">\r\n        <img src={selectedLanguage.icon} alt={selectedLanguage.name} />\r\n      </Dropdown.Toggle>\r\n      <Dropdown.Menu>\r\n        {Object.keys(languageOptions).map((language) => (\r\n          <Dropdown.Item\r\n            key={language}\r\n            onClick={() => i18n.changeLanguage(language)}\r\n          >\r\n            <img\r\n              src={languageOptions[language].icon}\r\n              alt=\"English\"\r\n              width=\"20\"\r\n              className=\"align-middle me-1\"\r\n            />\r\n            <span className=\"align-middle\">\r\n              {languageOptions[language].name}\r\n            </span>\r\n          </Dropdown.Item>\r\n        ))}\r\n      </Dropdown.Menu>\r\n    </Dropdown>\r\n  );\r\n};\r\n\r\nexport default NavbarLanguages;\r\n",
+      "start": 1702937442102,
+      "end": 1702937442122,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { Dropdown } from \"react-bootstrap\";\nimport usFlag from \"../../assets/img/flags/us.png\";\nimport frFlag from \"../../assets/img/flags/fr.png\";\nimport deFlag from \"../../assets/img/flags/de.png\";\nimport nlFlag from \"../../assets/img/flags/nl.png\";\nconst languageOptions = {\n  en: {\n    icon: usFlag,\n    name: \"English\"\n  },\n  fr: {\n    icon: frFlag,\n    name: \"French\"\n  },\n  de: {\n    icon: deFlag,\n    name: \"German\"\n  },\n  nl: {\n    icon: nlFlag,\n    name: \"Dutch\"\n  }\n};\nconst NavbarLanguages = () => {\n  const { i18n } = useTranslation();\n  const selectedLanguage = languageOptions[i18n.language];\n  return /* @__PURE__ */ jsxs(Dropdown, { className: \"me-2 nav-item\", align: \"end\", children: [\n    /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", className: \"nav-link nav-flag\", children: /* @__PURE__ */ jsx(\"img\", { src: selectedLanguage.icon, alt: selectedLanguage.name }) }),\n    /* @__PURE__ */ jsx(Dropdown.Menu, { children: Object.keys(languageOptions).map((language) => /* @__PURE__ */ jsxs(\n      Dropdown.Item,\n      {\n        onClick: () => i18n.changeLanguage(language),\n        children: [\n          /* @__PURE__ */ jsx(\n            \"img\",\n            {\n              src: languageOptions[language].icon,\n              alt: \"English\",\n              width: \"20\",\n              className: \"align-middle me-1\"\n            }\n          ),\n          /* @__PURE__ */ jsx(\"span\", { className: \"align-middle\", children: languageOptions[language].name })\n        ]\n      },\n      language\n    )) })\n  ] });\n};\nexport default NavbarLanguages;\n",
+      "start": 1702937442122,
+      "end": 1702937442160,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarLanguages.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Dropdown } from \"react-bootstrap\";\r\n\r\nimport usFlag from \"../../assets/img/flags/us.png\";\r\nimport frFlag from \"../../assets/img/flags/fr.png\";\r\nimport deFlag from \"../../assets/img/flags/de.png\";\r\nimport nlFlag from \"../../assets/img/flags/nl.png\";\r\n\r\nconst languageOptions = {\r\n  en: {\r\n    icon: usFlag,\r\n    name: \"English\",\r\n  },\r\n  fr: {\r\n    icon: frFlag,\r\n    name: \"French\",\r\n  },\r\n  de: {\r\n    icon: deFlag,\r\n    name: \"German\",\r\n  },\r\n  nl: {\r\n    icon: nlFlag,\r\n    name: \"Dutch\",\r\n  },\r\n};\r\n\r\nconst NavbarLanguages = () => {\r\n  const { i18n } = useTranslation();\r\n\r\n  const selectedLanguage = languageOptions[i18n.language];\r\n\r\n  return (\r\n    <Dropdown className=\"me-2 nav-item\" align=\"end\">\r\n      <Dropdown.Toggle as=\"a\" className=\"nav-link nav-flag\">\r\n        <img src={selectedLanguage.icon} alt={selectedLanguage.name} />\r\n      </Dropdown.Toggle>\r\n      <Dropdown.Menu>\r\n        {Object.keys(languageOptions).map((language) => (\r\n          <Dropdown.Item\r\n            key={language}\r\n            onClick={() => i18n.changeLanguage(language)}\r\n          >\r\n            <img\r\n              src={languageOptions[language].icon}\r\n              alt=\"English\"\r\n              width=\"20\"\r\n              className=\"align-middle me-1\"\r\n            />\r\n            <span className=\"align-middle\">\r\n              {languageOptions[language].name}\r\n            </span>\r\n          </Dropdown.Item>\r\n        ))}\r\n      </Dropdown.Menu>\r\n    </Dropdown>\r\n  );\r\n};\r\n\r\nexport default NavbarLanguages;\r\n"
+        ],
+        "mappings": "AAoCQ,cAIE,YAJF;AApCR,OAAO,WAAW;AAClB,SAAS,sBAAsB;AAC/B,SAAS,gBAAgB;AAEzB,OAAO,YAAY;AACnB,OAAO,YAAY;AACnB,OAAO,YAAY;AACnB,OAAO,YAAY;AAEnB,MAAM,kBAAkB;AAAA,EACtB,IAAI;AAAA,IACF,MAAM;AAAA,IACN,MAAM;AAAA,EACR;AAAA,EACA,IAAI;AAAA,IACF,MAAM;AAAA,IACN,MAAM;AAAA,EACR;AAAA,EACA,IAAI;AAAA,IACF,MAAM;AAAA,IACN,MAAM;AAAA,EACR;AAAA,EACA,IAAI;AAAA,IACF,MAAM;AAAA,IACN,MAAM;AAAA,EACR;AACF;AAEA,MAAM,kBAAkB,MAAM;AAC5B,QAAM,EAAE,KAAK,IAAI,eAAe;AAEhC,QAAM,mBAAmB,gBAAgB,KAAK,QAAQ;AAEtD,SACE,qBAAC,YAAS,WAAU,iBAAgB,OAAM,OACxC;AAAA,wBAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,WAAU,qBAChC,8BAAC,SAAI,KAAK,iBAAiB,MAAM,KAAK,iBAAiB,MAAM,GAC/D;AAAA,IACA,oBAAC,SAAS,MAAT,EACE,iBAAO,KAAK,eAAe,EAAE,IAAI,CAAC,aACjC;AAAA,MAAC,SAAS;AAAA,MAAT;AAAA,QAEC,SAAS,MAAM,KAAK,eAAe,QAAQ;AAAA,QAE3C;AAAA;AAAA,YAAC;AAAA;AAAA,cACC,KAAK,gBAAgB,QAAQ,EAAE;AAAA,cAC/B,KAAI;AAAA,cACJ,OAAM;AAAA,cACN,WAAU;AAAA;AAAA,UACZ;AAAA,UACA,oBAAC,UAAK,WAAU,gBACb,0BAAgB,QAAQ,EAAE,MAC7B;AAAA;AAAA;AAAA,MAXK;AAAA,IAYP,CACD,GACH;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    }
+  ]
+}

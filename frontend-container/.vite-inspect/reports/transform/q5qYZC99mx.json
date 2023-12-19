@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/utilities/buildClientSchema.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { devAssert } from '../jsutils/devAssert.mjs';\nimport { inspect } from '../jsutils/inspect.mjs';\nimport { isObjectLike } from '../jsutils/isObjectLike.mjs';\nimport { keyValMap } from '../jsutils/keyValMap.mjs';\nimport { parseValue } from '../language/parser.mjs';\nimport {\n  assertInterfaceType,\n  assertNullableType,\n  assertObjectType,\n  GraphQLEnumType,\n  GraphQLInputObjectType,\n  GraphQLInterfaceType,\n  GraphQLList,\n  GraphQLNonNull,\n  GraphQLObjectType,\n  GraphQLScalarType,\n  GraphQLUnionType,\n  isInputType,\n  isOutputType,\n} from '../type/definition.mjs';\nimport { GraphQLDirective } from '../type/directives.mjs';\nimport { introspectionTypes, TypeKind } from '../type/introspection.mjs';\nimport { specifiedScalarTypes } from '../type/scalars.mjs';\nimport { GraphQLSchema } from '../type/schema.mjs';\nimport { valueFromAST } from './valueFromAST.mjs';\n/**\n * Build a GraphQLSchema for use by client tools.\n *\n * Given the result of a client running the introspection query, creates and\n * returns a GraphQLSchema instance which can be then used with all graphql-js\n * tools, but cannot be used to execute a query, as introspection does not\n * represent the \"resolver\", \"parse\" or \"serialize\" functions or any other\n * server-internal mechanisms.\n *\n * This function expects a complete introspection result. Don't forget to check\n * the \"errors\" field of a server response before calling this function.\n */\n\nexport function buildClientSchema(introspection, options) {\n  (isObjectLike(introspection) && isObjectLike(introspection.__schema)) ||\n    devAssert(\n      false,\n      `Invalid or incomplete introspection result. Ensure that you are passing \"data\" property of introspection response and no \"errors\" was returned alongside: ${inspect(\n        introspection,\n      )}.`,\n    ); // Get the schema from the introspection result.\n\n  const schemaIntrospection = introspection.__schema; // Iterate through all types, getting the type definition for each.\n\n  const typeMap = keyValMap(\n    schemaIntrospection.types,\n    (typeIntrospection) => typeIntrospection.name,\n    (typeIntrospection) => buildType(typeIntrospection),\n  ); // Include standard types only if they are used.\n\n  for (const stdType of [...specifiedScalarTypes, ...introspectionTypes]) {\n    if (typeMap[stdType.name]) {\n      typeMap[stdType.name] = stdType;\n    }\n  } // Get the root Query, Mutation, and Subscription types.\n\n  const queryType = schemaIntrospection.queryType\n    ? getObjectType(schemaIntrospection.queryType)\n    : null;\n  const mutationType = schemaIntrospection.mutationType\n    ? getObjectType(schemaIntrospection.mutationType)\n    : null;\n  const subscriptionType = schemaIntrospection.subscriptionType\n    ? getObjectType(schemaIntrospection.subscriptionType)\n    : null; // Get the directives supported by Introspection, assuming empty-set if\n  // directives were not queried for.\n\n  const directives = schemaIntrospection.directives\n    ? schemaIntrospection.directives.map(buildDirective)\n    : []; // Then produce and return a Schema with these types.\n\n  return new GraphQLSchema({\n    description: schemaIntrospection.description,\n    query: queryType,\n    mutation: mutationType,\n    subscription: subscriptionType,\n    types: Object.values(typeMap),\n    directives,\n    assumeValid:\n      options === null || options === void 0 ? void 0 : options.assumeValid,\n  }); // Given a type reference in introspection, return the GraphQLType instance.\n  // preferring cached instances before building new instances.\n\n  function getType(typeRef) {\n    if (typeRef.kind === TypeKind.LIST) {\n      const itemRef = typeRef.ofType;\n\n      if (!itemRef) {\n        throw new Error('Decorated type deeper than introspection query.');\n      }\n\n      return new GraphQLList(getType(itemRef));\n    }\n\n    if (typeRef.kind === TypeKind.NON_NULL) {\n      const nullableRef = typeRef.ofType;\n\n      if (!nullableRef) {\n        throw new Error('Decorated type deeper than introspection query.');\n      }\n\n      const nullableType = getType(nullableRef);\n      return new GraphQLNonNull(assertNullableType(nullableType));\n    }\n\n    return getNamedType(typeRef);\n  }\n\n  function getNamedType(typeRef) {\n    const typeName = typeRef.name;\n\n    if (!typeName) {\n      throw new Error(`Unknown type reference: ${inspect(typeRef)}.`);\n    }\n\n    const type = typeMap[typeName];\n\n    if (!type) {\n      throw new Error(\n        `Invalid or incomplete schema, unknown type: ${typeName}. Ensure that a full introspection query is used in order to build a client schema.`,\n      );\n    }\n\n    return type;\n  }\n\n  function getObjectType(typeRef) {\n    return assertObjectType(getNamedType(typeRef));\n  }\n\n  function getInterfaceType(typeRef) {\n    return assertInterfaceType(getNamedType(typeRef));\n  } // Given a type's introspection result, construct the correct\n  // GraphQLType instance.\n\n  function buildType(type) {\n    // eslint-disable-next-line @typescript-eslint/prefer-optional-chain\n    if (type != null && type.name != null && type.kind != null) {\n      // FIXME: Properly type IntrospectionType, it's a breaking change so fix in v17\n      // eslint-disable-next-line @typescript-eslint/switch-exhaustiveness-check\n      switch (type.kind) {\n        case TypeKind.SCALAR:\n          return buildScalarDef(type);\n\n        case TypeKind.OBJECT:\n          return buildObjectDef(type);\n\n        case TypeKind.INTERFACE:\n          return buildInterfaceDef(type);\n\n        case TypeKind.UNION:\n          return buildUnionDef(type);\n\n        case TypeKind.ENUM:\n          return buildEnumDef(type);\n\n        case TypeKind.INPUT_OBJECT:\n          return buildInputObjectDef(type);\n      }\n    }\n\n    const typeStr = inspect(type);\n    throw new Error(\n      `Invalid or incomplete introspection result. Ensure that a full introspection query is used in order to build a client schema: ${typeStr}.`,\n    );\n  }\n\n  function buildScalarDef(scalarIntrospection) {\n    return new GraphQLScalarType({\n      name: scalarIntrospection.name,\n      description: scalarIntrospection.description,\n      specifiedByURL: scalarIntrospection.specifiedByURL,\n    });\n  }\n\n  function buildImplementationsList(implementingIntrospection) {\n    // TODO: Temporary workaround until GraphQL ecosystem will fully support\n    // 'interfaces' on interface types.\n    if (\n      implementingIntrospection.interfaces === null &&\n      implementingIntrospection.kind === TypeKind.INTERFACE\n    ) {\n      return [];\n    }\n\n    if (!implementingIntrospection.interfaces) {\n      const implementingIntrospectionStr = inspect(implementingIntrospection);\n      throw new Error(\n        `Introspection result missing interfaces: ${implementingIntrospectionStr}.`,\n      );\n    }\n\n    return implementingIntrospection.interfaces.map(getInterfaceType);\n  }\n\n  function buildObjectDef(objectIntrospection) {\n    return new GraphQLObjectType({\n      name: objectIntrospection.name,\n      description: objectIntrospection.description,\n      interfaces: () => buildImplementationsList(objectIntrospection),\n      fields: () => buildFieldDefMap(objectIntrospection),\n    });\n  }\n\n  function buildInterfaceDef(interfaceIntrospection) {\n    return new GraphQLInterfaceType({\n      name: interfaceIntrospection.name,\n      description: interfaceIntrospection.description,\n      interfaces: () => buildImplementationsList(interfaceIntrospection),\n      fields: () => buildFieldDefMap(interfaceIntrospection),\n    });\n  }\n\n  function buildUnionDef(unionIntrospection) {\n    if (!unionIntrospection.possibleTypes) {\n      const unionIntrospectionStr = inspect(unionIntrospection);\n      throw new Error(\n        `Introspection result missing possibleTypes: ${unionIntrospectionStr}.`,\n      );\n    }\n\n    return new GraphQLUnionType({\n      name: unionIntrospection.name,\n      description: unionIntrospection.description,\n      types: () => unionIntrospection.possibleTypes.map(getObjectType),\n    });\n  }\n\n  function buildEnumDef(enumIntrospection) {\n    if (!enumIntrospection.enumValues) {\n      const enumIntrospectionStr = inspect(enumIntrospection);\n      throw new Error(\n        `Introspection result missing enumValues: ${enumIntrospectionStr}.`,\n      );\n    }\n\n    return new GraphQLEnumType({\n      name: enumIntrospection.name,\n      description: enumIntrospection.description,\n      values: keyValMap(\n        enumIntrospection.enumValues,\n        (valueIntrospection) => valueIntrospection.name,\n        (valueIntrospection) => ({\n          description: valueIntrospection.description,\n          deprecationReason: valueIntrospection.deprecationReason,\n        }),\n      ),\n    });\n  }\n\n  function buildInputObjectDef(inputObjectIntrospection) {\n    if (!inputObjectIntrospection.inputFields) {\n      const inputObjectIntrospectionStr = inspect(inputObjectIntrospection);\n      throw new Error(\n        `Introspection result missing inputFields: ${inputObjectIntrospectionStr}.`,\n      );\n    }\n\n    return new GraphQLInputObjectType({\n      name: inputObjectIntrospection.name,\n      description: inputObjectIntrospection.description,\n      fields: () => buildInputValueDefMap(inputObjectIntrospection.inputFields),\n    });\n  }\n\n  function buildFieldDefMap(typeIntrospection) {\n    if (!typeIntrospection.fields) {\n      throw new Error(\n        `Introspection result missing fields: ${inspect(typeIntrospection)}.`,\n      );\n    }\n\n    return keyValMap(\n      typeIntrospection.fields,\n      (fieldIntrospection) => fieldIntrospection.name,\n      buildField,\n    );\n  }\n\n  function buildField(fieldIntrospection) {\n    const type = getType(fieldIntrospection.type);\n\n    if (!isOutputType(type)) {\n      const typeStr = inspect(type);\n      throw new Error(\n        `Introspection must provide output type for fields, but received: ${typeStr}.`,\n      );\n    }\n\n    if (!fieldIntrospection.args) {\n      const fieldIntrospectionStr = inspect(fieldIntrospection);\n      throw new Error(\n        `Introspection result missing field args: ${fieldIntrospectionStr}.`,\n      );\n    }\n\n    return {\n      description: fieldIntrospection.description,\n      deprecationReason: fieldIntrospection.deprecationReason,\n      type,\n      args: buildInputValueDefMap(fieldIntrospection.args),\n    };\n  }\n\n  function buildInputValueDefMap(inputValueIntrospections) {\n    return keyValMap(\n      inputValueIntrospections,\n      (inputValue) => inputValue.name,\n      buildInputValue,\n    );\n  }\n\n  function buildInputValue(inputValueIntrospection) {\n    const type = getType(inputValueIntrospection.type);\n\n    if (!isInputType(type)) {\n      const typeStr = inspect(type);\n      throw new Error(\n        `Introspection must provide input type for arguments, but received: ${typeStr}.`,\n      );\n    }\n\n    const defaultValue =\n      inputValueIntrospection.defaultValue != null\n        ? valueFromAST(parseValue(inputValueIntrospection.defaultValue), type)\n        : undefined;\n    return {\n      description: inputValueIntrospection.description,\n      type,\n      defaultValue,\n      deprecationReason: inputValueIntrospection.deprecationReason,\n    };\n  }\n\n  function buildDirective(directiveIntrospection) {\n    if (!directiveIntrospection.args) {\n      const directiveIntrospectionStr = inspect(directiveIntrospection);\n      throw new Error(\n        `Introspection result missing directive args: ${directiveIntrospectionStr}.`,\n      );\n    }\n\n    if (!directiveIntrospection.locations) {\n      const directiveIntrospectionStr = inspect(directiveIntrospection);\n      throw new Error(\n        `Introspection result missing directive locations: ${directiveIntrospectionStr}.`,\n      );\n    }\n\n    return new GraphQLDirective({\n      name: directiveIntrospection.name,\n      description: directiveIntrospection.description,\n      isRepeatable: directiveIntrospection.isRepeatable,\n      locations: directiveIntrospection.locations.slice(),\n      args: buildInputValueDefMap(directiveIntrospection.args),\n    });\n  }\n}\n",
+      "start": 1702937443104,
+      "end": 1702937443113,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443113,
+      "end": 1702937443113,
+      "order": "normal"
+    }
+  ]
+}

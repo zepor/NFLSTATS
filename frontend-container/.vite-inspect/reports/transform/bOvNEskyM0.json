@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/scheduler/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = require('./cjs/scheduler.production.min.js');\n} else {\n  module.exports = require('./cjs/scheduler.development.js');\n}\n",
+      "start": 1702937441089,
+      "end": 1702937441240,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441240,
+      "end": 1702937441240,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441240,
+      "end": 1702937441240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441240,
+      "end": 1702937441240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441240,
+      "end": 1702937441240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441240,
+      "end": 1702937441240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use strict\";\nif (true) {\n  module.exports = require(\"./cjs/scheduler.production.min.js\");\n} else {\n  module.exports = require(\"./cjs/scheduler.development.js\");\n}\n",
+      "start": 1702937441240,
+      "end": 1702937441255,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441255,
+      "end": 1702937441255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441255,
+      "end": 1702937441255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441255,
+      "end": 1702937441255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441255,
+      "end": 1702937441255,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __module as schedulerModule } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/scheduler/index.js?commonjs-module\";\nvar scheduler = schedulerModule.exports;\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-proxy\";\n\n\"use strict\";\nif (true) {\n  schedulerModule.exports = require$$0;\n} else {\n  module.exports = require(\"./cjs/scheduler.development.js\");\n}\n\nvar schedulerExports = schedulerModule.exports;\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(schedulerExports);\nexport { schedulerExports as __moduleExports };",
+      "start": 1702937441255,
+      "end": 1702937442003,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,YAAY,CAAC;AACb,IAAI,IAAI,EAAE;AACV,EAAE,uBAAc,GAAG,UAA4C,CAAC;AAChE,CAAC;AACD;AACA"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937442003,
+      "end": 1702937442003,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442003,
+      "end": 1702937442003,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442003,
+      "end": 1702937442003,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442003,
+      "end": 1702937442003,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442003,
+      "end": 1702937442003,
+      "order": "normal"
+    }
+  ]
+}

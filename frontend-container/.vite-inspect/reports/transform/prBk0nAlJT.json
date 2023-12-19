@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/hooks/useReactiveVar.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import * as React from \"react\";\nimport { useSyncExternalStore } from \"./useSyncExternalStore.js\";\nexport function useReactiveVar(rv) {\n    return useSyncExternalStore(React.useCallback(function (update) {\n        // By reusing the same onNext function in the nested call to\n        // rv.onNextChange(onNext), we can keep using the initial clean-up function\n        // returned by rv.onNextChange(function onNext(v){...}), without having to\n        // register the new clean-up function (returned by the nested\n        // rv.onNextChange(onNext)) with yet another callback.\n        return rv.onNextChange(function onNext() {\n            update();\n            rv.onNextChange(onNext);\n        });\n    }, [rv]), rv, rv);\n}\n//# sourceMappingURL=useReactiveVar.js.map",
+      "start": 1702937441086,
+      "end": 1702937441235,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441235,
+      "end": 1702937441235,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441236,
+      "end": 1702937441236,
+      "order": "normal"
+    }
+  ]
+}

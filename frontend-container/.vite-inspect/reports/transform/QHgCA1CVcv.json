@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/PieChart.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Pie } from \"react-chartjs-2\";\r\n\r\nimport { Card, Dropdown, Table } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faSquare } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PieChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\r\n    datasets: [\r\n      {\r\n        data: [260, 125, 54, 146],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.warning,\r\n          palette.danger,\r\n          \"#E8EAED\",\r\n        ],\r\n        borderWidth: 5,\r\n        borderColor: palette.white,\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    cutout: \"70%\",\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Source / Medium</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body className=\"d-flex\">\r\n        <div className=\"align-self-center w-100\">\r\n          <div className=\"py-3\">\r\n            <div className=\"chart chart-xs\">\r\n              <Pie data={data} options={options} />\r\n            </div>\r\n          </div>\r\n\r\n          <Table className=\"mb-0\">\r\n            <thead>\r\n              <tr>\r\n                <th>Source</th>\r\n                <th className=\"text-end\">Revenue</th>\r\n                <th className=\"text-end\">Value</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-primary\" />{\" \"}\r\n                  Direct\r\n                </td>\r\n                <td className=\"text-end\">$ 2602</td>\r\n                <td className=\"text-end text-success\">+43%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-warning\" />{\" \"}\r\n                  Affiliate\r\n                </td>\r\n                <td className=\"text-end\">$ 1253</td>\r\n                <td className=\"text-end text-success\">+13%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-danger\" />{\" \"}\r\n                  E-mail\r\n                </td>\r\n                <td className=\"text-end\">$ 541</td>\r\n                <td className=\"text-end text-success\">+24%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-dark\" />{\" \"}\r\n                  Other\r\n                </td>\r\n                <td className=\"text-end\">$ 1465</td>\r\n                <td className=\"text-end text-success\">+11%</td>\r\n              </tr>\r\n            </tbody>\r\n          </Table>\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PieChart;\r\n",
+      "start": 1702937441546,
+      "end": 1702937441564,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441564,
+      "end": 1702937441564,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441564,
+      "end": 1702937441564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Pie } from \"react-chartjs-2\";\nimport { Card, Dropdown, Table } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\nimport { faSquare } from \"@fortawesome/free-solid-svg-icons\";\nimport usePalette from \"../../../hooks/usePalette\";\nconst PieChart = () => {\n  const palette = usePalette();\n  const data = {\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\n    datasets: [\n      {\n        data: [260, 125, 54, 146],\n        backgroundColor: [\n          palette.primary,\n          palette.warning,\n          palette.danger,\n          \"#E8EAED\"\n        ],\n        borderWidth: 5,\n        borderColor: palette.white\n      }\n    ]\n  };\n  const options = {\n    maintainAspectRatio: false,\n    cutout: \"70%\",\n    plugins: {\n      legend: {\n        display: false\n      }\n    }\n  };\n  return /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n        /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n        /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n        ] })\n      ] }) }),\n      /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Source / Medium\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { className: \"d-flex\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"align-self-center w-100\", children: [\n      /* @__PURE__ */ jsx(\"div\", { className: \"py-3\", children: /* @__PURE__ */ jsx(\"div\", { className: \"chart chart-xs\", children: /* @__PURE__ */ jsx(Pie, { data, options }) }) }),\n      /* @__PURE__ */ jsxs(Table, { className: \"mb-0\", children: [\n        /* @__PURE__ */ jsx(\"thead\", { children: /* @__PURE__ */ jsxs(\"tr\", { children: [\n          /* @__PURE__ */ jsx(\"th\", { children: \"Source\" }),\n          /* @__PURE__ */ jsx(\"th\", { className: \"text-end\", children: \"Revenue\" }),\n          /* @__PURE__ */ jsx(\"th\", { className: \"text-end\", children: \"Value\" })\n        ] }) }),\n        /* @__PURE__ */ jsxs(\"tbody\", { children: [\n          /* @__PURE__ */ jsxs(\"tr\", { children: [\n            /* @__PURE__ */ jsxs(\"td\", { children: [\n              /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSquare, className: \"text-primary\" }),\n              \" \",\n              \"Direct\"\n            ] }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"$ 2602\" }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end text-success\", children: \"+43%\" })\n          ] }),\n          /* @__PURE__ */ jsxs(\"tr\", { children: [\n            /* @__PURE__ */ jsxs(\"td\", { children: [\n              /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSquare, className: \"text-warning\" }),\n              \" \",\n              \"Affiliate\"\n            ] }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"$ 1253\" }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end text-success\", children: \"+13%\" })\n          ] }),\n          /* @__PURE__ */ jsxs(\"tr\", { children: [\n            /* @__PURE__ */ jsxs(\"td\", { children: [\n              /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSquare, className: \"text-danger\" }),\n              \" \",\n              \"E-mail\"\n            ] }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"$ 541\" }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end text-success\", children: \"+24%\" })\n          ] }),\n          /* @__PURE__ */ jsxs(\"tr\", { children: [\n            /* @__PURE__ */ jsxs(\"td\", { children: [\n              /* @__PURE__ */ jsx(FontAwesomeIcon, { icon: faSquare, className: \"text-dark\" }),\n              \" \",\n              \"Other\"\n            ] }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end\", children: \"$ 1465\" }),\n            /* @__PURE__ */ jsx(\"td\", { className: \"text-end text-success\", children: \"+11%\" })\n          ] })\n        ] })\n      ] })\n    ] }) })\n  ] });\n};\nexport default PieChart;\n",
+      "start": 1702937441564,
+      "end": 1702937441569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Analytics/PieChart.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Pie } from \"react-chartjs-2\";\r\n\r\nimport { Card, Dropdown, Table } from \"react-bootstrap\";\r\n\r\nimport { MoreHorizontal } from \"react-feather\";\r\nimport { FontAwesomeIcon } from \"@fortawesome/react-fontawesome\";\r\nimport { faSquare } from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nconst PieChart = () => {\r\n  const palette = usePalette();\r\n\r\n  const data = {\r\n    labels: [\"Social\", \"Search Engines\", \"Direct\", \"Other\"],\r\n    datasets: [\r\n      {\r\n        data: [260, 125, 54, 146],\r\n        backgroundColor: [\r\n          palette.primary,\r\n          palette.warning,\r\n          palette.danger,\r\n          \"#E8EAED\",\r\n        ],\r\n        borderWidth: 5,\r\n        borderColor: palette.white,\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    maintainAspectRatio: false,\r\n    cutout: \"70%\",\r\n    plugins: {\r\n      legend: {\r\n        display: false,\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Source / Medium</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body className=\"d-flex\">\r\n        <div className=\"align-self-center w-100\">\r\n          <div className=\"py-3\">\r\n            <div className=\"chart chart-xs\">\r\n              <Pie data={data} options={options} />\r\n            </div>\r\n          </div>\r\n\r\n          <Table className=\"mb-0\">\r\n            <thead>\r\n              <tr>\r\n                <th>Source</th>\r\n                <th className=\"text-end\">Revenue</th>\r\n                <th className=\"text-end\">Value</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-primary\" />{\" \"}\r\n                  Direct\r\n                </td>\r\n                <td className=\"text-end\">$ 2602</td>\r\n                <td className=\"text-end text-success\">+43%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-warning\" />{\" \"}\r\n                  Affiliate\r\n                </td>\r\n                <td className=\"text-end\">$ 1253</td>\r\n                <td className=\"text-end text-success\">+13%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-danger\" />{\" \"}\r\n                  E-mail\r\n                </td>\r\n                <td className=\"text-end\">$ 541</td>\r\n                <td className=\"text-end text-success\">+24%</td>\r\n              </tr>\r\n              <tr>\r\n                <td>\r\n                  <FontAwesomeIcon icon={faSquare} className=\"text-dark\" />{\" \"}\r\n                  Other\r\n                </td>\r\n                <td className=\"text-end\">$ 1465</td>\r\n                <td className=\"text-end text-success\">+11%</td>\r\n              </tr>\r\n            </tbody>\r\n          </Table>\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default PieChart;\r\n"
+        ],
+        "mappings": "AA+Cc,cAEF,YAFE;AA/Cd,OAAO,WAAW;AAClB,SAAS,WAAW;AAEpB,SAAS,MAAM,UAAU,aAAa;AAEtC,SAAS,sBAAsB;AAC/B,SAAS,uBAAuB;AAChC,SAAS,gBAAgB;AAEzB,OAAO,gBAAgB;AAEvB,MAAM,WAAW,MAAM;AACrB,QAAM,UAAU,WAAW;AAE3B,QAAM,OAAO;AAAA,IACX,QAAQ,CAAC,UAAU,kBAAkB,UAAU,OAAO;AAAA,IACtD,UAAU;AAAA,MACR;AAAA,QACE,MAAM,CAAC,KAAK,KAAK,IAAI,GAAG;AAAA,QACxB,iBAAiB;AAAA,UACf,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR,QAAQ;AAAA,UACR;AAAA,QACF;AAAA,QACA,aAAa;AAAA,QACb,aAAa,QAAQ;AAAA,MACvB;AAAA,IACF;AAAA,EACF;AAEA,QAAM,UAAU;AAAA,IACd,qBAAqB;AAAA,IACrB,QAAQ;AAAA,IACR,SAAS;AAAA,MACP,QAAQ;AAAA,QACN,SAAS;AAAA,MACX;AAAA,IACF;AAAA,EACF;AAEA,SACE,qBAAC,QAAK,WAAU,mBACd;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,4BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,QACA,qBAAC,SAAS,MAAT,EACC;AAAA,8BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,UACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,UAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,WACpC;AAAA,SACF,GACF;AAAA,MACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,6BAAe;AAAA,OAC9C;AAAA,IACA,oBAAC,KAAK,MAAL,EAAU,WAAU,UACnB,+BAAC,SAAI,WAAU,2BACb;AAAA,0BAAC,SAAI,WAAU,QACb,8BAAC,SAAI,WAAU,kBACb,8BAAC,OAAI,MAAY,SAAkB,GACrC,GACF;AAAA,MAEA,qBAAC,SAAM,WAAU,QACf;AAAA,4BAAC,WACC,+BAAC,QACC;AAAA,8BAAC,QAAG,oBAAM;AAAA,UACV,oBAAC,QAAG,WAAU,YAAW,qBAAO;AAAA,UAChC,oBAAC,QAAG,WAAU,YAAW,mBAAK;AAAA,WAChC,GACF;AAAA,QACA,qBAAC,WACC;AAAA,+BAAC,QACC;AAAA,iCAAC,QACC;AAAA,kCAAC,mBAAgB,MAAM,UAAU,WAAU,gBAAe;AAAA,cAAG;AAAA,cAAI;AAAA,eAEnE;AAAA,YACA,oBAAC,QAAG,WAAU,YAAW,oBAAM;AAAA,YAC/B,oBAAC,QAAG,WAAU,yBAAwB,kBAAI;AAAA,aAC5C;AAAA,UACA,qBAAC,QACC;AAAA,iCAAC,QACC;AAAA,kCAAC,mBAAgB,MAAM,UAAU,WAAU,gBAAe;AAAA,cAAG;AAAA,cAAI;AAAA,eAEnE;AAAA,YACA,oBAAC,QAAG,WAAU,YAAW,oBAAM;AAAA,YAC/B,oBAAC,QAAG,WAAU,yBAAwB,kBAAI;AAAA,aAC5C;AAAA,UACA,qBAAC,QACC;AAAA,iCAAC,QACC;AAAA,kCAAC,mBAAgB,MAAM,UAAU,WAAU,eAAc;AAAA,cAAG;AAAA,cAAI;AAAA,eAElE;AAAA,YACA,oBAAC,QAAG,WAAU,YAAW,mBAAK;AAAA,YAC9B,oBAAC,QAAG,WAAU,yBAAwB,kBAAI;AAAA,aAC5C;AAAA,UACA,qBAAC,QACC;AAAA,iCAAC,QACC;AAAA,kCAAC,mBAAgB,MAAM,UAAU,WAAU,aAAY;AAAA,cAAG;AAAA,cAAI;AAAA,eAEhE;AAAA,YACA,oBAAC,QAAG,WAAU,YAAW,oBAAM;AAAA,YAC/B,oBAAC,QAAG,WAAU,yBAAwB,kBAAI;AAAA,aAC5C;AAAA,WACF;AAAA,SACF;AAAA,OACF,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441569,
+      "end": 1702937441570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441570,
+      "end": 1702937441570,
+      "order": "normal"
+    }
+  ]
+}

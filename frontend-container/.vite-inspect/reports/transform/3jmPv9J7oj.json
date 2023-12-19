@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/json.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: JSON\nDescription: JSON (JavaScript Object Notation) is a lightweight data-interchange format.\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nWebsite: http://www.json.org\nCategory: common, protocols\n*/\n\nfunction json(hljs) {\n  const LITERALS = {\n    literal: 'true false null'\n  };\n  const ALLOWED_COMMENTS = [\n    hljs.C_LINE_COMMENT_MODE,\n    hljs.C_BLOCK_COMMENT_MODE\n  ];\n  const TYPES = [\n    hljs.QUOTE_STRING_MODE,\n    hljs.C_NUMBER_MODE\n  ];\n  const VALUE_CONTAINER = {\n    end: ',',\n    endsWithParent: true,\n    excludeEnd: true,\n    contains: TYPES,\n    keywords: LITERALS\n  };\n  const OBJECT = {\n    begin: /\\{/,\n    end: /\\}/,\n    contains: [\n      {\n        className: 'attr',\n        begin: /\"/,\n        end: /\"/,\n        contains: [hljs.BACKSLASH_ESCAPE],\n        illegal: '\\\\n'\n      },\n      hljs.inherit(VALUE_CONTAINER, {\n        begin: /:/\n      })\n    ].concat(ALLOWED_COMMENTS),\n    illegal: '\\\\S'\n  };\n  const ARRAY = {\n    begin: '\\\\[',\n    end: '\\\\]',\n    contains: [hljs.inherit(VALUE_CONTAINER)], // inherit is a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents\n    illegal: '\\\\S'\n  };\n  TYPES.push(OBJECT, ARRAY);\n  ALLOWED_COMMENTS.forEach(function(rule) {\n    TYPES.push(rule);\n  });\n  return {\n    name: 'JSON',\n    contains: TYPES,\n    keywords: LITERALS,\n    illegal: '\\\\S'\n  };\n}\n\nmodule.exports = json;\n",
+      "start": 1702937444359,
+      "end": 1702937444404,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: JSON\nDescription: JSON (JavaScript Object Notation) is a lightweight data-interchange format.\nAuthor: Ivan Sagalaev <maniac@softwaremaniacs.org>\nWebsite: http://www.json.org\nCategory: common, protocols\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar json_1;\nvar hasRequiredJson;\n\nfunction requireJson () {\n\tif (hasRequiredJson) return json_1;\n\thasRequiredJson = 1;\n\tfunction json(hljs) {\n\t  const LITERALS = {\n\t    literal: 'true false null'\n\t  };\n\t  const ALLOWED_COMMENTS = [\n\t    hljs.C_LINE_COMMENT_MODE,\n\t    hljs.C_BLOCK_COMMENT_MODE\n\t  ];\n\t  const TYPES = [\n\t    hljs.QUOTE_STRING_MODE,\n\t    hljs.C_NUMBER_MODE\n\t  ];\n\t  const VALUE_CONTAINER = {\n\t    end: ',',\n\t    endsWithParent: true,\n\t    excludeEnd: true,\n\t    contains: TYPES,\n\t    keywords: LITERALS\n\t  };\n\t  const OBJECT = {\n\t    begin: /\\{/,\n\t    end: /\\}/,\n\t    contains: [\n\t      {\n\t        className: 'attr',\n\t        begin: /\"/,\n\t        end: /\"/,\n\t        contains: [hljs.BACKSLASH_ESCAPE],\n\t        illegal: '\\\\n'\n\t      },\n\t      hljs.inherit(VALUE_CONTAINER, {\n\t        begin: /:/\n\t      })\n\t    ].concat(ALLOWED_COMMENTS),\n\t    illegal: '\\\\S'\n\t  };\n\t  const ARRAY = {\n\t    begin: '\\\\[',\n\t    end: '\\\\]',\n\t    contains: [hljs.inherit(VALUE_CONTAINER)], // inherit is a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents\n\t    illegal: '\\\\S'\n\t  };\n\t  TYPES.push(OBJECT, ARRAY);\n\t  ALLOWED_COMMENTS.forEach(function(rule) {\n\t    TYPES.push(rule);\n\t  });\n\t  return {\n\t    name: 'JSON',\n\t    contains: TYPES,\n\t    keywords: LITERALS,\n\t    illegal: '\\\\S'\n\t  };\n\t}\n\n\tjson_1 = json;\n\treturn json_1;\n}\n\nexport { requireJson as __require };",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;CAQA,SAAS,IAAI,CAAC,IAAI,EAAE;CACpB,EAAE,MAAM,QAAQ,GAAG;CACnB,IAAI,OAAO,EAAE,iBAAiB;CAC9B,GAAG,CAAC;CACJ,EAAE,MAAM,gBAAgB,GAAG;CAC3B,IAAI,IAAI,CAAC,mBAAmB;CAC5B,IAAI,IAAI,CAAC,oBAAoB;CAC7B,GAAG,CAAC;CACJ,EAAE,MAAM,KAAK,GAAG;CAChB,IAAI,IAAI,CAAC,iBAAiB;CAC1B,IAAI,IAAI,CAAC,aAAa;CACtB,GAAG,CAAC;CACJ,EAAE,MAAM,eAAe,GAAG;CAC1B,IAAI,GAAG,EAAE,GAAG;CACZ,IAAI,cAAc,EAAE,IAAI;CACxB,IAAI,UAAU,EAAE,IAAI;CACpB,IAAI,QAAQ,EAAE,KAAK;CACnB,IAAI,QAAQ,EAAE,QAAQ;CACtB,GAAG,CAAC;CACJ,EAAE,MAAM,MAAM,GAAG;CACjB,IAAI,KAAK,EAAE,IAAI;CACf,IAAI,GAAG,EAAE,IAAI;CACb,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,KAAK,EAAE,GAAG;CAClB,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,QAAQ,EAAE,CAAC,IAAI,CAAC,gBAAgB,CAAC;CACzC,QAAQ,OAAO,EAAE,KAAK;CACtB,OAAO;CACP,MAAM,IAAI,CAAC,OAAO,CAAC,eAAe,EAAE;CACpC,QAAQ,KAAK,EAAE,GAAG;CAClB,OAAO,CAAC;CACR,KAAK,CAAC,MAAM,CAAC,gBAAgB,CAAC;CAC9B,IAAI,OAAO,EAAE,KAAK;CAClB,GAAG,CAAC;CACJ,EAAE,MAAM,KAAK,GAAG;CAChB,IAAI,KAAK,EAAE,KAAK;CAChB,IAAI,GAAG,EAAE,KAAK;CACd,IAAI,QAAQ,EAAE,CAAC,IAAI,CAAC,OAAO,CAAC,eAAe,CAAC,CAAC;CAC7C,IAAI,OAAO,EAAE,KAAK;CAClB,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,IAAI,CAAC,MAAM,EAAE,KAAK,CAAC,CAAC;CAC5B,EAAE,gBAAgB,CAAC,OAAO,CAAC,SAAS,IAAI,EAAE;CAC1C,IAAI,KAAK,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;CACrB,GAAG,CAAC,CAAC;CACL,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,MAAM;CAChB,IAAI,QAAQ,EAAE,KAAK;CACnB,IAAI,QAAQ,EAAE,QAAQ;CACtB,IAAI,OAAO,EAAE,KAAK;CAClB,GAAG,CAAC;CACJ,CAAC;AACD;AACA,OAAc,GAAG,IAAI"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444404,
+      "end": 1702937444404,
+      "order": "normal"
+    }
+  ]
+}

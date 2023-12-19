@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/inform7.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Inform 7\nAuthor: Bruno Dias <bruno.r.dias@gmail.com>\nDescription: Language definition for Inform 7, a DSL for writing parser interactive fiction.\nWebsite: http://inform7.com\n*/\n\nfunction inform7(hljs) {\n  const START_BRACKET = '\\\\[';\n  const END_BRACKET = '\\\\]';\n  return {\n    name: 'Inform 7',\n    aliases: ['i7'],\n    case_insensitive: true,\n    keywords: {\n      // Some keywords more or less unique to I7, for relevance.\n      keyword:\n        // kind:\n        'thing room person man woman animal container ' +\n        'supporter backdrop door ' +\n        // characteristic:\n        'scenery open closed locked inside gender ' +\n        // verb:\n        'is are say understand ' +\n        // misc keyword:\n        'kind of rule'\n    },\n    contains: [\n      {\n        className: 'string',\n        begin: '\"',\n        end: '\"',\n        relevance: 0,\n        contains: [\n          {\n            className: 'subst',\n            begin: START_BRACKET,\n            end: END_BRACKET\n          }\n        ]\n      },\n      {\n        className: 'section',\n        begin: /^(Volume|Book|Part|Chapter|Section|Table)\\b/,\n        end: '$'\n      },\n      {\n        // Rule definition\n        // This is here for relevance.\n        begin: /^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\\b/,\n        end: ':',\n        contains: [\n          {\n            // Rule name\n            begin: '\\\\(This',\n            end: '\\\\)'\n          }\n        ]\n      },\n      {\n        className: 'comment',\n        begin: START_BRACKET,\n        end: END_BRACKET,\n        contains: ['self']\n      }\n    ]\n  };\n}\n\nmodule.exports = inform7;\n",
+      "start": 1702937444344,
+      "end": 1702937444387,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Inform 7\nAuthor: Bruno Dias <bruno.r.dias@gmail.com>\nDescription: Language definition for Inform 7, a DSL for writing parser interactive fiction.\nWebsite: http://inform7.com\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar inform7_1;\nvar hasRequiredInform7;\n\nfunction requireInform7 () {\n\tif (hasRequiredInform7) return inform7_1;\n\thasRequiredInform7 = 1;\n\tfunction inform7(hljs) {\n\t  const START_BRACKET = '\\\\[';\n\t  const END_BRACKET = '\\\\]';\n\t  return {\n\t    name: 'Inform 7',\n\t    aliases: ['i7'],\n\t    case_insensitive: true,\n\t    keywords: {\n\t      // Some keywords more or less unique to I7, for relevance.\n\t      keyword:\n\t        // kind:\n\t        'thing room person man woman animal container ' +\n\t        'supporter backdrop door ' +\n\t        // characteristic:\n\t        'scenery open closed locked inside gender ' +\n\t        // verb:\n\t        'is are say understand ' +\n\t        // misc keyword:\n\t        'kind of rule'\n\t    },\n\t    contains: [\n\t      {\n\t        className: 'string',\n\t        begin: '\"',\n\t        end: '\"',\n\t        relevance: 0,\n\t        contains: [\n\t          {\n\t            className: 'subst',\n\t            begin: START_BRACKET,\n\t            end: END_BRACKET\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'section',\n\t        begin: /^(Volume|Book|Part|Chapter|Section|Table)\\b/,\n\t        end: '$'\n\t      },\n\t      {\n\t        // Rule definition\n\t        // This is here for relevance.\n\t        begin: /^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\\b/,\n\t        end: ':',\n\t        contains: [\n\t          {\n\t            // Rule name\n\t            begin: '\\\\(This',\n\t            end: '\\\\)'\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'comment',\n\t        begin: START_BRACKET,\n\t        end: END_BRACKET,\n\t        contains: ['self']\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tinform7_1 = inform7;\n\treturn inform7_1;\n}\n\nexport { requireInform7 as __require };",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA,SAAS,OAAO,CAAC,IAAI,EAAE;CACvB,EAAE,MAAM,aAAa,GAAG,KAAK,CAAC;CAC9B,EAAE,MAAM,WAAW,GAAG,KAAK,CAAC;CAC5B,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,UAAU;CACpB,IAAI,OAAO,EAAE,CAAC,IAAI,CAAC;CACnB,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,QAAQ,EAAE;CACd;CACA,MAAM,OAAO;CACb;CACA,QAAQ,+CAA+C;CACvD,QAAQ,0BAA0B;CAClC;CACA,QAAQ,2CAA2C;CACnD;CACA,QAAQ,wBAAwB;CAChC;CACA,QAAQ,cAAc;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,KAAK,EAAE,GAAG;CAClB,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,SAAS,EAAE,CAAC;CACpB,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,SAAS,EAAE,OAAO;CAC9B,YAAY,KAAK,EAAE,aAAa;CAChC,YAAY,GAAG,EAAE,WAAW;CAC5B,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,SAAS;CAC5B,QAAQ,KAAK,EAAE,6CAA6C;CAC5D,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,MAAM;CACN;CACA;CACA,QAAQ,KAAK,EAAE,kEAAkE;CACjF,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV;CACA,YAAY,KAAK,EAAE,SAAS;CAC5B,YAAY,GAAG,EAAE,KAAK;CACtB,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,SAAS;CAC5B,QAAQ,KAAK,EAAE,aAAa;CAC5B,QAAQ,GAAG,EAAE,WAAW;CACxB,QAAQ,QAAQ,EAAE,CAAC,MAAM,CAAC;CAC1B,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,UAAc,GAAG,OAAO"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444387,
+      "end": 1702937444387,
+      "order": "normal"
+    }
+  ]
+}

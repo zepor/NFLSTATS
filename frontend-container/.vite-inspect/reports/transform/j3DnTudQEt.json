@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/cache/inmemory/fixPolyfills.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use strict\";\n// Most JavaScript environments do not need the workarounds implemented in\n// fixPolyfills.native.ts, so importing fixPolyfills.ts merely imports\n// this empty module, adding nothing to bundle sizes or execution times.\n// When bundling for React Native, we substitute fixPolyfills.native.js\n// for fixPolyfills.js (see the \"react-native\" section of package.json),\n// to work around problems with Map and Set polyfills in older versions of\n// React Native (which should have been fixed in react-native@0.59.0):\n// https://github.com/apollographql/apollo-client/pull/5962\n//# sourceMappingURL=fixPolyfills.js.map",
+      "start": 1702937441883,
+      "end": 1702937441923,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441923,
+      "end": 1702937441923,
+      "order": "normal"
+    }
+  ]
+}

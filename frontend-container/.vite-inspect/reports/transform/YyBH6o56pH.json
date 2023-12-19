@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/mojolicious.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Mojolicious\nRequires: xml.js, perl.js\nAuthor: Dotan Dimet <dotan@corky.net>\nDescription: Mojolicious .ep (Embedded Perl) templates\nWebsite: https://mojolicious.org\nCategory: template\n*/\nfunction mojolicious(hljs) {\n  return {\n    name: 'Mojolicious',\n    subLanguage: 'xml',\n    contains: [\n      {\n        className: 'meta',\n        begin: '^__(END|DATA)__$'\n      },\n      // mojolicious line\n      {\n        begin: \"^\\\\s*%{1,2}={0,2}\",\n        end: '$',\n        subLanguage: 'perl'\n      },\n      // mojolicious block\n      {\n        begin: \"<%{1,2}={0,2}\",\n        end: \"={0,1}%>\",\n        subLanguage: 'perl',\n        excludeBegin: true,\n        excludeEnd: true\n      }\n    ]\n  };\n}\n\nmodule.exports = mojolicious;\n",
+      "start": 1702937444421,
+      "end": 1702937444527,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Mojolicious\nRequires: xml.js, perl.js\nAuthor: Dotan Dimet <dotan@corky.net>\nDescription: Mojolicious .ep (Embedded Perl) templates\nWebsite: https://mojolicious.org\nCategory: template\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar mojolicious_1;\nvar hasRequiredMojolicious;\n\nfunction requireMojolicious () {\n\tif (hasRequiredMojolicious) return mojolicious_1;\n\thasRequiredMojolicious = 1;\n\tfunction mojolicious(hljs) {\n\t  return {\n\t    name: 'Mojolicious',\n\t    subLanguage: 'xml',\n\t    contains: [\n\t      {\n\t        className: 'meta',\n\t        begin: '^__(END|DATA)__$'\n\t      },\n\t      // mojolicious line\n\t      {\n\t        begin: \"^\\\\s*%{1,2}={0,2}\",\n\t        end: '$',\n\t        subLanguage: 'perl'\n\t      },\n\t      // mojolicious block\n\t      {\n\t        begin: \"<%{1,2}={0,2}\",\n\t        end: \"={0,1}%>\",\n\t        subLanguage: 'perl',\n\t        excludeBegin: true,\n\t        excludeEnd: true\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tmojolicious_1 = mojolicious;\n\treturn mojolicious_1;\n}\n\nexport { requireMojolicious as __require };",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;CAQA,SAAS,WAAW,CAAC,IAAI,EAAE;CAC3B,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,aAAa;CACvB,IAAI,WAAW,EAAE,KAAK;CACtB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,KAAK,EAAE,kBAAkB;CACjC,OAAO;CACP;CACA,MAAM;CACN,QAAQ,KAAK,EAAE,mBAAmB;CAClC,QAAQ,GAAG,EAAE,GAAG;CAChB,QAAQ,WAAW,EAAE,MAAM;CAC3B,OAAO;CACP;CACA,MAAM;CACN,QAAQ,KAAK,EAAE,eAAe;CAC9B,QAAQ,GAAG,EAAE,UAAU;CACvB,QAAQ,WAAW,EAAE,MAAM;CAC3B,QAAQ,YAAY,EAAE,IAAI;CAC1B,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,cAAc,GAAG,WAAW"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444527,
+      "end": 1702937444527,
+      "order": "normal"
+    }
+  ]
+}

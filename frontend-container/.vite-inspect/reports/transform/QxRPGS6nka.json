@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/t4-templating.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = t4Templating\nt4Templating.displayName = 't4Templating'\nt4Templating.aliases = []\nfunction t4Templating(Prism) {\n  ;(function (Prism) {\n    function createBlock(prefix, inside, contentAlias) {\n      return {\n        pattern: RegExp('<#' + prefix + '[\\\\s\\\\S]*?#>'),\n        alias: 'block',\n        inside: {\n          delimiter: {\n            pattern: RegExp('^<#' + prefix + '|#>$'),\n            alias: 'important'\n          },\n          content: {\n            pattern: /[\\s\\S]+/,\n            inside: inside,\n            alias: contentAlias\n          }\n        }\n      }\n    }\n    function createT4(insideLang) {\n      var grammar = Prism.languages[insideLang]\n      var className = 'language-' + insideLang\n      return {\n        block: {\n          pattern: /<#[\\s\\S]+?#>/,\n          inside: {\n            directive: createBlock('@', {\n              'attr-value': {\n                pattern: /=(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+)/,\n                inside: {\n                  punctuation: /^=|^[\"']|[\"']$/\n                }\n              },\n              keyword: /\\b\\w+(?=\\s)/,\n              'attr-name': /\\b\\w+/\n            }),\n            expression: createBlock('=', grammar, className),\n            'class-feature': createBlock('\\\\+', grammar, className),\n            standard: createBlock('', grammar, className)\n          }\n        }\n      }\n    }\n    Prism.languages['t4-templating'] = Object.defineProperty({}, 'createT4', {\n      value: createT4\n    })\n  })(Prism)\n}\n",
+      "start": 1702937445084,
+      "end": 1702937445109,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445109,
+      "end": 1702937445109,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar t4Templating_1;\nvar hasRequiredT4Templating;\n\nfunction requireT4Templating () {\n\tif (hasRequiredT4Templating) return t4Templating_1;\n\thasRequiredT4Templating = 1;\n\t'use strict'\n\n\tt4Templating_1 = t4Templating\n\tt4Templating.displayName = 't4Templating'\n\tt4Templating.aliases = []\n\tfunction t4Templating(Prism) {\n\t  ;(function (Prism) {\n\t    function createBlock(prefix, inside, contentAlias) {\n\t      return {\n\t        pattern: RegExp('<#' + prefix + '[\\\\s\\\\S]*?#>'),\n\t        alias: 'block',\n\t        inside: {\n\t          delimiter: {\n\t            pattern: RegExp('^<#' + prefix + '|#>$'),\n\t            alias: 'important'\n\t          },\n\t          content: {\n\t            pattern: /[\\s\\S]+/,\n\t            inside: inside,\n\t            alias: contentAlias\n\t          }\n\t        }\n\t      }\n\t    }\n\t    function createT4(insideLang) {\n\t      var grammar = Prism.languages[insideLang]\n\t      var className = 'language-' + insideLang\n\t      return {\n\t        block: {\n\t          pattern: /<#[\\s\\S]+?#>/,\n\t          inside: {\n\t            directive: createBlock('@', {\n\t              'attr-value': {\n\t                pattern: /=(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+)/,\n\t                inside: {\n\t                  punctuation: /^=|^[\"']|[\"']$/\n\t                }\n\t              },\n\t              keyword: /\\b\\w+(?=\\s)/,\n\t              'attr-name': /\\b\\w+/\n\t            }),\n\t            expression: createBlock('=', grammar, className),\n\t            'class-feature': createBlock('\\\\+', grammar, className),\n\t            standard: createBlock('', grammar, className)\n\t          }\n\t        }\n\t      }\n\t    }\n\t    Prism.languages['t4-templating'] = Object.defineProperty({}, 'createT4', {\n\t      value: createT4\n\t    })\n\t  })(Prism)\n\t}\n\treturn t4Templating_1;\n}\n\nexport { requireT4Templating as __require };",
+      "start": 1702937445109,
+      "end": 1702937445110,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,eAAc,GAAG,YAAY;CAC7B,YAAY,CAAC,WAAW,GAAG,cAAc;CACzC,YAAY,CAAC,OAAO,GAAG,EAAE;CACzB,SAAS,YAAY,CAAC,KAAK,EAAE;CAC7B,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,SAAS,WAAW,CAAC,MAAM,EAAE,MAAM,EAAE,YAAY,EAAE;CACvD,MAAM,OAAO;CACb,QAAQ,OAAO,EAAE,MAAM,CAAC,IAAI,GAAG,MAAM,GAAG,cAAc,CAAC;CACvD,QAAQ,KAAK,EAAE,OAAO;CACtB,QAAQ,MAAM,EAAE;CAChB,UAAU,SAAS,EAAE;CACrB,YAAY,OAAO,EAAE,MAAM,CAAC,KAAK,GAAG,MAAM,GAAG,MAAM,CAAC;CACpD,YAAY,KAAK,EAAE,WAAW;CAC9B,WAAW;CACX,UAAU,OAAO,EAAE;CACnB,YAAY,OAAO,EAAE,SAAS;CAC9B,YAAY,MAAM,EAAE,MAAM;CAC1B,YAAY,KAAK,EAAE,YAAY;CAC/B,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,SAAS,QAAQ,CAAC,UAAU,EAAE;CAClC,MAAM,IAAI,OAAO,GAAG,KAAK,CAAC,SAAS,CAAC,UAAU,CAAC;CAC/C,MAAM,IAAI,SAAS,GAAG,WAAW,GAAG,UAAU;CAC9C,MAAM,OAAO;CACb,QAAQ,KAAK,EAAE;CACf,UAAU,OAAO,EAAE,cAAc;CACjC,UAAU,MAAM,EAAE;CAClB,YAAY,SAAS,EAAE,WAAW,CAAC,GAAG,EAAE;CACxC,cAAc,YAAY,EAAE;CAC5B,gBAAgB,OAAO,EAAE,kDAAkD;CAC3E,gBAAgB,MAAM,EAAE;CACxB,kBAAkB,WAAW,EAAE,gBAAgB;CAC/C,iBAAiB;CACjB,eAAe;CACf,cAAc,OAAO,EAAE,aAAa;CACpC,cAAc,WAAW,EAAE,OAAO;CAClC,aAAa,CAAC;CACd,YAAY,UAAU,EAAE,WAAW,CAAC,GAAG,EAAE,OAAO,EAAE,SAAS,CAAC;CAC5D,YAAY,eAAe,EAAE,WAAW,CAAC,KAAK,EAAE,OAAO,EAAE,SAAS,CAAC;CACnE,YAAY,QAAQ,EAAE,WAAW,CAAC,EAAE,EAAE,OAAO,EAAE,SAAS,CAAC;CACzD,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,eAAe,CAAC,GAAG,MAAM,CAAC,cAAc,CAAC,EAAE,EAAE,UAAU,EAAE;CAC7E,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445110,
+      "end": 1702937445110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445110,
+      "end": 1702937445110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445110,
+      "end": 1702937445110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445110,
+      "end": 1702937445110,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445110,
+      "end": 1702937445110,
+      "order": "normal"
+    }
+  ]
+}

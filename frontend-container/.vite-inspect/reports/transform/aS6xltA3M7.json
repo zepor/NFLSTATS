@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/NavDropdown.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use client\";\n\nimport classNames from 'classnames';\nimport * as React from 'react';\nimport { useBootstrapPrefix } from './ThemeProvider';\nimport Dropdown from './Dropdown';\nimport NavLink from './NavLink';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\nconst NavDropdown = /*#__PURE__*/React.forwardRef(({\n  id,\n  title,\n  children,\n  bsPrefix,\n  className,\n  rootCloseEvent,\n  menuRole,\n  disabled,\n  active,\n  renderMenuOnMount,\n  menuVariant,\n  ...props\n}, ref) => {\n  /* NavItem has no additional logic, it's purely presentational. Can set nav item class here to support \"as\" */\n  const navItemPrefix = useBootstrapPrefix(undefined, 'nav-item');\n  return /*#__PURE__*/_jsxs(Dropdown, {\n    ref: ref,\n    ...props,\n    className: classNames(className, navItemPrefix),\n    children: [/*#__PURE__*/_jsx(Dropdown.Toggle, {\n      id: id,\n      eventKey: null,\n      active: active,\n      disabled: disabled,\n      childBsPrefix: bsPrefix,\n      as: NavLink,\n      children: title\n    }), /*#__PURE__*/_jsx(Dropdown.Menu, {\n      role: menuRole,\n      renderOnMount: renderMenuOnMount,\n      rootCloseEvent: rootCloseEvent,\n      variant: menuVariant,\n      children: children\n    })]\n  });\n});\nNavDropdown.displayName = 'NavDropdown';\nexport default Object.assign(NavDropdown, {\n  Item: Dropdown.Item,\n  ItemText: Dropdown.ItemText,\n  Divider: Dropdown.Divider,\n  Header: Dropdown.Header\n});",
+      "start": 1702937441486,
+      "end": 1702937441516,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441516,
+      "end": 1702937441516,
+      "order": "normal"
+    }
+  ]
+}

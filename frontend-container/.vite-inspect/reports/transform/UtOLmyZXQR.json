@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/layouts/Landing.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Outlet } from \"react-router-dom\";\r\nimport Main from \"../components/Main\";\r\n\r\nconst Landing = ({ children }) => {\r\n  <Main>\r\n    {children}\r\n    <Outlet />\r\n  </Main>;\r\n};\r\n\r\nexport default Landing;\r\n",
+      "start": 1702937436389,
+      "end": 1702937436867,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436867,
+      "end": 1702937436867,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436867,
+      "end": 1702937436867,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Outlet } from \"react-router-dom\";\nimport Main from \"../components/Main\";\nconst Landing = ({ children }) => {\n  /* @__PURE__ */ jsxs(Main, { children: [\n    children,\n    /* @__PURE__ */ jsx(Outlet, {})\n  ] });\n};\nexport default Landing;\n",
+      "start": 1702937436867,
+      "end": 1702937436868,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/layouts/Landing.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Outlet } from \"react-router-dom\";\r\nimport Main from \"../components/Main\";\r\n\r\nconst Landing = ({ children }) => {\r\n  <Main>\r\n    {children}\r\n    <Outlet />\r\n  </Main>;\r\n};\r\n\r\nexport default Landing;\r\n"
+        ],
+        "mappings": "AAKE,SAEE,KAFF;AALF,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,OAAO,UAAU;AAEjB,MAAM,UAAU,CAAC,EAAE,SAAS,MAAM;AAChC,uBAAC,QACE;AAAA;AAAA,IACD,oBAAC,UAAO;AAAA,KACV;AACF;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436869,
+      "end": 1702937436870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436870,
+      "end": 1702937436870,
+      "order": "normal"
+    }
+  ]
+}

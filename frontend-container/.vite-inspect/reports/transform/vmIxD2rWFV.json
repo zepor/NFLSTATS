@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/maps/GoogleMaps/Streetview.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React, { useRef } from \"react\";\r\nimport ReactDOM from \"react-dom\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport GoogleMapReact from \"google-map-react\";\r\n\r\nconst Streetview = () => {\r\n  const panoramaRef = useRef(null);\r\n\r\n  const getMapOptions = () => {\r\n    return {\r\n      fullscreenControl: true,\r\n      mapTypeControl: true,\r\n      scaleControl: true,\r\n      scrollwheel: false,\r\n      streetViewControl: true,\r\n    };\r\n  };\r\n\r\n  const apiIsLoaded = (map, maps) => {\r\n    if (map) {\r\n      const panorama = new maps.StreetViewPanorama(\r\n        ReactDOM.findDOMNode(panoramaRef.current),\r\n        {\r\n          position: {\r\n            lat: 42.345573,\r\n            lng: -71.098326,\r\n          },\r\n          pov: {\r\n            heading: 160,\r\n            pitch: 0,\r\n          },\r\n          visible: true,\r\n        }\r\n      );\r\n      map.setStreetView(panorama);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Streetview</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Panoramic 360 degree views from designated roads throughout its\r\n          coverage area.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div style={{ height: 300, width: \"100%\" }}>\r\n          <GoogleMapReact\r\n            ref={panoramaRef}\r\n            options={getMapOptions}\r\n            bootstrapURLKeys={{\r\n              key: \"${{   secrets.GOOGLEMAPAPI }}\",\r\n            }}\r\n            defaultCenter={{\r\n              lat: 40.712784,\r\n              lng: -74.005941,\r\n            }}\r\n            defaultZoom={14}\r\n            onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}\r\n            yesIWantToUseGoogleMapApiInternals={true}\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Streetview;\r\n",
+      "start": 1702937441849,
+      "end": 1702937441871,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441871,
+      "end": 1702937441871,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441871,
+      "end": 1702937441871,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React, { useRef } from \"react\";\nimport ReactDOM from \"react-dom\";\nimport { Card } from \"react-bootstrap\";\nimport GoogleMapReact from \"google-map-react\";\nconst Streetview = () => {\n  const panoramaRef = useRef(null);\n  const getMapOptions = () => {\n    return {\n      fullscreenControl: true,\n      mapTypeControl: true,\n      scaleControl: true,\n      scrollwheel: false,\n      streetViewControl: true\n    };\n  };\n  const apiIsLoaded = (map, maps) => {\n    if (map) {\n      const panorama = new maps.StreetViewPanorama(\n        ReactDOM.findDOMNode(panoramaRef.current),\n        {\n          position: {\n            lat: 42.345573,\n            lng: -71.098326\n          },\n          pov: {\n            heading: 160,\n            pitch: 0\n          },\n          visible: true\n        }\n      );\n      map.setStreetView(panorama);\n    }\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Streetview\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Panoramic 360 degree views from designated roads throughout its coverage area.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { style: { height: 300, width: \"100%\" }, children: /* @__PURE__ */ jsx(\n      GoogleMapReact,\n      {\n        ref: panoramaRef,\n        options: getMapOptions,\n        bootstrapURLKeys: {\n          key: \"${{   secrets.GOOGLEMAPAPI }}\"\n        },\n        defaultCenter: {\n          lat: 40.712784,\n          lng: -74.005941\n        },\n        defaultZoom: 14,\n        onGoogleApiLoaded: ({ map, maps }) => apiIsLoaded(map, maps),\n        yesIWantToUseGoogleMapApiInternals: true\n      }\n    ) }) })\n  ] });\n};\nexport default Streetview;\n",
+      "start": 1702937441871,
+      "end": 1702937441886,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/maps/GoogleMaps/Streetview.jsx"
+        ],
+        "sourcesContent": [
+          "import React, { useRef } from \"react\";\r\nimport ReactDOM from \"react-dom\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nimport GoogleMapReact from \"google-map-react\";\r\n\r\nconst Streetview = () => {\r\n  const panoramaRef = useRef(null);\r\n\r\n  const getMapOptions = () => {\r\n    return {\r\n      fullscreenControl: true,\r\n      mapTypeControl: true,\r\n      scaleControl: true,\r\n      scrollwheel: false,\r\n      streetViewControl: true,\r\n    };\r\n  };\r\n\r\n  const apiIsLoaded = (map, maps) => {\r\n    if (map) {\r\n      const panorama = new maps.StreetViewPanorama(\r\n        ReactDOM.findDOMNode(panoramaRef.current),\r\n        {\r\n          position: {\r\n            lat: 42.345573,\r\n            lng: -71.098326,\r\n          },\r\n          pov: {\r\n            heading: 160,\r\n            pitch: 0,\r\n          },\r\n          visible: true,\r\n        }\r\n      );\r\n      map.setStreetView(panorama);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Streetview</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Panoramic 360 degree views from designated roads throughout its\r\n          coverage area.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div style={{ height: 300, width: \"100%\" }}>\r\n          <GoogleMapReact\r\n            ref={panoramaRef}\r\n            options={getMapOptions}\r\n            bootstrapURLKeys={{\r\n              key: \"${{   secrets.GOOGLEMAPAPI }}\",\r\n            }}\r\n            defaultCenter={{\r\n              lat: 40.712784,\r\n              lng: -74.005941,\r\n            }}\r\n            defaultZoom={14}\r\n            onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}\r\n            yesIWantToUseGoogleMapApiInternals={true}\r\n          />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Streetview;\r\n"
+        ],
+        "mappings": "AAyCM,SACE,KADF;AAzCN,OAAO,SAAS,cAAc;AAC9B,OAAO,cAAc;AACrB,SAAS,YAAY;AAErB,OAAO,oBAAoB;AAE3B,MAAM,aAAa,MAAM;AACvB,QAAM,cAAc,OAAO,IAAI;AAE/B,QAAM,gBAAgB,MAAM;AAC1B,WAAO;AAAA,MACL,mBAAmB;AAAA,MACnB,gBAAgB;AAAA,MAChB,cAAc;AAAA,MACd,aAAa;AAAA,MACb,mBAAmB;AAAA,IACrB;AAAA,EACF;AAEA,QAAM,cAAc,CAAC,KAAK,SAAS;AACjC,QAAI,KAAK;AACP,YAAM,WAAW,IAAI,KAAK;AAAA,QACxB,SAAS,YAAY,YAAY,OAAO;AAAA,QACxC;AAAA,UACE,UAAU;AAAA,YACR,KAAK;AAAA,YACL,KAAK;AAAA,UACP;AAAA,UACA,KAAK;AAAA,YACH,SAAS;AAAA,YACT,OAAO;AAAA,UACT;AAAA,UACA,SAAS;AAAA,QACX;AAAA,MACF;AACA,UAAI,cAAc,QAAQ;AAAA,IAC5B;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,wBAAU;AAAA,MACtB,oBAAC,QAAG,WAAU,4BAA2B,4FAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,OAAO,EAAE,QAAQ,KAAK,OAAO,OAAO,GACvC;AAAA,MAAC;AAAA;AAAA,QACC,KAAK;AAAA,QACL,SAAS;AAAA,QACT,kBAAkB;AAAA,UAChB,KAAK;AAAA,QACP;AAAA,QACA,eAAe;AAAA,UACb,KAAK;AAAA,UACL,KAAK;AAAA,QACP;AAAA,QACA,aAAa;AAAA,QACb,mBAAmB,CAAC,EAAE,KAAK,KAAK,MAAM,YAAY,KAAK,IAAI;AAAA,QAC3D,oCAAoC;AAAA;AAAA,IACtC,GACF,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441887,
+      "end": 1702937441887,
+      "order": "normal"
+    }
+  ]
+}

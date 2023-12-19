@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/django.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorMarkupTemplating = require('./markup-templating.js')\nmodule.exports = django\ndjango.displayName = 'django'\ndjango.aliases = ['jinja2']\nfunction django(Prism) {\n  Prism.register(refractorMarkupTemplating)\n  // Django/Jinja2 syntax definition for Prism.js <http://prismjs.com> syntax highlighter.\n  // Mostly it works OK but can paint code incorrectly on complex html/template tag combinations.\n  ;(function (Prism) {\n    Prism.languages.django = {\n      comment: /^\\{#[\\s\\S]*?#\\}$/,\n      tag: {\n        pattern: /(^\\{%[+-]?\\s*)\\w+/,\n        lookbehind: true,\n        alias: 'keyword'\n      },\n      delimiter: {\n        pattern: /^\\{[{%][+-]?|[+-]?[}%]\\}$/,\n        alias: 'punctuation'\n      },\n      string: {\n        pattern: /(\"|')(?:\\\\.|(?!\\1)[^\\\\\\r\\n])*\\1/,\n        greedy: true\n      },\n      filter: {\n        pattern: /(\\|)\\w+/,\n        lookbehind: true,\n        alias: 'function'\n      },\n      test: {\n        pattern: /(\\bis\\s+(?:not\\s+)?)(?!not\\b)\\w+/,\n        lookbehind: true,\n        alias: 'function'\n      },\n      function: /\\b[a-z_]\\w+(?=\\s*\\()/i,\n      keyword:\n        /\\b(?:and|as|by|else|for|if|import|in|is|loop|not|or|recursive|with|without)\\b/,\n      operator: /[-+%=]=?|!=|\\*\\*?=?|\\/\\/?=?|<[<=>]?|>[=>]?|[&|^~]/,\n      number: /\\b\\d+(?:\\.\\d+)?\\b/,\n      boolean: /[Ff]alse|[Nn]one|[Tt]rue/,\n      variable: /\\b\\w+\\b/,\n      punctuation: /[{}[\\](),.:;]/\n    }\n    var pattern = /\\{\\{[\\s\\S]*?\\}\\}|\\{%[\\s\\S]*?%\\}|\\{#[\\s\\S]*?#\\}/g\n    var markupTemplating = Prism.languages['markup-templating']\n    Prism.hooks.add('before-tokenize', function (env) {\n      markupTemplating.buildPlaceholders(env, 'django', pattern)\n    })\n    Prism.hooks.add('after-tokenize', function (env) {\n      markupTemplating.tokenizePlaceholders(env, 'django')\n    }) // Add an Jinja2 alias\n    Prism.languages.jinja2 = Prism.languages.django\n    Prism.hooks.add('before-tokenize', function (env) {\n      markupTemplating.buildPlaceholders(env, 'jinja2', pattern)\n    })\n    Prism.hooks.add('after-tokenize', function (env) {\n      markupTemplating.tokenizePlaceholders(env, 'jinja2')\n    })\n  })(Prism)\n}\n",
+      "start": 1702937444859,
+      "end": 1702937444892,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444892,
+      "end": 1702937444892,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/markup-templating.js?commonjs-wrapped\";\n\nvar django_1;\nvar hasRequiredDjango;\n\nfunction requireDjango () {\n\tif (hasRequiredDjango) return django_1;\n\thasRequiredDjango = 1;\n\t'use strict'\n\tvar refractorMarkupTemplating = require$$0()\n\tdjango_1 = django\n\tdjango.displayName = 'django'\n\tdjango.aliases = ['jinja2']\n\tfunction django(Prism) {\n\t  Prism.register(refractorMarkupTemplating)\n\t  // Django/Jinja2 syntax definition for Prism.js <http://prismjs.com> syntax highlighter.\n\t  // Mostly it works OK but can paint code incorrectly on complex html/template tag combinations.\n\t  ;(function (Prism) {\n\t    Prism.languages.django = {\n\t      comment: /^\\{#[\\s\\S]*?#\\}$/,\n\t      tag: {\n\t        pattern: /(^\\{%[+-]?\\s*)\\w+/,\n\t        lookbehind: true,\n\t        alias: 'keyword'\n\t      },\n\t      delimiter: {\n\t        pattern: /^\\{[{%][+-]?|[+-]?[}%]\\}$/,\n\t        alias: 'punctuation'\n\t      },\n\t      string: {\n\t        pattern: /(\"|')(?:\\\\.|(?!\\1)[^\\\\\\r\\n])*\\1/,\n\t        greedy: true\n\t      },\n\t      filter: {\n\t        pattern: /(\\|)\\w+/,\n\t        lookbehind: true,\n\t        alias: 'function'\n\t      },\n\t      test: {\n\t        pattern: /(\\bis\\s+(?:not\\s+)?)(?!not\\b)\\w+/,\n\t        lookbehind: true,\n\t        alias: 'function'\n\t      },\n\t      function: /\\b[a-z_]\\w+(?=\\s*\\()/i,\n\t      keyword:\n\t        /\\b(?:and|as|by|else|for|if|import|in|is|loop|not|or|recursive|with|without)\\b/,\n\t      operator: /[-+%=]=?|!=|\\*\\*?=?|\\/\\/?=?|<[<=>]?|>[=>]?|[&|^~]/,\n\t      number: /\\b\\d+(?:\\.\\d+)?\\b/,\n\t      boolean: /[Ff]alse|[Nn]one|[Tt]rue/,\n\t      variable: /\\b\\w+\\b/,\n\t      punctuation: /[{}[\\](),.:;]/\n\t    }\n\t    var pattern = /\\{\\{[\\s\\S]*?\\}\\}|\\{%[\\s\\S]*?%\\}|\\{#[\\s\\S]*?#\\}/g\n\t    var markupTemplating = Prism.languages['markup-templating']\n\t    Prism.hooks.add('before-tokenize', function (env) {\n\t      markupTemplating.buildPlaceholders(env, 'django', pattern)\n\t    })\n\t    Prism.hooks.add('after-tokenize', function (env) {\n\t      markupTemplating.tokenizePlaceholders(env, 'django')\n\t    }) // Add an Jinja2 alias\n\t    Prism.languages.jinja2 = Prism.languages.django\n\t    Prism.hooks.add('before-tokenize', function (env) {\n\t      markupTemplating.buildPlaceholders(env, 'jinja2', pattern)\n\t    })\n\t    Prism.hooks.add('after-tokenize', function (env) {\n\t      markupTemplating.tokenizePlaceholders(env, 'jinja2')\n\t    })\n\t  })(Prism)\n\t}\n\treturn django_1;\n}\n\nexport { requireDjango as __require };",
+      "start": 1702937444892,
+      "end": 1702937444994,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,yBAAyB,GAAG,YAAiC;AACjE,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,CAAC,QAAQ,CAAC;CAC3B,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,QAAQ,CAAC,yBAAyB,CAAC;CAC3C;CACA;CACA,GAAG,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC7B,MAAM,OAAO,EAAE,kBAAkB;CACjC,MAAM,GAAG,EAAE;CACX,QAAQ,OAAO,EAAE,mBAAmB;CACpC,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,SAAS;CACxB,OAAO;CACP,MAAM,SAAS,EAAE;CACjB,QAAQ,OAAO,EAAE,2BAA2B;CAC5C,QAAQ,KAAK,EAAE,aAAa;CAC5B,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,iCAAiC;CAClD,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,SAAS;CAC1B,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,IAAI,EAAE;CACZ,QAAQ,OAAO,EAAE,kCAAkC;CACnD,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,KAAK,EAAE,UAAU;CACzB,OAAO;CACP,MAAM,QAAQ,EAAE,uBAAuB;CACvC,MAAM,OAAO;CACb,QAAQ,+EAA+E;CACvF,MAAM,QAAQ,EAAE,mDAAmD;CACnE,MAAM,MAAM,EAAE,mBAAmB;CACjC,MAAM,OAAO,EAAE,0BAA0B;CACzC,MAAM,QAAQ,EAAE,SAAS;CACzB,MAAM,WAAW,EAAE,eAAe;CAClC,KAAK;CACL,IAAI,IAAI,OAAO,GAAG,iDAAiD;CACnE,IAAI,IAAI,gBAAgB,GAAG,KAAK,CAAC,SAAS,CAAC,mBAAmB,CAAC;CAC/D,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,iBAAiB,EAAE,UAAU,GAAG,EAAE;CACtD,MAAM,gBAAgB,CAAC,iBAAiB,CAAC,GAAG,EAAE,QAAQ,EAAE,OAAO,CAAC;CAChE,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,gBAAgB,EAAE,UAAU,GAAG,EAAE;CACrD,MAAM,gBAAgB,CAAC,oBAAoB,CAAC,GAAG,EAAE,QAAQ,CAAC;CAC1D,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACnD,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,iBAAiB,EAAE,UAAU,GAAG,EAAE;CACtD,MAAM,gBAAgB,CAAC,iBAAiB,CAAC,GAAG,EAAE,QAAQ,EAAE,OAAO,CAAC;CAChE,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,gBAAgB,EAAE,UAAU,GAAG,EAAE;CACrD,MAAM,gBAAgB,CAAC,oBAAoB,CAAC,GAAG,EAAE,QAAQ,CAAC;CAC1D,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444995,
+      "end": 1702937444995,
+      "order": "normal"
+    }
+  ]
+}

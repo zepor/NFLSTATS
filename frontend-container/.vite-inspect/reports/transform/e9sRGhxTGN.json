@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/eiffel.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = eiffel\neiffel.displayName = 'eiffel'\neiffel.aliases = []\nfunction eiffel(Prism) {\n  Prism.languages.eiffel = {\n    comment: /--.*/,\n    string: [\n      // Aligned-verbatim-strings\n      {\n        pattern: /\"([^[]*)\\[[\\s\\S]*?\\]\\1\"/,\n        greedy: true\n      }, // Non-aligned-verbatim-strings\n      {\n        pattern: /\"([^{]*)\\{[\\s\\S]*?\\}\\1\"/,\n        greedy: true\n      }, // Single-line string\n      {\n        pattern: /\"(?:%(?:(?!\\n)\\s)*\\n\\s*%|%\\S|[^%\"\\r\\n])*\"/,\n        greedy: true\n      }\n    ],\n    // normal char | special char | char code\n    char: /'(?:%.|[^%'\\r\\n])+'/,\n    keyword:\n      /\\b(?:across|agent|alias|all|and|as|assign|attached|attribute|check|class|convert|create|Current|debug|deferred|detachable|do|else|elseif|end|ensure|expanded|export|external|feature|from|frozen|if|implies|inherit|inspect|invariant|like|local|loop|not|note|obsolete|old|once|or|Precursor|redefine|rename|require|rescue|Result|retry|select|separate|some|then|undefine|until|variant|Void|when|xor)\\b/i,\n    boolean: /\\b(?:False|True)\\b/i,\n    // Convention: class-names are always all upper-case characters\n    'class-name': /\\b[A-Z][\\dA-Z_]*\\b/,\n    number: [\n      // hexa | octal | bin\n      /\\b0[xcb][\\da-f](?:_*[\\da-f])*\\b/i, // Decimal\n      /(?:\\b\\d(?:_*\\d)*)?\\.(?:(?:\\d(?:_*\\d)*)?e[+-]?)?\\d(?:_*\\d)*\\b|\\b\\d(?:_*\\d)*\\b\\.?/i\n    ],\n    punctuation: /:=|<<|>>|\\(\\||\\|\\)|->|\\.(?=\\w)|[{}[\\];(),:?]/,\n    operator: /\\\\\\\\|\\|\\.\\.\\||\\.\\.|\\/[~\\/=]?|[><]=?|[-+*^=~]/\n  }\n}\n",
+      "start": 1702937444868,
+      "end": 1702937444894,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar eiffel_1;\nvar hasRequiredEiffel;\n\nfunction requireEiffel () {\n\tif (hasRequiredEiffel) return eiffel_1;\n\thasRequiredEiffel = 1;\n\t'use strict'\n\n\teiffel_1 = eiffel\n\teiffel.displayName = 'eiffel'\n\teiffel.aliases = []\n\tfunction eiffel(Prism) {\n\t  Prism.languages.eiffel = {\n\t    comment: /--.*/,\n\t    string: [\n\t      // Aligned-verbatim-strings\n\t      {\n\t        pattern: /\"([^[]*)\\[[\\s\\S]*?\\]\\1\"/,\n\t        greedy: true\n\t      }, // Non-aligned-verbatim-strings\n\t      {\n\t        pattern: /\"([^{]*)\\{[\\s\\S]*?\\}\\1\"/,\n\t        greedy: true\n\t      }, // Single-line string\n\t      {\n\t        pattern: /\"(?:%(?:(?!\\n)\\s)*\\n\\s*%|%\\S|[^%\"\\r\\n])*\"/,\n\t        greedy: true\n\t      }\n\t    ],\n\t    // normal char | special char | char code\n\t    char: /'(?:%.|[^%'\\r\\n])+'/,\n\t    keyword:\n\t      /\\b(?:across|agent|alias|all|and|as|assign|attached|attribute|check|class|convert|create|Current|debug|deferred|detachable|do|else|elseif|end|ensure|expanded|export|external|feature|from|frozen|if|implies|inherit|inspect|invariant|like|local|loop|not|note|obsolete|old|once|or|Precursor|redefine|rename|require|rescue|Result|retry|select|separate|some|then|undefine|until|variant|Void|when|xor)\\b/i,\n\t    boolean: /\\b(?:False|True)\\b/i,\n\t    // Convention: class-names are always all upper-case characters\n\t    'class-name': /\\b[A-Z][\\dA-Z_]*\\b/,\n\t    number: [\n\t      // hexa | octal | bin\n\t      /\\b0[xcb][\\da-f](?:_*[\\da-f])*\\b/i, // Decimal\n\t      /(?:\\b\\d(?:_*\\d)*)?\\.(?:(?:\\d(?:_*\\d)*)?e[+-]?)?\\d(?:_*\\d)*\\b|\\b\\d(?:_*\\d)*\\b\\.?/i\n\t    ],\n\t    punctuation: /:=|<<|>>|\\(\\||\\|\\)|->|\\.(?=\\w)|[{}[\\];(),:?]/,\n\t    operator: /\\\\\\\\|\\|\\.\\.\\||\\.\\.|\\/[~\\/=]?|[><]=?|[-+*^=~]/\n\t  }\n\t}\n\treturn eiffel_1;\n}\n\nexport { requireEiffel as __require };",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,OAAO,EAAE,MAAM;CACnB,IAAI,MAAM,EAAE;CACZ;CACA,MAAM;CACN,QAAQ,OAAO,EAAE,yBAAyB;CAC1C,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM;CACN,QAAQ,OAAO,EAAE,yBAAyB;CAC1C,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM;CACN,QAAQ,OAAO,EAAE,2CAA2C;CAC5D,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,KAAK;CACL;CACA,IAAI,IAAI,EAAE,qBAAqB;CAC/B,IAAI,OAAO;CACX,MAAM,8YAA8Y;CACpZ,IAAI,OAAO,EAAE,qBAAqB;CAClC;CACA,IAAI,YAAY,EAAE,oBAAoB;CACtC,IAAI,MAAM,EAAE;CACZ;CACA,MAAM,kCAAkC;CACxC,MAAM,kFAAkF;CACxF,KAAK;CACL,IAAI,WAAW,EAAE,8CAA8C;CAC/D,IAAI,QAAQ,EAAE,8CAA8C;CAC5D,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444894,
+      "end": 1702937444894,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/space-separated-tokens/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nexports.parse = parse\nexports.stringify = stringify\n\nvar empty = ''\nvar space = ' '\nvar whiteSpace = /[ \\t\\n\\r\\f]+/g\n\nfunction parse(value) {\n  var input = String(value || empty).trim()\n  return input === empty ? [] : input.split(whiteSpace)\n}\n\nfunction stringify(values) {\n  return values.join(space).trim()\n}\n",
+      "start": 1702937445366,
+      "end": 1702937445378,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as spaceSeparatedTokens } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/space-separated-tokens/index.js?commonjs-exports\";\n\n'use strict'\n\nvar parse_1 = spaceSeparatedTokens.parse = parse\nvar stringify_1 = spaceSeparatedTokens.stringify = stringify\n\nvar empty = ''\nvar space = ' '\nvar whiteSpace = /[ \\t\\n\\r\\f]+/g\n\nfunction parse(value) {\n  var input = String(value || empty).trim()\n  return input === empty ? [] : input.split(whiteSpace)\n}\n\nfunction stringify(values) {\n  return values.join(space).trim()\n}\n\nexport { spaceSeparatedTokens as __moduleExports, parse_1 as parse, stringify_1 as stringify, spaceSeparatedTokens as default };",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY;AACZ;AACA,wCAAa,GAAG,KAAK;AACrB,gDAAiB,GAAG,SAAS;AAC7B;AACA,IAAI,KAAK,GAAG,EAAE;AACd,IAAI,KAAK,GAAG,GAAG;AACf,IAAI,UAAU,GAAG,eAAe;AAChC;AACA,SAAS,KAAK,CAAC,KAAK,EAAE;AACtB,EAAE,IAAI,KAAK,GAAG,MAAM,CAAC,KAAK,IAAI,KAAK,CAAC,CAAC,IAAI,EAAE;AAC3C,EAAE,OAAO,KAAK,KAAK,KAAK,GAAG,EAAE,GAAG,KAAK,CAAC,KAAK,CAAC,UAAU,CAAC;AACvD,CAAC;AACD;AACA,SAAS,SAAS,CAAC,MAAM,EAAE;AAC3B,EAAE,OAAO,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC,CAAC,IAAI,EAAE;AAClC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445378,
+      "end": 1702937445378,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/fault/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nvar formatter = require('format')\n\nvar fault = create(Error)\n\nmodule.exports = fault\n\nfault.eval = create(EvalError)\nfault.range = create(RangeError)\nfault.reference = create(ReferenceError)\nfault.syntax = create(SyntaxError)\nfault.type = create(TypeError)\nfault.uri = create(URIError)\n\nfault.create = create\n\n// Create a new `EConstructor`, with the formatted `format` as a first argument.\nfunction create(EConstructor) {\n  FormattedError.displayName = EConstructor.displayName || EConstructor.name\n\n  return FormattedError\n\n  function FormattedError(format) {\n    if (format) {\n      format = formatter.apply(null, arguments)\n    }\n\n    return new EConstructor(format)\n  }\n}\n",
+      "start": 1702937444643,
+      "end": 1702937444771,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444771,
+      "end": 1702937444771,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/format/format.js?commonjs-proxy\";\n\n'use strict'\n\nvar formatter = require$$0\n\nvar fault = create(Error)\n\nvar fault_1 = fault\n\nfault.eval = create(EvalError)\nfault.range = create(RangeError)\nfault.reference = create(ReferenceError)\nfault.syntax = create(SyntaxError)\nfault.type = create(TypeError)\nfault.uri = create(URIError)\n\nfault.create = create\n\n// Create a new `EConstructor`, with the formatted `format` as a first argument.\nfunction create(EConstructor) {\n  FormattedError.displayName = EConstructor.displayName || EConstructor.name\n\n  return FormattedError\n\n  function FormattedError(format) {\n    if (format) {\n      format = formatter.apply(null, arguments)\n    }\n\n    return new EConstructor(format)\n  }\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(fault_1);\nexport { fault_1 as __moduleExports };",
+      "start": 1702937444771,
+      "end": 1702937445297,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY;AACZ;AACA,IAAI,SAAS,GAAG,UAAiB;AACjC;AACA,IAAI,KAAK,GAAG,MAAM,CAAC,KAAK,CAAC;AACzB;IACA,OAAc,GAAG,KAAK;AACtB;AACA,KAAK,CAAC,IAAI,GAAG,MAAM,CAAC,SAAS,CAAC;AAC9B,KAAK,CAAC,KAAK,GAAG,MAAM,CAAC,UAAU,CAAC;AAChC,KAAK,CAAC,SAAS,GAAG,MAAM,CAAC,cAAc,CAAC;AACxC,KAAK,CAAC,MAAM,GAAG,MAAM,CAAC,WAAW,CAAC;AAClC,KAAK,CAAC,IAAI,GAAG,MAAM,CAAC,SAAS,CAAC;AAC9B,KAAK,CAAC,GAAG,GAAG,MAAM,CAAC,QAAQ,CAAC;AAC5B;AACA,KAAK,CAAC,MAAM,GAAG,MAAM;AACrB;AACA;AACA,SAAS,MAAM,CAAC,YAAY,EAAE;AAC9B,EAAE,cAAc,CAAC,WAAW,GAAG,YAAY,CAAC,WAAW,IAAI,YAAY,CAAC,IAAI;AAC5E;AACA,EAAE,OAAO,cAAc;AACvB;AACA,EAAE,SAAS,cAAc,CAAC,MAAM,EAAE;AAClC,IAAI,IAAI,MAAM,EAAE;AAChB,MAAM,MAAM,GAAG,SAAS,CAAC,KAAK,CAAC,IAAI,EAAE,SAAS,CAAC;AAC/C,KAAK;AACL;AACA,IAAI,OAAO,IAAI,YAAY,CAAC,MAAM,CAAC;AACnC,GAAG;AACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445297,
+      "end": 1702937445297,
+      "order": "normal"
+    }
+  ]
+}

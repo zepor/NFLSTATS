@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/react/hooks/useLazyQuery.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign } from \"tslib\";\nimport * as React from \"react\";\nimport { mergeOptions } from \"../../utilities/index.js\";\nimport { useInternalState } from \"./useQuery.js\";\nimport { useApolloClient } from \"./useApolloClient.js\";\n// The following methods, when called will execute the query, regardless of\n// whether the useLazyQuery execute function was called before.\nvar EAGER_METHODS = [\n    \"refetch\",\n    \"reobserve\",\n    \"fetchMore\",\n    \"updateQuery\",\n    \"startPolling\",\n    \"subscribeToMore\",\n];\nexport function useLazyQuery(query, options) {\n    var _a;\n    var execOptionsRef = React.useRef();\n    var optionsRef = React.useRef();\n    var queryRef = React.useRef();\n    var merged = mergeOptions(options, execOptionsRef.current || {});\n    var document = (_a = merged === null || merged === void 0 ? void 0 : merged.query) !== null && _a !== void 0 ? _a : query;\n    // Use refs to track options and the used query to ensure the `execute`\n    // function remains referentially stable between renders.\n    optionsRef.current = merged;\n    queryRef.current = document;\n    var internalState = useInternalState(useApolloClient(options && options.client), document);\n    var useQueryResult = internalState.useQuery(__assign(__assign({}, merged), { skip: !execOptionsRef.current }));\n    var initialFetchPolicy = useQueryResult.observable.options.initialFetchPolicy ||\n        internalState.getDefaultFetchPolicy();\n    var result = Object.assign(useQueryResult, {\n        called: !!execOptionsRef.current,\n    });\n    // We use useMemo here to make sure the eager methods have a stable identity.\n    var eagerMethods = React.useMemo(function () {\n        var eagerMethods = {};\n        var _loop_1 = function (key) {\n            var method = result[key];\n            eagerMethods[key] = function () {\n                if (!execOptionsRef.current) {\n                    execOptionsRef.current = Object.create(null);\n                    // Only the first time populating execOptionsRef.current matters here.\n                    internalState.forceUpdateState();\n                }\n                // @ts-expect-error this is just too generic to type\n                return method.apply(this, arguments);\n            };\n        };\n        for (var _i = 0, EAGER_METHODS_1 = EAGER_METHODS; _i < EAGER_METHODS_1.length; _i++) {\n            var key = EAGER_METHODS_1[_i];\n            _loop_1(key);\n        }\n        return eagerMethods;\n    }, []);\n    Object.assign(result, eagerMethods);\n    var execute = React.useCallback(function (executeOptions) {\n        execOptionsRef.current =\n            executeOptions ? __assign(__assign({}, executeOptions), { fetchPolicy: executeOptions.fetchPolicy || initialFetchPolicy }) : {\n                fetchPolicy: initialFetchPolicy,\n            };\n        var options = mergeOptions(optionsRef.current, __assign({ query: queryRef.current }, execOptionsRef.current));\n        var promise = internalState\n            .executeQuery(__assign(__assign({}, options), { skip: false }))\n            .then(function (queryResult) { return Object.assign(queryResult, eagerMethods); });\n        // Because the return value of `useLazyQuery` is usually floated, we need\n        // to catch the promise to prevent unhandled rejections.\n        promise.catch(function () { });\n        return promise;\n    }, []);\n    return [execute, result];\n}\n//# sourceMappingURL=useLazyQuery.js.map",
+      "start": 1702937441085,
+      "end": 1702937441220,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441220,
+      "end": 1702937441220,
+      "order": "normal"
+    }
+  ]
+}

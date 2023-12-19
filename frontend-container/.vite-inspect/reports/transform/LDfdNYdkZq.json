@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/axapta.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Microsoft X++\nDescription: X++ is a language used in Microsoft Dynamics 365, Dynamics AX, and Axapta.\nAuthor: Dmitri Roudakov <dmitri@roudakov.ru>\nWebsite: https://dynamics.microsoft.com/en-us/ax-overview/\nCategory: enterprise\n*/\n\n/** @type LanguageFn */\nfunction axapta(hljs) {\n  const BUILT_IN_KEYWORDS = [\n    'anytype',\n    'boolean',\n    'byte',\n    'char',\n    'container',\n    'date',\n    'double',\n    'enum',\n    'guid',\n    'int',\n    'int64',\n    'long',\n    'real',\n    'short',\n    'str',\n    'utcdatetime',\n    'var'\n  ];\n\n  const LITERAL_KEYWORDS = [\n    'default',\n    'false',\n    'null',\n    'true'\n  ];\n\n  const NORMAL_KEYWORDS = [\n    'abstract',\n    'as',\n    'asc',\n    'avg',\n    'break',\n    'breakpoint',\n    'by',\n    'byref',\n    'case',\n    'catch',\n    'changecompany',\n    'class',\n    'client',\n    'client',\n    'common',\n    'const',\n    'continue',\n    'count',\n    'crosscompany',\n    'delegate',\n    'delete_from',\n    'desc',\n    'display',\n    'div',\n    'do',\n    'edit',\n    'else',\n    'eventhandler',\n    'exists',\n    'extends',\n    'final',\n    'finally',\n    'firstfast',\n    'firstonly',\n    'firstonly1',\n    'firstonly10',\n    'firstonly100',\n    'firstonly1000',\n    'flush',\n    'for',\n    'forceliterals',\n    'forcenestedloop',\n    'forceplaceholders',\n    'forceselectorder',\n    'forupdate',\n    'from',\n    'generateonly',\n    'group',\n    'hint',\n    'if',\n    'implements',\n    'in',\n    'index',\n    'insert_recordset',\n    'interface',\n    'internal',\n    'is',\n    'join',\n    'like',\n    'maxof',\n    'minof',\n    'mod',\n    'namespace',\n    'new',\n    'next',\n    'nofetch',\n    'notexists',\n    'optimisticlock',\n    'order',\n    'outer',\n    'pessimisticlock',\n    'print',\n    'private',\n    'protected',\n    'public',\n    'readonly',\n    'repeatableread',\n    'retry',\n    'return',\n    'reverse',\n    'select',\n    'server',\n    'setting',\n    'static',\n    'sum',\n    'super',\n    'switch',\n    'this',\n    'throw',\n    'try',\n    'ttsabort',\n    'ttsbegin',\n    'ttscommit',\n    'unchecked',\n    'update_recordset',\n    'using',\n    'validtimestate',\n    'void',\n    'where',\n    'while'\n  ];\n\n  const KEYWORDS = {\n    keyword: NORMAL_KEYWORDS,\n    built_in: BUILT_IN_KEYWORDS,\n    literal: LITERAL_KEYWORDS\n  };\n\n  return {\n    name: 'X++',\n    aliases: ['x++'],\n    keywords: KEYWORDS,\n    contains: [\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      hljs.APOS_STRING_MODE,\n      hljs.QUOTE_STRING_MODE,\n      hljs.C_NUMBER_MODE,\n      {\n        className: 'meta',\n        begin: '#',\n        end: '$'\n      },\n      {\n        className: 'class',\n        beginKeywords: 'class interface',\n        end: /\\{/,\n        excludeEnd: true,\n        illegal: ':',\n        contains: [\n          {\n            beginKeywords: 'extends implements'\n          },\n          hljs.UNDERSCORE_TITLE_MODE\n        ]\n      }\n    ]\n  };\n}\n\nmodule.exports = axapta;\n",
+      "start": 1702937444232,
+      "end": 1702937444277,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Microsoft X++\nDescription: X++ is a language used in Microsoft Dynamics 365, Dynamics AX, and Axapta.\nAuthor: Dmitri Roudakov <dmitri@roudakov.ru>\nWebsite: https://dynamics.microsoft.com/en-us/ax-overview/\nCategory: enterprise\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar axapta_1;\nvar hasRequiredAxapta;\n\nfunction requireAxapta () {\n\tif (hasRequiredAxapta) return axapta_1;\n\thasRequiredAxapta = 1;\n\t/** @type LanguageFn */\n\tfunction axapta(hljs) {\n\t  const BUILT_IN_KEYWORDS = [\n\t    'anytype',\n\t    'boolean',\n\t    'byte',\n\t    'char',\n\t    'container',\n\t    'date',\n\t    'double',\n\t    'enum',\n\t    'guid',\n\t    'int',\n\t    'int64',\n\t    'long',\n\t    'real',\n\t    'short',\n\t    'str',\n\t    'utcdatetime',\n\t    'var'\n\t  ];\n\n\t  const LITERAL_KEYWORDS = [\n\t    'default',\n\t    'false',\n\t    'null',\n\t    'true'\n\t  ];\n\n\t  const NORMAL_KEYWORDS = [\n\t    'abstract',\n\t    'as',\n\t    'asc',\n\t    'avg',\n\t    'break',\n\t    'breakpoint',\n\t    'by',\n\t    'byref',\n\t    'case',\n\t    'catch',\n\t    'changecompany',\n\t    'class',\n\t    'client',\n\t    'client',\n\t    'common',\n\t    'const',\n\t    'continue',\n\t    'count',\n\t    'crosscompany',\n\t    'delegate',\n\t    'delete_from',\n\t    'desc',\n\t    'display',\n\t    'div',\n\t    'do',\n\t    'edit',\n\t    'else',\n\t    'eventhandler',\n\t    'exists',\n\t    'extends',\n\t    'final',\n\t    'finally',\n\t    'firstfast',\n\t    'firstonly',\n\t    'firstonly1',\n\t    'firstonly10',\n\t    'firstonly100',\n\t    'firstonly1000',\n\t    'flush',\n\t    'for',\n\t    'forceliterals',\n\t    'forcenestedloop',\n\t    'forceplaceholders',\n\t    'forceselectorder',\n\t    'forupdate',\n\t    'from',\n\t    'generateonly',\n\t    'group',\n\t    'hint',\n\t    'if',\n\t    'implements',\n\t    'in',\n\t    'index',\n\t    'insert_recordset',\n\t    'interface',\n\t    'internal',\n\t    'is',\n\t    'join',\n\t    'like',\n\t    'maxof',\n\t    'minof',\n\t    'mod',\n\t    'namespace',\n\t    'new',\n\t    'next',\n\t    'nofetch',\n\t    'notexists',\n\t    'optimisticlock',\n\t    'order',\n\t    'outer',\n\t    'pessimisticlock',\n\t    'print',\n\t    'private',\n\t    'protected',\n\t    'public',\n\t    'readonly',\n\t    'repeatableread',\n\t    'retry',\n\t    'return',\n\t    'reverse',\n\t    'select',\n\t    'server',\n\t    'setting',\n\t    'static',\n\t    'sum',\n\t    'super',\n\t    'switch',\n\t    'this',\n\t    'throw',\n\t    'try',\n\t    'ttsabort',\n\t    'ttsbegin',\n\t    'ttscommit',\n\t    'unchecked',\n\t    'update_recordset',\n\t    'using',\n\t    'validtimestate',\n\t    'void',\n\t    'where',\n\t    'while'\n\t  ];\n\n\t  const KEYWORDS = {\n\t    keyword: NORMAL_KEYWORDS,\n\t    built_in: BUILT_IN_KEYWORDS,\n\t    literal: LITERAL_KEYWORDS\n\t  };\n\n\t  return {\n\t    name: 'X++',\n\t    aliases: ['x++'],\n\t    keywords: KEYWORDS,\n\t    contains: [\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      hljs.APOS_STRING_MODE,\n\t      hljs.QUOTE_STRING_MODE,\n\t      hljs.C_NUMBER_MODE,\n\t      {\n\t        className: 'meta',\n\t        begin: '#',\n\t        end: '$'\n\t      },\n\t      {\n\t        className: 'class',\n\t        beginKeywords: 'class interface',\n\t        end: /\\{/,\n\t        excludeEnd: true,\n\t        illegal: ':',\n\t        contains: [\n\t          {\n\t            beginKeywords: 'extends implements'\n\t          },\n\t          hljs.UNDERSCORE_TITLE_MODE\n\t        ]\n\t      }\n\t    ]\n\t  };\n\t}\n\n\taxapta_1 = axapta;\n\treturn axapta_1;\n}\n\nexport { requireAxapta as __require };",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444277,
+      "end": 1702937444277,
+      "order": "normal"
+    }
+  ]
+}

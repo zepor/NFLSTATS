@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_ListCache.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import listCacheClear from './_listCacheClear.js';\nimport listCacheDelete from './_listCacheDelete.js';\nimport listCacheGet from './_listCacheGet.js';\nimport listCacheHas from './_listCacheHas.js';\nimport listCacheSet from './_listCacheSet.js';\n\n/**\n * Creates an list cache object.\n *\n * @private\n * @constructor\n * @param {Array} [entries] The key-value pairs to cache.\n */\nfunction ListCache(entries) {\n  var index = -1,\n      length = entries == null ? 0 : entries.length;\n\n  this.clear();\n  while (++index < length) {\n    var entry = entries[index];\n    this.set(entry[0], entry[1]);\n  }\n}\n\n// Add methods to `ListCache`.\nListCache.prototype.clear = listCacheClear;\nListCache.prototype['delete'] = listCacheDelete;\nListCache.prototype.get = listCacheGet;\nListCache.prototype.has = listCacheHas;\nListCache.prototype.set = listCacheSet;\n\nexport default ListCache;\n",
+      "start": 1702937444188,
+      "end": 1702937444206,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444206,
+      "end": 1702937444206,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444206,
+      "end": 1702937444206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444206,
+      "end": 1702937444206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444206,
+      "end": 1702937444206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444206,
+      "end": 1702937444206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444207,
+      "end": 1702937444207,
+      "order": "normal"
+    }
+  ]
+}

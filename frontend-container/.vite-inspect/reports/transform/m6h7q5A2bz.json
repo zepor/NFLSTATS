@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { __assign, __spreadArray } from \"tslib\";\nimport { print } from \"../../utilities/index.js\";\nvar defaultHttpOptions = {\n    includeQuery: true,\n    includeExtensions: false,\n    preserveHeaderCase: false,\n};\nvar defaultHeaders = {\n    // headers are case insensitive (https://stackoverflow.com/a/5259004)\n    accept: \"*/*\",\n    // The content-type header describes the type of the body of the request, and\n    // so it typically only is sent with requests that actually have bodies. One\n    // could imagine that Apollo Client would remove this header when constructing\n    // a GET request (which has no body), but we historically have not done that.\n    // This means that browsers will preflight all Apollo Client requests (even\n    // GET requests). Apollo Server's CSRF prevention feature (introduced in\n    // AS3.7) takes advantage of this fact and does not block requests with this\n    // header. If you want to drop this header from GET requests, then you should\n    // probably replace it with a `apollo-require-preflight` header, or servers\n    // with CSRF prevention enabled might block your GET request. See\n    // https://www.apollographql.com/docs/apollo-server/security/cors/#preventing-cross-site-request-forgery-csrf\n    // for more details.\n    \"content-type\": \"application/json\",\n};\nvar defaultOptions = {\n    method: \"POST\",\n};\nexport var fallbackHttpConfig = {\n    http: defaultHttpOptions,\n    headers: defaultHeaders,\n    options: defaultOptions,\n};\nexport var defaultPrinter = function (ast, printer) { return printer(ast); };\nexport function selectHttpOptionsAndBody(operation, fallbackConfig) {\n    var configs = [];\n    for (var _i = 2; _i < arguments.length; _i++) {\n        configs[_i - 2] = arguments[_i];\n    }\n    configs.unshift(fallbackConfig);\n    return selectHttpOptionsAndBodyInternal.apply(void 0, __spreadArray([operation,\n        defaultPrinter], configs, false));\n}\nexport function selectHttpOptionsAndBodyInternal(operation, printer) {\n    var configs = [];\n    for (var _i = 2; _i < arguments.length; _i++) {\n        configs[_i - 2] = arguments[_i];\n    }\n    var options = {};\n    var http = {};\n    configs.forEach(function (config) {\n        options = __assign(__assign(__assign({}, options), config.options), { headers: __assign(__assign({}, options.headers), config.headers) });\n        if (config.credentials) {\n            options.credentials = config.credentials;\n        }\n        http = __assign(__assign({}, http), config.http);\n    });\n    if (options.headers) {\n        options.headers = removeDuplicateHeaders(options.headers, http.preserveHeaderCase);\n    }\n    //The body depends on the http options\n    var operationName = operation.operationName, extensions = operation.extensions, variables = operation.variables, query = operation.query;\n    var body = { operationName: operationName, variables: variables };\n    if (http.includeExtensions)\n        body.extensions = extensions;\n    // not sending the query (i.e persisted queries)\n    if (http.includeQuery)\n        body.query = printer(query, print);\n    return {\n        options: options,\n        body: body,\n    };\n}\n// Remove potential duplicate header names, preserving last (by insertion order).\n// This is done to prevent unintentionally duplicating a header instead of\n// overwriting it (See #8447 and #8449).\nfunction removeDuplicateHeaders(headers, preserveHeaderCase) {\n    // If we're not preserving the case, just remove duplicates w/ normalization.\n    if (!preserveHeaderCase) {\n        var normalizedHeaders_1 = Object.create(null);\n        Object.keys(Object(headers)).forEach(function (name) {\n            normalizedHeaders_1[name.toLowerCase()] = headers[name];\n        });\n        return normalizedHeaders_1;\n    }\n    // If we are preserving the case, remove duplicates w/ normalization,\n    // preserving the original name.\n    // This allows for non-http-spec-compliant servers that expect intentionally\n    // capitalized header names (See #6741).\n    var headerData = Object.create(null);\n    Object.keys(Object(headers)).forEach(function (name) {\n        headerData[name.toLowerCase()] = {\n            originalName: name,\n            value: headers[name],\n        };\n    });\n    var normalizedHeaders = Object.create(null);\n    Object.keys(headerData).forEach(function (name) {\n        normalizedHeaders[headerData[name].originalName] = headerData[name].value;\n    });\n    return normalizedHeaders;\n}\n//# sourceMappingURL=selectHttpOptionsAndBody.js.map",
+      "start": 1702937440932,
+      "end": 1702937441015,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441015,
+      "end": 1702937441015,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441015,
+      "end": 1702937441016,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441016,
+      "end": 1702937441016,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441016,
+      "end": 1702937441016,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441016,
+      "end": 1702937441016,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441016,
+      "end": 1702937441016,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441016,
+      "end": 1702937441016,
+      "order": "normal"
+    }
+  ]
+}

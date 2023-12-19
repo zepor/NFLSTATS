@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/contexts/LayoutContext.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// src/contexts/LayoutContext.jsx\r\nimport React from \"react\";\r\n\r\nimport { LAYOUT } from \"../constants\";\r\n\r\nconst initialState = {\r\n  layout: LAYOUT.FLUID,\r\n};\r\n\r\nconst LayoutContext = React.createContext(initialState);\r\n\r\nexport default LayoutContext;\r\n",
+      "start": 1702937436272,
+      "end": 1702937436703,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436703,
+      "end": 1702937436703,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import React from \"react\";\nimport { LAYOUT } from \"../constants\";\nconst initialState = {\n  layout: LAYOUT.FLUID\n};\nconst LayoutContext = React.createContext(initialState);\nexport default LayoutContext;\n",
+      "start": 1702937436703,
+      "end": 1702937436868,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/contexts/LayoutContext.jsx"
+        ],
+        "sourcesContent": [
+          "// src/contexts/LayoutContext.jsx\r\nimport React from \"react\";\r\n\r\nimport { LAYOUT } from \"../constants\";\r\n\r\nconst initialState = {\r\n  layout: LAYOUT.FLUID,\r\n};\r\n\r\nconst LayoutContext = React.createContext(initialState);\r\n\r\nexport default LayoutContext;\r\n"
+        ],
+        "mappings": "AACA,OAAO,WAAW;AAElB,SAAS,cAAc;AAEvB,MAAM,eAAe;AAAA,EACnB,QAAQ,OAAO;AACjB;AAEA,MAAM,gBAAgB,MAAM,cAAc,YAAY;AAEtD,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436869,
+      "end": 1702937436870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436870,
+      "end": 1702937436870,
+      "order": "normal"
+    }
+  ]
+}

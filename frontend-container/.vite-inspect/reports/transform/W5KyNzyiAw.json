@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_stackSet.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import ListCache from './_ListCache.js';\nimport Map from './_Map.js';\nimport MapCache from './_MapCache.js';\n\n/** Used as the size to enable large array optimizations. */\nvar LARGE_ARRAY_SIZE = 200;\n\n/**\n * Sets the stack `key` to `value`.\n *\n * @private\n * @name set\n * @memberOf Stack\n * @param {string} key The key of the value to set.\n * @param {*} value The value to set.\n * @returns {Object} Returns the stack cache instance.\n */\nfunction stackSet(key, value) {\n  var data = this.__data__;\n  if (data instanceof ListCache) {\n    var pairs = data.__data__;\n    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {\n      pairs.push([key, value]);\n      this.size = ++data.size;\n      return this;\n    }\n    data = this.__data__ = new MapCache(pairs);\n  }\n  data.set(key, value);\n  this.size = data.size;\n  return this;\n}\n\nexport default stackSet;\n",
+      "start": 1702937444193,
+      "end": 1702937444208,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444208,
+      "end": 1702937444208,
+      "order": "normal"
+    }
+  ]
+}

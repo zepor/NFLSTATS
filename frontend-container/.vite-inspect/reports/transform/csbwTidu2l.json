@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/xml-doc.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = xmlDoc\nxmlDoc.displayName = 'xmlDoc'\nxmlDoc.aliases = []\nfunction xmlDoc(Prism) {\n  ;(function (Prism) {\n    /**\n     * If the given language is present, it will insert the given doc comment grammar token into it.\n     *\n     * @param {string} lang\n     * @param {any} docComment\n     */\n    function insertDocComment(lang, docComment) {\n      if (Prism.languages[lang]) {\n        Prism.languages.insertBefore(lang, 'comment', {\n          'doc-comment': docComment\n        })\n      }\n    }\n    var tag = Prism.languages.markup.tag\n    var slashDocComment = {\n      pattern: /\\/\\/\\/.*/,\n      greedy: true,\n      alias: 'comment',\n      inside: {\n        tag: tag\n      }\n    }\n    var tickDocComment = {\n      pattern: /'''.*/,\n      greedy: true,\n      alias: 'comment',\n      inside: {\n        tag: tag\n      }\n    }\n    insertDocComment('csharp', slashDocComment)\n    insertDocComment('fsharp', slashDocComment)\n    insertDocComment('vbnet', tickDocComment)\n  })(Prism)\n}\n",
+      "start": 1702937445121,
+      "end": 1702937445145,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar xmlDoc_1;\nvar hasRequiredXmlDoc;\n\nfunction requireXmlDoc () {\n\tif (hasRequiredXmlDoc) return xmlDoc_1;\n\thasRequiredXmlDoc = 1;\n\t'use strict'\n\n\txmlDoc_1 = xmlDoc\n\txmlDoc.displayName = 'xmlDoc'\n\txmlDoc.aliases = []\n\tfunction xmlDoc(Prism) {\n\t  ;(function (Prism) {\n\t    /**\n\t     * If the given language is present, it will insert the given doc comment grammar token into it.\n\t     *\n\t     * @param {string} lang\n\t     * @param {any} docComment\n\t     */\n\t    function insertDocComment(lang, docComment) {\n\t      if (Prism.languages[lang]) {\n\t        Prism.languages.insertBefore(lang, 'comment', {\n\t          'doc-comment': docComment\n\t        })\n\t      }\n\t    }\n\t    var tag = Prism.languages.markup.tag\n\t    var slashDocComment = {\n\t      pattern: /\\/\\/\\/.*/,\n\t      greedy: true,\n\t      alias: 'comment',\n\t      inside: {\n\t        tag: tag\n\t      }\n\t    }\n\t    var tickDocComment = {\n\t      pattern: /'''.*/,\n\t      greedy: true,\n\t      alias: 'comment',\n\t      inside: {\n\t        tag: tag\n\t      }\n\t    }\n\t    insertDocComment('csharp', slashDocComment)\n\t    insertDocComment('fsharp', slashDocComment)\n\t    insertDocComment('vbnet', tickDocComment)\n\t  })(Prism)\n\t}\n\treturn xmlDoc_1;\n}\n\nexport { requireXmlDoc as __require };",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB;CACA;CACA;CACA;CACA;CACA;CACA,IAAI,SAAS,gBAAgB,CAAC,IAAI,EAAE,UAAU,EAAE;CAChD,MAAM,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,EAAE;CACjC,QAAQ,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,IAAI,EAAE,SAAS,EAAE;CACtD,UAAU,aAAa,EAAE,UAAU;CACnC,SAAS,CAAC;CACV,OAAO;CACP,KAAK;CACL,IAAI,IAAI,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,GAAG;CACxC,IAAI,IAAI,eAAe,GAAG;CAC1B,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,SAAS;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,KAAK;CACL,IAAI,IAAI,cAAc,GAAG;CACzB,MAAM,OAAO,EAAE,OAAO;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,SAAS;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,GAAG,EAAE,GAAG;CAChB,OAAO;CACP,KAAK;CACL,IAAI,gBAAgB,CAAC,QAAQ,EAAE,eAAe,CAAC;CAC/C,IAAI,gBAAgB,CAAC,QAAQ,EAAE,eAAe,CAAC;CAC/C,IAAI,gBAAgB,CAAC,OAAO,EAAE,cAAc,CAAC;CAC7C,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445145,
+      "end": 1702937445145,
+      "order": "normal"
+    }
+  ]
+}

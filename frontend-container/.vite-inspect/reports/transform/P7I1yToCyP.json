@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/validation/rules/LoneAnonymousOperationRule.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { GraphQLError } from '../../error/GraphQLError.mjs';\nimport { Kind } from '../../language/kinds.mjs';\n\n/**\n * Lone anonymous operation\n *\n * A GraphQL document is only valid if when it contains an anonymous operation\n * (the query short-hand) that it contains only that one operation definition.\n *\n * See https://spec.graphql.org/draft/#sec-Lone-Anonymous-Operation\n */\nexport function LoneAnonymousOperationRule(context) {\n  let operationCount = 0;\n  return {\n    Document(node) {\n      operationCount = node.definitions.filter(\n        (definition) => definition.kind === Kind.OPERATION_DEFINITION,\n      ).length;\n    },\n\n    OperationDefinition(node) {\n      if (!node.name && operationCount > 1) {\n        context.reportError(\n          new GraphQLError(\n            'This anonymous operation must be the only defined operation.',\n            {\n              nodes: node,\n            },\n          ),\n        );\n      }\n    },\n  };\n}\n",
+      "start": 1702937443071,
+      "end": 1702937443092,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443092,
+      "end": 1702937443092,
+      "order": "normal"
+    }
+  ]
+}

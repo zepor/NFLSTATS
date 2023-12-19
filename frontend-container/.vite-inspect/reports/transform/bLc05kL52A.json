@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/bbcode.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = bbcode\nbbcode.displayName = 'bbcode'\nbbcode.aliases = ['shortcode']\nfunction bbcode(Prism) {\n  Prism.languages.bbcode = {\n    tag: {\n      pattern:\n        /\\[\\/?[^\\s=\\]]+(?:\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+))?(?:\\s+[^\\s=\\]]+\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+))*\\s*\\]/,\n      inside: {\n        tag: {\n          pattern: /^\\[\\/?[^\\s=\\]]+/,\n          inside: {\n            punctuation: /^\\[\\/?/\n          }\n        },\n        'attr-value': {\n          pattern: /=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+)/,\n          inside: {\n            punctuation: [\n              /^=/,\n              {\n                pattern: /^(\\s*)[\"']|[\"']$/,\n                lookbehind: true\n              }\n            ]\n          }\n        },\n        punctuation: /\\]/,\n        'attr-name': /[^\\s=\\]]+/\n      }\n    }\n  }\n  Prism.languages.shortcode = Prism.languages.bbcode\n}\n",
+      "start": 1702937444825,
+      "end": 1702937444850,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar bbcode_1;\nvar hasRequiredBbcode;\n\nfunction requireBbcode () {\n\tif (hasRequiredBbcode) return bbcode_1;\n\thasRequiredBbcode = 1;\n\t'use strict'\n\n\tbbcode_1 = bbcode\n\tbbcode.displayName = 'bbcode'\n\tbbcode.aliases = ['shortcode']\n\tfunction bbcode(Prism) {\n\t  Prism.languages.bbcode = {\n\t    tag: {\n\t      pattern:\n\t        /\\[\\/?[^\\s=\\]]+(?:\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+))?(?:\\s+[^\\s=\\]]+\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+))*\\s*\\]/,\n\t      inside: {\n\t        tag: {\n\t          pattern: /^\\[\\/?[^\\s=\\]]+/,\n\t          inside: {\n\t            punctuation: /^\\[\\/?/\n\t          }\n\t        },\n\t        'attr-value': {\n\t          pattern: /=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\"\\]=]+)/,\n\t          inside: {\n\t            punctuation: [\n\t              /^=/,\n\t              {\n\t                pattern: /^(\\s*)[\"']|[\"']$/,\n\t                lookbehind: true\n\t              }\n\t            ]\n\t          }\n\t        },\n\t        punctuation: /\\]/,\n\t        'attr-name': /[^\\s=\\]]+/\n\t      }\n\t    }\n\t  }\n\t  Prism.languages.shortcode = Prism.languages.bbcode\n\t}\n\treturn bbcode_1;\n}\n\nexport { requireBbcode as __require };",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,CAAC,WAAW,CAAC;CAC9B,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B,IAAI,GAAG,EAAE;CACT,MAAM,OAAO;CACb,QAAQ,uHAAuH;CAC/H,MAAM,MAAM,EAAE;CACd,QAAQ,GAAG,EAAE;CACb,UAAU,OAAO,EAAE,iBAAiB;CACpC,UAAU,MAAM,EAAE;CAClB,YAAY,WAAW,EAAE,QAAQ;CACjC,WAAW;CACX,SAAS;CACT,QAAQ,YAAY,EAAE;CACtB,UAAU,OAAO,EAAE,qCAAqC;CACxD,UAAU,MAAM,EAAE;CAClB,YAAY,WAAW,EAAE;CACzB,cAAc,IAAI;CAClB,cAAc;CACd,gBAAgB,OAAO,EAAE,kBAAkB;CAC3C,gBAAgB,UAAU,EAAE,IAAI;CAChC,eAAe;CACf,aAAa;CACb,WAAW;CACX,SAAS;CACT,QAAQ,WAAW,EAAE,IAAI;CACzB,QAAQ,WAAW,EAAE,WAAW;CAChC,OAAO;CACP,KAAK;CACL,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,SAAS,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM;CACpD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444850,
+      "end": 1702937444850,
+      "order": "normal"
+    }
+  ]
+}

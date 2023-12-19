@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_baseIsMap.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import getTag from './_getTag.js';\nimport isObjectLike from './isObjectLike.js';\n\n/** `Object#toString` result references. */\nvar mapTag = '[object Map]';\n\n/**\n * The base implementation of `_.isMap` without Node.js optimizations.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a map, else `false`.\n */\nfunction baseIsMap(value) {\n  return isObjectLike(value) && getTag(value) == mapTag;\n}\n\nexport default baseIsMap;\n",
+      "start": 1702937444210,
+      "end": 1702937444228,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444228,
+      "end": 1702937444228,
+      "order": "normal"
+    }
+  ]
+}

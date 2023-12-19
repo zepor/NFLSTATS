@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/xojo.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = xojo\nxojo.displayName = 'xojo'\nxojo.aliases = []\nfunction xojo(Prism) {\n  Prism.languages.xojo = {\n    comment: {\n      pattern: /(?:'|\\/\\/|Rem\\b).+/i,\n      greedy: true\n    },\n    string: {\n      pattern: /\"(?:\"\"|[^\"])*\"/,\n      greedy: true\n    },\n    number: [/(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:E[+-]?\\d+)?/i, /&[bchou][a-z\\d]+/i],\n    directive: {\n      pattern: /#(?:Else|ElseIf|Endif|If|Pragma)\\b/i,\n      alias: 'property'\n    },\n    keyword:\n      /\\b(?:AddHandler|App|Array|As(?:signs)?|Auto|Boolean|Break|By(?:Ref|Val)|Byte|Call|Case|Catch|CFStringRef|CGFloat|Class|Color|Const|Continue|CString|Currency|CurrentMethodName|Declare|Delegate|Dim|Do(?:uble|wnTo)?|Each|Else(?:If)?|End|Enumeration|Event|Exception|Exit|Extends|False|Finally|For|Function|Get|GetTypeInfo|Global|GOTO|If|Implements|In|Inherits|Int(?:8|16|32|64|eger|erface)?|Lib|Loop|Me|Module|Next|Nil|Object|Optional|OSType|ParamArray|Private|Property|Protected|PString|Ptr|Raise(?:Event)?|ReDim|RemoveHandler|Return|Select(?:or)?|Self|Set|Shared|Short|Single|Soft|Static|Step|String|Sub|Super|Text|Then|To|True|Try|Ubound|UInt(?:8|16|32|64|eger)?|Until|Using|Var(?:iant)?|Wend|While|WindowPtr|WString)\\b/i,\n    operator:\n      /<[=>]?|>=?|[+\\-*\\/\\\\^=]|\\b(?:AddressOf|And|Ctype|IsA?|Mod|New|Not|Or|WeakAddressOf|Xor)\\b/i,\n    punctuation: /[.,;:()]/\n  }\n}\n",
+      "start": 1702937445123,
+      "end": 1702937445146,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445146,
+      "end": 1702937445146,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar xojo_1;\nvar hasRequiredXojo;\n\nfunction requireXojo () {\n\tif (hasRequiredXojo) return xojo_1;\n\thasRequiredXojo = 1;\n\t'use strict'\n\n\txojo_1 = xojo\n\txojo.displayName = 'xojo'\n\txojo.aliases = []\n\tfunction xojo(Prism) {\n\t  Prism.languages.xojo = {\n\t    comment: {\n\t      pattern: /(?:'|\\/\\/|Rem\\b).+/i,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /\"(?:\"\"|[^\"])*\"/,\n\t      greedy: true\n\t    },\n\t    number: [/(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)(?:E[+-]?\\d+)?/i, /&[bchou][a-z\\d]+/i],\n\t    directive: {\n\t      pattern: /#(?:Else|ElseIf|Endif|If|Pragma)\\b/i,\n\t      alias: 'property'\n\t    },\n\t    keyword:\n\t      /\\b(?:AddHandler|App|Array|As(?:signs)?|Auto|Boolean|Break|By(?:Ref|Val)|Byte|Call|Case|Catch|CFStringRef|CGFloat|Class|Color|Const|Continue|CString|Currency|CurrentMethodName|Declare|Delegate|Dim|Do(?:uble|wnTo)?|Each|Else(?:If)?|End|Enumeration|Event|Exception|Exit|Extends|False|Finally|For|Function|Get|GetTypeInfo|Global|GOTO|If|Implements|In|Inherits|Int(?:8|16|32|64|eger|erface)?|Lib|Loop|Me|Module|Next|Nil|Object|Optional|OSType|ParamArray|Private|Property|Protected|PString|Ptr|Raise(?:Event)?|ReDim|RemoveHandler|Return|Select(?:or)?|Self|Set|Shared|Short|Single|Soft|Static|Step|String|Sub|Super|Text|Then|To|True|Try|Ubound|UInt(?:8|16|32|64|eger)?|Until|Using|Var(?:iant)?|Wend|While|WindowPtr|WString)\\b/i,\n\t    operator:\n\t      /<[=>]?|>=?|[+\\-*\\/\\\\^=]|\\b(?:AddressOf|And|Ctype|IsA?|Mod|New|Not|Or|WeakAddressOf|Xor)\\b/i,\n\t    punctuation: /[.,;:()]/\n\t  }\n\t}\n\treturn xojo_1;\n}\n\nexport { requireXojo as __require };",
+      "start": 1702937445146,
+      "end": 1702937445147,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CACzB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,gBAAgB;CAC/B,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE,CAAC,4CAA4C,EAAE,mBAAmB,CAAC;CAC/E,IAAI,SAAS,EAAE;CACf,MAAM,OAAO,EAAE,qCAAqC;CACpD,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,OAAO;CACX,MAAM,itBAAitB;CACvtB,IAAI,QAAQ;CACZ,MAAM,4FAA4F;CAClG,IAAI,WAAW,EAAE,UAAU;CAC3B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445147,
+      "end": 1702937445147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445147,
+      "end": 1702937445147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445147,
+      "end": 1702937445147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445147,
+      "end": 1702937445147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445147,
+      "end": 1702937445147,
+      "order": "normal"
+    }
+  ]
+}

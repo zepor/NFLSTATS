@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-bootstrap/esm/useWrappedRefWithWarning.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import invariant from 'invariant';\nimport { useCallback } from 'react';\nimport useMergedRefs from '@restart/hooks/useMergedRefs';\nexport default function useWrappedRefWithWarning(ref, componentName) {\n  // @ts-ignore\n  if (!(process.env.NODE_ENV !== \"production\")) return ref;\n\n  // eslint-disable-next-line react-hooks/rules-of-hooks\n  const warningRef = useCallback(refValue => {\n    !(refValue == null || !refValue.isReactComponent) ? process.env.NODE_ENV !== \"production\" ? invariant(false, `${componentName} injected a ref to a provided \\`as\\` component that resolved to a component instance instead of a DOM element. ` + 'Use `React.forwardRef` to provide the injected ref to the class component as a prop in order to pass it directly to a DOM element') : invariant(false) : void 0;\n  }, [componentName]);\n  // eslint-disable-next-line react-hooks/rules-of-hooks\n  return useMergedRefs(warningRef, ref);\n}",
+      "start": 1702937442025,
+      "end": 1702937442085,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442085,
+      "end": 1702937442085,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442085,
+      "end": 1702937442085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442085,
+      "end": 1702937442085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442085,
+      "end": 1702937442085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442085,
+      "end": 1702937442085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import invariant from \"invariant\";\nimport { useCallback } from \"react\";\nimport useMergedRefs from \"@restart/hooks/useMergedRefs\";\nexport default function useWrappedRefWithWarning(ref, componentName) {\n  if (true)\n    return ref;\n  const warningRef = useCallback((refValue) => {\n    !(refValue == null || !refValue.isReactComponent) ? false ? invariant(false, `${componentName} injected a ref to a provided \\`as\\` component that resolved to a component instance instead of a DOM element. Use \\`React.forwardRef\\` to provide the injected ref to the class component as a prop in order to pass it directly to a DOM element`) : invariant(false) : void 0;\n  }, [componentName]);\n  return useMergedRefs(warningRef, ref);\n}\n",
+      "start": 1702937442085,
+      "end": 1702937442092,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442092,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    }
+  ]
+}

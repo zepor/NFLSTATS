@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react-dom/client.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nvar m = require('react-dom');\nif (process.env.NODE_ENV === 'production') {\n  exports.createRoot = m.createRoot;\n  exports.hydrateRoot = m.hydrateRoot;\n} else {\n  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;\n  exports.createRoot = function(c, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.createRoot(c, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n  exports.hydrateRoot = function(c, h, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.hydrateRoot(c, h, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n}\n",
+      "start": 1702937435939,
+      "end": 1702937435941,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937435941,
+      "end": 1702937435941,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937435941,
+      "end": 1702937435941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937435941,
+      "end": 1702937435941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937435941,
+      "end": 1702937435941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937435941,
+      "end": 1702937435941,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use strict\";\nvar m = require(\"react-dom\");\nif (true) {\n  exports.createRoot = m.createRoot;\n  exports.hydrateRoot = m.hydrateRoot;\n} else {\n  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;\n  exports.createRoot = function(c, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.createRoot(c, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n  exports.hydrateRoot = function(c, h, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.hydrateRoot(c, h, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n}\n",
+      "start": 1702937435941,
+      "end": 1702937435944,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as client } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react-dom/client.js?commonjs-exports\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react-dom/index.js?commonjs-proxy\";\n\nvar hydrateRoot;\nvar createRoot;\n\"use strict\";\nvar m = require$$0;\nif (true) {\n  createRoot = client.createRoot = m.createRoot;\n  hydrateRoot = client.hydrateRoot = m.hydrateRoot;\n} else {\n  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;\n  exports.createRoot = function(c, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.createRoot(c, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n  exports.hydrateRoot = function(c, h, o) {\n    i.usingClientEntryPoint = true;\n    try {\n      return m.hydrateRoot(c, h, o);\n    } finally {\n      i.usingClientEntryPoint = false;\n    }\n  };\n}\n\nexport { client as __moduleExports, createRoot, hydrateRoot, client as default };",
+      "start": 1702937435946,
+      "end": 1702937442071,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;AAAA,YAAY,CAAC;AACb,IAAI,CAAC,GAAG,UAAoB,CAAC;AAC7B,IAAI,IAAI,EAAE;AACV,EAAE,8BAAkB,GAAG,CAAC,CAAC,UAAU,CAAC;AACpC,EAAE,gCAAmB,GAAG,CAAC,CAAC,WAAW,CAAC;AACtC,CAAC;AACD;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442071,
+      "end": 1702937442071,
+      "order": "normal"
+    }
+  ]
+}

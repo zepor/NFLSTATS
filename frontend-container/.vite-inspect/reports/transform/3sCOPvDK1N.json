@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/systemd.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = systemd\nsystemd.displayName = 'systemd'\nsystemd.aliases = []\nfunction systemd(Prism) {\n  // https://www.freedesktop.org/software/systemd/man/systemd.syntax.html\n  ;(function (Prism) {\n    var comment = {\n      pattern: /^[;#].*/m,\n      greedy: true\n    }\n    var quotesSource = /\"(?:[^\\r\\n\"\\\\]|\\\\(?:[^\\r]|\\r\\n?))*\"(?!\\S)/.source\n    Prism.languages.systemd = {\n      comment: comment,\n      section: {\n        pattern: /^\\[[^\\n\\r\\[\\]]*\\](?=[ \\t]*$)/m,\n        greedy: true,\n        inside: {\n          punctuation: /^\\[|\\]$/,\n          'section-name': {\n            pattern: /[\\s\\S]+/,\n            alias: 'selector'\n          }\n        }\n      },\n      key: {\n        pattern: /^[^\\s=]+(?=[ \\t]*=)/m,\n        greedy: true,\n        alias: 'attr-name'\n      },\n      value: {\n        // This pattern is quite complex because of two properties:\n        //  1) Quotes (strings) must be preceded by a space. Since we can't use lookbehinds, we have to \"resolve\"\n        //     the lookbehind. You will see this in the main loop where spaces are handled separately.\n        //  2) Line continuations.\n        //     After line continuations, empty lines and comments are ignored so we have to consume them.\n        pattern: RegExp(\n          /(=[ \\t]*(?!\\s))/.source + // the value either starts with quotes or not\n            '(?:' +\n            quotesSource +\n            '|(?=[^\"\\r\\n]))' + // main loop\n            '(?:' +\n            (/[^\\s\\\\]/.source + // handle spaces separately because of quotes\n              '|' +\n              '[ \\t]+(?:(?![ \\t\"])|' +\n              quotesSource +\n              ')' + // line continuation\n              '|' +\n              /\\\\[\\r\\n]+(?:[#;].*[\\r\\n]+)*(?![#;])/.source) +\n            ')*'\n        ),\n        lookbehind: true,\n        greedy: true,\n        alias: 'attr-value',\n        inside: {\n          comment: comment,\n          quoted: {\n            pattern: RegExp(/(^|\\s)/.source + quotesSource),\n            lookbehind: true,\n            greedy: true\n          },\n          punctuation: /\\\\$/m,\n          boolean: {\n            pattern: /^(?:false|no|off|on|true|yes)$/,\n            greedy: true\n          }\n        }\n      },\n      punctuation: /=/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937445081,
+      "end": 1702937445107,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445107,
+      "end": 1702937445107,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar systemd_1;\nvar hasRequiredSystemd;\n\nfunction requireSystemd () {\n\tif (hasRequiredSystemd) return systemd_1;\n\thasRequiredSystemd = 1;\n\t'use strict'\n\n\tsystemd_1 = systemd\n\tsystemd.displayName = 'systemd'\n\tsystemd.aliases = []\n\tfunction systemd(Prism) {\n\t  // https://www.freedesktop.org/software/systemd/man/systemd.syntax.html\n\t  ;(function (Prism) {\n\t    var comment = {\n\t      pattern: /^[;#].*/m,\n\t      greedy: true\n\t    }\n\t    var quotesSource = /\"(?:[^\\r\\n\"\\\\]|\\\\(?:[^\\r]|\\r\\n?))*\"(?!\\S)/.source\n\t    Prism.languages.systemd = {\n\t      comment: comment,\n\t      section: {\n\t        pattern: /^\\[[^\\n\\r\\[\\]]*\\](?=[ \\t]*$)/m,\n\t        greedy: true,\n\t        inside: {\n\t          punctuation: /^\\[|\\]$/,\n\t          'section-name': {\n\t            pattern: /[\\s\\S]+/,\n\t            alias: 'selector'\n\t          }\n\t        }\n\t      },\n\t      key: {\n\t        pattern: /^[^\\s=]+(?=[ \\t]*=)/m,\n\t        greedy: true,\n\t        alias: 'attr-name'\n\t      },\n\t      value: {\n\t        // This pattern is quite complex because of two properties:\n\t        //  1) Quotes (strings) must be preceded by a space. Since we can't use lookbehinds, we have to \"resolve\"\n\t        //     the lookbehind. You will see this in the main loop where spaces are handled separately.\n\t        //  2) Line continuations.\n\t        //     After line continuations, empty lines and comments are ignored so we have to consume them.\n\t        pattern: RegExp(\n\t          /(=[ \\t]*(?!\\s))/.source + // the value either starts with quotes or not\n\t            '(?:' +\n\t            quotesSource +\n\t            '|(?=[^\"\\r\\n]))' + // main loop\n\t            '(?:' +\n\t            (/[^\\s\\\\]/.source + // handle spaces separately because of quotes\n\t              '|' +\n\t              '[ \\t]+(?:(?![ \\t\"])|' +\n\t              quotesSource +\n\t              ')' + // line continuation\n\t              '|' +\n\t              /\\\\[\\r\\n]+(?:[#;].*[\\r\\n]+)*(?![#;])/.source) +\n\t            ')*'\n\t        ),\n\t        lookbehind: true,\n\t        greedy: true,\n\t        alias: 'attr-value',\n\t        inside: {\n\t          comment: comment,\n\t          quoted: {\n\t            pattern: RegExp(/(^|\\s)/.source + quotesSource),\n\t            lookbehind: true,\n\t            greedy: true\n\t          },\n\t          punctuation: /\\\\$/m,\n\t          boolean: {\n\t            pattern: /^(?:false|no|off|on|true|yes)$/,\n\t            greedy: true\n\t          }\n\t        }\n\t      },\n\t      punctuation: /=/\n\t    }\n\t  })(Prism)\n\t}\n\treturn systemd_1;\n}\n\nexport { requireSystemd as __require };",
+      "start": 1702937445107,
+      "end": 1702937445108,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,UAAc,GAAG,OAAO;CACxB,OAAO,CAAC,WAAW,GAAG,SAAS;CAC/B,OAAO,CAAC,OAAO,GAAG,EAAE;CACpB,SAAS,OAAO,CAAC,KAAK,EAAE;CACxB;CACA,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,OAAO,GAAG;CAClB,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,IAAI,YAAY,GAAG,2CAA2C,CAAC,MAAM;CACzE,IAAI,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG;CAC9B,MAAM,OAAO,EAAE,OAAO;CACtB,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,+BAA+B;CAChD,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,SAAS;CAChC,UAAU,cAAc,EAAE;CAC1B,YAAY,OAAO,EAAE,SAAS;CAC9B,YAAY,KAAK,EAAE,UAAU;CAC7B,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM,GAAG,EAAE;CACX,QAAQ,OAAO,EAAE,sBAAsB;CACvC,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,WAAW;CAC1B,OAAO;CACP,MAAM,KAAK,EAAE;CACb;CACA;CACA;CACA;CACA;CACA,QAAQ,OAAO,EAAE,MAAM;CACvB,UAAU,iBAAiB,CAAC,MAAM;CAClC,YAAY,KAAK;CACjB,YAAY,YAAY;CACxB,YAAY,gBAAgB;CAC5B,YAAY,KAAK;CACjB,aAAa,SAAS,CAAC,MAAM;CAC7B,cAAc,GAAG;CACjB,cAAc,sBAAsB;CACpC,cAAc,YAAY;CAC1B,cAAc,GAAG;CACjB,cAAc,GAAG;CACjB,cAAc,qCAAqC,CAAC,MAAM,CAAC;CAC3D,YAAY,IAAI;CAChB,SAAS;CACT,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,KAAK,EAAE,YAAY;CAC3B,QAAQ,MAAM,EAAE;CAChB,UAAU,OAAO,EAAE,OAAO;CAC1B,UAAU,MAAM,EAAE;CAClB,YAAY,OAAO,EAAE,MAAM,CAAC,QAAQ,CAAC,MAAM,GAAG,YAAY,CAAC;CAC3D,YAAY,UAAU,EAAE,IAAI;CAC5B,YAAY,MAAM,EAAE,IAAI;CACxB,WAAW;CACX,UAAU,WAAW,EAAE,MAAM;CAC7B,UAAU,OAAO,EAAE;CACnB,YAAY,OAAO,EAAE,gCAAgC;CACrD,YAAY,MAAM,EAAE,IAAI;CACxB,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM,WAAW,EAAE,GAAG;CACtB,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445108,
+      "end": 1702937445108,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445108,
+      "end": 1702937445108,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445108,
+      "end": 1702937445108,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445108,
+      "end": 1702937445108,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445108,
+      "end": 1702937445108,
+      "order": "normal"
+    }
+  ]
+}

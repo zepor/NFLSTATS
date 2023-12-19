@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/sass.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = sass\nsass.displayName = 'sass'\nsass.aliases = []\nfunction sass(Prism) {\n  ;(function (Prism) {\n    Prism.languages.sass = Prism.languages.extend('css', {\n      // Sass comments don't need to be closed, only indented\n      comment: {\n        pattern: /^([ \\t]*)\\/[\\/*].*(?:(?:\\r?\\n|\\r)\\1[ \\t].+)*/m,\n        lookbehind: true,\n        greedy: true\n      }\n    })\n    Prism.languages.insertBefore('sass', 'atrule', {\n      // We want to consume the whole line\n      'atrule-line': {\n        // Includes support for = and + shortcuts\n        pattern: /^(?:[ \\t]*)[@+=].+/m,\n        greedy: true,\n        inside: {\n          atrule: /(?:@[\\w-]+|[+=])/\n        }\n      }\n    })\n    delete Prism.languages.sass.atrule\n    var variable = /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n    var operator = [\n      /[+*\\/%]|[=!]=|<=?|>=?|\\b(?:and|not|or)\\b/,\n      {\n        pattern: /(\\s)-(?=\\s)/,\n        lookbehind: true\n      }\n    ]\n    Prism.languages.insertBefore('sass', 'property', {\n      // We want to consume the whole line\n      'variable-line': {\n        pattern: /^[ \\t]*\\$.+/m,\n        greedy: true,\n        inside: {\n          punctuation: /:/,\n          variable: variable,\n          operator: operator\n        }\n      },\n      // We want to consume the whole line\n      'property-line': {\n        pattern: /^[ \\t]*(?:[^:\\s]+ *:.*|:[^:\\s].*)/m,\n        greedy: true,\n        inside: {\n          property: [\n            /[^:\\s]+(?=\\s*:)/,\n            {\n              pattern: /(:)[^:\\s]+/,\n              lookbehind: true\n            }\n          ],\n          punctuation: /:/,\n          variable: variable,\n          operator: operator,\n          important: Prism.languages.sass.important\n        }\n      }\n    })\n    delete Prism.languages.sass.property\n    delete Prism.languages.sass.important // Now that whole lines for other patterns are consumed,\n    // what's left should be selectors\n    Prism.languages.insertBefore('sass', 'punctuation', {\n      selector: {\n        pattern:\n          /^([ \\t]*)\\S(?:,[^,\\r\\n]+|[^,\\r\\n]*)(?:,[^,\\r\\n]+)*(?:,(?:\\r?\\n|\\r)\\1[ \\t]+\\S(?:,[^,\\r\\n]+|[^,\\r\\n]*)(?:,[^,\\r\\n]+)*)*/m,\n        lookbehind: true,\n        greedy: true\n      }\n    })\n  })(Prism)\n}\n",
+      "start": 1702937445052,
+      "end": 1702937445081,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar sass_1;\nvar hasRequiredSass;\n\nfunction requireSass () {\n\tif (hasRequiredSass) return sass_1;\n\thasRequiredSass = 1;\n\t'use strict'\n\n\tsass_1 = sass\n\tsass.displayName = 'sass'\n\tsass.aliases = []\n\tfunction sass(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.sass = Prism.languages.extend('css', {\n\t      // Sass comments don't need to be closed, only indented\n\t      comment: {\n\t        pattern: /^([ \\t]*)\\/[\\/*].*(?:(?:\\r?\\n|\\r)\\1[ \\t].+)*/m,\n\t        lookbehind: true,\n\t        greedy: true\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('sass', 'atrule', {\n\t      // We want to consume the whole line\n\t      'atrule-line': {\n\t        // Includes support for = and + shortcuts\n\t        pattern: /^(?:[ \\t]*)[@+=].+/m,\n\t        greedy: true,\n\t        inside: {\n\t          atrule: /(?:@[\\w-]+|[+=])/\n\t        }\n\t      }\n\t    })\n\t    delete Prism.languages.sass.atrule\n\t    var variable = /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n\t    var operator = [\n\t      /[+*\\/%]|[=!]=|<=?|>=?|\\b(?:and|not|or)\\b/,\n\t      {\n\t        pattern: /(\\s)-(?=\\s)/,\n\t        lookbehind: true\n\t      }\n\t    ]\n\t    Prism.languages.insertBefore('sass', 'property', {\n\t      // We want to consume the whole line\n\t      'variable-line': {\n\t        pattern: /^[ \\t]*\\$.+/m,\n\t        greedy: true,\n\t        inside: {\n\t          punctuation: /:/,\n\t          variable: variable,\n\t          operator: operator\n\t        }\n\t      },\n\t      // We want to consume the whole line\n\t      'property-line': {\n\t        pattern: /^[ \\t]*(?:[^:\\s]+ *:.*|:[^:\\s].*)/m,\n\t        greedy: true,\n\t        inside: {\n\t          property: [\n\t            /[^:\\s]+(?=\\s*:)/,\n\t            {\n\t              pattern: /(:)[^:\\s]+/,\n\t              lookbehind: true\n\t            }\n\t          ],\n\t          punctuation: /:/,\n\t          variable: variable,\n\t          operator: operator,\n\t          important: Prism.languages.sass.important\n\t        }\n\t      }\n\t    })\n\t    delete Prism.languages.sass.property\n\t    delete Prism.languages.sass.important // Now that whole lines for other patterns are consumed,\n\t    // what's left should be selectors\n\t    Prism.languages.insertBefore('sass', 'punctuation', {\n\t      selector: {\n\t        pattern:\n\t          /^([ \\t]*)\\S(?:,[^,\\r\\n]+|[^,\\r\\n]*)(?:,[^,\\r\\n]+)*(?:,(?:\\r?\\n|\\r)\\1[ \\t]+\\S(?:,[^,\\r\\n]+|[^,\\r\\n]*)(?:,[^,\\r\\n]+)*)*/m,\n\t        lookbehind: true,\n\t        greedy: true\n\t      }\n\t    })\n\t  })(Prism)\n\t}\n\treturn sass_1;\n}\n\nexport { requireSass as __require };",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,KAAK,EAAE;CACzD;CACA,MAAM,OAAO,EAAE;CACf,QAAQ,OAAO,EAAE,+CAA+C;CAChE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,KAAK,CAAC;CACN,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,QAAQ,EAAE;CACnD;CACA,MAAM,aAAa,EAAE;CACrB;CACA,QAAQ,OAAO,EAAE,qBAAqB;CACtC,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,MAAM,EAAE,kBAAkB;CACpC,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,IAAI,OAAO,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,MAAM;CACtC,IAAI,IAAI,QAAQ,GAAG,wBAAwB;CAC3C,IAAI,IAAI,QAAQ,GAAG;CACnB,MAAM,0CAA0C;CAChD,MAAM;CACN,QAAQ,OAAO,EAAE,aAAa;CAC9B,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,UAAU,EAAE;CACrD;CACA,MAAM,eAAe,EAAE;CACvB,QAAQ,OAAO,EAAE,cAAc;CAC/B,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,WAAW,EAAE,GAAG;CAC1B,UAAU,QAAQ,EAAE,QAAQ;CAC5B,UAAU,QAAQ,EAAE,QAAQ;CAC5B,SAAS;CACT,OAAO;CACP;CACA,MAAM,eAAe,EAAE;CACvB,QAAQ,OAAO,EAAE,oCAAoC;CACrD,QAAQ,MAAM,EAAE,IAAI;CACpB,QAAQ,MAAM,EAAE;CAChB,UAAU,QAAQ,EAAE;CACpB,YAAY,iBAAiB;CAC7B,YAAY;CACZ,cAAc,OAAO,EAAE,YAAY;CACnC,cAAc,UAAU,EAAE,IAAI;CAC9B,aAAa;CACb,WAAW;CACX,UAAU,WAAW,EAAE,GAAG;CAC1B,UAAU,QAAQ,EAAE,QAAQ;CAC5B,UAAU,QAAQ,EAAE,QAAQ;CAC5B,UAAU,SAAS,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,SAAS;CACnD,SAAS;CACT,OAAO;CACP,KAAK,CAAC;CACN,IAAI,OAAO,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,QAAQ;CACxC,IAAI,OAAO,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,SAAS;CACzC;CACA,IAAI,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,aAAa,EAAE;CACxD,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO;CACf,UAAU,wHAAwH;CAClI,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,KAAK,CAAC;CACN,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445081,
+      "end": 1702937445081,
+      "order": "normal"
+    }
+  ]
+}

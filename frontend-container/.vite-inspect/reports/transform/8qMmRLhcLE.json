@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/Code.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Light as SyntaxHighlighter } from \"react-syntax-highlighter\";\r\n\r\nimport js from \"react-syntax-highlighter/dist/esm/languages/hljs/javascript\";\r\nimport { vs2015 } from \"react-syntax-highlighter/dist/esm/styles/hljs\";\r\n\r\nSyntaxHighlighter.registerLanguage(\"javascript\", js);\r\n\r\nconst Code = ({ children }) => {\r\n  return (\r\n    <SyntaxHighlighter\r\n      className=\"rounded p-3 bg-dark\"\r\n      language=\"javascript\"\r\n      style={vs2015}\r\n    >\r\n      {children}\r\n    </SyntaxHighlighter>\r\n  );\r\n};\r\n\r\nexport default Code;\r\n",
+      "start": 1702937441852,
+      "end": 1702937441883,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441883,
+      "end": 1702937441883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Light as SyntaxHighlighter } from \"react-syntax-highlighter\";\nimport js from \"react-syntax-highlighter/dist/esm/languages/hljs/javascript\";\nimport { vs2015 } from \"react-syntax-highlighter/dist/esm/styles/hljs\";\nSyntaxHighlighter.registerLanguage(\"javascript\", js);\nconst Code = ({ children }) => {\n  return /* @__PURE__ */ jsx(\n    SyntaxHighlighter,\n    {\n      className: \"rounded p-3 bg-dark\",\n      language: \"javascript\",\n      style: vs2015,\n      children\n    }\n  );\n};\nexport default Code;\n",
+      "start": 1702937441883,
+      "end": 1702937441886,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/Code.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Light as SyntaxHighlighter } from \"react-syntax-highlighter\";\r\n\r\nimport js from \"react-syntax-highlighter/dist/esm/languages/hljs/javascript\";\r\nimport { vs2015 } from \"react-syntax-highlighter/dist/esm/styles/hljs\";\r\n\r\nSyntaxHighlighter.registerLanguage(\"javascript\", js);\r\n\r\nconst Code = ({ children }) => {\r\n  return (\r\n    <SyntaxHighlighter\r\n      className=\"rounded p-3 bg-dark\"\r\n      language=\"javascript\"\r\n      style={vs2015}\r\n    >\r\n      {children}\r\n    </SyntaxHighlighter>\r\n  );\r\n};\r\n\r\nexport default Code;\r\n"
+        ],
+        "mappings": "AAWI;AAXJ,OAAO,WAAW;AAElB,SAAS,SAAS,yBAAyB;AAE3C,OAAO,QAAQ;AACf,SAAS,cAAc;AAEvB,kBAAkB,iBAAiB,cAAc,EAAE;AAEnD,MAAM,OAAO,CAAC,EAAE,SAAS,MAAM;AAC7B,SACE;AAAA,IAAC;AAAA;AAAA,MACC,WAAU;AAAA,MACV,UAAS;AAAA,MACT,OAAO;AAAA,MAEN;AAAA;AAAA,EACH;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441886,
+      "end": 1702937441886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441887,
+      "end": 1702937441887,
+      "order": "normal"
+    }
+  ]
+}

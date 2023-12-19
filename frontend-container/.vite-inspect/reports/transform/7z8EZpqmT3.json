@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/SaaS/USAMap.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React, { useEffect, useState } from \"react\";\r\nimport jsVectorMap from \"jsvectormap\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nfunction USAMap() {\r\n  const palette = usePalette();\r\n  const [debounced, setDebounced] = useState(false);\r\n\r\n  // Workaround, so vector maps work properly in dark mode\r\n  useEffect(() => {\r\n    setTimeout(() => {\r\n      setDebounced(true);\r\n    }, 100);\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    if (debounced) {\r\n      new jsVectorMap({\r\n        selector: \"#saas_usa\",\r\n        map: \"us_aea_en\",\r\n        zoomOnScroll: false,\r\n        regionStyle: {\r\n          initial: {\r\n            fill: palette[\"gray-200\"],\r\n          },\r\n        },\r\n        markerStyle: {\r\n          initial: {\r\n            r: 9,\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.white,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n          hover: {\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.primary,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n        },\r\n        backgroundColor: \"transparent\",\r\n        markers: [\r\n          {\r\n            coords: [37.77, -122.41],\r\n            name: \"San Francisco: 375\",\r\n          },\r\n          {\r\n            coords: [40.71, -74.0],\r\n            name: \"New York: 350\",\r\n          },\r\n          {\r\n            coords: [39.09, -94.57],\r\n            name: \"Kansas City: 250\",\r\n          },\r\n          {\r\n            coords: [36.16, -115.13],\r\n            name: \"Las Vegas: 275\",\r\n          },\r\n          {\r\n            coords: [32.77, -96.79],\r\n            name: \"Dallas: 225\",\r\n          },\r\n        ],\r\n      });\r\n    }\r\n  }, [debounced, palette]);\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Sales by State</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"map-container\" style={{ height: 294 }}>\r\n          <div id=\"saas_usa\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n}\r\n\r\nexport default USAMap;\r\n",
+      "start": 1702937441564,
+      "end": 1702937441581,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441581,
+      "end": 1702937441581,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441581,
+      "end": 1702937441581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React, { useEffect, useState } from \"react\";\nimport jsVectorMap from \"jsvectormap\";\nimport { Card, Dropdown } from \"react-bootstrap\";\nimport { MoreHorizontal } from \"react-feather\";\nimport usePalette from \"../../../hooks/usePalette\";\nfunction USAMap() {\n  const palette = usePalette();\n  const [debounced, setDebounced] = useState(false);\n  useEffect(() => {\n    setTimeout(() => {\n      setDebounced(true);\n    }, 100);\n  }, []);\n  useEffect(() => {\n    if (debounced) {\n      new jsVectorMap({\n        selector: \"#saas_usa\",\n        map: \"us_aea_en\",\n        zoomOnScroll: false,\n        regionStyle: {\n          initial: {\n            fill: palette[\"gray-200\"]\n          }\n        },\n        markerStyle: {\n          initial: {\n            r: 9,\n            fill: palette.primary,\n            \"fill-opacity\": 0.9,\n            stroke: palette.white,\n            \"stroke-width\": 7,\n            \"stroke-opacity\": 0.4\n          },\n          hover: {\n            fill: palette.primary,\n            \"fill-opacity\": 0.9,\n            stroke: palette.primary,\n            \"stroke-width\": 7,\n            \"stroke-opacity\": 0.4\n          }\n        },\n        backgroundColor: \"transparent\",\n        markers: [\n          {\n            coords: [37.77, -122.41],\n            name: \"San Francisco: 375\"\n          },\n          {\n            coords: [40.71, -74],\n            name: \"New York: 350\"\n          },\n          {\n            coords: [39.09, -94.57],\n            name: \"Kansas City: 250\"\n          },\n          {\n            coords: [36.16, -115.13],\n            name: \"Las Vegas: 275\"\n          },\n          {\n            coords: [32.77, -96.79],\n            name: \"Dallas: 225\"\n          }\n        ]\n      });\n    }\n  }, [debounced, palette]);\n  return /* @__PURE__ */ jsxs(Card, { className: \"flex-fill w-100\", children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(\"div\", { className: \"card-actions float-end\", children: /* @__PURE__ */ jsxs(Dropdown, { align: \"end\", children: [\n        /* @__PURE__ */ jsx(Dropdown.Toggle, { as: \"a\", bsPrefix: \"-\", children: /* @__PURE__ */ jsx(MoreHorizontal, {}) }),\n        /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" })\n        ] })\n      ] }) }),\n      /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Sales by State\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"map-container\", style: { height: 294 }, children: /* @__PURE__ */ jsx(\"div\", { id: \"saas_usa\" }) }) })\n  ] });\n}\nexport default USAMap;\n",
+      "start": 1702937441581,
+      "end": 1702937441584,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/SaaS/USAMap.jsx"
+        ],
+        "sourcesContent": [
+          "import React, { useEffect, useState } from \"react\";\r\nimport jsVectorMap from \"jsvectormap\";\r\nimport { Card, Dropdown } from \"react-bootstrap\";\r\nimport { MoreHorizontal } from \"react-feather\";\r\n\r\nimport usePalette from \"../../../hooks/usePalette\";\r\n\r\nfunction USAMap() {\r\n  const palette = usePalette();\r\n  const [debounced, setDebounced] = useState(false);\r\n\r\n  // Workaround, so vector maps work properly in dark mode\r\n  useEffect(() => {\r\n    setTimeout(() => {\r\n      setDebounced(true);\r\n    }, 100);\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    if (debounced) {\r\n      new jsVectorMap({\r\n        selector: \"#saas_usa\",\r\n        map: \"us_aea_en\",\r\n        zoomOnScroll: false,\r\n        regionStyle: {\r\n          initial: {\r\n            fill: palette[\"gray-200\"],\r\n          },\r\n        },\r\n        markerStyle: {\r\n          initial: {\r\n            r: 9,\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.white,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n          hover: {\r\n            fill: palette.primary,\r\n            \"fill-opacity\": 0.9,\r\n            stroke: palette.primary,\r\n            \"stroke-width\": 7,\r\n            \"stroke-opacity\": 0.4,\r\n          },\r\n        },\r\n        backgroundColor: \"transparent\",\r\n        markers: [\r\n          {\r\n            coords: [37.77, -122.41],\r\n            name: \"San Francisco: 375\",\r\n          },\r\n          {\r\n            coords: [40.71, -74.0],\r\n            name: \"New York: 350\",\r\n          },\r\n          {\r\n            coords: [39.09, -94.57],\r\n            name: \"Kansas City: 250\",\r\n          },\r\n          {\r\n            coords: [36.16, -115.13],\r\n            name: \"Las Vegas: 275\",\r\n          },\r\n          {\r\n            coords: [32.77, -96.79],\r\n            name: \"Dallas: 225\",\r\n          },\r\n        ],\r\n      });\r\n    }\r\n  }, [debounced, palette]);\r\n\r\n  return (\r\n    <Card className=\"flex-fill w-100\">\r\n      <Card.Header>\r\n        <div className=\"card-actions float-end\">\r\n          <Dropdown align=\"end\">\r\n            <Dropdown.Toggle as=\"a\" bsPrefix=\"-\">\r\n              <MoreHorizontal />\r\n            </Dropdown.Toggle>\r\n            <Dropdown.Menu>\r\n              <Dropdown.Item>Action</Dropdown.Item>\r\n              <Dropdown.Item>Another Action</Dropdown.Item>\r\n              <Dropdown.Item>Something else here</Dropdown.Item>\r\n            </Dropdown.Menu>\r\n          </Dropdown>\r\n        </div>\r\n        <Card.Title className=\"mb-0\">Sales by State</Card.Title>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"map-container\" style={{ height: 294 }}>\r\n          <div id=\"saas_usa\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n}\r\n\r\nexport default USAMap;\r\n"
+        ],
+        "mappings": "AA+Ec,cAEF,YAFE;AA/Ed,OAAO,SAAS,WAAW,gBAAgB;AAC3C,OAAO,iBAAiB;AACxB,SAAS,MAAM,gBAAgB;AAC/B,SAAS,sBAAsB;AAE/B,OAAO,gBAAgB;AAEvB,SAAS,SAAS;AAChB,QAAM,UAAU,WAAW;AAC3B,QAAM,CAAC,WAAW,YAAY,IAAI,SAAS,KAAK;AAGhD,YAAU,MAAM;AACd,eAAW,MAAM;AACf,mBAAa,IAAI;AAAA,IACnB,GAAG,GAAG;AAAA,EACR,GAAG,CAAC,CAAC;AAEL,YAAU,MAAM;AACd,QAAI,WAAW;AACb,UAAI,YAAY;AAAA,QACd,UAAU;AAAA,QACV,KAAK;AAAA,QACL,cAAc;AAAA,QACd,aAAa;AAAA,UACX,SAAS;AAAA,YACP,MAAM,QAAQ,UAAU;AAAA,UAC1B;AAAA,QACF;AAAA,QACA,aAAa;AAAA,UACX,SAAS;AAAA,YACP,GAAG;AAAA,YACH,MAAM,QAAQ;AAAA,YACd,gBAAgB;AAAA,YAChB,QAAQ,QAAQ;AAAA,YAChB,gBAAgB;AAAA,YAChB,kBAAkB;AAAA,UACpB;AAAA,UACA,OAAO;AAAA,YACL,MAAM,QAAQ;AAAA,YACd,gBAAgB;AAAA,YAChB,QAAQ,QAAQ;AAAA,YAChB,gBAAgB;AAAA,YAChB,kBAAkB;AAAA,UACpB;AAAA,QACF;AAAA,QACA,iBAAiB;AAAA,QACjB,SAAS;AAAA,UACP;AAAA,YACE,QAAQ,CAAC,OAAO,OAAO;AAAA,YACvB,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,OAAO,GAAK;AAAA,YACrB,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,OAAO,MAAM;AAAA,YACtB,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,OAAO,OAAO;AAAA,YACvB,MAAM;AAAA,UACR;AAAA,UACA;AAAA,YACE,QAAQ,CAAC,OAAO,MAAM;AAAA,YACtB,MAAM;AAAA,UACR;AAAA,QACF;AAAA,MACF,CAAC;AAAA,IACH;AAAA,EACF,GAAG,CAAC,WAAW,OAAO,CAAC;AAEvB,SACE,qBAAC,QAAK,WAAU,mBACd;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,SAAI,WAAU,0BACb,+BAAC,YAAS,OAAM,OACd;AAAA,4BAAC,SAAS,QAAT,EAAgB,IAAG,KAAI,UAAS,KAC/B,8BAAC,kBAAe,GAClB;AAAA,QACA,qBAAC,SAAS,MAAT,EACC;AAAA,8BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,UACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,UAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,WACpC;AAAA,SACF,GACF;AAAA,MACA,oBAAC,KAAK,OAAL,EAAW,WAAU,QAAO,4BAAc;AAAA,OAC7C;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,iBAAgB,OAAO,EAAE,QAAQ,IAAI,GAClD,8BAAC,SAAI,IAAG,YAAW,GACrB,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441584,
+      "end": 1702937441584,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441584,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441585,
+      "end": 1702937441585,
+      "order": "normal"
+    }
+  ]
+}

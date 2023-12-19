@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/utilities/observables/Observable.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { Observable } from \"zen-observable-ts\";\n// This simplified polyfill attempts to follow the ECMAScript Observable\n// proposal (https://github.com/zenparsing/es-observable)\nimport \"symbol-observable\";\n// The zen-observable package defines Observable.prototype[Symbol.observable]\n// when Symbol is supported, but RxJS interop depends on also setting this fake\n// '@@observable' string as a polyfill for Symbol.observable.\nvar prototype = Observable.prototype;\nvar fakeObsSymbol = \"@@observable\";\nif (!prototype[fakeObsSymbol]) {\n    // @ts-expect-error\n    prototype[fakeObsSymbol] = function () {\n        return this;\n    };\n}\nexport { Observable };\n//# sourceMappingURL=Observable.js.map",
+      "start": 1702937441017,
+      "end": 1702937441053,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441053,
+      "end": 1702937441053,
+      "order": "normal"
+    }
+  ]
+}

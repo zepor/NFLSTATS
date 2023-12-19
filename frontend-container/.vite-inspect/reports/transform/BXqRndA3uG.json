@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/pages/Blank.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Blank = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Blank Page\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Blank Page</h1>\r\n\r\n      <Row>\r\n        <Col>\r\n          <Card>\r\n            <Card.Header>\r\n              <Card.Title className=\"mb-0\">Empty card</Card.Title>\r\n            </Card.Header>\r\n            <Card.Body>&nbsp;</Card.Body>\r\n          </Card>\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Blank;\r\n",
+      "start": 1702937436719,
+      "end": 1702937436960,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436960,
+      "end": 1702937436960,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436960,
+      "end": 1702937436960,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\nconst Blank = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Blank Page\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Blank Page\" }),\n    /* @__PURE__ */ jsx(Row, { children: /* @__PURE__ */ jsx(Col, { children: /* @__PURE__ */ jsxs(Card, { children: [\n      /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Empty card\" }) }),\n      /* @__PURE__ */ jsx(Card.Body, { children: \" \" })\n    ] }) }) })\n  ] })\n] });\nexport default Blank;\n",
+      "start": 1702937436960,
+      "end": 1702937436964,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/pages/Blank.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Card, Col, Container, Row } from \"react-bootstrap\";\r\n\r\nconst Blank = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Blank Page\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Blank Page</h1>\r\n\r\n      <Row>\r\n        <Col>\r\n          <Card>\r\n            <Card.Header>\r\n              <Card.Title className=\"mb-0\">Empty card</Card.Title>\r\n            </Card.Header>\r\n            <Card.Body>&nbsp;</Card.Body>\r\n          </Card>\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Blank;\r\n"
+        ],
+        "mappings": "AAMI,cAMM,YANN;AANJ,OAAO,WAAW;AAClB,SAAS,cAAc;AACvB,SAAS,MAAM,KAAK,WAAW,WAAW;AAE1C,MAAM,QAAQ,MACZ,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,UAAO,OAAM,cAAa;AAAA,EAC3B,qBAAC,aAAU,OAAK,MAAC,WAAU,OACzB;AAAA,wBAAC,QAAG,WAAU,WAAU,wBAAU;AAAA,IAElC,oBAAC,OACC,8BAAC,OACC,+BAAC,QACC;AAAA,0BAAC,KAAK,QAAL,EACC,8BAAC,KAAK,OAAL,EAAW,WAAU,QAAO,wBAAU,GACzC;AAAA,MACA,oBAAC,KAAK,MAAL,EAAU,eAAM;AAAA,OACnB,GACF,GACF;AAAA,KACF;AAAA,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436964,
+      "end": 1702937436964,
+      "order": "normal"
+    }
+  ]
+}

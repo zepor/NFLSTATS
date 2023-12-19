@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/purescript.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\nvar refractorHaskell = require('./haskell.js')\nmodule.exports = purescript\npurescript.displayName = 'purescript'\npurescript.aliases = ['purs']\nfunction purescript(Prism) {\n  Prism.register(refractorHaskell)\n  Prism.languages.purescript = Prism.languages.extend('haskell', {\n    keyword:\n      /\\b(?:ado|case|class|data|derive|do|else|forall|if|in|infixl|infixr|instance|let|module|newtype|of|primitive|then|type|where)\\b|∀/,\n    'import-statement': {\n      // The imported or hidden names are not included in this import\n      // statement. This is because we want to highlight those exactly like\n      // we do for the names in the program.\n      pattern:\n        /(^[\\t ]*)import\\s+[A-Z][\\w']*(?:\\.[A-Z][\\w']*)*(?:\\s+as\\s+[A-Z][\\w']*(?:\\.[A-Z][\\w']*)*)?(?:\\s+hiding\\b)?/m,\n      lookbehind: true,\n      inside: {\n        keyword: /\\b(?:as|hiding|import)\\b/,\n        punctuation: /\\./\n      }\n    },\n    // These are builtin functions only. Constructors are highlighted later as a constant.\n    builtin:\n      /\\b(?:absurd|add|ap|append|apply|between|bind|bottom|clamp|compare|comparing|compose|conj|const|degree|discard|disj|div|eq|flap|flip|gcd|identity|ifM|join|lcm|liftA1|liftM1|map|max|mempty|min|mod|mul|negate|not|notEq|one|otherwise|recip|show|sub|top|unit|unless|unlessM|void|when|whenM|zero)\\b/,\n    operator: [\n      // Infix operators\n      Prism.languages.haskell.operator[0], // ASCII operators\n      Prism.languages.haskell.operator[2], // All UTF16 Unicode operator symbols\n      // This regex is equivalent to /(?=[\\x80-\\uFFFF])[\\p{gc=Math_Symbol}\\p{gc=Currency_Symbol}\\p{Modifier_Symbol}\\p{Other_Symbol}]/u\n      // See https://github.com/PrismJS/prism/issues/3006 for more details.\n      /[\\xa2-\\xa6\\xa8\\xa9\\xac\\xae-\\xb1\\xb4\\xb8\\xd7\\xf7\\u02c2-\\u02c5\\u02d2-\\u02df\\u02e5-\\u02eb\\u02ed\\u02ef-\\u02ff\\u0375\\u0384\\u0385\\u03f6\\u0482\\u058d-\\u058f\\u0606-\\u0608\\u060b\\u060e\\u060f\\u06de\\u06e9\\u06fd\\u06fe\\u07f6\\u07fe\\u07ff\\u09f2\\u09f3\\u09fa\\u09fb\\u0af1\\u0b70\\u0bf3-\\u0bfa\\u0c7f\\u0d4f\\u0d79\\u0e3f\\u0f01-\\u0f03\\u0f13\\u0f15-\\u0f17\\u0f1a-\\u0f1f\\u0f34\\u0f36\\u0f38\\u0fbe-\\u0fc5\\u0fc7-\\u0fcc\\u0fce\\u0fcf\\u0fd5-\\u0fd8\\u109e\\u109f\\u1390-\\u1399\\u166d\\u17db\\u1940\\u19de-\\u19ff\\u1b61-\\u1b6a\\u1b74-\\u1b7c\\u1fbd\\u1fbf-\\u1fc1\\u1fcd-\\u1fcf\\u1fdd-\\u1fdf\\u1fed-\\u1fef\\u1ffd\\u1ffe\\u2044\\u2052\\u207a-\\u207c\\u208a-\\u208c\\u20a0-\\u20bf\\u2100\\u2101\\u2103-\\u2106\\u2108\\u2109\\u2114\\u2116-\\u2118\\u211e-\\u2123\\u2125\\u2127\\u2129\\u212e\\u213a\\u213b\\u2140-\\u2144\\u214a-\\u214d\\u214f\\u218a\\u218b\\u2190-\\u2307\\u230c-\\u2328\\u232b-\\u2426\\u2440-\\u244a\\u249c-\\u24e9\\u2500-\\u2767\\u2794-\\u27c4\\u27c7-\\u27e5\\u27f0-\\u2982\\u2999-\\u29d7\\u29dc-\\u29fb\\u29fe-\\u2b73\\u2b76-\\u2b95\\u2b97-\\u2bff\\u2ce5-\\u2cea\\u2e50\\u2e51\\u2e80-\\u2e99\\u2e9b-\\u2ef3\\u2f00-\\u2fd5\\u2ff0-\\u2ffb\\u3004\\u3012\\u3013\\u3020\\u3036\\u3037\\u303e\\u303f\\u309b\\u309c\\u3190\\u3191\\u3196-\\u319f\\u31c0-\\u31e3\\u3200-\\u321e\\u322a-\\u3247\\u3250\\u3260-\\u327f\\u328a-\\u32b0\\u32c0-\\u33ff\\u4dc0-\\u4dff\\ua490-\\ua4c6\\ua700-\\ua716\\ua720\\ua721\\ua789\\ua78a\\ua828-\\ua82b\\ua836-\\ua839\\uaa77-\\uaa79\\uab5b\\uab6a\\uab6b\\ufb29\\ufbb2-\\ufbc1\\ufdfc\\ufdfd\\ufe62\\ufe64-\\ufe66\\ufe69\\uff04\\uff0b\\uff1c-\\uff1e\\uff3e\\uff40\\uff5c\\uff5e\\uffe0-\\uffe6\\uffe8-\\uffee\\ufffc\\ufffd]/\n    ]\n  })\n  Prism.languages.purs = Prism.languages.purescript\n}\n",
+      "start": 1702937445028,
+      "end": 1702937445053,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445053,
+      "end": 1702937445053,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __require as require$$0 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/haskell.js?commonjs-wrapped\";\n\nvar purescript_1;\nvar hasRequiredPurescript;\n\nfunction requirePurescript () {\n\tif (hasRequiredPurescript) return purescript_1;\n\thasRequiredPurescript = 1;\n\t'use strict'\n\tvar refractorHaskell = require$$0()\n\tpurescript_1 = purescript\n\tpurescript.displayName = 'purescript'\n\tpurescript.aliases = ['purs']\n\tfunction purescript(Prism) {\n\t  Prism.register(refractorHaskell)\n\t  Prism.languages.purescript = Prism.languages.extend('haskell', {\n\t    keyword:\n\t      /\\b(?:ado|case|class|data|derive|do|else|forall|if|in|infixl|infixr|instance|let|module|newtype|of|primitive|then|type|where)\\b|∀/,\n\t    'import-statement': {\n\t      // The imported or hidden names are not included in this import\n\t      // statement. This is because we want to highlight those exactly like\n\t      // we do for the names in the program.\n\t      pattern:\n\t        /(^[\\t ]*)import\\s+[A-Z][\\w']*(?:\\.[A-Z][\\w']*)*(?:\\s+as\\s+[A-Z][\\w']*(?:\\.[A-Z][\\w']*)*)?(?:\\s+hiding\\b)?/m,\n\t      lookbehind: true,\n\t      inside: {\n\t        keyword: /\\b(?:as|hiding|import)\\b/,\n\t        punctuation: /\\./\n\t      }\n\t    },\n\t    // These are builtin functions only. Constructors are highlighted later as a constant.\n\t    builtin:\n\t      /\\b(?:absurd|add|ap|append|apply|between|bind|bottom|clamp|compare|comparing|compose|conj|const|degree|discard|disj|div|eq|flap|flip|gcd|identity|ifM|join|lcm|liftA1|liftM1|map|max|mempty|min|mod|mul|negate|not|notEq|one|otherwise|recip|show|sub|top|unit|unless|unlessM|void|when|whenM|zero)\\b/,\n\t    operator: [\n\t      // Infix operators\n\t      Prism.languages.haskell.operator[0], // ASCII operators\n\t      Prism.languages.haskell.operator[2], // All UTF16 Unicode operator symbols\n\t      // This regex is equivalent to /(?=[\\x80-\\uFFFF])[\\p{gc=Math_Symbol}\\p{gc=Currency_Symbol}\\p{Modifier_Symbol}\\p{Other_Symbol}]/u\n\t      // See https://github.com/PrismJS/prism/issues/3006 for more details.\n\t      /[\\xa2-\\xa6\\xa8\\xa9\\xac\\xae-\\xb1\\xb4\\xb8\\xd7\\xf7\\u02c2-\\u02c5\\u02d2-\\u02df\\u02e5-\\u02eb\\u02ed\\u02ef-\\u02ff\\u0375\\u0384\\u0385\\u03f6\\u0482\\u058d-\\u058f\\u0606-\\u0608\\u060b\\u060e\\u060f\\u06de\\u06e9\\u06fd\\u06fe\\u07f6\\u07fe\\u07ff\\u09f2\\u09f3\\u09fa\\u09fb\\u0af1\\u0b70\\u0bf3-\\u0bfa\\u0c7f\\u0d4f\\u0d79\\u0e3f\\u0f01-\\u0f03\\u0f13\\u0f15-\\u0f17\\u0f1a-\\u0f1f\\u0f34\\u0f36\\u0f38\\u0fbe-\\u0fc5\\u0fc7-\\u0fcc\\u0fce\\u0fcf\\u0fd5-\\u0fd8\\u109e\\u109f\\u1390-\\u1399\\u166d\\u17db\\u1940\\u19de-\\u19ff\\u1b61-\\u1b6a\\u1b74-\\u1b7c\\u1fbd\\u1fbf-\\u1fc1\\u1fcd-\\u1fcf\\u1fdd-\\u1fdf\\u1fed-\\u1fef\\u1ffd\\u1ffe\\u2044\\u2052\\u207a-\\u207c\\u208a-\\u208c\\u20a0-\\u20bf\\u2100\\u2101\\u2103-\\u2106\\u2108\\u2109\\u2114\\u2116-\\u2118\\u211e-\\u2123\\u2125\\u2127\\u2129\\u212e\\u213a\\u213b\\u2140-\\u2144\\u214a-\\u214d\\u214f\\u218a\\u218b\\u2190-\\u2307\\u230c-\\u2328\\u232b-\\u2426\\u2440-\\u244a\\u249c-\\u24e9\\u2500-\\u2767\\u2794-\\u27c4\\u27c7-\\u27e5\\u27f0-\\u2982\\u2999-\\u29d7\\u29dc-\\u29fb\\u29fe-\\u2b73\\u2b76-\\u2b95\\u2b97-\\u2bff\\u2ce5-\\u2cea\\u2e50\\u2e51\\u2e80-\\u2e99\\u2e9b-\\u2ef3\\u2f00-\\u2fd5\\u2ff0-\\u2ffb\\u3004\\u3012\\u3013\\u3020\\u3036\\u3037\\u303e\\u303f\\u309b\\u309c\\u3190\\u3191\\u3196-\\u319f\\u31c0-\\u31e3\\u3200-\\u321e\\u322a-\\u3247\\u3250\\u3260-\\u327f\\u328a-\\u32b0\\u32c0-\\u33ff\\u4dc0-\\u4dff\\ua490-\\ua4c6\\ua700-\\ua716\\ua720\\ua721\\ua789\\ua78a\\ua828-\\ua82b\\ua836-\\ua839\\uaa77-\\uaa79\\uab5b\\uab6a\\uab6b\\ufb29\\ufbb2-\\ufbc1\\ufdfc\\ufdfd\\ufe62\\ufe64-\\ufe66\\ufe69\\uff04\\uff0b\\uff1c-\\uff1e\\uff3e\\uff40\\uff5c\\uff5e\\uffe0-\\uffe6\\uffe8-\\uffee\\ufffc\\ufffd]/\n\t    ]\n\t  })\n\t  Prism.languages.purs = Prism.languages.purescript\n\t}\n\treturn purescript_1;\n}\n\nexport { requirePurescript as __require };",
+      "start": 1702937445053,
+      "end": 1702937445054,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;CAAA,YAAY;CACZ,IAAI,gBAAgB,GAAG,YAAuB;AAC9C,aAAc,GAAG,UAAU;CAC3B,UAAU,CAAC,WAAW,GAAG,YAAY;CACrC,UAAU,CAAC,OAAO,GAAG,CAAC,MAAM,CAAC;CAC7B,SAAS,UAAU,CAAC,KAAK,EAAE;CAC3B,EAAE,KAAK,CAAC,QAAQ,CAAC,gBAAgB,CAAC;CAClC,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,SAAS,EAAE;CACjE,IAAI,OAAO;CACX,MAAM,kIAAkI;CACxI,IAAI,kBAAkB,EAAE;CACxB;CACA;CACA;CACA,MAAM,OAAO;CACb,QAAQ,4GAA4G;CACpH,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,0BAA0B;CAC3C,QAAQ,WAAW,EAAE,IAAI;CACzB,OAAO;CACP,KAAK;CACL;CACA,IAAI,OAAO;CACX,MAAM,sSAAsS;CAC5S,IAAI,QAAQ,EAAE;CACd;CACA,MAAM,KAAK,CAAC,SAAS,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,CAAC;CACzC,MAAM,KAAK,CAAC,SAAS,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC,CAAC;CACzC;CACA;CACA,MAAM,86CAA86C;CACp7C,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,UAAU;CACnD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445054,
+      "end": 1702937445054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445054,
+      "end": 1702937445054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445054,
+      "end": 1702937445054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445054,
+      "end": 1702937445054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445054,
+      "end": 1702937445054,
+      "order": "normal"
+    }
+  ]
+}

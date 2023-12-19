@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/agda.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = agda\nagda.displayName = 'agda'\nagda.aliases = []\nfunction agda(Prism) {\n  ;(function (Prism) {\n    Prism.languages.agda = {\n      comment: /\\{-[\\s\\S]*?(?:-\\}|$)|--.*/,\n      string: {\n        pattern: /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\\\\\\r\\n\"])*\"/,\n        greedy: true\n      },\n      punctuation: /[(){}⦃⦄.;@]/,\n      'class-name': {\n        pattern: /((?:data|record) +)\\S+/,\n        lookbehind: true\n      },\n      function: {\n        pattern: /(^[ \\t]*)(?!\\s)[^:\\r\\n]+(?=:)/m,\n        lookbehind: true\n      },\n      operator: {\n        pattern: /(^\\s*|\\s)(?:[=|:∀→λ\\\\?_]|->)(?=\\s)/,\n        lookbehind: true\n      },\n      keyword:\n        /\\b(?:Set|abstract|constructor|data|eta-equality|field|forall|hiding|import|in|inductive|infix|infixl|infixr|instance|let|macro|module|mutual|no-eta-equality|open|overlap|pattern|postulate|primitive|private|public|quote|quoteContext|quoteGoal|quoteTerm|record|renaming|rewrite|syntax|tactic|unquote|unquoteDecl|unquoteDef|using|variable|where|with)\\b/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937444707,
+      "end": 1702937444822,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar agda_1;\nvar hasRequiredAgda;\n\nfunction requireAgda () {\n\tif (hasRequiredAgda) return agda_1;\n\thasRequiredAgda = 1;\n\t'use strict'\n\n\tagda_1 = agda\n\tagda.displayName = 'agda'\n\tagda.aliases = []\n\tfunction agda(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.agda = {\n\t      comment: /\\{-[\\s\\S]*?(?:-\\}|$)|--.*/,\n\t      string: {\n\t        pattern: /\"(?:\\\\(?:\\r\\n|[\\s\\S])|[^\\\\\\r\\n\"])*\"/,\n\t        greedy: true\n\t      },\n\t      punctuation: /[(){}⦃⦄.;@]/,\n\t      'class-name': {\n\t        pattern: /((?:data|record) +)\\S+/,\n\t        lookbehind: true\n\t      },\n\t      function: {\n\t        pattern: /(^[ \\t]*)(?!\\s)[^:\\r\\n]+(?=:)/m,\n\t        lookbehind: true\n\t      },\n\t      operator: {\n\t        pattern: /(^\\s*|\\s)(?:[=|:∀→λ\\\\?_]|->)(?=\\s)/,\n\t        lookbehind: true\n\t      },\n\t      keyword:\n\t        /\\b(?:Set|abstract|constructor|data|eta-equality|field|forall|hiding|import|in|inductive|infix|infixl|infixr|instance|let|macro|module|mutual|no-eta-equality|open|overlap|pattern|postulate|primitive|private|public|quote|quoteContext|quoteGoal|quoteTerm|record|renaming|rewrite|syntax|tactic|unquote|unquoteDecl|unquoteDef|using|variable|where|with)\\b/\n\t    }\n\t  })(Prism)\n\t}\n\treturn agda_1;\n}\n\nexport { requireAgda as __require };",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,OAAO,EAAE,2BAA2B;CAC1C,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,qCAAqC;CACtD,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,WAAW,EAAE,aAAa;CAChC,MAAM,YAAY,EAAE;CACpB,QAAQ,OAAO,EAAE,wBAAwB;CACzC,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO,EAAE,gCAAgC;CACjD,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO,EAAE,oCAAoC;CACrD,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,OAAO;CACb,QAAQ,+VAA+V;CACvW,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444822,
+      "end": 1702937444822,
+      "order": "normal"
+    }
+  ]
+}

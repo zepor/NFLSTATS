@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/subunit.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: SubUnit\nAuthor: Sergey Bronnikov <sergeyb@bronevichok.ru>\nWebsite: https://pypi.org/project/python-subunit/\n*/\n\nfunction subunit(hljs) {\n  const DETAILS = {\n    className: 'string',\n    begin: '\\\\[\\n(multipart)?',\n    end: '\\\\]\\n'\n  };\n  const TIME = {\n    className: 'string',\n    begin: '\\\\d{4}-\\\\d{2}-\\\\d{2}(\\\\s+)\\\\d{2}:\\\\d{2}:\\\\d{2}\\.\\\\d+Z'\n  };\n  const PROGRESSVALUE = {\n    className: 'string',\n    begin: '(\\\\+|-)\\\\d+'\n  };\n  const KEYWORDS = {\n    className: 'keyword',\n    relevance: 10,\n    variants: [\n      {\n        begin: '^(test|testing|success|successful|failure|error|skip|xfail|uxsuccess)(:?)\\\\s+(test)?'\n      },\n      {\n        begin: '^progress(:?)(\\\\s+)?(pop|push)?'\n      },\n      {\n        begin: '^tags:'\n      },\n      {\n        begin: '^time:'\n      }\n    ]\n  };\n  return {\n    name: 'SubUnit',\n    case_insensitive: true,\n    contains: [\n      DETAILS,\n      TIME,\n      PROGRESSVALUE,\n      KEYWORDS\n    ]\n  };\n}\n\nmodule.exports = subunit;\n",
+      "start": 1702937444581,
+      "end": 1702937444635,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: SubUnit\nAuthor: Sergey Bronnikov <sergeyb@bronevichok.ru>\nWebsite: https://pypi.org/project/python-subunit/\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar subunit_1;\nvar hasRequiredSubunit;\n\nfunction requireSubunit () {\n\tif (hasRequiredSubunit) return subunit_1;\n\thasRequiredSubunit = 1;\n\tfunction subunit(hljs) {\n\t  const DETAILS = {\n\t    className: 'string',\n\t    begin: '\\\\[\\n(multipart)?',\n\t    end: '\\\\]\\n'\n\t  };\n\t  const TIME = {\n\t    className: 'string',\n\t    begin: '\\\\d{4}-\\\\d{2}-\\\\d{2}(\\\\s+)\\\\d{2}:\\\\d{2}:\\\\d{2}\\.\\\\d+Z'\n\t  };\n\t  const PROGRESSVALUE = {\n\t    className: 'string',\n\t    begin: '(\\\\+|-)\\\\d+'\n\t  };\n\t  const KEYWORDS = {\n\t    className: 'keyword',\n\t    relevance: 10,\n\t    variants: [\n\t      {\n\t        begin: '^(test|testing|success|successful|failure|error|skip|xfail|uxsuccess)(:?)\\\\s+(test)?'\n\t      },\n\t      {\n\t        begin: '^progress(:?)(\\\\s+)?(pop|push)?'\n\t      },\n\t      {\n\t        begin: '^tags:'\n\t      },\n\t      {\n\t        begin: '^time:'\n\t      }\n\t    ]\n\t  };\n\t  return {\n\t    name: 'SubUnit',\n\t    case_insensitive: true,\n\t    contains: [\n\t      DETAILS,\n\t      TIME,\n\t      PROGRESSVALUE,\n\t      KEYWORDS\n\t    ]\n\t  };\n\t}\n\n\tsubunit_1 = subunit;\n\treturn subunit_1;\n}\n\nexport { requireSubunit as __require };",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;CAMA,SAAS,OAAO,CAAC,IAAI,EAAE;CACvB,EAAE,MAAM,OAAO,GAAG;CAClB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,mBAAmB;CAC9B,IAAI,GAAG,EAAE,OAAO;CAChB,GAAG,CAAC;CACJ,EAAE,MAAM,IAAI,GAAG;CACf,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,uDAAuD;CAClE,GAAG,CAAC;CACJ,EAAE,MAAM,aAAa,GAAG;CACxB,IAAI,SAAS,EAAE,QAAQ;CACvB,IAAI,KAAK,EAAE,aAAa;CACxB,GAAG,CAAC;CACJ,EAAE,MAAM,QAAQ,GAAG;CACnB,IAAI,SAAS,EAAE,SAAS;CACxB,IAAI,SAAS,EAAE,EAAE;CACjB,IAAI,QAAQ,EAAE;CACd,MAAM;CACN,QAAQ,KAAK,EAAE,sFAAsF;CACrG,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,iCAAiC;CAChD,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,QAAQ;CACvB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,SAAS;CACnB,IAAI,gBAAgB,EAAE,IAAI;CAC1B,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,MAAM,IAAI;CACV,MAAM,aAAa;CACnB,MAAM,QAAQ;CACd,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,UAAc,GAAG,OAAO"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444635,
+      "end": 1702937444635,
+      "order": "normal"
+    }
+  ]
+}

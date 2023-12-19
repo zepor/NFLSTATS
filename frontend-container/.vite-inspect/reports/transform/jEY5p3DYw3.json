@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/aspectj.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @param {string} value\n * @returns {RegExp}\n * */\n\n/**\n * @param {RegExp | string } re\n * @returns {string}\n */\nfunction source(re) {\n  if (!re) return null;\n  if (typeof re === \"string\") return re;\n\n  return re.source;\n}\n\n/**\n * @param {...(RegExp | string) } args\n * @returns {string}\n */\nfunction concat(...args) {\n  const joined = args.map((x) => source(x)).join(\"\");\n  return joined;\n}\n\n/*\nLanguage: AspectJ\nAuthor: Hakan Ozler <ozler.hakan@gmail.com>\nWebsite: https://www.eclipse.org/aspectj/\nDescription: Syntax Highlighting for the AspectJ Language which is a general-purpose aspect-oriented extension to the Java programming language.\nAudit: 2020\n*/\n\n/** @type LanguageFn */\nfunction aspectj(hljs) {\n  const KEYWORDS =\n    'false synchronized int abstract float private char boolean static null if const ' +\n    'for true while long throw strictfp finally protected import native final return void ' +\n    'enum else extends implements break transient new catch instanceof byte super volatile case ' +\n    'assert short package default double public try this switch continue throws privileged ' +\n    'aspectOf adviceexecution proceed cflowbelow cflow initialization preinitialization ' +\n    'staticinitialization withincode target within execution getWithinTypeName handler ' +\n    'thisJoinPoint thisJoinPointStaticPart thisEnclosingJoinPointStaticPart declare parents ' +\n    'warning error soft precedence thisAspectInstance';\n  const SHORTKEYS = 'get set args call';\n\n  return {\n    name: 'AspectJ',\n    keywords: KEYWORDS,\n    illegal: /<\\/|#/,\n    contains: [\n      hljs.COMMENT(\n        /\\/\\*\\*/,\n        /\\*\\//,\n        {\n          relevance: 0,\n          contains: [\n            {\n              // eat up @'s in emails to prevent them to be recognized as doctags\n              begin: /\\w+@/,\n              relevance: 0\n            },\n            {\n              className: 'doctag',\n              begin: /@[A-Za-z]+/\n            }\n          ]\n        }\n      ),\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      hljs.APOS_STRING_MODE,\n      hljs.QUOTE_STRING_MODE,\n      {\n        className: 'class',\n        beginKeywords: 'aspect',\n        end: /[{;=]/,\n        excludeEnd: true,\n        illegal: /[:;\"\\[\\]]/,\n        contains: [\n          {\n            beginKeywords: 'extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton'\n          },\n          hljs.UNDERSCORE_TITLE_MODE,\n          {\n            begin: /\\([^\\)]*/,\n            end: /[)]+/,\n            keywords: KEYWORDS + ' ' + SHORTKEYS,\n            excludeEnd: false\n          }\n        ]\n      },\n      {\n        className: 'class',\n        beginKeywords: 'class interface',\n        end: /[{;=]/,\n        excludeEnd: true,\n        relevance: 0,\n        keywords: 'class interface',\n        illegal: /[:\"\\[\\]]/,\n        contains: [\n          {\n            beginKeywords: 'extends implements'\n          },\n          hljs.UNDERSCORE_TITLE_MODE\n        ]\n      },\n      {\n        // AspectJ Constructs\n        beginKeywords: 'pointcut after before around throwing returning',\n        end: /[)]/,\n        excludeEnd: false,\n        illegal: /[\"\\[\\]]/,\n        contains: [\n          {\n            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n            returnBegin: true,\n            contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n          }\n        ]\n      },\n      {\n        begin: /[:]/,\n        returnBegin: true,\n        end: /[{;]/,\n        relevance: 0,\n        excludeEnd: false,\n        keywords: KEYWORDS,\n        illegal: /[\"\\[\\]]/,\n        contains: [\n          {\n            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n            keywords: KEYWORDS + ' ' + SHORTKEYS,\n            relevance: 0\n          },\n          hljs.QUOTE_STRING_MODE\n        ]\n      },\n      {\n        // this prevents 'new Name(...), or throw ...' from being recognized as a function definition\n        beginKeywords: 'new throw',\n        relevance: 0\n      },\n      {\n        // the function class is a bit different for AspectJ compared to the Java language\n        className: 'function',\n        begin: /\\w+ +\\w+(\\.\\w+)?\\s*\\([^\\)]*\\)\\s*((throws)[\\w\\s,]+)?[\\{;]/,\n        returnBegin: true,\n        end: /[{;=]/,\n        keywords: KEYWORDS,\n        excludeEnd: true,\n        contains: [\n          {\n            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n            returnBegin: true,\n            relevance: 0,\n            contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n          },\n          {\n            className: 'params',\n            begin: /\\(/,\n            end: /\\)/,\n            relevance: 0,\n            keywords: KEYWORDS,\n            contains: [\n              hljs.APOS_STRING_MODE,\n              hljs.QUOTE_STRING_MODE,\n              hljs.C_NUMBER_MODE,\n              hljs.C_BLOCK_COMMENT_MODE\n            ]\n          },\n          hljs.C_LINE_COMMENT_MODE,\n          hljs.C_BLOCK_COMMENT_MODE\n        ]\n      },\n      hljs.C_NUMBER_MODE,\n      {\n        // annotation is also used in this language\n        className: 'meta',\n        begin: /@[A-Za-z]+/\n      }\n    ]\n  };\n}\n\nmodule.exports = aspectj;\n",
+      "start": 1702937444230,
+      "end": 1702937444267,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444267,
+      "end": 1702937444267,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * @param {string} value\n * @returns {RegExp}\n * */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar aspectj_1;\nvar hasRequiredAspectj;\n\nfunction requireAspectj () {\n\tif (hasRequiredAspectj) return aspectj_1;\n\thasRequiredAspectj = 1;\n\t/**\n\t * @param {RegExp | string } re\n\t * @returns {string}\n\t */\n\tfunction source(re) {\n\t  if (!re) return null;\n\t  if (typeof re === \"string\") return re;\n\n\t  return re.source;\n\t}\n\n\t/**\n\t * @param {...(RegExp | string) } args\n\t * @returns {string}\n\t */\n\tfunction concat(...args) {\n\t  const joined = args.map((x) => source(x)).join(\"\");\n\t  return joined;\n\t}\n\n\t/*\n\tLanguage: AspectJ\n\tAuthor: Hakan Ozler <ozler.hakan@gmail.com>\n\tWebsite: https://www.eclipse.org/aspectj/\n\tDescription: Syntax Highlighting for the AspectJ Language which is a general-purpose aspect-oriented extension to the Java programming language.\n\tAudit: 2020\n\t*/\n\n\t/** @type LanguageFn */\n\tfunction aspectj(hljs) {\n\t  const KEYWORDS =\n\t    'false synchronized int abstract float private char boolean static null if const ' +\n\t    'for true while long throw strictfp finally protected import native final return void ' +\n\t    'enum else extends implements break transient new catch instanceof byte super volatile case ' +\n\t    'assert short package default double public try this switch continue throws privileged ' +\n\t    'aspectOf adviceexecution proceed cflowbelow cflow initialization preinitialization ' +\n\t    'staticinitialization withincode target within execution getWithinTypeName handler ' +\n\t    'thisJoinPoint thisJoinPointStaticPart thisEnclosingJoinPointStaticPart declare parents ' +\n\t    'warning error soft precedence thisAspectInstance';\n\t  const SHORTKEYS = 'get set args call';\n\n\t  return {\n\t    name: 'AspectJ',\n\t    keywords: KEYWORDS,\n\t    illegal: /<\\/|#/,\n\t    contains: [\n\t      hljs.COMMENT(\n\t        /\\/\\*\\*/,\n\t        /\\*\\//,\n\t        {\n\t          relevance: 0,\n\t          contains: [\n\t            {\n\t              // eat up @'s in emails to prevent them to be recognized as doctags\n\t              begin: /\\w+@/,\n\t              relevance: 0\n\t            },\n\t            {\n\t              className: 'doctag',\n\t              begin: /@[A-Za-z]+/\n\t            }\n\t          ]\n\t        }\n\t      ),\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      hljs.APOS_STRING_MODE,\n\t      hljs.QUOTE_STRING_MODE,\n\t      {\n\t        className: 'class',\n\t        beginKeywords: 'aspect',\n\t        end: /[{;=]/,\n\t        excludeEnd: true,\n\t        illegal: /[:;\"\\[\\]]/,\n\t        contains: [\n\t          {\n\t            beginKeywords: 'extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton'\n\t          },\n\t          hljs.UNDERSCORE_TITLE_MODE,\n\t          {\n\t            begin: /\\([^\\)]*/,\n\t            end: /[)]+/,\n\t            keywords: KEYWORDS + ' ' + SHORTKEYS,\n\t            excludeEnd: false\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'class',\n\t        beginKeywords: 'class interface',\n\t        end: /[{;=]/,\n\t        excludeEnd: true,\n\t        relevance: 0,\n\t        keywords: 'class interface',\n\t        illegal: /[:\"\\[\\]]/,\n\t        contains: [\n\t          {\n\t            beginKeywords: 'extends implements'\n\t          },\n\t          hljs.UNDERSCORE_TITLE_MODE\n\t        ]\n\t      },\n\t      {\n\t        // AspectJ Constructs\n\t        beginKeywords: 'pointcut after before around throwing returning',\n\t        end: /[)]/,\n\t        excludeEnd: false,\n\t        illegal: /[\"\\[\\]]/,\n\t        contains: [\n\t          {\n\t            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n\t            returnBegin: true,\n\t            contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        begin: /[:]/,\n\t        returnBegin: true,\n\t        end: /[{;]/,\n\t        relevance: 0,\n\t        excludeEnd: false,\n\t        keywords: KEYWORDS,\n\t        illegal: /[\"\\[\\]]/,\n\t        contains: [\n\t          {\n\t            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n\t            keywords: KEYWORDS + ' ' + SHORTKEYS,\n\t            relevance: 0\n\t          },\n\t          hljs.QUOTE_STRING_MODE\n\t        ]\n\t      },\n\t      {\n\t        // this prevents 'new Name(...), or throw ...' from being recognized as a function definition\n\t        beginKeywords: 'new throw',\n\t        relevance: 0\n\t      },\n\t      {\n\t        // the function class is a bit different for AspectJ compared to the Java language\n\t        className: 'function',\n\t        begin: /\\w+ +\\w+(\\.\\w+)?\\s*\\([^\\)]*\\)\\s*((throws)[\\w\\s,]+)?[\\{;]/,\n\t        returnBegin: true,\n\t        end: /[{;=]/,\n\t        keywords: KEYWORDS,\n\t        excludeEnd: true,\n\t        contains: [\n\t          {\n\t            begin: concat(hljs.UNDERSCORE_IDENT_RE, /\\s*\\(/),\n\t            returnBegin: true,\n\t            relevance: 0,\n\t            contains: [ hljs.UNDERSCORE_TITLE_MODE ]\n\t          },\n\t          {\n\t            className: 'params',\n\t            begin: /\\(/,\n\t            end: /\\)/,\n\t            relevance: 0,\n\t            keywords: KEYWORDS,\n\t            contains: [\n\t              hljs.APOS_STRING_MODE,\n\t              hljs.QUOTE_STRING_MODE,\n\t              hljs.C_NUMBER_MODE,\n\t              hljs.C_BLOCK_COMMENT_MODE\n\t            ]\n\t          },\n\t          hljs.C_LINE_COMMENT_MODE,\n\t          hljs.C_BLOCK_COMMENT_MODE\n\t        ]\n\t      },\n\t      hljs.C_NUMBER_MODE,\n\t      {\n\t        // annotation is also used in this language\n\t        className: 'meta',\n\t        begin: /@[A-Za-z]+/\n\t      }\n\t    ]\n\t  };\n\t}\n\n\taspectj_1 = aspectj;\n\treturn aspectj_1;\n}\n\nexport { requireAspectj as __require };",
+      "start": 1702937444267,
+      "end": 1702937444268,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444268,
+      "end": 1702937444268,
+      "order": "normal"
+    }
+  ]
+}

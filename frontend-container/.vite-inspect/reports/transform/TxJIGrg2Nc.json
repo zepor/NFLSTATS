@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/hpkp.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = hpkp\nhpkp.displayName = 'hpkp'\nhpkp.aliases = []\nfunction hpkp(Prism) {\n  /**\n   * Original by Scott Helme.\n   *\n   * Reference: https://scotthelme.co.uk/hpkp-cheat-sheet/\n   */\n  Prism.languages.hpkp = {\n    directive: {\n      pattern:\n        /\\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\\s;=]|$)/i,\n      alias: 'property'\n    },\n    operator: /=/,\n    punctuation: /;/\n  }\n}\n",
+      "start": 1702937444912,
+      "end": 1702937444928,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar hpkp_1;\nvar hasRequiredHpkp;\n\nfunction requireHpkp () {\n\tif (hasRequiredHpkp) return hpkp_1;\n\thasRequiredHpkp = 1;\n\t'use strict'\n\n\thpkp_1 = hpkp\n\thpkp.displayName = 'hpkp'\n\thpkp.aliases = []\n\tfunction hpkp(Prism) {\n\t  /**\n\t   * Original by Scott Helme.\n\t   *\n\t   * Reference: https://scotthelme.co.uk/hpkp-cheat-sheet/\n\t   */\n\t  Prism.languages.hpkp = {\n\t    directive: {\n\t      pattern:\n\t        /\\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\\s;=]|$)/i,\n\t      alias: 'property'\n\t    },\n\t    operator: /=/,\n\t    punctuation: /;/\n\t  }\n\t}\n\treturn hpkp_1;\n}\n\nexport { requireHpkp as __require };",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB;CACA;CACA;CACA;CACA;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CACzB,IAAI,SAAS,EAAE;CACf,MAAM,OAAO;CACb,QAAQ,6FAA6F;CACrG,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,QAAQ,EAAE,GAAG;CACjB,IAAI,WAAW,EAAE,GAAG;CACpB,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444928,
+      "end": 1702937444928,
+      "order": "normal"
+    }
+  ]
+}

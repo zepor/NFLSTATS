@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_nativeKeysIn.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * This function is like\n * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)\n * except that it includes inherited enumerable properties.\n *\n * @private\n * @param {Object} object The object to query.\n * @returns {Array} Returns the array of property names.\n */\nfunction nativeKeysIn(object) {\n  var result = [];\n  if (object != null) {\n    for (var key in Object(object)) {\n      result.push(key);\n    }\n  }\n  return result;\n}\n\nexport default nativeKeysIn;\n",
+      "start": 1702937445191,
+      "end": 1702937445292,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445292,
+      "end": 1702937445292,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445292,
+      "end": 1702937445292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445293,
+      "end": 1702937445293,
+      "order": "normal"
+    }
+  ]
+}

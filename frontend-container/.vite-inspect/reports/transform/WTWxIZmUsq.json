@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/coq.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Coq\nAuthor: Stephan Boyer <stephan@stephanboyer.com>\nCategory: functional\nWebsite: https://coq.inria.fr\n*/\n\n/** @type LanguageFn */\nfunction coq(hljs) {\n  return {\n    name: 'Coq',\n    keywords: {\n      keyword:\n        '_|0 as at cofix else end exists exists2 fix for forall fun if IF in let ' +\n        'match mod Prop return Set then Type using where with ' +\n        'Abort About Add Admit Admitted All Arguments Assumptions Axiom Back BackTo ' +\n        'Backtrack Bind Blacklist Canonical Cd Check Class Classes Close Coercion ' +\n        'Coercions CoFixpoint CoInductive Collection Combined Compute Conjecture ' +\n        'Conjectures Constant constr Constraint Constructors Context Corollary ' +\n        'CreateHintDb Cut Declare Defined Definition Delimit Dependencies Dependent ' +\n        'Derive Drop eauto End Equality Eval Example Existential Existentials ' +\n        'Existing Export exporting Extern Extract Extraction Fact Field Fields File ' +\n        'Fixpoint Focus for From Function Functional Generalizable Global Goal Grab ' +\n        'Grammar Graph Guarded Heap Hint HintDb Hints Hypotheses Hypothesis ident ' +\n        'Identity If Immediate Implicit Import Include Inductive Infix Info Initial ' +\n        'Inline Inspect Instance Instances Intro Intros Inversion Inversion_clear ' +\n        'Language Left Lemma Let Libraries Library Load LoadPath Local Locate Ltac ML ' +\n        'Mode Module Modules Monomorphic Morphism Next NoInline Notation Obligation ' +\n        'Obligations Opaque Open Optimize Options Parameter Parameters Parametric ' +\n        'Path Paths pattern Polymorphic Preterm Print Printing Program Projections ' +\n        'Proof Proposition Pwd Qed Quit Rec Record Recursive Redirect Relation Remark ' +\n        'Remove Require Reserved Reset Resolve Restart Rewrite Right Ring Rings Save ' +\n        'Scheme Scope Scopes Script Search SearchAbout SearchHead SearchPattern ' +\n        'SearchRewrite Section Separate Set Setoid Show Solve Sorted Step Strategies ' +\n        'Strategy Structure SubClass Table Tables Tactic Term Test Theorem Time ' +\n        'Timeout Transparent Type Typeclasses Types Undelimit Undo Unfocus Unfocused ' +\n        'Unfold Universe Universes Unset Unshelve using Variable Variables Variant ' +\n        'Verbose Visibility where with',\n      built_in:\n        'abstract absurd admit after apply as assert assumption at auto autorewrite ' +\n        'autounfold before bottom btauto by case case_eq cbn cbv change ' +\n        'classical_left classical_right clear clearbody cofix compare compute ' +\n        'congruence constr_eq constructor contradict contradiction cut cutrewrite ' +\n        'cycle decide decompose dependent destruct destruction dintuition ' +\n        'discriminate discrR do double dtauto eapply eassumption eauto ecase ' +\n        'econstructor edestruct ediscriminate eelim eexact eexists einduction ' +\n        'einjection eleft elim elimtype enough equality erewrite eright ' +\n        'esimplify_eq esplit evar exact exactly_once exfalso exists f_equal fail ' +\n        'field field_simplify field_simplify_eq first firstorder fix fold fourier ' +\n        'functional generalize generalizing gfail give_up has_evar hnf idtac in ' +\n        'induction injection instantiate intro intro_pattern intros intuition ' +\n        'inversion inversion_clear is_evar is_var lapply lazy left lia lra move ' +\n        'native_compute nia nsatz omega once pattern pose progress proof psatz quote ' +\n        'record red refine reflexivity remember rename repeat replace revert ' +\n        'revgoals rewrite rewrite_strat right ring ring_simplify rtauto set ' +\n        'setoid_reflexivity setoid_replace setoid_rewrite setoid_symmetry ' +\n        'setoid_transitivity shelve shelve_unifiable simpl simple simplify_eq solve ' +\n        'specialize split split_Rabs split_Rmult stepl stepr subst sum swap ' +\n        'symmetry tactic tauto time timeout top transitivity trivial try tryif ' +\n        'unfold unify until using vm_compute with'\n    },\n    contains: [\n      hljs.QUOTE_STRING_MODE,\n      hljs.COMMENT('\\\\(\\\\*', '\\\\*\\\\)'),\n      hljs.C_NUMBER_MODE,\n      {\n        className: 'type',\n        excludeBegin: true,\n        begin: '\\\\|\\\\s*',\n        end: '\\\\w+'\n      },\n      { // relevance booster\n        begin: /[-=]>/\n      }\n    ]\n  };\n}\n\nmodule.exports = coq;\n",
+      "start": 1702937444268,
+      "end": 1702937444301,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Coq\nAuthor: Stephan Boyer <stephan@stephanboyer.com>\nCategory: functional\nWebsite: https://coq.inria.fr\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar coq_1;\nvar hasRequiredCoq;\n\nfunction requireCoq () {\n\tif (hasRequiredCoq) return coq_1;\n\thasRequiredCoq = 1;\n\t/** @type LanguageFn */\n\tfunction coq(hljs) {\n\t  return {\n\t    name: 'Coq',\n\t    keywords: {\n\t      keyword:\n\t        '_|0 as at cofix else end exists exists2 fix for forall fun if IF in let ' +\n\t        'match mod Prop return Set then Type using where with ' +\n\t        'Abort About Add Admit Admitted All Arguments Assumptions Axiom Back BackTo ' +\n\t        'Backtrack Bind Blacklist Canonical Cd Check Class Classes Close Coercion ' +\n\t        'Coercions CoFixpoint CoInductive Collection Combined Compute Conjecture ' +\n\t        'Conjectures Constant constr Constraint Constructors Context Corollary ' +\n\t        'CreateHintDb Cut Declare Defined Definition Delimit Dependencies Dependent ' +\n\t        'Derive Drop eauto End Equality Eval Example Existential Existentials ' +\n\t        'Existing Export exporting Extern Extract Extraction Fact Field Fields File ' +\n\t        'Fixpoint Focus for From Function Functional Generalizable Global Goal Grab ' +\n\t        'Grammar Graph Guarded Heap Hint HintDb Hints Hypotheses Hypothesis ident ' +\n\t        'Identity If Immediate Implicit Import Include Inductive Infix Info Initial ' +\n\t        'Inline Inspect Instance Instances Intro Intros Inversion Inversion_clear ' +\n\t        'Language Left Lemma Let Libraries Library Load LoadPath Local Locate Ltac ML ' +\n\t        'Mode Module Modules Monomorphic Morphism Next NoInline Notation Obligation ' +\n\t        'Obligations Opaque Open Optimize Options Parameter Parameters Parametric ' +\n\t        'Path Paths pattern Polymorphic Preterm Print Printing Program Projections ' +\n\t        'Proof Proposition Pwd Qed Quit Rec Record Recursive Redirect Relation Remark ' +\n\t        'Remove Require Reserved Reset Resolve Restart Rewrite Right Ring Rings Save ' +\n\t        'Scheme Scope Scopes Script Search SearchAbout SearchHead SearchPattern ' +\n\t        'SearchRewrite Section Separate Set Setoid Show Solve Sorted Step Strategies ' +\n\t        'Strategy Structure SubClass Table Tables Tactic Term Test Theorem Time ' +\n\t        'Timeout Transparent Type Typeclasses Types Undelimit Undo Unfocus Unfocused ' +\n\t        'Unfold Universe Universes Unset Unshelve using Variable Variables Variant ' +\n\t        'Verbose Visibility where with',\n\t      built_in:\n\t        'abstract absurd admit after apply as assert assumption at auto autorewrite ' +\n\t        'autounfold before bottom btauto by case case_eq cbn cbv change ' +\n\t        'classical_left classical_right clear clearbody cofix compare compute ' +\n\t        'congruence constr_eq constructor contradict contradiction cut cutrewrite ' +\n\t        'cycle decide decompose dependent destruct destruction dintuition ' +\n\t        'discriminate discrR do double dtauto eapply eassumption eauto ecase ' +\n\t        'econstructor edestruct ediscriminate eelim eexact eexists einduction ' +\n\t        'einjection eleft elim elimtype enough equality erewrite eright ' +\n\t        'esimplify_eq esplit evar exact exactly_once exfalso exists f_equal fail ' +\n\t        'field field_simplify field_simplify_eq first firstorder fix fold fourier ' +\n\t        'functional generalize generalizing gfail give_up has_evar hnf idtac in ' +\n\t        'induction injection instantiate intro intro_pattern intros intuition ' +\n\t        'inversion inversion_clear is_evar is_var lapply lazy left lia lra move ' +\n\t        'native_compute nia nsatz omega once pattern pose progress proof psatz quote ' +\n\t        'record red refine reflexivity remember rename repeat replace revert ' +\n\t        'revgoals rewrite rewrite_strat right ring ring_simplify rtauto set ' +\n\t        'setoid_reflexivity setoid_replace setoid_rewrite setoid_symmetry ' +\n\t        'setoid_transitivity shelve shelve_unifiable simpl simple simplify_eq solve ' +\n\t        'specialize split split_Rabs split_Rmult stepl stepr subst sum swap ' +\n\t        'symmetry tactic tauto time timeout top transitivity trivial try tryif ' +\n\t        'unfold unify until using vm_compute with'\n\t    },\n\t    contains: [\n\t      hljs.QUOTE_STRING_MODE,\n\t      hljs.COMMENT('\\\\(\\\\*', '\\\\*\\\\)'),\n\t      hljs.C_NUMBER_MODE,\n\t      {\n\t        className: 'type',\n\t        excludeBegin: true,\n\t        begin: '\\\\|\\\\s*',\n\t        end: '\\\\w+'\n\t      },\n\t      { // relevance booster\n\t        begin: /[-=]>/\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tcoq_1 = coq;\n\treturn coq_1;\n}\n\nexport { requireCoq as __require };",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;CAOA;CACA,SAAS,GAAG,CAAC,IAAI,EAAE;CACnB,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,KAAK;CACf,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,0EAA0E;CAClF,QAAQ,uDAAuD;CAC/D,QAAQ,6EAA6E;CACrF,QAAQ,2EAA2E;CACnF,QAAQ,0EAA0E;CAClF,QAAQ,wEAAwE;CAChF,QAAQ,6EAA6E;CACrF,QAAQ,uEAAuE;CAC/E,QAAQ,6EAA6E;CACrF,QAAQ,6EAA6E;CACrF,QAAQ,2EAA2E;CACnF,QAAQ,6EAA6E;CACrF,QAAQ,2EAA2E;CACnF,QAAQ,+EAA+E;CACvF,QAAQ,6EAA6E;CACrF,QAAQ,2EAA2E;CACnF,QAAQ,4EAA4E;CACpF,QAAQ,+EAA+E;CACvF,QAAQ,8EAA8E;CACtF,QAAQ,yEAAyE;CACjF,QAAQ,8EAA8E;CACtF,QAAQ,yEAAyE;CACjF,QAAQ,8EAA8E;CACtF,QAAQ,4EAA4E;CACpF,QAAQ,+BAA+B;CACvC,MAAM,QAAQ;CACd,QAAQ,6EAA6E;CACrF,QAAQ,iEAAiE;CACzE,QAAQ,uEAAuE;CAC/E,QAAQ,2EAA2E;CACnF,QAAQ,mEAAmE;CAC3E,QAAQ,sEAAsE;CAC9E,QAAQ,uEAAuE;CAC/E,QAAQ,iEAAiE;CACzE,QAAQ,0EAA0E;CAClF,QAAQ,2EAA2E;CACnF,QAAQ,yEAAyE;CACjF,QAAQ,uEAAuE;CAC/E,QAAQ,yEAAyE;CACjF,QAAQ,8EAA8E;CACtF,QAAQ,sEAAsE;CAC9E,QAAQ,qEAAqE;CAC7E,QAAQ,mEAAmE;CAC3E,QAAQ,6EAA6E;CACrF,QAAQ,qEAAqE;CAC7E,QAAQ,wEAAwE;CAChF,QAAQ,0CAA0C;CAClD,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,iBAAiB;CAC5B,MAAM,IAAI,CAAC,OAAO,CAAC,QAAQ,EAAE,QAAQ,CAAC;CACtC,MAAM,IAAI,CAAC,aAAa;CACxB,MAAM;CACN,QAAQ,SAAS,EAAE,MAAM;CACzB,QAAQ,YAAY,EAAE,IAAI;CAC1B,QAAQ,KAAK,EAAE,SAAS;CACxB,QAAQ,GAAG,EAAE,MAAM;CACnB,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,OAAO;CACtB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,MAAc,GAAG,GAAG"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444301,
+      "end": 1702937444301,
+      "order": "normal"
+    }
+  ]
+}

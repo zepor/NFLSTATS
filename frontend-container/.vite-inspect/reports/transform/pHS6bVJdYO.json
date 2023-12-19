@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/visual-basic.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = visualBasic\nvisualBasic.displayName = 'visualBasic'\nvisualBasic.aliases = []\nfunction visualBasic(Prism) {\n  Prism.languages['visual-basic'] = {\n    comment: {\n      pattern: /(?:['‘’]|REM\\b)(?:[^\\r\\n_]|_(?:\\r\\n?|\\n)?)*/i,\n      inside: {\n        keyword: /^REM/i\n      }\n    },\n    directive: {\n      pattern:\n        /#(?:Const|Else|ElseIf|End|ExternalChecksum|ExternalSource|If|Region)(?:\\b_[ \\t]*(?:\\r\\n?|\\n)|.)+/i,\n      alias: 'property',\n      greedy: true\n    },\n    string: {\n      pattern: /\\$?[\"“”](?:[\"“”]{2}|[^\"“”])*[\"“”]C?/i,\n      greedy: true\n    },\n    date: {\n      pattern:\n        /#[ \\t]*(?:\\d+([/-])\\d+\\1\\d+(?:[ \\t]+(?:\\d+[ \\t]*(?:AM|PM)|\\d+:\\d+(?::\\d+)?(?:[ \\t]*(?:AM|PM))?))?|\\d+[ \\t]*(?:AM|PM)|\\d+:\\d+(?::\\d+)?(?:[ \\t]*(?:AM|PM))?)[ \\t]*#/i,\n      alias: 'number'\n    },\n    number:\n      /(?:(?:\\b\\d+(?:\\.\\d+)?|\\.\\d+)(?:E[+-]?\\d+)?|&[HO][\\dA-F]+)(?:[FRD]|U?[ILS])?/i,\n    boolean: /\\b(?:False|Nothing|True)\\b/i,\n    keyword:\n      /\\b(?:AddHandler|AddressOf|Alias|And(?:Also)?|As|Boolean|ByRef|Byte|ByVal|Call|Case|Catch|C(?:Bool|Byte|Char|Date|Dbl|Dec|Int|Lng|Obj|SByte|Short|Sng|Str|Type|UInt|ULng|UShort)|Char|Class|Const|Continue|Currency|Date|Decimal|Declare|Default|Delegate|Dim|DirectCast|Do|Double|Each|Else(?:If)?|End(?:If)?|Enum|Erase|Error|Event|Exit|Finally|For|Friend|Function|Get(?:Type|XMLNamespace)?|Global|GoSub|GoTo|Handles|If|Implements|Imports|In|Inherits|Integer|Interface|Is|IsNot|Let|Lib|Like|Long|Loop|Me|Mod|Module|Must(?:Inherit|Override)|My(?:Base|Class)|Namespace|Narrowing|New|Next|Not(?:Inheritable|Overridable)?|Object|Of|On|Operator|Option(?:al)?|Or(?:Else)?|Out|Overloads|Overridable|Overrides|ParamArray|Partial|Private|Property|Protected|Public|RaiseEvent|ReadOnly|ReDim|RemoveHandler|Resume|Return|SByte|Select|Set|Shadows|Shared|short|Single|Static|Step|Stop|String|Structure|Sub|SyncLock|Then|Throw|To|Try|TryCast|Type|TypeOf|U(?:Integer|Long|Short)|Until|Using|Variant|Wend|When|While|Widening|With(?:Events)?|WriteOnly|Xor)\\b/i,\n    operator: /[+\\-*/\\\\^<=>&#@$%!]|\\b_(?=[ \\t]*[\\r\\n])/,\n    punctuation: /[{}().,:?]/\n  }\n  Prism.languages.vb = Prism.languages['visual-basic']\n  Prism.languages.vba = Prism.languages['visual-basic']\n}\n",
+      "start": 1702937445111,
+      "end": 1702937445134,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445134,
+      "end": 1702937445134,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar visualBasic_1;\nvar hasRequiredVisualBasic;\n\nfunction requireVisualBasic () {\n\tif (hasRequiredVisualBasic) return visualBasic_1;\n\thasRequiredVisualBasic = 1;\n\t'use strict'\n\n\tvisualBasic_1 = visualBasic\n\tvisualBasic.displayName = 'visualBasic'\n\tvisualBasic.aliases = []\n\tfunction visualBasic(Prism) {\n\t  Prism.languages['visual-basic'] = {\n\t    comment: {\n\t      pattern: /(?:['‘’]|REM\\b)(?:[^\\r\\n_]|_(?:\\r\\n?|\\n)?)*/i,\n\t      inside: {\n\t        keyword: /^REM/i\n\t      }\n\t    },\n\t    directive: {\n\t      pattern:\n\t        /#(?:Const|Else|ElseIf|End|ExternalChecksum|ExternalSource|If|Region)(?:\\b_[ \\t]*(?:\\r\\n?|\\n)|.)+/i,\n\t      alias: 'property',\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /\\$?[\"“”](?:[\"“”]{2}|[^\"“”])*[\"“”]C?/i,\n\t      greedy: true\n\t    },\n\t    date: {\n\t      pattern:\n\t        /#[ \\t]*(?:\\d+([/-])\\d+\\1\\d+(?:[ \\t]+(?:\\d+[ \\t]*(?:AM|PM)|\\d+:\\d+(?::\\d+)?(?:[ \\t]*(?:AM|PM))?))?|\\d+[ \\t]*(?:AM|PM)|\\d+:\\d+(?::\\d+)?(?:[ \\t]*(?:AM|PM))?)[ \\t]*#/i,\n\t      alias: 'number'\n\t    },\n\t    number:\n\t      /(?:(?:\\b\\d+(?:\\.\\d+)?|\\.\\d+)(?:E[+-]?\\d+)?|&[HO][\\dA-F]+)(?:[FRD]|U?[ILS])?/i,\n\t    boolean: /\\b(?:False|Nothing|True)\\b/i,\n\t    keyword:\n\t      /\\b(?:AddHandler|AddressOf|Alias|And(?:Also)?|As|Boolean|ByRef|Byte|ByVal|Call|Case|Catch|C(?:Bool|Byte|Char|Date|Dbl|Dec|Int|Lng|Obj|SByte|Short|Sng|Str|Type|UInt|ULng|UShort)|Char|Class|Const|Continue|Currency|Date|Decimal|Declare|Default|Delegate|Dim|DirectCast|Do|Double|Each|Else(?:If)?|End(?:If)?|Enum|Erase|Error|Event|Exit|Finally|For|Friend|Function|Get(?:Type|XMLNamespace)?|Global|GoSub|GoTo|Handles|If|Implements|Imports|In|Inherits|Integer|Interface|Is|IsNot|Let|Lib|Like|Long|Loop|Me|Mod|Module|Must(?:Inherit|Override)|My(?:Base|Class)|Namespace|Narrowing|New|Next|Not(?:Inheritable|Overridable)?|Object|Of|On|Operator|Option(?:al)?|Or(?:Else)?|Out|Overloads|Overridable|Overrides|ParamArray|Partial|Private|Property|Protected|Public|RaiseEvent|ReadOnly|ReDim|RemoveHandler|Resume|Return|SByte|Select|Set|Shadows|Shared|short|Single|Static|Step|Stop|String|Structure|Sub|SyncLock|Then|Throw|To|Try|TryCast|Type|TypeOf|U(?:Integer|Long|Short)|Until|Using|Variant|Wend|When|While|Widening|With(?:Events)?|WriteOnly|Xor)\\b/i,\n\t    operator: /[+\\-*/\\\\^<=>&#@$%!]|\\b_(?=[ \\t]*[\\r\\n])/,\n\t    punctuation: /[{}().,:?]/\n\t  }\n\t  Prism.languages.vb = Prism.languages['visual-basic']\n\t  Prism.languages.vba = Prism.languages['visual-basic']\n\t}\n\treturn visualBasic_1;\n}\n\nexport { requireVisualBasic as __require };",
+      "start": 1702937445134,
+      "end": 1702937445135,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,cAAc,GAAG,WAAW;CAC5B,WAAW,CAAC,WAAW,GAAG,aAAa;CACvC,WAAW,CAAC,OAAO,GAAG,EAAE;CACxB,SAAS,WAAW,CAAC,KAAK,EAAE;CAC5B,EAAE,KAAK,CAAC,SAAS,CAAC,cAAc,CAAC,GAAG;CACpC,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,8CAA8C;CAC7D,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,OAAO;CACxB,OAAO;CACP,KAAK;CACL,IAAI,SAAS,EAAE;CACf,MAAM,OAAO;CACb,QAAQ,mGAAmG;CAC3G,MAAM,KAAK,EAAE,UAAU;CACvB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,sCAAsC;CACrD,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,IAAI,EAAE;CACV,MAAM,OAAO;CACb,QAAQ,oKAAoK;CAC5K,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,MAAM;CACV,MAAM,8EAA8E;CACpF,IAAI,OAAO,EAAE,6BAA6B;CAC1C,IAAI,OAAO;CACX,MAAM,4gCAA4gC;CAClhC,IAAI,QAAQ,EAAE,yCAAyC;CACvD,IAAI,WAAW,EAAE,YAAY;CAC7B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG,KAAK,CAAC,SAAS,CAAC,cAAc,CAAC;CACtD,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,cAAc,CAAC;CACvD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445135,
+      "end": 1702937445135,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445135,
+      "end": 1702937445135,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445135,
+      "end": 1702937445135,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445135,
+      "end": 1702937445135,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445135,
+      "end": 1702937445135,
+      "order": "normal"
+    }
+  ]
+}

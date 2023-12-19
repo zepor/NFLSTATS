@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/lisp.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Lisp\nDescription: Generic lisp syntax\nAuthor: Vasily Polovnyov <vast@whiteants.net>\nCategory: lisp\n*/\n\nfunction lisp(hljs) {\n  var LISP_IDENT_RE = '[a-zA-Z_\\\\-+\\\\*\\\\/<=>&#][a-zA-Z0-9_\\\\-+*\\\\/<=>&#!]*';\n  var MEC_RE = '\\\\|[^]*?\\\\|';\n  var LISP_SIMPLE_NUMBER_RE = '(-|\\\\+)?\\\\d+(\\\\.\\\\d+|\\\\/\\\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\\\+|-)?\\\\d+)?';\n  var LITERAL = {\n    className: 'literal',\n    begin: '\\\\b(t{1}|nil)\\\\b'\n  };\n  var NUMBER = {\n    className: 'number',\n    variants: [\n      {begin: LISP_SIMPLE_NUMBER_RE, relevance: 0},\n      {begin: '#(b|B)[0-1]+(/[0-1]+)?'},\n      {begin: '#(o|O)[0-7]+(/[0-7]+)?'},\n      {begin: '#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?'},\n      {begin: '#(c|C)\\\\(' + LISP_SIMPLE_NUMBER_RE + ' +' + LISP_SIMPLE_NUMBER_RE, end: '\\\\)'}\n    ]\n  };\n  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null});\n  var COMMENT = hljs.COMMENT(\n    ';', '$',\n    {\n      relevance: 0\n    }\n  );\n  var VARIABLE = {\n    begin: '\\\\*', end: '\\\\*'\n  };\n  var KEYWORD = {\n    className: 'symbol',\n    begin: '[:&]' + LISP_IDENT_RE\n  };\n  var IDENT = {\n    begin: LISP_IDENT_RE,\n    relevance: 0\n  };\n  var MEC = {\n    begin: MEC_RE\n  };\n  var QUOTED_LIST = {\n    begin: '\\\\(', end: '\\\\)',\n    contains: ['self', LITERAL, STRING, NUMBER, IDENT]\n  };\n  var QUOTED = {\n    contains: [NUMBER, STRING, VARIABLE, KEYWORD, QUOTED_LIST, IDENT],\n    variants: [\n      {\n        begin: '[\\'`]\\\\(', end: '\\\\)'\n      },\n      {\n        begin: '\\\\(quote ', end: '\\\\)',\n        keywords: {name: 'quote'}\n      },\n      {\n        begin: '\\'' + MEC_RE\n      }\n    ]\n  };\n  var QUOTED_ATOM = {\n    variants: [\n      {begin: '\\'' + LISP_IDENT_RE},\n      {begin: '#\\'' + LISP_IDENT_RE + '(::' + LISP_IDENT_RE + ')*'}\n    ]\n  };\n  var LIST = {\n    begin: '\\\\(\\\\s*', end: '\\\\)'\n  };\n  var BODY = {\n    endsWithParent: true,\n    relevance: 0\n  };\n  LIST.contains = [\n    {\n      className: 'name',\n      variants: [\n        {\n          begin: LISP_IDENT_RE,\n          relevance: 0,\n        },\n        {begin: MEC_RE}\n      ]\n    },\n    BODY\n  ];\n  BODY.contains = [QUOTED, QUOTED_ATOM, LIST, LITERAL, NUMBER, STRING, COMMENT, VARIABLE, KEYWORD, MEC, IDENT];\n\n  return {\n    name: 'Lisp',\n    illegal: /\\S/,\n    contains: [\n      NUMBER,\n      hljs.SHEBANG(),\n      LITERAL,\n      STRING,\n      COMMENT,\n      QUOTED,\n      QUOTED_ATOM,\n      LIST,\n      IDENT\n    ]\n  };\n}\n\nmodule.exports = lisp;\n",
+      "start": 1702937444381,
+      "end": 1702937444430,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Lisp\nDescription: Generic lisp syntax\nAuthor: Vasily Polovnyov <vast@whiteants.net>\nCategory: lisp\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar lisp_1;\nvar hasRequiredLisp;\n\nfunction requireLisp () {\n\tif (hasRequiredLisp) return lisp_1;\n\thasRequiredLisp = 1;\n\tfunction lisp(hljs) {\n\t  var LISP_IDENT_RE = '[a-zA-Z_\\\\-+\\\\*\\\\/<=>&#][a-zA-Z0-9_\\\\-+*\\\\/<=>&#!]*';\n\t  var MEC_RE = '\\\\|[^]*?\\\\|';\n\t  var LISP_SIMPLE_NUMBER_RE = '(-|\\\\+)?\\\\d+(\\\\.\\\\d+|\\\\/\\\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\\\+|-)?\\\\d+)?';\n\t  var LITERAL = {\n\t    className: 'literal',\n\t    begin: '\\\\b(t{1}|nil)\\\\b'\n\t  };\n\t  var NUMBER = {\n\t    className: 'number',\n\t    variants: [\n\t      {begin: LISP_SIMPLE_NUMBER_RE, relevance: 0},\n\t      {begin: '#(b|B)[0-1]+(/[0-1]+)?'},\n\t      {begin: '#(o|O)[0-7]+(/[0-7]+)?'},\n\t      {begin: '#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?'},\n\t      {begin: '#(c|C)\\\\(' + LISP_SIMPLE_NUMBER_RE + ' +' + LISP_SIMPLE_NUMBER_RE, end: '\\\\)'}\n\t    ]\n\t  };\n\t  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null});\n\t  var COMMENT = hljs.COMMENT(\n\t    ';', '$',\n\t    {\n\t      relevance: 0\n\t    }\n\t  );\n\t  var VARIABLE = {\n\t    begin: '\\\\*', end: '\\\\*'\n\t  };\n\t  var KEYWORD = {\n\t    className: 'symbol',\n\t    begin: '[:&]' + LISP_IDENT_RE\n\t  };\n\t  var IDENT = {\n\t    begin: LISP_IDENT_RE,\n\t    relevance: 0\n\t  };\n\t  var MEC = {\n\t    begin: MEC_RE\n\t  };\n\t  var QUOTED_LIST = {\n\t    begin: '\\\\(', end: '\\\\)',\n\t    contains: ['self', LITERAL, STRING, NUMBER, IDENT]\n\t  };\n\t  var QUOTED = {\n\t    contains: [NUMBER, STRING, VARIABLE, KEYWORD, QUOTED_LIST, IDENT],\n\t    variants: [\n\t      {\n\t        begin: '[\\'`]\\\\(', end: '\\\\)'\n\t      },\n\t      {\n\t        begin: '\\\\(quote ', end: '\\\\)',\n\t        keywords: {name: 'quote'}\n\t      },\n\t      {\n\t        begin: '\\'' + MEC_RE\n\t      }\n\t    ]\n\t  };\n\t  var QUOTED_ATOM = {\n\t    variants: [\n\t      {begin: '\\'' + LISP_IDENT_RE},\n\t      {begin: '#\\'' + LISP_IDENT_RE + '(::' + LISP_IDENT_RE + ')*'}\n\t    ]\n\t  };\n\t  var LIST = {\n\t    begin: '\\\\(\\\\s*', end: '\\\\)'\n\t  };\n\t  var BODY = {\n\t    endsWithParent: true,\n\t    relevance: 0\n\t  };\n\t  LIST.contains = [\n\t    {\n\t      className: 'name',\n\t      variants: [\n\t        {\n\t          begin: LISP_IDENT_RE,\n\t          relevance: 0,\n\t        },\n\t        {begin: MEC_RE}\n\t      ]\n\t    },\n\t    BODY\n\t  ];\n\t  BODY.contains = [QUOTED, QUOTED_ATOM, LIST, LITERAL, NUMBER, STRING, COMMENT, VARIABLE, KEYWORD, MEC, IDENT];\n\n\t  return {\n\t    name: 'Lisp',\n\t    illegal: /\\S/,\n\t    contains: [\n\t      NUMBER,\n\t      hljs.SHEBANG(),\n\t      LITERAL,\n\t      STRING,\n\t      COMMENT,\n\t      QUOTED,\n\t      QUOTED_ATOM,\n\t      LIST,\n\t      IDENT\n\t    ]\n\t  };\n\t}\n\n\tlisp_1 = lisp;\n\treturn lisp_1;\n}\n\nexport { requireLisp as __require };",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444430,
+      "end": 1702937444430,
+      "order": "normal"
+    }
+  ]
+}

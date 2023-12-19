@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@aws-sdk/util-utf8-browser/dist-es/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { fromUtf8 as jsFromUtf8, toUtf8 as jsToUtf8 } from \"./pureJs\";\nimport { fromUtf8 as textEncoderFromUtf8, toUtf8 as textEncoderToUtf8 } from \"./whatwgEncodingApi\";\nexport const fromUtf8 = (input) => typeof TextEncoder === \"function\" ? textEncoderFromUtf8(input) : jsFromUtf8(input);\nexport const toUtf8 = (input) => typeof TextDecoder === \"function\" ? textEncoderToUtf8(input) : jsToUtf8(input);\n",
+      "start": 1702937445249,
+      "end": 1702937445300,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445300,
+      "end": 1702937445300,
+      "order": "normal"
+    }
+  ]
+}

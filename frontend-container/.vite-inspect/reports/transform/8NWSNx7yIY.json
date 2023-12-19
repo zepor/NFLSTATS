@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/layouts/Auth.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Outlet } from \"react-router-dom\";\r\n\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Main from \"../components/Main\";\r\nimport Settings from \"../components/Settings\";\r\n\r\nconst Auth = ({ children }) => (\r\n  <React.Fragment>\r\n    <Main className=\"d-flex w-100 justify-content-center\">\r\n      <Container className=\"d-flex flex-column\">\r\n        <Row className=\"h-100\">\r\n          <Col sm=\"10\" md=\"8\" lg=\"6\" xl=\"5\" className=\"mx-auto d-table h-100\">\r\n            <div className=\"d-table-cell align-middle\">\r\n              {children}\r\n              <Outlet />\r\n            </div>\r\n          </Col>\r\n        </Row>\r\n      </Container>\r\n    </Main>\r\n    <Settings />\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Auth;\r\n",
+      "start": 1702937436315,
+      "end": 1702937436719,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937436719,
+      "end": 1702937436719,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937436719,
+      "end": 1702937436719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Outlet } from \"react-router-dom\";\nimport { Col, Container, Row } from \"react-bootstrap\";\nimport Main from \"../components/Main\";\nimport Settings from \"../components/Settings\";\nconst Auth = ({ children }) => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Main, { className: \"d-flex w-100 justify-content-center\", children: /* @__PURE__ */ jsx(Container, { className: \"d-flex flex-column\", children: /* @__PURE__ */ jsx(Row, { className: \"h-100\", children: /* @__PURE__ */ jsx(Col, { sm: \"10\", md: \"8\", lg: \"6\", xl: \"5\", className: \"mx-auto d-table h-100\", children: /* @__PURE__ */ jsxs(\"div\", { className: \"d-table-cell align-middle\", children: [\n    children,\n    /* @__PURE__ */ jsx(Outlet, {})\n  ] }) }) }) }) }),\n  /* @__PURE__ */ jsx(Settings, {})\n] });\nexport default Auth;\n",
+      "start": 1702937436719,
+      "end": 1702937436868,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/layouts/Auth.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Outlet } from \"react-router-dom\";\r\n\r\nimport { Col, Container, Row } from \"react-bootstrap\";\r\n\r\nimport Main from \"../components/Main\";\r\nimport Settings from \"../components/Settings\";\r\n\r\nconst Auth = ({ children }) => (\r\n  <React.Fragment>\r\n    <Main className=\"d-flex w-100 justify-content-center\">\r\n      <Container className=\"d-flex flex-column\">\r\n        <Row className=\"h-100\">\r\n          <Col sm=\"10\" md=\"8\" lg=\"6\" xl=\"5\" className=\"mx-auto d-table h-100\">\r\n            <div className=\"d-table-cell align-middle\">\r\n              {children}\r\n              <Outlet />\r\n            </div>\r\n          </Col>\r\n        </Row>\r\n      </Container>\r\n    </Main>\r\n    <Settings />\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Auth;\r\n"
+        ],
+        "mappings": "AAcY,SAEE,KAFF;AAdZ,OAAO,WAAW;AAClB,SAAS,cAAc;AAEvB,SAAS,KAAK,WAAW,WAAW;AAEpC,OAAO,UAAU;AACjB,OAAO,cAAc;AAErB,MAAM,OAAO,CAAC,EAAE,SAAS,MACvB,qBAAC,MAAM,UAAN,EACC;AAAA,sBAAC,QAAK,WAAU,uCACd,8BAAC,aAAU,WAAU,sBACnB,8BAAC,OAAI,WAAU,SACb,8BAAC,OAAI,IAAG,MAAK,IAAG,KAAI,IAAG,KAAI,IAAG,KAAI,WAAU,yBAC1C,+BAAC,SAAI,WAAU,6BACZ;AAAA;AAAA,IACD,oBAAC,UAAO;AAAA,KACV,GACF,GACF,GACF,GACF;AAAA,EACA,oBAAC,YAAS;AAAA,GACZ;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937436868,
+      "end": 1702937436868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436869,
+      "end": 1702937436869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436869,
+      "end": 1702937436870,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436870,
+      "end": 1702937436870,
+      "order": "normal"
+    }
+  ]
+}

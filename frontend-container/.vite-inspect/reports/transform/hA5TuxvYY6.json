@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/dom-helpers/esm/hyphenate.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var rUpper = /([A-Z])/g;\nexport default function hyphenate(string) {\n  return string.replace(rUpper, '-$1').toLowerCase();\n}",
+      "start": 1702937444002,
+      "end": 1702937444012,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444012,
+      "end": 1702937444012,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444013,
+      "end": 1702937444013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444013,
+      "end": 1702937444013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444013,
+      "end": 1702937444013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444013,
+      "end": 1702937444013,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444013,
+      "end": 1702937444013,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/powerquery.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = powerquery\npowerquery.displayName = 'powerquery'\npowerquery.aliases = []\nfunction powerquery(Prism) {\n  // https://docs.microsoft.com/en-us/powerquery-m/power-query-m-language-specification\n  Prism.languages.powerquery = {\n    comment: {\n      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|\\/\\/.*)/,\n      lookbehind: true,\n      greedy: true\n    },\n    'quoted-identifier': {\n      pattern: /#\"(?:[^\"\\r\\n]|\"\")*\"(?!\")/,\n      greedy: true\n    },\n    string: {\n      pattern: /(?:#!)?\"(?:[^\"\\r\\n]|\"\")*\"(?!\")/,\n      greedy: true\n    },\n    constant: [\n      /\\bDay\\.(?:Friday|Monday|Saturday|Sunday|Thursday|Tuesday|Wednesday)\\b/,\n      /\\bTraceLevel\\.(?:Critical|Error|Information|Verbose|Warning)\\b/,\n      /\\bOccurrence\\.(?:All|First|Last)\\b/,\n      /\\bOrder\\.(?:Ascending|Descending)\\b/,\n      /\\bRoundingMode\\.(?:AwayFromZero|Down|ToEven|TowardZero|Up)\\b/,\n      /\\bMissingField\\.(?:Error|Ignore|UseNull)\\b/,\n      /\\bQuoteStyle\\.(?:Csv|None)\\b/,\n      /\\bJoinKind\\.(?:FullOuter|Inner|LeftAnti|LeftOuter|RightAnti|RightOuter)\\b/,\n      /\\bGroupKind\\.(?:Global|Local)\\b/,\n      /\\bExtraValues\\.(?:Error|Ignore|List)\\b/,\n      /\\bJoinAlgorithm\\.(?:Dynamic|LeftHash|LeftIndex|PairwiseHash|RightHash|RightIndex|SortMerge)\\b/,\n      /\\bJoinSide\\.(?:Left|Right)\\b/,\n      /\\bPrecision\\.(?:Decimal|Double)\\b/,\n      /\\bRelativePosition\\.From(?:End|Start)\\b/,\n      /\\bTextEncoding\\.(?:Ascii|BigEndianUnicode|Unicode|Utf16|Utf8|Windows)\\b/,\n      /\\b(?:Any|Binary|Date|DateTime|DateTimeZone|Duration|Function|Int16|Int32|Int64|Int8|List|Logical|None|Number|Record|Table|Text|Time)\\.Type\\b/,\n      /\\bnull\\b/\n    ],\n    boolean: /\\b(?:false|true)\\b/,\n    keyword:\n      /\\b(?:and|as|each|else|error|if|in|is|let|meta|not|nullable|optional|or|otherwise|section|shared|then|try|type)\\b|#(?:binary|date|datetime|datetimezone|duration|infinity|nan|sections|shared|table|time)\\b/,\n    function: {\n      pattern: /(^|[^#\\w.])[a-z_][\\w.]*(?=\\s*\\()/i,\n      lookbehind: true\n    },\n    'data-type': {\n      pattern:\n        /\\b(?:any|anynonnull|binary|date|datetime|datetimezone|duration|function|list|logical|none|number|record|table|text|time)\\b/,\n      alias: 'class-name'\n    },\n    number: {\n      pattern:\n        /\\b0x[\\da-f]+\\b|(?:[+-]?(?:\\b\\d+\\.)?\\b\\d+|[+-]\\.\\d+|(^|[^.])\\B\\.\\d+)(?:e[+-]?\\d+)?\\b/i,\n      lookbehind: true\n    },\n    operator: /[-+*\\/&?@^]|<(?:=>?|>)?|>=?|=>?|\\.\\.\\.?/,\n    punctuation: /[,;\\[\\](){}]/\n  }\n  Prism.languages.pq = Prism.languages['powerquery']\n  Prism.languages.mscript = Prism.languages['powerquery']\n}\n",
+      "start": 1702937445012,
+      "end": 1702937445039,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar powerquery_1;\nvar hasRequiredPowerquery;\n\nfunction requirePowerquery () {\n\tif (hasRequiredPowerquery) return powerquery_1;\n\thasRequiredPowerquery = 1;\n\t'use strict'\n\n\tpowerquery_1 = powerquery\n\tpowerquery.displayName = 'powerquery'\n\tpowerquery.aliases = []\n\tfunction powerquery(Prism) {\n\t  // https://docs.microsoft.com/en-us/powerquery-m/power-query-m-language-specification\n\t  Prism.languages.powerquery = {\n\t    comment: {\n\t      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|\\/\\/.*)/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    'quoted-identifier': {\n\t      pattern: /#\"(?:[^\"\\r\\n]|\"\")*\"(?!\")/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern: /(?:#!)?\"(?:[^\"\\r\\n]|\"\")*\"(?!\")/,\n\t      greedy: true\n\t    },\n\t    constant: [\n\t      /\\bDay\\.(?:Friday|Monday|Saturday|Sunday|Thursday|Tuesday|Wednesday)\\b/,\n\t      /\\bTraceLevel\\.(?:Critical|Error|Information|Verbose|Warning)\\b/,\n\t      /\\bOccurrence\\.(?:All|First|Last)\\b/,\n\t      /\\bOrder\\.(?:Ascending|Descending)\\b/,\n\t      /\\bRoundingMode\\.(?:AwayFromZero|Down|ToEven|TowardZero|Up)\\b/,\n\t      /\\bMissingField\\.(?:Error|Ignore|UseNull)\\b/,\n\t      /\\bQuoteStyle\\.(?:Csv|None)\\b/,\n\t      /\\bJoinKind\\.(?:FullOuter|Inner|LeftAnti|LeftOuter|RightAnti|RightOuter)\\b/,\n\t      /\\bGroupKind\\.(?:Global|Local)\\b/,\n\t      /\\bExtraValues\\.(?:Error|Ignore|List)\\b/,\n\t      /\\bJoinAlgorithm\\.(?:Dynamic|LeftHash|LeftIndex|PairwiseHash|RightHash|RightIndex|SortMerge)\\b/,\n\t      /\\bJoinSide\\.(?:Left|Right)\\b/,\n\t      /\\bPrecision\\.(?:Decimal|Double)\\b/,\n\t      /\\bRelativePosition\\.From(?:End|Start)\\b/,\n\t      /\\bTextEncoding\\.(?:Ascii|BigEndianUnicode|Unicode|Utf16|Utf8|Windows)\\b/,\n\t      /\\b(?:Any|Binary|Date|DateTime|DateTimeZone|Duration|Function|Int16|Int32|Int64|Int8|List|Logical|None|Number|Record|Table|Text|Time)\\.Type\\b/,\n\t      /\\bnull\\b/\n\t    ],\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    keyword:\n\t      /\\b(?:and|as|each|else|error|if|in|is|let|meta|not|nullable|optional|or|otherwise|section|shared|then|try|type)\\b|#(?:binary|date|datetime|datetimezone|duration|infinity|nan|sections|shared|table|time)\\b/,\n\t    function: {\n\t      pattern: /(^|[^#\\w.])[a-z_][\\w.]*(?=\\s*\\()/i,\n\t      lookbehind: true\n\t    },\n\t    'data-type': {\n\t      pattern:\n\t        /\\b(?:any|anynonnull|binary|date|datetime|datetimezone|duration|function|list|logical|none|number|record|table|text|time)\\b/,\n\t      alias: 'class-name'\n\t    },\n\t    number: {\n\t      pattern:\n\t        /\\b0x[\\da-f]+\\b|(?:[+-]?(?:\\b\\d+\\.)?\\b\\d+|[+-]\\.\\d+|(^|[^.])\\B\\.\\d+)(?:e[+-]?\\d+)?\\b/i,\n\t      lookbehind: true\n\t    },\n\t    operator: /[-+*\\/&?@^]|<(?:=>?|>)?|>=?|=>?|\\.\\.\\.?/,\n\t    punctuation: /[,;\\[\\](){}]/\n\t  }\n\t  Prism.languages.pq = Prism.languages['powerquery']\n\t  Prism.languages.mscript = Prism.languages['powerquery']\n\t}\n\treturn powerquery_1;\n}\n\nexport { requirePowerquery as __require };",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,aAAc,GAAG,UAAU;CAC3B,UAAU,CAAC,WAAW,GAAG,YAAY;CACrC,UAAU,CAAC,OAAO,GAAG,EAAE;CACvB,SAAS,UAAU,CAAC,KAAK,EAAE;CAC3B;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,UAAU,GAAG;CAC/B,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,sCAAsC;CACrD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,mBAAmB,EAAE;CACzB,MAAM,OAAO,EAAE,0BAA0B;CACzC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,gCAAgC;CAC/C,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,uEAAuE;CAC7E,MAAM,gEAAgE;CACtE,MAAM,oCAAoC;CAC1C,MAAM,qCAAqC;CAC3C,MAAM,8DAA8D;CACpE,MAAM,4CAA4C;CAClD,MAAM,8BAA8B;CACpC,MAAM,2EAA2E;CACjF,MAAM,iCAAiC;CACvC,MAAM,wCAAwC;CAC9C,MAAM,+FAA+F;CACrG,MAAM,8BAA8B;CACpC,MAAM,mCAAmC;CACzC,MAAM,yCAAyC;CAC/C,MAAM,yEAAyE;CAC/E,MAAM,8IAA8I;CACpJ,MAAM,UAAU;CAChB,KAAK;CACL,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,OAAO;CACX,MAAM,4MAA4M;CAClN,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,mCAAmC;CAClD,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,WAAW,EAAE;CACjB,MAAM,OAAO;CACb,QAAQ,4HAA4H;CACpI,MAAM,KAAK,EAAE,YAAY;CACzB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,sFAAsF;CAC9F,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,yCAAyC;CACvD,IAAI,WAAW,EAAE,cAAc;CAC/B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC;CACpD,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC;CACzD"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react/cjs/react-jsx-runtime.production.min.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @license React\n * react-jsx-runtime.production.min.js\n *\n * Copyright (c) Facebook, Inc. and its affiliates.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n'use strict';var f=require(\"react\"),k=Symbol.for(\"react.element\"),l=Symbol.for(\"react.fragment\"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};\nfunction q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=\"\"+g);void 0!==a.key&&(e=\"\"+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return{$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}exports.Fragment=l;exports.jsx=q;exports.jsxs=q;\n",
+      "start": 1702937435948,
+      "end": 1702937435983,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937435983,
+      "end": 1702937435983,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * @license React\n * react-jsx-runtime.production.min.js\n *\n * Copyright (c) Facebook, Inc. and its affiliates.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as reactJsxRuntime_production_min } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react/index.js?commonjs-proxy\";\n\n'use strict';var f=require$$0,k=Symbol.for(\"react.element\"),l=Symbol.for(\"react.fragment\"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};\nfunction q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=\"\"+g);void 0!==a.key&&(e=\"\"+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return{$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}var Fragment = reactJsxRuntime_production_min.Fragment=l;var jsx = reactJsxRuntime_production_min.jsx=q;var jsxs = reactJsxRuntime_production_min.jsxs=q;\n\nexport { reactJsxRuntime_production_min as __moduleExports, Fragment, jsx, jsxs, reactJsxRuntime_production_min as default };",
+      "start": 1702937435983,
+      "end": 1702937436002,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;AASA,YAAY,CAAC,IAAI,CAAC,CAAC,UAAgB,CAAC,CAAC,CAAC,MAAM,CAAC,GAAG,CAAC,eAAe,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,GAAG,CAAC,gBAAgB,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,SAAS,CAAC,cAAc,CAAC,CAAC,CAAC,CAAC,CAAC,kDAAkD,CAAC,iBAAiB,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC,CAAC;AACpP,SAAS,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,CAAC,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,GAAG,GAAG,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,GAAG,GAAG,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,cAAc,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,EAAE,CAAC,CAAC,YAAY,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,YAAY,CAAC,CAAC,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,QAAQ,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,sDAAgB,CAAC,CAAC,CAAC,4CAAW,CAAC,CAAC,CAAC,8CAAY,CAAC,CAAC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937436002,
+      "end": 1702937436002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436002,
+      "end": 1702937436002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436002,
+      "end": 1702937436002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436002,
+      "end": 1702937436002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436002,
+      "end": 1702937436002,
+      "order": "normal"
+    }
+  ]
+}

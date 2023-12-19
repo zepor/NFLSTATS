@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/warning/warning.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n'use strict';\n\n/**\n * Similar to invariant but only logs a warning if the condition is not met.\n * This can be used to log issues in development environments in critical\n * paths. Removing the logging code for production environments will keep the\n * same logic and follow the same code paths.\n */\n\nvar __DEV__ = process.env.NODE_ENV !== 'production';\n\nvar warning = function() {};\n\nif (__DEV__) {\n  var printWarning = function printWarning(format, args) {\n    var len = arguments.length;\n    args = new Array(len > 1 ? len - 1 : 0);\n    for (var key = 1; key < len; key++) {\n      args[key - 1] = arguments[key];\n    }\n    var argIndex = 0;\n    var message = 'Warning: ' +\n      format.replace(/%s/g, function() {\n        return args[argIndex++];\n      });\n    if (typeof console !== 'undefined') {\n      console.error(message);\n    }\n    try {\n      // --- Welcome to debugging React ---\n      // This error was thrown as a convenience so that you can use this stack\n      // to find the callsite that caused this warning to fire.\n      throw new Error(message);\n    } catch (x) {}\n  }\n\n  warning = function(condition, format, args) {\n    var len = arguments.length;\n    args = new Array(len > 2 ? len - 2 : 0);\n    for (var key = 2; key < len; key++) {\n      args[key - 2] = arguments[key];\n    }\n    if (format === undefined) {\n      throw new Error(\n          '`warning(condition, format, ...args)` requires a warning ' +\n          'message argument'\n      );\n    }\n    if (!condition) {\n      printWarning.apply(null, [format].concat(args));\n    }\n  };\n}\n\nmodule.exports = warning;\n",
+      "start": 1702937442069,
+      "end": 1702937442090,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442090,
+      "end": 1702937442090,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442090,
+      "end": 1702937442090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442090,
+      "end": 1702937442090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442090,
+      "end": 1702937442090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442090,
+      "end": 1702937442090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use strict\";\nvar __DEV__ = false;\nvar warning = function() {\n};\nif (__DEV__) {\n  var printWarning = function printWarning2(format, args) {\n    var len = arguments.length;\n    args = new Array(len > 1 ? len - 1 : 0);\n    for (var key = 1; key < len; key++) {\n      args[key - 1] = arguments[key];\n    }\n    var argIndex = 0;\n    var message = \"Warning: \" + format.replace(/%s/g, function() {\n      return args[argIndex++];\n    });\n    if (typeof console !== \"undefined\") {\n      console.error(message);\n    }\n    try {\n      throw new Error(message);\n    } catch (x) {\n    }\n  };\n  warning = function(condition, format, args) {\n    var len = arguments.length;\n    args = new Array(len > 2 ? len - 2 : 0);\n    for (var key = 2; key < len; key++) {\n      args[key - 2] = arguments[key];\n    }\n    if (format === void 0) {\n      throw new Error(\n        \"`warning(condition, format, ...args)` requires a warning message argument\"\n      );\n    }\n    if (!condition) {\n      printWarning.apply(null, [format].concat(args));\n    }\n  };\n}\nmodule.exports = warning;\n",
+      "start": 1702937442090,
+      "end": 1702937442092,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442092,
+      "end": 1702937442092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n\"use strict\";\nvar __DEV__ = false;\nvar warning = function() {\n};\nif (__DEV__) {\n  var printWarning = function printWarning2(format, args) {\n    var len = arguments.length;\n    args = new Array(len > 1 ? len - 1 : 0);\n    for (var key = 1; key < len; key++) {\n      args[key - 1] = arguments[key];\n    }\n    var argIndex = 0;\n    var message = \"Warning: \" + format.replace(/%s/g, function() {\n      return args[argIndex++];\n    });\n    if (typeof console !== \"undefined\") {\n      console.error(message);\n    }\n    try {\n      throw new Error(message);\n    } catch (x) {\n    }\n  };\n  warning = function(condition, format, args) {\n    var len = arguments.length;\n    args = new Array(len > 2 ? len - 2 : 0);\n    for (var key = 2; key < len; key++) {\n      args[key - 2] = arguments[key];\n    }\n    if (format === void 0) {\n      throw new Error(\n        \"`warning(condition, format, ...args)` requires a warning message argument\"\n      );\n    }\n    if (!condition) {\n      printWarning.apply(null, [format].concat(args));\n    }\n  };\n}\nvar warning_1 = warning;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(warning_1);\nexport { warning_1 as __moduleExports };",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY,CAAC;AACb,IAAI,OAAO,GAAG,KAAK,CAAC;AACpB,IAAI,OAAO,GAAG,WAAW;AACzB,CAAC,CAAC;AACF,IAAI,OAAO,EAAE;AACb,EAAE,IAAI,YAAY,GAAG,SAAS,aAAa,CAAC,MAAM,EAAE,IAAI,EAAE;AAC1D,IAAI,IAAI,GAAG,GAAG,SAAS,CAAC,MAAM,CAAC;AAC/B,IAAI,IAAI,GAAG,IAAI,KAAK,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC;AAC5C,IAAI,KAAK,IAAI,GAAG,GAAG,CAAC,EAAE,GAAG,GAAG,GAAG,EAAE,GAAG,EAAE,EAAE;AACxC,MAAM,IAAI,CAAC,GAAG,GAAG,CAAC,CAAC,GAAG,SAAS,CAAC,GAAG,CAAC,CAAC;AACrC,KAAK;AACL,IAAI,IAAI,QAAQ,GAAG,CAAC,CAAC;AACrB,IAAI,IAAI,OAAO,GAAG,WAAW,GAAG,MAAM,CAAC,OAAO,CAAC,KAAK,EAAE,WAAW;AACjE,MAAM,OAAO,IAAI,CAAC,QAAQ,EAAE,CAAC,CAAC;AAC9B,KAAK,CAAC,CAAC;AACP,IAAI,IAAI,OAAO,OAAO,KAAK,WAAW,EAAE;AACxC,MAAM,OAAO,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC;AAC7B,KAAK;AACL,IAAI,IAAI;AACR,MAAM,MAAM,IAAI,KAAK,CAAC,OAAO,CAAC,CAAC;AAC/B,KAAK,CAAC,OAAO,CAAC,EAAE;AAChB,KAAK;AACL,GAAG,CAAC;AACJ,EAAE,OAAO,GAAG,SAAS,SAAS,EAAE,MAAM,EAAE,IAAI,EAAE;AAC9C,IAAI,IAAI,GAAG,GAAG,SAAS,CAAC,MAAM,CAAC;AAC/B,IAAI,IAAI,GAAG,IAAI,KAAK,CAAC,GAAG,GAAG,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC;AAC5C,IAAI,KAAK,IAAI,GAAG,GAAG,CAAC,EAAE,GAAG,GAAG,GAAG,EAAE,GAAG,EAAE,EAAE;AACxC,MAAM,IAAI,CAAC,GAAG,GAAG,CAAC,CAAC,GAAG,SAAS,CAAC,GAAG,CAAC,CAAC;AACrC,KAAK;AACL,IAAI,IAAI,MAAM,KAAK,KAAK,CAAC,EAAE;AAC3B,MAAM,MAAM,IAAI,KAAK;AACrB,QAAQ,2EAA2E;AACnF,OAAO,CAAC;AACR,KAAK;AACL,IAAI,IAAI,CAAC,SAAS,EAAE;AACpB,MAAM,YAAY,CAAC,KAAK,CAAC,IAAI,EAAE,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC;AACtD,KAAK;AACL,GAAG,CAAC;AACJ,CAAC;IACD,SAAc,GAAG,OAAO"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442093,
+      "end": 1702937442093,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/cypher.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = cypher\ncypher.displayName = 'cypher'\ncypher.aliases = []\nfunction cypher(Prism) {\n  Prism.languages.cypher = {\n    // https://neo4j.com/docs/cypher-manual/current/syntax/comments/\n    comment: /\\/\\/.*/,\n    string: {\n      pattern: /\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"|'(?:[^'\\\\\\r\\n]|\\\\.)*'/,\n      greedy: true\n    },\n    'class-name': {\n      pattern: /(:\\s*)(?:\\w+|`(?:[^`\\\\\\r\\n])*`)(?=\\s*[{):])/,\n      lookbehind: true,\n      greedy: true\n    },\n    relationship: {\n      pattern:\n        /(-\\[\\s*(?:\\w+\\s*|`(?:[^`\\\\\\r\\n])*`\\s*)?:\\s*|\\|\\s*:\\s*)(?:\\w+|`(?:[^`\\\\\\r\\n])*`)/,\n      lookbehind: true,\n      greedy: true,\n      alias: 'property'\n    },\n    identifier: {\n      pattern: /`(?:[^`\\\\\\r\\n])*`/,\n      greedy: true\n    },\n    variable: /\\$\\w+/,\n    // https://neo4j.com/docs/cypher-manual/current/syntax/reserved/\n    keyword:\n      /\\b(?:ADD|ALL|AND|AS|ASC|ASCENDING|ASSERT|BY|CALL|CASE|COMMIT|CONSTRAINT|CONTAINS|CREATE|CSV|DELETE|DESC|DESCENDING|DETACH|DISTINCT|DO|DROP|ELSE|END|ENDS|EXISTS|FOR|FOREACH|IN|INDEX|IS|JOIN|KEY|LIMIT|LOAD|MANDATORY|MATCH|MERGE|NODE|NOT|OF|ON|OPTIONAL|OR|ORDER(?=\\s+BY)|PERIODIC|REMOVE|REQUIRE|RETURN|SCALAR|SCAN|SET|SKIP|START|STARTS|THEN|UNION|UNIQUE|UNWIND|USING|WHEN|WHERE|WITH|XOR|YIELD)\\b/i,\n    function: /\\b\\w+\\b(?=\\s*\\()/,\n    boolean: /\\b(?:false|null|true)\\b/i,\n    number: /\\b(?:0x[\\da-fA-F]+|\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)\\b/,\n    // https://neo4j.com/docs/cypher-manual/current/syntax/operators/\n    operator: /:|<--?|--?>?|<>|=~?|[<>]=?|[+*/%^|]|\\.\\.\\.?/,\n    punctuation: /[()[\\]{},;.]/\n  }\n}\n",
+      "start": 1702937444854,
+      "end": 1702937444885,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444885,
+      "end": 1702937444885,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar cypher_1;\nvar hasRequiredCypher;\n\nfunction requireCypher () {\n\tif (hasRequiredCypher) return cypher_1;\n\thasRequiredCypher = 1;\n\t'use strict'\n\n\tcypher_1 = cypher\n\tcypher.displayName = 'cypher'\n\tcypher.aliases = []\n\tfunction cypher(Prism) {\n\t  Prism.languages.cypher = {\n\t    // https://neo4j.com/docs/cypher-manual/current/syntax/comments/\n\t    comment: /\\/\\/.*/,\n\t    string: {\n\t      pattern: /\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"|'(?:[^'\\\\\\r\\n]|\\\\.)*'/,\n\t      greedy: true\n\t    },\n\t    'class-name': {\n\t      pattern: /(:\\s*)(?:\\w+|`(?:[^`\\\\\\r\\n])*`)(?=\\s*[{):])/,\n\t      lookbehind: true,\n\t      greedy: true\n\t    },\n\t    relationship: {\n\t      pattern:\n\t        /(-\\[\\s*(?:\\w+\\s*|`(?:[^`\\\\\\r\\n])*`\\s*)?:\\s*|\\|\\s*:\\s*)(?:\\w+|`(?:[^`\\\\\\r\\n])*`)/,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      alias: 'property'\n\t    },\n\t    identifier: {\n\t      pattern: /`(?:[^`\\\\\\r\\n])*`/,\n\t      greedy: true\n\t    },\n\t    variable: /\\$\\w+/,\n\t    // https://neo4j.com/docs/cypher-manual/current/syntax/reserved/\n\t    keyword:\n\t      /\\b(?:ADD|ALL|AND|AS|ASC|ASCENDING|ASSERT|BY|CALL|CASE|COMMIT|CONSTRAINT|CONTAINS|CREATE|CSV|DELETE|DESC|DESCENDING|DETACH|DISTINCT|DO|DROP|ELSE|END|ENDS|EXISTS|FOR|FOREACH|IN|INDEX|IS|JOIN|KEY|LIMIT|LOAD|MANDATORY|MATCH|MERGE|NODE|NOT|OF|ON|OPTIONAL|OR|ORDER(?=\\s+BY)|PERIODIC|REMOVE|REQUIRE|RETURN|SCALAR|SCAN|SET|SKIP|START|STARTS|THEN|UNION|UNIQUE|UNWIND|USING|WHEN|WHERE|WITH|XOR|YIELD)\\b/i,\n\t    function: /\\b\\w+\\b(?=\\s*\\()/,\n\t    boolean: /\\b(?:false|null|true)\\b/i,\n\t    number: /\\b(?:0x[\\da-fA-F]+|\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)\\b/,\n\t    // https://neo4j.com/docs/cypher-manual/current/syntax/operators/\n\t    operator: /:|<--?|--?>?|<>|=~?|[<>]=?|[+*/%^|]|\\.\\.\\.?/,\n\t    punctuation: /[()[\\]{},;.]/\n\t  }\n\t}\n\treturn cypher_1;\n}\n\nexport { requireCypher as __require };",
+      "start": 1702937444885,
+      "end": 1702937444886,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,SAAc,GAAG,MAAM;CACvB,MAAM,CAAC,WAAW,GAAG,QAAQ;CAC7B,MAAM,CAAC,OAAO,GAAG,EAAE;CACnB,SAAS,MAAM,CAAC,KAAK,EAAE;CACvB,EAAE,KAAK,CAAC,SAAS,CAAC,MAAM,GAAG;CAC3B;CACA,IAAI,OAAO,EAAE,QAAQ;CACrB,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,6CAA6C;CAC5D,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO,EAAE,6CAA6C;CAC5D,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO;CACb,QAAQ,iFAAiF;CACzF,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,UAAU,EAAE;CAChB,MAAM,OAAO,EAAE,mBAAmB;CAClC,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,QAAQ,EAAE,OAAO;CACrB;CACA,IAAI,OAAO;CACX,MAAM,2YAA2Y;CACjZ,IAAI,QAAQ,EAAE,kBAAkB;CAChC,IAAI,OAAO,EAAE,0BAA0B;CACvC,IAAI,MAAM,EAAE,sDAAsD;CAClE;CACA,IAAI,QAAQ,EAAE,6CAA6C;CAC3D,IAAI,WAAW,EAAE,cAAc;CAC/B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444886,
+      "end": 1702937444886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444886,
+      "end": 1702937444886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444886,
+      "end": 1702937444886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444886,
+      "end": 1702937444886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444886,
+      "end": 1702937444886,
+      "order": "normal"
+    }
+  ]
+}

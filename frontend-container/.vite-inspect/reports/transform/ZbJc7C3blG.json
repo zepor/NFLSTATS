@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_stackClear.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "var ListCache = require('./_ListCache');\n\n/**\n * Removes all key-value entries from the stack.\n *\n * @private\n * @name clear\n * @memberOf Stack\n */\nfunction stackClear() {\n  this.__data__ = new ListCache;\n  this.size = 0;\n}\n\nmodule.exports = stackClear;\n",
+      "start": 1702937445164,
+      "end": 1702937445173,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445173,
+      "end": 1702937445173,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/lodash/_ListCache.js?commonjs-proxy\";\n\nvar ListCache = require$$0;\n\n/**\n * Removes all key-value entries from the stack.\n *\n * @private\n * @name clear\n * @memberOf Stack\n */\nfunction stackClear() {\n  this.__data__ = new ListCache;\n  this.size = 0;\n}\n\nvar _stackClear = stackClear;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_stackClear);\nexport { _stackClear as __moduleExports };",
+      "start": 1702937445173,
+      "end": 1702937445368,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,IAAI,SAAS,GAAG,UAAuB,CAAC;AACxC;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,UAAU,GAAG;AACtB,EAAE,IAAI,CAAC,QAAQ,GAAG,IAAI,SAAS,CAAC;AAChC,EAAE,IAAI,CAAC,IAAI,GAAG,CAAC,CAAC;AAChB,CAAC;AACD;IACA,WAAc,GAAG,UAAU"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445368,
+      "end": 1702937445368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445368,
+      "end": 1702937445368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445368,
+      "end": 1702937445368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445368,
+      "end": 1702937445368,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445368,
+      "end": 1702937445368,
+      "order": "normal"
+    }
+  ]
+}

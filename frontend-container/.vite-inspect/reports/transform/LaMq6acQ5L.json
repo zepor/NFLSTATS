@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/scss.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = scss\nscss.displayName = 'scss'\nscss.aliases = []\nfunction scss(Prism) {\n  Prism.languages.scss = Prism.languages.extend('css', {\n    comment: {\n      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|\\/\\/.*)/,\n      lookbehind: true\n    },\n    atrule: {\n      pattern: /@[\\w-](?:\\([^()]+\\)|[^()\\s]|\\s+(?!\\s))*?(?=\\s+[{;])/,\n      inside: {\n        rule: /@[\\w-]+/ // See rest below\n      }\n    },\n    // url, compassified\n    url: /(?:[-a-z]+-)?url(?=\\()/i,\n    // CSS selector regex is not appropriate for Sass\n    // since there can be lot more things (var, @ directive, nesting..)\n    // a selector must start at the end of a property or after a brace (end of other rules or nesting)\n    // it can contain some characters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable\n    // the end of a selector is found when there is no rules in it ( {} or {\\s}) or if there is a property (because an interpolated var\n    // can \"pass\" as a selector- e.g: proper#{$erty})\n    // this one was hard to do, so please be careful if you edit this one :)\n    selector: {\n      // Initial look-ahead is used to prevent matching of blank selectors\n      pattern:\n        /(?=\\S)[^@;{}()]?(?:[^@;{}()\\s]|\\s+(?!\\s)|#\\{\\$[-\\w]+\\})+(?=\\s*\\{(?:\\}|\\s|[^}][^:{}]*[:{][^}]))/,\n      inside: {\n        parent: {\n          pattern: /&/,\n          alias: 'important'\n        },\n        placeholder: /%[-\\w]+/,\n        variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n      }\n    },\n    property: {\n      pattern: /(?:[-\\w]|\\$[-\\w]|#\\{\\$[-\\w]+\\})+(?=\\s*:)/,\n      inside: {\n        variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n      }\n    }\n  })\n  Prism.languages.insertBefore('scss', 'atrule', {\n    keyword: [\n      /@(?:content|debug|each|else(?: if)?|extend|for|forward|function|if|import|include|mixin|return|use|warn|while)\\b/i,\n      {\n        pattern: /( )(?:from|through)(?= )/,\n        lookbehind: true\n      }\n    ]\n  })\n  Prism.languages.insertBefore('scss', 'important', {\n    // var and interpolated vars\n    variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n  })\n  Prism.languages.insertBefore('scss', 'function', {\n    'module-modifier': {\n      pattern: /\\b(?:as|hide|show|with)\\b/i,\n      alias: 'keyword'\n    },\n    placeholder: {\n      pattern: /%[-\\w]+/,\n      alias: 'selector'\n    },\n    statement: {\n      pattern: /\\B!(?:default|optional)\\b/i,\n      alias: 'keyword'\n    },\n    boolean: /\\b(?:false|true)\\b/,\n    null: {\n      pattern: /\\bnull\\b/,\n      alias: 'keyword'\n    },\n    operator: {\n      pattern: /(\\s)(?:[-+*\\/%]|[=!]=|<=?|>=?|and|not|or)(?=\\s)/,\n      lookbehind: true\n    }\n  })\n  Prism.languages.scss['atrule'].inside.rest = Prism.languages.scss\n}\n",
+      "start": 1702937445056,
+      "end": 1702937445084,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445084,
+      "end": 1702937445084,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar scss_1;\nvar hasRequiredScss;\n\nfunction requireScss () {\n\tif (hasRequiredScss) return scss_1;\n\thasRequiredScss = 1;\n\t'use strict'\n\n\tscss_1 = scss\n\tscss.displayName = 'scss'\n\tscss.aliases = []\n\tfunction scss(Prism) {\n\t  Prism.languages.scss = Prism.languages.extend('css', {\n\t    comment: {\n\t      pattern: /(^|[^\\\\])(?:\\/\\*[\\s\\S]*?\\*\\/|\\/\\/.*)/,\n\t      lookbehind: true\n\t    },\n\t    atrule: {\n\t      pattern: /@[\\w-](?:\\([^()]+\\)|[^()\\s]|\\s+(?!\\s))*?(?=\\s+[{;])/,\n\t      inside: {\n\t        rule: /@[\\w-]+/ // See rest below\n\t      }\n\t    },\n\t    // url, compassified\n\t    url: /(?:[-a-z]+-)?url(?=\\()/i,\n\t    // CSS selector regex is not appropriate for Sass\n\t    // since there can be lot more things (var, @ directive, nesting..)\n\t    // a selector must start at the end of a property or after a brace (end of other rules or nesting)\n\t    // it can contain some characters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable\n\t    // the end of a selector is found when there is no rules in it ( {} or {\\s}) or if there is a property (because an interpolated var\n\t    // can \"pass\" as a selector- e.g: proper#{$erty})\n\t    // this one was hard to do, so please be careful if you edit this one :)\n\t    selector: {\n\t      // Initial look-ahead is used to prevent matching of blank selectors\n\t      pattern:\n\t        /(?=\\S)[^@;{}()]?(?:[^@;{}()\\s]|\\s+(?!\\s)|#\\{\\$[-\\w]+\\})+(?=\\s*\\{(?:\\}|\\s|[^}][^:{}]*[:{][^}]))/,\n\t      inside: {\n\t        parent: {\n\t          pattern: /&/,\n\t          alias: 'important'\n\t        },\n\t        placeholder: /%[-\\w]+/,\n\t        variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n\t      }\n\t    },\n\t    property: {\n\t      pattern: /(?:[-\\w]|\\$[-\\w]|#\\{\\$[-\\w]+\\})+(?=\\s*:)/,\n\t      inside: {\n\t        variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n\t      }\n\t    }\n\t  })\n\t  Prism.languages.insertBefore('scss', 'atrule', {\n\t    keyword: [\n\t      /@(?:content|debug|each|else(?: if)?|extend|for|forward|function|if|import|include|mixin|return|use|warn|while)\\b/i,\n\t      {\n\t        pattern: /( )(?:from|through)(?= )/,\n\t        lookbehind: true\n\t      }\n\t    ]\n\t  })\n\t  Prism.languages.insertBefore('scss', 'important', {\n\t    // var and interpolated vars\n\t    variable: /\\$[-\\w]+|#\\{\\$[-\\w]+\\}/\n\t  })\n\t  Prism.languages.insertBefore('scss', 'function', {\n\t    'module-modifier': {\n\t      pattern: /\\b(?:as|hide|show|with)\\b/i,\n\t      alias: 'keyword'\n\t    },\n\t    placeholder: {\n\t      pattern: /%[-\\w]+/,\n\t      alias: 'selector'\n\t    },\n\t    statement: {\n\t      pattern: /\\B!(?:default|optional)\\b/i,\n\t      alias: 'keyword'\n\t    },\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    null: {\n\t      pattern: /\\bnull\\b/,\n\t      alias: 'keyword'\n\t    },\n\t    operator: {\n\t      pattern: /(\\s)(?:[-+*\\/%]|[=!]=|<=?|>=?|and|not|or)(?=\\s)/,\n\t      lookbehind: true\n\t    }\n\t  })\n\t  Prism.languages.scss['atrule'].inside.rest = Prism.languages.scss\n\t}\n\treturn scss_1;\n}\n\nexport { requireScss as __require };",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,MAAM,CAAC,KAAK,EAAE;CACvD,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,sCAAsC;CACrD,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,qDAAqD;CACpE,MAAM,MAAM,EAAE;CACd,QAAQ,IAAI,EAAE,SAAS;CACvB,OAAO;CACP,KAAK;CACL;CACA,IAAI,GAAG,EAAE,yBAAyB;CAClC;CACA;CACA;CACA;CACA;CACA;CACA;CACA,IAAI,QAAQ,EAAE;CACd;CACA,MAAM,OAAO;CACb,QAAQ,gGAAgG;CACxG,MAAM,MAAM,EAAE;CACd,QAAQ,MAAM,EAAE;CAChB,UAAU,OAAO,EAAE,GAAG;CACtB,UAAU,KAAK,EAAE,WAAW;CAC5B,SAAS;CACT,QAAQ,WAAW,EAAE,SAAS;CAC9B,QAAQ,QAAQ,EAAE,wBAAwB;CAC1C,OAAO;CACP,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,0CAA0C;CACzD,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,wBAAwB;CAC1C,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,QAAQ,EAAE;CACjD,IAAI,OAAO,EAAE;CACb,MAAM,mHAAmH;CACzH,MAAM;CACN,QAAQ,OAAO,EAAE,0BAA0B;CAC3C,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,WAAW,EAAE;CACpD;CACA,IAAI,QAAQ,EAAE,wBAAwB;CACtC,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,YAAY,CAAC,MAAM,EAAE,UAAU,EAAE;CACnD,IAAI,iBAAiB,EAAE;CACvB,MAAM,OAAO,EAAE,4BAA4B;CAC3C,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,WAAW,EAAE;CACjB,MAAM,OAAO,EAAE,SAAS;CACxB,MAAM,KAAK,EAAE,UAAU;CACvB,KAAK;CACL,IAAI,SAAS,EAAE;CACf,MAAM,OAAO,EAAE,4BAA4B;CAC3C,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,IAAI,EAAE;CACV,MAAM,OAAO,EAAE,UAAU;CACzB,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,iDAAiD;CAChE,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,GAAG,CAAC;CACJ,EAAE,KAAK,CAAC,SAAS,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC,MAAM,CAAC,IAAI,GAAG,KAAK,CAAC,SAAS,CAAC,IAAI;CACnE"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445085,
+      "end": 1702937445085,
+      "order": "normal"
+    }
+  ]
+}

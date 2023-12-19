@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/hooks/useAuth.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { useContext } from \"react\";\r\n\r\n// import AuthContext from \"../contexts/JWTContext\";\r\n// import AuthContext from \"../contexts/FirebaseAuthContext\";\r\n// import AuthContext from \"../contexts/Auth0Context\";\r\nimport AuthContext from \"../contexts/CognitoContext\";\r\n\r\nconst useAuth = () => {\r\n  const context = useContext(AuthContext);\r\n\r\n  if (!context) {\r\n    throw new Error(\"AuthContext must be placed within AuthProvider\");\r\n  }\r\n\r\n  return context;\r\n};\r\n\r\nexport default useAuth;\r\n",
+      "start": 1702937441545,
+      "end": 1702937441563,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441563,
+      "end": 1702937441563,
+      "order": "normal"
+    }
+  ]
+}

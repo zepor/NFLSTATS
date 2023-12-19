@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/ui/Cards.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Button, Card, Col, Container, ListGroup, Row } from \"react-bootstrap\";\r\n\r\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\r\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\r\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\r\n\r\nconst CardWithImageAndLinks = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash1} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and links</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Card.Link href=\"#\">Card link</Card.Link>\r\n      <Card.Link href=\"#\">Another link</Card.Link>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithImageAndButton = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash2} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and button</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Button href=\"#\" variant=\"primary\">\r\n        Go somewhere\r\n      </Button>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithImageAndList = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash3} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and list</Card.Title>\r\n    </Card.Header>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item>Cras justo odio</ListGroup.Item>\r\n      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\r\n      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst CardWithLinks = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with links</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Card.Link href=\"#\">Card link</Card.Link>\r\n      <Card.Link href=\"#\">Another link</Card.Link>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithButton = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with button</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Button href=\"#\" variant=\"primary\">\r\n        Go somewhere\r\n      </Button>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithList = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with list</Card.Title>\r\n    </Card.Header>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item>Cras justo odio</ListGroup.Item>\r\n      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\r\n      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst Cards = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Cards\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Cards</h1>\r\n\r\n      <Row>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndLinks />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndButton />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndList />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithLinks />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithButton />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithList />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Cards;\r\n",
+      "start": 1702937436952,
+      "end": 1702937440804,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937440804,
+      "end": 1702937440804,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937440804,
+      "end": 1702937440804,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Helmet } from \"react-helmet-async\";\nimport { Button, Card, Col, Container, ListGroup, Row } from \"react-bootstrap\";\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\nconst CardWithImageAndLinks = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Img, { width: \"100%\", src: unsplash1, alt: \"Card image cap\" }),\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with image and links\" }) }),\n  /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsx(Card.Text, { children: \"Some quick example text to build on the card title and make up the bulk of the card's content.\" }),\n    /* @__PURE__ */ jsx(Card.Link, { href: \"#\", children: \"Card link\" }),\n    /* @__PURE__ */ jsx(Card.Link, { href: \"#\", children: \"Another link\" })\n  ] })\n] });\nconst CardWithImageAndButton = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Img, { width: \"100%\", src: unsplash2, alt: \"Card image cap\" }),\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with image and button\" }) }),\n  /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsx(Card.Text, { children: \"Some quick example text to build on the card title and make up the bulk of the card's content.\" }),\n    /* @__PURE__ */ jsx(Button, { href: \"#\", variant: \"primary\", children: \"Go somewhere\" })\n  ] })\n] });\nconst CardWithImageAndList = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Img, { width: \"100%\", src: unsplash3, alt: \"Card image cap\" }),\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with image and list\" }) }),\n  /* @__PURE__ */ jsxs(ListGroup, { variant: \"flush\", children: [\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Cras justo odio\" }),\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Dapibus ac facilisis in\" }),\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Vestibulum at eros\" })\n  ] })\n] });\nconst CardWithLinks = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with links\" }) }),\n  /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsx(Card.Text, { children: \"Some quick example text to build on the card title and make up the bulk of the card's content.\" }),\n    /* @__PURE__ */ jsx(Card.Link, { href: \"#\", children: \"Card link\" }),\n    /* @__PURE__ */ jsx(Card.Link, { href: \"#\", children: \"Another link\" })\n  ] })\n] });\nconst CardWithButton = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with button\" }) }),\n  /* @__PURE__ */ jsxs(Card.Body, { children: [\n    /* @__PURE__ */ jsx(Card.Text, { children: \"Some quick example text to build on the card title and make up the bulk of the card's content.\" }),\n    /* @__PURE__ */ jsx(Button, { href: \"#\", variant: \"primary\", children: \"Go somewhere\" })\n  ] })\n] });\nconst CardWithList = () => /* @__PURE__ */ jsxs(Card, { children: [\n  /* @__PURE__ */ jsx(Card.Header, { children: /* @__PURE__ */ jsx(Card.Title, { className: \"mb-0\", children: \"Card with list\" }) }),\n  /* @__PURE__ */ jsxs(ListGroup, { variant: \"flush\", children: [\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Cras justo odio\" }),\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Dapibus ac facilisis in\" }),\n    /* @__PURE__ */ jsx(ListGroup.Item, { children: \"Vestibulum at eros\" })\n  ] })\n] });\nconst Cards = () => /* @__PURE__ */ jsxs(React.Fragment, { children: [\n  /* @__PURE__ */ jsx(Helmet, { title: \"Cards\" }),\n  /* @__PURE__ */ jsxs(Container, { fluid: true, className: \"p-0\", children: [\n    /* @__PURE__ */ jsx(\"h1\", { className: \"h3 mb-3\", children: \"Cards\" }),\n    /* @__PURE__ */ jsxs(Row, { children: [\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithImageAndLinks, {}) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithImageAndButton, {}) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithImageAndList, {}) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithLinks, {}) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithButton, {}) }),\n      /* @__PURE__ */ jsx(Col, { md: \"6\", lg: \"4\", children: /* @__PURE__ */ jsx(CardWithList, {}) })\n    ] })\n  ] })\n] });\nexport default Cards;\n",
+      "start": 1702937440804,
+      "end": 1702937440809,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/ui/Cards.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { Helmet } from \"react-helmet-async\";\r\nimport { Button, Card, Col, Container, ListGroup, Row } from \"react-bootstrap\";\r\n\r\nimport unsplash1 from \"../../assets/img/photos/unsplash-1.jpg\";\r\nimport unsplash2 from \"../../assets/img/photos/unsplash-2.jpg\";\r\nimport unsplash3 from \"../../assets/img/photos/unsplash-3.jpg\";\r\n\r\nconst CardWithImageAndLinks = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash1} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and links</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Card.Link href=\"#\">Card link</Card.Link>\r\n      <Card.Link href=\"#\">Another link</Card.Link>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithImageAndButton = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash2} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and button</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Button href=\"#\" variant=\"primary\">\r\n        Go somewhere\r\n      </Button>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithImageAndList = () => (\r\n  <Card>\r\n    <Card.Img width=\"100%\" src={unsplash3} alt=\"Card image cap\" />\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with image and list</Card.Title>\r\n    </Card.Header>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item>Cras justo odio</ListGroup.Item>\r\n      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\r\n      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst CardWithLinks = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with links</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Card.Link href=\"#\">Card link</Card.Link>\r\n      <Card.Link href=\"#\">Another link</Card.Link>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithButton = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with button</Card.Title>\r\n    </Card.Header>\r\n    <Card.Body>\r\n      <Card.Text>\r\n        Some quick example text to build on the card title and make up the bulk\r\n        of the card's content.\r\n      </Card.Text>\r\n      <Button href=\"#\" variant=\"primary\">\r\n        Go somewhere\r\n      </Button>\r\n    </Card.Body>\r\n  </Card>\r\n);\r\n\r\nconst CardWithList = () => (\r\n  <Card>\r\n    <Card.Header>\r\n      <Card.Title className=\"mb-0\">Card with list</Card.Title>\r\n    </Card.Header>\r\n    <ListGroup variant=\"flush\">\r\n      <ListGroup.Item>Cras justo odio</ListGroup.Item>\r\n      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>\r\n      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>\r\n    </ListGroup>\r\n  </Card>\r\n);\r\n\r\nconst Cards = () => (\r\n  <React.Fragment>\r\n    <Helmet title=\"Cards\" />\r\n    <Container fluid className=\"p-0\">\r\n      <h1 className=\"h3 mb-3\">Cards</h1>\r\n\r\n      <Row>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndLinks />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndButton />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithImageAndList />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithLinks />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithButton />\r\n        </Col>\r\n        <Col md=\"6\" lg=\"4\">\r\n          <CardWithList />\r\n        </Col>\r\n      </Row>\r\n    </Container>\r\n  </React.Fragment>\r\n);\r\n\r\nexport default Cards;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937440809,
+      "end": 1702937440809,
+      "order": "normal"
+    }
+  ]
+}

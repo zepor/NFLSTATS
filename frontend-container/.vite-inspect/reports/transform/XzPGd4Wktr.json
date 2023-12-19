@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@apollo/client/utilities/observables/subclassing.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { Observable } from \"./Observable.js\";\nimport { canUseSymbol } from \"../common/canUse.js\";\n// Generic implementations of Observable.prototype methods like map and\n// filter need to know how to create a new Observable from an Observable\n// subclass (like Concast or ObservableQuery). Those methods assume\n// (perhaps unwisely?) that they can call the subtype's constructor with a\n// Subscriber function, even though the subclass constructor might expect\n// different parameters. Defining this static Symbol.species property on\n// the subclass is a hint to generic Observable code to use the default\n// constructor instead of trying to do `new Subclass(observer => ...)`.\nexport function fixObservableSubclass(subclass) {\n    function set(key) {\n        // Object.defineProperty is necessary because the Symbol.species\n        // property is a getter by default in modern JS environments, so we\n        // can't assign to it with a normal assignment expression.\n        Object.defineProperty(subclass, key, { value: Observable });\n    }\n    if (canUseSymbol && Symbol.species) {\n        set(Symbol.species);\n    }\n    // The \"@@species\" string is used as a fake Symbol.species value in some\n    // polyfill systems (including the SymbolSpecies variable used by\n    // zen-observable), so we should set it as well, to be safe.\n    set(\"@@species\");\n    return subclass;\n}\n//# sourceMappingURL=subclassing.js.map",
+      "start": 1702937441029,
+      "end": 1702937441084,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441084,
+      "end": 1702937441084,
+      "order": "normal"
+    }
+  ]
+}

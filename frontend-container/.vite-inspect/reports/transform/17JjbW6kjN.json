@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@aws-crypto/util/build/isEmptyData.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use strict\";\n// Copyright Amazon.com Inc. or its affiliates. All Rights Reserved.\n// SPDX-License-Identifier: Apache-2.0\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.isEmptyData = void 0;\nfunction isEmptyData(data) {\n    if (typeof data === \"string\") {\n        return data.length === 0;\n    }\n    return data.byteLength === 0;\n}\nexports.isEmptyData = isEmptyData;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXNFbXB0eURhdGEuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaXNFbXB0eURhdGEudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLG9FQUFvRTtBQUNwRSxzQ0FBc0M7OztBQUl0QyxTQUFnQixXQUFXLENBQUMsSUFBZ0I7SUFDMUMsSUFBSSxPQUFPLElBQUksS0FBSyxRQUFRLEVBQUU7UUFDNUIsT0FBTyxJQUFJLENBQUMsTUFBTSxLQUFLLENBQUMsQ0FBQztLQUMxQjtJQUVELE9BQU8sSUFBSSxDQUFDLFVBQVUsS0FBSyxDQUFDLENBQUM7QUFDL0IsQ0FBQztBQU5ELGtDQU1DIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQ29weXJpZ2h0IEFtYXpvbi5jb20gSW5jLiBvciBpdHMgYWZmaWxpYXRlcy4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5cbi8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBBcGFjaGUtMi4wXG5cbmltcG9ydCB7IFNvdXJjZURhdGEgfSBmcm9tIFwiQGF3cy1zZGsvdHlwZXNcIjtcblxuZXhwb3J0IGZ1bmN0aW9uIGlzRW1wdHlEYXRhKGRhdGE6IFNvdXJjZURhdGEpOiBib29sZWFuIHtcbiAgaWYgKHR5cGVvZiBkYXRhID09PSBcInN0cmluZ1wiKSB7XG4gICAgcmV0dXJuIGRhdGEubGVuZ3RoID09PSAwO1xuICB9XG5cbiAgcmV0dXJuIGRhdGEuYnl0ZUxlbmd0aCA9PT0gMDtcbn1cbiJdfQ==",
+      "start": 1702937445129,
+      "end": 1702937445153,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445153,
+      "end": 1702937445153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445153,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __exports as isEmptyData_1 } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/@aws-crypto/util/build/isEmptyData.js?commonjs-exports\";\n\n\"use strict\";\n// Copyright Amazon.com Inc. or its affiliates. All Rights Reserved.\n// SPDX-License-Identifier: Apache-2.0\nObject.defineProperty(isEmptyData_1, \"__esModule\", { value: true });\nvar isEmptyData_2 = isEmptyData_1.isEmptyData = void 0;\nfunction isEmptyData(data) {\n    if (typeof data === \"string\") {\n        return data.length === 0;\n    }\n    return data.byteLength === 0;\n}\nisEmptyData_2 = isEmptyData_1.isEmptyData = isEmptyData;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXNFbXB0eURhdGEuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaXNFbXB0eURhdGEudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLG9FQUFvRTtBQUNwRSxzQ0FBc0M7OztBQUl0QyxTQUFnQixXQUFXLENBQUMsSUFBZ0I7SUFDMUMsSUFBSSxPQUFPLElBQUksS0FBSyxRQUFRLEVBQUU7UUFDNUIsT0FBTyxJQUFJLENBQUMsTUFBTSxLQUFLLENBQUMsQ0FBQztLQUMxQjtJQUVELE9BQU8sSUFBSSxDQUFDLFVBQVUsS0FBSyxDQUFDLENBQUM7QUFDL0IsQ0FBQztBQU5ELGtDQU1DIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQ29weXJpZ2h0IEFtYXpvbi5jb20gSW5jLiBvciBpdHMgYWZmaWxpYXRlcy4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5cbi8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBBcGFjaGUtMi4wXG5cbmltcG9ydCB7IFNvdXJjZURhdGEgfSBmcm9tIFwiQGF3cy1zZGsvdHlwZXNcIjtcblxuZXhwb3J0IGZ1bmN0aW9uIGlzRW1wdHlEYXRhKGRhdGE6IFNvdXJjZURhdGEpOiBib29sZWFuIHtcbiAgaWYgKHR5cGVvZiBkYXRhID09PSBcInN0cmluZ1wiKSB7XG4gICAgcmV0dXJuIGRhdGEubGVuZ3RoID09PSAwO1xuICB9XG5cbiAgcmV0dXJuIGRhdGEuYnl0ZUxlbmd0aCA9PT0gMDtcbn1cbiJdfQ==\n\nexport { isEmptyData_1 as __moduleExports, isEmptyData_2 as isEmptyData, isEmptyData_1 as default };",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY,CAAC;AACb;AACA;AACA,MAAM,CAAC,cAAc,CAAC,aAAO,EAAE,YAAY,EAAE,EAAE,KAAK,EAAE,IAAI,EAAE,CAAC,CAAC;AAC9D,6CAAmB,GAAG,KAAK,CAAC,CAAC;AAC7B,SAAS,WAAW,CAAC,IAAI,EAAE;AAC3B,IAAI,IAAI,OAAO,IAAI,KAAK,QAAQ,EAAE;AAClC,QAAQ,OAAO,IAAI,CAAC,MAAM,KAAK,CAAC,CAAC;AACjC,KAAK;AACL,IAAI,OAAO,IAAI,CAAC,UAAU,KAAK,CAAC,CAAC;AACjC,CAAC;AACD,yCAAmB,GAAG,WAAW,CAAC;AAClC"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445154,
+      "end": 1702937445154,
+      "order": "normal"
+    }
+  ]
+}

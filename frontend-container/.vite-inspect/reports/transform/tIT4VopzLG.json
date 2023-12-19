@@ -1,0 +1,110 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@emotion/sheet/dist/emotion-sheet.browser.esm.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\n\nBased off glamor's StyleSheet, thanks Sunil ❤️\n\nhigh performance StyleSheet for css-in-js systems\n\n- uses multiple style tags behind the scenes for millions of rules\n- uses `insertRule` for appending in production for *much* faster performance\n\n// usage\n\nimport { StyleSheet } from '@emotion/sheet'\n\nlet styleSheet = new StyleSheet({ key: '', container: document.head })\n\nstyleSheet.insert('#box { border: 1px solid red; }')\n- appends a css rule into the stylesheet\n\nstyleSheet.flush()\n- empties the stylesheet of all its contents\n\n*/\n// $FlowFixMe\nfunction sheetForTag(tag) {\n  if (tag.sheet) {\n    // $FlowFixMe\n    return tag.sheet;\n  } // this weirdness brought to you by firefox\n\n  /* istanbul ignore next */\n\n\n  for (var i = 0; i < document.styleSheets.length; i++) {\n    if (document.styleSheets[i].ownerNode === tag) {\n      // $FlowFixMe\n      return document.styleSheets[i];\n    }\n  }\n}\n\nfunction createStyleElement(options) {\n  var tag = document.createElement('style');\n  tag.setAttribute('data-emotion', options.key);\n\n  if (options.nonce !== undefined) {\n    tag.setAttribute('nonce', options.nonce);\n  }\n\n  tag.appendChild(document.createTextNode(''));\n  tag.setAttribute('data-s', '');\n  return tag;\n}\n\nvar StyleSheet = /*#__PURE__*/function () {\n  // Using Node instead of HTMLElement since container may be a ShadowRoot\n  function StyleSheet(options) {\n    var _this = this;\n\n    this._insertTag = function (tag) {\n      var before;\n\n      if (_this.tags.length === 0) {\n        if (_this.insertionPoint) {\n          before = _this.insertionPoint.nextSibling;\n        } else if (_this.prepend) {\n          before = _this.container.firstChild;\n        } else {\n          before = _this.before;\n        }\n      } else {\n        before = _this.tags[_this.tags.length - 1].nextSibling;\n      }\n\n      _this.container.insertBefore(tag, before);\n\n      _this.tags.push(tag);\n    };\n\n    this.isSpeedy = options.speedy === undefined ? process.env.NODE_ENV === 'production' : options.speedy;\n    this.tags = [];\n    this.ctr = 0;\n    this.nonce = options.nonce; // key is the value of the data-emotion attribute, it's used to identify different sheets\n\n    this.key = options.key;\n    this.container = options.container;\n    this.prepend = options.prepend;\n    this.insertionPoint = options.insertionPoint;\n    this.before = null;\n  }\n\n  var _proto = StyleSheet.prototype;\n\n  _proto.hydrate = function hydrate(nodes) {\n    nodes.forEach(this._insertTag);\n  };\n\n  _proto.insert = function insert(rule) {\n    // the max length is how many rules we have per style tag, it's 65000 in speedy mode\n    // it's 1 in dev because we insert source maps that map a single rule to a location\n    // and you can only have one source map per style tag\n    if (this.ctr % (this.isSpeedy ? 65000 : 1) === 0) {\n      this._insertTag(createStyleElement(this));\n    }\n\n    var tag = this.tags[this.tags.length - 1];\n\n    if (process.env.NODE_ENV !== 'production') {\n      var isImportRule = rule.charCodeAt(0) === 64 && rule.charCodeAt(1) === 105;\n\n      if (isImportRule && this._alreadyInsertedOrderInsensitiveRule) {\n        // this would only cause problem in speedy mode\n        // but we don't want enabling speedy to affect the observable behavior\n        // so we report this error at all times\n        console.error(\"You're attempting to insert the following rule:\\n\" + rule + '\\n\\n`@import` rules must be before all other types of rules in a stylesheet but other rules have already been inserted. Please ensure that `@import` rules are before all other rules.');\n      }\n      this._alreadyInsertedOrderInsensitiveRule = this._alreadyInsertedOrderInsensitiveRule || !isImportRule;\n    }\n\n    if (this.isSpeedy) {\n      var sheet = sheetForTag(tag);\n\n      try {\n        // this is the ultrafast version, works across browsers\n        // the big drawback is that the css won't be editable in devtools\n        sheet.insertRule(rule, sheet.cssRules.length);\n      } catch (e) {\n        if (process.env.NODE_ENV !== 'production' && !/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear|-ms-expand|-ms-reveal){/.test(rule)) {\n          console.error(\"There was a problem inserting the following rule: \\\"\" + rule + \"\\\"\", e);\n        }\n      }\n    } else {\n      tag.appendChild(document.createTextNode(rule));\n    }\n\n    this.ctr++;\n  };\n\n  _proto.flush = function flush() {\n    // $FlowFixMe\n    this.tags.forEach(function (tag) {\n      return tag.parentNode && tag.parentNode.removeChild(tag);\n    });\n    this.tags = [];\n    this.ctr = 0;\n\n    if (process.env.NODE_ENV !== 'production') {\n      this._alreadyInsertedOrderInsensitiveRule = false;\n    }\n  };\n\n  return StyleSheet;\n}();\n\nexport { StyleSheet };\n",
+      "start": 1702937443161,
+      "end": 1702937443714,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937443714,
+      "end": 1702937443714,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937443714,
+      "end": 1702937443714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937443714,
+      "end": 1702937443714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937443714,
+      "end": 1702937443714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937443714,
+      "end": 1702937443714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "function sheetForTag(tag) {\n  if (tag.sheet) {\n    return tag.sheet;\n  }\n  for (var i = 0; i < document.styleSheets.length; i++) {\n    if (document.styleSheets[i].ownerNode === tag) {\n      return document.styleSheets[i];\n    }\n  }\n}\nfunction createStyleElement(options) {\n  var tag = document.createElement(\"style\");\n  tag.setAttribute(\"data-emotion\", options.key);\n  if (options.nonce !== void 0) {\n    tag.setAttribute(\"nonce\", options.nonce);\n  }\n  tag.appendChild(document.createTextNode(\"\"));\n  tag.setAttribute(\"data-s\", \"\");\n  return tag;\n}\nvar StyleSheet = /* @__PURE__ */ function() {\n  function StyleSheet2(options) {\n    var _this = this;\n    this._insertTag = function(tag) {\n      var before;\n      if (_this.tags.length === 0) {\n        if (_this.insertionPoint) {\n          before = _this.insertionPoint.nextSibling;\n        } else if (_this.prepend) {\n          before = _this.container.firstChild;\n        } else {\n          before = _this.before;\n        }\n      } else {\n        before = _this.tags[_this.tags.length - 1].nextSibling;\n      }\n      _this.container.insertBefore(tag, before);\n      _this.tags.push(tag);\n    };\n    this.isSpeedy = options.speedy === void 0 ? true : options.speedy;\n    this.tags = [];\n    this.ctr = 0;\n    this.nonce = options.nonce;\n    this.key = options.key;\n    this.container = options.container;\n    this.prepend = options.prepend;\n    this.insertionPoint = options.insertionPoint;\n    this.before = null;\n  }\n  var _proto = StyleSheet2.prototype;\n  _proto.hydrate = function hydrate(nodes) {\n    nodes.forEach(this._insertTag);\n  };\n  _proto.insert = function insert(rule) {\n    if (this.ctr % (this.isSpeedy ? 65e3 : 1) === 0) {\n      this._insertTag(createStyleElement(this));\n    }\n    var tag = this.tags[this.tags.length - 1];\n    if (false) {\n      var isImportRule = rule.charCodeAt(0) === 64 && rule.charCodeAt(1) === 105;\n      if (isImportRule && this._alreadyInsertedOrderInsensitiveRule) {\n        console.error(\"You're attempting to insert the following rule:\\n\" + rule + \"\\n\\n`@import` rules must be before all other types of rules in a stylesheet but other rules have already been inserted. Please ensure that `@import` rules are before all other rules.\");\n      }\n      this._alreadyInsertedOrderInsensitiveRule = this._alreadyInsertedOrderInsensitiveRule || !isImportRule;\n    }\n    if (this.isSpeedy) {\n      var sheet = sheetForTag(tag);\n      try {\n        sheet.insertRule(rule, sheet.cssRules.length);\n      } catch (e) {\n        if (false) {\n          console.error('There was a problem inserting the following rule: \"' + rule + '\"', e);\n        }\n      }\n    } else {\n      tag.appendChild(document.createTextNode(rule));\n    }\n    this.ctr++;\n  };\n  _proto.flush = function flush() {\n    this.tags.forEach(function(tag) {\n      return tag.parentNode && tag.parentNode.removeChild(tag);\n    });\n    this.tags = [];\n    this.ctr = 0;\n    if (false) {\n      this._alreadyInsertedOrderInsensitiveRule = false;\n    }\n  };\n  return StyleSheet2;\n}();\nexport { StyleSheet };\n",
+      "start": 1702937443714,
+      "end": 1702937443721,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937443721,
+      "end": 1702937443721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937443721,
+      "end": 1702937443721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937443721,
+      "end": 1702937443721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937443721,
+      "end": 1702937443721,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937443721,
+      "end": 1702937443722,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937443722,
+      "end": 1702937443724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937443724,
+      "end": 1702937443724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937443724,
+      "end": 1702937443724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937443724,
+      "end": 1702937443724,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937443724,
+      "end": 1702937443724,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/Header.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Button, Col, Dropdown, Row } from \"react-bootstrap\";\r\n\r\nimport { Calendar, Filter, RefreshCw } from \"react-feather\";\r\n\r\nconst Header = () => {\r\n  return (\r\n    <Row className=\"mb-2 mb-xl-3\">\r\n      <Col xs=\"auto\" className=\"d-none d-sm-block\">\r\n        <h3>Crypto</h3>\r\n      </Col>\r\n\r\n      <Col xs=\"auto\" className=\"ms-auto text-end mt-n1\">\r\n        <Dropdown className=\"d-inline me-2\">\r\n          <Dropdown.Toggle variant=\"light\" className=\"bg-white shadow-sm\">\r\n            <Calendar className=\"feather align-middle mt-n1\" /> Today\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n            <Dropdown.Item divider />\r\n            <Dropdown.Item>Seperated link</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n\r\n        <Button variant=\"primary\" className=\"shadow-sm me-1\">\r\n          <Filter className=\"feather\" />\r\n        </Button>\r\n        <Button variant=\"primary\" className=\"shadow-sm\">\r\n          <RefreshCw className=\"feather\" />\r\n        </Button>\r\n      </Col>\r\n    </Row>\r\n  );\r\n};\r\n\r\nexport default Header;\r\n",
+      "start": 1702937441597,
+      "end": 1702937441642,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441642,
+      "end": 1702937441642,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441642,
+      "end": 1702937441642,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Button, Col, Dropdown, Row } from \"react-bootstrap\";\nimport { Calendar, Filter, RefreshCw } from \"react-feather\";\nconst Header = () => {\n  return /* @__PURE__ */ jsxs(Row, { className: \"mb-2 mb-xl-3\", children: [\n    /* @__PURE__ */ jsx(Col, { xs: \"auto\", className: \"d-none d-sm-block\", children: /* @__PURE__ */ jsx(\"h3\", { children: \"Crypto\" }) }),\n    /* @__PURE__ */ jsxs(Col, { xs: \"auto\", className: \"ms-auto text-end mt-n1\", children: [\n      /* @__PURE__ */ jsxs(Dropdown, { className: \"d-inline me-2\", children: [\n        /* @__PURE__ */ jsxs(Dropdown.Toggle, { variant: \"light\", className: \"bg-white shadow-sm\", children: [\n          /* @__PURE__ */ jsx(Calendar, { className: \"feather align-middle mt-n1\" }),\n          \" Today\"\n        ] }),\n        /* @__PURE__ */ jsxs(Dropdown.Menu, { children: [\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Another Action\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Something else here\" }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { divider: true }),\n          /* @__PURE__ */ jsx(Dropdown.Item, { children: \"Seperated link\" })\n        ] })\n      ] }),\n      /* @__PURE__ */ jsx(Button, { variant: \"primary\", className: \"shadow-sm me-1\", children: /* @__PURE__ */ jsx(Filter, { className: \"feather\" }) }),\n      /* @__PURE__ */ jsx(Button, { variant: \"primary\", className: \"shadow-sm\", children: /* @__PURE__ */ jsx(RefreshCw, { className: \"feather\" }) })\n    ] })\n  ] });\n};\nexport default Header;\n",
+      "start": 1702937441642,
+      "end": 1702937441644,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/dashboards/Crypto/Header.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Button, Col, Dropdown, Row } from \"react-bootstrap\";\r\n\r\nimport { Calendar, Filter, RefreshCw } from \"react-feather\";\r\n\r\nconst Header = () => {\r\n  return (\r\n    <Row className=\"mb-2 mb-xl-3\">\r\n      <Col xs=\"auto\" className=\"d-none d-sm-block\">\r\n        <h3>Crypto</h3>\r\n      </Col>\r\n\r\n      <Col xs=\"auto\" className=\"ms-auto text-end mt-n1\">\r\n        <Dropdown className=\"d-inline me-2\">\r\n          <Dropdown.Toggle variant=\"light\" className=\"bg-white shadow-sm\">\r\n            <Calendar className=\"feather align-middle mt-n1\" /> Today\r\n          </Dropdown.Toggle>\r\n          <Dropdown.Menu>\r\n            <Dropdown.Item>Action</Dropdown.Item>\r\n            <Dropdown.Item>Another Action</Dropdown.Item>\r\n            <Dropdown.Item>Something else here</Dropdown.Item>\r\n            <Dropdown.Item divider />\r\n            <Dropdown.Item>Seperated link</Dropdown.Item>\r\n          </Dropdown.Menu>\r\n        </Dropdown>\r\n\r\n        <Button variant=\"primary\" className=\"shadow-sm me-1\">\r\n          <Filter className=\"feather\" />\r\n        </Button>\r\n        <Button variant=\"primary\" className=\"shadow-sm\">\r\n          <RefreshCw className=\"feather\" />\r\n        </Button>\r\n      </Col>\r\n    </Row>\r\n  );\r\n};\r\n\r\nexport default Header;\r\n"
+        ],
+        "mappings": "AAUQ,cAKE,YALF;AAVR,OAAO,WAAW;AAElB,SAAS,QAAQ,KAAK,UAAU,WAAW;AAE3C,SAAS,UAAU,QAAQ,iBAAiB;AAE5C,MAAM,SAAS,MAAM;AACnB,SACE,qBAAC,OAAI,WAAU,gBACb;AAAA,wBAAC,OAAI,IAAG,QAAO,WAAU,qBACvB,8BAAC,QAAG,oBAAM,GACZ;AAAA,IAEA,qBAAC,OAAI,IAAG,QAAO,WAAU,0BACvB;AAAA,2BAAC,YAAS,WAAU,iBAClB;AAAA,6BAAC,SAAS,QAAT,EAAgB,SAAQ,SAAQ,WAAU,sBACzC;AAAA,8BAAC,YAAS,WAAU,8BAA6B;AAAA,UAAE;AAAA,WACrD;AAAA,QACA,qBAAC,SAAS,MAAT,EACC;AAAA,8BAAC,SAAS,MAAT,EAAc,oBAAM;AAAA,UACrB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,UAC7B,oBAAC,SAAS,MAAT,EAAc,iCAAmB;AAAA,UAClC,oBAAC,SAAS,MAAT,EAAc,SAAO,MAAC;AAAA,UACvB,oBAAC,SAAS,MAAT,EAAc,4BAAc;AAAA,WAC/B;AAAA,SACF;AAAA,MAEA,oBAAC,UAAO,SAAQ,WAAU,WAAU,kBAClC,8BAAC,UAAO,WAAU,WAAU,GAC9B;AAAA,MACA,oBAAC,UAAO,SAAQ,WAAU,WAAU,aAClC,8BAAC,aAAU,WAAU,WAAU,GACjC;AAAA,OACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441644,
+      "end": 1702937441644,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441644,
+      "end": 1702937441645,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441645,
+      "end": 1702937441645,
+      "order": "normal"
+    }
+  ]
+}

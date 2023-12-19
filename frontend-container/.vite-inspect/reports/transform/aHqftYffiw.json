@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash-es/_copySymbols.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import copyObject from './_copyObject.js';\nimport getSymbols from './_getSymbols.js';\n\n/**\n * Copies own symbols of `source` to `object`.\n *\n * @private\n * @param {Object} source The object to copy symbols from.\n * @param {Object} [object={}] The object to copy symbols to.\n * @returns {Object} Returns `object`.\n */\nfunction copySymbols(source, object) {\n  return copyObject(source, getSymbols(source), object);\n}\n\nexport default copySymbols;\n",
+      "start": 1702937444039,
+      "end": 1702937444065,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444065,
+      "end": 1702937444065,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444065,
+      "end": 1702937444065,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444066,
+      "end": 1702937444066,
+      "order": "normal"
+    }
+  ]
+}

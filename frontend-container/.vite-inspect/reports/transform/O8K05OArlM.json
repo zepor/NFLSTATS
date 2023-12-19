@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/llvm.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = llvm\nllvm.displayName = 'llvm'\nllvm.aliases = []\nfunction llvm(Prism) {\n  ;(function (Prism) {\n    Prism.languages.llvm = {\n      comment: /;.*/,\n      string: {\n        pattern: /\"[^\"]*\"/,\n        greedy: true\n      },\n      boolean: /\\b(?:false|true)\\b/,\n      variable: /[%@!#](?:(?!\\d)(?:[-$.\\w]|\\\\[a-f\\d]{2})+|\\d+)/i,\n      label: /(?!\\d)(?:[-$.\\w]|\\\\[a-f\\d]{2})+:/i,\n      type: {\n        pattern:\n          /\\b(?:double|float|fp128|half|i[1-9]\\d*|label|metadata|ppc_fp128|token|void|x86_fp80|x86_mmx)\\b/,\n        alias: 'class-name'\n      },\n      keyword: /\\b[a-z_][a-z_0-9]*\\b/,\n      number:\n        /[+-]?\\b\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?\\b|\\b0x[\\dA-Fa-f]+\\b|\\b0xK[\\dA-Fa-f]{20}\\b|\\b0x[ML][\\dA-Fa-f]{32}\\b|\\b0xH[\\dA-Fa-f]{4}\\b/,\n      punctuation: /[{}[\\];(),.!*=<>]/\n    }\n  })(Prism)\n}\n",
+      "start": 1702937444952,
+      "end": 1702937444977,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar llvm_1;\nvar hasRequiredLlvm;\n\nfunction requireLlvm () {\n\tif (hasRequiredLlvm) return llvm_1;\n\thasRequiredLlvm = 1;\n\t'use strict'\n\n\tllvm_1 = llvm\n\tllvm.displayName = 'llvm'\n\tllvm.aliases = []\n\tfunction llvm(Prism) {\n\t  ;(function (Prism) {\n\t    Prism.languages.llvm = {\n\t      comment: /;.*/,\n\t      string: {\n\t        pattern: /\"[^\"]*\"/,\n\t        greedy: true\n\t      },\n\t      boolean: /\\b(?:false|true)\\b/,\n\t      variable: /[%@!#](?:(?!\\d)(?:[-$.\\w]|\\\\[a-f\\d]{2})+|\\d+)/i,\n\t      label: /(?!\\d)(?:[-$.\\w]|\\\\[a-f\\d]{2})+:/i,\n\t      type: {\n\t        pattern:\n\t          /\\b(?:double|float|fp128|half|i[1-9]\\d*|label|metadata|ppc_fp128|token|void|x86_fp80|x86_mmx)\\b/,\n\t        alias: 'class-name'\n\t      },\n\t      keyword: /\\b[a-z_][a-z_0-9]*\\b/,\n\t      number:\n\t        /[+-]?\\b\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?\\b|\\b0x[\\dA-Fa-f]+\\b|\\b0xK[\\dA-Fa-f]{20}\\b|\\b0x[ML][\\dA-Fa-f]{32}\\b|\\b0xH[\\dA-Fa-f]{4}\\b/,\n\t      punctuation: /[{}[\\];(),.!*=<>]/\n\t    }\n\t  })(Prism)\n\t}\n\treturn llvm_1;\n}\n\nexport { requireLlvm as __require };",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,OAAc,GAAG,IAAI;CACrB,IAAI,CAAC,WAAW,GAAG,MAAM;CACzB,IAAI,CAAC,OAAO,GAAG,EAAE;CACjB,SAAS,IAAI,CAAC,KAAK,EAAE;CACrB,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,KAAK,CAAC,SAAS,CAAC,IAAI,GAAG;CAC3B,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,SAAS;CAC1B,QAAQ,MAAM,EAAE,IAAI;CACpB,OAAO;CACP,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,QAAQ,EAAE,gDAAgD;CAChE,MAAM,KAAK,EAAE,mCAAmC;CAChD,MAAM,IAAI,EAAE;CACZ,QAAQ,OAAO;CACf,UAAU,gGAAgG;CAC1G,QAAQ,KAAK,EAAE,YAAY;CAC3B,OAAO;CACP,MAAM,OAAO,EAAE,sBAAsB;CACrC,MAAM,MAAM;CACZ,QAAQ,+HAA+H;CACvI,MAAM,WAAW,EAAE,mBAAmB;CACtC,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    }
+  ]
+}

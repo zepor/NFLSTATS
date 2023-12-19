@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/navbar/Navbar.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Button, Navbar, Nav, Form, InputGroup } from \"react-bootstrap\";\r\n\r\nimport {\r\n  AlertCircle,\r\n  Bell,\r\n  BellOff,\r\n  Home,\r\n  MessageCircle,\r\n  UserPlus,\r\n  Search,\r\n} from \"react-feather\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\n\r\nimport NavbarDropdown from \"./NavbarDropdown\";\r\nimport NavbarDropdownItem from \"./NavbarDropdownItem\";\r\nimport NavbarLanguages from \"./NavbarLanguages\";\r\nimport NavbarUser from \"./NavbarUser\";\r\n\r\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\r\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\r\nimport avatar4 from \"../../assets/img/avatars/avatar-4.jpg\";\r\nimport avatar5 from \"../../assets/img/avatars/avatar-5.jpg\";\r\n\r\nconst notifications = [\r\n  {\r\n    type: \"important\",\r\n    title: \"Update completed\",\r\n    description: \"Restart server 12 to complete the update.\",\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    type: \"default\",\r\n    title: \"Lorem ipsum\",\r\n    description: \"Aliquam ex eros, imperdiet vulputate hendrerit et.\",\r\n    time: \"6h ago\",\r\n  },\r\n  {\r\n    type: \"login\",\r\n    title: \"Login from 192.186.1.1\",\r\n    description: \"\",\r\n    time: \"6h ago\",\r\n  },\r\n  {\r\n    type: \"request\",\r\n    title: \"New connection\",\r\n    description: \"Anna accepted your request.\",\r\n    time: \"12h ago\",\r\n  },\r\n];\r\n\r\nconst messages = [\r\n  {\r\n    name: \"Ashley Briggs\",\r\n    avatar: avatar5,\r\n    description: \"Nam pretium turpis et arcu. Duis arcu tortor.\",\r\n    time: \"15m ago\",\r\n  },\r\n  {\r\n    name: \"Chris Wood\",\r\n    avatar: avatar1,\r\n    description: \"Curabitur ligula sapien euismod vitae.\",\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    name: \"Stacie Hall\",\r\n    avatar: avatar4,\r\n    description: \"Pellentesque auctor neque nec urna.\",\r\n    time: \"4h ago\",\r\n  },\r\n  {\r\n    name: \"Bertha Martin\",\r\n    avatar: avatar3,\r\n    description: \"Aenean tellus metus, bibendum sed, posuere ac, mattis non.\",\r\n    time: \"5h ago\",\r\n  },\r\n];\r\n\r\nconst NavbarComponent = () => {\r\n  const { t } = useTranslation();\r\n  const { isOpen, setIsOpen } = useSidebar();\r\n\r\n  return (\r\n    <Navbar variant=\"light\" expand className=\"navbar-bg\">\r\n      <span\r\n        className=\"sidebar-toggle d-flex\"\r\n        onClick={() => {\r\n          setIsOpen(!isOpen);\r\n        }}\r\n      >\r\n        <i className=\"hamburger align-self-center\" />\r\n      </span>\r\n\r\n      <Form inline=\"true\" className=\"d-none d-sm-inline-block\">\r\n        <InputGroup className=\"input-group-navbar\">\r\n          <Form.Control placeholder={t(\"Search\")} aria-label=\"Search\" />\r\n          <Button variant=\"\">\r\n            <Search className=\"feather\" />\r\n          </Button>\r\n        </InputGroup>\r\n      </Form>\r\n\r\n      <Navbar.Collapse>\r\n        <Nav className=\"navbar-align\">\r\n          <NavbarDropdown\r\n            header=\"New Messages\"\r\n            footer=\"Show all messages\"\r\n            icon={MessageCircle}\r\n            count={messages.length}\r\n            showBadge\r\n          >\r\n            {messages.map((item, key) => {\r\n              return (\r\n                <NavbarDropdownItem\r\n                  key={key}\r\n                  icon={\r\n                    <img\r\n                      className=\"avatar img-fluid rounded-circle\"\r\n                      src={item.avatar}\r\n                      alt={item.name}\r\n                    />\r\n                  }\r\n                  title={item.name}\r\n                  description={item.description}\r\n                  time={item.time}\r\n                  spacing\r\n                />\r\n              );\r\n            })}\r\n          </NavbarDropdown>\r\n\r\n          <NavbarDropdown\r\n            header=\"New Notifications\"\r\n            footer=\"Show all notifications\"\r\n            icon={BellOff}\r\n            count={notifications.length}\r\n          >\r\n            {notifications.map((item, key) => {\r\n              let icon = <Bell size={18} className=\"text-warning\" />;\r\n\r\n              if (item.type === \"important\") {\r\n                icon = <AlertCircle size={18} className=\"text-danger\" />;\r\n              }\r\n\r\n              if (item.type === \"login\") {\r\n                icon = <Home size={18} className=\"text-primary\" />;\r\n              }\r\n\r\n              if (item.type === \"request\") {\r\n                icon = <UserPlus size={18} className=\"text-success\" />;\r\n              }\r\n\r\n              return (\r\n                <NavbarDropdownItem\r\n                  key={key}\r\n                  icon={icon}\r\n                  title={item.title}\r\n                  description={item.description}\r\n                  time={item.time}\r\n                />\r\n              );\r\n            })}\r\n          </NavbarDropdown>\r\n\r\n          <NavbarLanguages />\r\n          <NavbarUser />\r\n        </Nav>\r\n      </Navbar.Collapse>\r\n    </Navbar>\r\n  );\r\n};\r\n\r\nexport default NavbarComponent;\r\n",
+      "start": 1702937441543,
+      "end": 1702937441561,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441562,
+      "end": 1702937441562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { Button, Navbar, Nav, Form, InputGroup } from \"react-bootstrap\";\nimport {\n  AlertCircle,\n  Bell,\n  BellOff,\n  Home,\n  MessageCircle,\n  UserPlus,\n  Search\n} from \"react-feather\";\nimport useSidebar from \"../../hooks/useSidebar\";\nimport NavbarDropdown from \"./NavbarDropdown\";\nimport NavbarDropdownItem from \"./NavbarDropdownItem\";\nimport NavbarLanguages from \"./NavbarLanguages\";\nimport NavbarUser from \"./NavbarUser\";\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\nimport avatar4 from \"../../assets/img/avatars/avatar-4.jpg\";\nimport avatar5 from \"../../assets/img/avatars/avatar-5.jpg\";\nconst notifications = [\n  {\n    type: \"important\",\n    title: \"Update completed\",\n    description: \"Restart server 12 to complete the update.\",\n    time: \"2h ago\"\n  },\n  {\n    type: \"default\",\n    title: \"Lorem ipsum\",\n    description: \"Aliquam ex eros, imperdiet vulputate hendrerit et.\",\n    time: \"6h ago\"\n  },\n  {\n    type: \"login\",\n    title: \"Login from 192.186.1.1\",\n    description: \"\",\n    time: \"6h ago\"\n  },\n  {\n    type: \"request\",\n    title: \"New connection\",\n    description: \"Anna accepted your request.\",\n    time: \"12h ago\"\n  }\n];\nconst messages = [\n  {\n    name: \"Ashley Briggs\",\n    avatar: avatar5,\n    description: \"Nam pretium turpis et arcu. Duis arcu tortor.\",\n    time: \"15m ago\"\n  },\n  {\n    name: \"Chris Wood\",\n    avatar: avatar1,\n    description: \"Curabitur ligula sapien euismod vitae.\",\n    time: \"2h ago\"\n  },\n  {\n    name: \"Stacie Hall\",\n    avatar: avatar4,\n    description: \"Pellentesque auctor neque nec urna.\",\n    time: \"4h ago\"\n  },\n  {\n    name: \"Bertha Martin\",\n    avatar: avatar3,\n    description: \"Aenean tellus metus, bibendum sed, posuere ac, mattis non.\",\n    time: \"5h ago\"\n  }\n];\nconst NavbarComponent = () => {\n  const { t } = useTranslation();\n  const { isOpen, setIsOpen } = useSidebar();\n  return /* @__PURE__ */ jsxs(Navbar, { variant: \"light\", expand: true, className: \"navbar-bg\", children: [\n    /* @__PURE__ */ jsx(\n      \"span\",\n      {\n        className: \"sidebar-toggle d-flex\",\n        onClick: () => {\n          setIsOpen(!isOpen);\n        },\n        children: /* @__PURE__ */ jsx(\"i\", { className: \"hamburger align-self-center\" })\n      }\n    ),\n    /* @__PURE__ */ jsx(Form, { inline: \"true\", className: \"d-none d-sm-inline-block\", children: /* @__PURE__ */ jsxs(InputGroup, { className: \"input-group-navbar\", children: [\n      /* @__PURE__ */ jsx(Form.Control, { placeholder: t(\"Search\"), \"aria-label\": \"Search\" }),\n      /* @__PURE__ */ jsx(Button, { variant: \"\", children: /* @__PURE__ */ jsx(Search, { className: \"feather\" }) })\n    ] }) }),\n    /* @__PURE__ */ jsx(Navbar.Collapse, { children: /* @__PURE__ */ jsxs(Nav, { className: \"navbar-align\", children: [\n      /* @__PURE__ */ jsx(\n        NavbarDropdown,\n        {\n          header: \"New Messages\",\n          footer: \"Show all messages\",\n          icon: MessageCircle,\n          count: messages.length,\n          showBadge: true,\n          children: messages.map((item, key) => {\n            return /* @__PURE__ */ jsx(\n              NavbarDropdownItem,\n              {\n                icon: /* @__PURE__ */ jsx(\n                  \"img\",\n                  {\n                    className: \"avatar img-fluid rounded-circle\",\n                    src: item.avatar,\n                    alt: item.name\n                  }\n                ),\n                title: item.name,\n                description: item.description,\n                time: item.time,\n                spacing: true\n              },\n              key\n            );\n          })\n        }\n      ),\n      /* @__PURE__ */ jsx(\n        NavbarDropdown,\n        {\n          header: \"New Notifications\",\n          footer: \"Show all notifications\",\n          icon: BellOff,\n          count: notifications.length,\n          children: notifications.map((item, key) => {\n            let icon = /* @__PURE__ */ jsx(Bell, { size: 18, className: \"text-warning\" });\n            if (item.type === \"important\") {\n              icon = /* @__PURE__ */ jsx(AlertCircle, { size: 18, className: \"text-danger\" });\n            }\n            if (item.type === \"login\") {\n              icon = /* @__PURE__ */ jsx(Home, { size: 18, className: \"text-primary\" });\n            }\n            if (item.type === \"request\") {\n              icon = /* @__PURE__ */ jsx(UserPlus, { size: 18, className: \"text-success\" });\n            }\n            return /* @__PURE__ */ jsx(\n              NavbarDropdownItem,\n              {\n                icon,\n                title: item.title,\n                description: item.description,\n                time: item.time\n              },\n              key\n            );\n          })\n        }\n      ),\n      /* @__PURE__ */ jsx(NavbarLanguages, {}),\n      /* @__PURE__ */ jsx(NavbarUser, {})\n    ] }) })\n  ] });\n};\nexport default NavbarComponent;\n",
+      "start": 1702937441562,
+      "end": 1702937441569,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/navbar/Navbar.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { useTranslation } from \"react-i18next\";\r\nimport { Button, Navbar, Nav, Form, InputGroup } from \"react-bootstrap\";\r\n\r\nimport {\r\n  AlertCircle,\r\n  Bell,\r\n  BellOff,\r\n  Home,\r\n  MessageCircle,\r\n  UserPlus,\r\n  Search,\r\n} from \"react-feather\";\r\n\r\nimport useSidebar from \"../../hooks/useSidebar\";\r\n\r\nimport NavbarDropdown from \"./NavbarDropdown\";\r\nimport NavbarDropdownItem from \"./NavbarDropdownItem\";\r\nimport NavbarLanguages from \"./NavbarLanguages\";\r\nimport NavbarUser from \"./NavbarUser\";\r\n\r\nimport avatar1 from \"../../assets/img/avatars/avatar.jpg\";\r\nimport avatar3 from \"../../assets/img/avatars/avatar-3.jpg\";\r\nimport avatar4 from \"../../assets/img/avatars/avatar-4.jpg\";\r\nimport avatar5 from \"../../assets/img/avatars/avatar-5.jpg\";\r\n\r\nconst notifications = [\r\n  {\r\n    type: \"important\",\r\n    title: \"Update completed\",\r\n    description: \"Restart server 12 to complete the update.\",\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    type: \"default\",\r\n    title: \"Lorem ipsum\",\r\n    description: \"Aliquam ex eros, imperdiet vulputate hendrerit et.\",\r\n    time: \"6h ago\",\r\n  },\r\n  {\r\n    type: \"login\",\r\n    title: \"Login from 192.186.1.1\",\r\n    description: \"\",\r\n    time: \"6h ago\",\r\n  },\r\n  {\r\n    type: \"request\",\r\n    title: \"New connection\",\r\n    description: \"Anna accepted your request.\",\r\n    time: \"12h ago\",\r\n  },\r\n];\r\n\r\nconst messages = [\r\n  {\r\n    name: \"Ashley Briggs\",\r\n    avatar: avatar5,\r\n    description: \"Nam pretium turpis et arcu. Duis arcu tortor.\",\r\n    time: \"15m ago\",\r\n  },\r\n  {\r\n    name: \"Chris Wood\",\r\n    avatar: avatar1,\r\n    description: \"Curabitur ligula sapien euismod vitae.\",\r\n    time: \"2h ago\",\r\n  },\r\n  {\r\n    name: \"Stacie Hall\",\r\n    avatar: avatar4,\r\n    description: \"Pellentesque auctor neque nec urna.\",\r\n    time: \"4h ago\",\r\n  },\r\n  {\r\n    name: \"Bertha Martin\",\r\n    avatar: avatar3,\r\n    description: \"Aenean tellus metus, bibendum sed, posuere ac, mattis non.\",\r\n    time: \"5h ago\",\r\n  },\r\n];\r\n\r\nconst NavbarComponent = () => {\r\n  const { t } = useTranslation();\r\n  const { isOpen, setIsOpen } = useSidebar();\r\n\r\n  return (\r\n    <Navbar variant=\"light\" expand className=\"navbar-bg\">\r\n      <span\r\n        className=\"sidebar-toggle d-flex\"\r\n        onClick={() => {\r\n          setIsOpen(!isOpen);\r\n        }}\r\n      >\r\n        <i className=\"hamburger align-self-center\" />\r\n      </span>\r\n\r\n      <Form inline=\"true\" className=\"d-none d-sm-inline-block\">\r\n        <InputGroup className=\"input-group-navbar\">\r\n          <Form.Control placeholder={t(\"Search\")} aria-label=\"Search\" />\r\n          <Button variant=\"\">\r\n            <Search className=\"feather\" />\r\n          </Button>\r\n        </InputGroup>\r\n      </Form>\r\n\r\n      <Navbar.Collapse>\r\n        <Nav className=\"navbar-align\">\r\n          <NavbarDropdown\r\n            header=\"New Messages\"\r\n            footer=\"Show all messages\"\r\n            icon={MessageCircle}\r\n            count={messages.length}\r\n            showBadge\r\n          >\r\n            {messages.map((item, key) => {\r\n              return (\r\n                <NavbarDropdownItem\r\n                  key={key}\r\n                  icon={\r\n                    <img\r\n                      className=\"avatar img-fluid rounded-circle\"\r\n                      src={item.avatar}\r\n                      alt={item.name}\r\n                    />\r\n                  }\r\n                  title={item.name}\r\n                  description={item.description}\r\n                  time={item.time}\r\n                  spacing\r\n                />\r\n              );\r\n            })}\r\n          </NavbarDropdown>\r\n\r\n          <NavbarDropdown\r\n            header=\"New Notifications\"\r\n            footer=\"Show all notifications\"\r\n            icon={BellOff}\r\n            count={notifications.length}\r\n          >\r\n            {notifications.map((item, key) => {\r\n              let icon = <Bell size={18} className=\"text-warning\" />;\r\n\r\n              if (item.type === \"important\") {\r\n                icon = <AlertCircle size={18} className=\"text-danger\" />;\r\n              }\r\n\r\n              if (item.type === \"login\") {\r\n                icon = <Home size={18} className=\"text-primary\" />;\r\n              }\r\n\r\n              if (item.type === \"request\") {\r\n                icon = <UserPlus size={18} className=\"text-success\" />;\r\n              }\r\n\r\n              return (\r\n                <NavbarDropdownItem\r\n                  key={key}\r\n                  icon={icon}\r\n                  title={item.title}\r\n                  description={item.description}\r\n                  time={item.time}\r\n                />\r\n              );\r\n            })}\r\n          </NavbarDropdown>\r\n\r\n          <NavbarLanguages />\r\n          <NavbarUser />\r\n        </Nav>\r\n      </Navbar.Collapse>\r\n    </Navbar>\r\n  );\r\n};\r\n\r\nexport default NavbarComponent;\r\n"
+        ],
+        "mappings": "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",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441569,
+      "end": 1702937441569,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441569,
+      "end": 1702937441570,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441570,
+      "end": 1702937441570,
+      "order": "normal"
+    }
+  ]
+}

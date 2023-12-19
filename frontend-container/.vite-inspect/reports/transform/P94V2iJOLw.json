@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/@restart/ui/esm/Anchor.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const _excluded = [\"onKeyDown\"];\nfunction _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }\n/* eslint-disable jsx-a11y/no-static-element-interactions */\n/* eslint-disable jsx-a11y/anchor-has-content */\n\nimport * as React from 'react';\nimport { useEventCallback } from '@restart/hooks';\nimport { useButtonProps } from './Button';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nexport function isTrivialHref(href) {\n  return !href || href.trim() === '#';\n}\n/**\n * An generic `<a>` component that covers a few A11y cases, ensuring that\n * cases where the `href` is missing or trivial like \"#\" are treated like buttons.\n */\nconst Anchor = /*#__PURE__*/React.forwardRef((_ref, ref) => {\n  let {\n      onKeyDown\n    } = _ref,\n    props = _objectWithoutPropertiesLoose(_ref, _excluded);\n  const [buttonProps] = useButtonProps(Object.assign({\n    tagName: 'a'\n  }, props));\n  const handleKeyDown = useEventCallback(e => {\n    buttonProps.onKeyDown(e);\n    onKeyDown == null ? void 0 : onKeyDown(e);\n  });\n  if (isTrivialHref(props.href) || props.role === 'button') {\n    return /*#__PURE__*/_jsx(\"a\", Object.assign({\n      ref: ref\n    }, props, buttonProps, {\n      onKeyDown: handleKeyDown\n    }));\n  }\n  return /*#__PURE__*/_jsx(\"a\", Object.assign({\n    ref: ref\n  }, props, {\n    onKeyDown: onKeyDown\n  }));\n});\nAnchor.displayName = 'Anchor';\nexport default Anchor;",
+      "start": 1702937441953,
+      "end": 1702937442021,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442021,
+      "end": 1702937442021,
+      "order": "normal"
+    }
+  ]
+}

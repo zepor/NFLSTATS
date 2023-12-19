@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/gn.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = gn\ngn.displayName = 'gn'\ngn.aliases = ['gni']\nfunction gn(Prism) {\n  // https://gn.googlesource.com/gn/+/refs/heads/main/docs/reference.md#grammar\n  Prism.languages.gn = {\n    comment: {\n      pattern: /#.*/,\n      greedy: true\n    },\n    'string-literal': {\n      pattern: /(^|[^\\\\\"])\"(?:[^\\r\\n\"\\\\]|\\\\.)*\"/,\n      lookbehind: true,\n      greedy: true,\n      inside: {\n        interpolation: {\n          pattern:\n            /((?:^|[^\\\\])(?:\\\\{2})*)\\$(?:\\{[\\s\\S]*?\\}|[a-zA-Z_]\\w*|0x[a-fA-F0-9]{2})/,\n          lookbehind: true,\n          inside: {\n            number: /^\\$0x[\\s\\S]{2}$/,\n            variable: /^\\$\\w+$/,\n            'interpolation-punctuation': {\n              pattern: /^\\$\\{|\\}$/,\n              alias: 'punctuation'\n            },\n            expression: {\n              pattern: /[\\s\\S]+/,\n              inside: null // see below\n            }\n          }\n        },\n        string: /[\\s\\S]+/\n      }\n    },\n    keyword: /\\b(?:else|if)\\b/,\n    boolean: /\\b(?:false|true)\\b/,\n    'builtin-function': {\n      // a few functions get special highlighting to improve readability\n      pattern:\n        /\\b(?:assert|defined|foreach|import|pool|print|template|tool|toolchain)(?=\\s*\\()/i,\n      alias: 'keyword'\n    },\n    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n    constant:\n      /\\b(?:current_cpu|current_os|current_toolchain|default_toolchain|host_cpu|host_os|root_build_dir|root_gen_dir|root_out_dir|target_cpu|target_gen_dir|target_os|target_out_dir)\\b/,\n    number: /-?\\b\\d+\\b/,\n    operator: /[-+!=<>]=?|&&|\\|\\|/,\n    punctuation: /[(){}[\\],.]/\n  }\n  Prism.languages.gn['string-literal'].inside['interpolation'].inside[\n    'expression'\n  ].inside = Prism.languages.gn\n  Prism.languages.gni = Prism.languages.gn\n}\n",
+      "start": 1702937444897,
+      "end": 1702937444918,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444918,
+      "end": 1702937444918,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar gn_1;\nvar hasRequiredGn;\n\nfunction requireGn () {\n\tif (hasRequiredGn) return gn_1;\n\thasRequiredGn = 1;\n\t'use strict'\n\n\tgn_1 = gn\n\tgn.displayName = 'gn'\n\tgn.aliases = ['gni']\n\tfunction gn(Prism) {\n\t  // https://gn.googlesource.com/gn/+/refs/heads/main/docs/reference.md#grammar\n\t  Prism.languages.gn = {\n\t    comment: {\n\t      pattern: /#.*/,\n\t      greedy: true\n\t    },\n\t    'string-literal': {\n\t      pattern: /(^|[^\\\\\"])\"(?:[^\\r\\n\"\\\\]|\\\\.)*\"/,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      inside: {\n\t        interpolation: {\n\t          pattern:\n\t            /((?:^|[^\\\\])(?:\\\\{2})*)\\$(?:\\{[\\s\\S]*?\\}|[a-zA-Z_]\\w*|0x[a-fA-F0-9]{2})/,\n\t          lookbehind: true,\n\t          inside: {\n\t            number: /^\\$0x[\\s\\S]{2}$/,\n\t            variable: /^\\$\\w+$/,\n\t            'interpolation-punctuation': {\n\t              pattern: /^\\$\\{|\\}$/,\n\t              alias: 'punctuation'\n\t            },\n\t            expression: {\n\t              pattern: /[\\s\\S]+/,\n\t              inside: null // see below\n\t            }\n\t          }\n\t        },\n\t        string: /[\\s\\S]+/\n\t      }\n\t    },\n\t    keyword: /\\b(?:else|if)\\b/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    'builtin-function': {\n\t      // a few functions get special highlighting to improve readability\n\t      pattern:\n\t        /\\b(?:assert|defined|foreach|import|pool|print|template|tool|toolchain)(?=\\s*\\()/i,\n\t      alias: 'keyword'\n\t    },\n\t    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n\t    constant:\n\t      /\\b(?:current_cpu|current_os|current_toolchain|default_toolchain|host_cpu|host_os|root_build_dir|root_gen_dir|root_out_dir|target_cpu|target_gen_dir|target_os|target_out_dir)\\b/,\n\t    number: /-?\\b\\d+\\b/,\n\t    operator: /[-+!=<>]=?|&&|\\|\\|/,\n\t    punctuation: /[(){}[\\],.]/\n\t  }\n\t  Prism.languages.gn['string-literal'].inside['interpolation'].inside[\n\t    'expression'\n\t  ].inside = Prism.languages.gn\n\t  Prism.languages.gni = Prism.languages.gn\n\t}\n\treturn gn_1;\n}\n\nexport { requireGn as __require };",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,KAAc,GAAG,EAAE;CACnB,EAAE,CAAC,WAAW,GAAG,IAAI;CACrB,EAAE,CAAC,OAAO,GAAG,CAAC,KAAK,CAAC;CACpB,SAAS,EAAE,CAAC,KAAK,EAAE;CACnB;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,GAAG;CACvB,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,gBAAgB,EAAE;CACtB,MAAM,OAAO,EAAE,iCAAiC;CAChD,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,aAAa,EAAE;CACvB,UAAU,OAAO;CACjB,YAAY,yEAAyE;CACrF,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,MAAM,EAAE;CAClB,YAAY,MAAM,EAAE,iBAAiB;CACrC,YAAY,QAAQ,EAAE,SAAS;CAC/B,YAAY,2BAA2B,EAAE;CACzC,cAAc,OAAO,EAAE,WAAW;CAClC,cAAc,KAAK,EAAE,aAAa;CAClC,aAAa;CACb,YAAY,UAAU,EAAE;CACxB,cAAc,OAAO,EAAE,SAAS;CAChC,cAAc,MAAM,EAAE,IAAI;CAC1B,aAAa;CACb,WAAW;CACX,SAAS;CACT,QAAQ,MAAM,EAAE,SAAS;CACzB,OAAO;CACP,KAAK;CACL,IAAI,OAAO,EAAE,iBAAiB;CAC9B,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,kBAAkB,EAAE;CACxB;CACA,MAAM,OAAO;CACb,QAAQ,kFAAkF;CAC1F,MAAM,KAAK,EAAE,SAAS;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE,uBAAuB;CACrC,IAAI,QAAQ;CACZ,MAAM,iLAAiL;CACvL,IAAI,MAAM,EAAE,WAAW;CACvB,IAAI,QAAQ,EAAE,oBAAoB;CAClC,IAAI,WAAW,EAAE,aAAa;CAC9B,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,EAAE,CAAC,gBAAgB,CAAC,CAAC,MAAM,CAAC,eAAe,CAAC,CAAC,MAAM;CACrE,IAAI,YAAY;CAChB,GAAG,CAAC,MAAM,GAAG,KAAK,CAAC,SAAS,CAAC,EAAE;CAC/B,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG,KAAK,CAAC,SAAS,CAAC,EAAE;CAC1C"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444919,
+      "end": 1702937444919,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/react/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = require('./cjs/react.production.min.js');\n} else {\n  module.exports = require('./cjs/react.development.js');\n}\n",
+      "start": 1702937435939,
+      "end": 1702937435940,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937435940,
+      "end": 1702937435940,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937435940,
+      "end": 1702937435940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937435940,
+      "end": 1702937435940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937435940,
+      "end": 1702937435940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937435940,
+      "end": 1702937435940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "\"use strict\";\nif (true) {\n  module.exports = require(\"./cjs/react.production.min.js\");\n} else {\n  module.exports = require(\"./cjs/react.development.js\");\n}\n",
+      "start": 1702937435940,
+      "end": 1702937435944,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937435944,
+      "end": 1702937435944,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __module as reactModule } from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react/index.js?commonjs-module\";\nvar react = reactModule.exports;\nimport require$$0 from \"\\u0000/home/zepor/ssweb/frontend-container/node_modules/react/cjs/react.production.min.js?commonjs-proxy\";\n\n\"use strict\";\nif (true) {\n  reactModule.exports = require$$0;\n} else {\n  module.exports = require(\"./cjs/react.development.js\");\n}\n\nvar reactExports = reactModule.exports;\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(reactExports);\nexport { reactExports as __moduleExports };",
+      "start": 1702937435947,
+      "end": 1702937436001,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;AAAA,YAAY,CAAC;AACb,IAAI,IAAI,EAAE;AACV,EAAE,mBAAc,GAAG,UAAwC,CAAC;AAC5D,CAAC;AACD;AACA"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937436001,
+      "end": 1702937436001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937436001,
+      "end": 1702937436001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937436001,
+      "end": 1702937436001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937436001,
+      "end": 1702937436001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937436001,
+      "end": 1702937436001,
+      "order": "normal"
+    }
+  ]
+}

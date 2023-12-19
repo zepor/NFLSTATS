@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Heatmap.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nconst HeatmapChart = () => {\r\n  const generateData = (count, yrange) => {\r\n    var i = 0;\r\n    var series = [];\r\n    while (i < count) {\r\n      var x = (i + 1).toString();\r\n      var y =\r\n        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;\r\n      series.push({\r\n        x: x,\r\n        y: y,\r\n      });\r\n      i++;\r\n    }\r\n    return series;\r\n  };\r\n\r\n  const data = [\r\n    {\r\n      name: \"Metric1\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric2\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric3\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric4\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric5\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric6\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric7\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric8\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric9\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    colors: [\"#008FFB\"],\r\n    xaxis: {\r\n      type: \"category\",\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Heatmap Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Heatmap is a visualization tool that employs color the way a bar chart\r\n          employs height and width in representing data.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"heatmap\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default HeatmapChart;\r\n",
+      "start": 1702937441809,
+      "end": 1702937441857,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441857,
+      "end": 1702937441857,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport Chart from \"react-apexcharts\";\nimport { Card } from \"react-bootstrap\";\nconst HeatmapChart = () => {\n  const generateData = (count, yrange) => {\n    var i = 0;\n    var series = [];\n    while (i < count) {\n      var x = (i + 1).toString();\n      var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;\n      series.push({\n        x,\n        y\n      });\n      i++;\n    }\n    return series;\n  };\n  const data = [\n    {\n      name: \"Metric1\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric2\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric3\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric4\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric5\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric6\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric7\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric8\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    },\n    {\n      name: \"Metric9\",\n      data: generateData(20, {\n        min: 0,\n        max: 90\n      })\n    }\n  ];\n  const options = {\n    dataLabels: {\n      enabled: false\n    },\n    colors: [\"#008FFB\"],\n    xaxis: {\n      type: \"category\"\n    }\n  };\n  return /* @__PURE__ */ jsxs(Card, { children: [\n    /* @__PURE__ */ jsxs(Card.Header, { children: [\n      /* @__PURE__ */ jsx(Card.Title, { children: \"Heatmap Chart\" }),\n      /* @__PURE__ */ jsx(\"h6\", { className: \"card-subtitle text-muted\", children: \"Heatmap is a visualization tool that employs color the way a bar chart employs height and width in representing data.\" })\n    ] }),\n    /* @__PURE__ */ jsx(Card.Body, { children: /* @__PURE__ */ jsx(\"div\", { className: \"chart\", children: /* @__PURE__ */ jsx(Chart, { options, series: data, type: \"heatmap\", height: \"350\" }) }) })\n  ] });\n};\nexport default HeatmapChart;\n",
+      "start": 1702937441857,
+      "end": 1702937441860,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/pages/charts/ApexCharts/Heatmap.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport Chart from \"react-apexcharts\";\r\nimport { Card } from \"react-bootstrap\";\r\n\r\nconst HeatmapChart = () => {\r\n  const generateData = (count, yrange) => {\r\n    var i = 0;\r\n    var series = [];\r\n    while (i < count) {\r\n      var x = (i + 1).toString();\r\n      var y =\r\n        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;\r\n      series.push({\r\n        x: x,\r\n        y: y,\r\n      });\r\n      i++;\r\n    }\r\n    return series;\r\n  };\r\n\r\n  const data = [\r\n    {\r\n      name: \"Metric1\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric2\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric3\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric4\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric5\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric6\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric7\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric8\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n    {\r\n      name: \"Metric9\",\r\n      data: generateData(20, {\r\n        min: 0,\r\n        max: 90,\r\n      }),\r\n    },\r\n  ];\r\n\r\n  const options = {\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    colors: [\"#008FFB\"],\r\n    xaxis: {\r\n      type: \"category\",\r\n    },\r\n  };\r\n\r\n  return (\r\n    <Card>\r\n      <Card.Header>\r\n        <Card.Title>Heatmap Chart</Card.Title>\r\n        <h6 className=\"card-subtitle text-muted\">\r\n          Heatmap is a visualization tool that employs color the way a bar chart\r\n          employs height and width in representing data.\r\n        </h6>\r\n      </Card.Header>\r\n      <Card.Body>\r\n        <div className=\"chart\">\r\n          <Chart options={options} series={data} type=\"heatmap\" height=\"350\" />\r\n        </div>\r\n      </Card.Body>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default HeatmapChart;\r\n"
+        ],
+        "mappings": "AAmGM,SACE,KADF;AAnGN,OAAO,WAAW;AAClB,OAAO,WAAW;AAClB,SAAS,YAAY;AAErB,MAAM,eAAe,MAAM;AACzB,QAAM,eAAe,CAAC,OAAO,WAAW;AACtC,QAAI,IAAI;AACR,QAAI,SAAS,CAAC;AACd,WAAO,IAAI,OAAO;AAChB,UAAI,KAAK,IAAI,GAAG,SAAS;AACzB,UAAI,IACF,KAAK,MAAM,KAAK,OAAO,KAAK,OAAO,MAAM,OAAO,MAAM,EAAE,IAAI,OAAO;AACrE,aAAO,KAAK;AAAA,QACV;AAAA,QACA;AAAA,MACF,CAAC;AACD;AAAA,IACF;AACA,WAAO;AAAA,EACT;AAEA,QAAM,OAAO;AAAA,IACX;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,MAAM,aAAa,IAAI;AAAA,QACrB,KAAK;AAAA,QACL,KAAK;AAAA,MACP,CAAC;AAAA,IACH;AAAA,EACF;AAEA,QAAM,UAAU;AAAA,IACd,YAAY;AAAA,MACV,SAAS;AAAA,IACX;AAAA,IACA,QAAQ,CAAC,SAAS;AAAA,IAClB,OAAO;AAAA,MACL,MAAM;AAAA,IACR;AAAA,EACF;AAEA,SACE,qBAAC,QACC;AAAA,yBAAC,KAAK,QAAL,EACC;AAAA,0BAAC,KAAK,OAAL,EAAW,2BAAa;AAAA,MACzB,oBAAC,QAAG,WAAU,4BAA2B,mIAGzC;AAAA,OACF;AAAA,IACA,oBAAC,KAAK,MAAL,EACC,8BAAC,SAAI,WAAU,SACb,8BAAC,SAAM,SAAkB,QAAQ,MAAM,MAAK,WAAU,QAAO,OAAM,GACrE,GACF;AAAA,KACF;AAEJ;AAEA,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441860,
+      "end": 1702937441860,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441861,
+      "end": 1702937441861,
+      "order": "normal"
+    }
+  ]
+}

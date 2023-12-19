@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/graphql/type/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export {\n  // Predicate\n  isSchema, // Assertion\n  assertSchema, // GraphQL Schema definition\n  GraphQLSchema,\n} from './schema.mjs';\nexport {\n  resolveObjMapThunk,\n  resolveReadonlyArrayThunk, // Predicates\n  isType,\n  isScalarType,\n  isObjectType,\n  isInterfaceType,\n  isUnionType,\n  isEnumType,\n  isInputObjectType,\n  isListType,\n  isNonNullType,\n  isInputType,\n  isOutputType,\n  isLeafType,\n  isCompositeType,\n  isAbstractType,\n  isWrappingType,\n  isNullableType,\n  isNamedType,\n  isRequiredArgument,\n  isRequiredInputField, // Assertions\n  assertType,\n  assertScalarType,\n  assertObjectType,\n  assertInterfaceType,\n  assertUnionType,\n  assertEnumType,\n  assertInputObjectType,\n  assertListType,\n  assertNonNullType,\n  assertInputType,\n  assertOutputType,\n  assertLeafType,\n  assertCompositeType,\n  assertAbstractType,\n  assertWrappingType,\n  assertNullableType,\n  assertNamedType, // Un-modifiers\n  getNullableType,\n  getNamedType, // Definitions\n  GraphQLScalarType,\n  GraphQLObjectType,\n  GraphQLInterfaceType,\n  GraphQLUnionType,\n  GraphQLEnumType,\n  GraphQLInputObjectType, // Type Wrappers\n  GraphQLList,\n  GraphQLNonNull,\n} from './definition.mjs';\nexport {\n  // Predicate\n  isDirective, // Assertion\n  assertDirective, // Directives Definition\n  GraphQLDirective, // Built-in Directives defined by the Spec\n  isSpecifiedDirective,\n  specifiedDirectives,\n  GraphQLIncludeDirective,\n  GraphQLSkipDirective,\n  GraphQLDeprecatedDirective,\n  GraphQLSpecifiedByDirective, // Constant Deprecation Reason\n  DEFAULT_DEPRECATION_REASON,\n} from './directives.mjs';\n// Common built-in scalar instances.\nexport {\n  // Predicate\n  isSpecifiedScalarType, // Standard GraphQL Scalars\n  specifiedScalarTypes,\n  GraphQLInt,\n  GraphQLFloat,\n  GraphQLString,\n  GraphQLBoolean,\n  GraphQLID, // Int boundaries constants\n  GRAPHQL_MAX_INT,\n  GRAPHQL_MIN_INT,\n} from './scalars.mjs';\nexport {\n  // Predicate\n  isIntrospectionType, // GraphQL Types for introspection.\n  introspectionTypes,\n  __Schema,\n  __Directive,\n  __DirectiveLocation,\n  __Type,\n  __Field,\n  __InputValue,\n  __EnumValue,\n  __TypeKind, // \"Enum\" of Type Kinds\n  TypeKind, // Meta-field definitions.\n  SchemaMetaFieldDef,\n  TypeMetaFieldDef,\n  TypeNameMetaFieldDef,\n} from './introspection.mjs'; // Validate GraphQL schema.\n\nexport { validateSchema, assertValidSchema } from './validate.mjs'; // Upholds the spec rules about naming.\n\nexport { assertName, assertEnumValueName } from './assertName.mjs';\n",
+      "start": 1702937441920,
+      "end": 1702937441953,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441953,
+      "end": 1702937441953,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/index.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport { BrowserRouter } from \"react-router-dom\";\r\nimport { createRoot } from \"react-dom/client\";\r\nimport App from \"./App\";\r\nimport { ApolloProvider } from \"@apollo/client\";\r\nimport client from \"./apolloClient\";\r\nimport ErrorBoundary from \"./components/ErrorBoundary\";\r\nconst container = document.getElementById(\"root\");\r\nconst root = createRoot(container);\r\n//console.log(\"Before rendering App\");\r\nroot.render(\r\n  <React.StrictMode>\r\n    <ErrorBoundary>\r\n      <BrowserRouter>\r\n        <ApolloProvider client={client}>\r\n          <App />\r\n        </ApolloProvider>\r\n      </BrowserRouter>\r\n    </ErrorBoundary>\r\n  </React.StrictMode>,\r\n);\r\n",
+      "start": 1702937435930,
+      "end": 1702937435931,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937435931,
+      "end": 1702937435931,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937435931,
+      "end": 1702937435931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { BrowserRouter } from \"react-router-dom\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\nimport { ApolloProvider } from \"@apollo/client\";\nimport client from \"./apolloClient\";\nimport ErrorBoundary from \"./components/ErrorBoundary\";\nconst container = document.getElementById(\"root\");\nconst root = createRoot(container);\nroot.render(\n  /* @__PURE__ */ jsx(React.StrictMode, { children: /* @__PURE__ */ jsx(ErrorBoundary, { children: /* @__PURE__ */ jsx(BrowserRouter, { children: /* @__PURE__ */ jsx(ApolloProvider, { client, children: /* @__PURE__ */ jsx(App, {}) }) }) }) })\n);\n",
+      "start": 1702937435931,
+      "end": 1702937435935,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/index.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport { BrowserRouter } from \"react-router-dom\";\r\nimport { createRoot } from \"react-dom/client\";\r\nimport App from \"./App\";\r\nimport { ApolloProvider } from \"@apollo/client\";\r\nimport client from \"./apolloClient\";\r\nimport ErrorBoundary from \"./components/ErrorBoundary\";\r\nconst container = document.getElementById(\"root\");\r\nconst root = createRoot(container);\r\n//console.log(\"Before rendering App\");\r\nroot.render(\r\n  <React.StrictMode>\r\n    <ErrorBoundary>\r\n      <BrowserRouter>\r\n        <ApolloProvider client={client}>\r\n          <App />\r\n        </ApolloProvider>\r\n      </BrowserRouter>\r\n    </ErrorBoundary>\r\n  </React.StrictMode>,\r\n);\r\n"
+        ],
+        "mappings": "AAeU;AAfV,OAAO,WAAW;AAClB,SAAS,qBAAqB;AAC9B,SAAS,kBAAkB;AAC3B,OAAO,SAAS;AAChB,SAAS,sBAAsB;AAC/B,OAAO,YAAY;AACnB,OAAO,mBAAmB;AAC1B,MAAM,YAAY,SAAS,eAAe,MAAM;AAChD,MAAM,OAAO,WAAW,SAAS;AAEjC,KAAK;AAAA,EACH,oBAAC,MAAM,YAAN,EACC,8BAAC,iBACC,8BAAC,iBACC,8BAAC,kBAAe,QACd,8BAAC,OAAI,GACP,GACF,GACF,GACF;AACF;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937435935,
+      "end": 1702937435935,
+      "order": "normal"
+    }
+  ]
+}

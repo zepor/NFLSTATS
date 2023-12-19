@@ -31,7 +31,8 @@ import {
   faClipboardList,
   faHistory,
   faChartBar,
-  faDesktop} from "@fortawesome/free-solid-svg-icons";
+  faDesktop,
+} from "@fortawesome/free-solid-svg-icons";
 
 import {
   SIDEBAR_POSITION,
@@ -39,7 +40,7 @@ import {
   LAYOUT,
   THEME,
 } from "../../constants";
-import useTheme from "../../hooks/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 import useSidebar from "../../hooks/useSidebar";
 import useLayout from "../../hooks/useLayout";
 
@@ -85,66 +86,40 @@ import screenshotDashboard6 from "../../assets/img/photos/screenshot-dashboard-6
 //import brandESLint from "../../assets/img/brands/eslint.svg";
 //import brandJavaScript from "../../assets/img/brands/javascript.svg";
 //import brandTypeScript from "../../assets/img/brands/typescript.svg";
-import { ReactComponent as LOFLogo } from "../../assets/img/logo.svg";
-import { ReactComponent as FBIcon } from "../../assets/img/brands/faFacebook.svg";
-import { ReactComponent as INSTAIcon } from "../../assets/img/brands/faInstagram.svg";
-import { ReactComponent as TWIcon } from "../../assets/img/brands/faTwitter.svg";
-import { ReactComponent as LINKIcon } from "../../assets/img/brands/faLinkedin.svg";
+import logo from "../../assets/img/logo.svg";
+import FBIcon from "../../assets/img/brands/faFacebook.svg";
+import INSTAIcon from "../../assets/img/brands/faInstagram.svg";
+import TWIcon from "../../assets/img/brands/faTwitter.svg";
+import LINKIcon from "../../assets/img/brands/faLinkedin.svg";
 
 import TeamSelector from "../../components/TeamSelection";
 
 const Navigation = () => {
   return (
-    <Container className="bg-primary-subtle py-3 mb-4">
-      <Navbar
-        expand="md"
-        className="d-flex flex-wrap align-items-center justify-content-between"
-      >
-        <Navbar.Brand href="/" className="landing-brand">
-          <LOFLogo style={{ height: "40px", marginRight: "10px" }} />
-          <Button variant="inverse" size="lg" className="text-lg">
-            LoveofFootball.io
-          </Button>
+    <Navbar expand="lg" bg="dark" variant="dark" className="py-3">
+      <Container>
+        <Navbar.Brand href="/">
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="LoveofFootball.io Logo"
+          />
+          LoveofFootball.io
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link
-              href="/analytics"
-              className="nav-item-ghost text-lg px-lg-3 border border-secondary bg-inverse"
-            >
-              Analytics
-            </Nav.Link>
-            <Nav.Link
-              href="/fantasy-draft"
-              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
-            >
-              Fantasy Draft
-            </Nav.Link>
-            <Nav.Link
-              href="/predictions"
-              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
-            >
-              Predictions
-            </Nav.Link>
-            <Nav.Link
-              href="/player-comparison"
-              className="nav-item-ghost text-lg px-lg-3 border border-secondary"
-            >
-              Player Comparison
-            </Nav.Link>
-            <Nav.Link href="/about" className="nav-item-ghost text-lg px-lg-3">
-              Abo ut Us
-            </Nav.Link>
-            <Nav.Link
-              href="mailto:support@loveoffootball.io"
-              className="nav-item-ghost text-lg px-lg-3"
-            >
-              Support
-            </Nav.Link>
+            <Nav.Link href="/analytics">Analytics</Nav.Link>
+            <Nav.Link href="/fantasy-draft">Fantasy Draft</Nav.Link>
+            <Nav.Link href="/predictions">Predictions</Nav.Link>
+            <Nav.Link href="/player-comparison">Player Comparison</Nav.Link>
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="mailto:support@loveoffootball.io">Support</Nav.Link>
           </Nav>
-          <div className="btn-group">
-            <Link to="/auth/sign-in" className="btn btn-primary">
+          <div className="auth-buttons ms-3">
+            <Link to="/auth/sign-in" className="btn btn-outline-light me-2">
               Sign In
             </Link>
             <Link to="/auth/sign-up" className="btn btn-success">
@@ -152,8 +127,8 @@ const Navigation = () => {
             </Link>
           </div>
         </Navbar.Collapse>
-      </Navbar>
-    </Container>
+      </Container>
+    </Navbar>
   );
 };
 
@@ -683,7 +658,10 @@ const Faq = () => {
             <Accordion activeKey={activeKey}>
               <Card className="border mb-3">
                 <Card.Header
-                  className="cursor-pointer" onClick={() => setActiveKey("0")}><h6 className="mb-0">How do I access player statistics?</h6>
+                  className="cursor-pointer"
+                  onClick={() => setActiveKey("0")}
+                >
+                  <h6 className="mb-0">How do I access player statistics?</h6>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body className="py-3">
@@ -782,7 +760,7 @@ const Footer = () => (
           <Button
             variant="success"
             size="lg"
-            href="/signup"
+            href="/auth/signup"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-n1 btn-pill"
@@ -790,11 +768,11 @@ const Footer = () => (
             Get LoveofFootball.io
           </Button>
           {/* Add social media links or newsletter signup here */}
-          <div>            
-            <TWIcon style={{ width: '20px', height: '20px' }} />
-            <FBIcon style={{ width: '20px', height: '20px' }} />
-            <INSTAIcon style={{ width: '20px', height: '20px' }} />
-            <LINKIcon style={{ width: '20px', height: '20px' }} />
+          <div>
+            <img src={FBIcon} alt="Facebook" className="social-icon" />
+            <img src={INSTAIcon} alt="Instagram" className="social-icon" />
+            <img src={TWIcon} alt="Twitter" className="social-icon" />
+            <img src={LINKIcon} alt="Linkedin" className="social-icon" />
           </div>
         </Col>
       </Row>
@@ -812,15 +790,12 @@ const Landing = () => {
     setPosition(SIDEBAR_POSITION.LEFT);
     setBehavior(SIDEBAR_BEHAVIOR.STICKY);
     setLayout(LAYOUT.FLUID);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <React.Fragment>
       <Navigation />
       <Intro />
-
       <section className="team-selector-section">
         <TeamSelector />
       </section>

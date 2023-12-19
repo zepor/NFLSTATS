@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/lolcode.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = lolcode\nlolcode.displayName = 'lolcode'\nlolcode.aliases = []\nfunction lolcode(Prism) {\n  Prism.languages.lolcode = {\n    comment: [/\\bOBTW\\s[\\s\\S]*?\\sTLDR\\b/, /\\bBTW.+/],\n    string: {\n      pattern: /\"(?::.|[^\":])*\"/,\n      inside: {\n        variable: /:\\{[^}]+\\}/,\n        symbol: [/:\\([a-f\\d]+\\)/i, /:\\[[^\\]]+\\]/, /:[)>o\":]/]\n      },\n      greedy: true\n    },\n    number: /(?:\\B-)?(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)/,\n    symbol: {\n      pattern: /(^|\\s)(?:A )?(?:BUKKIT|NOOB|NUMBAR|NUMBR|TROOF|YARN)(?=\\s|,|$)/,\n      lookbehind: true,\n      inside: {\n        keyword: /A(?=\\s)/\n      }\n    },\n    label: {\n      pattern: /((?:^|\\s)(?:IM IN YR|IM OUTTA YR) )[a-zA-Z]\\w*/,\n      lookbehind: true,\n      alias: 'string'\n    },\n    function: {\n      pattern: /((?:^|\\s)(?:HOW IZ I|I IZ|IZ) )[a-zA-Z]\\w*/,\n      lookbehind: true\n    },\n    keyword: [\n      {\n        pattern:\n          /(^|\\s)(?:AN|FOUND YR|GIMMEH|GTFO|HAI|HAS A|HOW IZ I|I HAS A|I IZ|IF U SAY SO|IM IN YR|IM OUTTA YR|IS NOW(?: A)?|ITZ(?: A)?|IZ|KTHX|KTHXBYE|LIEK(?: A)?|MAEK|MEBBE|MKAY|NERFIN|NO WAI|O HAI IM|O RLY\\?|OIC|OMG|OMGWTF|R|SMOOSH|SRS|TIL|UPPIN|VISIBLE|WILE|WTF\\?|YA RLY|YR)(?=\\s|,|$)/,\n        lookbehind: true\n      },\n      /'Z(?=\\s|,|$)/\n    ],\n    boolean: {\n      pattern: /(^|\\s)(?:FAIL|WIN)(?=\\s|,|$)/,\n      lookbehind: true\n    },\n    variable: {\n      pattern: /(^|\\s)IT(?=\\s|,|$)/,\n      lookbehind: true\n    },\n    operator: {\n      pattern:\n        /(^|\\s)(?:NOT|BOTH SAEM|DIFFRINT|(?:ALL|ANY|BIGGR|BOTH|DIFF|EITHER|MOD|PRODUKT|QUOSHUNT|SMALLR|SUM|WON) OF)(?=\\s|,|$)/,\n      lookbehind: true\n    },\n    punctuation: /\\.{3}|…|,|!/\n  }\n}\n",
+      "start": 1702937444958,
+      "end": 1702937444977,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar lolcode_1;\nvar hasRequiredLolcode;\n\nfunction requireLolcode () {\n\tif (hasRequiredLolcode) return lolcode_1;\n\thasRequiredLolcode = 1;\n\t'use strict'\n\n\tlolcode_1 = lolcode\n\tlolcode.displayName = 'lolcode'\n\tlolcode.aliases = []\n\tfunction lolcode(Prism) {\n\t  Prism.languages.lolcode = {\n\t    comment: [/\\bOBTW\\s[\\s\\S]*?\\sTLDR\\b/, /\\bBTW.+/],\n\t    string: {\n\t      pattern: /\"(?::.|[^\":])*\"/,\n\t      inside: {\n\t        variable: /:\\{[^}]+\\}/,\n\t        symbol: [/:\\([a-f\\d]+\\)/i, /:\\[[^\\]]+\\]/, /:[)>o\":]/]\n\t      },\n\t      greedy: true\n\t    },\n\t    number: /(?:\\B-)?(?:\\b\\d+(?:\\.\\d*)?|\\B\\.\\d+)/,\n\t    symbol: {\n\t      pattern: /(^|\\s)(?:A )?(?:BUKKIT|NOOB|NUMBAR|NUMBR|TROOF|YARN)(?=\\s|,|$)/,\n\t      lookbehind: true,\n\t      inside: {\n\t        keyword: /A(?=\\s)/\n\t      }\n\t    },\n\t    label: {\n\t      pattern: /((?:^|\\s)(?:IM IN YR|IM OUTTA YR) )[a-zA-Z]\\w*/,\n\t      lookbehind: true,\n\t      alias: 'string'\n\t    },\n\t    function: {\n\t      pattern: /((?:^|\\s)(?:HOW IZ I|I IZ|IZ) )[a-zA-Z]\\w*/,\n\t      lookbehind: true\n\t    },\n\t    keyword: [\n\t      {\n\t        pattern:\n\t          /(^|\\s)(?:AN|FOUND YR|GIMMEH|GTFO|HAI|HAS A|HOW IZ I|I HAS A|I IZ|IF U SAY SO|IM IN YR|IM OUTTA YR|IS NOW(?: A)?|ITZ(?: A)?|IZ|KTHX|KTHXBYE|LIEK(?: A)?|MAEK|MEBBE|MKAY|NERFIN|NO WAI|O HAI IM|O RLY\\?|OIC|OMG|OMGWTF|R|SMOOSH|SRS|TIL|UPPIN|VISIBLE|WILE|WTF\\?|YA RLY|YR)(?=\\s|,|$)/,\n\t        lookbehind: true\n\t      },\n\t      /'Z(?=\\s|,|$)/\n\t    ],\n\t    boolean: {\n\t      pattern: /(^|\\s)(?:FAIL|WIN)(?=\\s|,|$)/,\n\t      lookbehind: true\n\t    },\n\t    variable: {\n\t      pattern: /(^|\\s)IT(?=\\s|,|$)/,\n\t      lookbehind: true\n\t    },\n\t    operator: {\n\t      pattern:\n\t        /(^|\\s)(?:NOT|BOTH SAEM|DIFFRINT|(?:ALL|ANY|BIGGR|BOTH|DIFF|EITHER|MOD|PRODUKT|QUOSHUNT|SMALLR|SUM|WON) OF)(?=\\s|,|$)/,\n\t      lookbehind: true\n\t    },\n\t    punctuation: /\\.{3}|…|,|!/\n\t  }\n\t}\n\treturn lolcode_1;\n}\n\nexport { requireLolcode as __require };",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,UAAc,GAAG,OAAO;CACxB,OAAO,CAAC,WAAW,GAAG,SAAS;CAC/B,OAAO,CAAC,OAAO,GAAG,EAAE;CACpB,SAAS,OAAO,CAAC,KAAK,EAAE;CACxB,EAAE,KAAK,CAAC,SAAS,CAAC,OAAO,GAAG;CAC5B,IAAI,OAAO,EAAE,CAAC,0BAA0B,EAAE,SAAS,CAAC;CACpD,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,iBAAiB;CAChC,MAAM,MAAM,EAAE;CACd,QAAQ,QAAQ,EAAE,YAAY;CAC9B,QAAQ,MAAM,EAAE,CAAC,gBAAgB,EAAE,aAAa,EAAE,UAAU,CAAC;CAC7D,OAAO;CACP,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE,qCAAqC;CACjD,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO,EAAE,gEAAgE;CAC/E,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE;CACd,QAAQ,OAAO,EAAE,SAAS;CAC1B,OAAO;CACP,KAAK;CACL,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,gDAAgD;CAC/D,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,QAAQ;CACrB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,4CAA4C;CAC3D,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM;CACN,QAAQ,OAAO;CACf,UAAU,qRAAqR;CAC/R,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,cAAc;CACpB,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,8BAA8B;CAC7C,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO,EAAE,oBAAoB;CACnC,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,QAAQ,EAAE;CACd,MAAM,OAAO;CACb,QAAQ,sHAAsH;CAC9H,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,WAAW,EAAE,aAAa;CAC9B,GAAG;CACH"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444977,
+      "end": 1702937444977,
+      "order": "normal"
+    }
+  ]
+}

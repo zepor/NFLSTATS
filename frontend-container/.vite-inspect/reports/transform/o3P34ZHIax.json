@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/highlight.js/lib/languages/go.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\nLanguage: Go\nAuthor: Stephan Kountso aka StepLg <steplg@gmail.com>\nContributors: Evgeny Stepanischev <imbolk@gmail.com>\nDescription: Google go language (golang). For info about language\nWebsite: http://golang.org/\nCategory: common, system\n*/\n\nfunction go(hljs) {\n  const GO_KEYWORDS = {\n    keyword:\n      'break default func interface select case map struct chan else goto package switch ' +\n      'const fallthrough if range type continue for import return var go defer ' +\n      'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +\n      'uint16 uint32 uint64 int uint uintptr rune',\n    literal:\n       'true false iota nil',\n    built_in:\n      'append cap close complex copy imag len make new panic print println real recover delete'\n  };\n  return {\n    name: 'Go',\n    aliases: ['golang'],\n    keywords: GO_KEYWORDS,\n    illegal: '</',\n    contains: [\n      hljs.C_LINE_COMMENT_MODE,\n      hljs.C_BLOCK_COMMENT_MODE,\n      {\n        className: 'string',\n        variants: [\n          hljs.QUOTE_STRING_MODE,\n          hljs.APOS_STRING_MODE,\n          {\n            begin: '`',\n            end: '`'\n          }\n        ]\n      },\n      {\n        className: 'number',\n        variants: [\n          {\n            begin: hljs.C_NUMBER_RE + '[i]',\n            relevance: 1\n          },\n          hljs.C_NUMBER_MODE\n        ]\n      },\n      {\n        begin: /:=/ // relevance booster\n      },\n      {\n        className: 'function',\n        beginKeywords: 'func',\n        end: '\\\\s*(\\\\{|$)',\n        excludeEnd: true,\n        contains: [\n          hljs.TITLE_MODE,\n          {\n            className: 'params',\n            begin: /\\(/,\n            end: /\\)/,\n            keywords: GO_KEYWORDS,\n            illegal: /[\"']/\n          }\n        ]\n      }\n    ]\n  };\n}\n\nmodule.exports = go;\n",
+      "start": 1702937444328,
+      "end": 1702937444374,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\nLanguage: Go\nAuthor: Stephan Kountso aka StepLg <steplg@gmail.com>\nContributors: Evgeny Stepanischev <imbolk@gmail.com>\nDescription: Google go language (golang). For info about language\nWebsite: http://golang.org/\nCategory: common, system\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar go_1;\nvar hasRequiredGo;\n\nfunction requireGo () {\n\tif (hasRequiredGo) return go_1;\n\thasRequiredGo = 1;\n\tfunction go(hljs) {\n\t  const GO_KEYWORDS = {\n\t    keyword:\n\t      'break default func interface select case map struct chan else goto package switch ' +\n\t      'const fallthrough if range type continue for import return var go defer ' +\n\t      'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +\n\t      'uint16 uint32 uint64 int uint uintptr rune',\n\t    literal:\n\t       'true false iota nil',\n\t    built_in:\n\t      'append cap close complex copy imag len make new panic print println real recover delete'\n\t  };\n\t  return {\n\t    name: 'Go',\n\t    aliases: ['golang'],\n\t    keywords: GO_KEYWORDS,\n\t    illegal: '</',\n\t    contains: [\n\t      hljs.C_LINE_COMMENT_MODE,\n\t      hljs.C_BLOCK_COMMENT_MODE,\n\t      {\n\t        className: 'string',\n\t        variants: [\n\t          hljs.QUOTE_STRING_MODE,\n\t          hljs.APOS_STRING_MODE,\n\t          {\n\t            begin: '`',\n\t            end: '`'\n\t          }\n\t        ]\n\t      },\n\t      {\n\t        className: 'number',\n\t        variants: [\n\t          {\n\t            begin: hljs.C_NUMBER_RE + '[i]',\n\t            relevance: 1\n\t          },\n\t          hljs.C_NUMBER_MODE\n\t        ]\n\t      },\n\t      {\n\t        begin: /:=/ // relevance booster\n\t      },\n\t      {\n\t        className: 'function',\n\t        beginKeywords: 'func',\n\t        end: '\\\\s*(\\\\{|$)',\n\t        excludeEnd: true,\n\t        contains: [\n\t          hljs.TITLE_MODE,\n\t          {\n\t            className: 'params',\n\t            begin: /\\(/,\n\t            end: /\\)/,\n\t            keywords: GO_KEYWORDS,\n\t            illegal: /[\"']/\n\t          }\n\t        ]\n\t      }\n\t    ]\n\t  };\n\t}\n\n\tgo_1 = go;\n\treturn go_1;\n}\n\nexport { requireGo as __require };",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;CASA,SAAS,EAAE,CAAC,IAAI,EAAE;CAClB,EAAE,MAAM,WAAW,GAAG;CACtB,IAAI,OAAO;CACX,MAAM,oFAAoF;CAC1F,MAAM,0EAA0E;CAChF,MAAM,qFAAqF;CAC3F,MAAM,4CAA4C;CAClD,IAAI,OAAO;CACX,OAAO,qBAAqB;CAC5B,IAAI,QAAQ;CACZ,MAAM,yFAAyF;CAC/F,GAAG,CAAC;CACJ,EAAE,OAAO;CACT,IAAI,IAAI,EAAE,IAAI;CACd,IAAI,OAAO,EAAE,CAAC,QAAQ,CAAC;CACvB,IAAI,QAAQ,EAAE,WAAW;CACzB,IAAI,OAAO,EAAE,IAAI;CACjB,IAAI,QAAQ,EAAE;CACd,MAAM,IAAI,CAAC,mBAAmB;CAC9B,MAAM,IAAI,CAAC,oBAAoB;CAC/B,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,QAAQ,EAAE;CAClB,UAAU,IAAI,CAAC,iBAAiB;CAChC,UAAU,IAAI,CAAC,gBAAgB;CAC/B,UAAU;CACV,YAAY,KAAK,EAAE,GAAG;CACtB,YAAY,GAAG,EAAE,GAAG;CACpB,WAAW;CACX,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,QAAQ;CAC3B,QAAQ,QAAQ,EAAE;CAClB,UAAU;CACV,YAAY,KAAK,EAAE,IAAI,CAAC,WAAW,GAAG,KAAK;CAC3C,YAAY,SAAS,EAAE,CAAC;CACxB,WAAW;CACX,UAAU,IAAI,CAAC,aAAa;CAC5B,SAAS;CACT,OAAO;CACP,MAAM;CACN,QAAQ,KAAK,EAAE,IAAI;CACnB,OAAO;CACP,MAAM;CACN,QAAQ,SAAS,EAAE,UAAU;CAC7B,QAAQ,aAAa,EAAE,MAAM;CAC7B,QAAQ,GAAG,EAAE,aAAa;CAC1B,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,QAAQ,EAAE;CAClB,UAAU,IAAI,CAAC,UAAU;CACzB,UAAU;CACV,YAAY,SAAS,EAAE,QAAQ;CAC/B,YAAY,KAAK,EAAE,IAAI;CACvB,YAAY,GAAG,EAAE,IAAI;CACrB,YAAY,QAAQ,EAAE,WAAW;CACjC,YAAY,OAAO,EAAE,MAAM;CAC3B,WAAW;CACX,SAAS;CACT,OAAO;CACP,KAAK;CACL,GAAG,CAAC;CACJ,CAAC;AACD;AACA,KAAc,GAAG,EAAE"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444374,
+      "end": 1702937444374,
+      "order": "normal"
+    }
+  ]
+}

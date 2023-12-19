@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/java.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = java\njava.displayName = 'java'\njava.aliases = []\nfunction java(Prism) {\n  ;(function (Prism) {\n    var keywords =\n      /\\b(?:abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|exports|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|module|native|new|non-sealed|null|open|opens|package|permits|private|protected|provides|public|record|requires|return|sealed|short|static|strictfp|super|switch|synchronized|this|throw|throws|to|transient|transitive|try|uses|var|void|volatile|while|with|yield)\\b/ // full package (optional) + parent classes (optional)\n    var classNamePrefix = /(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*/\n      .source // based on the java naming conventions\n    var className = {\n      pattern: RegExp(classNamePrefix + /[A-Z](?:[\\d_A-Z]*[a-z]\\w*)?\\b/.source),\n      lookbehind: true,\n      inside: {\n        namespace: {\n          pattern: /^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?/,\n          inside: {\n            punctuation: /\\./\n          }\n        },\n        punctuation: /\\./\n      }\n    }\n    Prism.languages.java = Prism.languages.extend('clike', {\n      string: {\n        pattern: /(^|[^\\\\])\"(?:\\\\.|[^\"\\\\\\r\\n])*\"/,\n        lookbehind: true,\n        greedy: true\n      },\n      'class-name': [\n        className,\n        {\n          // variables and parameters\n          // this to support class names (or generic parameters) which do not contain a lower case letter (also works for methods)\n          pattern: RegExp(\n            classNamePrefix + /[A-Z]\\w*(?=\\s+\\w+\\s*[;,=()])/.source\n          ),\n          lookbehind: true,\n          inside: className.inside\n        }\n      ],\n      keyword: keywords,\n      function: [\n        Prism.languages.clike.function,\n        {\n          pattern: /(::\\s*)[a-z_]\\w*/,\n          lookbehind: true\n        }\n      ],\n      number:\n        /\\b0b[01][01_]*L?\\b|\\b0x(?:\\.[\\da-f_p+-]+|[\\da-f_]+(?:\\.[\\da-f_p+-]+)?)\\b|(?:\\b\\d[\\d_]*(?:\\.[\\d_]*)?|\\B\\.\\d[\\d_]*)(?:e[+-]?\\d[\\d_]*)?[dfl]?/i,\n      operator: {\n        pattern:\n          /(^|[^.])(?:<<=?|>>>?=?|->|--|\\+\\+|&&|\\|\\||::|[?:~]|[-+*/%&|^!=<>]=?)/m,\n        lookbehind: true\n      }\n    })\n    Prism.languages.insertBefore('java', 'string', {\n      'triple-quoted-string': {\n        // http://openjdk.java.net/jeps/355#Description\n        pattern: /\"\"\"[ \\t]*[\\r\\n](?:(?:\"|\"\")?(?:\\\\.|[^\"\\\\]))*\"\"\"/,\n        greedy: true,\n        alias: 'string'\n      },\n      char: {\n        pattern: /'(?:\\\\.|[^'\\\\\\r\\n]){1,6}'/,\n        greedy: true\n      }\n    })\n    Prism.languages.insertBefore('java', 'class-name', {\n      annotation: {\n        pattern: /(^|[^.])@\\w+(?:\\s*\\.\\s*\\w+)*/,\n        lookbehind: true,\n        alias: 'punctuation'\n      },\n      generics: {\n        pattern:\n          /<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&))*>)*>)*>)*>/,\n        inside: {\n          'class-name': className,\n          keyword: keywords,\n          punctuation: /[<>(),.:]/,\n          operator: /[?&|]/\n        }\n      },\n      namespace: {\n        pattern: RegExp(\n          /(\\b(?:exports|import(?:\\s+static)?|module|open|opens|package|provides|requires|to|transitive|uses|with)\\s+)(?!<keyword>)[a-z]\\w*(?:\\.[a-z]\\w*)*\\.?/.source.replace(\n            /<keyword>/g,\n            function () {\n              return keywords.source\n            }\n          )\n        ),\n        lookbehind: true,\n        inside: {\n          punctuation: /\\./\n        }\n      }\n    })\n  })(Prism)\n}\n",
+      "start": 1702937444923,
+      "end": 1702937444942,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444942,
+      "end": 1702937444942,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar java_1;\nvar hasRequiredJava;\n\nfunction requireJava () {\n\tif (hasRequiredJava) return java_1;\n\thasRequiredJava = 1;\n\t'use strict'\n\n\tjava_1 = java\n\tjava.displayName = 'java'\n\tjava.aliases = []\n\tfunction java(Prism) {\n\t  ;(function (Prism) {\n\t    var keywords =\n\t      /\\b(?:abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|exports|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|module|native|new|non-sealed|null|open|opens|package|permits|private|protected|provides|public|record|requires|return|sealed|short|static|strictfp|super|switch|synchronized|this|throw|throws|to|transient|transitive|try|uses|var|void|volatile|while|with|yield)\\b/ // full package (optional) + parent classes (optional)\n\t    var classNamePrefix = /(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*/\n\t      .source // based on the java naming conventions\n\t    var className = {\n\t      pattern: RegExp(classNamePrefix + /[A-Z](?:[\\d_A-Z]*[a-z]\\w*)?\\b/.source),\n\t      lookbehind: true,\n\t      inside: {\n\t        namespace: {\n\t          pattern: /^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?/,\n\t          inside: {\n\t            punctuation: /\\./\n\t          }\n\t        },\n\t        punctuation: /\\./\n\t      }\n\t    }\n\t    Prism.languages.java = Prism.languages.extend('clike', {\n\t      string: {\n\t        pattern: /(^|[^\\\\])\"(?:\\\\.|[^\"\\\\\\r\\n])*\"/,\n\t        lookbehind: true,\n\t        greedy: true\n\t      },\n\t      'class-name': [\n\t        className,\n\t        {\n\t          // variables and parameters\n\t          // this to support class names (or generic parameters) which do not contain a lower case letter (also works for methods)\n\t          pattern: RegExp(\n\t            classNamePrefix + /[A-Z]\\w*(?=\\s+\\w+\\s*[;,=()])/.source\n\t          ),\n\t          lookbehind: true,\n\t          inside: className.inside\n\t        }\n\t      ],\n\t      keyword: keywords,\n\t      function: [\n\t        Prism.languages.clike.function,\n\t        {\n\t          pattern: /(::\\s*)[a-z_]\\w*/,\n\t          lookbehind: true\n\t        }\n\t      ],\n\t      number:\n\t        /\\b0b[01][01_]*L?\\b|\\b0x(?:\\.[\\da-f_p+-]+|[\\da-f_]+(?:\\.[\\da-f_p+-]+)?)\\b|(?:\\b\\d[\\d_]*(?:\\.[\\d_]*)?|\\B\\.\\d[\\d_]*)(?:e[+-]?\\d[\\d_]*)?[dfl]?/i,\n\t      operator: {\n\t        pattern:\n\t          /(^|[^.])(?:<<=?|>>>?=?|->|--|\\+\\+|&&|\\|\\||::|[?:~]|[-+*/%&|^!=<>]=?)/m,\n\t        lookbehind: true\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('java', 'string', {\n\t      'triple-quoted-string': {\n\t        // http://openjdk.java.net/jeps/355#Description\n\t        pattern: /\"\"\"[ \\t]*[\\r\\n](?:(?:\"|\"\")?(?:\\\\.|[^\"\\\\]))*\"\"\"/,\n\t        greedy: true,\n\t        alias: 'string'\n\t      },\n\t      char: {\n\t        pattern: /'(?:\\\\.|[^'\\\\\\r\\n]){1,6}'/,\n\t        greedy: true\n\t      }\n\t    })\n\t    Prism.languages.insertBefore('java', 'class-name', {\n\t      annotation: {\n\t        pattern: /(^|[^.])@\\w+(?:\\s*\\.\\s*\\w+)*/,\n\t        lookbehind: true,\n\t        alias: 'punctuation'\n\t      },\n\t      generics: {\n\t        pattern:\n\t          /<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&)|<(?:[\\w\\s,.?]|&(?!&))*>)*>)*>)*>/,\n\t        inside: {\n\t          'class-name': className,\n\t          keyword: keywords,\n\t          punctuation: /[<>(),.:]/,\n\t          operator: /[?&|]/\n\t        }\n\t      },\n\t      namespace: {\n\t        pattern: RegExp(\n\t          /(\\b(?:exports|import(?:\\s+static)?|module|open|opens|package|provides|requires|to|transitive|uses|with)\\s+)(?!<keyword>)[a-z]\\w*(?:\\.[a-z]\\w*)*\\.?/.source.replace(\n\t            /<keyword>/g,\n\t            function () {\n\t              return keywords.source\n\t            }\n\t          )\n\t        ),\n\t        lookbehind: true,\n\t        inside: {\n\t          punctuation: /\\./\n\t        }\n\t      }\n\t    })\n\t  })(Prism)\n\t}\n\treturn java_1;\n}\n\nexport { requireJava as __require };",
+      "start": 1702937444942,
+      "end": 1702937444943,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444943,
+      "end": 1702937444943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444943,
+      "end": 1702937444943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444943,
+      "end": 1702937444943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444943,
+      "end": 1702937444943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444943,
+      "end": 1702937444943,
+      "order": "normal"
+    }
+  ]
+}

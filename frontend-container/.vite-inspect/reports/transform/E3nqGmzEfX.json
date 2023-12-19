@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/lodash/_setCacheHas.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Checks if `value` is in the array cache.\n *\n * @private\n * @name has\n * @memberOf SetCache\n * @param {*} value The value to search for.\n * @returns {number} Returns `true` if `value` is found, else `false`.\n */\nfunction setCacheHas(value) {\n  return this.__data__.has(value);\n}\n\nmodule.exports = setCacheHas;\n",
+      "start": 1702937445300,
+      "end": 1702937445330,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/**\n * Checks if `value` is in the array cache.\n *\n * @private\n * @name has\n * @memberOf SetCache\n * @param {*} value The value to search for.\n * @returns {number} Returns `true` if `value` is found, else `false`.\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nfunction setCacheHas(value) {\n  return this.__data__.has(value);\n}\n\nvar _setCacheHas = setCacheHas;\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(_setCacheHas);\nexport { _setCacheHas as __moduleExports };",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;AASA,SAAS,WAAW,CAAC,KAAK,EAAE;AAC5B,EAAE,OAAO,IAAI,CAAC,QAAQ,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC;AAClC,CAAC;AACD;IACA,YAAc,GAAG,WAAW"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445330,
+      "end": 1702937445330,
+      "order": "normal"
+    }
+  ]
+}

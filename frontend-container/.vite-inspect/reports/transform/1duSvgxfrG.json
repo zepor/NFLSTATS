@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/Main.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\nimport classNames from \"classnames\";\r\n\r\nconst Main = ({ className, children }) => (\r\n  <div className={classNames(\"main\", className)}>{children}</div>\r\n);\r\n\r\nexport default Main;\r\n",
+      "start": 1702937441538,
+      "end": 1702937441555,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441555,
+      "end": 1702937441555,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441555,
+      "end": 1702937441555,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport classNames from \"classnames\";\nconst Main = ({ className, children }) => /* @__PURE__ */ jsx(\"div\", { className: classNames(\"main\", className), children });\nexport default Main;\n",
+      "start": 1702937441555,
+      "end": 1702937441560,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/Main.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\nimport classNames from \"classnames\";\r\n\r\nconst Main = ({ className, children }) => (\r\n  <div className={classNames(\"main\", className)}>{children}</div>\r\n);\r\n\r\nexport default Main;\r\n"
+        ],
+        "mappings": "AAIE;AAJF,OAAO,WAAW;AAClB,OAAO,gBAAgB;AAEvB,MAAM,OAAO,CAAC,EAAE,WAAW,SAAS,MAClC,oBAAC,SAAI,WAAW,WAAW,QAAQ,SAAS,GAAI,UAAS;AAG3D,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441560,
+      "end": 1702937441560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441560,
+      "end": 1702937441560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441560,
+      "end": 1702937441560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441560,
+      "end": 1702937441560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441561,
+      "end": 1702937441561,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarDropdownItem.jsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import React from \"react\";\r\n\r\nimport { Row, Col, ListGroup } from \"react-bootstrap\";\r\n\r\nconst NavbarDropdownItem = ({ icon, title, description, time, spacing }) => (\r\n  <ListGroup.Item>\r\n    <Row className=\"align-items-center g-0\">\r\n      <Col xs={2}>{icon}</Col>\r\n      <Col xs={10} className={spacing ? \"pl-2\" : null}>\r\n        <div className=\"text-dark\">{title}</div>\r\n        <div className=\"text-muted small mt-1\">{description}</div>\r\n        <div className=\"text-muted small mt-1\">{time}</div>\r\n      </Col>\r\n    </Row>\r\n  </ListGroup.Item>\r\n);\r\n\r\nexport default NavbarDropdownItem;\r\n",
+      "start": 1702937442102,
+      "end": 1702937442122,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937442122,
+      "end": 1702937442122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { jsx, jsxs } from \"react/jsx-runtime\";\nimport React from \"react\";\nimport { Row, Col, ListGroup } from \"react-bootstrap\";\nconst NavbarDropdownItem = ({ icon, title, description, time, spacing }) => /* @__PURE__ */ jsx(ListGroup.Item, { children: /* @__PURE__ */ jsxs(Row, { className: \"align-items-center g-0\", children: [\n  /* @__PURE__ */ jsx(Col, { xs: 2, children: icon }),\n  /* @__PURE__ */ jsxs(Col, { xs: 10, className: spacing ? \"pl-2\" : null, children: [\n    /* @__PURE__ */ jsx(\"div\", { className: \"text-dark\", children: title }),\n    /* @__PURE__ */ jsx(\"div\", { className: \"text-muted small mt-1\", children: description }),\n    /* @__PURE__ */ jsx(\"div\", { className: \"text-muted small mt-1\", children: time })\n  ] })\n] }) });\nexport default NavbarDropdownItem;\n",
+      "start": 1702937442122,
+      "end": 1702937442160,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/zepor/ssweb/frontend-container/src/components/navbar/NavbarDropdownItem.jsx"
+        ],
+        "sourcesContent": [
+          "import React from \"react\";\r\n\r\nimport { Row, Col, ListGroup } from \"react-bootstrap\";\r\n\r\nconst NavbarDropdownItem = ({ icon, title, description, time, spacing }) => (\r\n  <ListGroup.Item>\r\n    <Row className=\"align-items-center g-0\">\r\n      <Col xs={2}>{icon}</Col>\r\n      <Col xs={10} className={spacing ? \"pl-2\" : null}>\r\n        <div className=\"text-dark\">{title}</div>\r\n        <div className=\"text-muted small mt-1\">{description}</div>\r\n        <div className=\"text-muted small mt-1\">{time}</div>\r\n      </Col>\r\n    </Row>\r\n  </ListGroup.Item>\r\n);\r\n\r\nexport default NavbarDropdownItem;\r\n"
+        ],
+        "mappings": "AAOM,cACA,YADA;AAPN,OAAO,WAAW;AAElB,SAAS,KAAK,KAAK,iBAAiB;AAEpC,MAAM,qBAAqB,CAAC,EAAE,MAAM,OAAO,aAAa,MAAM,QAAQ,MACpE,oBAAC,UAAU,MAAV,EACC,+BAAC,OAAI,WAAU,0BACb;AAAA,sBAAC,OAAI,IAAI,GAAI,gBAAK;AAAA,EAClB,qBAAC,OAAI,IAAI,IAAI,WAAW,UAAU,SAAS,MACzC;AAAA,wBAAC,SAAI,WAAU,aAAa,iBAAM;AAAA,IAClC,oBAAC,SAAI,WAAU,yBAAyB,uBAAY;AAAA,IACpD,oBAAC,SAAI,WAAU,yBAAyB,gBAAK;AAAA,KAC/C;AAAA,GACF,GACF;AAGF,eAAe;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937442160,
+      "end": 1702937442160,
+      "order": "normal"
+    }
+  ]
+}

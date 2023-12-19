@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/powershell.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = powershell\npowershell.displayName = 'powershell'\npowershell.aliases = []\nfunction powershell(Prism) {\n  ;(function (Prism) {\n    var powershell = (Prism.languages.powershell = {\n      comment: [\n        {\n          pattern: /(^|[^`])<#[\\s\\S]*?#>/,\n          lookbehind: true\n        },\n        {\n          pattern: /(^|[^`])#.*/,\n          lookbehind: true\n        }\n      ],\n      string: [\n        {\n          pattern: /\"(?:`[\\s\\S]|[^`\"])*\"/,\n          greedy: true,\n          inside: null // see below\n        },\n        {\n          pattern: /'(?:[^']|'')*'/,\n          greedy: true\n        }\n      ],\n      // Matches name spaces as well as casts, attribute decorators. Force starting with letter to avoid matching array indices\n      // Supports two levels of nested brackets (e.g. `[OutputType([System.Collections.Generic.List[int]])]`)\n      namespace: /\\[[a-z](?:\\[(?:\\[[^\\]]*\\]|[^\\[\\]])*\\]|[^\\[\\]])*\\]/i,\n      boolean: /\\$(?:false|true)\\b/i,\n      variable: /\\$\\w+\\b/,\n      // Cmdlets and aliases. Aliases should come last, otherwise \"write\" gets preferred over \"write-host\" for example\n      // Get-Command | ?{ $_.ModuleName -match \"Microsoft.PowerShell.(Util|Core|Management)\" }\n      // Get-Alias | ?{ $_.ReferencedCommand.Module.Name -match \"Microsoft.PowerShell.(Util|Core|Management)\" }\n      function: [\n        /\\b(?:Add|Approve|Assert|Backup|Block|Checkpoint|Clear|Close|Compare|Complete|Compress|Confirm|Connect|Convert|ConvertFrom|ConvertTo|Copy|Debug|Deny|Disable|Disconnect|Dismount|Edit|Enable|Enter|Exit|Expand|Export|Find|ForEach|Format|Get|Grant|Group|Hide|Import|Initialize|Install|Invoke|Join|Limit|Lock|Measure|Merge|Move|New|Open|Optimize|Out|Ping|Pop|Protect|Publish|Push|Read|Receive|Redo|Register|Remove|Rename|Repair|Request|Reset|Resize|Resolve|Restart|Restore|Resume|Revoke|Save|Search|Select|Send|Set|Show|Skip|Sort|Split|Start|Step|Stop|Submit|Suspend|Switch|Sync|Tee|Test|Trace|Unblock|Undo|Uninstall|Unlock|Unprotect|Unpublish|Unregister|Update|Use|Wait|Watch|Where|Write)-[a-z]+\\b/i,\n        /\\b(?:ac|cat|chdir|clc|cli|clp|clv|compare|copy|cp|cpi|cpp|cvpa|dbp|del|diff|dir|ebp|echo|epal|epcsv|epsn|erase|fc|fl|ft|fw|gal|gbp|gc|gci|gcs|gdr|gi|gl|gm|gp|gps|group|gsv|gu|gv|gwmi|iex|ii|ipal|ipcsv|ipsn|irm|iwmi|iwr|kill|lp|ls|measure|mi|mount|move|mp|mv|nal|ndr|ni|nv|ogv|popd|ps|pushd|pwd|rbp|rd|rdr|ren|ri|rm|rmdir|rni|rnp|rp|rv|rvpa|rwmi|sal|saps|sasv|sbp|sc|select|set|shcm|si|sl|sleep|sls|sort|sp|spps|spsv|start|sv|swmi|tee|trcm|type|write)\\b/i\n      ],\n      // per http://technet.microsoft.com/en-us/library/hh847744.aspx\n      keyword:\n        /\\b(?:Begin|Break|Catch|Class|Continue|Data|Define|Do|DynamicParam|Else|ElseIf|End|Exit|Filter|Finally|For|ForEach|From|Function|If|InlineScript|Parallel|Param|Process|Return|Sequence|Switch|Throw|Trap|Try|Until|Using|Var|While|Workflow)\\b/i,\n      operator: {\n        pattern:\n          /(^|\\W)(?:!|-(?:b?(?:and|x?or)|as|(?:Not)?(?:Contains|In|Like|Match)|eq|ge|gt|is(?:Not)?|Join|le|lt|ne|not|Replace|sh[lr])\\b|-[-=]?|\\+[+=]?|[*\\/%]=?)/i,\n        lookbehind: true\n      },\n      punctuation: /[|{}[\\];(),.]/\n    }) // Variable interpolation inside strings, and nested expressions\n    powershell.string[0].inside = {\n      function: {\n        // Allow for one level of nesting\n        pattern: /(^|[^`])\\$\\((?:\\$\\([^\\r\\n()]*\\)|(?!\\$\\()[^\\r\\n)])*\\)/,\n        lookbehind: true,\n        inside: powershell\n      },\n      boolean: powershell.boolean,\n      variable: powershell.variable\n    }\n  })(Prism)\n}\n",
+      "start": 1702937445012,
+      "end": 1702937445038,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937445038,
+      "end": 1702937445038,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar powershell_1;\nvar hasRequiredPowershell;\n\nfunction requirePowershell () {\n\tif (hasRequiredPowershell) return powershell_1;\n\thasRequiredPowershell = 1;\n\t'use strict'\n\n\tpowershell_1 = powershell\n\tpowershell.displayName = 'powershell'\n\tpowershell.aliases = []\n\tfunction powershell(Prism) {\n\t  ;(function (Prism) {\n\t    var powershell = (Prism.languages.powershell = {\n\t      comment: [\n\t        {\n\t          pattern: /(^|[^`])<#[\\s\\S]*?#>/,\n\t          lookbehind: true\n\t        },\n\t        {\n\t          pattern: /(^|[^`])#.*/,\n\t          lookbehind: true\n\t        }\n\t      ],\n\t      string: [\n\t        {\n\t          pattern: /\"(?:`[\\s\\S]|[^`\"])*\"/,\n\t          greedy: true,\n\t          inside: null // see below\n\t        },\n\t        {\n\t          pattern: /'(?:[^']|'')*'/,\n\t          greedy: true\n\t        }\n\t      ],\n\t      // Matches name spaces as well as casts, attribute decorators. Force starting with letter to avoid matching array indices\n\t      // Supports two levels of nested brackets (e.g. `[OutputType([System.Collections.Generic.List[int]])]`)\n\t      namespace: /\\[[a-z](?:\\[(?:\\[[^\\]]*\\]|[^\\[\\]])*\\]|[^\\[\\]])*\\]/i,\n\t      boolean: /\\$(?:false|true)\\b/i,\n\t      variable: /\\$\\w+\\b/,\n\t      // Cmdlets and aliases. Aliases should come last, otherwise \"write\" gets preferred over \"write-host\" for example\n\t      // Get-Command | ?{ $_.ModuleName -match \"Microsoft.PowerShell.(Util|Core|Management)\" }\n\t      // Get-Alias | ?{ $_.ReferencedCommand.Module.Name -match \"Microsoft.PowerShell.(Util|Core|Management)\" }\n\t      function: [\n\t        /\\b(?:Add|Approve|Assert|Backup|Block|Checkpoint|Clear|Close|Compare|Complete|Compress|Confirm|Connect|Convert|ConvertFrom|ConvertTo|Copy|Debug|Deny|Disable|Disconnect|Dismount|Edit|Enable|Enter|Exit|Expand|Export|Find|ForEach|Format|Get|Grant|Group|Hide|Import|Initialize|Install|Invoke|Join|Limit|Lock|Measure|Merge|Move|New|Open|Optimize|Out|Ping|Pop|Protect|Publish|Push|Read|Receive|Redo|Register|Remove|Rename|Repair|Request|Reset|Resize|Resolve|Restart|Restore|Resume|Revoke|Save|Search|Select|Send|Set|Show|Skip|Sort|Split|Start|Step|Stop|Submit|Suspend|Switch|Sync|Tee|Test|Trace|Unblock|Undo|Uninstall|Unlock|Unprotect|Unpublish|Unregister|Update|Use|Wait|Watch|Where|Write)-[a-z]+\\b/i,\n\t        /\\b(?:ac|cat|chdir|clc|cli|clp|clv|compare|copy|cp|cpi|cpp|cvpa|dbp|del|diff|dir|ebp|echo|epal|epcsv|epsn|erase|fc|fl|ft|fw|gal|gbp|gc|gci|gcs|gdr|gi|gl|gm|gp|gps|group|gsv|gu|gv|gwmi|iex|ii|ipal|ipcsv|ipsn|irm|iwmi|iwr|kill|lp|ls|measure|mi|mount|move|mp|mv|nal|ndr|ni|nv|ogv|popd|ps|pushd|pwd|rbp|rd|rdr|ren|ri|rm|rmdir|rni|rnp|rp|rv|rvpa|rwmi|sal|saps|sasv|sbp|sc|select|set|shcm|si|sl|sleep|sls|sort|sp|spps|spsv|start|sv|swmi|tee|trcm|type|write)\\b/i\n\t      ],\n\t      // per http://technet.microsoft.com/en-us/library/hh847744.aspx\n\t      keyword:\n\t        /\\b(?:Begin|Break|Catch|Class|Continue|Data|Define|Do|DynamicParam|Else|ElseIf|End|Exit|Filter|Finally|For|ForEach|From|Function|If|InlineScript|Parallel|Param|Process|Return|Sequence|Switch|Throw|Trap|Try|Until|Using|Var|While|Workflow)\\b/i,\n\t      operator: {\n\t        pattern:\n\t          /(^|\\W)(?:!|-(?:b?(?:and|x?or)|as|(?:Not)?(?:Contains|In|Like|Match)|eq|ge|gt|is(?:Not)?|Join|le|lt|ne|not|Replace|sh[lr])\\b|-[-=]?|\\+[+=]?|[*\\/%]=?)/i,\n\t        lookbehind: true\n\t      },\n\t      punctuation: /[|{}[\\];(),.]/\n\t    }) // Variable interpolation inside strings, and nested expressions\n\t    powershell.string[0].inside = {\n\t      function: {\n\t        // Allow for one level of nesting\n\t        pattern: /(^|[^`])\\$\\((?:\\$\\([^\\r\\n()]*\\)|(?!\\$\\()[^\\r\\n)])*\\)/,\n\t        lookbehind: true,\n\t        inside: powershell\n\t      },\n\t      boolean: powershell.boolean,\n\t      variable: powershell.variable\n\t    }\n\t  })(Prism)\n\t}\n\treturn powershell_1;\n}\n\nexport { requirePowershell as __require };",
+      "start": 1702937445038,
+      "end": 1702937445039,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,aAAc,GAAG,UAAU;CAC3B,UAAU,CAAC,WAAW,GAAG,YAAY;CACrC,UAAU,CAAC,OAAO,GAAG,EAAE;CACvB,SAAS,UAAU,CAAC,KAAK,EAAE;CAC3B,EAAE,CAAC,CAAC,UAAU,KAAK,EAAE;CACrB,IAAI,IAAI,UAAU,IAAI,KAAK,CAAC,SAAS,CAAC,UAAU,GAAG;CACnD,MAAM,OAAO,EAAE;CACf,QAAQ;CACR,UAAU,OAAO,EAAE,sBAAsB;CACzC,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,QAAQ;CACR,UAAU,OAAO,EAAE,aAAa;CAChC,UAAU,UAAU,EAAE,IAAI;CAC1B,SAAS;CACT,OAAO;CACP,MAAM,MAAM,EAAE;CACd,QAAQ;CACR,UAAU,OAAO,EAAE,sBAAsB;CACzC,UAAU,MAAM,EAAE,IAAI;CACtB,UAAU,MAAM,EAAE,IAAI;CACtB,SAAS;CACT,QAAQ;CACR,UAAU,OAAO,EAAE,gBAAgB;CACnC,UAAU,MAAM,EAAE,IAAI;CACtB,SAAS;CACT,OAAO;CACP;CACA;CACA,MAAM,SAAS,EAAE,oDAAoD;CACrE,MAAM,OAAO,EAAE,qBAAqB;CACpC,MAAM,QAAQ,EAAE,SAAS;CACzB;CACA;CACA;CACA,MAAM,QAAQ,EAAE;CAChB,QAAQ,urBAAurB;CAC/rB,QAAQ,ucAAuc;CAC/c,OAAO;CACP;CACA,MAAM,OAAO;CACb,QAAQ,iPAAiP;CACzP,MAAM,QAAQ,EAAE;CAChB,QAAQ,OAAO;CACf,UAAU,uJAAuJ;CACjK,QAAQ,UAAU,EAAE,IAAI;CACxB,OAAO;CACP,MAAM,WAAW,EAAE,eAAe;CAClC,KAAK,CAAC;CACN,IAAI,UAAU,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,MAAM,GAAG;CAClC,MAAM,QAAQ,EAAE;CAChB;CACA,QAAQ,OAAO,EAAE,sDAAsD;CACvE,QAAQ,UAAU,EAAE,IAAI;CACxB,QAAQ,MAAM,EAAE,UAAU;CAC1B,OAAO;CACP,MAAM,OAAO,EAAE,UAAU,CAAC,OAAO;CACjC,MAAM,QAAQ,EAAE,UAAU,CAAC,QAAQ;CACnC,KAAK;CACL,GAAG,EAAE,KAAK,CAAC;CACX"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937445039,
+      "end": 1702937445039,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/refractor/lang/gap.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict'\n\nmodule.exports = gap\ngap.displayName = 'gap'\ngap.aliases = []\nfunction gap(Prism) {\n  // https://www.gap-system.org/Manuals/doc/ref/chap4.html\n  // https://www.gap-system.org/Manuals/doc/ref/chap27.html\n  Prism.languages.gap = {\n    shell: {\n      pattern: /^gap>[\\s\\S]*?(?=^gap>|$(?![\\s\\S]))/m,\n      greedy: true,\n      inside: {\n        gap: {\n          pattern: /^(gap>).+(?:(?:\\r(?:\\n|(?!\\n))|\\n)>.*)*/,\n          lookbehind: true,\n          inside: null // see below\n        },\n        punctuation: /^gap>/\n      }\n    },\n    comment: {\n      pattern: /#.*/,\n      greedy: true\n    },\n    string: {\n      pattern:\n        /(^|[^\\\\'\"])(?:'(?:[^\\r\\n\\\\']|\\\\.){1,10}'|\"(?:[^\\r\\n\\\\\"]|\\\\.)*\"(?!\")|\"\"\"[\\s\\S]*?\"\"\")/,\n      lookbehind: true,\n      greedy: true,\n      inside: {\n        continuation: {\n          pattern: /([\\r\\n])>/,\n          lookbehind: true,\n          alias: 'punctuation'\n        }\n      }\n    },\n    keyword:\n      /\\b(?:Assert|Info|IsBound|QUIT|TryNextMethod|Unbind|and|atomic|break|continue|do|elif|else|end|fi|for|function|if|in|local|mod|not|od|or|quit|readonly|readwrite|rec|repeat|return|then|until|while)\\b/,\n    boolean: /\\b(?:false|true)\\b/,\n    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n    number: {\n      pattern:\n        /(^|[^\\w.]|\\.\\.)(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?(?:_[a-z]?)?(?=$|[^\\w.]|\\.\\.)/,\n      lookbehind: true\n    },\n    continuation: {\n      pattern: /([\\r\\n])>/,\n      lookbehind: true,\n      alias: 'punctuation'\n    },\n    operator: /->|[-+*/^~=!]|<>|[<>]=?|:=|\\.\\./,\n    punctuation: /[()[\\]{},;.:]/\n  }\n  Prism.languages.gap.shell.inside.gap.inside = Prism.languages.gap\n}\n",
+      "start": 1702937444893,
+      "end": 1702937444912,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar gap_1;\nvar hasRequiredGap;\n\nfunction requireGap () {\n\tif (hasRequiredGap) return gap_1;\n\thasRequiredGap = 1;\n\t'use strict'\n\n\tgap_1 = gap\n\tgap.displayName = 'gap'\n\tgap.aliases = []\n\tfunction gap(Prism) {\n\t  // https://www.gap-system.org/Manuals/doc/ref/chap4.html\n\t  // https://www.gap-system.org/Manuals/doc/ref/chap27.html\n\t  Prism.languages.gap = {\n\t    shell: {\n\t      pattern: /^gap>[\\s\\S]*?(?=^gap>|$(?![\\s\\S]))/m,\n\t      greedy: true,\n\t      inside: {\n\t        gap: {\n\t          pattern: /^(gap>).+(?:(?:\\r(?:\\n|(?!\\n))|\\n)>.*)*/,\n\t          lookbehind: true,\n\t          inside: null // see below\n\t        },\n\t        punctuation: /^gap>/\n\t      }\n\t    },\n\t    comment: {\n\t      pattern: /#.*/,\n\t      greedy: true\n\t    },\n\t    string: {\n\t      pattern:\n\t        /(^|[^\\\\'\"])(?:'(?:[^\\r\\n\\\\']|\\\\.){1,10}'|\"(?:[^\\r\\n\\\\\"]|\\\\.)*\"(?!\")|\"\"\"[\\s\\S]*?\"\"\")/,\n\t      lookbehind: true,\n\t      greedy: true,\n\t      inside: {\n\t        continuation: {\n\t          pattern: /([\\r\\n])>/,\n\t          lookbehind: true,\n\t          alias: 'punctuation'\n\t        }\n\t      }\n\t    },\n\t    keyword:\n\t      /\\b(?:Assert|Info|IsBound|QUIT|TryNextMethod|Unbind|and|atomic|break|continue|do|elif|else|end|fi|for|function|if|in|local|mod|not|od|or|quit|readonly|readwrite|rec|repeat|return|then|until|while)\\b/,\n\t    boolean: /\\b(?:false|true)\\b/,\n\t    function: /\\b[a-z_]\\w*(?=\\s*\\()/i,\n\t    number: {\n\t      pattern:\n\t        /(^|[^\\w.]|\\.\\.)(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?(?:_[a-z]?)?(?=$|[^\\w.]|\\.\\.)/,\n\t      lookbehind: true\n\t    },\n\t    continuation: {\n\t      pattern: /([\\r\\n])>/,\n\t      lookbehind: true,\n\t      alias: 'punctuation'\n\t    },\n\t    operator: /->|[-+*/^~=!]|<>|[<>]=?|:=|\\.\\./,\n\t    punctuation: /[()[\\]{},;.:]/\n\t  }\n\t  Prism.languages.gap.shell.inside.gap.inside = Prism.languages.gap\n\t}\n\treturn gap_1;\n}\n\nexport { requireGap as __require };",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;CAAA,YAAY;AACZ;AACA,MAAc,GAAG,GAAG;CACpB,GAAG,CAAC,WAAW,GAAG,KAAK;CACvB,GAAG,CAAC,OAAO,GAAG,EAAE;CAChB,SAAS,GAAG,CAAC,KAAK,EAAE;CACpB;CACA;CACA,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,GAAG;CACxB,IAAI,KAAK,EAAE;CACX,MAAM,OAAO,EAAE,qCAAqC;CACpD,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,GAAG,EAAE;CACb,UAAU,OAAO,EAAE,yCAAyC;CAC5D,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,MAAM,EAAE,IAAI;CACtB,SAAS;CACT,QAAQ,WAAW,EAAE,OAAO;CAC5B,OAAO;CACP,KAAK;CACL,IAAI,OAAO,EAAE;CACb,MAAM,OAAO,EAAE,KAAK;CACpB,MAAM,MAAM,EAAE,IAAI;CAClB,KAAK;CACL,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,qFAAqF;CAC7F,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,MAAM,EAAE,IAAI;CAClB,MAAM,MAAM,EAAE;CACd,QAAQ,YAAY,EAAE;CACtB,UAAU,OAAO,EAAE,WAAW;CAC9B,UAAU,UAAU,EAAE,IAAI;CAC1B,UAAU,KAAK,EAAE,aAAa;CAC9B,SAAS;CACT,OAAO;CACP,KAAK;CACL,IAAI,OAAO;CACX,MAAM,uMAAuM;CAC7M,IAAI,OAAO,EAAE,oBAAoB;CACjC,IAAI,QAAQ,EAAE,uBAAuB;CACrC,IAAI,MAAM,EAAE;CACZ,MAAM,OAAO;CACb,QAAQ,sFAAsF;CAC9F,MAAM,UAAU,EAAE,IAAI;CACtB,KAAK;CACL,IAAI,YAAY,EAAE;CAClB,MAAM,OAAO,EAAE,WAAW;CAC1B,MAAM,UAAU,EAAE,IAAI;CACtB,MAAM,KAAK,EAAE,aAAa;CAC1B,KAAK;CACL,IAAI,QAAQ,EAAE,iCAAiC;CAC/C,IAAI,WAAW,EAAE,eAAe;CAChC,GAAG;CACH,EAAE,KAAK,CAAC,SAAS,CAAC,GAAG,CAAC,KAAK,CAAC,MAAM,CAAC,GAAG,CAAC,MAAM,GAAG,KAAK,CAAC,SAAS,CAAC,GAAG;CACnE"
+      }
+    },
+    {
+      "name": "inject",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937444912,
+      "end": 1702937444912,
+      "order": "normal"
+    }
+  ]
+}

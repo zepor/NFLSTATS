@@ -1,0 +1,108 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/node_modules/amazon-cognito-identity-js/es/CognitoIdToken.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; _setPrototypeOf(subClass, superClass); }\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n/*!\n * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n * SPDX-License-Identifier: Apache-2.0\n */\n\nimport CognitoJwtToken from './CognitoJwtToken';\n\n/** @class */\nvar CognitoIdToken = /*#__PURE__*/function (_CognitoJwtToken) {\n  _inheritsLoose(CognitoIdToken, _CognitoJwtToken);\n  /**\n   * Constructs a new CognitoIdToken object\n   * @param {string=} IdToken The JWT Id token\n   */\n  function CognitoIdToken(_temp) {\n    var _ref = _temp === void 0 ? {} : _temp,\n      IdToken = _ref.IdToken;\n    return _CognitoJwtToken.call(this, IdToken || '') || this;\n  }\n  return CognitoIdToken;\n}(CognitoJwtToken);\nexport { CognitoIdToken as default };",
+      "start": 1702937441857,
+      "end": 1702937441901,
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "inject",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1702937441901,
+      "end": 1702937441901,
+      "order": "normal"
+    }
+  ]
+}

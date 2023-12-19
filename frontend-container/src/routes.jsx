@@ -1,25 +1,20 @@
 import React from "react";
 import { lazy } from "@loadable/component";
-
 // Layouts
 import AuthLayout from "./layouts/Auth";
 import DashboardLayout from "./layouts/Dashboard";
 import DocLayout from "./layouts/Doc";
 import LandingLayout from "./layouts/Landing";
-
 // Guards
 import AuthGuard from "./components/guards/AuthGuard";
-
 // Landing
 const Landing = lazy(() => import("./pages/landing/Landing"));
-
 // Dashboards
 const Default = lazy(() => import("./pages/dashboards/Default"));
 const Analytics = lazy(() => import("./pages/dashboards/Analytics"));
 const SaaS = lazy(() => import("./pages/dashboards/SaaS"));
 const Social = lazy(() => import("./pages/dashboards/Social"));
 const Crypto = lazy(() => import("./pages/dashboards/Crypto"));
-
 // Pages
 const Profile = lazy(() => import("./pages/pages/Profile"));
 const Settings = lazy(() => import("./pages/pages/Settings"));
@@ -30,7 +25,6 @@ const Pricing = lazy(() => import("./pages/pages/Pricing"));
 const Tasks = lazy(() => import("./pages/pages/Tasks"));
 const Chat = lazy(() => import("./pages/pages/Chat"));
 const Blank = lazy(() => import("./pages/pages/Blank"));
-
 // Auth
 const Page500 = lazy(() => import("./pages/auth/Page500"));
 const Page404 = lazy(() => import("./pages/auth/Page404"));
@@ -39,7 +33,6 @@ const SignUp = lazy(() => import("./pages/auth/SignUp"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const PrivacyPolicy = lazy(() => import("./pages/auth/PrivacyPolicy"));
 const TermsofService = lazy(() => import("./pages/auth/TermsofService"));
-
 // UI components
 const Alerts = lazy(() => import("./pages/ui/Alerts"));
 const Buttons = lazy(() => import("./pages/ui/Buttons"));
@@ -52,11 +45,9 @@ const Modals = lazy(() => import("./pages/ui/Modals"));
 const Offcanvas = lazy(() => import("./pages/ui/Offcanvas"));
 const Tabs = lazy(() => import("./pages/ui/Tabs"));
 const Typography = lazy(() => import("./pages/ui/Typography"));
-
 // Icons
 const Feather = lazy(() => import("./pages/icons/Feather"));
 const FontAwesome = lazy(() => import("./pages/icons/FontAwesome"));
-
 // Forms
 const Layouts = lazy(() => import("./pages/forms/Layouts"));
 const BasicInputs = lazy(() => import("./pages/forms/BasicInputs"));
@@ -65,7 +56,6 @@ const FloatingLabels = lazy(() => import("./pages/forms/FloatingLabels"));
 const AdvancedInputs = lazy(() => import("./pages/forms/AdvancedInputs"));
 const Formik = lazy(() => import("./pages/forms/Formik"));
 const Editors = lazy(() => import("./pages/forms/Editors"));
-
 // Tables
 const Tables = lazy(() => import("./pages/tables/Tables"));
 const Pagination = lazy(() => import("./pages/tables/Pagination"));
@@ -73,21 +63,16 @@ const ColumnSorting = lazy(() => import("./pages/tables/ColumnSorting"));
 const ColumnFiltering = lazy(() => import("./pages/tables/ColumnFiltering"));
 const RowExpanding = lazy(() => import("./pages/tables/RowExpanding"));
 const RowSelection = lazy(() => import("./pages/tables/RowSelection"));
-
 // Charts
 const Chartjs = lazy(() => import("./pages/charts/Chartjs"));
 const ApexCharts = lazy(() => import("./pages/charts/ApexCharts"));
-
 // Notifications
 const Notifications = lazy(() => import("./pages/notifications/Notifications"));
-
 // Maps
 const GoogleMaps = lazy(() => import("./pages/maps/GoogleMaps"));
 const VectorMaps = lazy(() => import("./pages/maps/VectorMaps"));
-
 // Calendar
 const Calendar = lazy(() => import("./pages/calendar/Calendar"));
-
 // Documentation
 const Introduction = lazy(() => import("./pages/docs/Introduction"));
 const GettingStarted = lazy(() => import("./pages/docs/GettingStarted"));
@@ -110,10 +95,8 @@ const Deployment = lazy(() => import("./pages/docs/Deployment"));
 const MigratingToNextJS = lazy(() => import("./pages/docs/MigratingToNextJS"));
 const Support = lazy(() => import("./pages/docs/Support"));
 const Changelog = lazy(() => import("./pages/docs/Changelog"));
-
 // Protected routes
 const ProtectedPage = lazy(() => import("./pages/protected/ProtectedPage"));
-
 const routes = [
   {
     path: "/",
@@ -222,7 +205,7 @@ const routes = [
         element: <PrivacyPolicy />,
       },
       {
-        path: "TermsofService",
+        path: "termsofservice",
         element: <TermsofService />,
       },
     ],
