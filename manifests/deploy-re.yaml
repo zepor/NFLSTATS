@@ -7,7 +7,6 @@ metadata:
     app: redis
 spec:
   replicas: 2
-  imagePullPolicy: Always
   strategy:
     type: RollingUpdate
     rollingUpdate:

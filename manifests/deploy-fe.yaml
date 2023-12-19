@@ -7,7 +7,6 @@ metadata:
     app: fe
 spec:
   replicas: 2
-  imagePullPolicy: Always
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -24,6 +23,7 @@ spec:
       containers:
         - name: fe
           image: loveofsports.azurecr.io/fe:latest
+          imagePullPolicy: Always
           env:
             - name: FRONTEND_SERVICE_HOST
               value: frontend

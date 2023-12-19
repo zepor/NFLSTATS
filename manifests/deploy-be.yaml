@@ -7,7 +7,6 @@ metadata:
     app: be
 spec:
   replicas: 2
-  imagePullPolicy: Always
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -24,6 +23,7 @@ spec:
       containers:
         - name: be
           image: loveofsports.azurecr.io/be:latest
+          imagePullPolicy: Always
           env:
             - name: BACKEND_SERVICE_HOST
               value: backend
