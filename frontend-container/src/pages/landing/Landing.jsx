@@ -769,10 +769,10 @@ const Footer = () => (
           </Button>
           {/* Add social media links or newsletter signup here */}
           <div>
-            <img src={FBIcon} alt="Facebook" className="social-icon" />
-            <img src={INSTAIcon} alt="Instagram" className="social-icon" />
-            <img src={TWIcon} alt="Twitter" className="social-icon" />
-            <img src={LINKIcon} alt="Linkedin" className="social-icon" />
+            <img src={FBIcon} alt="Facebook" width="30" height="30" />
+            <img src={INSTAIcon} alt="Instagram" width="30" height="30" />
+            <img src={TWIcon} alt="Twitter" width="30" height="30" />
+            <img src={LINKIcon} alt="Linkedin" width="30" height="30" />
           </div>
         </Col>
       </Row>
