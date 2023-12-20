@@ -9,7 +9,7 @@ This is the NFLSTATS project, designed to provide statistical insights for the N
 This guide will help you set up the environment using GitHub Codespaces or set it up locally using Docker and Docker Compose. Be aware the application is half built right now. It needs quite a bit of TLC. THis is my first project, feel free to critisize and make recommendations as you see fit!
 
 
-![system diagram](diagram.png)
+
 
 ## Using GitHub Codespaces
 
