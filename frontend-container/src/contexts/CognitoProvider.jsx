@@ -50,31 +50,21 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const loadConfig = async () => {
-      let config;
       if (process.env.NODE_ENV === "development") {
-        console.log(
-          "Development Environment: Loading Cognito config from module",
-        );
         const configModule = await import("../config");
-        config = configModule.cognitoConfig;
+        setCognitoConfig(configModule.cognitoConfig);
       } else {
-        console.log(
-          "Production Environment: Loading Cognito config from environment variables",
-        );
-        config = {
+        setCognitoConfig({
           userPoolId: process.env.VITE_COGNITO_USER_POOL_ID,
           clientId: process.env.VITE_COGNITO_CLIENT_ID,
-        };
+        });
       }
-      setCognitoConfig(config);
     };
-
     loadConfig();
   }, []);
 
-
   const UserPool = useMemo(() => {
-    if (cognitoConfig) {
+    if (cognitoConfig && cognitoConfig.userPoolId && cognitoConfig.clientId) {
       return new CognitoUserPool({
         UserPoolId: cognitoConfig.userPoolId,
         ClientId: cognitoConfig.clientId,
