@@ -6,15 +6,27 @@ import {
   CognitoUserPool,
 } from "amazon-cognito-identity-js";
 import axios from "../utils/axios";
-import { cognitoConfig } from "../config";
+import { cognitoConfig as devCognitoConfig } from "../config";
 import AuthContext from "./CognitoContext";
 
 const INITIALIZE = "INITIALIZE";
 const SIGN_OUT = "SIGN_OUT";
 
+// Function to get Cognito configuration
+const getCognitoConfig = () => {
+  const userPoolId =
+    process.env.VITE_COGNITO_USER_POOL_ID || devCognitoConfig.userPoolId;
+  const clientId =
+    process.env.VITE_COGNITO_CLIENT_ID || devCognitoConfig.clientId;
+
+  return { userPoolId, clientId };
+};
+
+const { userPoolId, clientId } = getCognitoConfig();
+
 const UserPool = new CognitoUserPool({
-  UserPoolId: cognitoConfig.userPoolId || "",
-  ClientId: cognitoConfig.clientId || "",
+  UserPoolId: userPoolId || "",
+  ClientId: clientId || "",
 });
 
 const initialState = {
