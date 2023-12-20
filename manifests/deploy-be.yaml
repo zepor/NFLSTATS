@@ -19,6 +19,8 @@ spec:
     metadata:
       labels:
         app: be
+      annotations:
+        date: "{{.Date}}"
     spec:
       containers:
         - name: be

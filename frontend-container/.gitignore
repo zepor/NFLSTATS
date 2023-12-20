@@ -47,4 +47,5 @@ amplifytools.xcconfig
 .flaskenv*
 !.env.project
 !.env.vault
+.env.me
 src/config.js

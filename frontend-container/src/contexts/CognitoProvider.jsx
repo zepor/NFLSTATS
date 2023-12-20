@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useReducer } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useReducer,
+  useState,
+  useMemo,
+} from "react";
 import {
   AuthenticationDetails,
   CognitoUser,
@@ -7,28 +13,10 @@ import {
 } from "amazon-cognito-identity-js";
 import axios from "../utils/axios";
 import AuthContext from "./CognitoContext";
+import Loader from "../components/Loader";
 
 const INITIALIZE = "INITIALIZE";
 const SIGN_OUT = "SIGN_OUT";
-
-// Function to get Cognito configuration
-let cognitoConfig;
-
-if (process.env.NODE_ENV === "development") {
-  // Only import the config file in development environment
-  cognitoConfig = require("../config").cognitoConfig;
-} else {
-  // In production, use environment variables directly
-  cognitoConfig = {
-    userPoolId: process.env.VITE_COGNITO_USER_POOL_ID,
-    clientId: process.env.VITE_COGNITO_CLIENT_ID,
-  };
-}
-
-const UserPool = new CognitoUserPool({
-  UserPoolId: cognitoConfig.userPoolId || "",
-  ClientId: cognitoConfig.clientId || "",
-});
 
 const initialState = {
   isAuthenticated: false,
@@ -58,6 +46,42 @@ const reducer = (state, action) => {
 
 function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [cognitoConfig, setCognitoConfig] = useState(null);
+
+  useEffect(() => {
+    const loadConfig = async () => {
+      let config;
+      if (process.env.NODE_ENV === "development") {
+        console.log(
+          "Development Environment: Loading Cognito config from module",
+        );
+        const configModule = await import("../config");
+        config = configModule.cognitoConfig;
+      } else {
+        console.log(
+          "Production Environment: Loading Cognito config from environment variables",
+        );
+        config = {
+          userPoolId: process.env.VITE_COGNITO_USER_POOL_ID,
+          clientId: process.env.VITE_COGNITO_CLIENT_ID,
+        };
+      }
+      setCognitoConfig(config);
+    };
+
+    loadConfig();
+  }, []);
+
+
+  const UserPool = useMemo(() => {
+    if (cognitoConfig) {
+      return new CognitoUserPool({
+        UserPoolId: cognitoConfig.userPoolId,
+        ClientId: cognitoConfig.clientId,
+      });
+    }
+    return null;
+  }, [cognitoConfig]);
 
   const getUserAttributes = useCallback(
     (currentUser) =>
@@ -80,7 +104,7 @@ function AuthProvider({ children }) {
   const getSession = useCallback(
     () =>
       new Promise((resolve, reject) => {
-        const user = UserPool.getCurrentUser();
+        const user = UserPool ? UserPool.getCurrentUser() : null;
         if (user) {
           user.getSession(async (err, session) => {
             if (err) {
@@ -103,16 +127,21 @@ function AuthProvider({ children }) {
           });
         }
       }),
-    [getUserAttributes],
+    [UserPool, getUserAttributes],
   );
 
   useEffect(() => {
-    getSession();
-  }, [getSession]);
+    if (cognitoConfig) {
+      getSession();
+    }
+  }, [getSession, cognitoConfig]);
 
   const signIn = useCallback(
     (email, password) =>
       new Promise((resolve, reject) => {
+        if (!UserPool) {
+          return reject(new Error("Cognito User Pool not available"));
+        }
         const user = new CognitoUser({ Username: email, Pool: UserPool });
         const authDetails = new AuthenticationDetails({
           Username: email,
@@ -131,16 +160,16 @@ function AuthProvider({ children }) {
           },
         });
       }),
-    [getSession],
+    [UserPool, getSession],
   );
 
   const signOut = useCallback(() => {
-    const user = UserPool.getCurrentUser();
+    const user = UserPool ? UserPool.getCurrentUser() : null;
     if (user) {
       user.signOut();
       dispatch({ type: SIGN_OUT });
     }
-  }, []);
+  }, [UserPool]);
 
   const signUp = useCallback(
     (email, password, firstName, lastName) =>
@@ -172,6 +201,10 @@ function AuthProvider({ children }) {
     console.log(email);
     // Add password reset logic here
   }, []);
+
+  if (!cognitoConfig) {
+    return <Loader />;
+  }
 
   return (
     <AuthContext.Provider

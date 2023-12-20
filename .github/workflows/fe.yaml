@@ -44,6 +44,10 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ secrets.CLUSTER_NAME }}
           resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
+      - name: Prepare Deployment Manifest
+        run: |
+          DATE=$(date +%s)
+          sed -i "s/{{.Date}}/$DATE/" manifests/deploy-fe.yaml
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f manifests/deploy-fe.yaml
