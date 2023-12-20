@@ -49,6 +49,16 @@ spec:
               value: "redis-service"
             - name: BACKEND_HOST
               value: "backend-service"
+            - name: VITE_COGNITO_USER_POOL_ID
+              valueFrom:
+                secretKeyRef:
+                  name: cognito-config
+                  key: VITE_COGNITO_USER_POOL_ID
+            - name: VITE_COGNITO_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: cognito-config
+                  key: VITE_COGNITO_CLIENT_ID
           ports:
             - containerPort: 3000
           volumeMounts:
