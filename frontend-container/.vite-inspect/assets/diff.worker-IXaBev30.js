@@ -164,9 +164,8 @@
         return endpoint.constructor.name === "MessagePort";
     }
     function closeEndPoint(endpoint) {
-        if (isMessagePort(endpoint)) {
-          endpoint.close();
-        }
+        if (isMessagePort(endpoint))
+            endpoint.close();
     }
     function wrap(ep, target) {
         return createProxy(ep, [], target);
@@ -621,7 +620,7 @@
     	          for (var j = subDiff.length - 1; j >= 0; j--) {
     	            diffs.splice(pointer, 0, subDiff[j]);
     	          }
-    	          pointer += subDiff.length;
+    	          pointer = pointer + subDiff.length;
     	        }
     	        count_insert = 0;
     	        count_delete = 0;
@@ -1167,31 +1166,32 @@
     	      var overlap_length1 = this.diff_commonOverlap_(deletion, insertion);
     	      var overlap_length2 = this.diff_commonOverlap_(insertion, deletion);
     	      if (overlap_length1 >= overlap_length2) {
-               	        if (overlap_length1 >= deletion.length / 2 ||
-               	            overlap_length1 >= insertion.length / 2) {
-               	          // Overlap found.  Insert an equality and trim the surrounding edits.
-               	          diffs.splice(pointer, 0, new diff_match_patch.Diff(DIFF_EQUAL,
-               	              insertion.substring(0, overlap_length1)));
-               	          diffs[pointer - 1][1] =
-               	              deletion.substring(0, deletion.length - overlap_length1);
-               	          diffs[pointer + 1][1] = insertion.substring(overlap_length1);
-               	          pointer++;
-               	        }
-               	      }
-           else if (overlap_length2 >= deletion.length / 2 ||
-               	            overlap_length2 >= insertion.length / 2) {
-               	          // Reverse overlap found.
-               	          // Insert an equality and swap and trim the surrounding edits.
-               	          diffs.splice(pointer, 0, new diff_match_patch.Diff(DIFF_EQUAL,
-               	              deletion.substring(0, overlap_length2)));
-               	          diffs[pointer - 1][0] = DIFF_INSERT;
-               	          diffs[pointer - 1][1] =
-               	              insertion.substring(0, insertion.length - overlap_length2);
-               	          diffs[pointer + 1][0] = DIFF_DELETE;
-               	          diffs[pointer + 1][1] =
-               	              deletion.substring(overlap_length2);
-               	          pointer++;
-               	        }
+    	        if (overlap_length1 >= deletion.length / 2 ||
+    	            overlap_length1 >= insertion.length / 2) {
+    	          // Overlap found.  Insert an equality and trim the surrounding edits.
+    	          diffs.splice(pointer, 0, new diff_match_patch.Diff(DIFF_EQUAL,
+    	              insertion.substring(0, overlap_length1)));
+    	          diffs[pointer - 1][1] =
+    	              deletion.substring(0, deletion.length - overlap_length1);
+    	          diffs[pointer + 1][1] = insertion.substring(overlap_length1);
+    	          pointer++;
+    	        }
+    	      } else {
+    	        if (overlap_length2 >= deletion.length / 2 ||
+    	            overlap_length2 >= insertion.length / 2) {
+    	          // Reverse overlap found.
+    	          // Insert an equality and swap and trim the surrounding edits.
+    	          diffs.splice(pointer, 0, new diff_match_patch.Diff(DIFF_EQUAL,
+    	              deletion.substring(0, overlap_length2)));
+    	          diffs[pointer - 1][0] = DIFF_INSERT;
+    	          diffs[pointer - 1][1] =
+    	              insertion.substring(0, insertion.length - overlap_length2);
+    	          diffs[pointer + 1][0] = DIFF_DELETE;
+    	          diffs[pointer + 1][1] =
+    	              deletion.substring(overlap_length2);
+    	          pointer++;
+    	        }
+    	      }
     	      pointer++;
     	    }
     	    pointer++;
@@ -2079,18 +2079,21 @@
     	          patch.diffs[patchDiffLength++] = diffs[x];
     	          patch.length1 += diff_text.length;
     	          patch.length2 += diff_text.length;
-    	        } else if (diff_text.length >= 2 * this.Patch_Margin && patchDiffLength) {
-                          this.patch_addContext_(patch, prepatch_text);
-                        	            patches.push(patch);
-                        	            patch = new diff_match_patch.patch_obj();
-                        	            patchDiffLength = 0;
-                        	            // Unlike Unidiff, our patch lists have a rolling context.
-                        	            // https://github.com/google/diff-match-patch/wiki/Unidiff
-                        	            // Update prepatch text & pos to reflect the application of the
-                        	            // just completed patch.
-                        	            prepatch_text = postpatch_text;
-                        	            char_count1 = char_count2;
-                    }
+    	        } else if (diff_text.length >= 2 * this.Patch_Margin) {
+    	          // Time for a new patch.
+    	          if (patchDiffLength) {
+    	            this.patch_addContext_(patch, prepatch_text);
+    	            patches.push(patch);
+    	            patch = new diff_match_patch.patch_obj();
+    	            patchDiffLength = 0;
+    	            // Unlike Unidiff, our patch lists have a rolling context.
+    	            // https://github.com/google/diff-match-patch/wiki/Unidiff
+    	            // Update prepatch text & pos to reflect the application of the
+    	            // just completed patch.
+    	            prepatch_text = postpatch_text;
+    	            char_count1 = char_count2;
+    	          }
+    	        }
     	        break;
     	    }
 
@@ -2476,12 +2479,10 @@
     	      } else if (sign == '@') {
     	        // Start of next patch.
     	        break;
-    	      } else if (sign === '') {
-                    ;
-                  } else {
-                      	        // WTF?
-                      	        throw new Error('Invalid patch mode "' + sign + '" in: ' + line);
-                      	      }
+    	      } else if (sign === '') ; else {
+    	        // WTF?
+    	        throw new Error('Invalid patch mode "' + sign + '" in: ' + line);
+    	      }
     	      textPointer++;
     	    }
     	  }

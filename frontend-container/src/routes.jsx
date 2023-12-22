@@ -1,5 +1,7 @@
 import React from "react";
 import { lazy } from "@loadable/component";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // Layouts
 import AuthLayout from "./layouts/Auth";
 import DashboardLayout from "./layouts/Dashboard";
@@ -77,10 +79,10 @@ const Calendar = lazy(() => import("./pages/calendar/Calendar"));
 const Introduction = lazy(() => import("./pages/docs/Introduction"));
 const GettingStarted = lazy(() => import("./pages/docs/GettingStarted"));
 const Routing = lazy(() => import("./pages/docs/Routing"));
-//const Auth0 = lazy(() => import("./pages/docs/auth/Auth0"));
+const Auth0 = lazy(() => import("./pages/docs/auth/Auth0"));
 const Cognito = lazy(() => import("./pages/docs/auth/Cognito"));
-//const Firebase = lazy(() => import("./pages/docs/auth/Firebase"));
-//const JWT = lazy(() => import("./pages/docs/auth/JWT"));
+const Firebase = lazy(() => import("./pages/docs/auth/Firebase"));
+const JWT = lazy(() => import("./pages/docs/auth/JWT"));
 const Guards = lazy(() => import("./pages/docs/Guards"));
 const APICalls = lazy(() => import("./pages/docs/APICalls"));
 const Redux = lazy(() => import("./pages/docs/Redux"));
@@ -97,6 +99,13 @@ const Support = lazy(() => import("./pages/docs/Support"));
 const Changelog = lazy(() => import("./pages/docs/Changelog"));
 // Protected routes
 const ProtectedPage = lazy(() => import("./pages/protected/ProtectedPage"));
+const RedirectToSignIn = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/auth/sign-in");
+  }, [navigate]);
+  return null; // or a loading indicator if preferred
+};
 const routes = [
   {
     path: "/",
@@ -175,6 +184,10 @@ const routes = [
         element: <Blank />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <RedirectToSignIn />,
   },
   {
     path: "auth",
@@ -414,22 +427,22 @@ const routes = [
         path: "routing",
         element: <Routing />,
       },
-      //{
-      //  path: "auth/auth0",
-      //  element: <Auth0 />,
-      //},
+      {
+        path: "auth/auth0",
+        element: <Auth0 />,
+      },
       {
         path: "auth/cognito",
         element: <Cognito />,
       },
-      //{
-      //  path: "auth/firebase",
-      //  element: <Firebase />,
-      //},
-      //{
-      //  path: "auth/jwt",
-      //  element: <JWT />,
-      //},
+      {
+        path: "auth/firebase",
+        element: <Firebase />,
+      },
+      {
+        path: "auth/jwt",
+        element: <JWT />,
+      },
       {
         path: "guards",
         element: <Guards />,
