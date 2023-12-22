@@ -1,8 +1,0 @@
-{
-    "app_id": "sportsradarfeed-ljtpz",
-    "config_version": 20210101,
-    "name": "SportsRadarFeed",
-    "location": "US-VA",
-    "provider_region": "gcp-us-central1",
-    "deployment_model": "LOCAL"
-}

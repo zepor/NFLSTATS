@@ -5,7 +5,7 @@ import { MoreHorizontal } from "react-feather";
 
 import DT from "react-datetime";
 
-const DateTime = DT.default ? DT.default : DT;
+const DateTime = DT.default || DT;
 
 const Calendar = () => (
   <Card className="flex-fill w-100">

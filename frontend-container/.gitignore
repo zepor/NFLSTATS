@@ -49,3 +49,4 @@ amplifytools.xcconfig
 !.env.vault
 .env.me
 src/config.js
+NFL-Stats/

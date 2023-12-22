@@ -50,4 +50,4 @@ class TransactionInfo(Document):
 
     def __str__(self):
         # You can customize this string representation
-        return "TransactionInfo: " + str(self.id)
+        return f"TransactionInfo: {str(self.id)}"

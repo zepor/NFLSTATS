@@ -440,28 +440,28 @@ def get_year_season_combinations(current_year, current_season_type):
             "REG": "Regular Season",
             "PST": "Playoffs"
         }
-        year_season_combinations = []
+        season_type_order = {"PRE": 0, "REG": 1, "PST": 2}
+        year_season_combinations = set()
         current_combo = {
             "year": current_year,
             "season_type": season_type_mapping[current_season_type]
         }
         for item in data.get_AllSeasonsTeamStatDetails_cache:
-            if "_id" in item and "year" in item["_id"] and "season_type" in item["_id"] and "games_played" in item["seasonStatTeam"]:
-                year = item["_id"]["year"]
+            if all(k in item["_id"] for k in ("year", "season_type")) and "games_played" in item["seasonStatTeam"] and item["seasonStatTeam"]["games_played"] > 1:
                 season_type_db = item["_id"]["season_type"]
-                # Only include seasons with more than 1 game played
-                if item["seasonStatTeam"]["games_played"] > 1:
+                year = item["_id"]["year"]
+                if year != current_year or season_type_db != current_season_type:
                     season_type = season_type_mapping.get(
                         season_type_db, season_type_db)
-                    if not (year == current_year and season_type_db == current_season_type):
-                        combo = {"year": year, "season_type": season_type}
-                        if combo not in year_season_combinations:
-                            year_season_combinations.append(combo)
-        ordered_seasons = ["PRE", "REG", "PST"]
-        year_season_combinations.sort(key=lambda x: (x['year'], ordered_seasons.index(
-            [k for k, v in season_type_mapping.items() if v == x['season_type']][0])), reverse=True)
-        if current_combo in year_season_combinations:
-            year_season_combinations.remove(current_combo)
+                    combo = {"year": year, "season_type": season_type}
+                    year_season_combinations.add(frozenset(combo.items()))
+        year_season_combinations = [
+            dict(combo) for combo in sorted(
+                year_season_combinations,
+                key=lambda x: (x['year'], season_type_order[x['season_type']]),
+                reverse=True
+            )
+        ]
         year_season_combinations.insert(0, current_combo)
         be_logger.info(
             f"get_year_season_combinations:Number Items in Season Dropdown:{len(year_season_combinations)}")
@@ -692,7 +692,7 @@ def get_data():
         team_top_10_data_cache_json = structure_data_for_categories()
         if team_top_10_data_cache_json is None:
             be_logger.error(
-                f"get_data: structure_data_for_categories() returned None")
+                "get_data: structure_data_for_categories() returned None")
             return jsonify({"error": "Error in getting top 10 data"}), 500
         else:
             be_logger.info(
@@ -703,8 +703,9 @@ def get_data():
             be_logger.info(
                 f"get_data: Number of Documents returned to year_season_combinations_cache: {len(data.year_season_combinations_cache)}")
         if key in data.teams_dict_cache:
-            be_logger.debug("get_data: Teams_dict_cache content: {}".format(
-                data.teams_dict_cache[key][1:4]))
+            be_logger.debug(
+                f"get_data: Teams_dict_cache content: {data.teams_dict_cache[key][1:4]}"
+            )
         else:
             be_logger.warning(
                 f"get_data: Key {key} not found in data.teams_dict_cache")
@@ -768,7 +769,7 @@ def populate_teams():
     try:
         be_logger.info("/populate-teams being accessed)")
         # Debugging line:
-        be_logger.debug("Args received from frontend: " + str(request.args))
+        be_logger.debug(f"Args received from frontend: {str(request.args)}")
         selected_year_from_frontend = request.args.get(
             'year', default=data.selected_year, type=int)
         selected_season_type_from_frontend = request.args.get(
@@ -1063,8 +1064,7 @@ def venues():
 @log_and_catch_exceptions
 @app.route("/livegames", methods=['GET'])
 def live_games():
-    games_data = fetch_live_games_data()
-    if games_data:
+    if games_data := fetch_live_games_data():
         return jsonify(games_data)
     else:
         return Response(json.dumps({"error": "Query is already running or an error occurred"}), status=500, mimetype='application/json')
@@ -1135,9 +1135,9 @@ be_logger.info(f"Current FLASK_ENV: {flask_env}")
 if __name__ == "__main__":
     clear_cache()
     if flask_env == 'development' and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-        data = data if data else FootballData()
+        data = data or FootballData()
         app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=True)
     elif flask_env != 'development':
         # In production mode, just initialize as usual
-        data = data if data else FootballData()
+        data = data or FootballData()
         app.run()

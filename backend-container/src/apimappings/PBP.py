@@ -72,7 +72,7 @@ def fetch_and_pbp_by_game(game_id):
     response = requests.get(PLAY_BY_PLAY_API_URL, timeout=10)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
-        return f"GetCurrentSeasonScheduleError for {game_id} {year}: " + str(response.status_code)
+        return f"GetCurrentSeasonScheduleError for {game_id} {year}: {response.status_code}"
     data = response.json()
     # print("data:", data)
     venue_info_dict = extract_venue_info(data)
@@ -115,8 +115,7 @@ def extract_play_by_play_data(source):
     # Fetch play-by-play data from the source (API, database, file, etc.)
     # This is an example of extracting from an API
     response = requests.get(source)
-    data = response.json()
-    return data
+    return response.json()
 
 @log_and_catch_exceptions
 def extract_venue_info(data):
@@ -128,11 +127,12 @@ def extract_venue_info(data):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
         for game in week['games']:
-            venue_info = {}
-            venue_info['id'] = game['venue']['id']
-            venue_info['name'] = game['venue']['name']
-            venue_info['city'] = game['venue']['city']
-            venue_info['state'] = game['venue'].get('state')
+            venue_info = {
+                'id': game['venue']['id'],
+                'name': game['venue']['name'],
+                'city': game['venue']['city'],
+                'state': game['venue'].get('state'),
+            }
             venue_info['country'] = game['venue'].get('country')
             venue_info['zip'] = game['venue'].get('zip')
             venue_info['address'] = game['venue']['address']
@@ -359,7 +359,6 @@ def extract_pbp_info(data):
 
 @log_and_catch_exceptions
 def map_pbp_info(pbp_info_dict):
-    mapped_pbps = {}
     for pbp_id, pbp_details in pbp_info_dict.items():
 
         quarter_embedded = quarter(
@@ -422,7 +421,7 @@ def map_pbp_info(pbp_info_dict):
             clock=pbp_details['clock'],
             type=pbp_details['type'],
         )
-    return mapped_pbps
+    return {}
 
 
 @log_and_catch_exceptions
@@ -435,14 +434,15 @@ def extract_league_info(data):
     if isinstance(weeks_or_week, dict):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
-        league_info = {}
-        league_info['Season Id'] = season['id']
-        league_info['Season Year'] = season['year']
-        league_info['Season Type'] = season['type']
-        league_info['Season Name'] = season['name']
-        league_info['Week Id'] = week['id']
-        league_info['Week Sequence'] = week['sequence']
-        league_info['Week Title'] = week['title']
+        league_info = {
+            'Season Id': season['id'],
+            'Season Year': season['year'],
+            'Season Type': season['type'],
+            'Season Name': season['name'],
+            'Week Id': week['id'],
+            'Week Sequence': week['sequence'],
+            'Week Title': week['title'],
+        }
         bye_week_teams = week.get('bye_week', [])
         bye_week_team_info = []
         for team in bye_week_teams:
@@ -471,9 +471,7 @@ def map_league_info(league_info_dict):
             year=league_details['Season Year']
         )
         week_embedded_list = []  # List to store leagueweek instances
-        bye_week_team_info_list = league_details['Bye Week Team Info']
-        # Check if there are bye week teams or not
-        if bye_week_team_info_list:
+        if bye_week_team_info_list := league_details['Bye Week Team Info']:
             for team_info in bye_week_team_info_list:
                 week_embedded = leagueweek(
                     id=league_details['Week Id'],
@@ -513,8 +511,7 @@ def extract_game_info(data):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
         for game in week['games']:
-            game_ginfo = {}
-            game_ginfo['season_id'] = data.get('id', None)
+            game_ginfo = {'season_id': data.get('id', None)}
             game_ginfo['week_id'] = week.get('id', None)
             game_ginfo['venue_id'] = game['venue']['id']
             game_ginfo['game_id'] = game['id']
@@ -564,7 +561,7 @@ def extract_game_info(data):
             game_ginfo['wind_direction'] = game.get(
                 'weather', {}).get('wind', {}).get('direction', None)
             game_info_dict[game['id']] = game_ginfo
-        # print("game_info_dict:", game_info_dict)
+            # print("game_info_dict:", game_info_dict)
     return game_info_dict
 
 
@@ -639,8 +636,6 @@ def map_game_info(game_info_dict):
 
 @log_and_catch_exceptions
 def extract_boxscore_info(data):
-    boxscore_info_dict = {}
-
     # Extract general game information
     game_id = data['id']
     attendance = data.get('attendance')
@@ -660,21 +655,21 @@ def extract_boxscore_info(data):
     quarters_info = extract_quarters_info(data)
     overtime_info = extract_overtime_info(data)
 
-    boxscore_info_dict[game_id] = {
-        'game_id': game_id,
-        'attendance': attendance,
-        'home_team': home_team,
-        'away_team': away_team,
-        'home_team_points': home_team_points,
-        'away_team_points': away_team_points,
-        'coin_toss': coin_toss_info,
-        'timeouts': timeouts_info,
-        'challenges': challenges_info,
-        'quarters': quarters_info,
-        'overtimes': overtime_info
+    return {
+        game_id: {
+            'game_id': game_id,
+            'attendance': attendance,
+            'home_team': home_team,
+            'away_team': away_team,
+            'home_team_points': home_team_points,
+            'away_team_points': away_team_points,
+            'coin_toss': coin_toss_info,
+            'timeouts': timeouts_info,
+            'challenges': challenges_info,
+            'quarters': quarters_info,
+            'overtimes': overtime_info,
+        }
     }
-
-    return boxscore_info_dict
 
 # Helper functions to extract specific details
 
@@ -715,31 +710,31 @@ def extract_challenges_info(data):
 
 
 def extract_quarters_info(data):
-    quarters_list = []
-    for quarter in data['periods']:
-        if quarter['period_type'] == 'quarter':
-            quarters_list.append(quarter(
-                quarter_id=quarter['id'],
-                quarter_number=quarter['number'],
-                quarter_sequence=quarter['sequence'],
-                awayteampointsforquarter=quarter['scoring']['away']['points'],
-                hometeampointsforquarter=quarter['scoring']['home']['points']
-            ))
-    return quarters_list
+    return [
+        quarter(
+            quarter_id=quarter['id'],
+            quarter_number=quarter['number'],
+            quarter_sequence=quarter['sequence'],
+            awayteampointsforquarter=quarter['scoring']['away']['points'],
+            hometeampointsforquarter=quarter['scoring']['home']['points'],
+        )
+        for quarter in data['periods']
+        if quarter['period_type'] == 'quarter'
+    ]
 
 
 def extract_overtime_info(data):
-    overtime_list = []
-    for quarter in data['periods']:
-        if quarter['period_type'] == 'overtime':
-            overtime_list.append(overtime(
-                overtime_id=quarter['id'],
-                overtime_number=quarter['number'],
-                overtime_sequence=quarter['sequence'],
-                awayteamovertimepoints=quarter['scoring']['away']['points'],
-                hometeamovertimepoints=quarter['scoring']['home']['points']
-            ))
-    return overtime_list
+    return [
+        overtime(
+            overtime_id=quarter['id'],
+            overtime_number=quarter['number'],
+            overtime_sequence=quarter['sequence'],
+            awayteamovertimepoints=quarter['scoring']['away']['points'],
+            hometeamovertimepoints=quarter['scoring']['home']['points'],
+        )
+        for quarter in data['periods']
+        if quarter['period_type'] == 'overtime'
+    ]
 
 
 
@@ -754,8 +749,8 @@ def map_boxscore_info(boxscore_info_dict):
             coin_toss_instance = coin_toss(...)
             challenges_instance = challenges(...)
             timeouts_instance = timeouts(...)
-            quarters_instances = [quarter(...) for quarter_data in info['quarters']]
-            overtime_instances = [overtime(...) for overtime_data in info['overtimes']]
+            quarters_instances = [quarter(...) for _ in info['quarters']]
+            overtime_instances = [overtime(...) for _ in info['overtimes']]
 
             # Create main BoxscoreInfo instance
             boxscore_info_instance = BoxscoreInfo(

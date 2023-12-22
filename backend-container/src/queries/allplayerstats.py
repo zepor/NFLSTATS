@@ -6,90 +6,67 @@ self.get_AllSeasonsPlayerStatDetails_cache = FootballData.fetch_AllSeasonsPlayer
     @log_and_catch_exceptions
     def fetch_AllSeasonsPlayerStatDetails():
         print("Starting fetch for AllSeasonsPlayerStatDetails...")
-        data = [
+        print("Finished fetch for AllSeasonsPlayerStatDetails.")
+        return [
             {
                 '$lookup': {
                     'from': 'TeamInfo',
                     'localField': 'teamid',
                     'foreignField': '_id',
-                    'as': 'teamInfo'
+                    'as': 'teamInfo',
                 }
-            }, {
-                '$unwind': '$teamInfo'
-            }, {
+            },
+            {'$unwind': '$teamInfo'},
+            {
                 '$lookup': {
                     'from': 'FranchiseInfo',
                     'localField': 'teamid',
                     'foreignField': 'teamid',
-                    'as': 'franchiseInfo'
+                    'as': 'franchiseInfo',
                 }
-            }, {
-                '$unwind': '$franchiseInfo'
-            }, {
+            },
+            {'$unwind': '$franchiseInfo'},
+            {
                 '$lookup': {
                     'from': 'SeasonInfo',
                     'localField': 'seasonid',
                     'foreignField': '_id',
-                    'as': 'seasonInfo'
+                    'as': 'seasonInfo',
                 }
-            }, {
-                '$unwind': '$seasonInfo'
-            }, {
+            },
+            {'$unwind': '$seasonInfo'},
+            {
                 '$lookup': {
                     'from': 'SeasonStatPlayer',
-                    'let': {
-                        'team_id': '$teamid',
-                        'season_id': '$seasonid'
-                    },
+                    'let': {'team_id': '$teamid', 'season_id': '$seasonid'},
                     'pipeline': [
                         {
                             '$match': {
                                 '$expr': {
                                     '$and': [
-                                        {
-                                            '$eq': [
-                                                '$teamid', '$$team_id'
-                                            ]
-                                        }, {
-                                            '$eq': [
-                                                '$seasonid', '$$season_id'
-                                            ]
-                                        }
+                                        {'$eq': ['$teamid', '$$team_id']},
+                                        {'$eq': ['$seasonid', '$$season_id']},
                                     ]
                                 }
                             }
                         }
                     ],
-                    'as': 'seasonstatplayer'
+                    'as': 'seasonstatplayer',
                 }
-            }, {
-                '$unwind': '$seasonstatplayer'
-            }, {
+            },
+            {'$unwind': '$seasonstatplayer'},
+            {
                 '$group': {
                     '_id': {
                         'year': '$seasonInfo.year',
                         'season_type': '$seasonInfo.type',
-                        'team': '$teamInfo.team.name'
+                        'team': '$teamInfo.team.name',
                     },
-                    'teamInfo': {
-                        '$first': '$teamInfo'
-                    },
-                    'franchiseInfo': {
-                        '$first': '$franchiseInfo'
-                    },
-                    'seasonInfo': {
-                        '$first': '$seasonInfo'
-                    },
-                    'seasonstatplayer': {
-                        '$first': '$seasonstatplayer'
-                    }
+                    'teamInfo': {'$first': '$teamInfo'},
+                    'franchiseInfo': {'$first': '$franchiseInfo'},
+                    'seasonInfo': {'$first': '$seasonInfo'},
+                    'seasonstatplayer': {'$first': '$seasonstatplayer'},
                 }
-            }, {
-                '$sort': {
-                    '_id.year': -1,
-                    '_id.season_type': 1
-                }
-            }
-        ]
-        print("Finished fetch for AllSeasonsPlayerStatDetails.")
-        return data  
+            },
+            {'$sort': {'_id.year': -1, '_id.season_type': 1}},
+        ]  

@@ -120,13 +120,12 @@ def fetch_and_save_team_profile():
         logger.exception("An error occurred:")
         return f"Error: {str(e)}", 500
 def extract_franchise_info(data):
-    franchise_info = {
+    return {
         'id': data['id'],
         'falias': data['franchise']['alias'],
         'fid': data['franchise']['id'],
         'fname': data['franchise']['name'],
     }
-    return franchise_info
 def map_franchise_info(franchise_info):
     franchise_id = franchise_info['fid']
     mapped_franchise = FranchiseInfo(
@@ -140,7 +139,7 @@ def extract_league_hierarchy(data):
     # Extract conference and division data from raw data
     conference_data = data['conference']
     division_data = data['division']
-    
+
     # Extract specific data points
     extracted_conference = {
         'calias': conference_data['alias'],
@@ -154,13 +153,8 @@ def extract_league_hierarchy(data):
             }
         ]
     }
-    
-    league_hierarchy_dict = {
-        'conferences': [extracted_conference]
-    }
-    
-    #logging.info("League Hierarchy Dict:", league_hierarchy_dict)
-    return league_hierarchy_dict
+
+    return {'conferences': [extracted_conference]}
 def map_leaguehierarchy(league_hierarchy_dict):
     # Manually set the static ID for the mapped_leaguehierarchy
     static_id = "3c6d318a-6164-4290-9bbc-bf9bb21cc4b8"
@@ -363,7 +357,7 @@ def map_team_info(team_info):
         name=team_info['name'],
         sr_id=team_info['sr_id']
     )
-    team_dict = {
+    return {
         team_id: {
             "team": mapped_team,
             "coachs": mapped_coaches,
@@ -373,7 +367,6 @@ def map_team_info(team_info):
             "division_id": team_info.get('division_id', None),
         }
     }
-    return team_dict
 def extract_venue_info(data):
     venue_data = data.get('venue', {})
     # Debug: Print the type and content of venue_data to check its structure
@@ -398,7 +391,6 @@ def extract_venue_info(data):
     logging.info("Content of venue info:", venue_info)
     return venue_info
 def map_venue_info(venue_info_dict):
-    mapped_venues = {}
     # No need to loop; just extract the details from venue_info_dict directly
     venue_details = venue_info_dict
     # Debug: Print the type and content of venue_details
@@ -425,7 +417,7 @@ def map_venue_info(venue_info_dict):
         venue1=venue_embedded,
         location=location_embedded
     )
-    mapped_venues[venue_details['id']] = venue_info_instance  
+    mapped_venues = {venue_details['id']: venue_info_instance}
     # Debug: Print the number of mapped venues and their content
     logging.info(f"Number of mapped venues: {len(mapped_venues)}")
     logging.info("Mapped_Venues:", mapped_venues)
@@ -460,7 +452,7 @@ def map_league_hierarchy(league_hierarchy_dict):
     return mapped_league_hierarchy
 def save_to_database(mapped_leaguehierarchy, mapped_franchises, mapped_players, mapped_teams, mapped_venues):
     logging.info("save_to_database called")
-    
+
     def update_collection(model_cls, mapped_data, collection_name):
         updated_count = 0
         new_count = 0
@@ -506,12 +498,12 @@ def save_to_database(mapped_leaguehierarchy, mapped_franchises, mapped_players, 
                 logging.info(f"Added new {collection_name} with id {new_entry.id}")  # Print after saving
                 new_count += 1
         logging.info(f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
-    
+
     update_collection(FranchiseInfo, mapped_franchises.values(), "franchise")
     update_collection(PlayerDCIinfo, mapped_players.values(), "player")
     update_collection(TeamInfo, mapped_teams.items(), "teams")
     update_collection(VenueInfo, mapped_venues.items(), "venue")
-    
+
     # Handling the LeagueHierarchy separately, as there's only one document.
     existing_league_hierarchy = LeagueHierarchy.objects.first()
     if existing_league_hierarchy:
@@ -530,5 +522,5 @@ def save_to_database(mapped_leaguehierarchy, mapped_franchises, mapped_players, 
         if updated_fields:
             logging.info(f"Updated the LeagueHierarchy: Updated fields: {', '.join(updated_fields)}")
         else:
-            logging.info(f"No updates needed for LeagueHierarchy")
+            logging.info("No updates needed for LeagueHierarchy")
 

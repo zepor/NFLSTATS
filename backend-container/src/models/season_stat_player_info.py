@@ -246,10 +246,10 @@ class SeasonStatPlayer(Document):
     meta = {"collection": "SeasonStatPlayer"}  # Specify the collection name
 
     def __str__(self):
-        return "SeasonStatPlayer: " + str(self.tojson())
+        return f"SeasonStatPlayer: {str(self.tojson())}"
 
     def save(self, *args, **kwargs):
-        if all([hasattr(self, attr) for attr in ['playerid', 'teamid', 'seasonid']]):
+        if all(hasattr(self, attr) for attr in ['playerid', 'teamid', 'seasonid']):
             self._id = f"{self.playerid}_{self.teamid}_{self.seasonid}"
         else:
             raise ValueError(

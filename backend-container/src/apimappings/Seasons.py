@@ -22,7 +22,7 @@ def fetch_and_save_seasons():
     response = requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
-        return f"Call Hierarchy Successfully"+ str(response.status_code)
+        return f"Call Hierarchy Successfully{response.status_code}"
     data = response.json()
     season_indo_dict = extract_season_info(data)
     mapped_seasons = map_seaoson_info(season_indo_dict)

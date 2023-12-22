@@ -44,7 +44,7 @@ def fetch_and_save_seasonal_stats():
     logging.info("SeasonalStats called")
     API_KEY = os.getenv('APIKEY')
     URL = "http://api.sportradar.us/nfl/official/trial/v7/en/seasons/{SEASONYEAR}/{SEASONTYPE}/teams/{TEAMID}/statistics.json?api_key={API_KEY}"
-    TEAMID =  list(set([team.id for team in TeamInfo.objects.only("id")]))
+    TEAMID = list({team.id for team in TeamInfo.objects.only("id")})
     SEASONYEAR = [2023]
     #list(set([season.year for season in SeasonInfo.objects.only("year")]))
     SEASONTYPE = ['REG']
@@ -71,6 +71,7 @@ def fetch_and_save_seasonal_stats():
                 raise
         logger.error(f"Max retries reached for URL: {url}. Skipping...")
         return None
+
     total_mapped_seasons = 0
     total_mapped_players = 0
     total_mapped_opposeasonalstats = 0
@@ -979,9 +980,7 @@ def extract_team_info(data):
         "alias": data.get("alias"),
         "sr_id": data.get("sr_id"),
     }
-    team_info_dict = {team_id: team_info}
-    #logging.info("Extracted TeamInfo data:", team_info_dict)
-    return team_info_dict
+    return {team_id: team_info}
 def truncate_dict(d, max_items=5):
     """Truncates dictionary to a certain number of items."""
     truncated = dict(list(d.items())[:max_items])
@@ -1081,7 +1080,7 @@ def save_to_database(mapped_seasons, mapped_players,  opponenetseasondata, teams
         for entry_id, mapped_entry in mapped_data.items():
             if not isinstance(mapped_entry, dict):
                 mapped_entry = handle_non_dict_entry(entry_id, mapped_entry, model_cls)
-            new_entry = map_dict_to_model(mapped_entry, model_cls) if not isinstance(mapped_entry, model_cls) else mapped_entry
+            new_entry = mapped_entry if isinstance(mapped_entry, model_cls) else map_dict_to_model(mapped_entry, model_cls)
             # Specify query condition based on collection_name
             if collection_name in ["SeasonStatOppo", "SeasonStatTeam"]:
                 query_condition = {"seasonid": entry_id[0], "teamid": entry_id[1]}
@@ -1117,7 +1116,7 @@ def save_to_database(mapped_seasons, mapped_players,  opponenetseasondata, teams
                     logging.info(f"Added new {collection_name} with id {new_entry.id}")
                     new_count += 1
                 except Exception as e:
-                    logging.error(f"Error while saving {collection_name} with data: {mongo_representation if mongo_representation else 'Failed before mongo representation'}")
+                    logging.error(f"Error while saving {collection_name} with data: {mongo_representation or 'Failed before mongo representation'}")
                     raise e
         logging.info(f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
     update_collection(SeasonInfo, mapped_seasons, "SeasonInfo")
