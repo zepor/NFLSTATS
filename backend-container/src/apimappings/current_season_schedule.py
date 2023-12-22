@@ -47,7 +47,7 @@ def fetch_and_save_all_seasons_schedule():
             response = requests.get(url)
             print("Response status code:", response.status_code)
             if response.status_code != 200:
-                return f"GetCurrentSeasonScheduleError for {year} {season_type}: " + str(response.status_code)
+                return f"GetCurrentSeasonScheduleError for {year} {season_type}: {response.status_code}"
             data = response.json()
             venue_info_dict = extract_venue_info(data)
             league_info_dict = extract_league_info(data)
@@ -62,7 +62,6 @@ def fetch_and_save_all_seasons_schedule():
             print("Games saved to database")
             time.sleep(2)
     return "Schedule data for all seasons fetched and saved successfully."
-
 
 @log_and_catch_exceptions
 @bp.route('/fetchAndSaveWeeklySchedule', methods=['GET'])
@@ -80,7 +79,7 @@ def fetch_and_save_weekly_schedule():
     response = requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
-        return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: " + str(response.status_code)
+        return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: {response.status_code}"
     data = response.json()
     # print("data:", data)
     venue_info_dict = extract_venue_info(data)
@@ -108,9 +107,10 @@ def extract_boxscore_info(data):
         weeks_or_week = [weeks_or_week]
     for week in weeks_or_week:
         for game in week['games']:
-            boxscore_info = {}
-            boxscore_info['game_id'] = game['id']
-            boxscore_info['attendance'] = game.get('attendance', None)
+            boxscore_info = {
+                'game_id': game['id'],
+                'attendance': game.get('attendance', None),
+            }
             boxscore_info['home_teambs'] = game['home']['alias']
             boxscore_info['away_teambs'] = game['away']['alias']
             scoring = game.get('scoring', {})
@@ -120,21 +120,23 @@ def extract_boxscore_info(data):
                 'away_points')
             boxscore_info['quarters'] = []
             for quarter in scoring.get('periods', []):
-                quarter_info = {}
-                quarter_info['quarter_id'] = quarter['id']
-                quarter_info['quarter_number'] = quarter['number']
-                quarter_info['quarter_sequence'] = quarter['sequence']
-                quarter_info['away_points_for_quarter'] = quarter['away_points']
-                quarter_info['home_points_for_quarter'] = quarter['home_points']
+                quarter_info = {
+                    'quarter_id': quarter['id'],
+                    'quarter_number': quarter['number'],
+                    'quarter_sequence': quarter['sequence'],
+                    'away_points_for_quarter': quarter['away_points'],
+                    'home_points_for_quarter': quarter['home_points'],
+                }
                 boxscore_info['quarters'].append(quarter_info)
             boxscore_info['overtime'] = []
             for overtime in scoring.get('overtime', []):
-                overtime_info = {}
-                overtime_info['overtime_id'] = overtime['id']
-                overtime_info['overtime_number'] = overtime['number']
-                overtime_info['overtime_sequence'] = overtime['sequence']
-                overtime_info['away_points_for_overtime'] = overtime['away_points']
-                overtime_info['home_points_for_overtime'] = overtime['home_points']
+                overtime_info = {
+                    'overtime_id': overtime['id'],
+                    'overtime_number': overtime['number'],
+                    'overtime_sequence': overtime['sequence'],
+                    'away_points_for_overtime': overtime['away_points'],
+                    'home_points_for_overtime': overtime['home_points'],
+                }
                 boxscore_info['overtime'].append(overtime_info)
             boxscore_info_dict[game['id']] = boxscore_info
     return boxscore_info_dict
@@ -201,8 +203,7 @@ def extract_game_info(data):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
         for game in week['games']:
-            game_ginfo = {}
-            game_ginfo['season_id'] = data.get('id', None)
+            game_ginfo = {'season_id': data.get('id', None)}
             game_ginfo['week_id'] = week.get('id', None)
             game_ginfo['venue_id'] = game['venue']['id']
             game_ginfo['game_id'] = game['id']
@@ -252,7 +253,7 @@ def extract_game_info(data):
             game_ginfo['wind_direction'] = game.get(
                 'weather', {}).get('wind', {}).get('direction', None)
             game_info_dict[game['id']] = game_ginfo
-        # print("game_info_dict:", game_info_dict)
+            # print("game_info_dict:", game_info_dict)
     return game_info_dict
 
 
@@ -336,14 +337,15 @@ def extract_league_info(data):
     if isinstance(weeks_or_week, dict):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
-        league_info = {}
-        league_info['Season Id'] = season['id']
-        league_info['Season Year'] = season['year']
-        league_info['Season Type'] = season['type']
-        league_info['Season Name'] = season['name']
-        league_info['Week Id'] = week['id']
-        league_info['Week Sequence'] = week['sequence']
-        league_info['Week Title'] = week['title']
+        league_info = {
+            'Season Id': season['id'],
+            'Season Year': season['year'],
+            'Season Type': season['type'],
+            'Season Name': season['name'],
+            'Week Id': week['id'],
+            'Week Sequence': week['sequence'],
+            'Week Title': week['title'],
+        }
         bye_week_teams = week.get('bye_week', [])
         bye_week_team_info = []
         for team in bye_week_teams:
@@ -372,9 +374,7 @@ def map_league_info(league_info_dict):
             year=league_details['Season Year']
         )
         week_embedded_list = []  # List to store leagueweek instances
-        bye_week_team_info_list = league_details['Bye Week Team Info']
-        # Check if there are bye week teams or not
-        if bye_week_team_info_list:
+        if bye_week_team_info_list := league_details['Bye Week Team Info']:
             for team_info in bye_week_team_info_list:
                 week_embedded = leagueweek(
                     id=league_details['Week Id'],
@@ -414,11 +414,12 @@ def extract_venue_info(data):
         weeks_or_week = [weeks_or_week]  # make it a list so we can iterate
     for week in weeks_or_week:
         for game in week['games']:
-            venue_info = {}
-            venue_info['id'] = game['venue']['id']
-            venue_info['name'] = game['venue']['name']
-            venue_info['city'] = game['venue']['city']
-            venue_info['state'] = game['venue'].get('state')
+            venue_info = {
+                'id': game['venue']['id'],
+                'name': game['venue']['name'],
+                'city': game['venue']['city'],
+                'state': game['venue'].get('state'),
+            }
             venue_info['country'] = game['venue'].get('country')
             venue_info['zip'] = game['venue'].get('zip')
             venue_info['address'] = game['venue']['address']
@@ -431,7 +432,7 @@ def extract_venue_info(data):
             venue_info['lng'] = game.get('venue', {}).get(
                 'location', {}).get('lng', None)
             venue_info_dict[game['venue']['id']] = venue_info
-            # print("venue_info_dict:", venue_info_dict)
+                    # print("venue_info_dict:", venue_info_dict)
     return venue_info_dict
 
 

@@ -44,7 +44,7 @@ const Task = ({ id, checked, text, avatar }) => (
         <Form.Check
           type="checkbox"
           id={"exampleCustomCheckbox" + id}
-          defaultChecked={checked ? true : false}
+          defaultChecked={!!checked}
         />
       </div>
       <p>{text}</p>

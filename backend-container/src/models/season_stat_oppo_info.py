@@ -313,7 +313,7 @@ class SeasonStatOppo(Document):
     meta = {"collection": "SeasonStatOppo"}  # Specify the collection name
 
     def __str__(self):
-        return "SeasonStatOppo: " + str(self.tojson())
+        return f"SeasonStatOppo: {str(self.tojson())}"
 
     def save(self, *args, **kwargs):
         if hasattr(self, 'teamid') and hasattr(self, 'seasonid'):

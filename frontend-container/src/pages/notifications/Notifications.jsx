@@ -135,9 +135,7 @@ const Notifications = () => {
                   onClick={() =>
                     notyf.open({
                       type,
-                      message: message
-                        ? message
-                        : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+                      message: message || "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
                       duration,
                       ripple,
                       dismissible,

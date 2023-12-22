@@ -1,4 +1,4 @@
-import React, { StrictMode, Suspense } from "react";
+import React, { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
@@ -11,6 +11,7 @@ import SidebarProvider from "./contexts/SidebarProvider";
 import LayoutProvider from "./contexts/LayoutProvider";
 import ChartJsDefaults from "./utils/ChartJsDefaults";
 import AuthProvider from "./contexts/CognitoProvider";
+import "./builder-components.js";
 
 const App = () => {
   const routeContent = useRoutes(routes);
@@ -23,7 +24,14 @@ const App = () => {
             <SidebarProvider>
               <LayoutProvider>
                 <ChartJsDefaults />
-                <AuthProvider>{routeContent}</AuthProvider>
+                <AuthProvider>
+                  <builder-component
+                    model="page"
+                    api-key="2c87660801bc48878f989ed5ac733863"
+                  >
+                    {routeContent}
+                  </builder-component>
+                </AuthProvider>
               </LayoutProvider>
             </SidebarProvider>
           </ThemeProvider>

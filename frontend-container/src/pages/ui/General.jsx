@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import {Accordion,
+import {
+  Accordion,
   Badge,
   Breadcrumb,
   Button,
@@ -13,7 +14,8 @@ import {Accordion,
   Tooltip,
   ProgressBar,
   Spinner,
-  OverlayTrigger} from "react-bootstrap";
+  OverlayTrigger,
+} from "react-bootstrap";
 
 import avatar1 from "../../assets/img/avatars/avatar.jpg";
 
@@ -67,7 +69,10 @@ const AccordionElement = () => (
   <Card>
     <Card.Header className="pb-0">
       <Card.Title>Accordion</Card.Title>
-      <h6 className="card-subtitle text-muted">Build vertically collapsing accordions in combination with the Collapse component.</h6>
+      <h6 className="card-subtitle text-muted">
+        Build vertically collapsing accordions in combination with the Collapse
+        component.
+      </h6>
     </Card.Header>
     <Card.Body>
       <Accordion defaultActiveKey="0">

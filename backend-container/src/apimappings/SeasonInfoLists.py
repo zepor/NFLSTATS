@@ -19,9 +19,11 @@ from datetime import datetime
 import requests
 API_KEY = os.getenv('APIKEY')
 URL = "http://api.sportradar.us/nfl/official/trial/v7/en/seasons/{SEASONYEAR}/{SEASONTYPE}/teams/{TeamID}/statistics.json?api_key={API_KEY}"
-TEAMID = list(set([team.id for team in TeamInfo.objects.only("id")]))
-SEASONYEAR = list(set([season.year for season in SeasonInfo.objects.only("year")]))
-SEASONTYPE = list(set([season["type"] for season in SeasonInfo.objects.only("type")]))
+TEAMID = list({team.id for team in TeamInfo.objects.only("id")})
+SEASONYEAR = list({season.year for season in SeasonInfo.objects.only("year")})
+SEASONTYPE = list(
+    {season["type"] for season in SeasonInfo.objects.only("type")}
+)
 print(SEASONYEAR)
 print(TEAMID)
 print(SEASONTYPE)

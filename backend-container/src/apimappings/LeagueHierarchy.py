@@ -24,7 +24,7 @@ def fetchandsaveLeagueHierarchy():
     response = requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
-        return f"Call Seasons Successfully"+ str(response.status_code)
+        return f"Call Seasons Successfully{response.status_code}"
     data = response.json()
     venue_info_dict = extract_venue_info(data)
     league_hierarchy_dict = extract_league_hierarchy(data)
@@ -42,11 +42,12 @@ def extract_venue_info(data):
     for conference_data in data['conferences']:
         for division_data in conference_data['divisions']:
             for team_data in division_data['teams']:
-                venue_info = {}
-                venue_info['id'] = team_data['venue']['id']
-                venue_info['name'] = team_data['venue']['name']
-                venue_info['city'] = team_data['venue']['city']
-                venue_info['state'] = team_data['venue'].get('state')
+                venue_info = {
+                    'id': team_data['venue']['id'],
+                    'name': team_data['venue']['name'],
+                    'city': team_data['venue']['city'],
+                    'state': team_data['venue'].get('state'),
+                }
                 venue_info['country'] = team_data['venue'].get('country')
                 venue_info['zip'] = team_data['venue'].get('zip')
                 venue_info['address'] = team_data['venue']['address']
@@ -57,7 +58,7 @@ def extract_venue_info(data):
                 venue_info['lat'] = team_data.get('venue', {}).get('location', {}).get('lat', None)
                 venue_info['lng'] = team_data.get('venue', {}).get('location', {}).get('lng', None)
                 venue_info_dict[team_data['venue']['id']] = venue_info
-                #print("venue_info_dict:", venue_info_dict)
+                            #print("venue_info_dict:", venue_info_dict)
     return venue_info_dict
 def map_venue_info(venue_info_dict):
     mapped_venues = {}
@@ -212,8 +213,6 @@ def extract_league_hierarchy(data):
     print("league_hierarchy_dict", league_hierarchy_dict)  # Print the extracted data
     return league_hierarchy_dict
 def map_league_hierarchy(league_hierarchy_dict):
-    mapped_leagues = {}
-    
     print("Type of league_hierarchy_dict:", type(league_hierarchy_dict))
     print("Content of league_hierarchy_dict:", league_hierarchy_dict)
 
@@ -237,32 +236,31 @@ def map_league_hierarchy(league_hierarchy_dict):
 
         for division_data in conference_data['divisions']:
             mapped_teams = []  # Initialize a list to hold team objects
-            
+
             for team_data in division_data['teams']:
                 mapped_team = teams(
                     teamid=team_data['id'],
                     teamname=team_data['name']
                 )
                 mapped_teams.append(mapped_team)
-            
+
             mapped_division = division(
                 did=division_data['id'],
                 dalias=division_data['alias'],
                 dname=division_data['name'],
                 teams=mapped_teams
             )
-            
+
             mapped_divisions.append(mapped_division)
 
         mapped_conference.divisions = mapped_divisions
         current_mapped_league.conferences.append(mapped_conference)
-    
-    mapped_leagues[league_id] = LeagueHierarchy(
-        league=current_mapped_league,
-        typeleague=None
-    )
-    
-    return mapped_leagues
+
+    return {
+        league_id: LeagueHierarchy(
+            league=current_mapped_league, typeleague=None
+        )
+    }
 def save_to_database(mapped_venues, mapped_leaguehierarchy, mapped_franchises, mapped_teams):
     print("save_to_database called")
     

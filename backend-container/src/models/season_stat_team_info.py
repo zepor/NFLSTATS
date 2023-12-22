@@ -300,7 +300,7 @@ class SeasonStatTeam(Document):
 
     def __str__(self):
         # You can customize this string representation
-        return "SeasonStatTeam: " + str(self.id)
+        return f"SeasonStatTeam: {str(self.id)}"
 
     def save(self, *args, **kwargs):
         if hasattr(self, 'teamid') and hasattr(self, 'seasonid'):
