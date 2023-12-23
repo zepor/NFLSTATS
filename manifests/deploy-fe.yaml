@@ -61,6 +61,41 @@ spec:
                 secretKeyRef:
                   name: cognito-config
                   key: VITE_COGNITO_CLIENT_ID
+            - name: VITE_AUTH0_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secret
+                  key: AUTH0_SECRET
+            - name: VITE_AUTH0_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secret
+                  key: AUTH0_BASE_URL
+            - name: VITE_AUTH0_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secret
+                  key: AUTH0_CLIENT_ID
+            - name: VITE_AUTH0_ISSUER_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secret
+                  key: VITE_AUTH0_ISSUER_BASE_URL
+            - name: AUTH0_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secrets
+                  key: AUTH0_DOMAIN
+            - name: ALGORITHMS
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secrets
+                  key: ALGORITHMS
+            - name: API_AUDIENCE
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secrets
+                  key: API_AUDIENCE
           ports:
             - containerPort: 3000
           volumeMounts:

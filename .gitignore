@@ -345,3 +345,6 @@ SportsRadar/
 nextjs-container/
 /backend-container/src/Schema/NFL_v7/*.py
 /backend-container/src/Schema/NFL_v7/*.json
+DeviceSyncApp/
+NFL-Stats-FastAPI/
+

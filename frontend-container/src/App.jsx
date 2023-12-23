@@ -10,7 +10,6 @@ import ThemeProvider from "./contexts/ThemeProvider";
 import SidebarProvider from "./contexts/SidebarProvider";
 import LayoutProvider from "./contexts/LayoutProvider";
 import ChartJsDefaults from "./utils/ChartJsDefaults";
-import AuthProvider from "./contexts/CognitoProvider";
 import "./builder-components.js";
 
 const App = () => {
@@ -24,14 +23,12 @@ const App = () => {
             <SidebarProvider>
               <LayoutProvider>
                 <ChartJsDefaults />
-                <AuthProvider>
-                  <builder-component
-                    model="page"
-                    api-key="2c87660801bc48878f989ed5ac733863"
-                  >
-                    {routeContent}
-                  </builder-component>
-                </AuthProvider>
+                <builder-component
+                  model="page"
+                  api-key="2c87660801bc48878f989ed5ac733863"
+                >
+                  {routeContent}
+                </builder-component>
               </LayoutProvider>
             </SidebarProvider>
           </ThemeProvider>

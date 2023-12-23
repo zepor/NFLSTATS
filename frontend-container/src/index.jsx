@@ -5,33 +5,27 @@ import App from "./App";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-const { auth } = require("express-openid-connect");
+const root = createRoot(document.getElementById('root'));
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  secret: process.env.AUTH0_SECRET,
-  baseURL: process.env.AUTH0_BASE_URL,
-  clientID: process.env.AUTH0_CLIENT_ID,
-  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
-};
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-App.use(auth(config));
-// req.isAuthenticated is provided from the auth router
-App.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
-});
+const auth0Domain = process.env.VITE_AUTH0_DOMAIN; // Set these in your .env file
+const auth0ClientId = process.env.VITE_AUTH0_CLIENT_ID;
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ApolloProvider client={client}>
-        <ErrorBoundary>
-          <App />
-        </ErrorBoundary>
-      </ApolloProvider>
+      <Auth0Provider
+        domain={auth0Domain}
+        clientId={auth0ClientId}
+        redirectUri={window.location.origin}
+      >
+        <ApolloProvider client={client}>
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
+        </ApolloProvider>
+      </Auth0Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

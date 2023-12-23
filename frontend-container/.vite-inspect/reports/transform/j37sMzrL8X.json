@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/redux/store.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { configureStore } from \"@reduxjs/toolkit\";\r\nimport counterReducer from \"./slices/counter\";\r\n\r\nexport const store = configureStore({\r\n  reducer: {\r\n    counter: counterReducer,\r\n  },\r\n});\r\n",
+      "start": 1703289449518,
+      "end": 1703289449518
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703289449518,
+      "end": 1703289449518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import { configureStore } from \"/node_modules/.vite/deps/@reduxjs_toolkit.js?v=733ce8d4\";\r\nimport counterReducer from \"/src/redux/slices/counter.js\";\r\n\r\nexport const store = configureStore({\r\n  reducer: {\r\n    counter: counterReducer,\r\n  },\r\n});\r\n",
+      "start": 1703289449518,
+      "end": 1703289449519,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

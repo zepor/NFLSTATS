@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/config.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "export const firebaseConfig = {\r\n  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,\r\n  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,\r\n  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,\r\n  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,\r\n  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,\r\n  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,\r\n  appId: import.meta.env.VITE_FIREBASE_APPID,\r\n  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,\r\n};\r\n\r\nexport const auth0Config = {\r\n  clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,\r\n  domain: import.meta.env.VITE_AUTH0_DOMAIN,\r\n};\r\n\r\nexport const cognitoConfig = {\r\n  userPoolId: import.meta.env.VITE_COGNITO_USER_POOL_ID,\r\n  clientId: import.meta.env.VITE_COGNITO_CLIENT_ID,\r\n};\r\n",
+      "start": 1703289466191,
+      "end": 1703289466191
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import.meta.env = {\"VITE_COGNITO_REGION\": \"us-east-1\", \"VITE_COGNITO_USER_POOL_ID\": \"us-east-1_d5SADn2K5\", \"VITE_COGNITO_CLIENT_ID\": \"4inc8vt4mndie919edas3i64kp\", \"VITE_APP_COGNITO_CLIENT_ID\": \"4inc8vt4mndie919edas3i64kp\", \"VITE_APP_COGNITO_USER_POOL_ID\": \"us-east-1_d5SADn2K5\", \"VITE_USER_NODE_ENV\": \"development\", \"BASE_URL\": \"/\", \"MODE\": \"development\", \"DEV\": true, \"PROD\": false, \"SSR\": false};export const firebaseConfig = {\r\n  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,\r\n  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,\r\n  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,\r\n  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,\r\n  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,\r\n  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,\r\n  appId: import.meta.env.VITE_FIREBASE_APPID,\r\n  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,\r\n};\r\n\r\nexport const auth0Config = {\r\n  clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,\r\n  domain: import.meta.env.VITE_AUTH0_DOMAIN,\r\n};\r\n\r\nexport const cognitoConfig = {\r\n  userPoolId: import.meta.env.VITE_COGNITO_USER_POOL_ID,\r\n  clientId: import.meta.env.VITE_COGNITO_CLIENT_ID,\r\n};\r\n",
+      "start": 1703289466191,
+      "end": 1703289466191,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

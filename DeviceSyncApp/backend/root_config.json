@@ -1,5 +1,0 @@
-{
-    "name": "DeviceSync",
-    "provider_region": "aws-us-east-2",
-    "deployment_model": "LOCAL"
-}

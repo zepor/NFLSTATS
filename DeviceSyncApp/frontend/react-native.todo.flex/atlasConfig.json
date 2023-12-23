@@ -1,9 +1,0 @@
-{
-    "appId": "devicesync-lsank",
-    "appUrl": "https://realm.mongodb.com/groups/64d1d5bcc265060662f82f98/apps/6576b33d75d261d6bbddb8de",
-    "baseUrl": "https://realm.mongodb.com",
-    "clientApiBaseUrl": "https://us-east-2.aws.realm.mongodb.com",
-    "dataApiBaseUrl": "https://us-east-2.aws.data.mongodb-api.com",
-    "dataExplorerLink": "https://cloud.mongodb.com/links/64d1d5bcc265060662f82f98/explorer/Zepor/database/collection/find",
-    "dataSourceName": "mongodb-atlas"
-}

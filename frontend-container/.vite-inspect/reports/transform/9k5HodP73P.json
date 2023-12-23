@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/i18n.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import i18n from \"i18next\";\r\nimport { initReactI18next } from \"react-i18next\";\r\n\r\nconst resources = {\r\n  en: {\r\n    translation: {\r\n      Search: \"Search projects…\",\r\n      \"Welcome back\": \"Welcome back\",\r\n    },\r\n  },\r\n  fr: {\r\n    translation: {\r\n      Search: \"Rechercher…\",\r\n      \"Welcome back\": \"Bon retour\",\r\n    },\r\n  },\r\n  de: {\r\n    translation: {\r\n      Search: \"Suchen…\",\r\n      \"Welcome back\": \"Willkommen zurück\",\r\n    },\r\n  },\r\n  nl: {\r\n    translation: {\r\n      Search: \"Zoeken…\",\r\n      \"Welcome back\": \"Welkom terug\",\r\n    },\r\n  },\r\n};\r\n\r\ni18n.use(initReactI18next).init({\r\n  resources,\r\n  lng: \"en\",\r\n  fallbackLng: \"en\",\r\n  interpolation: {\r\n    escapeValue: false,\r\n  },\r\n});\r\n",
+      "start": 1703289449519,
+      "end": 1703289449519
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import i18n from \"/node_modules/.vite/deps/i18next.js?v=733ce8d4\";\r\nimport { initReactI18next } from \"/node_modules/.vite/deps/react-i18next.js?v=733ce8d4\";\r\n\r\nconst resources = {\r\n  en: {\r\n    translation: {\r\n      Search: \"Search projects…\",\r\n      \"Welcome back\": \"Welcome back\",\r\n    },\r\n  },\r\n  fr: {\r\n    translation: {\r\n      Search: \"Rechercher…\",\r\n      \"Welcome back\": \"Bon retour\",\r\n    },\r\n  },\r\n  de: {\r\n    translation: {\r\n      Search: \"Suchen…\",\r\n      \"Welcome back\": \"Willkommen zurück\",\r\n    },\r\n  },\r\n  nl: {\r\n    translation: {\r\n      Search: \"Zoeken…\",\r\n      \"Welcome back\": \"Welkom terug\",\r\n    },\r\n  },\r\n};\r\n\r\ni18n.use(initReactI18next).init({\r\n  resources,\r\n  lng: \"en\",\r\n  fallbackLng: \"en\",\r\n  interpolation: {\r\n    escapeValue: false,\r\n  },\r\n});\r\n",
+      "start": 1703289449519,
+      "end": 1703289449519,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

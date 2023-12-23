@@ -1,15 +1,10 @@
 import { useEffect, useReducer } from "react";
 import { Auth0Client } from "@auth0/auth0-spa-js";
-
-import { auth0Config } from "../config";
-
 import AuthContext from "./Auth0Context";
 
 const INITIALIZE = "INITIALIZE";
 const SIGN_IN = "SIGN_IN";
 const SIGN_OUT = "SIGN_OUT";
-
-let auth0Client = null;
 
 const initialState = {
   isAuthenticated: false,
@@ -45,21 +40,19 @@ function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const initialize = async () => {
+    const initializeAuth0 = async () => {
+      const auth0Client = new Auth0Client({
+        domain: process.env.VITE_APP_AUTH0_DOMAIN,
+        client_id: process.env.VITE_APP_AUTH0_CLIENT_ID,
+        audience: process.env.VITE_APP_AUTH0_AUDIENCE,
+        redirect_uri: window.location.origin,
+      });
       try {
-        auth0Client = new Auth0Client({
-          client_id: auth0Config.clientId || "",
-          domain: auth0Config.domain || "",
-          redirect_uri: window.location.origin,
-        });
-
         await auth0Client.checkSession();
-
         const isAuthenticated = await auth0Client.isAuthenticated();
 
         if (isAuthenticated) {
           const user = await auth0Client.getUser();
-
           dispatch({
             type: INITIALIZE,
             payload: { isAuthenticated, user: user || null },
@@ -79,7 +72,7 @@ function AuthProvider({ children }) {
       }
     };
 
-    initialize();
+    initializeAuth0();
   }, []);
 
   const signIn = async () => {
@@ -99,7 +92,7 @@ function AuthProvider({ children }) {
 
   const resetPassword = (email) => {};
 
-  return (
+  root.return (
     <AuthContext.Provider
       value={{
         ...state,
@@ -109,7 +102,8 @@ function AuthProvider({ children }) {
           avatar: state?.user?.picture,
           email: state?.user?.email,
           displayName: "Lucy",
-          role: "user"},
+          role: "user",
+        },
         signIn,
         signOut,
         resetPassword,

@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/home/zepor/ssweb/frontend-container/src/hooks/useOuterClick.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { useEffect, useRef } from \"react\";\r\n\r\nfunction useOuterClick(callback) {\r\n  // Initialize mutable ref, which stores callback\r\n  const callbackRef = useRef();\r\n  // returned to client, who marks \"border\" element\r\n  const innerRef = useRef();\r\n\r\n  // Update callback on each render, so second useEffect has access to current value\r\n  useEffect(() => {\r\n    callbackRef.current = callback;\r\n  });\r\n\r\n  useEffect(() => {\r\n    document.addEventListener(\"click\", handleClick);\r\n    return () => document.removeEventListener(\"click\", handleClick);\r\n    function handleClick(e) {\r\n      if (innerRef.current &&\r\n              callbackRef.current &&\r\n              !innerRef.current.contains(e.target)) {\n        callbackRef.current(e);\n      }\r\n    }\r\n  }, []);\r\n\r\n  return innerRef;\r\n}\r\n\r\nexport default useOuterClick;\r\n",
+      "start": 1703289450020,
+      "end": 1703289450020
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import __vite__cjsImport0_react from \"/node_modules/.vite/deps/react.js?v=733ce8d4\"; const useEffect = __vite__cjsImport0_react[\"useEffect\"]; const useRef = __vite__cjsImport0_react[\"useRef\"];\r\n\r\nfunction useOuterClick(callback) {\r\n  // Initialize mutable ref, which stores callback\r\n  const callbackRef = useRef();\r\n  // returned to client, who marks \"border\" element\r\n  const innerRef = useRef();\r\n\r\n  // Update callback on each render, so second useEffect has access to current value\r\n  useEffect(() => {\r\n    callbackRef.current = callback;\r\n  });\r\n\r\n  useEffect(() => {\r\n    document.addEventListener(\"click\", handleClick);\r\n    return () => document.removeEventListener(\"click\", handleClick);\r\n    function handleClick(e) {\r\n      if (innerRef.current &&\r\n              callbackRef.current &&\r\n              !innerRef.current.contains(e.target)) {\n        callbackRef.current(e);\n      }\r\n    }\r\n  }, []);\r\n\r\n  return innerRef;\r\n}\r\n\r\nexport default useOuterClick;\r\n",
+      "start": 1703289450020,
+      "end": 1703289450020,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}
