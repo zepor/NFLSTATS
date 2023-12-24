@@ -6,7 +6,7 @@ import os, time
 from pymongo import MongoClient
 from datetime import datetime
 from uuid import UUID
-from models.seasons import(SeasonInfo)
+from src.models.seasons import(SeasonInfo)
 from mongoengine import connect, DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 from bson import ObjectId
 import logging

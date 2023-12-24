@@ -10,11 +10,11 @@ if not hasattr(os, 'add_dll_directory'):
 from pymongo import MongoClient
 from datetime import datetime
 from uuid import UUID
-from models.franchise_info import(FranchiseInfo) 
-from models.venue_info import(venue1, location, VenueInfo)
-from models.leaguehierarchy import(teams, division, conference, league,typeleague, LeagueHierarchy)
-from models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
-from models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
+from src.models.franchise_info import(FranchiseInfo) 
+from src.models.venue_info import(venue1, location, VenueInfo)
+from src.models.leaguehierarchy import(teams, division, conference, league,typeleague, LeagueHierarchy)
+from src.models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
+from src.models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
 from mongoengine import DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 from bson import ObjectId
 import logging

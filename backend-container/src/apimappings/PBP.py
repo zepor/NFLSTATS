@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 from flask import Flask, Blueprint, jsonify, make_response, render_template, request, session
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
-from models.play_by_play_info import (quarter, location, possession, start_location, play, score, detail, event, end_situation, start_situation, drive, description, penalty,defensive_team, offensive_team, period, points_after_play, PlayByPlayInfo)
+from src.models.play_by_play_info import (quarter, location, possession, start_location, play, score, detail, event, end_situation, start_situation, drive, description, penalty,defensive_team, offensive_team, period, points_after_play, PlayByPlayInfo)
 from mongoengine import (connect, DecimalField, Document, EmbeddedDocument, EmbeddedDocumentField, EmbeddedDocumentListField, StringField, UUIDField, IntField, BooleanField, DateTimeField)
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure

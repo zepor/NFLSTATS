@@ -1,21 +1,34 @@
-FROM python:3.9.18
-# Set the working directory
+# Use Python 3.10 image as the base
+FROM python:3.10
+
+# Set the working directory in the container
 WORKDIR /ssweb
+
 # Install system dependencies
 RUN apt-get update && \
     apt-get install -y gnupg wget iputils-ping curl openssl gcc build-essential \
     libxml2-dev libxslt-dev libssl-dev zlib1g-dev python3-dev libnss3-tools && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-# Upgrade pip and install Python dependencies
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Copy only the requirements.txt first to leverage Docker cache
 COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
 # Copy the rest of your application's code
 COPY . .
-# Environment variables
+
+# Set environment variables
 ARG FLASK_ENV=development
 ENV FLASK_ENV=${FLASK_ENV}
+ENV PYTHONUNBUFFERED=1 
 # Exposing port 5000 for Flask app
 EXPOSE 5000
+
 # Running the application
 CMD ["python", "run.py"]

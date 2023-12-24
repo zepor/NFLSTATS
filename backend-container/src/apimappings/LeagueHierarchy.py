@@ -8,11 +8,11 @@ if not hasattr(os, 'add_dll_directory'):
         pass
 from datetime import datetime
 from uuid import UUID
-from models.franchise_info import(FranchiseInfo) 
-from models.venue_info import(venue1, location, VenueInfo)
-from models.leaguehierarchy import( teams, division, conference, league,typeleague, LeagueHierarchy)
-from models.team_info import(coach, rgb_color, team_color, team, TeamInfo)
-from models.changelog import ChangelogEntry  # Import the ChangelogEntry model
+from src.models.franchise_info import(FranchiseInfo) 
+from src.models.venue_info import(venue1, location, VenueInfo)
+from src.models.leaguehierarchy import( teams, division, conference, league,typeleague, LeagueHierarchy)
+from src.models.team_info import(coach, rgb_color, team_color, team, TeamInfo)
+from src.models.changelog import ChangelogEntry  # Import the ChangelogEntry model
 from mongoengine import DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 from bson import ObjectId
 bp = Blueprint('LeagueHierarchy', __name__)

@@ -12,20 +12,20 @@ from datetime import datetime
 from uuid import UUID
 import json
 from mongoengine import connect
-from models.seasons import(SeasonInfo) 
-from models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
-from models.season_stat_oppo_info import(SeasonStatOppo, intreturns, passing, receiving,
+from src.models.seasons import(SeasonInfo) 
+from src.models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
+from src.models.season_stat_oppo_info import(SeasonStatOppo, intreturns, passing, receiving,
 defense, receiving, defense, thirddown,fourthdown,goaltogo, redzone, kicks, fieldgoals,
 punts, rushing, kickreturns, puntreturns, miscreturns, record,  conversions,
 kickoffs, fumbles, penalties, touchdowns, interceptions, firstdowns)
-from models.season_stat_team_info import(SeasonStatTeam, intreturns, passing,
+from src.models.season_stat_team_info import(SeasonStatTeam, intreturns, passing,
 receiving, defense, thirddown,fourthdown,goaltogo, redzone, kicks, fieldgoals, punts, 
 rushing, kickreturns, puntreturns, record, conversions, kickoffs, fumbles, penalties,
 touchdowns, interceptions, firstdowns)
-from models.season_stat_player_info import(SeasonStatPlayer, intreturns, 
+from src.models.season_stat_player_info import(SeasonStatPlayer, intreturns, 
 passing, receiving, defense, fieldgoals, punts, rushing, extrapoints, 
 kickreturns, puntreturns, conversions, kickoffs, fumbles, penalties)                                        
-from models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
+from src.models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
 from flask_mongoengine import MongoEngine
 from mongoengine import (DoesNotExist, DecimalField, EmbeddedDocumentField, Document,
  StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, 

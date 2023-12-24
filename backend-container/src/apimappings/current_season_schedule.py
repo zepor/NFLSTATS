@@ -1,12 +1,12 @@
-from models.boxscore_info import (
+from src.models.boxscore_info import (
     gamebs, quarter, overtime, BoxscoreInfo)
 import json
 import pandas
-from models.game_info import (
+from src.models.game_info import (
     gamegame, awayteam, hometeam, broadcast, weather, wind, GameInfo)
-from models.league_info import (
+from src.models.league_info import (
     game, season, changelog, leagueweek, LeagueInfo)
-from models.venue_info import (venue1, location, VenueInfo)
+from src.models.venue_info import (venue1, location, VenueInfo)
 import time
 import os
 import requests
