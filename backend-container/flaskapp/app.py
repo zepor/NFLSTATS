@@ -59,22 +59,19 @@ from src.nflfeapi.getvenues import venues, bp_venues
 from src.nflfeapi.populateseasons import populate_seasons, bp_populate_seasons
 from src.nflfeapi.populateteams import populate_teams, bp_populate_teams
 from src.nflfeapi.support_api import submit_support_request, bp_support_api
-
 #ROUTERS IMPORTS
-
 #UTILS IMPORTS
-from src.utils.auth import auth_blueprint, init_oauth
+from src.utils.auth import init_oauth, auth_blueprint, login, callback, logout, home
 from src.utils.log import be_logger
 from src.utils.logandcatchexceptions import log_and_catch_exceptions
 from src.utils.notfound import init_app
 
 from config import (Config, DevelopmentConfig, ProductionConfig)
-from flask import Flask, jsonify, request, session, redirect, url_for, render_template, make_response
+from flask import Flask
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from dotenv import load_dotenv
 import logging
-import json 
 from os import environ as env
 import sys
 import os
@@ -82,14 +79,15 @@ import os.path
 load_dotenv()
 sys.path.append('/ssweb')
 sys.path.append('/ssweb/src')
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
+
 init_oauth(app)
-CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'http://localhost:3000'], resources={r"/api/*": {"origins": "*"}})
+CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'http://localhost:3000', 'http://localhost:5000'], resources={r"/api/*": {"origins": "*"}})
 mongodb_client = get_mongodb_connection()
 db = MongoEngine(app)
-redis_primary_host = 'redis'  # The host used in the development environment
+redis_primary_host = 'redis'
 redis_fallback_host = 'redis-service'
-redis_port = 6379  # Default Redis port
+redis_port = 6379
 r = connect_to_redis(redis_primary_host, redis_fallback_host, redis_port)
 data_cache = FootballData()
 app.debug = True
@@ -111,7 +109,7 @@ app.register_blueprint(bp_team_profile)
 app.register_blueprint(bp_seasons)
 app.register_blueprint(bp_seasonal_stats)
 app.register_blueprint(bp_pbp, url_prefix='/pbp')
-app.register_blueprint(auth_blueprint, url_prefix="/auth")
+app.register_blueprint(auth_blueprint, url_prefix='/auth')
 app.register_blueprint(bp_default)
 app.register_blueprint(bp_get_data)
 app.register_blueprint(bp_live_games)
@@ -119,7 +117,7 @@ app.register_blueprint(bp_get_top10)
 app.register_blueprint(bp_venues)
 app.register_blueprint(bp_populate_seasons)
 app.register_blueprint(bp_populate_teams)
-app.register_blueprint(bp_support_api)
+app.register_blueprint(bp_support_api, url_prefix="/api")
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 
@@ -127,11 +125,11 @@ logger = logging.getLogger(__name__)
 FLASK_DEBUG = os.environ.get('FLASK_DEBUG')
 be_logger.info(f"Current FLASK_DEBUG: {FLASK_DEBUG}")
 if __name__ == "__main__":
-    clear_cache()
+    #clear_cache()
     if FLASK_DEBUG == 'true' and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-        data = data or FootballData()
+        data = FootballData()
         app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=True)
     elif FLASK_DEBUG != 'true':
         # In production mode, just initialize as usual
-        data = data or FootballData()
+        data = FootballData()
         app.run()

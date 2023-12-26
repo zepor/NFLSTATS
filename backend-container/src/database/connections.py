@@ -1,9 +1,9 @@
 import os
-from src.utils.log import be_logger
+import redis
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-import redis
 from dotenv import load_dotenv 
+from src.utils.log import be_logger
 load_dotenv()
 def get_mongodb_connection():
     """Establishes a connection to MongoDB.
@@ -15,29 +15,21 @@ def get_mongodb_connection():
         ConnectionFailure: If the connection to MongoDB fails after the maximum number of retries.
 
     """
-    mongodb_service_name = os.getenv('MONGODB_SERVICE_NAME', 'localhost')
-    mongodb_url = os.getenv(
-        'MONGODB_URL', f"mongodb://{mongodb_service_name}:27017/current_season"
-    )
-    MAX_RETRIES = 5  # Maximum number of retries
-    RETRY_DELAY = 5
+    try:
+        mongodb_url = os.environ.get('MONGODB_URL')
+        if not mongodb_url:
+            raise ValueError("MONGODB_URL environment variable not set.")
 
-    client = MongoClient(mongodb_url, connectTimeoutMS=30000, socketTimeoutMS=None)
+        client = MongoClient(mongodb_url, serverSelectionTimeoutMS=5000, connect=False,
+                             maxPoolSize=10, connectTimeoutMS=30000, retryWrites=True,
+                             w='majority', retryReads=True)
 
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            client.admin.command('ismaster')
-            return client  # Return the client object if the connection is successful
-        except ConnectionFailure:
-            if attempt < MAX_RETRIES:
-                logging.warning(f"MongoDB server not available. "
-                                f"Attempt {attempt} of {MAX_RETRIES}. "
-                                f"Retrying in {RETRY_DELAY} seconds...")
-                time.sleep(RETRY_DELAY)  # Wait for a while before retrying
-            else:
-                logging.error("MongoDB server not available after maximum retries.")
-                # Handle the maximum retries reached scenario
-                return None  # Return None to indicate a failure
+        client.admin.command('ping')  # Test the connection
+        be_logger.debug("Successfully connected to MongoDB.")
+        return client
+    except Exception as e:
+        be_logger.error(f"Failed to connect to MongoDB: {e}")
+        return None
 
 def connect_to_redis(primary_host, fallback_host, port=6379):
     """Establishes a connection to Redis.

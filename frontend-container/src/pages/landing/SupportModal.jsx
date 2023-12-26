@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
 const apiUrlSubmitSupport = import.meta.env.VITE_SUPPORT_API_URL;
-console.log(apiUrlSubmitSupport); 
 const SupportModal = ({ show, onHide, emailAddress }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

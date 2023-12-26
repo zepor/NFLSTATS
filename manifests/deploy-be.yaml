@@ -37,6 +37,11 @@ spec:
               value: production
             - name: AZURE_STORAGE_ACCOUNT
               value: sportfs
+            - name: APP_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: auth0-secrets
+                  key: APP_SECRET_KEY
             - name: AZURE_STORAGE_KEY
               valueFrom:
                 secretKeyRef:

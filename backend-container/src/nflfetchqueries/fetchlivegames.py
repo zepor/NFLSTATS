@@ -14,7 +14,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, '..', '..'))
 sys.path.append(project_root)  
 sys.path.append(os.path.join(project_root, 'src'))  
-
+live_games_query_running = False  
 @log_and_catch_exceptions
 def fetch_live_games_data():
     global live_games_query_running

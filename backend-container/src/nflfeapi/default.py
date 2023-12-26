@@ -24,8 +24,8 @@ from src.nflfeapi.default import (
 
 
 @log_and_catch_exceptions
-@bp_default.route('/', defaults={'path': ''})
-@bp_default.route('/<path:path>')
+#@bp_default.route('/99', defaults={'path': ''})
+@bp_default.route('/99<path:path>')
 def serve(path):
     try:
         be_logger.info("Fetching live games data...")
