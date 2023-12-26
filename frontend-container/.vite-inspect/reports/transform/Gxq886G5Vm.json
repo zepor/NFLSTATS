@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/app/src/hooks/useLocalStorage.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { useState } from \"react\";\r\n\r\nfunction useLocalStorage(key, initialValue) {\r\n  // State to store our value\r\n  // Pass initial state function to useState so logic is only executed once\r\n  const [storedValue, setStoredValue] = useState(() => {\r\n    try {\r\n      // Get from local storage by key\r\n      const item = window.localStorage.getItem(key);\r\n      // Parse stored json or if none return initialValue\r\n      return item ? JSON.parse(item) : initialValue;\r\n    } catch (error) {\r\n      // If error also return initialValue\r\n      console.log(error);\r\n      return initialValue;\r\n    }\r\n  });\r\n\r\n  // Return a wrapped version of useState's setter function that\r\n  // persists the new value to localStorage.\r\n  const setValue = (value) => {\r\n    try {\r\n      // Allow value to be a function so we have same API as useState\r\n      const valueToStore =\r\n        value instanceof Function ? value(storedValue) : value;\r\n      // Save state\r\n      setStoredValue(valueToStore);\r\n      // Save to local storage\r\n      window.localStorage.setItem(key, JSON.stringify(valueToStore));\r\n    } catch (error) {\r\n      // A more advanced implementation would handle the error case\r\n      console.log(error);\r\n    }\r\n  };\r\n\r\n  return [storedValue, setValue];\r\n}\r\n\r\nexport default useLocalStorage;\r\n",
+      "start": 1703474741416,
+      "end": 1703474741416
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import __vite__cjsImport0_react from \"/node_modules/.vite/deps/react.js?v=c161d0bf\"; const useState = __vite__cjsImport0_react[\"useState\"];\r\n\r\nfunction useLocalStorage(key, initialValue) {\r\n  // State to store our value\r\n  // Pass initial state function to useState so logic is only executed once\r\n  const [storedValue, setStoredValue] = useState(() => {\r\n    try {\r\n      // Get from local storage by key\r\n      const item = window.localStorage.getItem(key);\r\n      // Parse stored json or if none return initialValue\r\n      return item ? JSON.parse(item) : initialValue;\r\n    } catch (error) {\r\n      // If error also return initialValue\r\n      console.log(error);\r\n      return initialValue;\r\n    }\r\n  });\r\n\r\n  // Return a wrapped version of useState's setter function that\r\n  // persists the new value to localStorage.\r\n  const setValue = (value) => {\r\n    try {\r\n      // Allow value to be a function so we have same API as useState\r\n      const valueToStore =\r\n        value instanceof Function ? value(storedValue) : value;\r\n      // Save state\r\n      setStoredValue(valueToStore);\r\n      // Save to local storage\r\n      window.localStorage.setItem(key, JSON.stringify(valueToStore));\r\n    } catch (error) {\r\n      // A more advanced implementation would handle the error case\r\n      console.log(error);\r\n    }\r\n  };\r\n\r\n  return [storedValue, setValue];\r\n}\r\n\r\nexport default useLocalStorage;\r\n",
+      "start": 1703474741416,
+      "end": 1703474741416,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

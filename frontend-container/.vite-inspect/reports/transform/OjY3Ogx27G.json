@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/app/src/hooks/useTheme.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { useContext } from \"react\";\r\nimport ThemeContext from \"../contexts/ThemeContext\";\r\n\r\nexport const useTheme = () => useContext(ThemeContext);\r\n",
+      "start": 1703474741415,
+      "end": 1703474741415
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import __vite__cjsImport0_react from \"/node_modules/.vite/deps/react.js?v=c161d0bf\"; const useContext = __vite__cjsImport0_react[\"useContext\"];\r\nimport ThemeContext from \"/src/contexts/ThemeContext.jsx\";\r\n\r\nexport const useTheme = () => useContext(ThemeContext);\r\n",
+      "start": 1703474741415,
+      "end": 1703474741415,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

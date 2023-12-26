@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/app/src/hooks/useSettingsState.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { useEffect } from \"react\";\r\nimport useLocalStorage from \"./useLocalStorage\";\r\n\r\nfunction useSettingsState(key, initialValue) {\r\n  const [value, setValue] = useLocalStorage(key, initialValue);\r\n\r\n  useEffect(() => {\r\n    document.body.dataset[key] = value;\r\n\r\n    // Replace stylesheet if dark theme gets toggled\r\n    if (key === \"theme\") {\r\n      const theme = value === \"dark\" ? \"dark\" : \"light\";\r\n\r\n      const stylesheet = document.querySelector(\".js-stylesheet\");\r\n      if (stylesheet) {\r\n        if (import.meta.env.PROD) {\r\n          // Use precompiled css files while in production mode\r\n          stylesheet.setAttribute(\"href\", `/assets/${theme}.css`);\r\n        } else {\r\n          // Use sass files while in development mode, so we can watch changes while developing\r\n          stylesheet.setAttribute(\"href\", `/src/assets/scss/${theme}.scss`);\r\n        }\r\n      }\r\n    }\r\n  }, [value, key]);\r\n\r\n  return [value, setValue];\r\n}\r\n\r\nexport default useSettingsState;\r\n",
+      "start": 1703474741339,
+      "end": 1703474741339
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import.meta.env = {\"VITE_AUTH0_SECRET\": \"yPUG1Gxnnhxn88rlkLBhkrepkvtey23Z-bPT_Nul670TmxA4w2Q1f7ktDT0vabsA\", \"VITE_AUTH0_BASE_URL\": \"https://loveoffootball.io\", \"VITE_AUTH0_CLIENT_ID\": \"a80YXZCJR1a3cEDIURxwiE4OUcMUOYRX\", \"VITE_AUTH0_ISSUER_BASE_URL\": \"https://dev-uo83nk1cgfqz4tww.us.auth0.com\", \"VITE_AUTH0_DOMAIN\": \"dev-uo83nk1cgfqz4tww.us.auth0.com\", \"VITE_API_AUDIENCE\": \"https://dev-uo83nk1cgfqz4tww.us.auth0.com/api/v2/\", \"VITE_SUPPORT_API_URL\": \"https://loveoffootball.io/submit-support\", \"VITE_APP_API_URL\": \"https://loveoffootball.io/submit-support\", \"VITE_USER_NODE_ENV\": \"development\", \"BASE_URL\": \"/\", \"MODE\": \"development\", \"DEV\": true, \"PROD\": false, \"SSR\": false};import __vite__cjsImport0_react from \"/node_modules/.vite/deps/react.js?v=c161d0bf\"; const useEffect = __vite__cjsImport0_react[\"useEffect\"];\r\nimport useLocalStorage from \"/src/hooks/useLocalStorage.js\";\r\n\r\nfunction useSettingsState(key, initialValue) {\r\n  const [value, setValue] = useLocalStorage(key, initialValue);\r\n\r\n  useEffect(() => {\r\n    document.body.dataset[key] = value;\r\n\r\n    // Replace stylesheet if dark theme gets toggled\r\n    if (key === \"theme\") {\r\n      const theme = value === \"dark\" ? \"dark\" : \"light\";\r\n\r\n      const stylesheet = document.querySelector(\".js-stylesheet\");\r\n      if (stylesheet) {\r\n        if (import.meta.env.PROD) {\r\n          // Use precompiled css files while in production mode\r\n          stylesheet.setAttribute(\"href\", `/assets/${theme}.css`);\r\n        } else {\r\n          // Use sass files while in development mode, so we can watch changes while developing\r\n          stylesheet.setAttribute(\"href\", `/src/assets/scss/${theme}.scss`);\r\n        }\r\n      }\r\n    }\r\n  }, [value, key]);\r\n\r\n  return [value, setValue];\r\n}\r\n\r\nexport default useSettingsState;\r\n",
+      "start": 1703474741339,
+      "end": 1703474741339,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

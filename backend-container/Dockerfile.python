@@ -15,20 +15,22 @@ RUN apt-get update && \
 RUN pip install --upgrade pip
 
 # Copy only the requirements.txt first to leverage Docker cache
-COPY requirements.txt .
+COPY ./flaskapp/requirements.txt ./flaskapp/
 
 # Install Python dependencies
-RUN pip install -r requirements.txt
+RUN pip install -r flaskapp/requirements.txt
 
 # Copy the rest of your application's code
 COPY . .
 
 # Set environment variables
-ARG FLASK_ENV=development
-ENV FLASK_ENV=${FLASK_ENV}
+ARG FLASK_DEBUG=true
+ENV FLASK_DEBUG=${FLASK_DEBUG}
 ENV PYTHONUNBUFFERED=1 
+ENV PYTHONPATH "${PYTHONPATH}:/ssweb"
 # Exposing port 5000 for Flask app
 EXPOSE 5000
+EXPOSE 5001
 
 # Running the application
-CMD ["python", "run.py"]
+CMD ["python", "flaskapp/run.py"]

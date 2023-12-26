@@ -27,6 +27,8 @@ spec:
           image: loveofsports.azurecr.io/be:latest
           imagePullPolicy: Always
           env:
+            - name: FLASK_DEBUG
+              value: "false"
             - name: BACKEND_SERVICE_HOST
               value: backend
             - name: BACKEND_SERVICE_PORT
@@ -104,6 +106,11 @@ spec:
                 secretKeyRef:
                   name: auth0-secret
                   key: VITE_AUTH0_ISSUER_BASE_URL
+            - name: VITE_SUPPORT_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: environment-secret 
+                  key: VITE_SUPPORT_API_URL 
 
           ports:
             - containerPort: 5000

@@ -9,8 +9,12 @@ import DocLayout from "./layouts/Doc";
 import LandingLayout from "./layouts/Landing";
 // Guards
 import AuthGuard from "./components/guards/AuthGuard";
+import SignInPage from "./pages/auth/SignIn";
+import SignUpPage from "./pages/auth/SignUp";
 // Landing
 const Landing = lazy(() => import("./pages/landing/Landing"));
+const AboutUs = lazy(() => import("./pages/landing/AboutUs"));
+
 // Dashboards
 const Default = lazy(() => import("./pages/dashboards/Default"));
 const Analytics = lazy(() => import("./pages/dashboards/Analytics"));
@@ -99,10 +103,11 @@ const Support = lazy(() => import("./pages/docs/Support"));
 const Changelog = lazy(() => import("./pages/docs/Changelog"));
 // Protected routes
 const ProtectedPage = lazy(() => import("./pages/protected/ProtectedPage"));
-const RedirectToSignIn = () => {
+const RedirectToLogin = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate("/auth/sign-in");
+    navigate("/auth/sign-up");
   }, [navigate]);
   return null; // or a loading indicator if preferred
 };
@@ -114,6 +119,10 @@ const routes = [
       {
         path: "",
         element: <Landing />,
+      },
+      {
+        path: "about",
+        element: <AboutUs />,
       },
     ],
   },
@@ -187,7 +196,7 @@ const routes = [
   },
   {
     path: "/login",
-    element: <RedirectToSignIn />,
+    element: <RedirectToLogin />,
   },
   {
     path: "auth",
@@ -195,11 +204,11 @@ const routes = [
     children: [
       {
         path: "sign-in",
-        element: <SignIn />,
+        element: <SignInPage />,
       },
       {
         path: "sign-up",
-        element: <SignUp />,
+        element: <SignUpPage />,
       },
       {
         path: "reset-password",

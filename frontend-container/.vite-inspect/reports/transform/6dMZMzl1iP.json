@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/app/src/builder-components.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import { Builder, builder } from \"@builder.io/react\";\nimport Alerts from \"./pages/ui/Alerts\";\nimport Buttons from \"./pages/ui/Buttons\";\nimport Carousel from \"./pages/ui/Carousel\";\nimport Cards from \"./pages/ui/Cards\";\nimport EmbedVideo from \"./pages/ui/EmbedVideo\";\nimport General from \"./pages/ui/General\";\nimport Grid from \"./pages/ui/Grid\";\nimport Modals from \"./pages/ui/Modals\";\nimport Offcanvas from \"./pages/ui/Offcanvas\";\nimport Tabs from \"./pages/ui/Tabs\";\nimport Typography from \"./pages/ui/Typography\";\nimport AuthLayout from \"./layouts/Auth\";\nimport DashboardLayout from \"./layouts/Dashboard\";\nimport DocLayout from \"./layouts/Doc\";\nimport LandingLayout from \"./layouts/Landing\";\nimport AuthGuard from \"./components/guards/AuthGuard\";\nimport Landing from \"./pages/landing/Landing\";\nimport BarChart from \"./pages/dashboards/Analytics/BarChart\";\nimport Header from \"./pages/dashboards/Analytics/Header\";\nimport Analytics from \"./pages/dashboards/Analytics/index\";\nimport Languages from \"./pages/dashboards/Analytics/Languages\";\nimport PieChart from \"./pages/dashboards/Analytics/PieChart\";\nimport RadarChart from \"./pages/dashboards/Analytics/RadarChart\";\nimport Statistics from \"./pages/dashboards/Analytics/Statistics\";\nimport Traffic from \"./pages/dashboards/Analytics/Traffic\";\nimport WorldMap from \"./pages/dashboards/Analytics/WorldMap\";\nimport GamesSchedule from \"./pages/dashboards/Analytics/Schedule\";\n//import { accordionConfig } from \"@builder.io/widgets/dist/lib/components/Accordion.config\";\n//import loadable from \"@loadable/component\";\nconst colors = [\"primary\", \"secondary\", \"success\", \"danger\", \"warning\", \"info\"];\nconst components = [\n  {\n    component: Alerts,\n    name: \"Alerts\",\n    inputs: [\n      {\n        name: \"alertType\",\n        type: \"enum\",\n        enum: [\n          \"default\",\n          \"icon\",\n          \"outline\",\n          \"coloredOutline\",\n          \"additionalContent\",\n          \"withButtons\",\n        ],\n        defaultValue: \"default\",\n      },\n      { name: \"color\", type: \"enum\", enum: colors, defaultValue: \"primary\" },\n      {\n        name: \"content\",\n        type: \"string\",\n        defaultValue: \"Your alert message here\",\n      },\n      { name: \"icon\", type: \"string\", defaultValue: \"\" }, // You can use file picker or a list of icon options\n      { name: \"dismissible\", type: \"boolean\", defaultValue: true },\n    ],\n  },\n  { component: Buttons, name: \"Buttons\", inputs: [] },\n  { component: Carousel, name: \"Carousel\", inputs: [] },\n  { component: Cards, name: \"Cards\", inputs: [] },\n  { component: EmbedVideo, name: \"EmbedVideo\", inputs: [] },\n  { component: General, name: \"General\", inputs: [] },\n  { component: Grid, name: \"Grid\", inputs: [] },\n  { component: Modals, name: \"Modals\", inputs: [] },\n  { component: Offcanvas, name: \"Offcanvas\", inputs: [] },\n  { component: Tabs, name: \"Tabs\", inputs: [] },\n  { component: Typography, name: \"Typography\", inputs: [] },\n  { component: AuthLayout, name: \"AuthLayout\", inputs: [] },\n  { component: DashboardLayout, name: \"DashboardLayout\", inputs: [] },\n  { component: DocLayout, name: \"DocLayout\", inputs: [] },\n  { component: LandingLayout, name: \"LandingLayout\", inputs: [] },\n  { component: AuthGuard, name: \"AuthGuard\", inputs: [] },\n  { component: Landing, name: \"Landing\", inputs: [] },\n  { component: BarChart, name: \"BarChart\", inputs: [] },\n  { component: Header, name: \"Header\", inputs: [] },\n  { component: Analytics, name: \"Analytics\", inputs: [] },\n  { component: Languages, name: \"Languages\", inputs: [] },\n  { component: PieChart, name: \"PieChart\", inputs: [] },\n  { component: RadarChart, name: \"RadarChart\", inputs: [] },\n  { component: Statistics, name: \"Statistics\", inputs: [] },\n  { component: Traffic, name: \"Traffic\", inputs: [] },\n  { component: WorldMap, name: \"WorldMap\", inputs: [] },\n  { component: GamesSchedule, name: \"GamesSchedule\", inputs: [] },\n];\n\n//Builder.registerComponent(\n  //loadable(() =>\n    //import(\"@builder.io/widgets/dist/lib/components/Accordion\").then(\n    //  (mod) => mod.AccordionComponent,\n   // ),\n  //),\n // accordionConfig,\n//);\n\ncomponents.forEach(({ component, name, inputs }) => {\n  Builder.registerComponent(component, {\n    name,\n    inputs,\n  });\n});\n",
+      "start": 1703474741100,
+      "end": 1703474741100
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703474741100,
+      "end": 1703474741100,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703474741100,
+      "end": 1703474741102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703474741102,
+      "end": 1703474741102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703474741102,
+      "end": 1703474741102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import { Builder, builder } from \"/node_modules/.vite/deps/@builder__io_react.js?v=80b7f51a\";\nimport Alerts from \"/src/pages/ui/Alerts.jsx\";\nimport Buttons from \"/src/pages/ui/Buttons.jsx\";\nimport Carousel from \"/src/pages/ui/Carousel.jsx\";\nimport Cards from \"/src/pages/ui/Cards.jsx\";\nimport EmbedVideo from \"/src/pages/ui/EmbedVideo.jsx\";\nimport General from \"/src/pages/ui/General.jsx\";\nimport Grid from \"/src/pages/ui/Grid.jsx\";\nimport Modals from \"/src/pages/ui/Modals.jsx\";\nimport Offcanvas from \"/src/pages/ui/Offcanvas.jsx\";\nimport Tabs from \"/src/pages/ui/Tabs.jsx\";\nimport Typography from \"/src/pages/ui/Typography.jsx\";\nimport AuthLayout from \"/src/layouts/Auth.jsx\";\nimport DashboardLayout from \"/src/layouts/Dashboard.jsx\";\nimport DocLayout from \"/src/layouts/Doc.jsx\";\nimport LandingLayout from \"/src/layouts/Landing.jsx\";\nimport AuthGuard from \"/src/components/guards/AuthGuard.jsx\";\nimport Landing from \"/src/pages/landing/Landing.jsx\";\nimport BarChart from \"/src/pages/dashboards/Analytics/BarChart.jsx\";\nimport Header from \"/src/pages/dashboards/Analytics/Header.jsx\";\nimport Analytics from \"/src/pages/dashboards/Analytics/index.jsx\";\nimport Languages from \"/src/pages/dashboards/Analytics/Languages.jsx\";\nimport PieChart from \"/src/pages/dashboards/Analytics/PieChart.jsx\";\nimport RadarChart from \"/src/pages/dashboards/Analytics/RadarChart.jsx\";\nimport Statistics from \"/src/pages/dashboards/Analytics/Statistics.jsx\";\nimport Traffic from \"/src/pages/dashboards/Analytics/Traffic.jsx\";\nimport WorldMap from \"/src/pages/dashboards/Analytics/WorldMap.jsx\";\nimport GamesSchedule from \"/src/pages/dashboards/Analytics/Schedule.jsx\";\n//import { accordionConfig } from \"@builder.io/widgets/dist/lib/components/Accordion.config\";\n//import loadable from \"@loadable/component\";\nconst colors = [\"primary\", \"secondary\", \"success\", \"danger\", \"warning\", \"info\"];\nconst components = [\n  {\n    component: Alerts,\n    name: \"Alerts\",\n    inputs: [\n      {\n        name: \"alertType\",\n        type: \"enum\",\n        enum: [\n          \"default\",\n          \"icon\",\n          \"outline\",\n          \"coloredOutline\",\n          \"additionalContent\",\n          \"withButtons\",\n        ],\n        defaultValue: \"default\",\n      },\n      { name: \"color\", type: \"enum\", enum: colors, defaultValue: \"primary\" },\n      {\n        name: \"content\",\n        type: \"string\",\n        defaultValue: \"Your alert message here\",\n      },\n      { name: \"icon\", type: \"string\", defaultValue: \"\" }, // You can use file picker or a list of icon options\n      { name: \"dismissible\", type: \"boolean\", defaultValue: true },\n    ],\n  },\n  { component: Buttons, name: \"Buttons\", inputs: [] },\n  { component: Carousel, name: \"Carousel\", inputs: [] },\n  { component: Cards, name: \"Cards\", inputs: [] },\n  { component: EmbedVideo, name: \"EmbedVideo\", inputs: [] },\n  { component: General, name: \"General\", inputs: [] },\n  { component: Grid, name: \"Grid\", inputs: [] },\n  { component: Modals, name: \"Modals\", inputs: [] },\n  { component: Offcanvas, name: \"Offcanvas\", inputs: [] },\n  { component: Tabs, name: \"Tabs\", inputs: [] },\n  { component: Typography, name: \"Typography\", inputs: [] },\n  { component: AuthLayout, name: \"AuthLayout\", inputs: [] },\n  { component: DashboardLayout, name: \"DashboardLayout\", inputs: [] },\n  { component: DocLayout, name: \"DocLayout\", inputs: [] },\n  { component: LandingLayout, name: \"LandingLayout\", inputs: [] },\n  { component: AuthGuard, name: \"AuthGuard\", inputs: [] },\n  { component: Landing, name: \"Landing\", inputs: [] },\n  { component: BarChart, name: \"BarChart\", inputs: [] },\n  { component: Header, name: \"Header\", inputs: [] },\n  { component: Analytics, name: \"Analytics\", inputs: [] },\n  { component: Languages, name: \"Languages\", inputs: [] },\n  { component: PieChart, name: \"PieChart\", inputs: [] },\n  { component: RadarChart, name: \"RadarChart\", inputs: [] },\n  { component: Statistics, name: \"Statistics\", inputs: [] },\n  { component: Traffic, name: \"Traffic\", inputs: [] },\n  { component: WorldMap, name: \"WorldMap\", inputs: [] },\n  { component: GamesSchedule, name: \"GamesSchedule\", inputs: [] },\n];\n\n//Builder.registerComponent(\n  //loadable(() =>\n    //import(\"@builder.io/widgets/dist/lib/components/Accordion\").then(\n    //  (mod) => mod.AccordionComponent,\n   // ),\n  //),\n // accordionConfig,\n//);\n\ncomponents.forEach(({ component, name, inputs }) => {\n  Builder.registerComponent(component, {\n    name,\n    inputs,\n  });\n});\n",
+      "start": 1703474741102,
+      "end": 1703474741105,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

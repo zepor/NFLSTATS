@@ -43,7 +43,10 @@ import {
 import { useTheme } from "../../hooks/useTheme";
 import useSidebar from "../../hooks/useSidebar";
 import useLayout from "../../hooks/useLayout";
-
+import SignInModal from "../auth/SignInModal"; // Import the SignInModal component
+import SignUpModal from "../auth/SignUpModal"; // Import the SignUpModal component
+import AboutUsModal from "./AboutUs";
+import SupportModal from "./SupportModal";
 //import { ReactComponent as Logo } from "../../assets/img/logo.svg";
 //import screenshotMixed from "../../assets/img/screenshots/mixed.jpg";
 //import screenshotThemeDefault from "../../assets/img/screenshots/theme-default.jpg";
@@ -95,6 +98,21 @@ import LINKIcon from "../../assets/img/brands/faLinkedin.svg";
 import TeamSelector from "../../components/TeamSelection";
 
 const Navigation = () => {
+  // State variables to control the visibility of the modals
+  const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const [showAboutUsModal, setShowAboutUsModal] = useState(false);
+  const [showSupportModal, setShowSupportModal] = useState(false);
+  // Functions to open and close the modals
+  const handleSignInClick = () => setShowSignInModal(true);
+  const handleCloseSignInModal = () => setShowSignInModal(false);
+  const handleSignUpClick = () => setShowSignUpModal(true);
+  const handleCloseSignUpModal = () => setShowSignUpModal(false);
+  const handleAboutUsClick = () => setShowAboutUsModal(true);
+  const handleCloseAboutUsModal = () => setShowAboutUsModal(false);
+  const handleSupportClick = () => setShowSupportModal(true);
+  const handleCloseSupportModal = () => setShowSupportModal(false);
+
   return (
     <Navbar expand="lg" bg="dark" variant="dark" className="py-3">
       <Container>
@@ -115,23 +133,49 @@ const Navigation = () => {
             <Nav.Link href="/fantasy-draft">Fantasy Draft</Nav.Link>
             <Nav.Link href="/predictions">Predictions</Nav.Link>
             <Nav.Link href="/player-comparison">Player Comparison</Nav.Link>
-            <Nav.Link href="/about">About Us</Nav.Link>
-            <Nav.Link href="mailto:support@loveoffootball.io">Support</Nav.Link>
+
+            {/* About Us button */}
+            <Nav.Link onClick={handleAboutUsClick}>About Us</Nav.Link>
+
+            {/* Support button */}
+            <Nav.Link onClick={handleSupportClick}>Support</Nav.Link>
           </Nav>
+
           <div className="auth-buttons ms-3">
-            <Link to="/auth/sign-in" className="btn btn-outline-light me-2">
+            {/* Trigger the Sign In modal */}
+            <Button
+              onClick={handleSignInClick}
+              variant="outline-light"
+              className="me-2"
+            >
               Sign In
-            </Link>
-            <Link to="/auth/sign-up" className="btn btn-success">
+            </Button>
+            {/* Trigger the Get Started (Sign Up) modal */}
+            <Button onClick={handleSignUpClick} variant="success">
               Get Started
-            </Link>
+            </Button>
+
+            {/* About Us Modal */}
+            <AboutUsModal
+              show={showAboutUsModal}
+              onHide={handleCloseAboutUsModal}
+            />
+
+            {/* Support Modal */}
+            <SupportModal
+              show={showSupportModal}
+              onHide={handleCloseSupportModal}
+            />
           </div>
         </Navbar.Collapse>
       </Container>
+
+      {/* Render the Sign In and Sign Up modals */}
+      <SignInModal show={showSignInModal} onHide={handleCloseSignInModal} />
+      <SignUpModal show={showSignUpModal} onHide={handleCloseSignUpModal} />
     </Navbar>
   );
 };
-
 const Intro = () => (
   <section className="landing-intro pt-5 pt-lg-6 pb-5 pb-lg-7">
     <Container className="landing-intro-content">

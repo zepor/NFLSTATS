@@ -1,10 +1,11 @@
-import React, { Suspense } from "react";
-import { useRoutes } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import { useNavigate, useRoutes } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Provider as ReduxProvider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { store } from "./redux/store";
 import "./i18n";
-import routes from "./routes";
+import routes from "./routes"; // Your routes configuration
 import Loader from "./components/Loader";
 import ThemeProvider from "./contexts/ThemeProvider";
 import SidebarProvider from "./contexts/SidebarProvider";
@@ -13,7 +14,19 @@ import ChartJsDefaults from "./utils/ChartJsDefaults";
 import "./builder-components.js";
 
 const App = () => {
+  const { isAuthenticated, isLoading } = useAuth0();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (!isAuthenticated) {
+      //navigate("/");
+    }
+  }, [isAuthenticated, isLoading, navigate]);
+
   const routeContent = useRoutes(routes);
+
   return (
     <HelmetProvider>
       <Helmet titleTemplate="%s | NFL Dashboard" defaultTitle="NFL Dashboard" />

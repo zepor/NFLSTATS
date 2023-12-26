@@ -1,0 +1,91 @@
+{
+  "resolvedId": "/app/src/components/sidebar/docItems.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "import {\r\n  ArrowRightCircle,\r\n  Code,\r\n  Globe,\r\n  Info,\r\n  List,\r\n  Mail,\r\n  Shield,\r\n  Users,\r\n} from \"react-feather\";\r\n\r\nconst gettingStartedSection = [\r\n  {\r\n    href: \"/docs/introduction\",\r\n    icon: Info,\r\n    title: \"Welcome\",\r\n  },\r\n  {\r\n    href: \"/docs/getting-started\",\r\n    icon: Code,\r\n    title: \"Getting Started\",\r\n  },\r\n];\r\n\r\nconst developmentSection = [\r\n  {\r\n    href: \"/docs/routing\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Routing\",\r\n  },\r\n  {\r\n    href: \"/docs/auth\",\r\n    icon: Users,\r\n    title: \"Authentication\",\r\n    children: [\r\n      {\r\n        href: \"/docs/auth/auth0\",\r\n        title: \"Auth0\",\r\n      },\r\n      //{\r\n      //  href: \"/docs/auth/cognito\",\r\n      //  title: \"Cognito\",\r\n      //},\r\n      {\r\n        href: \"/docs/auth/firebase\",\r\n        title: \"Firebase\",\r\n      },\r\n      {\r\n        href: \"/docs/auth/jwt\",\r\n        title: \"JWT\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    href: \"/docs/guards\",\r\n    icon: Shield,\r\n    title: \"Guards\",\r\n  },\r\n  {\r\n    href: \"/docs/api-calls\",\r\n    icon: ArrowRightCircle,\r\n    title: \"API Calls\",\r\n  },\r\n  {\r\n    href: \"/docs/environment-variables\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Environment Variables\",\r\n  },\r\n  {\r\n    href: \"/docs/redux\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Redux\",\r\n  },\r\n  {\r\n    href: \"/docs/internationalization\",\r\n    icon: Globe,\r\n    title: \"Internationalization\",\r\n  },\r\n  {\r\n    href: \"/docs/eslint-and-prettier\",\r\n    icon: ArrowRightCircle,\r\n    title: \"ESLint & Prettier\",\r\n  },\r\n  {\r\n    href: \"/docs/deployment\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Deployment\",\r\n  },\r\n  {\r\n    href: \"/docs/migrating-to-next-js\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Migrating to Next.js\",\r\n  },\r\n];\r\n\r\nconst helpSection = [\r\n  {\r\n    href: \"/docs/support\",\r\n    icon: Mail,\r\n    title: \"Support\",\r\n  },\r\n  {\r\n    href: \"/docs/changelog\",\r\n    icon: List,\r\n    title: \"Changelog\",\r\n    badge: \"v3.1.0\",\r\n  },\r\n];\r\n\r\nconst navItems = [\r\n  {\r\n    title: \"Getting Started\",\r\n    pages: gettingStartedSection,\r\n  },\r\n  {\r\n    title: \"Development\",\r\n    pages: developmentSection,\r\n  },\r\n  {\r\n    title: \"Help\",\r\n    pages: helpSection,\r\n  },\r\n];\r\n\r\nexport default navItems;\r\n",
+      "start": 1703474741470,
+      "end": 1703474741470
+    },
+    {
+      "name": "vite:react-babel",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "import {\r\n  ArrowRightCircle,\r\n  Code,\r\n  Globe,\r\n  Info,\r\n  List,\r\n  Mail,\r\n  Shield,\r\n  Users,\r\n} from \"/node_modules/.vite/deps/react-feather.js?v=ad213e26\";\r\n\r\nconst gettingStartedSection = [\r\n  {\r\n    href: \"/docs/introduction\",\r\n    icon: Info,\r\n    title: \"Welcome\",\r\n  },\r\n  {\r\n    href: \"/docs/getting-started\",\r\n    icon: Code,\r\n    title: \"Getting Started\",\r\n  },\r\n];\r\n\r\nconst developmentSection = [\r\n  {\r\n    href: \"/docs/routing\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Routing\",\r\n  },\r\n  {\r\n    href: \"/docs/auth\",\r\n    icon: Users,\r\n    title: \"Authentication\",\r\n    children: [\r\n      {\r\n        href: \"/docs/auth/auth0\",\r\n        title: \"Auth0\",\r\n      },\r\n      //{\r\n      //  href: \"/docs/auth/cognito\",\r\n      //  title: \"Cognito\",\r\n      //},\r\n      {\r\n        href: \"/docs/auth/firebase\",\r\n        title: \"Firebase\",\r\n      },\r\n      {\r\n        href: \"/docs/auth/jwt\",\r\n        title: \"JWT\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    href: \"/docs/guards\",\r\n    icon: Shield,\r\n    title: \"Guards\",\r\n  },\r\n  {\r\n    href: \"/docs/api-calls\",\r\n    icon: ArrowRightCircle,\r\n    title: \"API Calls\",\r\n  },\r\n  {\r\n    href: \"/docs/environment-variables\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Environment Variables\",\r\n  },\r\n  {\r\n    href: \"/docs/redux\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Redux\",\r\n  },\r\n  {\r\n    href: \"/docs/internationalization\",\r\n    icon: Globe,\r\n    title: \"Internationalization\",\r\n  },\r\n  {\r\n    href: \"/docs/eslint-and-prettier\",\r\n    icon: ArrowRightCircle,\r\n    title: \"ESLint & Prettier\",\r\n  },\r\n  {\r\n    href: \"/docs/deployment\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Deployment\",\r\n  },\r\n  {\r\n    href: \"/docs/migrating-to-next-js\",\r\n    icon: ArrowRightCircle,\r\n    title: \"Migrating to Next.js\",\r\n  },\r\n];\r\n\r\nconst helpSection = [\r\n  {\r\n    href: \"/docs/support\",\r\n    icon: Mail,\r\n    title: \"Support\",\r\n  },\r\n  {\r\n    href: \"/docs/changelog\",\r\n    icon: List,\r\n    title: \"Changelog\",\r\n    badge: \"v3.1.0\",\r\n  },\r\n];\r\n\r\nconst navItems = [\r\n  {\r\n    title: \"Getting Started\",\r\n    pages: gettingStartedSection,\r\n  },\r\n  {\r\n    title: \"Development\",\r\n    pages: developmentSection,\r\n  },\r\n  {\r\n    title: \"Help\",\r\n    pages: helpSection,\r\n  },\r\n];\r\n\r\nexport default navItems;\r\n",
+      "start": 1703474741470,
+      "end": 1703474741470,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}
