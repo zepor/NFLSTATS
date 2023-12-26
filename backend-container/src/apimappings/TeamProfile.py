@@ -1,22 +1,19 @@
 import sys
+from security import safe_requests
+
 sys.path.append('..')
 sys.path.append("os.getenv('LPATH')/src/")
-import requests, pandas, json
-from flask import Blueprint, jsonify, Flask
+from flask import Blueprint
 import os, time
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
-from pymongo import MongoClient
 from datetime import datetime
-from uuid import UUID
 from src.models.franchise_info import(FranchiseInfo) 
 from src.models.venue_info import(venue1, location, VenueInfo)
-from src.models.leaguehierarchy import(teams, division, conference, league,typeleague, LeagueHierarchy)
+from src.models.leaguehierarchy import(division, conference, LeagueHierarchy)
 from src.models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
-from src.models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
-from mongoengine import DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from bson import ObjectId
+from src.models.player_DCI_info import(player, PlayerDCIinfo)
 import logging
 bp = Blueprint('TeamProfile', __name__)
 @bp.route('/TeamProfile', methods=['GET'])
@@ -69,7 +66,7 @@ def fetch_and_save_team_profile():
     try:
         for TeamID in team_ids:
             logger.info(f"{datetime.now()} Requesting URL: {URL.format(TeamID=TeamID)}")
-            response = requests.get(URL.format(TeamID=TeamID))
+            response = safe_requests.get(URL.format(TeamID=TeamID))
             logger.info(f"Response status code: {response.status_code}")
             
             if response.status_code != 200:

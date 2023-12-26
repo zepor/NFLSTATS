@@ -1,10 +1,12 @@
-import os, time
+import os
+from security import safe_requests
+
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
 from mongoengine import connect
 from src.models.seasons import(SeasonInfo)
-from src.models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
+from src.models.team_info import(TeamInfo)
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
@@ -36,7 +38,7 @@ try:
                 constructed_url = URL.format(SEASONYEAR=year, SEASONTYPE=season_type, TeamID=team_id)
                 print(datetime.now(), "Constructed URL:", constructed_url)
                 try:
-                    response = requests.get(constructed_url)
+                    response = safe_requests.get(constructed_url)
                     if response.status_code != 200:
                         print(f"Error: API call to {constructed_url} returned status code: {response.status_code}")
                 except requests.exceptions.RequestException as req_e:

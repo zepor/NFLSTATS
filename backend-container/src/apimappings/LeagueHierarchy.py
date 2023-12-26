@@ -1,27 +1,24 @@
 import sys
+from security import safe_requests
+
 sys.path.append('..')
-import requests, pandas, json
-from flask import Blueprint, jsonify, Flask
-import os, time
+from flask import Blueprint
+import os
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
 from datetime import datetime
-from uuid import UUID
 from src.models.franchise_info import(FranchiseInfo) 
 from src.models.venue_info import(venue1, location, VenueInfo)
-from src.models.leaguehierarchy import( teams, division, conference, league,typeleague, LeagueHierarchy)
-from src.models.team_info import(coach, rgb_color, team_color, team, TeamInfo)
-from src.models.changelog import ChangelogEntry  # Import the ChangelogEntry model
-from mongoengine import DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from bson import ObjectId
+from src.models.leaguehierarchy import( teams, division, conference, league,LeagueHierarchy)
+from src.models.team_info import(team_color, team, TeamInfo)
 bp = Blueprint('LeagueHierarchy', __name__)
 @bp.route('/LeagueHierarchy', methods=['GET'])
 def fetchandsaveLeagueHierarchy():
     #print("LeagueHierarchy")
     url = os.getenv('LEAGUE_HIERARCHY_API_URL')
     print(datetime.now(), "Requesting URL:", url)
-    response = requests.get(url)
+    response = safe_requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
         return f"Call Seasons Successfully{response.status_code}"

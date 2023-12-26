@@ -1,21 +1,17 @@
 from src.models.boxscore_info import (
     gamebs, quarter, overtime, BoxscoreInfo)
-import json
-import pandas
 from src.models.game_info import (
     gamegame, awayteam, hometeam, broadcast, weather, wind, GameInfo)
 from src.models.league_info import (
-    game, season, changelog, leagueweek, LeagueInfo)
+    season, leagueweek, LeagueInfo)
 from src.models.venue_info import (venue1, location, VenueInfo)
 import time
 import os
-import requests
-from bson import ObjectId
-from mongoengine import DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from uuid import UUID
 from datetime import datetime
-from flask import Blueprint, jsonify, Flask
+from flask import Blueprint
 import sys
+from security import safe_requests
+
 sys.path.append("os.getenv('LPATH')/src/")
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
@@ -44,7 +40,7 @@ def fetch_and_save_all_seasons_schedule():
             url = SEASONS_API_URL.format(
                 year=year, season_type=season_type, API_KEY=API_KEY)
             print(datetime.now(), "Requesting URL:", url)
-            response = requests.get(url)
+            response = safe_requests.get(url)
             print("Response status code:", response.status_code)
             if response.status_code != 200:
                 return f"GetCurrentSeasonScheduleError for {year} {season_type}: {response.status_code}"
@@ -76,7 +72,7 @@ def fetch_and_save_weekly_schedule():
     url = WEEKLY_SCHEDULE_API_URL.format(
         season_year=season_year, season_type=season_type, week_number=week_number, API_KEY=API_KEY)
     print(datetime.now(), "Requesting URL:", url)
-    response = requests.get(url)
+    response = safe_requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
         return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: {response.status_code}"
