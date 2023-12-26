@@ -1,14 +1,11 @@
 import sys
+from security import safe_requests
+
 sys.path.append('..')
-import requests, pandas, json
-from flask import Blueprint, jsonify, Flask
-import os, time
-from pymongo import MongoClient
+from flask import Blueprint
+import os
 from datetime import datetime
-from uuid import UUID
 from src.models.seasons import(SeasonInfo)
-from mongoengine import connect, DoesNotExist, DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from bson import ObjectId
 import logging
 bp = Blueprint('Seasons', __name__)
 @bp.route('/Seasons', methods=['GET'])
@@ -19,7 +16,7 @@ def fetch_and_save_seasons():
     print("fetch_and_save_seasons called")
     url = os.getenv('SEASONS_API')
     print(datetime.now(), "Requesting URL:", url)
-    response = requests.get(url)
+    response = safe_requests.get(url)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
         return f"Call Hierarchy Successfully{response.status_code}"

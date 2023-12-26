@@ -1,31 +1,12 @@
-import base64
-import json
-import logging
 import os
-import pickle
-import redis
-import requests
 import sys
 import time
-from datetime import datetime, timedelta
-from itertools import groupby
-from json import JSONEncoder
-from logging.handlers import RotatingFileHandler
-from operator import itemgetter
-from threading import Thread
-from apscheduler.schedulers.background import BackgroundScheduler
-from bson import Binary, ObjectId
-from dateutil.parser import parse
-from dotenv import load_dotenv
-from flask import Flask, Blueprint, jsonify, make_response, render_template, request, session
-from flask_cors import CORS
-from flask_mongoengine import MongoEngine
-from src.models.play_by_play_info import (quarter, location, possession, start_location, play, score, detail, event, end_situation, start_situation, drive, description, penalty,defensive_team, offensive_team, period, points_after_play, PlayByPlayInfo)
-from mongoengine import (connect, DecimalField, Document, EmbeddedDocument, EmbeddedDocumentField, EmbeddedDocumentListField, StringField, UUIDField, IntField, BooleanField, DateTimeField)
+from datetime import datetime
+from flask import Blueprint
+from src.models.play_by_play_info import (quarter, location, possession, start_location, play, score)
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
-from uuid import UUID
-from waitress import serve
+from security import safe_requests
+
 sys.path.append("os.getenv('LPATH')/src/")
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
@@ -69,7 +50,7 @@ def fetch_and_pbp_by_game(game_id):
     print("fetch_and_pbp_by_game")
     API_KEY = os.getenv('APIKEY')
     PLAY_BY_PLAY_API_URL = f"https://api.sportradar.us/nfl/official/trial/v7/en/games/{game_id}/pbp.json?api_key={api_key}"
-    response = requests.get(PLAY_BY_PLAY_API_URL, timeout=10)
+    response = safe_requests.get(PLAY_BY_PLAY_API_URL, timeout=10)
     print("Response status code:", response.status_code)
     if response.status_code != 200:
         return f"GetCurrentSeasonScheduleError for {game_id} {year}: {response.status_code}"
@@ -114,7 +95,7 @@ def process_games_for_year(year):
 def extract_play_by_play_data(source):
     # Fetch play-by-play data from the source (API, database, file, etc.)
     # This is an example of extracting from an API
-    response = requests.get(source)
+    response = safe_requests.get(source)
     return response.json()
 
 @log_and_catch_exceptions
