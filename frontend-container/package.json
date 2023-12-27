@@ -39,7 +39,7 @@
     "apexcharts": "3.45.0",
     "apollo-server-express": "^3.13.0",
     "atlas-app-services-cli": "^1.0.3",
-    "axios": "^1.6.2",
+    "axios": "^1.6.3",
     "axios-mock-adapter": "1.22.0",
     "bootstrap": "^5.3.2",
     "chart.js": "4.4.1",
