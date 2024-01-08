@@ -73,3 +73,26 @@ class TeamFeeds:
         )
         logger.info("Data retrieved successfully.")
         return result
+
+    def get_team_profile(
+        self, access_level, version, language_code, team_id, file_format, api_key
+    ):
+        """
+        Get the team_profile for a given team_id
+        :param access_level:
+        :param version:
+        :param language_code:
+        :param team_id:
+        :param file_format:
+        :param api_key:
+        :return: The team_profile feed of the given year
+        """
+        if not api_key:
+            logger.error("API key not found in environment variables.")
+            raise ValueError("API key not found in environment variables")
+        datastore = DataStore(SportsRadarFetcher())
+        result = datastore.fetch_data(
+            url=f"{self.base_url}/{access_level}/{version}/{language_code}/teams/{team_id}/profile.{file_format}?api_key={api_key}"
+        )
+        logger.info("Data retrieved successfully.")
+        return result
