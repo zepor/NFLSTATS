@@ -89,9 +89,10 @@ class PrimaryFeeds:
             logger.error("API key not found in environment variable.")
             raise ValueError("API key not found in environment variables")
         datastore = DataStore(SportsRadarFetcher())
-        return datastore.fetch_data(
+        result = datastore.fetch_data(
             url=f"{self.base_url}/{access_level}/{version}/{language_code}/games/{year}/{season_type}/schedule.{file_format}?api_key={api_key}"
         )
+        return result
 
     def get_weekly_schedule(
         self,
@@ -122,6 +123,8 @@ class PrimaryFeeds:
             logger.error("API key not found in enviroment variable.")
             raise ValueError("API key not found in environment variables")
         datastore = DataStore(SportsRadarFetcher())
-        return datastore.fetch_data(
+        result = datastore.fetch_data(
             url=f"{self.base_url}/{access_level}/{version}/{language_code}/games/{season_year}/{season_type}/{week_number}/schedule.{file_format}?api_key={api_key}"
         )
+
+        return result
