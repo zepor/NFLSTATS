@@ -1,36 +1,22 @@
 import sys
+from security import safe_requests
+
 sys.path.append('..')
-import requests, pandas, json
+import requests
 from requests.exceptions import RequestException
-from flask import Blueprint, jsonify, Flask
+from flask import Blueprint
 import os, time
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):
         pass
-from pymongo import MongoClient
 from datetime import datetime
-from uuid import UUID
-import json
-from mongoengine import connect
 from src.models.seasons import(SeasonInfo) 
-from src.models.player_DCI_info import(player, prospect, primary, position, practice, injury, PlayerDCIinfo)
-from src.models.season_stat_oppo_info import(SeasonStatOppo, intreturns, passing, receiving,
-defense, receiving, defense, thirddown,fourthdown,goaltogo, redzone, kicks, fieldgoals,
-punts, rushing, kickreturns, puntreturns, miscreturns, record,  conversions,
-kickoffs, fumbles, penalties, touchdowns, interceptions, firstdowns)
-from src.models.season_stat_team_info import(SeasonStatTeam, intreturns, passing,
-receiving, defense, thirddown,fourthdown,goaltogo, redzone, kicks, fieldgoals, punts, 
-rushing, kickreturns, puntreturns, record, conversions, kickoffs, fumbles, penalties,
-touchdowns, interceptions, firstdowns)
-from src.models.season_stat_player_info import(SeasonStatPlayer, intreturns, 
-passing, receiving, defense, fieldgoals, punts, rushing, extrapoints, 
-kickreturns, puntreturns, conversions, kickoffs, fumbles, penalties)                                        
-from src.models.team_info import(coach, rgb_color, team, team_color, TeamInfo)
-from flask_mongoengine import MongoEngine
-from mongoengine import (DoesNotExist, DecimalField, EmbeddedDocumentField, Document,
- StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, 
- EmbeddedDocumentListField)
-from bson import ObjectId
+from src.models.player_DCI_info import(player, PlayerDCIinfo)
+from src.models.season_stat_oppo_info import(SeasonStatOppo)
+from src.models.season_stat_team_info import(SeasonStatTeam)
+from src.models.season_stat_player_info import(SeasonStatPlayer)                                        
+from src.models.team_info import(TeamInfo)
+from mongoengine import (EmbeddedDocumentField, EmbeddedDocumentListField)
 import logging
 from dotenv import load_dotenv
 load_dotenv()
@@ -55,7 +41,7 @@ def fetch_and_save_seasonal_stats():
         retries = 0
         while retries < MAX_RETRIES:
             try:
-                response = requests.get(url)
+                response = safe_requests.get(url)
                 response.raise_for_status()
                 return response.json()
             except requests.HTTPError as http_err:
@@ -85,7 +71,7 @@ def fetch_and_save_seasonal_stats():
                     constructed_url = URL.format(SEASONYEAR=year, SEASONTYPE=season_type, TEAMID=team_id)
                     logging.info(f"{datetime.now()} - Requesting URL: {constructed_url}")
                     try:
-                        response = requests.get(constructed_url)
+                        response = safe_requests.get(constructed_url)
                         logging.info(f"Response status code: {response.status_code}")
                         if response.status_code != 200:
                             logger.error(f"API call to {constructed_url} returned status code: {response.status_code}")
