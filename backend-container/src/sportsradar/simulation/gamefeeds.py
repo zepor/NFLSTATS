@@ -47,7 +47,7 @@ def get_game_boxscore(recording_id, session_id):
     * status code. The JSON response is returned as the result of the method.
     """
     url = f"{Config.BASE_URL}/{GAME_FEEDS_TYPE}/{Config.LEAGUE}/{recording_id}?feed=boxscore&contentType={Config.CONTENT_TYPE}&sessionId={session_id}"
-    response = requests.get(url=url)
+    response = requests.get(url=url, timeout=60)
     if response.status_code != 200:
         raise Exception(f"Request failed with status code: {response.status_code}")
     return response.json()
@@ -62,7 +62,7 @@ def get_game_info(recording_id, session_id):
 
     """
     url = f"{Config.BASE_URL}/{GAME_FEEDS_TYPE}/{Config.LEAGUE}/{recording_id}?feed=game&contentType={Config.CONTENT_TYPE}&sessionId={session_id}"
-    response = requests.get(url=url)
+    response = requests.get(url=url, timeout=60)
     if response.status_code != 200:
         raise Exception(f"Request failed with status code: {response.status_code}")
     return response.json()
@@ -77,7 +77,7 @@ def get_pbp_info(recording_id, session_id):
     :return: The play-by-play information in JSON format.
     """
     url = f"{Config.BASE_URL}/{GAME_FEEDS_TYPE}/{Config.LEAGUE}/{recording_id}?feed=pbp&contentType={Config.CONTENT_TYPE}&sessionId={session_id}"
-    response = requests.get(url=url)
+    response = requests.get(url=url, timeout=60)
     if response.status_code != 200:
         raise Exception(f"Request failed with status code: {response.status_code}")
     return response.json()
@@ -94,7 +94,7 @@ def get_game_roster(recording_id, session_id):
     * with the corresponding status code.
     """
     url = f"{Config.BASE_URL}/{GAME_FEEDS_TYPE}/{Config.LEAGUE}/{recording_id}?feed=rosters&contentType={Config.CONTENT_TYPE}&sessionId={session_id}"
-    response = requests.get(url=url)
+    response = requests.get(url=url, timeout=60)
     print(response)
     if response.status_code != 200:
         raise Exception(f"Request failed with status code: {response.status_code}")

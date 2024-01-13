@@ -24,7 +24,7 @@ def create_session(url: str, recording_id: str):
     }
 
     try:
-        response = requests.post(url, headers=headers, json=json_data)
+        response = requests.post(url, headers=headers, json=json_data, timeout=60)
         response.raise_for_status()  # Will only proceed if the request was successful
     except requests.RequestException as e:
         print(f"Request failed with {e}")
