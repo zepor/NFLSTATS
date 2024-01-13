@@ -78,7 +78,7 @@ class AvailableRecordings:
         json_data = {"query": query, "variables": {"league": league}}
 
         try:
-            response = requests.post(self.base_url, headers=headers, json=json_data)
+            response = requests.post(self.base_url, headers=headers, json=json_data, timeout=60)
             logger.info("Data retrieved successfully.")
             return response
         except requests.exceptions.RequestException as err:
