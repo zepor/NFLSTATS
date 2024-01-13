@@ -76,7 +76,7 @@
     "react-error-boundary": "^4.0.12",
     "react-feather": "2.0.10",
     "react-helmet-async": "^2.0.4",
-    "react-i18next": "13.5.0",
+    "react-i18next": "14.0.0",
     "react-input-mask": "2.0.4",
     "react-perfect-scrollbar": "1.5.8",
     "react-popper": "2.3.0",
