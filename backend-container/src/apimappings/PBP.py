@@ -5,8 +5,6 @@ from datetime import datetime
 from flask import Blueprint
 from src.models.play_by_play_info import (quarter, location, possession, start_location, play, score)
 from pymongo import MongoClient
-from security import safe_requests
-
 sys.path.append("os.getenv('LPATH')/src/")
 if not hasattr(os, 'add_dll_directory'):
     def add_dll_directory(path):

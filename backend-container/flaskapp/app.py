@@ -36,6 +36,7 @@ from src.apimappings.current_season_schedule import bp as bp_current_season_sche
 from src.apimappings.current_season_schedule import fetch_and_save_weekly_schedule
 from src.apimappings.PBP import bp as bp_pbp
 from src.apimappings.PBP import process_games_for_year
+from src.apimappings.gamefeeds import gamefeeds_blueprint
 #DATABASE IMPORTS
 from src.database.connections import get_mongodb_connection, connect_to_redis
 from src.database.rediscache import clear_cache, FootballData
@@ -118,6 +119,7 @@ app.register_blueprint(bp_venues)
 app.register_blueprint(bp_populate_seasons)
 app.register_blueprint(bp_populate_teams)
 app.register_blueprint(bp_support_api, url_prefix="/api")
+app.register_blueprint(gamefeeds_blueprint, url_prefix='/gamefeeds')
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 

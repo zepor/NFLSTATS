@@ -1,6 +1,4 @@
 import sys
-from security import safe_requests
-
 sys.path.append('..')
 sys.path.append("os.getenv('LPATH')/src/")
 from flask import Blueprint

@@ -19,11 +19,9 @@ def get_mongodb_connection():
         mongodb_url = os.environ.get('MONGODB_URL')
         if not mongodb_url:
             raise ValueError("MONGODB_URL environment variable not set.")
-
         client = MongoClient(mongodb_url, serverSelectionTimeoutMS=5000, connect=False,
                              maxPoolSize=10, connectTimeoutMS=30000, retryWrites=True,
                              w='majority', retryReads=True)
-
         client.admin.command('ping')  # Test the connection
         be_logger.debug("Successfully connected to MongoDB.")
         return client

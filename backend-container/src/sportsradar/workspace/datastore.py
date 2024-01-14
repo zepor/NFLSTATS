@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 from src.sportsradar import logging_helpers
+from src.database.connections import get_mongodb_connection
 
 logger = logging_helpers.get_logger(__name__)
 
@@ -52,7 +53,7 @@ def setup_http_session():
     return session
 
 
-def save_data(response, db_uri, database, collection):
+def save_data(response, database, collection):
     """
     Save data to MongoDB collection.
 
@@ -66,13 +67,11 @@ def save_data(response, db_uri, database, collection):
     - ValueError: If the database name is None.
 
     """
-    mongo_client = MongoClient(host=db_uri, server_api=ServerApi("1"), port=27017)
-    if database is None:
-        raise ValueError("MongoDB environment variable not set.")
-    else:
-        print(database)
-        db = mongo_client[database]
-        db[collection].insert_one(response.json())
+    mongo_client = get_mongodb_connection()
+    if not mongo_client:
+        raise ValueError("Failed to connect to MongoDB.")
+    db = mongo_client[database]
+    db[collection].insert_one(response.json())
 
 
 class SportsRadarFetcher:

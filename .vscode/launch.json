@@ -8,7 +8,7 @@
       "program": "${file}",
       "console": "integratedTerminal",
       "justMyCode": true,
-      "pythonPath": "/home/zepor/.pyenv/versions/3.10.0/envs/venv310/bin/python",
+      "python": "/home/zepor/.pyenv/versions/3.10.0/envs/venv310/bin/python",
       "pipPath": "/home/zepor/.pyenv/versions/3.10.0/envs/venv310/bin/pip"
     },
     {

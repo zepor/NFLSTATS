@@ -7,8 +7,8 @@ class gamebs(EmbeddedDocument):
     attendance = IntField()
     hometeam = StringField()
     awayteam = StringField()
-    awayteamtotaltotalpoints = IntField()
-    hometeamtotaltotalpoints = IntField()
+    awayteamtotalpoints = IntField()
+    hometeamtotalpoints = IntField()
 
 
 class overtime(EmbeddedDocument):

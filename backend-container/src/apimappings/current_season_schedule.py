@@ -1,3 +1,11 @@
+import os
+import sys
+import requests
+import time
+from datetime import datetime
+from flask import Blueprint, jsonify
+from dotenv import load_dotenv
+load_dotenv()
 from src.models.boxscore_info import (
     gamebs, quarter, overtime, BoxscoreInfo)
 from src.models.game_info import (
@@ -5,47 +13,41 @@ from src.models.game_info import (
 from src.models.league_info import (
     season, leagueweek, LeagueInfo)
 from src.models.venue_info import (venue1, location, VenueInfo)
-import time
-import os
-from datetime import datetime
-from flask import Blueprint
-import sys
-from security import safe_requests
+from src.utils.log import be_logger
+from src.utils.logandcatchexceptions import log_and_catch_exceptions
+from src.database.connections import get_mongodb_connection
 
-sys.path.append("os.getenv('LPATH')/src/")
-if not hasattr(os, 'add_dll_directory'):
-    def add_dll_directory(path):
-        pass
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '..', '..'))
+sys.path.append(project_root)
+sys.path.append(os.path.join(project_root, 'src'))
+
 bp = Blueprint('current_season_schedule', __name__)
-
-
-def log_and_catch_exceptions(func):
-    def func_wrapper(*args, **kwargs):
-        try:
-            return func(*args, **kwargs)
-        except Exception as e:
-            be_logger.error(f"Error in {func.__name__}: {e}")
-            raise Exception(f"Error in {func.__name__}: {e}")
-    return func_wrapper
-
-
+api_key = os.getenv('APIKEY')
+mongodb_url = os.getenv('MONGODB_URL')
+mongodb_database = os.getenv('MONGODB_DATABASE')
 @log_and_catch_exceptions
 @bp.route('/fetchAndSaveAllSeasonsSchedule', methods=['GET'])
 def fetch_and_save_all_seasons_schedule():
-    print("fetch_and_save_all_seasons_schedule called")
-    API_KEY = os.getenv('APIKEY')
+    be_logger.info("fetch_and_save_all_seasons_schedule called")
+    API_KEY = api_key
     SEASONS_API_URL = "http://api.sportradar.us/nfl/official/trial/v7/en/games/{year}/{season_type}/schedule.json?api_key={API_KEY}"
-    for year in range(2016, 2024):
+    for year in range(2023, 2025):
         for season_type in ['REG', 'PST']:
-            url = SEASONS_API_URL.format(
-                year=year, season_type=season_type, API_KEY=API_KEY)
-            print(datetime.now(), "Requesting URL:", url)
-            response = safe_requests.get(url)
-            print("Response status code:", response.status_code)
+            url = SEASONS_API_URL.format(year=year, season_type=season_type, API_KEY=API_KEY)
+            be_logger.info(f"Requesting URL at {datetime.now()}: {fetch_and_save_all_seasons_schedule}")
+            response = requests.get(url)
+            be_logger.info(f"Response status code for {fetch_and_save_all_seasons_schedule}: {response.status_code}")
+            
             if response.status_code != 200:
+                be_logger.error(f"Error fetching data from {fetch_and_save_all_seasons_schedule}: {response.status_code}")
                 return f"GetCurrentSeasonScheduleError for {year} {season_type}: {response.status_code}"
+            
             data = response.json()
+            be_logger.info(f"Data fetched for {year} {season_type}: {str(data)[:200]}")
             venue_info_dict = extract_venue_info(data)
+            if not venue_info_dict:
+                be_logger.error(f"No venue data extracted for {year} {season_type}")
             league_info_dict = extract_league_info(data)
             game_info_dict = extract_game_info(data)
             boxscore_info_dict = extract_boxscore_info(data)
@@ -54,16 +56,16 @@ def fetch_and_save_all_seasons_schedule():
             mapped_games = map_game_info(game_info_dict)
             mapped_boxscores = map_boxscore_info(boxscore_info_dict)
             save_to_database(mapped_venues, mapped_leagues,
-                             mapped_games, mapped_boxscores)
-            print("Games saved to database")
+                            mapped_games, mapped_boxscores)
+            be_logger.info("Games saved to database")
             time.sleep(2)
-    return "Schedule data for all seasons fetched and saved successfully."
+    return jsonify({"message": "Schedule fetched and saved successfully"}), 200
 
 @log_and_catch_exceptions
 @bp.route('/fetchAndSaveWeeklySchedule', methods=['GET'])
 def fetch_and_save_weekly_schedule():
-    print("fetch_and_save_weekly_schedule called")
-    API_KEY = os.getenv('APIKEY')
+    be_logger.info("fetch_and_save_weekly_schedule called")
+    API_KEY = api_key
     season_year = datetime.now().year
     season_type = 'REG'  # or 'PRE' or 'POST' depending on the current season
     # adjust this calculation as needed
@@ -71,13 +73,13 @@ def fetch_and_save_weekly_schedule():
     WEEKLY_SCHEDULE_API_URL = 'http://api.sportradar.us/nfl/official/trial/v7/en/games/{season_year}/{season_type}/{week_number}/schedule.json?api_key={API_KEY}'
     url = WEEKLY_SCHEDULE_API_URL.format(
         season_year=season_year, season_type=season_type, week_number=week_number, API_KEY=API_KEY)
-    print(datetime.now(), "Requesting URL:", url)
-    response = safe_requests.get(url)
-    print("Response status code:", response.status_code)
+    be_logger.info(f"{datetime.now()} Requesting URL: {url}")
+    response = requests.get(url)
+    be_logger.info(f"Response status code: {response.status_code}")
     if response.status_code != 200:
         return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: {response.status_code}"
     data = response.json()
-    # print("data:", data)
+    # be_logger.info("data:", data)
     venue_info_dict = extract_venue_info(data)
     league_info_dict = extract_league_info(data)
     game_info_dict = extract_game_info(data)
@@ -183,9 +185,9 @@ def map_boxscore_info(boxscore_info_dict):
             )
             mapped_boxscores[gamebs_id] = boxscore_info_instance
         except Exception as e:
-            print(f"Error processing gamebs_id {gamebs_id}: {e}")
+            be_logger.info(f"Error processing gamebs_id {gamebs_id}: {e}")
             raise e
-    # print("Mapped Boxscore Info:", mapped_boxscores)
+    # be_logger.info("Mapped Boxscore Info:", mapped_boxscores)
     return mapped_boxscores
 
 
@@ -249,7 +251,7 @@ def extract_game_info(data):
             game_ginfo['wind_direction'] = game.get(
                 'weather', {}).get('wind', {}).get('direction', None)
             game_info_dict[game['id']] = game_ginfo
-            # print("game_info_dict:", game_info_dict)
+            # be_logger.info("game_info_dict:", game_info_dict)
     return game_info_dict
 
 
@@ -258,7 +260,7 @@ def map_game_info(game_info_dict):
     mapped_games = {}
     for game_id in game_info_dict:
         game_details = game_info_dict[game_id]
-        # print("game_details:", game_details)
+        # be_logger.info("game_details:", game_details)
         # Convert integer IDs to string UUIDs if needed
         game_embedded1 = gamegame(
             id=game_details['game_id'],
@@ -319,7 +321,7 @@ def map_game_info(game_info_dict):
             wind=wind_embedded
         )
         mapped_games[game_id] = game_info_instance
-    # print("Mapped Game Info:", mapped_games)
+    # be_logger.info("Mapped Game Info:", mapped_games)
     return mapped_games
 
 
@@ -396,7 +398,7 @@ def map_league_info(league_info_dict):
             leagueweek=week_embedded_list
         )
         mapped_leagues[weekid] = league_info_instance
-    print("Mapped Leagues:", mapped_leagues)
+    be_logger.info("Mapped Leagues:", mapped_leagues)
     return mapped_leagues
 
 
@@ -428,7 +430,7 @@ def extract_venue_info(data):
             venue_info['lng'] = game.get('venue', {}).get(
                 'location', {}).get('lng', None)
             venue_info_dict[game['venue']['id']] = venue_info
-                    # print("venue_info_dict:", venue_info_dict)
+                    # be_logger.info("venue_info_dict:", venue_info_dict)
     return venue_info_dict
 
 
@@ -461,54 +463,54 @@ def map_venue_info(venue_info_dict):
             location=location_embedded
         )
         mapped_venues[venue_id] = venue_info_instance
-    # print(len(mapped_venues))
-    # print("Mapped_Venues", mapped_venues)
+    # be_logger.info(len(mapped_venues))
+    # be_logger.info("Mapped_Venues", mapped_venues)
     return mapped_venues
 
 @log_and_catch_exceptions
 def save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscores):
-    print("save_to_database called")
+    be_logger.info("save_to_database called")
+    client = get_mongodb_connection()
+    if not client:
+        raise ConnectionError("Failed to connect to MongoDB.")
+    db = client["Current_Season"]
 
-    def update_collection(model_cls, mapped_data, collection_name):
+    def update_collection(model_cls, mapped_data, collection_name, db):
         updated_count = 0
         new_count = 0
         for mapped_entry_info in mapped_data:
-            mapped_entry = mapped_entry_info
-            mapped_entry_id = mapped_entry.id  # Extract the ID from the mapped entry
-            existing_entry = model_cls.objects(id=mapped_entry_id).first()
+            try:
+                mapped_entry = mapped_entry_info
+                mapped_entry_id = mapped_entry.id
+                existing_entry = model_cls.objects(id=mapped_entry_id).first()
 
-            # Print the ID being checked
-            print(f"Checking {collection_name} with ID: {mapped_entry_id}")
-
-            if existing_entry:
-                updated_fields = []
-                for field_name in existing_entry._fields.keys():
-                    existing_value = getattr(existing_entry, field_name)
-                    mapped_value = getattr(mapped_entry, field_name)
-                    if existing_value != mapped_value:
-                        setattr(existing_entry, field_name, mapped_value)
-                        updated_fields.append(field_name)
-                if updated_fields:
-                    existing_entry.save()
-                    updated_count += 1
-                    print(
-                        f"Updated {collection_name} {mapped_entry_id}: Updated fields: {', '.join(updated_fields)}")
+                if existing_entry:
+                    updated_fields = []
+                    for field_name in existing_entry._fields.keys():
+                        existing_value = getattr(existing_entry, field_name)
+                        mapped_value = getattr(mapped_entry, field_name)
+                        if existing_value != mapped_value:
+                            setattr(existing_entry, field_name, mapped_value)
+                            updated_fields.append(field_name)
+                    if updated_fields:
+                        existing_entry.save()
+                        updated_count += 1
+                        be_logger.info(f"Updated {collection_name} {mapped_entry_id}: Updated fields: {', '.join(updated_fields)}")
+                    else:
+                        be_logger.info(f"No updates needed for {collection_name} {mapped_entry_id}")
                 else:
-                    print(
-                        f"No updates needed for {collection_name} {mapped_entry_id}")
-            else:
-                mongo_representation = mapped_entry.to_mongo()
-                print(
-                    f"Mapped entry: {mapped_entry}, Mongo representation: {mongo_representation}")
-                new_entry = model_cls(**mapped_entry.to_mongo())
-                new_entry.save()
-                new_count += 1
-                print(f"Added new {collection_name} with id {mapped_entry_id}")
+                    new_entry = model_cls(**mapped_entry.to_mongo())
+                    new_entry.save()
+                    new_count += 1
+                    be_logger.info(f"Added new {collection_name} with id {mapped_entry_id}")
+            except Exception as e:
+                be_logger.error(f"Error saving {collection_name} with id {mapped_entry_id}: {e}")
 
-        print(
-            f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
+        be_logger.info(f"Updated {updated_count} {collection_name}s and added {new_count} new {collection_name}s.")
 
-    update_collection(VenueInfo, mapped_venues.values(), "venue")
-    update_collection(LeagueInfo, mapped_leagues.values(), "league")
-    update_collection(GameInfo, mapped_games.values(), "game")
-    update_collection(BoxscoreInfo, mapped_boxscores.values(), "boxscore")
+    update_collection(VenueInfo, mapped_venues.values(), "venue", db)
+    update_collection(LeagueInfo, mapped_leagues.values(), "league", db)
+    update_collection(GameInfo, mapped_games.values(), "game", db)
+    update_collection(BoxscoreInfo, mapped_boxscores.values(), "boxscore", db)
+
+    client.close()

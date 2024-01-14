@@ -1,6 +1,4 @@
 import sys
-from security import safe_requests
-
 sys.path.append('..')
 from flask import Blueprint
 import os
