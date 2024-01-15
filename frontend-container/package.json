@@ -43,7 +43,7 @@
     "axios-mock-adapter": "1.22.0",
     "bootstrap": "^5.3.2",
     "chart.js": "4.4.1",
-    "classnames": "2.3.2",
+    "classnames": "2.3.3",
     "dotenv": "^16.3.1",
     "eitherx": "^1.0.3",
     "faker": "^6.6.6",
