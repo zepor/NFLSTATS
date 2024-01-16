@@ -500,8 +500,7 @@ def save_to_database(mapped_leaguehierarchy, mapped_franchises, mapped_players, 
     update_collection(VenueInfo, mapped_venues.items(), "venue")
 
     # Handling the LeagueHierarchy separately, as there's only one document.
-    existing_league_hierarchy = LeagueHierarchy.objects.first()
-    if existing_league_hierarchy:
+    if existing_league_hierarchy := LeagueHierarchy.objects.first():
         # Update the existing document
         updated_fields = []
         fields_to_skip = ['id', 'league_id']

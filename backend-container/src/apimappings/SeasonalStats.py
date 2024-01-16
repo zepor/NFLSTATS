@@ -1074,8 +1074,7 @@ def save_to_database(mapped_seasons, mapped_players,  opponenetseasondata, teams
                 query_condition = {"_id": entry_id}
             else:
                 query_condition = {"id": entry_id}
-            existing_entry = model_cls.objects(**query_condition).first()
-            if existing_entry:
+            if existing_entry := model_cls.objects(**query_condition).first():
                 update_data = {}
                 for field_name in existing_entry._fields.keys():
                     existing_value = getattr(existing_entry, field_name)

@@ -181,8 +181,7 @@ class RedisCache(AbstractCache):
         )
 
     def get(self, resource: NFLStatsResourceKey) -> Any:
-        value = self._db.get(str(resource))
-        if value is None:
+        if (value := self._db.get(str(resource))) is None:
             raise KeyError(f"Resource - {resource} not found in the Redis cache")
         return json.loads(value)
 

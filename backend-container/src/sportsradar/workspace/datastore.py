@@ -28,8 +28,7 @@ def create_mongo_client():
     Raises:
         ValueError: If the MONGODB_URL environment variable is not set.
     """
-    mongo_url = os.getenv("MONGODB_URL")
-    if mongo_url is None:
+    if (mongo_url := os.getenv("MONGODB_URL")) is None:
         raise ValueError("MongoDB environment variable for URL not set.")
     return MongoClient(host=mongo_url, server_api=ServerApi("1"), port=27017)
 

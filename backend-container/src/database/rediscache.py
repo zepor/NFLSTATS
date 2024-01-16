@@ -32,8 +32,7 @@ redis_fallback_host = os.getenv('REDIS_FALLBACK_HOST', 'redis-service')
 redis_client = connect_to_redis(redis_primary_host, redis_fallback_host)
 serialized_data = pickle.dumps(data)
 redis_client.setex(cache_key, cache_expiration, serialized_data)
-cached_data = redis_client.get(cache_key)
-if cached_data is not None:
+if (cached_data := redis_client.get(cache_key)) is not None:
     try:
         data = pickle.loads(cached_data)
         be_logger.info("Successfully loaded data from cache.")

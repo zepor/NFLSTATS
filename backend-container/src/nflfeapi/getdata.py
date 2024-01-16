@@ -48,8 +48,7 @@ def get_data():
             data.selected_team = selected_team_from_frontend
             updated = True
         be_logger.info(f"get_data: Updated flag: {updated}")
-        team_top_10_data_cache_json = structure_data_for_categories()
-        if team_top_10_data_cache_json is None:
+        if (team_top_10_data_cache_json := structure_data_for_categories()) is None:
             be_logger.error(
                 "get_data: structure_data_for_categories() returned None")
             return jsonify({"error": "Error in getting top 10 data"}), 500
@@ -71,8 +70,7 @@ def get_data():
         data.selected_teams = data.teams_dict_cache.get(key, [])
         be_logger.info(
             f"get_data: Selected Teams (first 2): {data.selected_teams[:2]}")
-        team_top_10_data = data.team_top_10_data_cache.get(key)
-        if team_top_10_data is None:  # Add this check
+        if (team_top_10_data := data.team_top_10_data_cache.get(key)) is None:  # Add this check
             be_logger.error(
                 f"get_data: No team top 10 data Cache: {data.team_top_10_data_cache}")
             return jsonify({"error": "No team top 10 data found"}), 500
