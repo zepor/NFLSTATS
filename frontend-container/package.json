@@ -30,7 +30,7 @@
     "@fullcalendar/daygrid": "6.1.10",
     "@fullcalendar/react": "6.1.10",
     "@fullcalendar/timegrid": "6.1.10",
-    "@loadable/component": "5.16.2",
+    "@loadable/component": "5.16.3",
     "@mui/material": "^5.15.0",
     "@reduxjs/toolkit": "2.0.1",
     "@rollup/plugin-json": "^6.1.0",
