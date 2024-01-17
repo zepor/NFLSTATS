@@ -31,7 +31,7 @@
     "@fullcalendar/react": "6.1.10",
     "@fullcalendar/timegrid": "6.1.10",
     "@loadable/component": "5.16.2",
-    "@mui/material": "^5.15.0",
+    "@mui/material": "^5.15.2",
     "@reduxjs/toolkit": "2.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "abort-controller": "^3.0.0",
