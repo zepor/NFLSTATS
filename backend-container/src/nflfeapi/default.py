@@ -30,8 +30,7 @@ def serve(path):
     try:
         be_logger.info("Fetching live games data...")
         fetched_data = fetch_live_games_data()
-        live_games_data = fetched_data.get("upcominggames", [])
-        if live_games_data:
+        if live_games_data := fetched_data.get("upcominggames", []):
             live_games_cache_key = "livegames_cache"
             r.set(live_games_cache_key, pickle.dumps(live_games_data))
             be_logger.info(
@@ -45,8 +44,7 @@ def serve(path):
         be_logger.info(
             f"Current year: {current_year}, Current season type: {current_season_type}")
         be_logger.info("Fetching AllSeasonsTeamStatDetails cache...")
-        cached_data = r.get("get_AllSeasonsTeamStatDetails_cache")
-        if cached_data is None:
+        if (cached_data := r.get("get_AllSeasonsTeamStatDetails_cache")) is None:
             be_logger.info("Cache is empty, fetching data...")
             query_allteamstats = fetch_allseasonsteamstatdetails()
             results_data = list(

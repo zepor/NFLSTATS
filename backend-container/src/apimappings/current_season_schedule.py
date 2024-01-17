@@ -482,9 +482,8 @@ def save_to_database(mapped_venues, mapped_leagues, mapped_games, mapped_boxscor
             try:
                 mapped_entry = mapped_entry_info
                 mapped_entry_id = mapped_entry.id
-                existing_entry = model_cls.objects(id=mapped_entry_id).first()
 
-                if existing_entry:
+                if existing_entry := model_cls.objects(id=mapped_entry_id).first():
                     updated_fields = []
                     for field_name in existing_entry._fields.keys():
                         existing_value = getattr(existing_entry, field_name)
