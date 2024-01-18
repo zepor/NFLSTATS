@@ -55,7 +55,7 @@
     "graphql-tools": "^9.0.0",
     "graphql-type-json": "^0.3.2",
     "history": "5.3.0",
-    "i18next": "23.7.11",
+    "i18next": "23.7.12",
     "jsonwebtoken": "^9.0.2",
     "jsvectormap": "1.5.3",
     "jwt-decode": "4.0.0",
