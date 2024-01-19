@@ -1,0 +1,6 @@
+{
+	"name": "MongoSQLD",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
