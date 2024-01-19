@@ -1,0 +1,12 @@
+{
+	"name": "OdbcTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MongoDBSQLD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OdbcTable",
+		"schema": []
+	}
+}
