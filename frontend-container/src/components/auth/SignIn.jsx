@@ -18,6 +18,12 @@ function SignIn() {
       <small>
         <Link to="/auth/reset-password">Forgot password?</Link>
       </small>
+
+      {/* Terms of Service and Privacy Policy Links */}
+      <div className="text-center mt-3">
+        <Link to="/auth/termsofservice">Terms of Service</Link> |{" "}
+        <Link to="/auth/privacypolicy">Privacy Policy</Link>
+      </div>
     </>
   );
 }
