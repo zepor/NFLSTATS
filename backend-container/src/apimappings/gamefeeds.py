@@ -9,7 +9,7 @@ from src.utils.logandcatchexceptions import log_and_catch_exceptions
 from src.sportsradar.workspace.datastore import save_data
 from src.sportsradar.extract.gamefeeds import GameFeeds
 from src.database.connections import get_mongodb_connection
-
+#from sportradar.extract.gamefeeds import GameFeeds
 load_dotenv()
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -87,10 +87,8 @@ def process_game_feeds(year):
             be_logger.error(f"Error processing game ID {game_id}: {e}")
     return results
 
+@log_and_catch_exceptions
 @gamefeeds_blueprint.route('/<int:year>', methods=['GET'])
 def get_game_feeds(year):
-    try:
-        data = process_game_feeds(year)
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    data = process_game_feeds(year)
+    return jsonify(data)

@@ -37,6 +37,7 @@ from src.apimappings.current_season_schedule import fetch_and_save_weekly_schedu
 from src.apimappings.PBP import bp as bp_pbp
 from src.apimappings.PBP import process_games_for_year
 from src.apimappings.gamefeeds import gamefeeds_blueprint
+from src.apimappings.additionalfeeds import additionalfeeds_blueprint
 #DATABASE IMPORTS
 from src.database.connections import get_mongodb_connection, connect_to_redis
 from src.database.rediscache import clear_cache, FootballData
@@ -66,9 +67,9 @@ from src.utils.auth import init_oauth, auth_blueprint, login, callback, logout, 
 from src.utils.log import be_logger
 from src.utils.logandcatchexceptions import log_and_catch_exceptions
 from src.utils.notfound import init_app
-
+from src.utils.dalle3 import dalle3_blueprint, generate_image
 from config import (Config, DevelopmentConfig, ProductionConfig)
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from dotenv import load_dotenv
@@ -81,7 +82,6 @@ load_dotenv()
 sys.path.append('/ssweb')
 sys.path.append('/ssweb/src')
 app = Flask(__name__, template_folder='../templates')
-
 init_oauth(app)
 CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'http://localhost:3000', 'http://localhost:5000'], resources={r"/api/*": {"origins": "*"}})
 mongodb_client = get_mongodb_connection()
@@ -120,12 +120,19 @@ app.register_blueprint(bp_populate_seasons)
 app.register_blueprint(bp_populate_teams)
 app.register_blueprint(bp_support_api, url_prefix="/api")
 app.register_blueprint(gamefeeds_blueprint, url_prefix='/gamefeeds')
+app.register_blueprint(additionalfeeds_blueprint, url_prefix='/additionalfeeds')
+app.register_blueprint(dalle3_blueprint)
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 
 logger = logging.getLogger(__name__)
 FLASK_DEBUG = os.environ.get('FLASK_DEBUG')
 be_logger.info(f"Current FLASK_DEBUG: {FLASK_DEBUG}")
+
+@app.route('/image', methods=['GET'])
+def image_page():
+    return render_template('home.html')
+
 if __name__ == "__main__":
     #clear_cache()
     if FLASK_DEBUG == 'true' and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':

@@ -115,7 +115,17 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: environment-secret 
-                  key: VITE_SUPPORT_API_URL 
+                  key: VITE_SUPPORT_API_URL
+            - name: DALLE3KEY
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: DALLE3KEY
+            - name: OPENAI_ORGANIZATION
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: OPENAI_ORGANIZATION
 
           ports:
             - containerPort: 5000
