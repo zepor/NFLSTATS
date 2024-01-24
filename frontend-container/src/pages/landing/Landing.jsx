@@ -811,7 +811,6 @@ const Footer = () => (
           >
             Get LoveofFootball.io
           </Button>
-          {/* Add social media links or newsletter signup here */}
           <div>
             <img src={FBIcon} alt="Facebook" width="30" height="30" />
             <img src={INSTAIcon} alt="Instagram" width="30" height="30" />
@@ -820,9 +819,17 @@ const Footer = () => (
           </div>
         </Col>
       </Row>
+      <Row>
+        <Col md="12" className="text-center mt-4">
+          <a href="https://loveoffootball.io/auth/privacypolicy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          {' | '}
+          <a href="https://loveoffootball.io/auth/termsofservice" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+        </Col>
+      </Row>
     </Container>
   </section>
 );
+
 
 const Landing = () => {
   const { setTheme } = useTheme();
