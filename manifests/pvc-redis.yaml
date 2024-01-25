@@ -18,7 +18,7 @@ metadata:
   name: redis-pdb
   namespace: azdevspace
 spec:
-  minAvailable: 2  # Set the minimum available pods to 2 (to allow 1 disruption)
+  minAvailable: 2 # Set the minimum available pods to 2 (to allow 1 disruption)
   selector:
     matchLabels:
       app: redis

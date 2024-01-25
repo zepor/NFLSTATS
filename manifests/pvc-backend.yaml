@@ -21,4 +21,4 @@ spec:
   minAvailable: 2  # Set the minimum available pods to 2 (to allow 1 disruption)
   selector:
     matchLabels:
-      app: backend
+      app: be
