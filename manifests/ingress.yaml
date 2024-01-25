@@ -30,7 +30,7 @@ spec:
               service:
                 name: be
                 port:
-                  number: 5000
+                  number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -38,9 +38,7 @@ metadata:
   name: nwp-ingress-azdev
   namespace: azdevspace
 spec:
-  podSelector:
-    matchLabels:
-      app: fe
+  podSelector: {}
   policyTypes:
     - Ingress
   ingress:
