@@ -5,7 +5,7 @@ metadata:
   namespace: azdevspace
 spec:
   ports:
-  - name: http
+  - name: behttp
     port: 80
     targetPort: 5000
   - name: 5k

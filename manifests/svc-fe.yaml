@@ -5,10 +5,10 @@ metadata:
   namespace: azdevspace
 spec:
   ports:
-  - name: http
+  - name: fehttp
     port: 80
     targetPort: 3000
-  - name: https
+  - name: fehttps
     port: 443
     targetPort: 3000
   - name: 3k
