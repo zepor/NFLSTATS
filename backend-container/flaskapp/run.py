@@ -24,7 +24,7 @@ else:
         "timeout": 120,
         "accesslog": "-",
         "errorlog": "-",
-        "worker_class": "gevent"
+        "worker_class": "gthread"
     }
     # Validate that essential option is set, else exit or set defaults
     if options["workers"] is None:
