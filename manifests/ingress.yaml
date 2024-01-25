@@ -35,13 +35,32 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: nwp-ingress-azdev
+  name: nwp-ingress-fe
   namespace: azdevspace
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      app: fe
   policyTypes:
     - Ingress
   ingress:
     - from:
         - ipBlock:
             cidr: 0.0.0.0/0
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nwp-ingress-be
+  namespace: azdevspace
+spec:
+  podSelector:
+    matchLabels:
+      app: be
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+
