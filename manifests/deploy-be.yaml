@@ -126,6 +126,16 @@ spec:
                 secretKeyRef:
                   name: my-cluster-secrets
                   key: OPENAI_ORGANIZATION
+            - name: FLASK_APP
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: FLASK_APP
+            - name: FLASK_DEBUG
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: FLASK_DEBUG
 
           ports:
             - containerPort: 5000
