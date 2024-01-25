@@ -83,7 +83,7 @@ sys.path.append('/ssweb')
 sys.path.append('/ssweb/src')
 app = Flask(__name__, template_folder='../templates')
 init_oauth(app)
-CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'http://localhost:3000', 'http://localhost:5000'], resources={r"/api/*": {"origins": "*"}})
+CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'https://loveoffootball.io/image', 'http://localhost:3000', 'http://localhost:5000'], resources={r"/api/*": {"origins": "*"}})
 mongodb_client = get_mongodb_connection()
 db = MongoEngine(app)
 redis_primary_host = 'redis'

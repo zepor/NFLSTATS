@@ -8,6 +8,9 @@ spec:
   - name: behttp
     port: 80
     targetPort: 5000
+  - name: behttps
+    port: 443
+    targetPort: 5000
   - name: 5k
     port: 5000
     targetPort: 5000
