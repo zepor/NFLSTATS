@@ -8,9 +8,6 @@ spec:
   - name: http
     port: 80
     targetPort: 5000
-  - name: https
-    port: 443
-    targetPort: 5000
   - name: 5k
     port: 5000
     targetPort: 5000

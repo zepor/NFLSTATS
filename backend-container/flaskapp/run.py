@@ -1,7 +1,7 @@
 import os
 from app import app
 FLASK_DEBUG = os.environ.get('FLASK_DEBUG', 'true')
-if os.environ.get('FLASK_DEBUG') == 'true':
+if FLASK_DEBUG == 'true':
     # Use Flask's built-in development server with debugging enabled
     print("Running in development mode...")
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=True)
@@ -21,16 +21,13 @@ else:
     options = {
         "bind": "0.0.0.0:8000",
         "workers": os.environ.get('WORKERS'),
-        "certfile": os.environ.get('CERTFILE_PATH'),
-        "keyfile": os.environ.get('KEYFILE_PATH'),
         "timeout": 120,
         "accesslog": "-",
         "errorlog": "-",
         "worker_class": "gevent"
     }
-    # Validate that essential options are set, else exit or set defaults
-    for opt in ["workers", "certfile", "keyfile"]:
-        if options[opt] is None:
-            print(f"Error: Environment variable for {opt} not set.")
-            exit(1)
+    # Validate that essential option is set, else exit or set defaults
+    if options["workers"] is None:
+        print("Error: Environment variable for workers not set.")
+        exit(1)
     StandaloneApplication(app, options).run()
