@@ -11,6 +11,8 @@ spec:
   - name: 5k
     port: 5000
     targetPort: 5000
+  selector:
+    app: be
   sessionAffinity: None
   type: ClusterIP
 status:
