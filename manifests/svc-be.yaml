@@ -5,9 +5,16 @@ metadata:
   namespace: azdevspace
 spec:
   ports:
-    - port: 5000
-      protocol: TCP
-      targetPort: 5000
-  selector:
-    app: be
+  - name: http
+    port: 80
+    targetPort: 5000
+  - name: https
+    port: 443
+    targetPort: 5000
+  - name: 5k
+    port: 5000
+    targetPort: 5000
+  sessionAffinity: None
   type: ClusterIP
+status:
+  loadBalancer: {}
