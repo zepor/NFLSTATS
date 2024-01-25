@@ -24,6 +24,13 @@ spec:
                 name: fe
                 port:
                   number: 80
+          - path: "/image"
+            pathType: Prefix
+            backend:
+              service:
+                name: be
+                port:
+                  number: 5000
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
