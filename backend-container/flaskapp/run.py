@@ -19,7 +19,7 @@ else:
         def load(self):
             return self.application
     options = {
-        "bind": "0.0.0.0:8000",
+        "bind": "0.0.0.0:5000",
         "workers": os.environ.get('WORKERS'),
         "timeout": 120,
         "accesslog": "-",
