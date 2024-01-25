@@ -136,6 +136,11 @@ spec:
                 secretKeyRef:
                   name: my-cluster-secrets
                   key: FLASK_DEBUG
+            - name: WORKERS
+              valueFrom:
+                secretKeyRef:
+                  name: my-cluster-secrets
+                  key: WORKERS
 
           ports:
             - containerPort: 5000
