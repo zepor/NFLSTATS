@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
-const apiUrlSubmitSupport = import.meta.env.VITE_SUPPORT_API_URL;
+const apiUrlSubmitSupport =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000/api/submit-support"
+    : import.meta.env.VITE_SUPPORT_API_URL;
+
 const SupportModal = ({ show, onHide, emailAddress }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,50 +14,47 @@ const SupportModal = ({ show, onHide, emailAddress }) => {
   const [errorMessage, setErrorMessage] = useState(""); // To store error messages
   const [rateLimited, setRateLimited] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  console.log("API URL for submitting support:", apiUrlSubmitSupport);
 
   const sendEmail = async () => {
-    // Validate email and phone number formats
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
-    const phoneRegex = /^\d{10}$/; // Change this regex to match your phone number format
-
+    setErrorMessage("");
+    setSuccessMessage("");
+    setRateLimited(false);
     if (!name || !email || !phone || !message) {
       setErrorMessage("All fields are required.");
-    } else if (!email.match(emailRegex)) {
+      return;
+    }
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+    if (!email.match(emailRegex)) {
       setErrorMessage("Invalid email address.");
-    } else if (!phone.match(phoneRegex)) {
+      return;
+    }
+    const phoneRegex = /^\d{10}$/;
+    if (!phone.match(phoneRegex)) {
       setErrorMessage("Invalid phone number.");
-    } else {
-      // Clear previous success and error messages
-      setErrorMessage("");
-      setSuccessMessage("");
+      return;
+    }
+    try {
+      const response = await axios.post(apiUrlSubmitSupport, {
+        name,
+        email,
+        phone,
+        message,
+      });
 
-      try {
-        // Make an HTTP POST request to your Flask backend
-        const response = await axios.post(
-          `${apiUrlSubmitSupport}`, // Use apiUrl variable here
-          {
-            name,
-            email,
-            phone,
-            message,
-          },
+      if (response.status === 200) {
+        setSuccessMessage("Email sent successfully.");
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 429) {
+        setRateLimited(true);
+        setErrorMessage(
+          "You have reached the rate limit. Please try again later.",
         );
-
-        if (response.status === 200) {
-          // The email was sent successfully
-          setSuccessMessage("Email sent successfully");
-        } else {
-          // Handle other status codes or errors from the backend
-          console.error("Failed to send email");
-        }
-      } catch (error) {
-        // Handle any network or unexpected errors
-        if (error.response && error.response.status === 429) {
-          // Rate limited, show a message to the user
-          setRateLimited(true);
-        } else {
-          console.error("An error occurred:", error);
-        }
+      } else {
+        setErrorMessage(
+          "An unexpected error occurred. Please try again later.",
+        );
       }
     }
   };

@@ -84,7 +84,11 @@ sys.path.append('/ssweb/src')
 app = Flask(__name__, template_folder='../templates')
 be_logger.info(os.path.abspath('../templates'))
 init_oauth(app)
-CORS(app, origins=['https://0.0.0.0', 'https://loveoffootball.io', 'https://loveoffootball.io/image', 'http://localhost:3000', 'http://localhost:5000'], resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://loveoffootball.io", 
+                                 "https://loveoffootball.io/image", "http://localhost:5000", 
+                                 "https://loveoffootball.io/api/submit-support"]}})
+#'https://0.0.0.0', 'https://loveoffootball.io','https://loveoffootball.io/image',
+#'http://localhost:3000','http://localhost:5000','https://loveoffootball.io/api/submit-support'
 mongodb_client = get_mongodb_connection()
 db = MongoEngine(app)
 redis_primary_host = 'redis'
@@ -119,7 +123,7 @@ app.register_blueprint(bp_get_top10)
 app.register_blueprint(bp_venues)
 app.register_blueprint(bp_populate_seasons)
 app.register_blueprint(bp_populate_teams)
-app.register_blueprint(bp_support_api, url_prefix="/api")
+app.register_blueprint(bp_support_api, url_prefix='/api')
 app.register_blueprint(gamefeeds_blueprint, url_prefix='/gamefeeds')
 app.register_blueprint(additionalfeeds_blueprint, url_prefix='/additionalfeeds')
 app.register_blueprint(dalle3_blueprint)

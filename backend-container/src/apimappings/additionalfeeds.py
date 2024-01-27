@@ -25,9 +25,6 @@ additionalfeeds_blueprint = Blueprint('additionalfeeds', __name__)
 api_key = os.getenv('APIKEY')
 mongodb_url = os.getenv('MONGODB_URL')
 mongodb_database = os.getenv('MONGODB_DATABASE')
-api_key = os.getenv('APIKEY')
-mongodb_url = os.getenv('MONGODB_URL')
-mongodb_database = os.getenv('MONGODB_DATABASE')
 class TestConstants:
     BASE_URL = "https://api.sportradar.us/nfl/official"
     ACCESS_LEVEL = "trial"

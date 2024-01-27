@@ -134,7 +134,6 @@ node_modules
 Secrets/
 frontend-container/public/static/images/users/Docker Desktop #Installer.exe
 jabascript/
-templates/
 "New Folder"/
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -286,7 +285,6 @@ kubescape-*
 workflow-designtime/
 get_helm.sh
 Secrets/
-templates/
 javascript/
 .ignore/
 # Node Modules
@@ -342,6 +340,7 @@ NFL-Stats/
 nextjs-container/
 /backend-container/src/Schema/NFL_v7/*.py
 /backend-container/src/Schema/NFL_v7/*.json
+/backend-container/Tests/
 DeviceSyncApp/
 NFL-Stats-FastAPI/
 WSL2-Linux-Kernal/

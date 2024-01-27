@@ -1,6 +1,5 @@
 from mongoengine import Document, DateTimeField, DictField, StringField
 
-
 class ChangelogEntry(Document):
     entity_id = StringField(required=True)  # ID of the entity being updated
     # Type of the entity (e.g., VenueInfo, LeagueInfo, etc.)
