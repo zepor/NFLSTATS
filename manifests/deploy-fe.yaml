@@ -31,8 +31,6 @@ spec:
               value: frontend
             - name: FRONTEND_SERVICE_PORT
               value: "3000"
-            - name: NODE_ENV
-              value: production
             - name: AZURE_STORAGE_ACCOUNT
               value: sportfs
             - name: AZURE_STORAGE_KEY
@@ -111,6 +109,11 @@ spec:
                 secretKeyRef:
                   name: environment-secret 
                   key: VITE_SUPPORT_API_URL 
+            - name: NODE_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: environment-secret 
+                  key: NODE_ENV
           ports:
             - containerPort: 3000
           volumeMounts:
