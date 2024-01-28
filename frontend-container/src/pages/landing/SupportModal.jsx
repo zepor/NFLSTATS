@@ -4,7 +4,7 @@ import axios from "axios";
 const apiUrlSubmitSupport =
   process.env.NODE_ENV === "development"
     ? "http://localhost:5000/api/submit-support"
-    : import.meta.env.VITE_SUPPORT_API_URL;
+    : "https://loveoffootball.io/api/submit-support";
 
 const SupportModal = ({ show, onHide, emailAddress }) => {
   const [name, setName] = useState("");

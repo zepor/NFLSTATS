@@ -1,5 +1,4 @@
-from mongoengine import DecimalField, DateField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-
+from mongoengine import DateField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
 
 class team(EmbeddedDocument):
     alias = StringField()

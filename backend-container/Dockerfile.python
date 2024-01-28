@@ -31,6 +31,6 @@ ENV PYTHONPATH "${PYTHONPATH}:/ssweb"
 # Exposing port 5000 for Flask app
 EXPOSE 5000
 EXPOSE 5001
-
+RUN pip install mongoengine
 # Running the application
 CMD ["python", "flaskapp/run.py"]

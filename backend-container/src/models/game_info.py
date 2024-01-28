@@ -1,6 +1,4 @@
-from mongoengine import DecimalField, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocument, EmbeddedDocumentListField
-from mongoengine import DecimalField, EmbeddedDocument, EmbeddedDocumentField, Document, StringField, UUIDField, IntField, BooleanField, DateTimeField, EmbeddedDocumentListField
-
+from mongoengine import EmbeddedDocument, EmbeddedDocumentField, Document, StringField, IntField, BooleanField, DateTimeField
 
 class gamegame(EmbeddedDocument):
     id = StringField(primary_key=True)

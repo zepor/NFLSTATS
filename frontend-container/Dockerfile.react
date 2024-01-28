@@ -6,6 +6,7 @@ FROM node:20-alpine
 WORKDIR /app
 # Add `/app/node_modules/.bin` to the PATH environment variable
 ENV PATH /app/node_modules/.bin:$PATH
+ENV NODE_ENV production
 # Copy package.json and package-lock.json files to the working directory
 COPY package.json ./
 COPY package-lock.json ./
