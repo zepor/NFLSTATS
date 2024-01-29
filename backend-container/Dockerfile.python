@@ -6,31 +6,39 @@ WORKDIR /ssweb
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y gnupg wget iputils-ping curl openssl gcc build-essential \
-    libxml2-dev libxslt-dev libssl-dev zlib1g-dev python3-dev libnss3-tools && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+    curl wget \
+    openssl gcc g++ build-essential \
+    libxml2-dev libxslt-dev libssl-dev zlib1g-dev libbz2-dev liblzma-dev \
+    python3-dev libnss3-tools \
+    libcurl4-openssl-dev libssl-dev \
+    r-base
 
-# Upgrade pip
-RUN pip install --upgrade pip
+# Create a directory for R libraries
+RUN mkdir -p /usr/local/lib/R/site-library
 
-# Copy only the requirements.txt first to leverage Docker cache
+# Install R packages to the specified library directory, ensuring system requirements for 'nflreadr' and similar packages are met
+RUN R -e "install.packages(c('remotes', 'xml2', 'httr'), repos='http://cran.rstudio.com/', lib='/usr/local/lib/R/site-library')" && \
+    R -e "remotes::install_cran(c('nflfastR', 'nflseedR', 'nfl4th', 'nflreadr', 'nflplotR'), lib='/usr/local/lib/R/site-library')"
+
+# Upgrade pip and install Python dependencies in one step
 COPY ./flaskapp/requirements.txt ./flaskapp/
-
-# Install Python dependencies
-RUN pip install -r flaskapp/requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r flaskapp/requirements.txt
 
 # Copy the rest of your application's code
 COPY . .
 
 # Set environment variables
-ARG FLASK_DEBUG=true
-ENV FLASK_DEBUG=${FLASK_DEBUG}
-ENV PYTHONUNBUFFERED=1 
+ENV FLASK_DEBUG=true
+ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH "${PYTHONPATH}:/ssweb"
-# Exposing port 5000 for Flask app
+ENV R_LIBS_USER "/usr/local/lib/R/site-library"
+
+# Exposing ports for Flask app
 EXPOSE 5000
 EXPOSE 5001
-RUN pip install mongoengine
-# Running the application
+
+# Run your Flask application
 CMD ["python", "flaskapp/run.py"]
+CMD ["python", "src/apimappings/nflverse.py"]

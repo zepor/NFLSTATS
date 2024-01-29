@@ -27,6 +27,8 @@ spec:
           image: loveofsports.azurecr.io/be:latest
           imagePullPolicy: Always
           env:
+            - name: R_LIBS_USER
+              value: "/ssweb/backend-container/R/"
             - name: FLASK_DEBUG
               value: "false"
             - name: BACKEND_SERVICE_HOST

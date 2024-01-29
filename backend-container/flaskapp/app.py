@@ -38,8 +38,9 @@ from src.apimappings.PBP import bp as bp_pbp
 from src.apimappings.PBP import process_games_for_year
 from src.apimappings.gamefeeds import gamefeeds_blueprint
 from src.apimappings.additionalfeeds import additionalfeeds_blueprint
+from src.apimappings.nflverse import nflverse_blueprint, fetch_and_store
 #DATABASE IMPORTS
-from src.database.connections import get_mongodb_connection, connect_to_redis
+from src.database.connections import get_mongodb_connection, connect_to_redis, r
 from src.database.rediscache import clear_cache, FootballData
 #NFLFETCHQUERIES IMPORTS
 from src.nflfetchqueries.fetchallseasonsplayerstatdetails import fetch_AllSeasonsPlayerStatDetails
@@ -127,6 +128,7 @@ app.register_blueprint(bp_support_api, url_prefix='/api')
 app.register_blueprint(gamefeeds_blueprint, url_prefix='/gamefeeds')
 app.register_blueprint(additionalfeeds_blueprint, url_prefix='/additionalfeeds')
 app.register_blueprint(dalle3_blueprint)
+app.register_blueprint(nflverse_blueprint)
 app.secret_key = 'sessionkey'
 app.jinja_env.cache = {}
 

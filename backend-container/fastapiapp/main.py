@@ -37,9 +37,6 @@ from src.apimappings.PBP import bp as bp_pbp
 from src.apimappings.PBP import process_games_for_year
 from fastapi import FastAPI
 from src.routers import seasons_router
-
-from src.Database.db import client
-from src.Database.redis import r
 from src.Database.rediscache import FootballData
 data_cache = FootballData()
 #NFLFEAPI IMPORTS
