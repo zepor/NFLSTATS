@@ -1,10 +1,9 @@
-import requests
 import json
 import os
 from threading import Thread
 import src.utils.log as be_logger
-import src.utils.logandcatchexceptions as logandcatchexceptions
-import time
+from security import safe_requests
+
 load_dotenv()
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -26,11 +25,11 @@ feeds = {
 # Function to handle the subscription and be_logger.infoing of data@log_and_catch_exceptions
 def subscribe_to_feed(feed_url, params):
     while True:
-        with requests.get(feed_url, params=params, allow_redirects=False, stream=True) as r:
+        with safe_requests.get(feed_url, params=params, allow_redirects=False, stream=True) as r:
             if r.status_code == 200:
                 redirect_url = r.headers['Location']
                 be_logger.info(f"Listening for data on {feed_url}")
-                with requests.get(redirect_url, stream=True) as stream:
+                with safe_requests.get(redirect_url, stream=True) as stream:
                     for line in stream.iter_lines():
                         if line:
                             decoded_line = line.decode('utf-8')
