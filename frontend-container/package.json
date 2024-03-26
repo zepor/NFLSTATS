@@ -47,7 +47,7 @@
     "dotenv": "^16.3.1",
     "eitherx": "^1.0.3",
     "faker": "^6.6.6",
-    "firebase": "10.7.1",
+    "firebase": "10.9.0",
     "formik": "2.4.5",
     "google-map-react": "2.2.1",
     "graphql": "^16.8.1",
