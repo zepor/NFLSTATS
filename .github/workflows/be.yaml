@@ -14,7 +14,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
@@ -34,7 +34,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: buildImage
     steps:
       - uses: actions/checkout@v3
