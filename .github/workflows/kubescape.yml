@@ -1,5 +1,8 @@
 name: Kubescape scanning for misconfigurations
 on: [push, pull_request]
+permissions:
+  security-events: write
+  contents: read
 jobs:
   kubescape:
     runs-on: ubuntu-latest
