@@ -38,15 +38,11 @@ jobs:
     needs: buildImage
     steps:
       - uses: actions/checkout@v3
-      - uses: azure/login@v1
+      - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
+          enable-AzPSSession: false
+          environment: azurecloud
       - uses: azure/aks-set-context@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
