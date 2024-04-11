@@ -64,7 +64,7 @@
     "node-fetch": "^3.3.2",
     "nodejs": "^0.0.0",
     "notyf": "3.10.0",
-    "npm": "^10.2.5",
+    "npm": "^10.5.2",
     "npm-check-updates": "^16.14.12",
     "react": "^18.2.0",
     "react-apexcharts": "1.4.1",
