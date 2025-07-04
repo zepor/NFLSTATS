@@ -36,7 +36,7 @@ def fetch_and_save_all_seasons_schedule():
         for season_type in ['REG', 'PST']:
             url = SEASONS_API_URL.format(year=year, season_type=season_type, API_KEY=API_KEY)
             be_logger.info(f"Requesting URL at {datetime.now()}: {fetch_and_save_all_seasons_schedule}")
-            response = requests.get(url)
+            response = requests.get(url, timeout=60)
             be_logger.info(f"Response status code for {fetch_and_save_all_seasons_schedule}: {response.status_code}")
             
             if response.status_code != 200:
@@ -74,7 +74,7 @@ def fetch_and_save_weekly_schedule():
     url = WEEKLY_SCHEDULE_API_URL.format(
         season_year=season_year, season_type=season_type, week_number=week_number, API_KEY=API_KEY)
     be_logger.info(f"{datetime.now()} Requesting URL: {url}")
-    response = requests.get(url)
+    response = requests.get(url, timeout=60)
     be_logger.info(f"Response status code: {response.status_code}")
     if response.status_code != 200:
         return f"GetCurrentSeasonScheduleError for {season_year} {season_type} {week_number}: {response.status_code}"
